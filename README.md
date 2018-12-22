@@ -45,32 +45,23 @@ pumpkin-book
 └─chapter2
 ```
 
-## 准备·基础工作
+## 基础工作
 
 1. [大纲梳理] 西瓜书输出一个目录  [@spareribs](https://github.com/spareribs) 
 
    参考 [《统计学习方法》](https://github.com/WenDesi/lihang_book_algorithm) 和 [《Python 数据分析与挖掘实战 》](https://github.com/apachecn/python_data_analysis_and_mining_action) 制作《南瓜书》大纲
 
-2. [推导示例] 简单输出一个推导的 [demo](https://github.com/Datawhale18/pumpkin-book/blob/master/chapter2/part3/2.20-2.21.md) 提供参考  [@Sm1les](https://github.com/Sm1les) 
+2. [推导示例] 简单输出一个推导的demo提供参考  [@Sm1les](https://github.com/Sm1les) 
 
-3. [文档规范] 输出推导过程《公式命名》规范文档  #TODO
+3. [文档规范] 指定相关规范文档  #TODO
 
-4. [文档规范] 输出《推导文档》的规范  #TODO
-
-
-
-## 展望·未来计划
-
-1. 2018.12.21 输出demo【done】
-2. 2018.12.22 输出南瓜书目录
-3. 2018.12.24 ~ 2019.01.06 内部 《南瓜书推导实践》- 第0期 试行
-4. 【等待第3点结果再决定】观察效果分组 开展《南瓜书推导实践》让更多人加入进来完善计划
+4. [文档展示] 暂时先用浏览器扩展辅助展示，后期考虑用Github Pages或者自建网站展示
 
 
-备用方案：
+## 未来计划
 
-1. Github Pages
-2. 自建
+1. 内部试行第0期
+2. 总结第0期经验，后期带学员一起推导
 
 ## 关注我们
 
