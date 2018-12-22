@@ -10,8 +10,8 @@
 
 ## 目录
 
-- 第1章 [绪论](https://github.com/Datawhale18/pumpkin-book/Chapter1/chapter1.md)
-- 第2章 [模型评估与选择](https://github.com/Datawhale18/pumpkin-book/Chapter2/chapter2.md)
+- 第1章 [绪论](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter1/chapter1.md)
+- 第2章 [模型评估与选择](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter2/chapter2.md)
 
 
 ## 在线阅读方式
@@ -38,7 +38,7 @@ pumpkin-book
 ├─Chapter1  # 第一章
 │  ├─resources  # 资源文件夹
 |  |  └─images  # 图片资源
-|  ├─chapter1.md  # 第一章公式全解
+|  ├─chapter1.md # 第一章公式全解
 |  └─README.md  # 章节说明
 └─chapter2
 ```
