@@ -14,7 +14,7 @@
 
 - 第1章 [绪论](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter1/chapter1.md)
 - 第2章 [模型评估与选择](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter2/chapter2.md)
-
+- 第3章 [线性模型](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter3/chapter3.md)
 
 ## 在线阅读须知
 

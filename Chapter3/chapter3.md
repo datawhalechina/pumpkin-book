@@ -31,5 +31,5 @@ $$
     & = \cfrac{\sum_{i=1}^{m}(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^{m}(x_i-\bar{x})^2} 
 \end{aligned}
 $$
-若令$ \mathbf{X}=(x_1,x_2,...,x_m) $，$ \mathbf{X}_{demean} $为去均值后的$ \mathbf{X} $，$ \mathbf{y}=(y_1,y_2,...,y_m) $，$ \mathbf{y}_{demean} $为去均值后的$ \mathbf{y} $，其中$ \mathbf{X} $、$ \mathbf{X}_{demean} $、$ \mathbf{y} $、$ \mathbf{y}_{demean} $均为m行1列的列向量，代入上式可得：
-$$ w=\cfrac{\mathbf{X}_{demean}\mathbf{y}_{demean}^T}{\mathbf{X}_{demean}\mathbf{X}_{demean}^T}$$
+若令$ \mathbf{X}=(x_1,x_2,...,x_m) $，$ \mathbf{X}_{demean} $为去均值后的$ \mathbf{X} $，$ \mathbf{y}=(y_1,y_2,...,y_m) $，$ \mathbf{y}\_{demean} $为去均值后的$ \mathbf{y} $，其中$ \mathbf{X} $、$ \mathbf{X}\_{demean} $、$ \mathbf{y} $、$ \mathbf{y}_{demean} $均为m行1列的列向量，代入上式可得：
+$$ w=\cfrac{\mathbf{X}\_{demean}\mathbf{y}\_{demean}^T}{\mathbf{X}\_{demean}\mathbf{X}_{demean}^T}$$
