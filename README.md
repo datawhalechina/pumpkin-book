@@ -42,7 +42,7 @@ pumpkin-book
 |  |  └─images  # 图片资源
 |  ├─chapter1.md # 第1章公式全解
 |  └─README.md  # 章节说明
-└─chapter2
+└─Chapter2
 ```
 
 ## 基础工作
