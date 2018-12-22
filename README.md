@@ -1,11 +1,13 @@
 <h1>南瓜书PumpkinBook</h1>
+
+[西瓜书（周志华.《机器学习》.清华大学出版社）](https://book.douban.com/subject/26708119)是机器学习领域的经典入门教材之一，周老师为了使尽可能多的读者通过西瓜书对机器学习有所了解, 所以在书中对部分公式的推导细节没有详述，但是这对那些想深究公式推导细节的读者来说可能“不太友好”，本书旨在弥补西瓜书在此处的不足，尽可能地还原公式推导细节，诚挚欢迎每一位西瓜书读者前来参与完善本书：一个人可以走的很快，但是一群人却可以走的更远。
+
 <div align="center"><img src="https://img1.doubanio.com/view/subject/l/public/s28735609.jpg" width = "476.7" height = "555.3"></div>
 
-> 原书：[周志华. 机器学习. 清华大学出版社, 2016.](https://book.douban.com/subject/26708119/)
->
-> 贡献者： Datawhale成员
->
-> 欢迎任何人参与和完善：一个人可以走的很快，但是一群人却可以走的更远。
+> 书名：机器学习<br>
+> 作者：周志华<br>
+> 出版社：清华大学出版社<br>
+> 版次：2016年1月第1版
 
 
 ## 目录
@@ -16,14 +18,14 @@
 
 ## 在线阅读方式
 
-由于目前Github暂不支持在`Markdown`中嵌入`LaTeX`公式，所以在线阅读时需要用
-Chrome浏览器+[MathJax Plugin for Github扩展](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima)的方式才能看到公式，扩展离线安装包参见`plugin/chrome-extensions/MathJax-Plugin-for-Github_v0.2.4.crx`
+由于目前Github暂不支持在Markdown中嵌入LaTeX公式，所以在线阅读时需要用
+Chrome浏览器+[MathJax Plugin for Github](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima)扩展的方式才能看到公式，扩展离线安装包参见`plugin/chrome-extensions/MathJax-Plugin-for-Github_v0.2.4.crx`
 
 
 ##  协作规范
 
 ### 文档规范：
-文档采用`Markdown`语法编写，数学公式采用`LaTeX`语法编写，参考资料如下：
+文档采用Markdown语法编写，数学公式采用LaTeX语法编写，数学符号规范参见西瓜书《主要符号表》。
 
 |          | 格式     | 参考资料                                                     |
 | :------: | :------- | :----------------------------------------------------------- |
@@ -35,10 +37,10 @@ Chrome浏览器+[MathJax Plugin for Github扩展](https://chrome.google.com/webs
 
 ```
 pumpkin-book
-├─Chapter1  # 第一章
+├─Chapter1  # 第1章
 │  ├─resources  # 资源文件夹
 |  |  └─images  # 图片资源
-|  ├─chapter1.md # 第一章公式全解
+|  ├─chapter1.md # 第1章公式全解
 |  └─README.md  # 章节说明
 └─chapter2
 ```
