@@ -69,8 +69,8 @@ pumpkin-book
 
 备用方案：
 
-1. jupyer notebook
-2. Github Pages
+1. Github Pages
+2. 自建
 
 ## 关注我们
 
