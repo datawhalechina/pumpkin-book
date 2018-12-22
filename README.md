@@ -1,5 +1,5 @@
-<center><h1>南瓜书PumpkinBook</h1></center>
-<center><img src="https://img1.doubanio.com/view/subject/l/public/s28735609.jpg" width = "476.7" height = "555.3"></center>
+<h1>南瓜书PumpkinBook</h1>
+<div align="center"><img src="https://img1.doubanio.com/view/subject/l/public/s28735609.jpg" width = "476.7" height = "555.3"></div>
 
 > 原书：[周志华. 机器学习. 清华大学出版社, 2016.](https://book.douban.com/subject/26708119/)
 >
@@ -7,7 +7,6 @@
 >
 > 欢迎任何人参与和完善：一个人可以走的很快，但是一群人却可以走的更远。
 
----
 
 ## 目录
 
@@ -15,16 +14,14 @@
 - 第2章 [模型评估与选择](https://github.com/Datawhale18/pumpkin-book/Chapter2/chapter2.md)
 
 
-
----
 ## 在线阅读方式
 
 由于目前Github暂不支持在`Markdown`中嵌入`LaTeX`公式，所以在线阅读时需要用
 Chrome浏览器+[MathJax Plugin for Github扩展](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima)的方式才能看到公式，扩展离线安装包参见`plugin/chrome-extensions/MathJax-Plugin-for-Github_v0.2.4.crx`
 
----
 
 ##  协作规范
+
 ### 文档规范：
 文档采用`Markdown`语法编写，数学公式采用`LaTeX`语法编写，参考资料如下：
 
