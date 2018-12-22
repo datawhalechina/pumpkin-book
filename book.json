@@ -1,0 +1,6 @@
+{
+    "plugins": ["katex"],
+    "pdf": {
+        "fontFamily": "SimHei"
+    }
+}
