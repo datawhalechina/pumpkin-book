@@ -16,7 +16,7 @@
 - 第2章 [模型评估与选择](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter2/chapter2.md)
 
 
-## 在线阅读方式
+## 在线阅读须知
 
 由于目前Github暂不支持在Markdown中嵌入LaTeX公式，所以在线阅读时需要用
 Chrome浏览器+[MathJax Plugin for Github](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima)扩展的方式才能看到公式，扩展离线安装包参见`plugin/chrome-extensions/MathJax-Plugin-for-Github_v0.2.4.crx`
