@@ -7,7 +7,8 @@
 > 书名：机器学习<br>
 > 作者：周志华<br>
 > 出版社：清华大学出版社<br>
-> 版次：2016年1月第1版
+> 版次：2016年1月第1版<br>
+> 勘误表：http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/MLbook2016.htm
 
 
 ## 目录
