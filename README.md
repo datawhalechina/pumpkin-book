@@ -26,7 +26,7 @@ Chrome浏览器+[MathJax Plugin for Github](https://chrome.google.com/webstore/d
 
 ##  协作规范
 
-### 文档规范：
+##### 文档书写规范：
 文档采用Markdown语法编写，数学公式采用LaTeX语法编写，数学符号规范参见西瓜书《主要符号表》。
 
 |          | 格式     | 参考资料                                                     |
@@ -35,7 +35,7 @@ Chrome浏览器+[MathJax Plugin for Github](https://chrome.google.com/webstore/d
 | 数学公式 | LaTeX    | 1. CSDN Latex语法编写数学公式 http://t.cn/E469pdI<br>2.Latex 在线编辑工具 http://latex.codecogs.com/eqneditor/editor.php |
 
 
-### 目录结构规范：
+##### 目录结构规范：
 
 ```
 pumpkin-book
@@ -43,9 +43,26 @@ pumpkin-book
 │  ├─resources  # 资源文件夹
 |  |  └─images  # 图片资源
 |  ├─chapter1.md # 第1章公式全解
-|  └─README.md  # 章节说明
+|  └─README.md  # 章节目录
 └─Chapter2
 ```
+##### 公式全解文档规范：
+```
+### 公式编号
+$$公式的LaTeX表达式$$
+[推导]：公式推导步骤
+[解析]：公式解析说明
+### 附录
+附录内容
+```
+样例参见`Chapter2/chapter2.md`和`Chapter3/chapter3.md`
+##### 章节目录文档规范：
+```
+# 章节编号和名称
+### 子章节编号和名称
+- [公式编号](公式全解文档链接)
+```
+样例参见`Chapter2/README.md`和`Chapter3/README.md`
 
 ## 基础工作
 
@@ -55,9 +72,9 @@ pumpkin-book
 
 2. [推导示例] 简单输出一个推导的demo提供参考  [@Sm1les](https://github.com/Sm1les) 
 
-3. [文档规范] 指定相关规范文档  #TODO
+3. [文档规范] 指定相关规范文档
 
-4. [文档展示] 暂时先用浏览器扩展辅助展示，后期考虑用Github Pages或者自建网站展示
+4. [文档展示] 暂时先用浏览器扩展辅助展示，后期考虑用Github Pages或者自建网站展示 #TODO
 
 
 ## 未来计划

@@ -2,7 +2,7 @@
 
 $$ w=\cfrac{\sum_{i=1}^{m}y_i(x_i-\bar{x})}{\sum_{i=1}^{m}x_i^2-\cfrac{1}{m}(\sum_{i=1}^{m}x_i)^2} $$
 
-令式（3.5）等于0：
+[推导]：令式（3.5）等于0：
 $$ 0 = w\sum_{i=1}^{m}x_i^2-\sum_{i=1}^{m}(y_i-b)x_i $$
 $$ w\sum_{i=1}^{m}x_i^2 = \sum_{i=1}^{m}y_ix_i-\sum_{i=1}^{m}bx_i $$
 由于令式（3.6）等于0可得$ b=\cfrac{1}{m}\sum_{i=1}^{m}(y_i-wx_i) $，又$ \cfrac{1}{m}\sum_{i=1}^{m}y_i=\bar{y} $，$ \cfrac{1}{m}\sum_{i=1}^{m}x_i=\bar{x} $，则$ b=\bar{y}-w\bar{x} $，代入上式可得：
@@ -37,7 +37,7 @@ $$ w=\cfrac{\mathbf{X}\_{demean}\mathbf{y}\_{demean}^T}{\mathbf{X}\_{demean}\mat
 
 $$ \cfrac{\partial E_{\hat{w}}}{\partial \hat{w}}=2\mathbf{X}^T(\mathbf{X}\hat{w}-\mathbf{y}) $$
 
-将$ E_{\hat{w}}=(\mathbf{y}-\mathbf{X}\hat{w})^T(\mathbf{y}-\mathbf{X}\hat{w}) $展开可得：
+[推导]：将$ E_{\hat{w}}=(\mathbf{y}-\mathbf{X}\hat{w})^T(\mathbf{y}-\mathbf{X}\hat{w}) $展开可得：
 $$ E_{\hat{w}}= \mathbf{y}^T\mathbf{y}-\mathbf{y}^T\mathbf{X}\hat{w}-\hat{w}^T\mathbf{X}^T\mathbf{y}+\hat{w}^T\mathbf{X}^T\mathbf{X}\hat{w} $$
 对$ \hat{w} $求导可得：
 $$ \cfrac{\partial E_{\hat{w}}}{\partial \hat{w}}= \cfrac{\partial \mathbf{y}^T\mathbf{y}}{\partial \hat{w}}-\cfrac{\partial \mathbf{y}^T\mathbf{X}\hat{w}}{\partial \hat{w}}-\cfrac{\partial \hat{w}^T\mathbf{X}^T\mathbf{y}}{\partial \hat{w}}+\cfrac{\partial \hat{w}^T\mathbf{X}^T\mathbf{X}\hat{w}}{\partial \hat{w}} $$
@@ -49,7 +49,7 @@ $$ \cfrac{\partial E_{\hat{w}}}{\partial \hat{w}}=2\mathbf{X}^T(\mathbf{X}\hat{w
 
 $$ l(β)=\sum_{i=1}^{m}(-y_iβ^T\hat{\boldsymbol x_i}+\ln(1+e^{β^T\hat{\boldsymbol x_i}})) $$
 
-将式（3.26）代入式（3.25）可得：
+[推导]：将式（3.26）代入式（3.25）可得：
 $$ l(β,b)=\sum_{i=1}^{m}\ln(y_ip_1(\boldsymbol{\hat{x_i}};β)+(1-y_i)p_0(\boldsymbol{\hat{x_i}};β)) $$
 其中$ p_1(\boldsymbol{\hat{x_i}};β)=\cfrac{e^{β^T\hat{\boldsymbol x_i}}}{1+e^{β^T\hat{\boldsymbol x_i}}},p_0(\boldsymbol{\hat{x_i}};β)=\cfrac{1}{1+e^{β^T\hat{\boldsymbol x_i}}} $，代入上式可得：
 $$ l(β,b)=\sum_{i=1}^{m}\ln(\cfrac{y_ie^{β^T\hat{\boldsymbol x_i}}+1-y_i}{1+e^{β^T\hat{\boldsymbol x_i}}}) $$
@@ -72,7 +72,7 @@ $$ l(β)=\sum_{i=1}^{m}(y_i\ln(p_1(\boldsymbol{\hat{x_i}};β))+(1-y_i)\ln(p_0(\b
 
 $$\frac{\partial l(β)}{\partial β}=-\sum_{i=1}^{m}\hat{\boldsymbol x_i}(y_i-p_1(\hat{\boldsymbol x_i};β))$$
 
-此式可以进行向量化，令$p_1(\hat{\boldsymbol x_i};β)=\hat{y_i}$，代入上式得：
+[解析]：此式可以进行向量化，令$p_1(\hat{\boldsymbol x_i};β)=\hat{y_i}$，代入上式得：
 $$\begin{aligned}
 	\frac{\partial l(β)}{\partial β} &= -\sum_{i=1}^{m}\hat{\boldsymbol x_i}(y_i-\hat{y_i}) \\\\
 	& =\sum_{i=1}^{m}\hat{\boldsymbol x_i}(\hat{y_i}-y_i) \\\\
@@ -84,6 +84,7 @@ $$\begin{aligned}
 
 $$J=\cfrac{\boldsymbol w^T(\mu_0-\mu_1)(\mu_0-\mu_1)^T\boldsymbol w}{\boldsymbol w^T(\Sigma_0+\Sigma_1)\boldsymbol w}$$
 
+[推导]：
 $$\begin{aligned}
 	J &= \cfrac{\big|\big|\boldsymbol w^T\mu_0-\boldsymbol w^T\mu_1\big|\big|_2^2}{\boldsymbol w^T(\Sigma_0+\Sigma_1)\boldsymbol w} \\\\
 	&= \cfrac{\big|\big|(\boldsymbol w^T\mu_0-\boldsymbol w^T\mu_1)^T\big|\big|_2^2}{\boldsymbol w^T(\Sigma_0+\Sigma_1)\boldsymbol w} \\\\
@@ -96,7 +97,7 @@ $$\begin{aligned}
 
 $$\boldsymbol S_b\boldsymbol w=\lambda\boldsymbol S_w\boldsymbol w$$
 
-由3.36可列拉格朗日函数：
+[推导]：由3.36可列拉格朗日函数：
 $$l(\boldsymbol w)=-\boldsymbol w^T\boldsymbol S_b\boldsymbol w+\lambda(\boldsymbol w^T\boldsymbol S_w\boldsymbol w-1)$$
 对$\boldsymbol w$求偏导可得：
 $$\begin{aligned}
