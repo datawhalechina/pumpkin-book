@@ -61,9 +61,9 @@ $$
 T_a=\lbrace{\frac{a^i+a^{i+1}}{2}|1\leq{i}\leq{n-1}}\rbrace \tag {4.7}
 $$
 
-对于取值集合 T_a 中的每个 t 值计算将特征 a 离散为一个特征值只有两个值，分别是 \lbrace{a} >t\rbrace和\lbrace{a} \leq{t}\rbrace 的特征，计算新特征的信息增益，找到信息增益最大的t值即为该特征的最优划分点。
+对于取值集合 $ T_a$  中的每个 $t$  值计算将特征 $a$  离散为一个特征值只有两个值，分别是 $\lbrace{a} >t\rbrace$ 和 $\lbrace{a} \leq{t}\rbrace$  的特征，计算新特征的信息增益，找到信息增益最大的 $t$ 值即为该特征的最优划分点。
 $$
 \begin{split}
 Gain(D,a) &= \max\limits_{t \in T_a} \ Gain(D,a) \\
-&= \max\limits_{t \in T_a} \ Ent(D)-\sum_{\lambda \in \{-,+\}} \frac{\left | D_t^{\lambda } \right |}{\left |D  \right |}Ent(D_t^{\lambda }) \end{split}\tag{4.8}
+&= \max\limits_{t \in T_a} \ Ent(D)-\sum_{\lambda \in \{-,+\}} \frac{\left | D_t^{\lambda } \right |}{\left |D  \right |}Ent(D_t^{\lambda }) \end{split} \tag{4.8}
 $$
