@@ -1,4 +1,4 @@
-﻿# 第6章 支持向量机
+﻿﻿# 第6章 支持向量机
 ## 6.1 间隔与支持向量
 超平面的方程可以表示为：
 $$\tag{6.1} w^Tx+b =0$$
@@ -39,8 +39,8 @@ $$||w|| = \sqrt{w_1^2+w_2^2 +\cdots + w_n^2}$$
 
 假设超平面$(w,b)$能够将训练样本正确分类，即对于$(x_i,y_i)\in D$,若$y_i = +1$,则有$w^Tx_i + b \gt0$;若$y_i = -1$,则有$w^Tx_i + b \lt0$。
 $$\tag{6.3}  \begin{cases}
-   w^Tx_i+b \geqslant + 1 &\text{  } y_i = +1 \\
-​    w^Tx_i+b \leqslant - 1  &\text{  } y_i = -1
+   w^Tx_i+b \geq  + 1 &\text{  } y_i = +1 \\
+​    w^Tx_i+b \leq  - 1  &\text{  } y_i = -1
 \end{cases}$$
 **推导6.3**
 空间任意一点到超平面的距离为d
@@ -49,12 +49,12 @@ $$d=\frac{|w^Tx+b|}{||w||}$$
 $$||w|| = \sqrt{w_1^2+w_2^2 +\cdots + w_n^2}$$
 
 $$\begin{cases}
-   \frac{w^Tx_i+b }{||w||}\geqslant d & \forall y_i=1 \\
-   \frac{w^Tx_i+b}{||w||}\leqslant -d & \forall y_i=-1 \\
+   \frac{w^Tx_i+b }{||w||}\geq  d & \forall y_i=1 \\
+   \frac{w^Tx_i+b}{||w||}\leq  -d & \forall y_i=-1 \\
 \end{cases}
-\implies \begin{cases}
-   w_d^T x_i + b_d\geqslant 1 & \forall y_i=1 \\
-   w_d^T x_i+ b_d \leqslant -1 & \forall y_i=-1 \\
+\Longrightarrow \begin{cases}
+   w_d^T x_i + b_d\geq  1 & \forall y_i=1 \\
+   w_d^T x_i+ b_d \leq  -1 & \forall y_i=-1 \\
 \end{cases}$$
 其中$$\begin{cases}
    w_d^T = \frac{w^T}{d}\\
@@ -64,9 +64,9 @@ $$\begin{cases}
 **重命名！！！ 令**$$\begin{cases}
    w_d^T = w^T\\
  b_d = b \\
-\end{cases}\implies w^Tx+b=0\implies \begin{cases}
-   w^T x_i + b\geqslant 1 & \forall y_i=1 \\
-   w^T x_i+ b \leqslant -1 & \forall y_i=-1 \\
+\end{cases}\Longrightarrow w^Tx+b=0\Longrightarrow \begin{cases}
+   w^T x_i + b\geq  1 & \forall y_i=1 \\
+   w^T x_i+ b \leq  -1 & \forall y_i=-1 \\
 \end{cases}$$
 距离超平面最近的这几个训练样本点使式 (6.3) 的等号成立，它们被称为"支持向量" (surport vector)，两个异类支持向量到超平面的距离之和为:
 $$\tag{6.4} \gamma =\frac{2}{||w||}$$
@@ -82,16 +82,16 @@ $$\gamma =  \frac{1}{||w||}$$
 到能满足式 (6.3) 中约束的参数$w$和$b$,使得$\gamma$最大，即
 $$\tag{6.5} \underbrace{max}_{\text{$w,b$}}\frac{2}{||w||} $$
 
-$$s.t.\quad y_i(w^Tx_i+b)  \geqslant 1,\quad i=1,2 \dots m$$
+$$s.t.\quad y_i(w^Tx_i+b)  \geq  1,\quad i=1,2 \dots m$$
 显然为了最大化间隔$\gamma$,仅需最大化$\frac{2}{||w||}$ ，这等价于最小化$||w||$ **(加上系数与平方，只是为了计算方便)**。
 $$\tag{6.6} \underbrace{min}_{\text{$w,b$}}\frac{1}{2} ||w||^2$$
 
-$$s.t.\quad y_i(w^Tx_i+b)  \geqslant 1,\quad i=1,2 \dots m$$
+$$s.t.\quad y_i(w^Tx_i+b)  \geq 1,\quad i=1,2 \dots m$$
 
 ## 6.2 对偶问题
 求解式 (6.6)来得到大间隔划分超平面所对应的模型
 $$\tag{6.7} f(x) = w^Tx+b​$$
-对式 (6.6)使用拉格朗日乘子法可得到其"对偶问题" (dual problem). 具体来说，对式 (6.6) 的每条约束添加拉格朗日乘子$\alpha \geqslant 0​$，则该问题的拉格朗日函数可写为:
+对式 (6.6)使用拉格朗日乘子法可得到其"对偶问题" (dual problem). 具体来说，对式 (6.6) 的每条约束添加拉格朗日乘子$\alpha \geq  0​$，则该问题的拉格朗日函数可写为:
 $$\tag{6.8} L(w,b,\alpha) = \frac{1}{2}||w||^2+\sum_{i=1}^m\alpha_i(1-y_i(w^Tx_i+b))​$$
 **推导6.8**
 其中$\alpha = (\alpha_1;\alpha_2;\cdots\alpha_m)$.令$L(w,b,\alpha)$对$w$和$b$的偏导为0​
@@ -102,9 +102,9 @@ $$\begin{aligned}L(w,b,\alpha) &= \frac{1}{2}||w||^2+\sum_{i=1}^m\alpha_i(1-y_i(
 \end{aligned}​$$
 (1)对$w$和$b$分别求偏导数​
 
-$$\frac {\partial L}{\partial w}=w - \sum_{i=1}^{m}\alpha^iy^ix^i = 0 \implies w=\sum_{i=1}^{m}\alpha^iy^ix^i$$
+$$\frac {\partial L}{\partial w}=w - \sum_{i=1}^{m}\alpha^iy^ix^i = 0 \Longrightarrow w=\sum_{i=1}^{m}\alpha^iy^ix^i$$
 
-$$\frac {\partial L}{\partial b}=\sum_{i=1}^{m}\alpha^iy^i0 \implies \sum_{i=1}^{m}\alpha^iy^i = 0$$		
+$$\frac {\partial L}{\partial b}=\sum_{i=1}^{m}\alpha^iy^i0 \Longrightarrow \sum_{i=1}^{m}\alpha^iy^i = 0$$		
 $$\tag{6.9} w = \sum_{i=1}^m\alpha_iy_ix_i $$
 
 $$\tag{6.10} 0=\sum_{i=1}^m\alpha_iy_i$$
@@ -119,32 +119,32 @@ i -\sum _{i=1}^m\alpha_iy_ib\\
 & = -\frac {1}{2}w^T\sum _{i=1}^m\alpha_iy_ix_i+\sum _{i=1}^m\alpha_i -\sum _{i=1}^m\alpha_iy_ib\\
 &=-\frac {1}{2}w^T\sum _{i=1}^m\alpha_iy_ix_i+\sum _{i=1}^m\alpha_i -b\sum _{i=1}^m\alpha_iy_i\\
 &=-\frac {1}{2}(\sum_{i=1}^{m}\alpha_iy_ix_i)^T(\sum _{i=1}^m\alpha_iy_ix_i)+\sum _{i=1}^m\alpha_i -b\sum _{i=1}^m\alpha_iy_i\\
-&=-\frac {1}{2}\sum_{i=1}^{m}\alpha_iy_i(x_i)^T\sum _{i=1}^m\alpha_iy_ix_i+\sum _{i=1}^m\alpha_i -b\sum _{i=1}^m\alpha_iy_i\implies其中 \sum_{i=1}^{m}\alpha_iy_i = 0\\
+&=-\frac {1}{2}\sum_{i=1}^{m}\alpha_iy_i(x_i)^T\sum _{i=1}^m\alpha_iy_ix_i+\sum _{i=1}^m\alpha_i -b\sum _{i=1}^m\alpha_iy_i\Longrightarrow其中 \sum_{i=1}^{m}\alpha_iy_i = 0\\
 &= -\frac {1}{2}\sum_{i=1}^{m}\alpha_iy_i(x_i)^T\sum _{i=1}^m\alpha_iy_ix_i+\sum _{i=1}^m\alpha_i \\
 &=\sum _{i=1}^m\alpha_i-\frac {1}{2}\sum_{i=1 }^{m}\sum_{j=1}^{m}\alpha_i\alpha_jy_iy_j(x_i)^Tx_j
 \end{aligned}$$
 
 $$s.t. \quad \sum_{i=1}^m \alpha_i y_i = 0$$
 
-$$\alpha _i \geqslant 0,\quad i=1,2\dots,m$$
+$$\alpha _i \geq  0,\quad i=1,2\dots,m$$
 
 将(6.9)带入$f(x)$得：
 $$\tag{6.12} f(x) = w^Tx+b = \sum_{i=1}^{m}\alpha_iy_ix_i^Tx+b$$
 从对偶问题 (6.11)解出的$\alpha_i$是式 (6.8) 中的拉格朗日乘子，它恰对应着训练样本 $(x_i ,y_i)$. 注意到式 (6.6) 中有不等式约束,因此上述过程需满足KKT(Karush-Kuhn-Tucker) 条件,即要求:
 $$\tag{6.13} \begin{cases}
-   \alpha_i \geqslant 0; &\text{  } \\
-   y_if(x_i)-1 \geqslant0;&\text{}\\
+   \alpha_i \geq  0; &\text{  } \\
+   y_if(x_i)-1 \geq 0;&\text{}\\
    \alpha_i(y_if(x_i) -1) =0   
 \end{cases}$$
 使用$SMO$算法，固定$\alpha_i,\alpha_j$以外的参数，则有：
-$$\tag{6.14} \alpha_iy_i + \alpha_jy_j = c,\quad \alpha_i \geqslant 0 ,\quad \alpha_j\geqslant0$$
+$$\tag{6.14} \alpha_iy_i + \alpha_jy_j = c,\quad \alpha_i \geq 0 ,\quad \alpha_j\geq 0$$
 $$\tag{6.15}c = -\sum_{k\ne i,j}\alpha_ky_k$$
 $$\tag{6.16}\alpha_iy_i+\alpha_jy_j = c$$
 对于任何支持向量都有
 $$\begin{cases}
    w^T x_s + b=1 & \forall y_s=1 \\
    w^T x_s+ b= -1 & \forall y_s=-1  
-\end{cases} \implies y_sf(x_s)= 1$$
+\end{cases} \Longrightarrow y_sf(x_s)= 1$$
 $$\tag{6.17}y_s(\sum_{i\in S}\alpha_iy_ix_i^Tx_s+b) = 1$$
 **推导6.17**
 (6.17)等式两边同乘$y_s$
@@ -158,12 +158,12 @@ $\phi(x)$表示将 x映射
 $$\tag{6.19}f(x) = w^T\phi(x) +b$$
 $$\tag{6.20}  \underbrace{min}_{\text{$w,b$}}\frac{1}{2}||w||^2$$
 
-$$s.t. \quad y_i(w^T\phi(x_i)+ b)\geqslant 1,\quad i = 1,2\dots m​$$
+$$s.t. \quad y_i(w^T\phi(x_i)+ b)\geq  1,\quad i = 1,2\dots m​$$
 
 $$\tag{6.21}\underbrace{max}_{\text{$\alpha$}}\sum_{i=1}^m\alpha_i - \frac{1}{2}\sum_{i=1}^m\sum_{j=1}^m\alpha_i\alpha_jy_iy_j\phi(x_i)^T(x_j)$$
 
 $$s.t. \quad \sum_{i=1}^m\alpha_iy_i = 0$$
-$$\alpha_i\geqslant0,\quad i =1,2,\dots,m$$
+$$\alpha_i\geq 0,\quad i =1,2,\dots,m$$
 [半正定矩阵和正定矩阵](https://blog.csdn.net/asd136912/article/details/79146151)
 $$\tag{6.22}\kappa(x_i,x_j) =\lang\phi(x_i),\phi(x_j)
 \rang  = \phi(x)(x_i)^T\phi(x)(x_j)$$
@@ -171,7 +171,7 @@ $$\tag{6.23} \underbrace{max}_{\text{$\alpha$}}  \sum_{i=1}^m\alpha_i - \frac{1}
 
 $$s.t. \quad \sum_{i=1}^m\alpha_iy_i =0$$
 
-$$\alpha_i \geqslant 0,\quad i =1,2\cdots,m$$
+$$\alpha_i \geq  0,\quad i =1,2\cdots,m$$
 $$\tag{6.24}\begin{aligned} f(x) &=w^T\phi(x) +b \\&=\sum_{i=1}^m\alpha_iy_i\phi(x)(x_i)^T\phi(x) +b
 \\&=\sum_{i=1}^m\alpha_iy_i\kappa(x_i,x_j) +b\end{aligned}$$
 为核函数还可通过函数组合得到,例如:
@@ -185,7 +185,7 @@ $$\tag{6.27} \kappa(x,z)=g(x)\kappa_1(x,z)g(z)$$
 ## 6.4 软间隔与正则化
 
 
-$$\tag{6.28} \quad y_i(w^Tx_i+b)  \geqslant 1,\quad i=1,2 \dots m​$$
+$$\tag{6.28} \quad y_i(w^Tx_i+b)  \geq  1,\quad i=1,2 \dots m​$$
 $$\tag{6.29} \underbrace{min}_{\text{$w,b$}}\frac{1}{2} ||w||^2+C\sum_{i=1}^{m}l_{0/1}(y_i(w^Tx_i+b)-1)​$$   
 $$\tag{6.30}l_{0/1}(z)=\begin{cases}\\
 1 ,     z<0 \\
@@ -197,15 +197,15 @@ hingle损失：$$\tag{6.31}l_{hinge}=max(0,1-z);​$$
 对率损失：$$\tag{6.33}（logistics loss）：L_{log}(z)=log(1+exp(-z))​$$  
  我们用hinge损失代替$l_{0/1}​$ $$\tag{6.29} \underbrace{min}_{\text{$w,b$}}\frac{1}{2} ||w||^2+C\sum_{i=1}^{m}max(0,1-y_i(w^Tx_i+b))​$$
 
-引入“松弛变量”$\varepsilon_i$,为了方便理解，我们用‘红色’标出四个位于间隔内的点，粉色线段长度代表函数间隔（在这里为1）蓝色线段为$\varepsilon$ 绿色线段为$1-\varepsilon$  ，此时我们将（6.34）重写为$$\tag{6.35} \underbrace{min}_{\text{$w,b,\varepsilon_i$}}\frac{1}{2} ||w||^2+C\sum_{i=1}^{m}\varepsilon_i$$ $$s.t.\quad y_i(w^Tx_i+b)  \geqslant 1-\varepsilon_i,\quad i=1,2 \dots m$$ $$\varepsilon_i \geqslant 0 \quad i= 1,2,...m.$$
+引入“松弛变量”$\varepsilon_i$,为了方便理解，我们用‘红色’标出四个位于间隔内的点，粉色线段长度代表函数间隔（在这里为1）蓝色线段为$\varepsilon$ 绿色线段为$1-\varepsilon$  ，此时我们将（6.34）重写为$$\tag{6.35} \underbrace{min}_{\text{$w,b,\varepsilon_i$}}\frac{1}{2} ||w||^2+C\sum_{i=1}^{m}\varepsilon_i$$ $$s.t.\quad y_i(w^Tx_i+b)  \geq 1-\varepsilon_i,\quad i=1,2 \dots m$$ $$\varepsilon_i \geq  0 \quad i= 1,2,...m.$$
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190115204250303.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTg3MTEyNg==,size_16,color_FFFFFF,t_70)
 $$\tag{6.36} L(w,b,\alpha,\varepsilon ,\mu) = \frac{1}{2}||w||^2+C\sum_{i=1}^m \varepsilon_i\\+\sum_{i=1}^m \alpha_i(1-\varepsilon_i-y_i(w^Tx_i+b))-\sum_{i=1}^m\mu_i \varepsilon_i$$在这部分由于存在两个月叔条件，我们引入两个拉格朗日乘子$\alpha ,\varepsilon$
  分别对$w,b,\varepsilon$求导并使其为0
- $$\tag{6.37} \frac {\partial L}{\partial w}=w - \sum_{i=1}^{m}\alpha^iy^ix^i = 0 \implies w=\sum_{i=1}^{m}\alpha^iy^ix^i$$
+ $$\tag{6.37} \frac {\partial L}{\partial w}=w - \sum_{i=1}^{m}\alpha^iy^ix^i = 0 \Longrightarrow w=\sum_{i=1}^{m}\alpha^iy^ix^i$$
 
-$$\tag{6.38} \frac {\partial L}{\partial b}=\sum_{i=1}^{m}\alpha^iy^i=0 \implies \sum_{i=1}^{m}\alpha^iy^i = 0$$		
+$$\tag{6.38} \frac {\partial L}{\partial b}=\sum_{i=1}^{m}\alpha^iy^i=0 \Longrightarrow \sum_{i=1}^{m}\alpha^iy^i = 0$$		
 ​                                                     
-$$\tag{6.39} \frac{\partial L}{\partial \varepsilon}=C\sum_{i=1}^m1-\sum_{i=1}^m \alpha_1 -\sum_{i=1}^m \,u_i \implies C=\alpha_i +\mu_i$$
+$$\tag{6.39} \frac{\partial L}{\partial \varepsilon}=C\sum_{i=1}^m1-\sum_{i=1}^m \alpha_1 -\sum_{i=1}^m \,u_i \Longrightarrow C=\alpha_i +\mu_i$$
 
 将式6.37-6.39代入6.36可以得到6.35的对偶问题——线性规划中普遍存在配对现象，每一个线性规划问题都存在另一个与他有对应关系的线性规划问题，其一叫原问题，其二叫对偶问题
 $$\begin{aligned}
@@ -242,10 +242,10 @@ $$\tag{6.43} \underbrace{min}_{\text{$w,b,\varepsilon_i$}}\frac{1}{2} ||w||^2+C\
 $$\tag{6.45}  \underbrace{min}_{\text{$w,b,\varepsilon_i,\hat \varepsilon_i$}}\frac{1}{2} ||w||^2+C\sum_{i=1}^{m}(\epsilon_i,\hat \varepsilon_i $$ $$f(x_i)-y_i\leq\epsilon+\varepsilon_i,$$ $$y_i-f(x_i) \leq\epsilon+\hat\varepsilon_i,$$ $$\varepsilon_i \geq0,\hat\varepsilon0,\quad i=1,2,\dots,m.$$
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190116102424518.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTg3MTEyNg==,size_16,color_FFFFFF,t_70)
 引入拉格朗日乘子$\mu_i \geq0,m\hat\mu_i\geq0$,对应两个松弛变量，$\alpha-i\geq0,\hat\alpha_i\geq0$对应两个约束条件.
-$$\tag{6.46} L(w,b,\alpha,\hat\alpha,\varepsilon,\hat\varepsilon ,\mu,\hat\mu) = \frac{1}{2}||w||^2+C\sum_{i=1}^m (\varepsilon_i+\hat\varepsilon_i)-\sum_{i=1}^m\mu_i \varepsilon_i-\sum_{i=1}^m\hat\mu_i \hat\varepsilon_i\\+\sum_{i=1}^m \alpha_i(f(x_i)-y_i-\epsilon-\varepsilon_i)+\sum_{i=1}^m\hat\alpha_i(y_i-f(x_i)-\epsilon-\hat\varepsilon_i$$
+$$\tag{6.46} L(w,b,\alpha,\hat\alpha,\varepsilon,\hat\varepsilon ,\mu,\hat\mu) \\= \frac{1}{2}||w||^2+C\sum_{i=1}^m (\varepsilon_i+\hat\varepsilon_i)-\sum_{i=1}^m\mu_i \varepsilon_i-\sum_{i=1}^m\hat\mu_i \hat\varepsilon_i +\sum_{i=1}^m \alpha_i(f(x_i)-y_i-\epsilon-\varepsilon_i)+\sum_{i=1}^m\hat\alpha_i(y_i-f(x_i)-\epsilon-\hat\varepsilon_i$$
 
 $L(w,b,\alpha,\hat\alpha,\varepsilon,\hat\varepsilon ,\mu,\hat\mu)​$分别对 $w，b,\varepsilon,\hat\varepsilon​$求偏导并使其为0
-$$\tag{6.47} \frac{\partial L}{\partial w}=w-\sum_{i=1}^m\alpha_ix_i-\sum_{i=1}^m\hat\alpha_ix_i=0 \implies w=\sum_{i=1}^m(\hat\alpha_i-\alpha_i)x_i ​$$  $$\tag{6.48} \frac{\partial L}{\partial b}=\sum_{i=1}^m\alpha_i  -\sum_{i=1}^m\hat\alpha_i=0 \implies 0=\sum_{i=1}^m(\hat\alpha_i-\alpha_i)​$$ $$\tag{6.49} \frac{\partial L}{\partial \varepsilon_i}=C\sum_{i=1}^m1-\sum_{i=1}^m \alpha_1 -\sum_{i=1}^m \,u_i \implies C=\alpha_i +\mu_i​$$  $$\tag{6.50} \frac{\partial L}{\partial \hat\varepsilon_i}=C\sum_{i=1}^m1-\sum_{i=1}^m \hat\alpha_1 -\sum_{i=1}^m \hat\mu_i \implies C=\hat\alpha_i +\hat\mu_i​$$
+$$\tag{6.47} \frac{\partial L}{\partial w}=w-\sum_{i=1}^m\alpha_ix_i-\sum_{i=1}^m\hat\alpha_ix_i=0 \Longrightarrow w=\sum_{i=1}^m(\hat\alpha_i-\alpha_i)x_i ​$$  $$\tag{6.48} \frac{\partial L}{\partial b}=\sum_{i=1}^m\alpha_i  -\sum_{i=1}^m\hat\alpha_i=0 \Longrightarrow 0=\sum_{i=1}^m(\hat\alpha_i-\alpha_i)​$$ $$\tag{6.49} \frac{\partial L}{\partial \varepsilon_i}=C\sum_{i=1}^m1-\sum_{i=1}^m \alpha_1 -\sum_{i=1}^m \,u_i \Longrightarrow C=\alpha_i +\mu_i​$$  $$\tag{6.50} \frac{\partial L}{\partial \hat\varepsilon_i}=C\sum_{i=1}^m1-\sum_{i=1}^m \hat\alpha_1 -\sum_{i=1}^m \hat\mu_i \Longrightarrow C=\hat\alpha_i +\hat\mu_i​$$
 
 将6.47-6.50代入6.46，即可得到SVR的对偶问题
 $$\begin{aligned}
@@ -283,7 +283,7 @@ $$\tag{6.56}f(x)=\sum_{i=1}^m(\hat\alpha_i-\alpha_i)k(x,x_i)+b$$  其中$$k(x_i,
 它的核心思想是将数据映射到高维空间中，希望在高维空间中数据具有更好的区分性，而核函数是用来计算映射到高维空间中内积的一种方法，也就是说核方法的本质应该是内积，而内积又恰恰定义了相似度。
 
 [再生核希尔伯特空间](https://blog.csdn.net/haolexiao/article/details/72171523?utm_source=itdadao&utm_medium=referral)
-$$\tag{6.57} \underbrace{min}_{\text{$h \in H$}}F(h) = \varOmega(||h||_H)+\ell(h(x_1),h(x_2)\dots h(x_m))$$ 
+$$\tag{6.57} \underbrace{min}_{\text{$h \in H$}}F(h) = \Omega(||h||_H)+\ell(h(x_1),h(x_2)\dots h(x_m))$$ 
 
 $$\tag{6.58} h^*(x) = \sum_{i=1}^m\alpha_i\kappa(x,x_i)$$
 [证明见wiki](https://en.wikipedia.org/wiki/Representer_theorem)
