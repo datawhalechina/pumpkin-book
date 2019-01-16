@@ -1,4 +1,4 @@
-﻿﻿# 第6章 支持向量机
+﻿# 第6章 支持向量机
 ## 6.1 间隔与支持向量
 超平面的方程可以表示为：
 $$\tag{6.1} w^Tx+b =0$$
@@ -165,8 +165,8 @@ $$\tag{6.21}\underbrace{max}_{\text{$\alpha$}}\sum_{i=1}^m\alpha_i - \frac{1}{2}
 $$s.t. \quad \sum_{i=1}^m\alpha_iy_i = 0$$
 $$\alpha_i\geq 0,\quad i =1,2,\dots,m$$
 [半正定矩阵和正定矩阵](https://blog.csdn.net/asd136912/article/details/79146151)
-$$\tag{6.22}\kappa(x_i,x_j) =\lang\phi(x_i),\phi(x_j)
-\rang  = \phi(x)(x_i)^T\phi(x)(x_j)$$
+$$\tag{6.22}\kappa(x_i,x_j) =\langle \phi(x_i),\phi(x_j)
+\rangle  = \phi(x)(x_i)^T\phi(x)(x_j)$$
 $$\tag{6.23} \underbrace{max}_{\text{$\alpha$}}  \sum_{i=1}^m\alpha_i - \frac{1}{2}\sum_{i=1}^m\sum_{j=1}^m\alpha_i\alpha_jy_iy_j\kappa(x_i,x_j) $$
 
 $$s.t. \quad \sum_{i=1}^m\alpha_iy_i =0$$
@@ -199,7 +199,7 @@ hingle损失：$$\tag{6.31}l_{hinge}=max(0,1-z);​$$
 
 引入“松弛变量”$\varepsilon_i$,为了方便理解，我们用‘红色’标出四个位于间隔内的点，粉色线段长度代表函数间隔（在这里为1）蓝色线段为$\varepsilon$ 绿色线段为$1-\varepsilon$  ，此时我们将（6.34）重写为$$\tag{6.35} \underbrace{min}_{\text{$w,b,\varepsilon_i$}}\frac{1}{2} ||w||^2+C\sum_{i=1}^{m}\varepsilon_i$$ $$s.t.\quad y_i(w^Tx_i+b)  \geq 1-\varepsilon_i,\quad i=1,2 \dots m$$ $$\varepsilon_i \geq  0 \quad i= 1,2,...m.$$
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190115204250303.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTg3MTEyNg==,size_16,color_FFFFFF,t_70)
-$$\tag{6.36} L(w,b,\alpha,\varepsilon ,\mu) = \frac{1}{2}||w||^2+C\sum_{i=1}^m \varepsilon_i\\+\sum_{i=1}^m \alpha_i(1-\varepsilon_i-y_i(w^Tx_i+b))-\sum_{i=1}^m\mu_i \varepsilon_i$$在这部分由于存在两个月叔条件，我们引入两个拉格朗日乘子$\alpha ,\varepsilon$
+$$\tag{6.36} L(w,b,\alpha,\varepsilon ,\mu) = \frac{1}{2}||w||^2+C\sum_{i=1}^m \varepsilon_i +\sum_{i=1}^m \alpha_i(1-\varepsilon_i-y_i(w^Tx_i+b))-\sum_{i=1}^m\mu_i \varepsilon_i$$在这部分由于存在两个月叔条件，我们引入两个拉格朗日乘子$\alpha ,\varepsilon$
  分别对$w,b,\varepsilon$求导并使其为0
  $$\tag{6.37} \frac {\partial L}{\partial w}=w - \sum_{i=1}^{m}\alpha^iy^ix^i = 0 \Longrightarrow w=\sum_{i=1}^{m}\alpha^iy^ix^i$$
 
@@ -242,7 +242,7 @@ $$\tag{6.43} \underbrace{min}_{\text{$w,b,\varepsilon_i$}}\frac{1}{2} ||w||^2+C\
 $$\tag{6.45}  \underbrace{min}_{\text{$w,b,\varepsilon_i,\hat \varepsilon_i$}}\frac{1}{2} ||w||^2+C\sum_{i=1}^{m}(\epsilon_i,\hat \varepsilon_i $$ $$f(x_i)-y_i\leq\epsilon+\varepsilon_i,$$ $$y_i-f(x_i) \leq\epsilon+\hat\varepsilon_i,$$ $$\varepsilon_i \geq0,\hat\varepsilon0,\quad i=1,2,\dots,m.$$
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190116102424518.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTg3MTEyNg==,size_16,color_FFFFFF,t_70)
 引入拉格朗日乘子$\mu_i \geq0,m\hat\mu_i\geq0$,对应两个松弛变量，$\alpha-i\geq0,\hat\alpha_i\geq0$对应两个约束条件.
-$$\tag{6.46} L(w,b,\alpha,\hat\alpha,\varepsilon,\hat\varepsilon ,\mu,\hat\mu) \\= \frac{1}{2}||w||^2+C\sum_{i=1}^m (\varepsilon_i+\hat\varepsilon_i)-\sum_{i=1}^m\mu_i \varepsilon_i-\sum_{i=1}^m\hat\mu_i \hat\varepsilon_i +\sum_{i=1}^m \alpha_i(f(x_i)-y_i-\epsilon-\varepsilon_i)+\sum_{i=1}^m\hat\alpha_i(y_i-f(x_i)-\epsilon-\hat\varepsilon_i$$
+$$\tag{6.46} L(w,b,\alpha,\hat\alpha,\varepsilon,\hat\varepsilon ,\mu,\hat\mu) \\ = \frac{1}{2}||w||^2+C\sum_{i=1}^m (\varepsilon_i+\hat\varepsilon_i)-\sum_{i=1}^m\mu_i \varepsilon_i-\sum_{i=1}^m\hat\mu_i \hat\varepsilon_i +\sum_{i=1}^m \alpha_i(f(x_i)-y_i-\epsilon-\varepsilon_i)+\sum_{i=1}^m\hat\alpha_i(y_i-f(x_i)-\epsilon-\hat\varepsilon_i$$
 
 $L(w,b,\alpha,\hat\alpha,\varepsilon,\hat\varepsilon ,\mu,\hat\mu)​$分别对 $w，b,\varepsilon,\hat\varepsilon​$求偏导并使其为0
 $$\tag{6.47} \frac{\partial L}{\partial w}=w-\sum_{i=1}^m\alpha_ix_i-\sum_{i=1}^m\hat\alpha_ix_i=0 \Longrightarrow w=\sum_{i=1}^m(\hat\alpha_i-\alpha_i)x_i ​$$  $$\tag{6.48} \frac{\partial L}{\partial b}=\sum_{i=1}^m\alpha_i  -\sum_{i=1}^m\hat\alpha_i=0 \Longrightarrow 0=\sum_{i=1}^m(\hat\alpha_i-\alpha_i)​$$ $$\tag{6.49} \frac{\partial L}{\partial \varepsilon_i}=C\sum_{i=1}^m1-\sum_{i=1}^m \alpha_1 -\sum_{i=1}^m \,u_i \Longrightarrow C=\alpha_i +\mu_i​$$  $$\tag{6.50} \frac{\partial L}{\partial \hat\varepsilon_i}=C\sum_{i=1}^m1-\sum_{i=1}^m \hat\alpha_1 -\sum_{i=1}^m \hat\mu_i \Longrightarrow C=\hat\alpha_i +\hat\mu_i​$$
