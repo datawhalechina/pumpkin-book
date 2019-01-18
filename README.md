@@ -13,13 +13,13 @@
 
 ## 目录
 
-- 第1章 [绪论](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter1/README.md)
-- 第2章 [模型评估与选择](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter2/README.md)
-- 第3章 [线性模型](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter3/README.md)
-- 第4章 [决策树](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter4/README.md)
-- 第5章 [神经网络](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter5/README.md)
-- 第6章 todo
-- 第7章 [贝叶斯分类器](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter7/README.md)
+- 第1章 [绪论](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter1)
+- 第2章 [模型评估与选择](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter2)
+- 第3章 [线性模型](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter3)
+- 第4章 [决策树](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter4)
+- 第5章 [神经网络](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter5)
+- 第6章 [支持向量机](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter6)
+- 第7章 [贝叶斯分类器](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter7)
 
 ## 在线阅读须知
 
