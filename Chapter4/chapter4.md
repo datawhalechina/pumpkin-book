@@ -34,11 +34,11 @@ $$
 
 ### 4.3
 $$
-Gain\_ratio(D,a)=\frac{Gain(D,a)}{IV(a)}
+Gain\\_ratio(D,a)=\frac{Gain(D,a)}{IV(a)}
 $$
 [解析]：基于信息增益的缺点，$C4.5$ 算法不直接使用信息增益，而是使用一种叫增益率的方法来选择最优特征进行划分，对于样本集 $D$ 中的离散特征 $a$ ，增益率为
 $$
-Gain\_ratio(D,a)=\frac{Gain(D,a)}{IV(a)} 
+Gain\\_ratio(D,a)=\frac{Gain(D,a)}{IV(a)} 
 $$
 其中，
 $$
@@ -51,15 +51,15 @@ IV(a) 是特征 a 的熵。
 ### 4.5
 $$
 \begin{aligned}
-Gini(D) &=\sum_{k=1}^{|y|}\sum_{k\neq{k'}}{p_k}{p_{k'}}\\
+Gini(D) &=\sum_{k=1}^{|y|}\sum_{k\neq{k'}}{p_k}{p_{k'}}\\\\
 &=1-\sum_{k=1}^{|y|}p_k^2 
 \end{aligned}
 $$
 [推导]：假定当前样本集合 $D$ 中第 $k$ 类样本所占的比例为 $p_k(k =1,2,...,|y|)$，则 $D$ 的**基尼值**为
 $$
 \begin{split}
-Gini(p) &=\sum_{k=1}^{|y|}\sum_{k\neq{k'}}{p_k}{p_{k'}}\\
-&=\sum_{k=1}^{|y|}{p_k}{(1-p_k)} \\
+Gini(p) &=\sum_{k=1}^{|y|}\sum_{k\neq{k'}}{p_k}{p_{k'}}\\\\
+&=\sum_{k=1}^{|y|}{p_k}{(1-p_k)} \\\\
 &=1-\sum_{k=1}^{|y|}p_k^2 
 \end{split}
 $$
@@ -73,6 +73,6 @@ $$
 对于取值集合 $ T_a$  中的每个 $t$  值计算将特征 $a$  离散为一个特征值只有两个值，分别是 $\lbrace{a} >t\rbrace$ 和 $\lbrace{a} \leq{t}\rbrace$  的特征，计算新特征的信息增益，找到信息增益最大的 $t$ 值即为该特征的最优划分点。
 $$
 \begin{split}
-Gain(D,a) &= \max\limits_{t \in T_a} \ Gain(D,a) \\
+Gain(D,a) &= \max\limits_{t \in T_a} \ Gain(D,a) \\\\
 &= \max\limits_{t \in T_a} \ Ent(D)-\sum_{\lambda \in \{-,+\}} \frac{\left | D_t^{\lambda } \right |}{\left |D  \right |}Ent(D_t^{\lambda }) \end{split} \tag{4.8}
 $$
