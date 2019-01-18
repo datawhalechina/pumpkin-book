@@ -34,11 +34,11 @@ $$
 
 ### 4.3
 $$
-Gain\\_ratio(D,a)=\frac{Gain(D,a)}{IV(a)}
+Gain-ratio(D,a)=\frac{Gain(D,a)}{IV(a)}
 $$
 [解析]：基于信息增益的缺点，$C4.5$ 算法不直接使用信息增益，而是使用一种叫增益率的方法来选择最优特征进行划分，对于样本集 $D$ 中的离散特征 $a$ ，增益率为
 $$
-Gain\\_ratio(D,a)=\frac{Gain(D,a)}{IV(a)} 
+Gain-ratio(D,a)=\frac{Gain(D,a)}{IV(a)} 
 $$
 其中，
 $$
