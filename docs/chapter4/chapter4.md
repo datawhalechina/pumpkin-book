@@ -57,11 +57,11 @@ Gini(D) &=\sum_{k=1}^{|y|}\sum_{k\neq{k'}}{p_k}{p_{k'}}\\
 $$
 [推导]：假定当前样本集合 $D$ 中第 $k$ 类样本所占的比例为 $p_k(k =1,2,...,|y|)$，则 $D$ 的**基尼值**为
 $$
-\begin{split}
+\begin{aligned}
 Gini(p) &=\sum_{k=1}^{|y|}\sum_{k\neq{k'}}{p_k}{p_{k'}}\\
 &=\sum_{k=1}^{|y|}{p_k}{(1-p_k)} \\
 &=1-\sum_{k=1}^{|y|}p_k^2 
-\end{split}
+\end{aligned}
 $$
 
 ## 4.7 - 4.8
@@ -72,7 +72,7 @@ T_a=\lbrace{\frac{a^i+a^{i+1}}{2}|1\leq{i}\leq{n-1}}\rbrace \tag {4.7}
 $$
 对于取值集合 $ T_a$  中的每个 $t$  值计算将特征 $a$  离散为一个特征值只有两个值，分别是 $\lbrace{a} >t\rbrace$ 和 $\lbrace{a} \leq{t}\rbrace$  的特征，计算新特征的信息增益，找到信息增益最大的 $t$ 值即为该特征的最优划分点。
 $$
-\begin{split}
+\begin{aligned}
 Gain(D,a) &= \max\limits_{t \in T_a} \ Gain(D,a) \\
-&= \max\limits_{t \in T_a} \ Ent(D)-\sum_{\lambda \in \{-,+\}} \frac{\left | D_t^{\lambda } \right |}{\left |D  \right |}Ent(D_t^{\lambda }) \end{split} \tag{4.8}
+&= \max\limits_{t \in T_a} \ Ent(D)-\sum_{\lambda \in \{-,+\}} \frac{\left | D_t^{\lambda } \right |}{\left |D  \right |}Ent(D_t^{\lambda }) \end{aligned} \tag{4.8}
 $$

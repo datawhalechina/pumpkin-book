@@ -43,7 +43,6 @@ Prior probabilities of the classes. If specified the priors are not adjusted acc
 
 var_smoothing : float, optional (default=1e-9)
 Portion of the largest variance of all features that is added to variances for calculation stability.
-
 #### 贝叶斯应用
 
 1. 中文分词
