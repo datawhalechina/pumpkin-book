@@ -11,7 +11,7 @@
 
 ## 关注我们
 
-<div align=center><img src="https://raw.githubusercontent.com/Datawhale18/pumpkin-book/master/res/qrcode.png" width = "250" height = "270"></div>
+<div align=center><img src="https://raw.githubusercontent.com/Datawhale18/pumpkin-book/master/res/qrcode.jpeg" width = "250" height = "270"></div>
 
 # LICENSE
 [GNU General Public License v3.0](https://github.com/Datawhale18/pumpkin-book/blob/master/LICENSE)
