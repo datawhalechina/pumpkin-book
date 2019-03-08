@@ -1,7 +1,6 @@
-<h1>南瓜书PumpkinBook</h1>
-
+# 南瓜书PumpkinBook
 [西瓜书（周志华《机器学习》）](https://book.douban.com/subject/26708119)是机器学习领域的经典入门教材之一，周老师为了使尽可能多的读者通过西瓜书对机器学习有所了解, 所以在书中对部分公式的推导细节没有详述，但是这对那些想深究公式推导细节的读者来说可能“不太友好”，本书旨在对西瓜书里比较难理解的公式加以解析，以及对部分公式补充具体的推导细节，诚挚欢迎每一位西瓜书读者前来参与完善本书：一个人可以走的很快，但是一群人却可以走的更远。
-
+# 选用的西瓜书版本
 <img src="https://img1.doubanio.com/view/subject/l/public/s28735609.jpg" width = "476.7" height = "555.3">
 
 > 书名：机器学习<br>
@@ -10,26 +9,31 @@
 > 版次：2016年1月第1版<br>
 > 勘误表：http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/MLbook2016.htm
 
+# 在线阅读地址
+https://datawhale18.github.io/pumpkin-book/
 
-## 目录
+# 目录
 
-- 第1章 [绪论](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter1)
-- 第2章 [模型评估与选择](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter2)
-- 第3章 [线性模型](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter3)
-- 第4章 [决策树](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter4)
-- 第5章 [神经网络](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter5)
-- 第6章 [支持向量机](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter6)
-- 第7章 [贝叶斯分类器](https://github.com/Datawhale18/pumpkin-book/blob/master/Chapter7)
+- 第1章 [绪论](https://datawhale18.github.io/pumpkin-book/#/chapter1/chapter1)
+- 第2章 [模型评估与选择](https://datawhale18.github.io/pumpkin-book/#/chapter2/chapter2)
+- 第3章 [线性模型](https://datawhale18.github.io/pumpkin-book/#/chapter3/chapter3)
+- 第4章 [决策树](https://datawhale18.github.io/pumpkin-book/#/chapter4/chapter4)
+- 第5章 [神经网络](https://datawhale18.github.io/pumpkin-book/#/chapter5/chapter5)
+- 第6章 [支持向量机](https://datawhale18.github.io/pumpkin-book/#/chapter6/chapter6)
+- 第7章 [贝叶斯分类器](https://datawhale18.github.io/pumpkin-book/#/chapter7/chapter7)
+- 第8章 集成学习
+- 第9章 聚类
+- 第10章 降维与度量学习
+- 第11章 特征选择与稀疏学习
+- 第12章 计算学习理论
+- 第13章 半监督学习
+- 第14章 概率图模型
+- 第15章 规则学习
+- 第16章 强化学习
 
-## 在线阅读须知
+#  协作规范
 
-由于目前Github暂不支持在Markdown中嵌入LaTeX公式，所以在线阅读时需要用
-Chrome浏览器+[MathJax Plugin for Github](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima)扩展的方式才能看到公式，扩展离线安装包参见`plugin/chrome-extensions/MathJax-Plugin-for-Github_v0.2.4.crx`
-
-
-##  协作规范
-
-##### 文档书写规范：
+### 文档书写规范：
 文档采用Markdown语法编写，数学公式采用LaTeX语法编写，数学符号规范参见西瓜书《主要符号表》。
 
 |          | 格式     | 参考资料                                                     |
@@ -38,56 +42,32 @@ Chrome浏览器+[MathJax Plugin for Github](https://chrome.google.com/webstore/d
 | 数学公式 | LaTeX    | 1. CSDN Latex语法编写数学公式 http://t.cn/E469pdI<br>2.Latex 在线编辑工具 http://latex.codecogs.com/eqneditor/editor.php |
 
 
-##### 目录结构规范：
+### 目录结构规范：
 
 ```
 pumpkin-book
-├─Chapter1  # 第1章
-│  ├─resources  # 资源文件夹
-|  |  └─images  # 图片资源
-|  ├─chapter1.md # 第1章公式全解
-|  └─README.md  # 章节目录
-└─Chapter2
+├─docs
+|  ├─chapter1  # 第1章
+|  |  ├─resources  # 资源文件夹
+|  |  |  └─images  # 图片资源
+|  |  └─chapter1.md # 第1章公式全解
+|  ├─chapter2
+...
 ```
-##### 公式全解文档规范：
+### 公式全解文档规范：
 ```
-### 公式编号
-$$公式的LaTeX表达式$$
-[推导]：公式推导步骤
-[解析]：公式解析说明
-### 附录
-附录内容
+## 公式编号
+$$（公式的LaTeX表达式）$$
+[推导]：（公式推导步骤） or [解析]：（公式解析说明）
+## 附录
+（附录内容）
 ```
-样例参见`Chapter2/chapter2.md`和`Chapter3/chapter3.md`
-##### 章节目录文档规范：
-```
-# 章节编号和名称
-### 子章节编号和名称
-- [公式编号](公式全解文档链接)
-```
-样例参见`Chapter2/README.md`和`Chapter3/README.md`
-
-## 基础工作
-
-1. [大纲梳理] 西瓜书输出一个目录  [@spareribs](https://github.com/spareribs) 
-
-   参考 [《统计学习方法》](https://github.com/WenDesi/lihang_book_algorithm) 和 [《Python 数据分析与挖掘实战 》](https://github.com/apachecn/python_data_analysis_and_mining_action) 制作《南瓜书》大纲
-
-2. [推导示例] 简单输出一个推导的demo提供参考  [@Sm1les](https://github.com/Sm1les) 
-
-3. [文档规范] 指定相关规范文档
-
-4. [文档展示] 暂时先用浏览器扩展辅助展示，后期考虑用Github Pages或者自建网站展示 #TODO
-
-
-## 未来计划
-
-1. 内部试行第0期
-2. 总结第0期经验，后期带学员一起推导
+样例参见`docs/chapter2/chapter2.md`和`docs/chapter3/chapter3.md`
 
 ## 关注我们
 
 <div align=center><img src="https://img-blog.csdnimg.cn/20181219162146245.png" width = "250" height = "270"></div>
 
-
+# LICENSE
+[GNU General Public License v3.0](https://github.com/Datawhale18/pumpkin-book/blob/master/LICENSE)
 
