@@ -1,8 +1,19 @@
 ## 1.2
+$$\begin{aligned}
+\sum_{f}E_{ote}(\mathfrak{L}_a\vert X,f) &= \sum_f\sum_h\sum_{x\in\mathcal{X}-X}P(x)\mathbb{I}(h(x)\neq f(x))P(h\vert X,\mathfrak{L}_a) \\
+&=\sum_{x\in\mathcal{X}-X}P(x) \sum_hP(h\vert X,\mathfrak{L}_a)\sum_f\mathbb{I}(h(x)\neq f(x)) \\
+&=\sum_{x\in\mathcal{X}-X}P(x) \sum_hP(h\vert X,\mathfrak{L}_a)\cfrac{1}{2}2^{\vert \mathcal{X} \vert} \\
+&=\cfrac{1}{2}2^{\vert \mathcal{X} \vert}\sum_{x\in\mathcal{X}-X}P(x) \sum_hP(h\vert X,\mathfrak{L}_a) \\
+&=2^{\vert \mathcal{X} \vert-1}\sum_{x\in\mathcal{X}-X}P(x) \cdot 1\\
+\end{aligned}$$
 
-没有免费午餐定理(NFL)定理证明
-
-[解析]：这里要说明一下：$L_a$ 表示训练出来的算法，$f$ 是表示真实目标函数。这条定理希望求出的是：某个算法对于某一类问题下所有真实目标函数的误差总和。书中给出的是简化版证明，仅考虑二分类问题。理解的难点在于第二个等号到第三个等号之间的转化。在二分类问题下，真实目标可以是任意一个将 |X|个样本映射到 {0,1} 的函数，一共有 $2^{|X|}$ 个 $f$，而且每一个 $f$ 出现的概率相等。所以对于任意一个样本 x，都有一半的  $f$ 下 x=1，另一半的 $f$ 下 x=0。从而有
-$$
-\sum_f Ⅱ(h(x) ≠ f(x)) = \frac{1}{2}2^{|X|}
-$$
+[解析]：第一步到第二步是因为$\sum_i^m\sum_j^n\sum_k^o a_ib_jc_k=\sum_i^m a_i \cdot \sum_j^n b_j \cdot \sum_k^o c_k$；
+第二步到第三步：首先要知道此时$f$的定义为**任何能将样本映射到{0,1}的函数+均匀分布**，也即不止一个$f$且每个$f$出现的概率相等，例如样本空间只有两个样本时：$ \mathcal{X}=\{x_1,x_2\},\vert \mathcal{X} \vert=2$，那么所有的真实目标函数$f$为：
+$$\begin{aligned}
+f_1:f_1(x_1)=0,f_1(x_2)=0;\\
+f_2:f_2(x_1)=0,f_2(x_2)=1;\\
+f_3:f_3(x_1)=1,f_3(x_2)=0;\\
+f_4:f_4(x_1)=1,f_4(x_2)=1;
+\end{aligned}$$
+一共$2^{\vert \mathcal{X} \vert}=2^2=4$个真实目标函数。所以此时通过算法$\mathfrak{L}_a$学习出来的模型$h(x)$对每个样本无论预测值为0还是1必然有一半的$f$与之预测值相等，所以$\sum_f\mathbb{I}(h(x)\neq f(x)) = \cfrac{1}{2}2^{\vert \mathcal{X} \vert} $；
+第三步一直到最后有点概率论的基础应该都能看懂了。
