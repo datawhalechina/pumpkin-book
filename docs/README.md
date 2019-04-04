@@ -13,7 +13,20 @@
 > 版次：2016年1月第1版<br>
 > 勘误表：http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/MLbook2016.htm
 
-## 关注我们
+# 主要贡献者（按首字母排名）
+[@awyd234](https://github.com/awyd234)
+[@Heitao5200](https://github.com/Heitao5200)
+[@juxiao](https://github.com/juxiao)
+[@LongJH](https://github.com/LongJH)
+[@LilRachel](https://github.com/LilRachel)
+[@Majingmin](https://github.com/Majingmin)
+[@spareribs](https://github.com/spareribs)
+[@sunchaothu](https://github.com/sunchaothu)
+[@StevenLzq](https://github.com/StevenLzq)
+[@Sm1les](https://github.com/Sm1les)
+[@Ye980226](https://github.com/Ye980226)
+
+# 关注我们
 
 <div align=center><img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/qrcode.jpeg" width = "250" height = "270"></div>
 
