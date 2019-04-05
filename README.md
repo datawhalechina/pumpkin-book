@@ -16,7 +16,7 @@ https://datawhalechina.github.io/pumpkin-book/
 - 第5章 [神经网络](https://datawhalechina.github.io/pumpkin-book/#/chapter5/chapter5)
 - 第6章 [支持向量机](https://datawhalechina.github.io/pumpkin-book/#/chapter6/chapter6)
 - 第7章 [贝叶斯分类器](https://datawhalechina.github.io/pumpkin-book/#/chapter7/chapter7)
-- 第8章 集成学习
+- 第8章 [集成学习](https://datawhalechina.github.io/pumpkin-book/#/chapter8/chapter8)
 - 第9章 聚类
 - 第10章 降维与度量学习
 - 第11章 特征选择与稀疏学习
