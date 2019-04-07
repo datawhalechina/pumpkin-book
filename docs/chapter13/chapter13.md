@@ -1,7 +1,5 @@
 ## 13.1
 
-@(机器学习笔记)
-
 $$p(\boldsymbol{x})=\sum_{i=1}^{N} \alpha_{i} \cdot p\left(\boldsymbol{x} | \boldsymbol{\mu}_{i}, \mathbf{\Sigma}_{i}\right)$$
 [解析]： 该式即为 9.4.3 节的式(9.29)，式(9.29)中的$k$个混合成分对应于此处的$N$个可能的类别
 
