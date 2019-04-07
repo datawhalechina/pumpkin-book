@@ -55,3 +55,77 @@ norm = \max\left (p(x^{t-1})Q(x^* | x^{t-1}),p(x^*)Q(x^{t-1} | x^*) \right )
 \tag{6}
 $$
 即教材的$14.28​$.
+
+## 14.32
+
+$${\rm ln}p(x)=\mathcal{L}(q)+{\rm KL}(q \parallel p)$$ 
+
+[推导]
+
+根据条件概率公式$p(x,z)=p(z|x)*p(x)$，可以得到$p(x)=\frac{p(x,z)}{p(z|x)}$
+
+然后两边同时作用${\rm ln}$函数，可得${\rm ln}p(x)={\rm ln}\frac{p(x,z)}{p(z|x)}$    (1)
+
+因为$q(z)$是概率密度函数，所以$1=\int q(z)dz$
+
+等式两边同时乘以${\rm ln}p(x)$，因为${\rm ln}p(x)$是不关于变量$z$的函数，所以${\rm ln}p(x)$可以拿进积分里面，得到${\rm ln}p(x)=\int q(z){\rm ln}p(x)dz$
+$$
+\begin{align}
+{\rm ln}p(x)&=\int q(z){\rm ln}p(x) \\
+ &=\int q(z){\rm ln}\frac{p(x,z)}{p(z|x)}\qquad(带入公式(1))\\
+ &=\int q(z){\rm ln}\bigg\{\frac{p(x,z)}{q(z)}\cdot\frac{q(z)}{p(z|x)}\bigg\} \\
+ &=\int q(z)\bigg({\rm ln}\frac{p(x,z)}{q(z)}-{\rm ln}\frac{p(z|x)}{q(z)}\bigg) \\
+  &=\int q(z){\rm ln}\bigg\{\frac{p(x,z)}{q(z)}\bigg\}-\int q(z){\rm ln}\frac{p(z|x)}{q(z)} \\
+  &=\mathcal{L}(q)+{\rm KL}(q \parallel p)\qquad(根据\mathcal{L}和{\rm KL}的定义)
+\end{align}
+$$
+
+
+## 14.36
+
+$$
+\begin{align}
+\mathcal{L}(q)&=\int \prod_{i}q_{i}\bigg\{ {\rm ln}p({\rm \mathbf{x},\mathbf{z}})-\sum_{i}{\rm ln}q_{i}\bigg\}d{\rm\mathbf{z}} \\
+&=\int q_{j}\bigg\{\int p(x,z)\prod_{i\ne j}q_{i}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{j}}}-\int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_{j}}}+{\rm const} \\
+&=\int q_{j}{\rm ln}\tilde{p}({\rm \mathbf{x},\mathbf{z_{j}}})d{\rm\mathbf{z_{j}}}-\int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_{j}}}+{\rm const}
+\end{align}
+$$
+
+[推导]
+$$
+\mathcal{L}(q)=\int \prod_{i}q_{i}\bigg\{ {\rm ln}p({\rm \mathbf{x},\mathbf{z}})-\sum_{i}{\rm ln}q_{i}\bigg\}d{\rm\mathbf{z}}=\int\prod_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}}-\int\prod_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}
+$$
+公式可以看做两个积分相减，我们先来看左边积分$\int\prod_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}}$的推导。
+$$
+\begin{align}
+\int\prod_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}} &= \int q_{j}\prod_{i\ne j}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}} \\
+&= \int q_{j}\bigg\{\int{\rm ln}p({\rm \mathbf{x},\mathbf{z}})\prod_{i\ne j}q_{i}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{j}}}\qquad (先对{\rm\mathbf{z_{j}}}求积分，再对{\rm\mathbf{z_{i}}}求积分)
+\end{align}
+$$
+这个就是教材中的$14.36$左边的积分部分。
+
+我们现在看下右边积分的推导$\int\prod_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}$的推导。
+
+在此之前我们看下$\int\prod_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}$的计算
+$$
+\begin{align}
+\int\prod_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}&= \int q_{i^{\prime}}\prod_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}\qquad (选取一个变量q_{i^{\prime}}, i^{\prime}\ne k) \\
+&=\int q_{i^{\prime}}\bigg\{\int\prod_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{i^{\prime}}}}
+\end{align}
+$$
+$\bigg\{\int\prod_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}}\bigg\}$部分与变量$q_{i^{\prime}}$无关，所以可以拿到积分外面。又因为$\int q_{i^{\prime}}d{\rm\mathbf{z_{i^{\prime}}}}=1$，所以
+$$
+\begin{align}
+\int\prod_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}&=\int\prod_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}} \\
+&= \int q_{k}{\rm ln}q_{k}d{\rm\mathbf{z_k}}\qquad (所有k以外的变量都可以通过上面的方式消除)
+\end{align}
+$$
+有了这个结论，我们再来看公式
+$$
+\begin{align}
+\int\prod_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}&= \int\prod_{i}q_{i}{\rm ln}q_{j}d{\rm\mathbf{z}} + \sum_{k\ne j}\int\prod_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}} \\
+&= \int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_j}} + \sum_{z\ne j}\int q_{k}{\rm ln}q_{k}d{\rm\mathbf{z_k}}\qquad (根据上面结论) \\
+&= \int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_j}} + {\rm const} \qquad (这里我们关心的是q_{j}，其他变量可以视为{\rm const})
+\end{align}
+$$
+这个就是$14.36$右边的积分部分。
