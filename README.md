@@ -61,12 +61,18 @@ pumpkin-book
 ### 公式全解文档规范：
 ```
 ## 公式编号
+
 $$（公式的LaTeX表达式）$$
+
 [推导]：（公式推导步骤） or [解析]：（公式解析说明）
-## 附录
+
+## 附录（可选）
+
 （附录内容）
 ```
-样例参见`docs/chapter2/chapter2.md`和`docs/chapter3/chapter3.md`
+例如：
+<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/example.png">
+
 
 # 主要贡献者（按首字母排名）
 [@awyd234](https://github.com/awyd234)
