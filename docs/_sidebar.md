@@ -7,4 +7,4 @@
   - [第6章 支持向量机](chapter6/chapter6.md)
   - [第7章 贝叶斯分类器](chapter7/chapter7.md)
   - [第8章 集成学习](chapter8/chapter8.md)
-
+  - [第14章 概率图模型](chapter14/chapter14.md)
