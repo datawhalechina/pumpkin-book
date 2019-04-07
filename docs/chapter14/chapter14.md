@@ -60,9 +60,7 @@ $$
 
 $${\rm ln}p(x)=\mathcal{L}(q)+{\rm KL}(q \parallel p)$$ 
 
-[推导]
-
-根据条件概率公式$p(x,z)=p(z|x)*p(x)$，可以得到$p(x)=\frac{p(x,z)}{p(z|x)}$
+[推导]：根据条件概率公式$p(x,z)=p(z|x)*p(x)$，可以得到$p(x)=\frac{p(x,z)}{p(z|x)}$
 
 然后两边同时作用${\rm ln}$函数，可得${\rm ln}p(x)={\rm ln}\frac{p(x,z)}{p(z|x)}$    (1)
 
@@ -91,7 +89,7 @@ $$
 \end{align}
 $$
 
-[推导]
+[推导]：
 $$
 \mathcal{L}(q)=\int \prod_{i}q_{i}\bigg\{ {\rm ln}p({\rm \mathbf{x},\mathbf{z}})-\sum_{i}{\rm ln}q_{i}\bigg\}d{\rm\mathbf{z}}=\int\prod_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}}-\int\prod_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}
 $$
