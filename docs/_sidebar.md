@@ -6,5 +6,7 @@
   - [第5章 神经网络](chapter5/chapter5.md)
   - [第6章 支持向量机](chapter6/chapter6.md)
   - [第7章 贝叶斯分类器](chapter7/chapter7.md)
-
-
+  - [第8章 集成学习](chapter8/chapter8.md)
+  - [第9章 聚类](chapter9/chapter9.md)
+  - [第13章 半监督学习](chapter13/chapter13.md)
+  - [第14章 概率图模型](chapter14/chapter14.md)
