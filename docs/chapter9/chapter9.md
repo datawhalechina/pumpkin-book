@@ -21,7 +21,7 @@ $$\begin{aligned}
 &=\sum_{j=1}^m\frac{\alpha_{i}\cdot \frac{\partial}{\partial\boldsymbol{\mu_{i}}}(p(\boldsymbol x_{j}|\boldsymbol{\mu_{i},\Sigma_{i}}))}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{l},\Sigma_{l}})} \\
 &=\sum_{j=1}^m\frac{\alpha_{i}\cdot \frac{1}{(2\pi)^\frac{n}{2}\left| \boldsymbol\Sigma_{i}\right |^\frac{1}{2}}e^{-\frac{1}{2}(\boldsymbol{x_{j}}-\boldsymbol\mu_{i})^T\boldsymbol\Sigma_{i}^{-1}(\boldsymbol{x_{j}-\mu_{i}})}}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{l},\Sigma_{l}})}\frac{\partial}{\partial \boldsymbol\mu_{i}}\left(-\frac{1}{2}\left(\boldsymbol{x_{j}-\mu_{i}}\right)^T\boldsymbol\Sigma_{i}^{-1}\left(\boldsymbol{x_{j}-\mu_{i}}\right)\right) \\
 &=\sum_{j=1}^m\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{i},\Sigma_{i}})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{l},\Sigma_{l}})}(-\frac{1}{2})\left(\left(\boldsymbol\Sigma_{i}^{-1}+\left(\boldsymbol\Sigma_{i}^{-1}\right)^T\right)\cdot\left(\boldsymbol{x_{j}-\mu_{i}}\right)\cdot(-1)\right) \\
-&=\sum_{j=1}^m\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{i},\Sigma_{i}})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{l},\Sigma_{l}})}(-\frac{1}{2})\left(-\boldsymbol\Sigma_{i}^{-1}\left(\boldsymbol{x_{j}-\mu_{i}}\right)-\left(\boldsymbol\Sigma_{i}^{-1}\right)^T\left(\boldsymbol{x_{j}-\mu_{i}}\right)\right)=0 \\
+&=\sum_{j=1}^m\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{i},\Sigma_{i}})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{l},\Sigma_{l}})}(-\frac{1}{2})\left(-\boldsymbol\Sigma_{i}^{-1}\left(\boldsymbol{x_{j}-\mu_{i}}\right)-\left(\boldsymbol\Sigma_{i}^{-1}\right)^T\left(\boldsymbol{x_{j}-\mu_{i}}\right)\right) \\
 &=\sum_{j=1}^m\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{i},\Sigma_{i}})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{l},\Sigma_{l}})}(-\frac{1}{2})\left(-\boldsymbol\Sigma_{i}^{-1}\left(\boldsymbol{x_{j}-\mu_{i}}\right)-\left(\boldsymbol\Sigma_{i}^T\right)^{-1}\left(\boldsymbol{x_{j}-\mu_{i}}\right)\right) \\
 &=\sum_{j=1}^m\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{i},\Sigma_{i}})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{l},\Sigma_{l}})}(-\frac{1}{2})\left(-\boldsymbol\Sigma_{i}^{-1}\left(\boldsymbol{x_{j}-\mu_{i}}\right)-\boldsymbol\Sigma_{i}^{-1}\left(\boldsymbol{x_{j}-\mu_{i}}\right)\right) \\
 &=\sum_{j=1}^m\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{i},\Sigma_{i}})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{l},\Sigma_{l}})}(-\frac{1}{2})\left(-2\cdot\boldsymbol\Sigma_{i}^{-1}\left(\boldsymbol{x_{j}-\mu_{i}}\right)\right) \\
@@ -150,6 +150,6 @@ $$
 $$
 参考资料<br>
 Petersen, K. B., & Pedersen, M. S. *The Matrix Cookbook*.<br>
-Bishop, C. M. (2006). *Pattern recognition and machine learning*. springer.
+Bishop, C. M. (2006). *Pattern Recognition and Machine Learning*. Springer.
 
 
