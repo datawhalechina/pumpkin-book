@@ -54,7 +54,7 @@ $$ l(\beta)=\sum_{i=1}^{m}\ln\left(y_ip_1(\hat{\boldsymbol x}_i;\beta)+(1-y_i)p_
 其中$ p_1(\hat{\boldsymbol x}_i;\beta)=\cfrac{e^{\beta^T\hat{\boldsymbol x}_i}}{1+e^{\beta^T\hat{\boldsymbol x}_i}},p_0(\hat{\boldsymbol x}_i;\beta)=\cfrac{1}{1+e^{\beta^T\hat{\boldsymbol x}_i}} $，代入上式可得：
 $$\begin{aligned} 
 l(\beta)&=\sum_{i=1}^{m}\ln\left(\cfrac{y_ie^{\beta^T\hat{\boldsymbol x}_i}+1-y_i}{1+e^{\beta^T\hat{\boldsymbol x}_i}}\right) \\
-&=\sum_{i=1}^{m}(\ln\left(y_ie^{\beta^T\hat{\boldsymbol x}_i}+1-y_i)-\ln(1+e^{\beta^T\hat{\boldsymbol x}_i})\right) 
+&=\sum_{i=1}^{m}\left(\ln(y_ie^{\beta^T\hat{\boldsymbol x}_i}+1-y_i)-\ln(1+e^{\beta^T\hat{\boldsymbol x}_i})\right) 
 \end{aligned}$$
 由于$ y_i $=0或1，则：
 $$ l(\beta) =
