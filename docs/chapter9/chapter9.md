@@ -149,7 +149,7 @@ $$
 \frac{\partial}{\partial x}\left(A^{-1}\right)=-A^{-1}\frac{\partial A}{\partial x}A^{-1}
 $$
 参考资料<br>
-Petersen, K. B., & Pedersen, M. S. *The Matrix Cookbook*.<br>
+Petersen, K. B. & Pedersen, M. S. *The Matrix Cookbook*.<br>
 Bishop, C. M. (2006). *Pattern Recognition and Machine Learning*. Springer.
 
 
