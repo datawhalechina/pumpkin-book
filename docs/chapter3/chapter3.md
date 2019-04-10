@@ -130,3 +130,19 @@ $$\begin{aligned}
 &= \sum_{i=1}^Nm_i\left(-\boldsymbol\mu_i\boldsymbol\mu^T-\boldsymbol\mu\boldsymbol\mu_i^T+\boldsymbol\mu\boldsymbol\mu^T+\boldsymbol\mu_i\boldsymbol\mu_i^T\right) \\
 &= \sum_{i=1}^N m_i(\boldsymbol\mu_i-\boldsymbol\mu)(\boldsymbol\mu_i-\boldsymbol\mu)^T
 \end{aligned}$$
+
+## 3.44
+$$\max\limits_{\mathbf{W}}\cfrac{
+tr(\mathbf{W}^T\boldsymbol S_b \mathbf{W})}{tr(\mathbf{W}^T\boldsymbol S_w \mathbf{W})}$$
+[解析]：此式是式3.35的推广形式，证明如下：
+设$\mathbf{W}=[\boldsymbol w_1,\boldsymbol w_2,...,\boldsymbol w_i,...,\boldsymbol w_{N-1}]$，其中$\boldsymbol w_i$为$d$行1列的列向量，则：
+$$\left\{
+\begin{aligned}
+tr(\mathbf{W}^T\boldsymbol S_b \mathbf{W})&=\sum_{i=1}^{N-1}\boldsymbol w_i^T\boldsymbol S_b \boldsymbol w_i \\
+tr(\mathbf{W}^T\boldsymbol S_w \mathbf{W})&=\sum_{i=1}^{N-1}\boldsymbol w_i^T\boldsymbol S_w \boldsymbol w_i
+\end{aligned}
+\right.$$
+所以式3.44可变形为：
+$$\max\limits_{\mathbf{W}}\cfrac{
+\sum_{i=1}^{N-1}\boldsymbol w_i^T\boldsymbol S_b \boldsymbol w_i}{\sum_{i=1}^{N-1}\boldsymbol w_i^T\boldsymbol S_w \boldsymbol w_i}$$
+对比式3.35易知上式即为式3.35的推广形式。
