@@ -1,14 +1,14 @@
 ﻿## 10.4
 $$\sum^m_{i=1}dist^2_{ij}=tr(\boldsymbol B)+mb_{jj}$$
-[推导]:
+[推导]：
 $$\begin{aligned}
 \sum^m_{i=1}dist^2_{ij}&= \sum^m_{i=1}b_{ii}+\sum^m_{i=1}b_{jj}-2\sum^m_{i=1}b_{ij}\\
 &=tr(B)+mb_{jj}
 \end{aligned}​$$
+
 ## 10.10
 $$b_{ij}=-\frac{1}{2}(dist^2_{ij}-dist^2_{i\cdot}-dist^2_{\cdot j}+dist^2_{\cdot\cdot})$$
-[推导]:
-由公式（10.3）可得，
+[推导]：由公式（10.3）可得，
 $$b_{ij}=-\frac{1}{2}(dist^2_{ij}-b_{ii}-b_{jj})$$
 由公式（10.6）和（10.9）可得，
 $$\begin{aligned}
@@ -31,13 +31,13 @@ b_{ij}&=-\frac{1}{2}(dist^2_{ij}-b_{ii}-b_{jj})\\
 &=-\frac{1}{2}(dist^2_{ij}-dist^2_{i\cdot}+\frac{1}{2}dist^2_{\cdot\cdot}-dist^2_{\cdot j}+\frac{1}{2}dist^2_{\cdot\cdot})\\
 &=-\frac{1}{2}(dist^2_{ij}-dist^2_{i\cdot}-dist^2_{\cdot j}+dist^2_{\cdot\cdot})
 \end{aligned}$$
+
 ## 10.14
 $$\begin{aligned}
 \sum^m_{i=1}\| \sum^{d'}_{j=1}z_{ij}\boldsymbol w_j-\boldsymbol x_i \|^2_2&=\sum^m_{i=1}\boldsymbol z^T_i\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z^T_i\boldsymbol W^T\boldsymbol x_i + const\\
 &\propto -tr(\boldsymbol W^T(\sum^m_{i=1}\boldsymbol x_i\boldsymbol x^T_i)\boldsymbol W)
 \end{aligned}$$
-[推导]:
-已知$\boldsymbol W^T \boldsymbol W=\boldsymbol I$和$\boldsymbol z_i=\boldsymbol W^T \boldsymbol x_i$，
+[推导]：已知$\boldsymbol W^T \boldsymbol W=\boldsymbol I$和$\boldsymbol z_i=\boldsymbol W^T \boldsymbol x_i$，
 $$\begin{aligned}
 \sum^m_{i=1}\| \sum^{d'}_{j=1}z_{ij}\boldsymbol w_j-\boldsymbol x_i \|^2_2&=\sum^m_{i=1}\| \boldsymbol W\boldsymbol z_i-\boldsymbol x_i \|^2_2\\
 &=\sum^m_{i=1}(\boldsymbol W\boldsymbol z_i)^T(\boldsymbol W\boldsymbol z_i)-2\sum^m_{i=1}(\boldsymbol W\boldsymbol z_i)^T\boldsymbol x_i+\sum^m_{i=1}\boldsymbol x^T_i\boldsymbol x_i\\
@@ -48,12 +48,12 @@ $$\begin{aligned}
 &\propto -tr(\boldsymbol W^T(\sum^m_{i=1}\boldsymbol x_i\boldsymbol x^T_i)\boldsymbol W)
 \end{aligned}$$
 其中，$\sum^m_{i=1}\boldsymbol x^T_i\boldsymbol x_i$是常数。
+
 ## 10.17
 $$
 \boldsymbol X\boldsymbol X^T\boldsymbol w_i=\lambda _i\boldsymbol w_i
 $$
-[推导]:
-已知
+[推导]：已知
 $$\begin{aligned}
 &\min\limits_{\boldsymbol W}-tr(\boldsymbol W^T\boldsymbol X\boldsymbol X^T\boldsymbol W)\\
 &s.t. \boldsymbol W^T\boldsymbol W=\boldsymbol I. 
@@ -69,10 +69,10 @@ $$\begin{aligned}
 \boldsymbol X\boldsymbol X^T\boldsymbol W&=\boldsymbol\lambda\boldsymbol W\\
 \end{aligned}$$
 其中，$\boldsymbol W=\{\boldsymbol w_1,\boldsymbol w_2,\cdot\cdot\cdot,\boldsymbol w_d\}$和$\boldsymbol \lambda=\boldsymbol{diag}(\lambda_1,\lambda_2,\cdot\cdot\cdot,\lambda_d)$。
+
 ## 10.28
 $$w_{ij}=\cfrac{\sum\limits_{k\in Q_i}C_{jk}^{-1}}{\sum\limits_{l,s\in Q_i}C_{ls}^{-1}}$$
-[推导]:
-已知
+[推导]：已知
 $$\begin{aligned}
 \min\limits_{\boldsymbol W}&\sum^m_{i=1}\| \boldsymbol x_i-\sum_{j \in Q_i}w_{ij}\boldsymbol x_j \|^2_2\\
 s.t.&\sum_{j \in Q_i}w_{ij}=1
@@ -105,13 +105,13 @@ $$\begin{aligned}
 $$
 \boldsymbol W_i=\cfrac{\boldsymbol C^{-1}_i\boldsymbol 1_k}{\boldsymbol 1_k\boldsymbol C^{-1}_i\boldsymbol 1_k}
 $$
-## 10.31
 
+## 10.31
 $$\begin{aligned}
 &\min\limits_{\boldsymbol Z}tr(\boldsymbol Z \boldsymbol M \boldsymbol Z^T)\\
 &s.t. \boldsymbol Z^T\boldsymbol Z=\boldsymbol I. 
 \end{aligned}$$
-[推导]:
+[推导]：
 $$\begin{aligned}
 \min\limits_{\boldsymbol Z}\sum^m_{i=1}\| \boldsymbol z_i-\sum_{j \in Q_i}w_{ij}\boldsymbol z_j \|^2_2&=\sum^m_{i=1}\|\boldsymbol Z\boldsymbol I_i-\boldsymbol Z\boldsymbol W_i\|^2_2\\
 &=\sum^m_{i=1}\|\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i)\|^2_2\\
@@ -122,5 +122,4 @@ $$\begin{aligned}
 &=tr(\boldsymbol Z\boldsymbol M\boldsymbol Z^T)
 \end{aligned}$$
 其中，$\boldsymbol M=(\boldsymbol I-\boldsymbol W)(\boldsymbol I-\boldsymbol W)^T$。
-[解析]:
-约束条件$\boldsymbol Z^T\boldsymbol Z=\boldsymbol I$是为了得到标准化（标准正交空间）的低维数据。
+[解析]：约束条件$\boldsymbol Z^T\boldsymbol Z=\boldsymbol I$是为了得到标准化（标准正交空间）的低维数据。
