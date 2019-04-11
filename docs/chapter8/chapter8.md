@@ -17,7 +17,7 @@ $$
 $$
 
 ## 8.5-8.8
-由式(8.4)可知
+[解析]：由式(8.4)可知
 $$H(\boldsymbol{x})=\sum_{t=1}^{T} \alpha_{t} h_{t}(\boldsymbol{x})$$
 
 又由式(8.11)可知
@@ -25,7 +25,6 @@ $$
 \alpha_{t}=\frac{1}{2} \ln \left(\frac{1-\epsilon_{t}}{\epsilon_{t}}\right)
 $$
 该分类器的权重只与分类器的错误率负相关(即错误率越大，权重越低)
-[推导:]
 
 (1)先考虑指数损失函数$e^{-f(x) H(x)}$的含义：$f$为真实函数，对于样本$x$来说，$f(\boldsymbol{x}) \in\{-1,+1\}$只能取和两个值，而$H(\boldsymbol{x})$是一个实数；
 当$H(\boldsymbol{x})$的符号与$f(x)$一致时，$f(\boldsymbol{x}) H(\boldsymbol{x})>0$，因此$e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}=e^{-|H(\boldsymbol{x})|}<1$，且$|H(\boldsymbol{x})|$越大指数损失函数$e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}$越小（这很合理：此时$|H(\boldsymbol{x})|$越大意味着分类器本身对预测结果的信心越大，损失应该越小；若$|H(\boldsymbol{x})|$在零附近，虽然预测正确，但表示分类器本身对预测结果信心很小，损失应该较大）；
