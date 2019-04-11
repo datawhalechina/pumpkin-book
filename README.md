@@ -17,12 +17,12 @@ https://datawhalechina.github.io/pumpkin-book/
 - 第6章 [支持向量机](https://datawhalechina.github.io/pumpkin-book/#/chapter6/chapter6)
 - 第7章 [贝叶斯分类器](https://datawhalechina.github.io/pumpkin-book/#/chapter7/chapter7)
 - 第8章 [集成学习](https://datawhalechina.github.io/pumpkin-book/#/chapter8/chapter8)
-- 第9章 聚类
-- 第10章 降维与度量学习
+- 第9章 [聚类](https://datawhalechina.github.io/pumpkin-book/#/chapter9/chapter9)
+- 第10章 [降维与度量学习](https://datawhalechina.github.io/pumpkin-book/#/chapter10/chapter10)
 - 第11章 特征选择与稀疏学习
 - 第12章 计算学习理论
-- 第13章 半监督学习
-- 第14章 概率图模型
+- 第13章 [半监督学习](https://datawhalechina.github.io/pumpkin-book/#/chapter13/chapter13)
+- 第14章 [概率图模型](https://datawhalechina.github.io/pumpkin-book/#/chapter14/chapter14)
 - 第15章 规则学习
 - 第16章 强化学习
 
@@ -61,12 +61,18 @@ pumpkin-book
 ### 公式全解文档规范：
 ```
 ## 公式编号
+
 $$（公式的LaTeX表达式）$$
+
 [推导]：（公式推导步骤） or [解析]：（公式解析说明）
-## 附录
+
+## 附录（可选）
+
 （附录内容）
 ```
-样例参见`docs/chapter2/chapter2.md`和`docs/chapter3/chapter3.md`
+例如：
+<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/example.png">
+
 
 # 主要贡献者（按首字母排名）
 [@awyd234](https://github.com/awyd234)

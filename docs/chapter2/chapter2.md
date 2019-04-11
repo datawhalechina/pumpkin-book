@@ -6,7 +6,7 @@ $$ AUC=\cfrac{1}{2}\sum_{i=1}^{m-1}(x_{i+1} - x_i)\cdot(y_i + y_{i+1}) $$
 
 ## 2.21
 
-$$ l_{rank}=\cfrac{1}{m^+m^-}\sum_{x^+ \in D^+}\sum_{x^- \in D^-}(||(f(x^+)<f(x^-))+\cfrac{1}{2}||(f(x^+)=f(x^-))) $$
+$$ l_{rank}=\cfrac{1}{m^+m^-}\sum_{x^+ \in D^+}\sum_{x^- \in D^-}(\mathbb{I}(f(x^+)<f(x^-))+\cfrac{1}{2}\mathbb{I}(f(x^+)=f(x^-))) $$
 
 [解析]：此公式正如书上所说，$ l_{rank} $为ROC曲线**之上**的面积，假设某ROC曲线如下图所示：
 
@@ -22,15 +22,15 @@ $$ l_{rank}=\cfrac{1}{m^+m^-}\sum_{x^+ \in D^+}\sum_{x^- \in D^-}(||(f(x^+)<f(x^
 
 for $ x^+_i $ in $ D^+ $:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ \cfrac{1}{m^+}\cdot\cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}(||(f(x^+_i)<f(x^-))+\cfrac{1}{2}||(f(x^+_i)=f(x^-))) $ #记为式S
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ \cfrac{1}{m^+}\cdot\cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}(\mathbb{I}(f(x^+_i)<f(x^-))+\cfrac{1}{2}\mathbb{I}(f(x^+_i)=f(x^-))) $ #记为式S
 
 由于每个$ x^+_i $都对应着一条绿色或蓝色线段，所以遍历$ x^+_i $可以看成是在遍历每条绿色和蓝色线段，并用式S来求出每条绿色线段与Y轴构成的面积（例如上图中的m1)或者蓝色线段与Y轴构成的面积（例如上图中的m2+m3）。
 
 **对于每条绿色线段：** 将其式S展开可得：
-$$ \cfrac{1}{m^+}\cdot\cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}||(f(x^+_i)<f(x^-))+\cfrac{1}{m^+}\cdot\cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}\cfrac{1}{2}||(f(x^+_i)=f(x^-)) $$其中$ x^+_i $此时恒为该线段所对应的正样例，是一个定值。$ \sum_{x^- \in D^-}\cfrac{1}{2}||(f(x^+_i)=f(x^-) $是在通过遍历所有反样例来统计和$ x^+_i $的预测值相等的反样例个数，由于没有反样例的预测值和$ x^+_i $的预测值相等，所以$ \sum_{x^- \in D^-}\cfrac{1}{2}||(f(x^+_i)=f(x^-)) $此时恒为0，于是其式S可以化简为：$$ \cfrac{1}{m^+}\cdot\cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}||(f(x^+_i)<f(x^-)) $$其中$ \cfrac{1}{m^+} $为该线段在Y轴上的投影长度，$ \sum_{x^- \in D^-}||(f(x^+_i)<f(x^-)) $同理是在通过遍历所有反样例来统计预测值大于$ x^+_i $的预测值的反样例个数，也即该线段左边和下边的红色线段个数+蓝色线段对应的反样例个数，所以$ \cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}(||(f(x^+)<f(x^-))) $便是该线段左边和下边的红色线段在X轴的投影长度+蓝色线段在X轴的投影长度，也就是该绿色线段在X轴的投影长度，观察ROC图像易知绿色线段与Y轴围成的面积=该线段在Y轴的投影长度 * 该线段在X轴的投影长度。
+$$ \cfrac{1}{m^+}\cdot\cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}\mathbb{I}(f(x^+_i)<f(x^-))+\cfrac{1}{m^+}\cdot\cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}\cfrac{1}{2}\mathbb{I}(f(x^+_i)=f(x^-)) $$其中$ x^+_i $此时恒为该线段所对应的正样例，是一个定值。$ \sum_{x^- \in D^-}\cfrac{1}{2}\mathbb{I}(f(x^+_i)=f(x^-) $是在通过遍历所有反样例来统计和$ x^+_i $的预测值相等的反样例个数，由于没有反样例的预测值和$ x^+_i $的预测值相等，所以$ \sum_{x^- \in D^-}\cfrac{1}{2}\mathbb{I}(f(x^+_i)=f(x^-)) $此时恒为0，于是其式S可以化简为：$$ \cfrac{1}{m^+}\cdot\cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}\mathbb{I}(f(x^+_i)<f(x^-)) $$其中$ \cfrac{1}{m^+} $为该线段在Y轴上的投影长度，$ \sum_{x^- \in D^-}\mathbb{I}(f(x^+_i)<f(x^-)) $同理是在通过遍历所有反样例来统计预测值大于$ x^+_i $的预测值的反样例个数，也即该线段左边和下边的红色线段个数+蓝色线段对应的反样例个数，所以$ \cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}(\mathbb{I}(f(x^+)<f(x^-))) $便是该线段左边和下边的红色线段在X轴的投影长度+蓝色线段在X轴的投影长度，也就是该绿色线段在X轴的投影长度，观察ROC图像易知绿色线段与Y轴围成的面积=该线段在Y轴的投影长度 * 该线段在X轴的投影长度。
 
 **对于每条蓝色线段：** 将其式S展开可得：
-$$ \cfrac{1}{m^+}\cdot\cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}||(f(x^+_i)<f(x^-))+\cfrac{1}{m^+}\cdot\cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}\cfrac{1}{2}||(f(x^+_i)=f(x^-)) $$
-其中前半部分表示的是蓝色线段和Y轴围成的图形里面矩形部分的面积，后半部分表示的便是剩下的三角形的面积，矩形部分的面积公式同绿色线段的面积公式一样很好理解，而三角形部分的面积公式里面的$ \cfrac{1}{m^+} $为底边长，$ \cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}||(f(x^+_i)=f(x^-)) $为高。
+$$ \cfrac{1}{m^+}\cdot\cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}\mathbb{I}(f(x^+_i)<f(x^-))+\cfrac{1}{m^+}\cdot\cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}\cfrac{1}{2}\mathbb{I}(f(x^+_i)=f(x^-)) $$
+其中前半部分表示的是蓝色线段和Y轴围成的图形里面矩形部分的面积，后半部分表示的便是剩下的三角形的面积，矩形部分的面积公式同绿色线段的面积公式一样很好理解，而三角形部分的面积公式里面的$ \cfrac{1}{m^+} $为底边长，$ \cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}\mathbb{I}(f(x^+_i)=f(x^-)) $为高。
 
 综上分析可知，式S既可以用来求绿色线段与Y轴构成的面积也能求蓝色线段与Y轴构成的面积，所以遍历完所有绿色和蓝色线段并将其与Y轴构成的面积累加起来即得$ l_{rank} $。
