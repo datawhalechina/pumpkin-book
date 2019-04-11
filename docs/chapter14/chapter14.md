@@ -136,7 +136,7 @@ q_j^*(\mathbf{z}_j) = \frac{ \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},
 \end{aligned}
 $$
 
-[推导]：由$14.39$去对数直接可得
+[推导]：由$14.39$去对数并积分
 $$
 \begin{aligned} 
  \int q_j^*(\mathbf{z}_j)\mathrm{d}\mathbf{z}_j &=\int \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right )\cdot\exp(const) \, \mathrm{d}\mathbf{z}_j \\
@@ -153,7 +153,7 @@ $$
 
 $$
 \begin{aligned} 
-  q_j^*(\mathbf{z}_j)\mathrm{d}\mathbf{z}_j &= \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right )\cdot\exp(const) \, \mathrm{d}\mathbf{z}_j \\
+  q_j^*(\mathbf{z}_j) &= \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right )\cdot\exp(const) \, \mathrm{d}\mathbf{z}_j \\
  &= \frac{ \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right ) }{\int \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right ) \mathrm{d}\mathbf{z}_j}
  \end{aligned}
  \tag{9}
