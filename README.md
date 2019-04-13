@@ -38,7 +38,7 @@ https://datawhalechina.github.io/pumpkin-book/
 #  协作规范
 
 ### 文档书写规范：
-文档采用```Markdown```语法编写，数学公式采用```LaTeX```语法编写，数学符号规范参见西瓜书《主要符号表》。
+文档采用```Markdown```语法编写，数学公式采用```LaTeX```语法编写，数学符号规范参见西瓜书目录前一页《主要符号表》。<br>
 编辑器推荐：马克飞象（https://maxiang.io）
 
 ### 目录结构规范：
