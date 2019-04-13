@@ -38,13 +38,8 @@ https://datawhalechina.github.io/pumpkin-book/
 #  协作规范
 
 ### 文档书写规范：
-文档采用Markdown语法编写，数学公式采用LaTeX语法编写，数学符号规范参见西瓜书《主要符号表》。
-
-|          | 格式     | 参考资料                                                     |
-| :------: | :------- | :----------------------------------------------------------- |
-| 文档 | Markdown | 1. CSDN Markdown 使用教程 http://t.cn/E4699cO<br>2. 简书 Markdown 使用教程 https://www.jianshu.com/p/q81RER<br>3. 编辑软件推荐 Typora https://typora.io/ |
-| 数学公式 | LaTeX    | 1. CSDN Latex语法编写数学公式 http://t.cn/E469pdI<br>2.Latex 在线编辑工具 http://latex.codecogs.com/eqneditor/editor.php |
-
+文档采用```Markdown```语法编写，数学公式采用```LaTeX```语法编写，数学符号规范参见西瓜书《主要符号表》。
+编辑器推荐：马克飞象（https://maxiang.io）
 
 ### 目录结构规范：
 
