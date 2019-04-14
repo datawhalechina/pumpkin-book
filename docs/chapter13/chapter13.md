@@ -25,12 +25,12 @@ $$p(y=j\vert \theta=i,x)=
 1,&i=j \\
 0,&i\not=j
 \end{cases}$$
-##13.3
+## 13.3
 $$
 p(\Theta=i | \boldsymbol{x})=\frac{\alpha_{i} \cdot p\left(\boldsymbol{x} | \boldsymbol{\mu}_{i}, \mathbf{\Sigma}_{i}\right)}{\sum_{i=1}^{N} \alpha_{i} \cdot p\left(\boldsymbol{x} | \boldsymbol{\mu}_{i}, \mathbf{\Sigma}_{i}\right)}
 $$
 [解析]：该式即为 9.4.3 节的式(9.30)，具体推导参见有关式(9.30)的解释。
-##13.4
+## 13.4
 $$
 \begin{aligned} L L\left(D_{l} \cup D_{u}\right)=& \sum_{\left(x_{j}, y_{j}\right) \in D_{l}} \ln \left(\sum_{i=1}^{N} \alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \mathbf{\Sigma}_{i}\right) \cdot p\left(y_{j} | \Theta=i, \boldsymbol{x}_{j}\right)\right) \\ &+\sum_{x_{j} \in D_{u}} \ln \left(\sum_{i=1}^{N} \alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \mathbf{\Sigma}_{i}\right)\right) \end{aligned}
 $$
@@ -42,7 +42,7 @@ $$p(y_j\vert \theta=i,x_j)=
 \end{cases}$$
 该式第 1 项针对有标记样本$(x_i,y_i) \in D_i$来说，因为有标记样本的类别是确定的，因此在计算它的对数似然时，它只可能来自$N$个高斯混合成分中的一个（西瓜书第 296 页第 2 行提到“假设样本由高斯混合模型生成，且每个类别对应一个高斯混合成分”），所以计算第 1 项计算有标记样本似然时乘以了$p(y_j\vert\theta =i,x_j)$ ；
 该式第 2 项针对未标记样本$x_j\in D_u$；来说的，因为未标记样本的类别不确定，即它可能来自$N$个高斯混合成分中的任何一个，所以第 1 项使用了式(13.1)。
-##13.5
+## 13.5
 $$
 \gamma_{j i}=\frac{\alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \mathbf{\Sigma}_{i}\right)}{\sum_{i=1}^{N} \alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \mathbf{\Sigma}_{i}\right)}
 $$
@@ -53,7 +53,7 @@ $$
 \Sigma_{i}=\frac{1}{l_{i}} \sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left( x_{j}- \mu_{i}\right)\left( x_{j}-\mu_{i}\right)^{\top}
 $$
 其中$l_i$表示第$i$类样本的有标记样本数目，$|D_l|$为有标记样本集样本总数，$\wedge$为“逻辑与”。
-##13.6
+## 13.6
 $$
 \boldsymbol{\mu}_{i}=\frac{1}{\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i}+l_{i}}\left(\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \boldsymbol{x}_{j}+\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \boldsymbol{x}_{j}\right)
 $$
@@ -88,7 +88,7 @@ $$
 \left(\sum_{x_{j} \in D_{u}} \gamma_{j i}+\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \backslash y_{j}=i} 1\right) \mu_{i}=\sum_{x_{j} \in D_{u}} \gamma_{j i} \cdot x_{j}+\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} x_{j}
 $$
 即得式(13.6)；
-##13.7
+## 13.7
 $$
 \begin{aligned} \boldsymbol{\Sigma}_{i}=& \frac{1}{\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i}+l_{i}}\left(\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\mathrm{T}}\right.\\+& \sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\mathrm{T}} ) \end{aligned}
 $$
@@ -118,7 +118,7 @@ $$
 \sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}+\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}=\left(\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i}+l_{i}\right) \boldsymbol{\Sigma}_{i}
 $$
 即得式(13.7)；
-##13.8
+## 13.8
 $$
 \alpha_{i}=\frac{1}{m}\left(\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i}+l_{i}\right)
 $$
