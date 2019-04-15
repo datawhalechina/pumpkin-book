@@ -35,15 +35,15 @@ $$
 $$ w=\cfrac{\boldsymbol{y}_{d}^T\boldsymbol{x}_{d}}{\boldsymbol{x}_d^T\boldsymbol{x}_{d}}$$
 ## 3.10
 
-$$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}=2\mathbf{X}^T(\mathbf{X}\hat{\boldsymbol w}-\mathbf{y}) $$
+$$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}=2\mathbf{X}^T(\mathbf{X}\hat{\boldsymbol w}-\boldsymbol{y}) $$
 
-[推导]：将$ E_{\hat{\boldsymbol w}}=(\mathbf{y}-\mathbf{X}\hat{\boldsymbol w})^T(\mathbf{y}-\mathbf{X}\hat{\boldsymbol w}) $展开可得：
-$$ E_{\hat{\boldsymbol w}}= \mathbf{y}^T\mathbf{y}-\mathbf{y}^T\mathbf{X}\hat{\boldsymbol w}-\hat{\boldsymbol w}^T\mathbf{X}^T\mathbf{y}+\hat{\boldsymbol w}^T\mathbf{X}^T\mathbf{X}\hat{\boldsymbol w} $$
+[推导]：将$ E_{\hat{\boldsymbol w}}=(\boldsymbol{y}-\boldsymbol{X}\hat{\boldsymbol w})^T(\boldsymbol{y}-\mathbf{X}\hat{\boldsymbol w}) $展开可得：
+$$ E_{\hat{\boldsymbol w}}= \boldsymbol{y}^T\boldsymbol{y}-\boldsymbol{y}^T\mathbf{X}\hat{\boldsymbol w}-\hat{\boldsymbol w}^T\mathbf{X}^T\boldsymbol{y}+\hat{\boldsymbol w}^T\mathbf{X}^T\mathbf{X}\hat{\boldsymbol w} $$
 对$ \hat{\boldsymbol w} $求导可得：
-$$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}= \cfrac{\partial \mathbf{y}^T\mathbf{y}}{\partial \hat{\boldsymbol w}}-\cfrac{\partial \mathbf{y}^T\mathbf{X}\hat{\boldsymbol w}}{\partial \hat{\boldsymbol w}}-\cfrac{\partial \hat{\boldsymbol w}^T\mathbf{X}^T\mathbf{y}}{\partial \hat{\boldsymbol w}}+\cfrac{\partial \hat{\boldsymbol w}^T\mathbf{X}^T\mathbf{X}\hat{\boldsymbol w}}{\partial \hat{\boldsymbol w}} $$
+$$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}= \cfrac{\partial \boldsymbol{y}^T\boldsymbol{y}}{\partial \hat{\boldsymbol w}}-\cfrac{\partial \boldsymbol{y}^T\mathbf{X}\hat{\boldsymbol w}}{\partial \hat{\boldsymbol w}}-\cfrac{\partial \hat{\boldsymbol w}^T\mathbf{X}^T\boldsymbol{y}}{\partial \hat{\boldsymbol w}}+\cfrac{\partial \hat{\boldsymbol w}^T\mathbf{X}^T\mathbf{X}\hat{\boldsymbol w}}{\partial \hat{\boldsymbol w}} $$
 由向量的求导公式可得：
-$$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}= 0-\mathbf{X}^T\mathbf{y}-\mathbf{X}^T\mathbf{y}+(\mathbf{X}^T\mathbf{X}+\mathbf{X}^T\mathbf{X})\hat{\boldsymbol w} $$
-$$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}=2\mathbf{X}^T(\mathbf{X}\hat{\boldsymbol w}-\mathbf{y}) $$
+$$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}= 0-\mathbf{X}^T\boldsymbol{y}-\mathbf{X}^T\boldsymbol{y}+(\mathbf{X}^T\mathbf{X}+\mathbf{X}^T\mathbf{X})\hat{\boldsymbol w} $$
+$$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}=2\mathbf{X}^T(\mathbf{X}\hat{\boldsymbol w}-\boldsymbol{y}) $$
 
 ## 3.27
 
