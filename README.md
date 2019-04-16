@@ -24,7 +24,7 @@ https://datawhalechina.github.io/pumpkin-book/
 - 第13章 [半监督学习](https://datawhalechina.github.io/pumpkin-book/#/chapter13/chapter13)
 - 第14章 [概率图模型](https://datawhalechina.github.io/pumpkin-book/#/chapter14/chapter14)
 - 第15章 规则学习
-- 第16章 强化学习
+- 第16章 [强化学习](https://datawhalechina.github.io/pumpkin-book/#/chapter16/chapter16)
 
 # 选用的西瓜书版本
 <img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/xigua.jpg" width = "476.7" height = "555.3">
