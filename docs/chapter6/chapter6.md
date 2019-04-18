@@ -1,3 +1,40 @@
+## 6.3
+$$
+\left\{\begin{array}{ll}{\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b \geqslant+1,} & {y_{i}=+1} \\ {\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b \leqslant-1,} & {y_{i}=-1}\end{array}\right.
+$$
+[推导]：假设这个超平面是$\left(\boldsymbol{w}^{\prime}\right)^{\top} \boldsymbol{x}+b^{\prime}=0$，对于$\left(\boldsymbol{x}_{i}, y_{i}\right) \in D$，有：
+$$
+\left\{\begin{array}{ll}{\left(\boldsymbol{w}^{\prime}\right)^{\top} \boldsymbol{x}_{i}+b^{\prime}>0,} & {y_{i}=+1} \\ {\left(\boldsymbol{w}^{\prime}\right)^{\top} \boldsymbol{x}_{i}+b^{\prime}<0,} & {y_{i}=-1}\end{array}\right.
+$$
+根据几何间隔，将以上关系修正为：
+$$
+\left\{\begin{array}{ll}{\left(\boldsymbol{w}^{\prime}\right)^{\top} \boldsymbol{x}_{i}+b^{\prime} \geq+\zeta,} & {y_{i}=+1} \\ {\left(\boldsymbol{w}^{\prime}\right)^{\top} \boldsymbol{x}_{i}+b^{\prime} \leq-\zeta,} & {y_{i}=-1}\end{array}\right.
+$$
+其中$\zeta$为某个大于零的常数，两边同除以$\zeta$，再次修正以上关系为：
+$$
+\left\{\begin{array}{ll}{\left(\frac{1}{\zeta} \boldsymbol{w}^{\prime}\right)^{\top} \boldsymbol{x}_{i}+\frac{b^{\prime}}{\zeta} \geq+1,} & {y_{i}=+1} \\ {\left(\frac{1}{\zeta} \boldsymbol{w}^{\prime}\right)^{\top} \boldsymbol{x}_{i}+\frac{b^{\prime}}{\zeta} \leq-1,} & {y_{i}=-1}\end{array}\right.
+$$
+令：$\boldsymbol{w}=\frac{1}{\zeta} \boldsymbol{w}^{\prime}, b=\frac{b^{\prime}}{\zeta}$，则以上关系可写为：
+$$
+\left\{\begin{array}{ll}{\boldsymbol{w}^{\top} \boldsymbol{x}_{i}+b \geq+1,} & {y_{i}=+1} \\ {\boldsymbol{w}^{\top} \boldsymbol{x}_{i}+b \leq-1,} & {y_{i}=-1}\end{array}\right.
+$$
+
+## 6.8
+$$
+L(\boldsymbol{w}, b, \boldsymbol{\alpha})=\frac{1}{2}\|\boldsymbol{w}\|^{2}+\sum_{i=1}^{m} \alpha_{i}\left(1-y_{i}\left(\boldsymbol{w}^{\top} \boldsymbol{x}_{i}+b\right)\right)
+$$
+[推导]:
+
+待求目标：$\min _{\boldsymbol{x}} f(\boldsymbol{x}),$$\qquad s.t. \ \ \ $$\boldsymbol{h}(\boldsymbol{x})=0, \boldsymbol{g}(\boldsymbol{x}) \leq 0$
+
+等式约束和不等式约束：$h(x)=0, g(x) \leq 0$分别是由个等式方程和个不等式方程组成的方程组。
+
+拉格朗日乘子：$\boldsymbol{\lambda}=\left(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{m}\right)$  $\qquad\boldsymbol{\mu}=\left(\mu_{1}, \mu_{2}, \ldots, \mu_{n}\right)$
+
+拉格朗日函数：$L(\boldsymbol{x}, \boldsymbol{\lambda}, \boldsymbol{\mu})=f(\boldsymbol{x})+\boldsymbol{\lambda} \boldsymbol{h}(\boldsymbol{x})+\boldsymbol{\mu} \boldsymbol{g}(\boldsymbol{x})$
+ 
+
+
 ## 6.9-6.10
 $$\begin{aligned}
 w &= \sum_{i=1}^m\alpha_iy_i\boldsymbol{x}_i \\
@@ -37,6 +74,10 @@ $$\begin{aligned}
 \end{aligned}$$
 所以
 $$\max_{\boldsymbol{\alpha}}\min_{\boldsymbol{w},b} L(\boldsymbol{w},b,\boldsymbol{\alpha}) =\max_{\boldsymbol{\alpha}} \sum_{i=1}^m\alpha_i - \frac{1}{2}\sum_{i = 1}^m\sum_{j=1}^m\alpha_i \alpha_j y_iy_j\boldsymbol{x}_i^T\boldsymbol{x}_j $$
+
+
+
+
 ## 6.39
 $$ C=\alpha_i +\mu_i $$
 [推导]：对式（6.36）关于$\xi_i$求偏导并令其等于0可得：
