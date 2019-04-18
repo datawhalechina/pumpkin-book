@@ -27,14 +27,16 @@ $$
 ## 11.13
 $$\boldsymbol x_{\boldsymbol k+\boldsymbol 1}=\underset{\boldsymbol x}{argmin}\frac{L}{2}\left \| \boldsymbol x -\boldsymbol z\right \|_{2}^{2}+\lambda \left \| \boldsymbol x \right \|_{1}$$
 [推导]：假设目标函数为$g(\boldsymbol x)$，则
+$$
 \begin{aligned}
 g(\boldsymbol x)
 & =\frac{L}{2}\left \|\boldsymbol  x \boldsymbol -\boldsymbol z\right \|_{2}^{2}+\lambda \left \| \boldsymbol x \right \|_{1}\\
 & =\frac{L}{2}\sum_{i=1}^{d}\left \| x^{i} -z^{i}\right \|_{2}^{2}+\lambda \sum_{i=1}^{d}\left \| x^{i} \right \|_{1} \\
 & =\sum_{i=1}^{d}(\frac{L}{2}(x^{i}-z^{i})^{2}+\lambda \left | x^{i}\right |)&
 \end{aligned}
+$$
 由上式可见， $g(\boldsymbol x)$可以拆成 d个独立的函 数，求解式(11.13)可以分别求解d个独立的目标函数。 
-针对目标函数$g(x^{i})$$=\frac{L}{2}(x^{i}-z^{i})^{2}+\lambda \left | x^{i}\right |$，通过求导求解极值：
+针对目标函数$g(x^{i})=\frac{L}{2}(x^{i}-z^{i})^{2}+\lambda \left | x^{i}\right |$，通过求导求解极值：
 $$\frac{dg(x^{i})}{dx^{i}}=L(x^{i}-z^{i})+\lambda sgn(x^{i})$$
 其中$$sgn(x^{i})=\left\{\begin{matrix}
 1, &x^{i}>0\\ 
