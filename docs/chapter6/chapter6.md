@@ -23,17 +23,19 @@ $$
 $$
 L(\boldsymbol{w}, b, \boldsymbol{\alpha})=\frac{1}{2}\|\boldsymbol{w}\|^{2}+\sum_{i=1}^{m} \alpha_{i}\left(1-y_{i}\left(\boldsymbol{w}^{\top} \boldsymbol{x}_{i}+b\right)\right)
 $$
-[推导]:
+[推导]：
+待求目标:
+$$\begin{aligned}
+\min_{\boldsymbol{x}}\quad f(\boldsymbol{x})\\
+s.t.\quad h(\boldsymbol{x})&=0\\
+g(\boldsymbol{x}) &\leq 0
+\end{aligned}$$
 
-待求目标：$\min _{\boldsymbol{x}} f(\boldsymbol{x}),$$\qquad s.t. \ \ \ $$\boldsymbol{h}(\boldsymbol{x})=0, \boldsymbol{g}(\boldsymbol{x}) \leq 0$
-
-等式约束和不等式约束：$h(x)=0, g(x) \leq 0$分别是由个等式方程和个不等式方程组成的方程组。
+等式约束和不等式约束：$h(\boldsymbol{x})=0, g(\boldsymbol{x}) \leq 0$分别是由一个等式方程和一个不等式方程组成的方程组。
 
 拉格朗日乘子：$\boldsymbol{\lambda}=\left(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{m}\right)$  $\qquad\boldsymbol{\mu}=\left(\mu_{1}, \mu_{2}, \ldots, \mu_{n}\right)$
 
-拉格朗日函数：$L(\boldsymbol{x}, \boldsymbol{\lambda}, \boldsymbol{\mu})=f(\boldsymbol{x})+\boldsymbol{\lambda} \boldsymbol{h}(\boldsymbol{x})+\boldsymbol{\mu} \boldsymbol{g}(\boldsymbol{x})$
- 
-
+拉格朗日函数：$L(\boldsymbol{x}, \boldsymbol{\lambda}, \boldsymbol{\mu})=f(\boldsymbol{x})+\boldsymbol{\lambda} h(\boldsymbol{x})+\boldsymbol{\mu} g(\boldsymbol{x})$
 
 ## 6.9-6.10
 $$\begin{aligned}
