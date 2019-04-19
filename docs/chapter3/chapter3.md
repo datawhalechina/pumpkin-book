@@ -24,14 +24,14 @@ $$
      & = \cfrac{\sum_{i=1}^{m}(y_ix_i-y_i\bar{x})}{\sum_{i=1}^{m}(x_i^2-x_i\bar{x})}
 \end{aligned}
 $$
-又$ \bar{y}\sum_{i=1}^{m}x_i=\bar{x}\sum_{i=1}^{m}y_i=\sum_{i=1}^{m}\bar{y}x_i=\sum_{i=1}^{m}\bar{x}y_i=m\bar{x}\bar{y}=\sum_{i=1}^{m}\bar{x}\bar{y} $，则上式可化为：
+又因为$ \bar{y}\sum_{i=1}^{m}x_i=\bar{x}\sum_{i=1}^{m}y_i=\sum_{i=1}^{m}\bar{y}x_i=\sum_{i=1}^{m}\bar{x}y_i=m\bar{x}\bar{y}=\sum_{i=1}^{m}\bar{x}\bar{y} $，$\sum_{i=1}^{m}x_i\bar{x}=\bar{x}\sum_{i=1}^{m}x_i=\bar{x}\cdot m \cdot\frac{1}{m}\cdot\sum_{i=1}^{m}x_i=m\bar{x}^2=\sum_{i=1}^{m}\bar{x}^2$，则上式可化为：
 $$ 
 \begin{aligned}
     w & = \cfrac{\sum_{i=1}^{m}(y_ix_i-y_i\bar{x}-x_i\bar{y}+\bar{x}\bar{y})}{\sum_{i=1}^{m}(x_i^2-x_i\bar{x}-x_i\bar{x}+\bar{x}^2)} \\
     & = \cfrac{\sum_{i=1}^{m}(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^{m}(x_i-\bar{x})^2} 
 \end{aligned}
 $$
-若令$ \boldsymbol{x}=(x_1,x_2,...,x_m) $，$ \boldsymbol{x}_{d} $为去均值后的$ \boldsymbol{x} $，$ \boldsymbol{y}=(y_1,y_2,...,y_m) $，$ \boldsymbol{y}_{d} $为去均值后的$ \boldsymbol{y} $，其中$ \boldsymbol{x} $、$ \boldsymbol{x}_{d} $、$ \boldsymbol{y} $、$ \boldsymbol{y}_{d} $均为m行1列的列向量，代入上式可得：
+若令$ \boldsymbol{x}=(x_1,x_2,...,x_m)^T $，$ \boldsymbol{x}_{d} $为去均值后的$ \boldsymbol{x} $，$ \boldsymbol{y}=(y_1,y_2,...,y_m)^T $，$ \boldsymbol{y}_{d} $为去均值后的$ \boldsymbol{y} $，其中$ \boldsymbol{x} $、$ \boldsymbol{x}_{d} $、$ \boldsymbol{y} $、$ \boldsymbol{y}_{d} $均为m行1列的列向量，代入上式可得：
 $$ w=\cfrac{\boldsymbol{y}_{d}^T\boldsymbol{x}_{d}}{\boldsymbol{x}_d^T\boldsymbol{x}_{d}}$$
 ## 3.10
 
