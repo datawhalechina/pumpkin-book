@@ -37,7 +37,7 @@ $$ w=\cfrac{\boldsymbol{x}_{d}^T\boldsymbol{y}_{d}}{\boldsymbol{x}_d^T\boldsymbo
 
 $$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}=2\mathbf{X}^T(\mathbf{X}\hat{\boldsymbol w}-\boldsymbol{y}) $$
 
-[推导]：将$ E_{\hat{\boldsymbol w}}=(\boldsymbol{y}-\boldsymbol{X}\hat{\boldsymbol w})^T(\boldsymbol{y}-\mathbf{X}\hat{\boldsymbol w}) $展开可得：
+[推导]：将$ E_{\hat{\boldsymbol w}}=(\boldsymbol{y}-\mathbf{X}\hat{\boldsymbol w})^T(\boldsymbol{y}-\mathbf{X}\hat{\boldsymbol w}) $展开可得：
 $$ E_{\hat{\boldsymbol w}}= \boldsymbol{y}^T\boldsymbol{y}-\boldsymbol{y}^T\mathbf{X}\hat{\boldsymbol w}-\hat{\boldsymbol w}^T\mathbf{X}^T\boldsymbol{y}+\hat{\boldsymbol w}^T\mathbf{X}^T\mathbf{X}\hat{\boldsymbol w} $$
 对$ \hat{\boldsymbol w} $求导可得：
 $$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}= \cfrac{\partial \boldsymbol{y}^T\boldsymbol{y}}{\partial \hat{\boldsymbol w}}-\cfrac{\partial \boldsymbol{y}^T\mathbf{X}\hat{\boldsymbol w}}{\partial \hat{\boldsymbol w}}-\cfrac{\partial \hat{\boldsymbol w}^T\mathbf{X}^T\boldsymbol{y}}{\partial \hat{\boldsymbol w}}+\cfrac{\partial \hat{\boldsymbol w}^T\mathbf{X}^T\mathbf{X}\hat{\boldsymbol w}}{\partial \hat{\boldsymbol w}} $$
