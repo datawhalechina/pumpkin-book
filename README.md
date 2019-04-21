@@ -21,13 +21,13 @@
 - 第7章 [贝叶斯分类器](https://datawhalechina.github.io/pumpkin-book/#/chapter7/chapter7)
 - 第8章 [集成学习](https://datawhalechina.github.io/pumpkin-book/#/chapter8/chapter8)
 - 第9章 [聚类](https://datawhalechina.github.io/pumpkin-book/#/chapter9/chapter9)
-- 第10章 降维与度量学习（正在完成中）
-- 第11章 特征选择与稀疏学习（正在完成中）
+- 第10章 [降维与度量学习](https://datawhalechina.github.io/pumpkin-book/#/chapter10/chapter10)
+- 第11章 [特征选择与稀疏学习](https://datawhalechina.github.io/pumpkin-book/#/chapter11/chapter11)
 - 第12章 计算学习理论（正在完成中）
 - 第13章 [半监督学习](https://datawhalechina.github.io/pumpkin-book/#/chapter13/chapter13)
 - 第14章 [概率图模型](https://datawhalechina.github.io/pumpkin-book/#/chapter14/chapter14)
 - 第15章 规则学习（正在完成中）
-- 第16章 强化学习（正在完成中）
+- 第16章 [强化学习](https://datawhalechina.github.io/pumpkin-book/#/chapter16/chapter16)
 
 ### 选用的西瓜书版本
 
@@ -49,7 +49,6 @@
 | :------: | :------- | :----------------------------------------------------------- |
 | 文档 | Markdown | 1. CSDN Markdown 使用教程 http://t.cn/E4699cO<br>2. 简书 Markdown 使用教程 https://www.jianshu.com/p/q81RER<br>3. 编辑软件推荐 Typora https://typora.io/ |
 | 数学公式 | LaTeX    | 1. CSDN Latex语法编写数学公式 http://t.cn/E469pdI<br>2.Latex 在线编辑工具 http://latex.codecogs.com/eqneditor/editor.php |
-
 
 ### 目录结构规范：
 
