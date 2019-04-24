@@ -12,11 +12,12 @@
 
 ![西瓜书](https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/xigua.jpg "选用的西瓜书版本")
 
-> 书名：机器学习
-> 作者：周志华
-> 出版社：清华大学出版社
-> 版次：2016年1月第1版
-> [勘误表：http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/MLbook2016.htm](http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/MLbook2016.htm "勘误")
+> 书名：机器学习<br>
+> 作者：周志华<br>
+> 出版社：清华大学出版社<br>
+> 版次：2016年1月第1版<br>
+> [勘误表：http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/MLbook2016.htm](http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/MLbook2016.htm "勘误")<br>
+> 全书共16章，大致分为3个部分：第1部分（第1～3章）介绍机器学习的基础知识；第2部分（第4～10章）讨论一些经典而常用的机器学习方法（决策树、神经网络、支持向量机、贝叶斯分类器、集成学习、聚类、降维与度量学习）；第3部分（第11～16章）为进阶知识，内容涉及特征选择与稀疏学习、计算学习理论、半监督学习、概率图模型、规则学习以及强化学习等。
 
 ### 主要贡献者（按首字母排名）
 
