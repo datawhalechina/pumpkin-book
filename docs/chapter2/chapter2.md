@@ -8,7 +8,9 @@ $$ AUC=\cfrac{1}{2}\sum_{i=1}^{m-1}(x_{i+1} - x_i)\cdot(y_i + y_{i+1}) $$
 
 $$ l_{rank}=\cfrac{1}{m^+m^-}\sum_{x^+ \in D^+}\sum_{x^- \in D^-}(\mathbb{I}(f(x^+)<f(x^-))+\cfrac{1}{2}\mathbb{I}(f(x^+)=f(x^-))) $$
 
-[解析]：此公式正如书上所说，$ l_{rank} $为ROC曲线**之上**的面积，假设某ROC曲线如下图所示：
+[解析]：
+
+此公式正如书上所说，$ l_{rank} $为ROC曲线**之上**的面积，假设某ROC曲线如下图所示：
 
 ![avatar ROC曲线](resources/images/lrank.png? "ROC曲线")
 
@@ -36,11 +38,7 @@ $$ \cfrac{1}{m^+}\cdot\cfrac{1}{m^-}\cdot\sum_{x^- \in D^-}\mathbb{I}(f(x^+_i)<f
 
 综上分析可知，式S既可以用来求绿色线段与Y轴构成的面积也能求蓝色线段与Y轴构成的面积，所以遍历完所有绿色和蓝色线段并将其与Y轴构成的面积累加起来即得$ l_{rank} $。
 
-[^ROC曲线]:roc曲线：接收者操作特征(receiveroperating characteristic),roc曲线上每个点反映着对同一信号刺激的感受性。
-
-**横轴：负正类率(false postive rate FPR)特异度**，划分实例中所有负例占所有负例的比例；(1-Specificity)
-
-**纵轴：真正类率(true postive rate TPR)灵敏度**，Sensitivity(正类覆盖率)
+[^ROC曲线]: roc曲线：接收者操作特征（receiveroperating characteristic）,roc曲线上每个点反映着对同一信号刺激的感受性。**横轴：负正类率(false postive rate FPR)特异度**，划分实例中所有负例占所有负例的比例；(1-Specificity)，**纵轴：真正类率(true postive rate TPR)灵敏度**，Sensitivity(正类覆盖率)
 
 参考：
 
