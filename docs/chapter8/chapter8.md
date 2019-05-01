@@ -17,7 +17,7 @@ $$
 $$
 
 ## 8.5-8.8
-由式(8.4)可知
+[推导]：由式(8.4)可知
 $$H(\boldsymbol{x})=\sum_{t=1}^{T} \alpha_{t} h_{t}(\boldsymbol{x})$$
 
 又由式(8.11)可知
@@ -25,7 +25,6 @@ $$
 \alpha_{t}=\frac{1}{2} \ln \left(\frac{1-\epsilon_{t}}{\epsilon_{t}}\right)
 $$
 该分类器的权重只与分类器的错误率负相关(即错误率越大，权重越低)
-[推导:]
 
 (1)先考虑指数损失函数$e^{-f(x) H(x)}$的含义：$f$为真实函数，对于样本$x$来说，$f(\boldsymbol{x}) \in\{-1,+1\}$只能取和两个值，而$H(\boldsymbol{x})$是一个实数；
 当$H(\boldsymbol{x})$的符号与$f(x)$一致时，$f(\boldsymbol{x}) H(\boldsymbol{x})>0$，因此$e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}=e^{-|H(\boldsymbol{x})|}<1$，且$|H(\boldsymbol{x})|$越大指数损失函数$e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}$越小（这很合理：此时$|H(\boldsymbol{x})|$越大意味着分类器本身对预测结果的信心越大，损失应该越小；若$|H(\boldsymbol{x})|$在零附近，虽然预测正确，但表示分类器本身对预测结果信心很小，损失应该较大）；
@@ -63,12 +62,10 @@ $$
 
 
 ## 8.16
-
-#### 方法一
 $$
 \begin{aligned} h_{t}(\boldsymbol{x}) &=\underset{h}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\frac{e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right]} f(\boldsymbol{x}) h(\boldsymbol{x})\right] \\ &=\underset{\boldsymbol{h}}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_{t}}[f(\boldsymbol{x}) h(\boldsymbol{x})] \end{aligned}
 $$
-
+[推导]：
 假设x的概率分布是f(x)
 (注:本书中概率分布全都是$\mathcal{D(x)}$)
 
@@ -90,15 +87,13 @@ $$
 \begin{aligned} & \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\frac{e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right]} f(\boldsymbol{x}) h(\boldsymbol{x})\right] \\=& \sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}_{i}\right) \frac{e^{-f\left(\boldsymbol{x}_{i}\right) H_{t-1}\left(\boldsymbol{x}_{i}\right)}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x}) }]  \right.}f(x_i)h(x_i) \\=& \sum_{i=1}^{|D|} \mathcal{D}_{t}\left(\boldsymbol{x}_{i}\right) f\left(\boldsymbol{x}_{i}\right) h\left(\boldsymbol{x}_{i}\right) \\=& \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_{t}}[f(\boldsymbol{x}) h(\boldsymbol{x})] \end{aligned}
 $$
 
-#### 方法二
-
-由下式(*)推至式(8.16)
+【注】：由下式$(*)$也可推至式(8.16)
 
 $$
 P(f(x)=1|x)e^{-H(x)}+P(f(x)=-1|x)e^{H(x)}(*)
 $$
 
-首先式(*)可以拆成n个式子,n的个数为x的取值个数
+首先式$(*)$可以拆成n个式子,n的个数为x的取值个数
 
 
 $$
@@ -109,7 +104,7 @@ $$
 $P(f(x_i=1|x_i))$与$P(f(x_i=-1|x_i))$
 其中有一个为0，另一个为1
 
-则式(**)可以化简成
+则式$(**)$可以化简成
 $$
 e^{-f(x_i)H(x_i)}(i=1,2,...,n)(***)
 $$
