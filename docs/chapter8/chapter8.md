@@ -61,30 +61,10 @@ $$
 \end{aligned}
 $$
 
-<!-- ## 8.16
-由式(8.13)可知
-$$
-\begin{aligned} \ell_{\exp }\left(H_{t-1}+h_{t} | \mathcal{D}\right) & \simeq \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\left(1-f(\boldsymbol{x}) h_{t}(\boldsymbol{x})+\frac{f^{2}(\boldsymbol{x}) h_{t}^{2}(\boldsymbol{x})}{2}\right)\right] \\ &=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\left(1-f(\boldsymbol{x}) h_{t}(\boldsymbol{x})+\frac{1}{2}\right)\right] \quad \text { . } \end{aligned}
-$$
-
-求得的$h_t$使得损失函数最小，所以得出(8.14)
-$$
-\begin{aligned}
-h_{t}(\boldsymbol{x})&=\underset{h}{\arg \min } \ell_{\exp }\left(H_{t-1}+h | \mathcal{D}\right)
-\\&
-\begin{array}{l}{ =\underset{h}{\arg \min } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\left(1-f(\boldsymbol{x}) h(\boldsymbol{x})+\frac{1}{2}\right)\right]} \\ {=\underset{h}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} f(\boldsymbol{x}) h(\boldsymbol{x})\right]} \\ {=\underset{h}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\frac{e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right.}} f(\boldsymbol{x}) h(\boldsymbol{x})\right]}\end{array} \end{aligned}
-$$
-
-最后一行式子里$\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right]$因为是基于学习器$H_{t-1}$的指数损失函数的期望，所以是大于0的常数，所以这里不影响损失函数最小时，参数h的值。
-
-式(8.15)
-$$
-\mathcal{D}_{t}(\boldsymbol{x})=\frac{\mathcal{D}(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right]}
-$$
-
-这里的$\mathcal{D}$是x的概率分布 -->
 
 ## 8.16
+
+#### 方法一
 $$
 \begin{aligned} h_{t}(\boldsymbol{x}) &=\underset{h}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\frac{e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right]} f(\boldsymbol{x}) h(\boldsymbol{x})\right] \\ &=\underset{\boldsymbol{h}}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_{t}}[f(\boldsymbol{x}) h(\boldsymbol{x})] \end{aligned}
 $$
@@ -110,29 +90,34 @@ $$
 \begin{aligned} & \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\frac{e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right]} f(\boldsymbol{x}) h(\boldsymbol{x})\right] \\=& \sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}_{i}\right) \frac{e^{-f\left(\boldsymbol{x}_{i}\right) H_{t-1}\left(\boldsymbol{x}_{i}\right)}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x}) }]  \right.}f(x_i)h(x_i) \\=& \sum_{i=1}^{|D|} \mathcal{D}_{t}\left(\boldsymbol{x}_{i}\right) f\left(\boldsymbol{x}_{i}\right) h\left(\boldsymbol{x}_{i}\right) \\=& \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_{t}}[f(\boldsymbol{x}) h(\boldsymbol{x})] \end{aligned}
 $$
 
+#### 方法二
 
+由下式(*)推至式(8.16)
 
-## 附录
-
-(1) 如何由下式(*)推至式(8.16)
 $$
 P(f(x)=1|x)e^{-H(x)}+P(f(x)=-1|x)e^{H(x)}(*)
 $$
 
 首先式(*)可以拆成n个式子,n的个数为x的取值个数
 
+
 $$
 P(f(x_i)=1|x_i)e^{-H(x_i)}+P(f(x_i)=-1|x_i)e^{H(x_i)}(i=1,2,...,n)(**)
 $$
 
-当$x_i$确定的时候,$P(f(x_i=1|x_i))$与$P(f(x_i=-1|x_i))$其中有一个为0，另一个为1，则式(**)可以化简成
+当$x_i$确定的时候
+$P(f(x_i=1|x_i))$与$P(f(x_i=-1|x_i))$
+其中有一个为0，另一个为1
+
+则式(**)可以化简成
 $$
 e^{-f(x_i)H(x_i)}(i=1,2,...,n)(***)
 $$
-拆成n个式子是根据不同的x来拆分的，可以把$x=x_i$看成一个事件，设为事件$A_i$，当事件$A_i$发生时，事件$A_j$一定不发生，即各事件互斥,而且各个事件发生的概率是$P(A_i)=\mathcal{D}(x_i)$，此时可以考虑成原来的x被分成了n叉树，每个路径的概率是$\mathcal{D}(x_i)$,叶子结点的值是$e^{-f(x_i)H(x_i)}$相乘再相加即为期望，同式(8.16)
-<!-- $$
-P(\cup_{i=1}^nA_i)=\sum_{i=1}^nP(A_i)=\sum_{i=1}^n\mathcal{D}(x_i)
-$$ -->
 
+拆成n个式子是根据不同的x来拆分的，可以把$x=x_i$看成一个事件，设为事件$A_i$。
+
+当事件$A_i$发生时，事件$A_j$一定不发生，即各事件互斥,而且各个事件发生的概率是$P(A_i)=\mathcal{D}(x_i)$
+
+此时可以考虑成原来的x被分成了n叉树，每个路径的概率是$\mathcal{D}(x_i)$,叶子结点的值是$e^{-f(x_i)H(x_i)}$相乘再相加即为期望，同式(8.16)
 
 
