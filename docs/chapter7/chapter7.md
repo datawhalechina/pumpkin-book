@@ -31,12 +31,20 @@ $$p_{(\boldsymbol x_{i}| c)}$$
 
 ## 7.23
 
-$$P(c|\boldsymbol x)\propto\sum\limits_{i=1}^{d}P(c_{i}|\boldsymbol x_{i})\prod _{j=1}^{d}P(c_{i}|\boldsymbol x_{i})$$
-[推导]：$$P(c|\boldsymbol x)=\cfrac{P(\boldsymbol x|c)}{P(\boldsymbol x)}=\cfrac{P(c|x_{i})P(x_{1},…,x_{i-1},x_{i+1},…,x_{d}|c,x_{i})}{P(\boldsymbol x)}$$
-$$P(c|\boldsymbol x)\propto P(c|x_{i})P(x_{1},…,x_{i-1},x_{i+1},…,x_{d}|c,x_{i})$$
-$$P(c|\boldsymbol x)\propto\sum\limits_{i=1}^{d}P(c_{i}|\boldsymbol x_{i})\prod _{j=1}^{d}P(c_{i}|\boldsymbol x_{i})$$
-此即为式7.23
-[解析]：式(7.24)和式(7.25)的使用到了$|D_{c,x_{i}}|$与$|D_{c,x_{i},x_{j}}|$，若$|D_{x_{i}}|$集合中样本数量过少，则$|D_{c,x_{i}}|$与$|D_{c,x_{i},x_{j}}|$将会更小，因此在式(7.23)中要求$|D_{x_{i}}|$集合中样本数量不少于$m^{'}$。
+$$P(c|\boldsymbol x)\propto{\sum_{i=1 \atop |D_{x_{i}}|\geq m'}^{d}}P(c,x_{i})\prod_{j=1}^{d}P(x_j|c,x_i)$$
+[推导]：
+$$\begin{aligned}
+P(c|\boldsymbol x)&=\cfrac{P(\boldsymbol x,c)}{P(\boldsymbol x)}\\
+&=\cfrac{P\left(x_{1}, x_{2}, \ldots, x_{d}, c\right)}{P(\boldsymbol x)}\\
+&=\cfrac{P\left(x_{1}, x_{2}, \ldots, x_{d} | c\right) P(c)}{P(\boldsymbol x)} \\
+&=\cfrac{P\left(x_{1}, \ldots, x_{i-1}, x_{i+1}, \ldots, x_{d} | c, x_{i}\right) P\left(c, x_{i}\right)}{P(\boldsymbol x)} \\
+\end{aligned}$$
+$$\begin{aligned}
+P(c|\boldsymbol x)&\propto P(c,x_{i})P(x_{1},…,x_{i-1},x_{i+1},…,x_{d}|c,x_{i}) \\
+&=P(c,x_{i})\prod _{j=1}^{d}P(x_j|c,x_i)
+\end{aligned}$$
+$$P(c|\boldsymbol x)\propto\sum\limits_{i=1 \atop |D_{x_{i}}|\geq m'}^{d}P(c_{i}|\boldsymbol x_{i})\prod_{j=1}^{d}P(c_{i}|\boldsymbol x_{i})$$
+此即为式7.23，由于式(7.24)和式(7.25)的使用到了$|D_{c,x_{i}}|$与$|D_{c,x_{i},x_{j}}|$，若$|D_{x_{i}}|$集合中样本数量过少，则$|D_{c,x_{i}}|$与$|D_{c,x_{i},x_{j}}|$将会更小，因此在式(7.23)中要求$|D_{x_{i}}|$集合中样本数量不少于$m'$。
 
 
 
