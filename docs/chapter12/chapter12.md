@@ -1,9 +1,7 @@
 ## 12.4 
-
 $$
-Jensen不等式：对任意凸函数f(x), 有 f(E(x)) \leq E(f(x))
+f(E(x)) \leq E(f(x))
 $$
-
 [推导]：显然，对于任意凸函数，必然有：
 $$
 f\left(\alpha x_{1}+(1-\alpha) x_{2}\right) \leq \alpha f\left(x_{1}\right)+(1-\alpha) f\left(x_{2}\right)
@@ -27,12 +25,9 @@ f(E(x)) \leq \frac{1}{m} f\left(x_{1}\right)+\frac{1}{m} f\left(x_{2}\right)+\ld
 $$
 
 ##  12.17
-
-若训练集$D$包含$m$个从分布$D$独立同分布采样而得的样例，$0<\varepsilon<1$,则对任意$h \in H$,有：
 $$
 P(|\hat{E}(h)-E(h)| \geq \varepsilon) \leq 2 e^{-2 m \varepsilon^{2}}
 $$
-
 [推导]：已知Hoeffding不等式：若$x_{1}, x_{2} \ldots . . . x_{m}$为$m$个独立变量，且满足$0 \leq x_{i} \leq 1$ ,则对任意$\varepsilon>0$,有：
 $$
 P\left(\left|\frac{1}{m} \sum_{i}^{m} x_{i}-\frac{1}{m} \sum_{i}^{m} E\left(x_{i}\right)\right| \geq \varepsilon\right) \leq 2 e^{-2 m \varepsilon^{2}}
@@ -56,8 +51,6 @@ P(|\hat{E}(h)-E(h)| \geq \varepsilon) \leq 2 e^{-2 m \varepsilon^{2}}
 $$
 
 ##  12.18
-
-若训练集$D$包含$m$个从分布$D$上独立同分布采样而得的样例，$0<\varepsilon<1$，则对任意$h \in H$，式（12.18）以至少$1-\delta$的概率成立：
 $$
 \hat{E}(h)-\sqrt{\frac{\ln (2 / \delta)}{2 m}} \leq E(h) \leq \hat{E}(h)+\sqrt{\frac{\ln (2 / \delta)}{2 m}}
 $$
@@ -82,8 +75,6 @@ $$
 以至少$1-\delta$的概率成立
 
 ## 12.59
-
-给定从分布$D$上独立同分布采样得到的大小为$m$的示例集$D$,若学习算法$Ƹ$满足关于损失函数$l$的$\beta$-均匀稳定性，且损失函数$l$的上届为$M$,$0<\varepsilon<1$,则对任意$m\geq1$,以至少$1-\delta$的概率有：
 $$
 l(\varepsilon, D) \leq l_{l o o}(\overline{\varepsilon}, D)+\beta+(4 m \beta+M) \sqrt{ \frac{\ln (1 / \delta)}{2 m}}
 $$

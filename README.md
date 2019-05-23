@@ -23,7 +23,7 @@
 - 第9章 [聚类](https://datawhalechina.github.io/pumpkin-book/#/chapter9/chapter9)
 - 第10章 [降维与度量学习](https://datawhalechina.github.io/pumpkin-book/#/chapter10/chapter10)
 - 第11章 [特征选择与稀疏学习](https://datawhalechina.github.io/pumpkin-book/#/chapter11/chapter11)
-- 第12章 计算学习理论（正在完成中）
+- 第12章 [计算学习理论](https://datawhalechina.github.io/pumpkin-book/#/chapter12/chapter12)
 - 第13章 [半监督学习](https://datawhalechina.github.io/pumpkin-book/#/chapter13/chapter13)
 - 第14章 [概率图模型](https://datawhalechina.github.io/pumpkin-book/#/chapter14/chapter14)
 - 第15章 规则学习（正在完成中）
