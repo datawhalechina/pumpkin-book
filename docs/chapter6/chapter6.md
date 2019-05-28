@@ -115,4 +115,48 @@ C &= \alpha_i+\mu_i
 消去$\mu_i$可得等价约束条件为：
 $$0 \leq\alpha_i \leq C \quad i=1,2,\dots ,m$$
 
+## 6.52
+$$
+\left\{\begin{array}{l}
+{\alpha_{i}\left(f\left(\boldsymbol{x}_{i}\right)-y_{i}-\epsilon-\xi_{i}\right)=0} \\ {\hat{\alpha}_{i}\left(y_{i}-f\left(\boldsymbol{x}_{i}\right)-\epsilon-\hat{\xi}_{i}\right)=0} \\ {\alpha_{i} \hat{\alpha}_{i}=0, \xi_{i} \hat{\xi}_{i}=0} \\ 
+{\left(C-\alpha_{i}\right) \xi_{i}=0,\left(C-\hat{\alpha}_{i}\right) \hat{\xi}_{i}=0}
+\end{array}\right.
+$$
+[推导]：
+将式（6.45）的约束条件全部恒等变形为小于等于0的形式可得：
+$$
+\left\{\begin{array}{l}
+{f\left(\boldsymbol{x}_{i}\right)-y_{i}-\epsilon-\xi_{i} \leq 0 }  \\ 
+{y_{i}-f\left(\boldsymbol{x}_{i}\right)-\epsilon-\hat{\xi}_{i} \leq 0 } \\ 
+{-\xi_{i} \leq 0} \\
+{-\hat{\xi}_{i} \leq 0}
+\end{array}\right.
+$$
+由于以上四个约束条件的拉格朗日乘子分别为$\alpha_i,\hat{\alpha}_i,\mu_i,\hat{\mu}_i$，所以由西瓜书附录式（B.3）可知，以上四个约束条件可相应转化为以下KKT条件：
+$$
+\left\{\begin{array}{l}
+{\alpha_i\left(f\left(\boldsymbol{x}_{i}\right)-y_{i}-\epsilon-\xi_{i} \right) = 0 }  \\ 
+{\hat{\alpha}_i\left(y_{i}-f\left(\boldsymbol{x}_{i}\right)-\epsilon-\hat{\xi}_{i} \right) = 0 } \\ 
+{-\mu_i\xi_{i} = 0 \Rightarrow \mu_i\xi_{i} = 0 }  \\
+{-\hat{\mu}_i \hat{\xi}_{i} = 0  \Rightarrow \hat{\mu}_i \hat{\xi}_{i} = 0 }
+\end{array}\right.
+$$
+由式（6.49）和式（6.50）可知：
+$$
+\begin{aligned}
+\mu_i=C-\alpha_i \\
+\hat{\mu}_i=C-\hat{\alpha}_i
+\end{aligned}
+$$
+所以上述KKT条件可以进一步变形为：
+$$
+\left\{\begin{array}{l}
+{\alpha_i\left(f\left(\boldsymbol{x}_{i}\right)-y_{i}-\epsilon-\xi_{i} \right) = 0 }  \\ 
+{\hat{\alpha}_i\left(y_{i}-f\left(\boldsymbol{x}_{i}\right)-\epsilon-\hat{\xi}_{i} \right) = 0 } \\ 
+{(C-\alpha_i)\xi_{i} = 0 }  \\
+{(C-\hat{\alpha}_i) \hat{\xi}_{i} = 0 }
+\end{array}\right.
+$$
+又因为样本$(\boldsymbol{x}_i,y_i)$只可能处在间隔带的某一侧，那么约束条件$f\left(\boldsymbol{x}_{i}\right)-y_{i}-\epsilon-\xi_{i}=0$和$y_{i}-f\left(\boldsymbol{x}_{i}\right)-\epsilon-\hat{\xi}_{i}=0$不可能同时成立，所以$\alpha_i$和$\hat{\alpha}_i$中至少有一个为0，也即$\alpha_i\hat{\alpha}_i=0$。在此基础上再进一步分析可知，如果$\alpha_i=0$的话，那么根据约束$(C-\alpha_i)\xi_{i} = 0$可知此时$\xi_i=0$，同理，如果$\hat{\alpha}_i=0$的话，那么根据约束$(C-\hat{\alpha}_i)\hat{\xi}_{i} = 0$可知此时$\hat{\xi}_i=0$，所以$\xi_i$和$\hat{\xi}_i$中也是至少有一个为0，也即$\xi_{i} \hat{\xi}_{i}=0$。将$\alpha_i\hat{\alpha}_i=0,\xi_{i} \hat{\xi}_{i}=0$整合进上述KKT条件中即可得到式（6.52）。
+
 
