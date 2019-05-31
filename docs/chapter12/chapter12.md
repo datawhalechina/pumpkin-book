@@ -62,7 +62,7 @@ $$
 
 即:
 $$
-P(|\hat{E}(h)-E(h)| \leq \varepsilon) \leq 1-2 e^{-2 m \varepsilon^{2}}
+P(|\hat{E}(h)-E(h)| \leq \varepsilon) \geq 1-2 e^{-2 m \varepsilon^{2}}
 $$
 取$\delta=2 e^{-2 m \varepsilon^{2}}$,则$\varepsilon=\sqrt{\frac{\ln (2 / \delta)}{2 m}}$
 
