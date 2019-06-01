@@ -80,16 +80,25 @@ $$（公式的LaTeX表达式）$$
 ### 主要贡献者（按首字母排名）
 
 [@awyd234](https://github.com/awyd234)
+[@feijuan](https://github.com/feijuan)
+[@Ggmatch](https://github.com/Ggmatch)
 [@Heitao5200](https://github.com/Heitao5200)
+[@huaqing89](https://github.com/huaqing89)
 [@juxiao](https://github.com/juxiao)
+[@jbb0523](https://blog.csdn.net/jbb0523)
 [@LongJH](https://github.com/LongJH)
 [@LilRachel](https://github.com/LilRachel)
+[@LeoLRH](https://github.com/LeoLRH)
 [@Majingmin](https://github.com/Majingmin)
+[@MrBigFan](https://github.com/MrBigFan)
+[@Nono17](https://github.com/Nono17)
 [@spareribs](https://github.com/spareribs)
 [@sunchaothu](https://github.com/sunchaothu)
 [@StevenLzq](https://github.com/StevenLzq)
 [@Sm1les](https://github.com/Sm1les)
+[@shanry](https://github.com/shanry)
 [@Ye980226](https://github.com/Ye980226)
+
 
 ## 关注我们
 
