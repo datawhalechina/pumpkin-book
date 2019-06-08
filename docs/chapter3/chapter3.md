@@ -47,28 +47,35 @@ $$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}=2\math
 
 ## 3.27
 
-$$ l(\beta)=\sum_{i=1}^{m}(-y_i\beta^T\hat{\boldsymbol x}_i+\ln(1+e^{\beta^T\hat{\boldsymbol x}_i})) $$
+$$ \ell(\boldsymbol{\beta})=\sum_{i=1}^{m}(-y_i\boldsymbol{\beta}^T\hat{\boldsymbol x}_i+\ln(1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i})) $$
 
 [推导]：将式（3.26）代入式（3.25）可得：
-$$ l(\beta)=\sum_{i=1}^{m}\ln\left(y_ip_1(\hat{\boldsymbol x}_i;\beta)+(1-y_i)p_0(\hat{\boldsymbol x}_i;\beta)\right) $$
-其中$ p_1(\hat{\boldsymbol x}_i;\beta)=\cfrac{e^{\beta^T\hat{\boldsymbol x}_i}}{1+e^{\beta^T\hat{\boldsymbol x}_i}},p_0(\hat{\boldsymbol x}_i;\beta)=\cfrac{1}{1+e^{\beta^T\hat{\boldsymbol x}_i}} $，代入上式可得：
+$$ \ell(\boldsymbol{\beta})=\sum_{i=1}^{m}\ln\left(y_ip_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})+(1-y_i)p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right) $$
+其中$ p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})=\cfrac{e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}}{1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}},p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})=\cfrac{1}{1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}} $，代入上式可得：
 $$\begin{aligned} 
-l(\beta)&=\sum_{i=1}^{m}\ln\left(\cfrac{y_ie^{\beta^T\hat{\boldsymbol x}_i}+1-y_i}{1+e^{\beta^T\hat{\boldsymbol x}_i}}\right) \\
-&=\sum_{i=1}^{m}\left(\ln(y_ie^{\beta^T\hat{\boldsymbol x}_i}+1-y_i)-\ln(1+e^{\beta^T\hat{\boldsymbol x}_i})\right) 
+\ell(\boldsymbol{\beta})&=\sum_{i=1}^{m}\ln\left(\cfrac{y_ie^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}+1-y_i}{1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}}\right) \\
+&=\sum_{i=1}^{m}\left(\ln(y_ie^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}+1-y_i)-\ln(1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i})\right) 
 \end{aligned}$$
 由于$ y_i $=0或1，则：
-$$ l(\beta) =
+$$ \ell(\boldsymbol{\beta}) =
 \begin{cases} 
-\sum_{i=1}^{m}(-\ln(1+e^{\beta^T\hat{\boldsymbol x}_i})),  & y_i=0 \\
-\sum_{i=1}^{m}(\beta^T\hat{\boldsymbol x}_i-\ln(1+e^{\beta^T\hat{\boldsymbol x}_i})), & y_i=1
+\sum_{i=1}^{m}(-\ln(1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i})),  & y_i=0 \\
+\sum_{i=1}^{m}(\boldsymbol{\beta}^T\hat{\boldsymbol x}_i-\ln(1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i})), & y_i=1
 \end{cases} $$
 两式综合可得：
-$$ l(\beta)=\sum_{i=1}^{m}\left(y_i\beta^T\hat{\boldsymbol x}_i-\ln(1+e^{\beta^T\hat{\boldsymbol x}_i})\right) $$
+$$ \ell(\boldsymbol{\beta})=\sum_{i=1}^{m}\left(y_i\boldsymbol{\beta}^T\hat{\boldsymbol x}_i-\ln(1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i})\right) $$
 由于此式仍为极大似然估计的似然函数，所以最大化似然函数等价于最小化似然函数的相反数，也即在似然函数前添加负号即可得式（3.27）。
 
-【注】：若式（3.26）中的似然项改写方式为$ p(y_i|\boldsymbol x_i;\boldsymbol w,b)=[p_1(\hat{\boldsymbol x}_i;\beta)]^{y_i}[p_0(\hat{\boldsymbol x}_i;\beta)]^{1-y_i} $，再将其代入式（3.25）可得：
-$$ l(\beta)=\sum_{i=1}^{m}\left(y_i\ln(p_1(\hat{\boldsymbol x}_i;\beta))+(1-y_i)\ln(p_0(\hat{\boldsymbol x}_i;\beta))\right) $$
-此式显然更易推导出式（3.27）
+【注】：若式（3.26）中的似然项改写方式为$ p(y_i|\boldsymbol x_i;\boldsymbol w,b)=[p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})]^{y_i}[p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})]^{1-y_i} $，再将其代入式（3.25）可得：
+$$\begin{aligned}
+ \ell(\boldsymbol{\beta})&=\sum_{i=1}^{m}\ln\left([p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})]^{y_i}[p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})]^{1-y_i}\right) \\
+&=\sum_{i=1}^{m}\left[y_i\ln\left(p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right)+(1-y_i)\ln\left(p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right)\right] \\
+&=\sum_{i=1}^{m} \left \{ y_i\left[\ln\left(p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right)-\ln\left(p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right)\right]+\ln\left(p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right)\right\} \\
+&=\sum_{i=1}^{m}\left[y_i\ln\left(\cfrac{p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})}{p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})}\right)+\ln\left(p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right)\right] \\
+&=\sum_{i=1}^{m}\left[y_i\ln\left(e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}\right)+\ln\left(\cfrac{1}{1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}}\right)\right] \\
+&=\sum_{i=1}^{m}\left(y_i\boldsymbol{\beta}^T\hat{\boldsymbol x}_i-\ln(1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i})\right) 
+\end{aligned}$$
+显然，此种方式更易推导出式（3.27）
 
 ## 3.30
 
