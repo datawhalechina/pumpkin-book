@@ -24,60 +24,69 @@ $$
      & = \cfrac{\sum_{i=1}^{m}(y_ix_i-y_i\bar{x})}{\sum_{i=1}^{m}(x_i^2-x_i\bar{x})}
 \end{aligned}
 $$
-又$ \bar{y}\sum_{i=1}^{m}x_i=\bar{x}\sum_{i=1}^{m}y_i=\sum_{i=1}^{m}\bar{y}x_i=\sum_{i=1}^{m}\bar{x}y_i=m\bar{x}\bar{y}=\sum_{i=1}^{m}\bar{x}\bar{y} $，则上式可化为：
+又因为$ \bar{y}\sum_{i=1}^{m}x_i=\bar{x}\sum_{i=1}^{m}y_i=\sum_{i=1}^{m}\bar{y}x_i=\sum_{i=1}^{m}\bar{x}y_i=m\bar{x}\bar{y}=\sum_{i=1}^{m}\bar{x}\bar{y} $，$\sum_{i=1}^{m}x_i\bar{x}=\bar{x}\sum_{i=1}^{m}x_i=\bar{x}\cdot m \cdot\frac{1}{m}\cdot\sum_{i=1}^{m}x_i=m\bar{x}^2=\sum_{i=1}^{m}\bar{x}^2$，则上式可化为：
 $$ 
 \begin{aligned}
     w & = \cfrac{\sum_{i=1}^{m}(y_ix_i-y_i\bar{x}-x_i\bar{y}+\bar{x}\bar{y})}{\sum_{i=1}^{m}(x_i^2-x_i\bar{x}-x_i\bar{x}+\bar{x}^2)} \\
     & = \cfrac{\sum_{i=1}^{m}(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^{m}(x_i-\bar{x})^2} 
 \end{aligned}
 $$
-若令$ \boldsymbol{x}=(x_1,x_2,...,x_m) $，$ \boldsymbol{x}_{d} $为去均值后的$ \boldsymbol{x} $，$ \boldsymbol{y}=(y_1,y_2,...,y_m) $，$ \boldsymbol{y}_{d} $为去均值后的$ \boldsymbol{y} $，其中$ \boldsymbol{x} $、$ \boldsymbol{x}_{d} $、$ \boldsymbol{y} $、$ \boldsymbol{y}_{d} $均为m行1列的列向量，代入上式可得：
-$$ w=\cfrac{\boldsymbol{y}_{d}^T\boldsymbol{x}_{d}}{\boldsymbol{x}_d^T\boldsymbol{x}_{d}}$$
+若令$ \boldsymbol{x}=(x_1,x_2,...,x_m)^T $，$ \boldsymbol{x}_{d}=(x_1-\bar{x},x_2-\bar{x},...,x_m-\bar{x})^T $为去均值后的$ \boldsymbol{x} $，$ \boldsymbol{y}=(y_1,y_2,...,y_m)^T $，$ \boldsymbol{y}_{d}=(y_1-\bar{y},y_2-\bar{y},...,y_m-\bar{y})^T $为去均值后的$ \boldsymbol{y} $，其中$ \boldsymbol{x} $、$ \boldsymbol{x}_{d} $、$ \boldsymbol{y} $、$ \boldsymbol{y}_{d} $均为m行1列的列向量，代入上式可得：
+$$ w=\cfrac{\boldsymbol{x}_{d}^T\boldsymbol{y}_{d}}{\boldsymbol{x}_d^T\boldsymbol{x}_{d}}$$
 ## 3.10
 
-$$ \cfrac{\partial E_{\hat{w}}}{\partial \hat{w}}=2\mathbf{X}^T(\mathbf{X}\hat{w}-\mathbf{y}) $$
+$$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}=2\mathbf{X}^T(\mathbf{X}\hat{\boldsymbol w}-\boldsymbol{y}) $$
 
-[推导]：将$ E_{\hat{w}}=(\mathbf{y}-\mathbf{X}\hat{w})^T(\mathbf{y}-\mathbf{X}\hat{w}) $展开可得：
-$$ E_{\hat{w}}= \mathbf{y}^T\mathbf{y}-\mathbf{y}^T\mathbf{X}\hat{w}-\hat{w}^T\mathbf{X}^T\mathbf{y}+\hat{w}^T\mathbf{X}^T\mathbf{X}\hat{w} $$
-对$ \hat{w} $求导可得：
-$$ \cfrac{\partial E_{\hat{w}}}{\partial \hat{w}}= \cfrac{\partial \mathbf{y}^T\mathbf{y}}{\partial \hat{w}}-\cfrac{\partial \mathbf{y}^T\mathbf{X}\hat{w}}{\partial \hat{w}}-\cfrac{\partial \hat{w}^T\mathbf{X}^T\mathbf{y}}{\partial \hat{w}}+\cfrac{\partial \hat{w}^T\mathbf{X}^T\mathbf{X}\hat{w}}{\partial \hat{w}} $$
+[推导]：将$ E_{\hat{\boldsymbol w}}=(\boldsymbol{y}-\mathbf{X}\hat{\boldsymbol w})^T(\boldsymbol{y}-\mathbf{X}\hat{\boldsymbol w}) $展开可得：
+$$ E_{\hat{\boldsymbol w}}= \boldsymbol{y}^T\boldsymbol{y}-\boldsymbol{y}^T\mathbf{X}\hat{\boldsymbol w}-\hat{\boldsymbol w}^T\mathbf{X}^T\boldsymbol{y}+\hat{\boldsymbol w}^T\mathbf{X}^T\mathbf{X}\hat{\boldsymbol w} $$
+对$ \hat{\boldsymbol w} $求导可得：
+$$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}= \cfrac{\partial \boldsymbol{y}^T\boldsymbol{y}}{\partial \hat{\boldsymbol w}}-\cfrac{\partial \boldsymbol{y}^T\mathbf{X}\hat{\boldsymbol w}}{\partial \hat{\boldsymbol w}}-\cfrac{\partial \hat{\boldsymbol w}^T\mathbf{X}^T\boldsymbol{y}}{\partial \hat{\boldsymbol w}}+\cfrac{\partial \hat{\boldsymbol w}^T\mathbf{X}^T\mathbf{X}\hat{\boldsymbol w}}{\partial \hat{\boldsymbol w}} $$
 由向量的求导公式可得：
-$$ \cfrac{\partial E_{\hat{w}}}{\partial \hat{w}}= 0-\mathbf{X}^T\mathbf{y}-\mathbf{X}^T\mathbf{y}+(\mathbf{X}^T\mathbf{X}+\mathbf{X}^T\mathbf{X})\hat{w} $$
-$$ \cfrac{\partial E_{\hat{w}}}{\partial \hat{w}}=2\mathbf{X}^T(\mathbf{X}\hat{w}-\mathbf{y}) $$
+$$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}= 0-\mathbf{X}^T\boldsymbol{y}-\mathbf{X}^T\boldsymbol{y}+(\mathbf{X}^T\mathbf{X}+\mathbf{X}^T\mathbf{X})\hat{\boldsymbol w} $$
+$$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}=2\mathbf{X}^T(\mathbf{X}\hat{\boldsymbol w}-\boldsymbol{y}) $$
 
 ## 3.27
 
-$$ l(β)=\sum_{i=1}^{m}(-y_iβ^T\hat{\boldsymbol x_i}+\ln(1+e^{β^T\hat{\boldsymbol x_i}})) $$
+$$ \ell(\boldsymbol{\beta})=\sum_{i=1}^{m}(-y_i\boldsymbol{\beta}^T\hat{\boldsymbol x}_i+\ln(1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i})) $$
 
 [推导]：将式（3.26）代入式（3.25）可得：
-$$ l(β,b)=\sum_{i=1}^{m}\ln(y_ip_1(\boldsymbol{\hat{x_i}};β)+(1-y_i)p_0(\boldsymbol{\hat{x_i}};β)) $$
-其中$ p_1(\boldsymbol{\hat{x_i}};β)=\cfrac{e^{β^T\hat{\boldsymbol x_i}}}{1+e^{β^T\hat{\boldsymbol x_i}}},p_0(\boldsymbol{\hat{x_i}};β)=\cfrac{1}{1+e^{β^T\hat{\boldsymbol x_i}}} $，代入上式可得：
-$$ l(β,b)=\sum_{i=1}^{m}\ln(\cfrac{y_ie^{β^T\hat{\boldsymbol x_i}}+1-y_i}{1+e^{β^T\hat{\boldsymbol x_i}}}) $$
-$$ l(β,b)=\sum_{i=1}^{m}(\ln(y_ie^{β^T\hat{\boldsymbol x_i}}+1-y_i)-\ln(1+e^{β^T\hat{\boldsymbol x_i}})) $$
-又$ y_i $=0或1，则：
-$$ l(β,b) =
+$$ \ell(\boldsymbol{\beta})=\sum_{i=1}^{m}\ln\left(y_ip_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})+(1-y_i)p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right) $$
+其中$ p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})=\cfrac{e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}}{1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}},p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})=\cfrac{1}{1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}} $，代入上式可得：
+$$\begin{aligned} 
+\ell(\boldsymbol{\beta})&=\sum_{i=1}^{m}\ln\left(\cfrac{y_ie^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}+1-y_i}{1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}}\right) \\
+&=\sum_{i=1}^{m}\left(\ln(y_ie^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}+1-y_i)-\ln(1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i})\right) 
+\end{aligned}$$
+由于$ y_i $=0或1，则：
+$$ \ell(\boldsymbol{\beta}) =
 \begin{cases} 
-\sum_{i=1}^{m}(-\ln(1+e^{β^T\hat{\boldsymbol x_i}})),  & y_i=0 \\
-\sum_{i=1}^{m}(β^T\hat{\boldsymbol x_i}-\ln(1+e^{β^T\hat{\boldsymbol x_i}})), & y_i=1
+\sum_{i=1}^{m}(-\ln(1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i})),  & y_i=0 \\
+\sum_{i=1}^{m}(\boldsymbol{\beta}^T\hat{\boldsymbol x}_i-\ln(1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i})), & y_i=1
 \end{cases} $$
 两式综合可得：
-$$ l(β)=\sum_{i=1}^{m}(y_iβ^T\hat{\boldsymbol x_i}-\ln(1+e^{β^T\hat{\boldsymbol x_i}})) $$
+$$ \ell(\boldsymbol{\beta})=\sum_{i=1}^{m}\left(y_i\boldsymbol{\beta}^T\hat{\boldsymbol x}_i-\ln(1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i})\right) $$
 由于此式仍为极大似然估计的似然函数，所以最大化似然函数等价于最小化似然函数的相反数，也即在似然函数前添加负号即可得式（3.27）。
 
-【注】：若式（3.26）中的似然项改写方式为$ p(y_i|\boldsymbol x_i;\boldsymbol w,b)=[p_1(\boldsymbol{\hat{x_i}};β)]^{y_i}[p_0(\boldsymbol{\hat{x_i}};β)]^{1-y_i} $，再将其代入式（3.25）可得：
-$$ l(β)=\sum_{i=1}^{m}(y_i\ln(p_1(\boldsymbol{\hat{x_i}};β))+(1-y_i)\ln(p_0(\boldsymbol{\hat{x_i}};β))) $$
-此式显然更易推导出式（3.27）
+【注】：若式（3.26）中的似然项改写方式为$ p(y_i|\boldsymbol x_i;\boldsymbol w,b)=[p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})]^{y_i}[p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})]^{1-y_i} $，再将其代入式（3.25）可得：
+$$\begin{aligned}
+ \ell(\boldsymbol{\beta})&=\sum_{i=1}^{m}\ln\left([p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})]^{y_i}[p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})]^{1-y_i}\right) \\
+&=\sum_{i=1}^{m}\left[y_i\ln\left(p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right)+(1-y_i)\ln\left(p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right)\right] \\
+&=\sum_{i=1}^{m} \left \{ y_i\left[\ln\left(p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right)-\ln\left(p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right)\right]+\ln\left(p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right)\right\} \\
+&=\sum_{i=1}^{m}\left[y_i\ln\left(\cfrac{p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})}{p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})}\right)+\ln\left(p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right)\right] \\
+&=\sum_{i=1}^{m}\left[y_i\ln\left(e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}\right)+\ln\left(\cfrac{1}{1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}}\right)\right] \\
+&=\sum_{i=1}^{m}\left(y_i\boldsymbol{\beta}^T\hat{\boldsymbol x}_i-\ln(1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i})\right) 
+\end{aligned}$$
+显然，此种方式更易推导出式（3.27）
 
 ## 3.30
 
-$$\frac{\partial l(β)}{\partial β}=-\sum_{i=1}^{m}\hat{\boldsymbol x_i}(y_i-p_1(\hat{\boldsymbol x_i};β))$$
+$$\frac{\partial l(\beta)}{\partial \beta}=-\sum_{i=1}^{m}\hat{\boldsymbol x}_i(y_i-p_1(\hat{\boldsymbol x}_i;\beta))$$
 
-[解析]：此式可以进行向量化，令$p_1(\hat{\boldsymbol x_i};β)=\hat{y_i}$，代入上式得：
+[解析]：此式可以进行向量化，令$p_1(\hat{\boldsymbol x}_i;\beta)=\hat{y}_i$，代入上式得：
 $$\begin{aligned}
-	\frac{\partial l(β)}{\partial β} &= -\sum_{i=1}^{m}\hat{\boldsymbol x_i}(y_i-\hat{y_i}) \\
-	& =\sum_{i=1}^{m}\hat{\boldsymbol x_i}(\hat{y_i}-y_i) \\
+	\frac{\partial l(\beta)}{\partial \beta} &= -\sum_{i=1}^{m}\hat{\boldsymbol x}_i(y_i-\hat{y}_i) \\
+	& =\sum_{i=1}^{m}\hat{\boldsymbol x}_i(\hat{y}_i-y_i) \\
 	& ={\boldsymbol X^T}(\hat{\boldsymbol y}-\boldsymbol{y}) \\
-	& ={\boldsymbol X^T}(p_1(\boldsymbol X;β)-\boldsymbol{y}) \\
+	& ={\boldsymbol X^T}(p_1(\boldsymbol X;\beta)-\boldsymbol{y}) \\
 \end{aligned}$$
 
 ## 3.32
@@ -128,3 +137,19 @@ $$\begin{aligned}
 &= \sum_{i=1}^Nm_i\left(-\boldsymbol\mu_i\boldsymbol\mu^T-\boldsymbol\mu\boldsymbol\mu_i^T+\boldsymbol\mu\boldsymbol\mu^T+\boldsymbol\mu_i\boldsymbol\mu_i^T\right) \\
 &= \sum_{i=1}^N m_i(\boldsymbol\mu_i-\boldsymbol\mu)(\boldsymbol\mu_i-\boldsymbol\mu)^T
 \end{aligned}$$
+
+## 3.44
+$$\max\limits_{\mathbf{W}}\cfrac{
+tr(\mathbf{W}^T\boldsymbol S_b \mathbf{W})}{tr(\mathbf{W}^T\boldsymbol S_w \mathbf{W})}$$
+[解析]：此式是式3.35的推广形式，证明如下：
+设$\mathbf{W}=[\boldsymbol w_1,\boldsymbol w_2,...,\boldsymbol w_i,...,\boldsymbol w_{N-1}]$，其中$\boldsymbol w_i$为$d$行1列的列向量，则：
+$$\left\{
+\begin{aligned}
+tr(\mathbf{W}^T\boldsymbol S_b \mathbf{W})&=\sum_{i=1}^{N-1}\boldsymbol w_i^T\boldsymbol S_b \boldsymbol w_i \\
+tr(\mathbf{W}^T\boldsymbol S_w \mathbf{W})&=\sum_{i=1}^{N-1}\boldsymbol w_i^T\boldsymbol S_w \boldsymbol w_i
+\end{aligned}
+\right.$$
+所以式3.44可变形为：
+$$\max\limits_{\mathbf{W}}\cfrac{
+\sum_{i=1}^{N-1}\boldsymbol w_i^T\boldsymbol S_b \boldsymbol w_i}{\sum_{i=1}^{N-1}\boldsymbol w_i^T\boldsymbol S_w \boldsymbol w_i}$$
+对比式3.35易知上式即为式3.35的推广形式。

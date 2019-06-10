@@ -25,7 +25,7 @@ $$
 \end{aligned} 
 \tag{3}
 $$
-假设采样得到的序列为$x_1,x_2,..,x_{t-1},x_t​$，则可以使用$MH​$算法来使得$x_{t-1}​$(假设为状态$s_i​$)转移到$x_t​$(假设为状态$s_j​$)的概率满足式$(2)​$.
+假设采样得到的序列为$x_1,x_2,..,x_{t-1},x_t$，则可以使用$MH$算法来使得$x_{t-1}$(假设为状态$s_i$)转移到$x_t$(假设为状态$s_j$)的概率满足式$(2)$.
 
 ## 14.28
 
@@ -127,3 +127,34 @@ $$
 \end{aligned}
 $$
 这个就是$14.36$右边的积分部分。
+
+## 14.40
+
+$$
+\begin{aligned} 
+q_j^*(\mathbf{z}_j) = \frac{ \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right ) }{\int \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right ) \mathrm{d}\mathbf{z}_j}
+\end{aligned}
+$$
+
+[推导]：由$14.39$去对数并积分
+$$
+\begin{aligned} 
+ \int q_j^*(\mathbf{z}_j)\mathrm{d}\mathbf{z}_j &=\int \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right )\cdot\exp(const) \, \mathrm{d}\mathbf{z}_j \\
+ &=\exp(const) \int \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right ) \, \mathrm{d}\mathbf{z}_j \\
+ &= 1
+ \end{aligned}
+ \tag{7}
+$$
+所以
+$$
+\exp(const)  = \dfrac{1}{\int \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right ) \, \mathrm{d}\mathbf{z}_j}  \\
+\tag{8}
+$$
+
+$$
+\begin{aligned} 
+  q_j^*(\mathbf{z}_j) &= \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right )\cdot\exp(const) \, \mathrm{d}\mathbf{z}_j \\
+ &= \frac{ \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right ) }{\int \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right ) \mathrm{d}\mathbf{z}_j}
+ \end{aligned}
+ \tag{9}
+$$
