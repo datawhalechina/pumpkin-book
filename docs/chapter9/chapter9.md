@@ -1,3 +1,69 @@
+## 9.5 
+
+$$
+JC=\frac{a}{a+b+c}
+$$
+
+[解析]：给定两个集合$A$和$B$，则Jaccard系数定义为如下公式
+
+
+$$
+JC=\frac{|A\bigcap B|}{|A\bigcup B|}=\frac{|A\bigcap B|}{|A|+|B|-|A\bigcap B|}
+$$
+Jaccard系数可以用来描述两个集合的相似程度。
+
+推论：假设全集$U$共有$n$个元素，且$A\subseteq U$，$B\subseteq U$，则每一个元素的位置共有四种情况：
+
+1、元素同时在集合$A$和$B$中，这样的元素个数记为$M_{11}$；
+
+2、元素出现在集合$A$中，但没有出现在集合$B$中，这样的元素个数记为$M_{10}$；
+
+3、元素没有出现在集合$A$中，但出现在集合$B$中，这样的元素个数记为$M_{01}$；
+
+4、元素既没有出现在集合$A$中，也没有出现在集合$B$中，这样的元素个数记为$M_{00}$。
+
+根据Jaccard系数的定义，此时的Jaccard系数为如下公式
+$$
+JC=\frac{M_{11}}{M_{11}+M_{10}+M_{01}}
+$$
+由于聚类属于无监督学习，事先并不知道聚类后样本所属类别的类别标记所代表的意义，即便参考模型的类别标记意义是已知的，我们也无法知道聚类后的类别标记与参考模型的类别标记是如何对应的，况且聚类后的类别总数与参考模型的类别总数还可能不一样，因此只用单个样本无法衡量聚类性能的好坏。
+
+由于外部指标的基本思想就是以参考模型的类别划分为参照，因此如果某一个样本对中的两个样本在聚类结果中同属于一个类，在参考模型中也同属于一个类，那么对于这两个样本来说这是一个好的聚类结果。
+
+总的来说所有样本对中的两个样本共存在四种情况：
+1、样本对中的两个样本在聚类结果中属于同一个类，在参考模型中也属于同一个类；
+2、样本对中的两个样本在聚类结果中属于同一个类，在参考模型中不属于同一个类；
+3、样本对中的两个样本在聚类结果中不属于同一个类，在参考模型中属于同一个类；
+4、样本对中的两个样本在聚类结果中不属于同一个类，在参考模型中也不属于同一个类。
+
+综上所述，即所有样本对存在着书中公式(9.1)-(9.4)的四种情况，现在假设集合$A$中存放着两个样本都同属于聚类结果的同一个类的样本对，即$A=SS\bigcup SD$，集合$B$中存放着两个样本都同属于参考模型的同一个类的样本对，即$B=SS\bigcup DS$，那么根据Jaccard系数的定义有：
+$$
+JC=\frac{|A\bigcap B|}{|A\bigcup B|}=\frac{|SS|}{|SS\bigcup SD\bigcup DS|}=\frac{a}{a+b+c}
+$$
+也可直接将书中公式(9.1)-(9.4)的四种情况类比推论，即$M_{11}=a$，$M_{10}=b$，$M_{01}=c$，所以
+$$
+JC=\frac{M_{11}}{M_{11}+M_{10}+M_{01}}=\frac{a}{a+b+c}
+$$
+
+## 9.6
+$$
+FMI=\sqrt{\frac{a}{a+b}\cdot \frac{a}{a+c}}
+$$
+
+[解析]：其中$\frac{a}{a+b}$和$\frac{a}{a+c}$为Wallace提出的两个非对称指标，$a$代表两个样本在聚类结果和参考模型中均属于同一类的样本对的个数，$a+b$代表两个样本在聚类结果中属于同一类的样本对的个数，$a+c$代表两个样本在参考模型中属于同一类的样本对的个数，这两个非对称指标均可理解为样本对中的两个样本在聚类结果和参考模型中均属于同一类的概率。由于指标的非对称性，这两个概率值往往不一样，因此Fowlkes和Mallows提出利用几何平均数将这两个非对称指标转化为一个对称指标，即Fowlkes and Mallows Index, FMI。
+
+## 9.7
+$$
+RI=\frac{2(a+d)}{m(m-1)}
+$$
+[解析]：Rand Index定义如下：
+$$
+RI=\frac{a+d}{a+b+c+d}=\frac{a+d}{m(m-1)/2}=\frac{2(a+d)}{m(m-1)}
+$$
+即可以理解为两个样本都属于聚类结果和参考模型中的同一类的样本对的个数与两个样本都分别不属于聚类结果和参考模型中的同一类的样本对的个数的总和在所有样本对中出现的频率，可以简单理解为聚类结果与参考模型的一致性。
+
+参看 https://en.wikipedia.org/wiki/Rand_index
+
 ## 9.33
 
 $$
@@ -136,8 +202,8 @@ $$
 $$
 
 
-
 ## 附录
+
 参考公式
 $$
 \frac{\partial\boldsymbol x^TB\boldsymbol x}{\partial\boldsymbol x}=\left(B+B^T\right)\boldsymbol x 
@@ -149,7 +215,9 @@ $$
 \frac{\partial}{\partial x}\left(A^{-1}\right)=-A^{-1}\frac{\partial A}{\partial x}A^{-1}
 $$
 参考资料<br>
-Petersen, K. B. & Pedersen, M. S. *The Matrix Cookbook*.<br>
-Bishop, C. M. (2006). *Pattern Recognition and Machine Learning*. Springer.
+[1] Meilă, Marina. "Comparing clusterings—an information based distance." Journal of multivariate analysis 98.5 (2007): 873-895.
+[2] Halkidi, Maria, Yannis Batistakis, and Michalis Vazirgiannis. "On clustering validation techniques." Journal of intelligent information systems 17.2-3 (2001): 107-145.
+[3] Petersen, K. B. & Pedersen, M. S. *The Matrix Cookbook*.<br>
+[4] Bishop, C. M. (2006). *Pattern Recognition and Machine Learning*. Springer.
 
 
