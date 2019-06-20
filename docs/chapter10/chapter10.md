@@ -61,7 +61,7 @@ $$\begin{aligned}
 运用拉格朗日乘子法可得，
 $$\begin{aligned}
 J(\boldsymbol W)&=-tr(\boldsymbol W^T\boldsymbol X\boldsymbol X^T\boldsymbol W+\boldsymbol\lambda'(\boldsymbol W^T\boldsymbol W-\boldsymbol I))\\
-\cfrac{\partial J(\boldsymbol W)}{\partial \boldsymbol W} &=\boldsymbol X\boldsymbol X^T\boldsymbol W+\boldsymbol\lambda'\boldsymbol W
+\cfrac{\partial J(\boldsymbol W)}{\partial \boldsymbol W} &=-(2\boldsymbol X\boldsymbol X^T\boldsymbol W+2\boldsymbol\lambda'\boldsymbol W)
 \end{aligned}$$
 令$\cfrac{\partial J(\boldsymbol W)}{\partial \boldsymbol W}=\boldsymbol 0$，故
 $$\begin{aligned}
