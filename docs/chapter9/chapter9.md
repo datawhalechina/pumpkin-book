@@ -30,10 +30,10 @@ $$
 
 由于外部指标的基本思想就是以参考模型的类别划分为参照，因此如果某一个样本对中的两个样本在聚类结果中同属于一个类，在参考模型中也同属于一个类，那么对于这两个样本来说这是一个好的聚类结果。
 
-总的来说所有样本对中的两个样本共存在四种情况：
-1、样本对中的两个样本在聚类结果中属于同一个类，在参考模型中也属于同一个类；
-2、样本对中的两个样本在聚类结果中属于同一个类，在参考模型中不属于同一个类；
-3、样本对中的两个样本在聚类结果中不属于同一个类，在参考模型中属于同一个类；
+总的来说所有样本对中的两个样本共存在四种情况：<br>
+1、样本对中的两个样本在聚类结果中属于同一个类，在参考模型中也属于同一个类；<br>
+2、样本对中的两个样本在聚类结果中属于同一个类，在参考模型中不属于同一个类；<br>
+3、样本对中的两个样本在聚类结果中不属于同一个类，在参考模型中属于同一个类；<br>
 4、样本对中的两个样本在聚类结果中不属于同一个类，在参考模型中也不属于同一个类。
 
 综上所述，即所有样本对存在着书中公式(9.1)-(9.4)的四种情况，现在假设集合$A$中存放着两个样本都同属于聚类结果的同一个类的样本对，即$A=SS\bigcup SD$，集合$B$中存放着两个样本都同属于参考模型的同一个类的样本对，即$B=SS\bigcup DS$，那么根据Jaccard系数的定义有：
@@ -215,8 +215,8 @@ $$
 \frac{\partial}{\partial x}\left(A^{-1}\right)=-A^{-1}\frac{\partial A}{\partial x}A^{-1}
 $$
 参考资料<br>
-[1] Meilă, Marina. "Comparing clusterings—an information based distance." Journal of multivariate analysis 98.5 (2007): 873-895.
-[2] Halkidi, Maria, Yannis Batistakis, and Michalis Vazirgiannis. "On clustering validation techniques." Journal of intelligent information systems 17.2-3 (2001): 107-145.
+[1] Meilă, Marina. "Comparing clusterings—an information based distance." Journal of multivariate analysis 98.5 (2007): 873-895.<br>
+[2] Halkidi, Maria, Yannis Batistakis, and Michalis Vazirgiannis. "On clustering validation techniques." Journal of intelligent information systems 17.2-3 (2001): 107-145.<br>
 [3] Petersen, K. B. & Pedersen, M. S. *The Matrix Cookbook*.<br>
 [4] Bishop, C. M. (2006). *Pattern Recognition and Machine Learning*. Springer.
 
