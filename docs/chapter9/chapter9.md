@@ -92,8 +92,11 @@ $$\begin{aligned}
 &=\sum_{j=1}^m\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{i},\Sigma_{i}})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{l},\Sigma_{l}})}(-\frac{1}{2})\left(-\boldsymbol\Sigma_{i}^{-1}\left(\boldsymbol{x_{j}-\mu_{i}}\right)-\boldsymbol\Sigma_{i}^{-1}\left(\boldsymbol{x_{j}-\mu_{i}}\right)\right) \\
 &=\sum_{j=1}^m\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{i},\Sigma_{i}})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol{\mu_{l},\Sigma_{l}})}(-\frac{1}{2})\left(-2\cdot\boldsymbol\Sigma_{i}^{-1}\left(\boldsymbol{x_{j}-\mu_{i}}\right)\right) \\
 &=\sum_{j=1}^m \frac{\alpha_{i}\cdot p\left(\boldsymbol{x_{j}}|\boldsymbol\mu _{i},\boldsymbol\Sigma_{i}\right)}{\sum_{l=1}^k \alpha_{l}\cdot p(\boldsymbol{x_{j}}|\boldsymbol\mu_{l},\boldsymbol\Sigma_{l})}\boldsymbol\Sigma_{i}^{-1}(\boldsymbol{x_{j}-\mu_{i}}) \\
-&=\sum_{j=1}^m \frac{\alpha_{i}\cdot p\left(\boldsymbol{x_{j}}|\boldsymbol\mu _{i},\boldsymbol\Sigma_{i}\right)}{\sum_{l=1}^k \alpha_{l}\cdot p(\boldsymbol{x_{j}}|\boldsymbol\mu_{l},\boldsymbol\Sigma_{l})}(\boldsymbol{x_{j}-\mu_{i}})=0
 \end{aligned}$$
+令上式等于0可得：
+$$\frac {\partial LL(D)}{\partial \boldsymbol\mu_{i}}=\sum_{j=1}^m \frac{\alpha_{i}\cdot p\left(\boldsymbol{x_{j}}|\boldsymbol\mu _{i},\boldsymbol\Sigma_{i}\right)}{\sum_{l=1}^k \alpha_{l}\cdot p(\boldsymbol{x_{j}}|\boldsymbol\mu_{l},\boldsymbol\Sigma_{l})}\boldsymbol\Sigma_{i}^{-1}(\boldsymbol{x_{j}-\mu_{i}})=0 $$
+左右两边同时乘上$\boldsymbol\Sigma_{i}$可得：
+$$\sum_{j=1}^m \frac{\alpha_{i}\cdot p\left(\boldsymbol{x_{j}}|\boldsymbol\mu _{i},\boldsymbol\Sigma_{i}\right)}{\sum_{l=1}^k \alpha_{l}\cdot p(\boldsymbol{x_{j}}|\boldsymbol\mu_{l},\boldsymbol\Sigma_{l})}(\boldsymbol{x_{j}-\mu_{i}})=0 $$
 
 ## 9.35
 
