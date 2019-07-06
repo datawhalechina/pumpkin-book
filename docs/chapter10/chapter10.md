@@ -83,7 +83,9 @@ $$\mathbf{W}^T\mathbf X\mathbf X^T\mathbf W=\mathbf{W}^T\mathbf{W}\Lambda$$
 $$\mathbf{W}^T\mathbf X\mathbf X^T\mathbf W=\Lambda$$
 又因为$\mathbf{W}$是正交矩阵，所以$\mathbf{W}^T=\mathbf{W}^{-1}$，于是上式可化为
 $$\mathbf{W}^{-1}\mathbf X\mathbf X^T\mathbf W=\Lambda$$
-仔细观察目前得到的这个式子可以发现，此式为线性代数里经典的相似对角化问题，其中，$\mathbf W=\left(\boldsymbol{w}_{1}, \boldsymbol{w}_{2},...,\boldsymbol{w}_{d} \right)\in \mathbb{R}^{d \times d}$是由矩阵$\mathbf X\mathbf X^T$的$d$个相互正交的特征向量$\boldsymbol{w}_{i}$构成的正交矩阵，$\Lambda=\text{diag}(\lambda_1,\lambda_2,...,\lambda_d)\in \mathbb{R}^{d \times d}$是由矩阵$\mathbf X\mathbf X^T$的$d$个特征值$\lambda_i$构成的对角矩阵，按照特征值和特征向量的定义可知
+仔细观察目前得到的这个式子可以发现，此式为线性代数里经典的矩阵相似问题，也就是给定矩阵$\mathbf X\mathbf X^T$求其相似矩阵$\Lambda$以及相似变换矩阵$\mathbf{W}$，并且$\Lambda$和$\mathbf{W}$的解不唯一。尽管$\Lambda$和$\mathbf{W}$的解不唯一，但是根据相似矩阵的性质可知$\Lambda$的迹与$\mathbf X\mathbf X^T$的迹恒相等，则优化目标的函数值也恒保持不变，也即
+$$-\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)=-\text { tr }(\mathbf W^{-1}\mathbf X\mathbf X^T\mathbf W)=-\text { tr }(\Lambda)=-\text { tr }(\mathbf X\mathbf X^T)$$
+所以我们只需要求出任意一个满足$\mathbf{W}^{-1}\mathbf X\mathbf X^T\mathbf W=\Lambda$的$\Lambda$和$\mathbf{W}$即可。由于$\mathbf X\mathbf X^T$是实对称矩阵，实对称矩阵一定正交相似于由其特征值构成的对角矩阵，且相似变换矩阵是由其特征向量构成，所以我们可以令$\mathbf W=\left(\boldsymbol{w}_{1}, \boldsymbol{w}_{2},...,\boldsymbol{w}_{d} \right)\in \mathbb{R}^{d \times d}$为由$\mathbf X\mathbf X^T$的$d$个相互正交的特征向量$\boldsymbol{w}_{i}$构成的正交矩阵，$\Lambda=\text{diag}(\lambda_1,\lambda_2,...,\lambda_d)\in \mathbb{R}^{d \times d}$为由$\mathbf X\mathbf X^T$的$d$个特征值$\lambda_i$构成的对角矩阵，因此求出了$\mathbf X\mathbf X^T$的特征值和特征向量也就求出了$\Lambda$和$\mathbf{W}$。按照特征值和特征向量的定义可知
 $$\mathbf X\mathbf X^T\boldsymbol w_i=\lambda _i\boldsymbol w_i$$
 此即为式（10.17）。
 
