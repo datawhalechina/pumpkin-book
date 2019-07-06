@@ -51,24 +51,41 @@ $$\begin{aligned}
 
 ## 10.17
 $$
-\boldsymbol X\boldsymbol X^T\boldsymbol w_i=\lambda _i\boldsymbol w_i
+\mathbf X\mathbf X^T\boldsymbol w_i=\lambda _i\boldsymbol w_i
 $$
-[推导]：已知
+[推导]：由式（10.15）可知，主成分分析的优化目标为
 $$\begin{aligned}
-&\min\limits_{\boldsymbol W}-tr(\boldsymbol W^T\boldsymbol X\boldsymbol X^T\boldsymbol W)\\
-&s.t. \boldsymbol W^T\boldsymbol W=\boldsymbol I. 
+&\min\limits_{\mathbf W} \quad-\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)\\
+&s.t. \quad\mathbf W^T\mathbf W=\mathbf I
 \end{aligned}$$
-运用拉格朗日乘子法可得，
+其中，$\mathbf{X}=\left(\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \ldots, \boldsymbol{x}_{m}\right) \in \mathbb{R}^{d \times m},\mathbf{W}=\left(\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{d}\right) \in \mathbb{R}^{d \times d}$，且$\mathbf{W}$为正交矩阵，$\mathbf{I} \in \mathbb{R}^{d \times d}$为单位矩阵。对于带矩阵约束的优化问题，根据[How to set up Lagrangian optimization with matrix constrains](https://math.stackexchange.com/questions/1104376/how-to-set-up-lagrangian-optimization-with-matrix-constrains)中讲述的方法可得上述优化目标的拉格朗日函数为
+$$L(\mathbf W)=-\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)+\langle \Theta,\mathbf W^T\mathbf W-\mathbf I\rangle$$
+其中，$\Theta  \in \mathbb{R}^{d \times d}$为拉格朗日乘子矩阵，其维度恒等于约束条件的维度，且其中的每个元素均为未知的拉格朗日乘子，$\langle \mathbf A, \mathbf B \rangle = \text { tr }(\mathbf A^T \mathbf B) = \sum\limits_{i,j} \mathbf A_{ij} \mathbf B_{ij}$为[矩阵的内积](https://en.wikipedia.org/wiki/Frobenius_inner_product)
+，根据矩阵内积的运算性质我们可以将拉格朗日函数恒等变形为
+$$ L(\mathbf W)=-\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)+\text { tr }\left(\Theta^T(\mathbf W^T\mathbf W-\mathbf I)\right) $$
+对拉格朗日函数关于$\mathbf{W}$求导可得
 $$\begin{aligned}
-J(\boldsymbol W)&=-tr(\boldsymbol W^T\boldsymbol X\boldsymbol X^T\boldsymbol W+\boldsymbol\lambda'(\boldsymbol W^T\boldsymbol W-\boldsymbol I))\\
-\cfrac{\partial J(\boldsymbol W)}{\partial \boldsymbol W} &=-(2\boldsymbol X\boldsymbol X^T\boldsymbol W+2\boldsymbol\lambda'\boldsymbol W)
+\cfrac{\partial L(\mathbf W)}{\partial \mathbf W}&=\cfrac{\partial}{\partial \mathbf W}\left[-\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)+\text { tr }\left(\Theta^T(\mathbf W^T\mathbf W-\mathbf I)\right)\right] \\
+&=-\cfrac{\partial}{\partial \mathbf W}\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)+\cfrac{\partial}{\partial \mathbf W}\text { tr }\left(\Theta^T(\mathbf W^T\mathbf W-\mathbf I)\right) \\
 \end{aligned}$$
-令$\cfrac{\partial J(\boldsymbol W)}{\partial \boldsymbol W}=\boldsymbol 0$，故
+由矩阵微分公式$\cfrac{\partial}{\partial \mathbf{X}} \text { tr }(\mathbf{X}^{T} \mathbf{B} \mathbf{X})=\mathbf{B X}+\mathbf{B}^{T} \mathbf{X},\cfrac{\partial}{\partial \mathbf{X}} \text { tr }\left(\mathbf{B X}^{T} \mathbf{X}\right)=\mathbf{X B}^{T}+\mathbf{X B}$可得
 $$\begin{aligned}
-\boldsymbol X\boldsymbol X^T\boldsymbol W&=-\boldsymbol\lambda'\boldsymbol W\\
-\boldsymbol X\boldsymbol X^T\boldsymbol W&=\boldsymbol\lambda\boldsymbol W\\
+\cfrac{\partial L(\mathbf W)}{\partial \mathbf W}&=-2\mathbf X\mathbf X^T\mathbf W+\mathbf{W}\Theta+\mathbf{W}\Theta^T \\
+&=-2\mathbf X\mathbf X^T\mathbf W+\mathbf{W}(\Theta+\Theta^T)
 \end{aligned}$$
-其中，$\boldsymbol W=\{\boldsymbol w_1,\boldsymbol w_2,\cdot\cdot\cdot,\boldsymbol w_d\}$和$\boldsymbol \lambda=\boldsymbol{diag}(\lambda_1,\lambda_2,\cdot\cdot\cdot,\lambda_d)$。
+令$\cfrac{\partial L(\mathbf W)}{\partial \mathbf W}=\mathbf 0$可得
+$$-2\mathbf X\mathbf X^T\mathbf W+\mathbf{W}(\Theta+\Theta^T)=\mathbf 0$$
+$$\mathbf X\mathbf X^T\mathbf W=\cfrac{1}{2}\mathbf{W}(\Theta+\Theta^T)$$
+令$\Lambda=\cfrac{1}{2}(\Theta+\Theta^T)$，则上式可化为
+$$\mathbf X\mathbf X^T\mathbf W=\mathbf{W}\Lambda$$
+又因为$\mathbf{W}$满足约束$\mathbf W^T\mathbf W=\mathbf I$，则考虑对上式两边同时左乘上一个$\mathbf{W}^T$可得
+$$\mathbf{W}^T\mathbf X\mathbf X^T\mathbf W=\mathbf{W}^T\mathbf{W}\Lambda$$
+$$\mathbf{W}^T\mathbf X\mathbf X^T\mathbf W=\Lambda$$
+又因为$\mathbf{W}$是正交矩阵，所以$\mathbf{W}^T=\mathbf{W}^{-1}$，于是上式可化为
+$$\mathbf{W}^{-1}\mathbf X\mathbf X^T\mathbf W=\Lambda$$
+仔细观察目前得到的这个式子可以发现，此式为线性代数里经典的相似对角化问题，其中，$\mathbf W=\left(\boldsymbol{w}_{1}, \boldsymbol{w}_{2},...,\boldsymbol{w}_{d} \right)\in \mathbb{R}^{d \times d}$是由矩阵$\mathbf X\mathbf X^T$的$d$个相互正交的特征向量$\boldsymbol{w}_{i}$构成的正交矩阵，$\Lambda=\text{diag}(\lambda_1,\lambda_2,...,\lambda_d)\in \mathbb{R}^{d \times d}$是由矩阵$\mathbf X\mathbf X^T$的$d$个特征值$\lambda_i$构成的对角矩阵，按照特征值和特征向量的定义可知
+$$\mathbf X\mathbf X^T\boldsymbol w_i=\lambda _i\boldsymbol w_i$$
+此即为式（10.17）。
 
 ## 10.28
 $$w_{ij}=\cfrac{\sum\limits_{k\in Q_i}C_{jk}^{-1}}{\sum\limits_{l,s\in Q_i}C_{ls}^{-1}}$$
