@@ -4,14 +4,14 @@ $$\Delta w_i = \eta(y-\hat{y})x_i$$
 $$y=f(\sum_{i} w_i x_i - \theta)$$
 将$\theta$看成哑结点后，模型可化简为：
 $$y=f(\sum_{i} w_i x_i)=f(\boldsymbol w^T \boldsymbol x)$$
-其中$f$为阶跃函数。<br>根据《统计学习方法》§2可知，假设误分类点集合为$M$，$\boldsymbol x_i \in M$为误分类点，$\boldsymbol x_i$的真实标签为$y_i$,模型的预测值为$\hat{y_i}$,对于误分类点$\boldsymbol x_i$来说，此时$\boldsymbol w^T \boldsymbol x_i \gt 0,\hat{y_i}=1,y_i=0$或$\boldsymbol w^T \boldsymbol x_i \lt 0,\hat{y_i}=0,y_i=1$,综合考虑两种情形可得：
-$$(\hat{y_i}-y_i)\boldsymbol w \boldsymbol x_i>0$$
+其中$f$为阶跃函数。<br>根据《统计学习方法》§2可知，假设误分类点集合为$M$，$\boldsymbol x_i \in M$为误分类点，$\boldsymbol x_i$的真实标签为$y_i$,模型的预测值为$\hat{y}_i$,对于误分类点$\boldsymbol x_i$来说，此时$\boldsymbol w^T \boldsymbol x_i \gt 0,\hat{y}_i=1,y_i=0$或$\boldsymbol w^T \boldsymbol x_i \lt 0,\hat{y}_i=0,y_i=1$,综合考虑两种情形可得：
+$$(\hat{y}_i-y_i)\boldsymbol w^T \boldsymbol x_i>0$$
 所以可以推得损失函数为：
-$$L(\boldsymbol w)=\sum_{\boldsymbol x_i \in M} (\hat{y_i}-y_i)\boldsymbol w \boldsymbol x_i$$
+$$L(\boldsymbol w)=\sum_{\boldsymbol x_i \in M} (\hat{y}_i-y_i)\boldsymbol w^T \boldsymbol x_i$$
 损失函数的梯度为：
-$$\nabla_w L(\boldsymbol w)=\sum_{\boldsymbol x_i \in M} (\hat{y_i}-y_i)\boldsymbol x_i$$
+$$\nabla_w L(\boldsymbol w)=\sum_{\boldsymbol x_i \in M} (\hat{y}_i-y_i)\boldsymbol x_i$$
 随机选取一个误分类点$(\boldsymbol x_i,y_i)$，对$\boldsymbol w$进行更新：
-$$\boldsymbol w \leftarrow \boldsymbol w-\eta(\hat{y_i}-y_i)\boldsymbol x_i=\boldsymbol w+\eta(y_i-\hat{y_i})\boldsymbol x_i$$
+$$\boldsymbol w \leftarrow \boldsymbol w-\eta(\hat{y}_i-y_i)\boldsymbol x_i=\boldsymbol w+\eta(y_i-\hat{y}_i)\boldsymbol x_i$$
 显然式5.2为$\boldsymbol w$的第$i$个分量$w_i$的变化情况
 ## 5.12
 $$\Delta \theta_j = -\eta g_j$$
