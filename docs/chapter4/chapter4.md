@@ -28,7 +28,7 @@ $$f(1,0,...,0)=-1\cdot \log _{2} 1-0\cdot \log _{2} 0...-0\cdot \log _{2} 0=0$$
 $$f(x_1,...,x_n)=\sum_{k=1}^{n} g(x_k) $$
 其中，$g(x_k)=-x_{k} \log _{2} x_{k},0 \leq x_k \leq 1$。那么当$g(x_1),g(x_2),...,g(x_n)$分别取到其最小值时，$f(x_1,...,x_n)$也就取到了最小值。所以接下来考虑分别求$g(x_1),g(x_2),...,g(x_n)$各自的最小值，由于$g(x_1),g(x_2),...,g(x_n)$的定义域和函数表达式均相同，所以只需求出$g(x_1)$的最小值也就求出了$g(x_2),...,g(x_n)$的最小值。下面考虑求$g(x_1)$的最小值，首先对$g(x_1)$关于$x_1$求一阶和二阶导数
 $$g^{\prime}(x_1)=\cfrac{d(-x_{1} \log _{2} x_{1})}{d x_1}=-\log _{2} x_{1}-x_1\cdot \cfrac{1}{x_1\ln2}=-\log _{2} x_{1}-\cfrac{1}{\ln2}$$
-$$g^{\prime\prime}(x_1)=\cfrac{d\left(-\log _{2} x_{1}-\cfrac{1}{\ln2}\right)}{d x_1}=-\log _{2} x_{1}-x_1\cdot \cfrac{1}{x_1\ln2}=-\cfrac{1}{x_{1}\ln2}$$
+$$g^{\prime\prime}(x_1)=\cfrac{d\left[g^{\prime}(x_1)\right]}{d x_1}=\cfrac{d\left(-\log _{2} x_{1}-\cfrac{1}{\ln2}\right)}{d x_1}=-\cfrac{1}{x_{1}\ln2}$$
 显然，当$0 \leq x_k \leq 1$时$g^{\prime\prime}(x_1)=-\cfrac{1}{x_{1}\ln2}$恒小于0，所以$g(x_1)$是一个在其定义域范围内开头向下的凹函数，那么其最小值必然在边界取，于是分别取$x_1=0$和$x_1=1$，代入$g(x_1)$可得
 $$g(0)=-0\log _{2} 0=0$$
 $$g(1)=-1\log _{2} 1=0$$
