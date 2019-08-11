@@ -103,11 +103,11 @@ $$
 \begin{aligned}
 \boldsymbol b_{\boldsymbol j}\boldsymbol \alpha ^{\boldsymbol j}
 & =\begin{bmatrix}
-b_{1}^{j}\\ b_{w}^{j}
+b_{j}^{1}\\ b_{j}^{2}
 \\ \cdot 
 \\ \cdot 
 \\ \cdot 
-\\ b_{d}^{j}
+\\ b_{j}^{d}
 \end{bmatrix}\cdot 
 \begin{bmatrix}
  \alpha _{1}^{j}& \alpha _{2}^{j} & \cdot  & \cdot  & \cdot  & \alpha _{m}^{j}
