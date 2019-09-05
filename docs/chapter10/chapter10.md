@@ -51,24 +51,58 @@ $$\begin{aligned}
 
 ## 10.17
 $$
-\boldsymbol X\boldsymbol X^T\boldsymbol w_i=\lambda _i\boldsymbol w_i
+\mathbf X\mathbf X^T\boldsymbol w_i=\lambda _i\boldsymbol w_i
 $$
-[推导]：已知
+[推导]：由式（10.15）可知，主成分分析的优化目标为
 $$\begin{aligned}
-&\min\limits_{\boldsymbol W}-tr(\boldsymbol W^T\boldsymbol X\boldsymbol X^T\boldsymbol W)\\
-&s.t. \boldsymbol W^T\boldsymbol W=\boldsymbol I. 
+&\min\limits_{\mathbf W} \quad-\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)\\
+&s.t. \quad\mathbf W^T\mathbf W=\mathbf I
 \end{aligned}$$
-运用拉格朗日乘子法可得，
+其中，$\mathbf{X}=\left(\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \ldots, \boldsymbol{x}_{m}\right) \in \mathbb{R}^{d \times m},\mathbf{W}=\left(\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{d}\right) \in \mathbb{R}^{d \times d}$，且$\mathbf{W}$为正交矩阵，$\mathbf{I} \in \mathbb{R}^{d \times d}$为单位矩阵。对于带矩阵约束的优化问题，根据[How to set up Lagrangian optimization with matrix constrains](https://math.stackexchange.com/questions/1104376/how-to-set-up-lagrangian-optimization-with-matrix-constrains)中讲述的方法可得上述优化目标的拉格朗日函数为
+$$L(\mathbf W)=-\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)+\langle \Theta,\mathbf W^T\mathbf W-\mathbf I\rangle$$
+其中，$\Theta  \in \mathbb{R}^{d \times d}$为拉格朗日乘子矩阵，其维度恒等于约束条件的维度，且其中的每个元素均为未知的拉格朗日乘子，$\langle \mathbf A, \mathbf B \rangle = \text { tr }(\mathbf A^T \mathbf B) = \sum\limits_{i,j} \mathbf A_{ij} \mathbf B_{ij}$为[矩阵的内积](https://en.wikipedia.org/wiki/Frobenius_inner_product)
+，根据矩阵内积的运算性质我们可以将拉格朗日函数恒等变形为
+$$ L(\mathbf W)=-\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)+\text { tr }\left(\Theta^T(\mathbf W^T\mathbf W-\mathbf I)\right) $$
+对拉格朗日函数关于$\mathbf{W}$求导可得
 $$\begin{aligned}
-J(\boldsymbol W)&=-tr(\boldsymbol W^T\boldsymbol X\boldsymbol X^T\boldsymbol W+\boldsymbol\lambda'(\boldsymbol W^T\boldsymbol W-\boldsymbol I))\\
-\cfrac{\partial J(\boldsymbol W)}{\partial \boldsymbol W} &=-(2\boldsymbol X\boldsymbol X^T\boldsymbol W+2\boldsymbol\lambda'\boldsymbol W)
+\cfrac{\partial L(\mathbf W)}{\partial \mathbf W}&=\cfrac{\partial}{\partial \mathbf W}\left[-\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)+\text { tr }\left(\Theta^T(\mathbf W^T\mathbf W-\mathbf I)\right)\right] \\
+&=-\cfrac{\partial}{\partial \mathbf W}\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)+\cfrac{\partial}{\partial \mathbf W}\text { tr }\left(\Theta^T(\mathbf W^T\mathbf W-\mathbf I)\right) \\
 \end{aligned}$$
-令$\cfrac{\partial J(\boldsymbol W)}{\partial \boldsymbol W}=\boldsymbol 0$，故
+由矩阵微分公式$\cfrac{\partial}{\partial \mathbf{X}} \text { tr }(\mathbf{X}^{T} \mathbf{B} \mathbf{X})=\mathbf{B X}+\mathbf{B}^{T} \mathbf{X},\cfrac{\partial}{\partial \mathbf{X}} \text { tr }\left(\mathbf{B X}^{T} \mathbf{X}\right)=\mathbf{X B}^{T}+\mathbf{X B}$可得
 $$\begin{aligned}
-\boldsymbol X\boldsymbol X^T\boldsymbol W&=-\boldsymbol\lambda'\boldsymbol W\\
-\boldsymbol X\boldsymbol X^T\boldsymbol W&=\boldsymbol\lambda\boldsymbol W\\
+\cfrac{\partial L(\mathbf W)}{\partial \mathbf W}&=-2\mathbf X\mathbf X^T\mathbf W+\mathbf{W}\Theta+\mathbf{W}\Theta^T \\
+&=-2\mathbf X\mathbf X^T\mathbf W+\mathbf{W}(\Theta+\Theta^T)
 \end{aligned}$$
-其中，$\boldsymbol W=\{\boldsymbol w_1,\boldsymbol w_2,\cdot\cdot\cdot,\boldsymbol w_d\}$和$\boldsymbol \lambda=\boldsymbol{diag}(\lambda_1,\lambda_2,\cdot\cdot\cdot,\lambda_d)$。
+令$\cfrac{\partial L(\mathbf W)}{\partial \mathbf W}=\mathbf 0$可得
+$$-2\mathbf X\mathbf X^T\mathbf W+\mathbf{W}(\Theta+\Theta^T)=\mathbf 0$$
+$$\mathbf X\mathbf X^T\mathbf W=\cfrac{1}{2}\mathbf{W}(\Theta+\Theta^T)$$
+令$\Lambda=\cfrac{1}{2}(\Theta+\Theta^T)$，则上式可化为
+$$\mathbf X\mathbf X^T\mathbf W=\mathbf{W}\Lambda$$
+又因为$\mathbf{W}$满足约束$\mathbf W^T\mathbf W=\mathbf I$，则考虑对上式两边同时左乘上一个$\mathbf{W}^T$可得
+$$\mathbf{W}^T\mathbf X\mathbf X^T\mathbf W=\mathbf{W}^T\mathbf{W}\Lambda$$
+$$\mathbf{W}^T\mathbf X\mathbf X^T\mathbf W=\Lambda$$
+又因为$\mathbf{W}$是正交矩阵，所以$\mathbf{W}^T=\mathbf{W}^{-1}$，于是上式可化为
+$$\mathbf{W}^{-1}\mathbf X\mathbf X^T\mathbf W=\Lambda$$
+仔细观察目前得到的这个式子可以发现，此式为线性代数里经典的矩阵相似问题，也就是给定矩阵$\mathbf X\mathbf X^T$求其相似矩阵$\Lambda$以及相似变换矩阵$\mathbf{W}$，并且$\Lambda$和$\mathbf{W}$的解不唯一。尽管$\Lambda$和$\mathbf{W}$的解不唯一，但是根据相似矩阵的性质可知$\Lambda$的迹与$\mathbf X\mathbf X^T$的迹恒相等，则优化目标的函数值也恒保持不变，也即
+$$-\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)=-\text { tr }(\mathbf W^{-1}\mathbf X\mathbf X^T\mathbf W)=-\text { tr }(\Lambda)=-\text { tr }(\mathbf X\mathbf X^T)$$
+所以我们只需要求出任意一个满足$\mathbf{W}^{-1}\mathbf X\mathbf X^T\mathbf W=\Lambda$的$\Lambda$和$\mathbf{W}$即可。由于$\mathbf X\mathbf X^T$是实对称矩阵，实对称矩阵一定正交相似于由其特征值构成的对角矩阵，且相似变换矩阵是由其特征向量构成，所以我们可以令$\mathbf W=\left(\boldsymbol{w}_{1}, \boldsymbol{w}_{2},...,\boldsymbol{w}_{d} \right)\in \mathbb{R}^{d \times d}$为由$\mathbf X\mathbf X^T$的$d$个相互正交的特征向量$\boldsymbol{w}_{i}$构成的正交矩阵，$\Lambda=\text{diag}(\lambda_1,\lambda_2,...,\lambda_d)\in \mathbb{R}^{d \times d}$为由$\mathbf X\mathbf X^T$的$d$个特征值$\lambda_i$构成的对角矩阵，因此求出了$\mathbf X\mathbf X^T$的特征值和特征向量也就求出了$\Lambda$和$\mathbf{W}$。按照特征值和特征向量的定义可知
+$$\mathbf X\mathbf X^T\boldsymbol w_i=\lambda _i\boldsymbol w_i$$
+此即为式（10.17）。
+
+## 10.24
+$$\mathbf{K}\boldsymbol{\alpha}^j=\lambda_j\boldsymbol{\alpha}^j $$
+[推导]：已知$\boldsymbol z_i=\phi(\boldsymbol x_i)$，类比$\mathbf{X}=\{\boldsymbol x_1,\boldsymbol x_2,...,\boldsymbol x_m\}$可以构造$\mathbf{Z}=\{\boldsymbol z_1,\boldsymbol z_2,...,\boldsymbol z_m\}$，所以公式(10.21)可变换为
+$$\left(\sum_{i=1}^{m} \phi(\boldsymbol{x}_{i}) \phi(\boldsymbol{x}_{i})^{\mathrm{T}}\right)\boldsymbol w_j=\left(\sum_{i=1}^{m} \boldsymbol z_i \boldsymbol z_i^{\mathrm{T}}\right)\boldsymbol w_j=\mathbf{Z}\mathbf{Z}^{\mathrm{T}}\boldsymbol w_j=\lambda_j\boldsymbol w_j $$
+又由公式(10.22)可知
+$$\boldsymbol w_j=\sum_{i=1}^{m} \phi\left(\boldsymbol{x}_{i}\right) \alpha_{i}^j=\sum_{i=1}^{m} \boldsymbol z_i \alpha_{i}^j=\mathbf{Z}\boldsymbol{\alpha}^j$$
+其中，$\boldsymbol{\alpha}^j=(\alpha_{1}^j;\alpha_{2}^j;...;\alpha_{m}^j)\in \mathbb{R}^{m \times 1} $。所以公式(10.21)可以进一步变换为
+$$\mathbf{Z}\mathbf{Z}^{\mathrm{T}}\mathbf{Z}\boldsymbol{\alpha}^j=\lambda_j\mathbf{Z}\boldsymbol{\alpha}^j $$
+$$\mathbf{Z}\mathbf{Z}^{\mathrm{T}}\mathbf{Z}\boldsymbol{\alpha}^j=\mathbf{Z}\lambda_j\boldsymbol{\alpha}^j $$
+由于主成分分析的目标是求出$\boldsymbol w_j$，也等价于要求出满足上式的$\boldsymbol{\alpha}^j$，显然，此时满足$\mathbf{Z}^{\mathrm{T}}\mathbf{Z}\boldsymbol{\alpha}^j=\lambda_j\boldsymbol{\alpha}^j $的$\boldsymbol{\alpha}^j$一定满足上式，所以问题转化为了求解满足下式的$\boldsymbol{\alpha}^j$：
+$$\mathbf{Z}^{\mathrm{T}}\mathbf{Z}\boldsymbol{\alpha}^j=\lambda_j\boldsymbol{\alpha}^j $$
+令$\mathbf{Z}^{\mathrm{T}}\mathbf{Z}=\mathbf{K}$，那么上式可化为
+$$\mathbf{K}\boldsymbol{\alpha}^j=\lambda_j\boldsymbol{\alpha}^j $$
+此式即为公式(10.24)，其中矩阵$\mathbf{K}$的第i行第j列的元素$(\mathbf{K})_{ij}=\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_j=\phi(\boldsymbol x_i)^{\mathrm{T}}\phi(\boldsymbol x_j)=\kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right)$
 
 ## 10.28
 $$w_{ij}=\cfrac{\sum\limits_{k\in Q_i}C_{jk}^{-1}}{\sum\limits_{l,s\in Q_i}C_{ls}^{-1}}$$
@@ -90,11 +124,9 @@ $$
 $$
 其中，$\boldsymbol 1_k$为k维全1向量。
 运用拉格朗日乘子法可得，
-$$
-J(\boldsymbol W)==\sum^m_{i=1}\boldsymbol W^T_i\boldsymbol C_i\boldsymbol W_i+\lambda(\boldsymbol W_i^T\boldsymbol 1_k-1)
-$$
 $$\begin{aligned}
-\cfrac{\partial J(\boldsymbol W)}{\partial \boldsymbol W_i} &=2\boldsymbol C_i\boldsymbol W_i+\lambda'\boldsymbol 1_k
+J(\boldsymbol W)&=\sum^m_{i=1}\boldsymbol W^T_i\boldsymbol C_i\boldsymbol W_i+\lambda(\boldsymbol W_i^T\boldsymbol 1_k-1)\\
+\cfrac{\partial J(\boldsymbol W)}{\partial \boldsymbol W_i} &=2\boldsymbol C_i\boldsymbol W_i+\lambda\boldsymbol 1_k
 \end{aligned}$$
 令$\cfrac{\partial J(\boldsymbol W)}{\partial \boldsymbol W_i}=0$，故
 $$\begin{aligned}
