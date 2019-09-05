@@ -124,11 +124,9 @@ $$
 $$
 其中，$\boldsymbol 1_k$为k维全1向量。
 运用拉格朗日乘子法可得，
-$$
-J(\boldsymbol W)==\sum^m_{i=1}\boldsymbol W^T_i\boldsymbol C_i\boldsymbol W_i+\lambda(\boldsymbol W_i^T\boldsymbol 1_k-1)
-$$
 $$\begin{aligned}
-\cfrac{\partial J(\boldsymbol W)}{\partial \boldsymbol W_i} &=2\boldsymbol C_i\boldsymbol W_i+\lambda'\boldsymbol 1_k
+J(\boldsymbol W)&=\sum^m_{i=1}\boldsymbol W^T_i\boldsymbol C_i\boldsymbol W_i+\lambda(\boldsymbol W_i^T\boldsymbol 1_k-1)\\
+\cfrac{\partial J(\boldsymbol W)}{\partial \boldsymbol W_i} &=2\boldsymbol C_i\boldsymbol W_i+\lambda\boldsymbol 1_k
 \end{aligned}$$
 令$\cfrac{\partial J(\boldsymbol W)}{\partial \boldsymbol W_i}=0$，故
 $$\begin{aligned}
