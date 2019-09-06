@@ -51,43 +51,45 @@ $$\begin{aligned}
 
 ## 10.17
 $$
-\mathbf X\mathbf X^T\boldsymbol w_i=\lambda _i\boldsymbol w_i
+\mathbf X\mathbf X^{\mathrm{T}} \boldsymbol w_i=\lambda _i\boldsymbol w_i
 $$
 [推导]：由式（10.15）可知，主成分分析的优化目标为
 $$\begin{aligned}
-&\min\limits_{\mathbf W} \quad-\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)\\
-&s.t. \quad\mathbf W^T\mathbf W=\mathbf I
+&\min\limits_{\mathbf W} \quad-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)\\
+&s.t. \quad\mathbf W^{\mathrm{T}} \mathbf W=\mathbf I
 \end{aligned}$$
-其中，$\mathbf{X}=\left(\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \ldots, \boldsymbol{x}_{m}\right) \in \mathbb{R}^{d \times m},\mathbf{W}=\left(\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{d}\right) \in \mathbb{R}^{d \times d}$，且$\mathbf{W}$为正交矩阵，$\mathbf{I} \in \mathbb{R}^{d \times d}$为单位矩阵。对于带矩阵约束的优化问题，根据[How to set up Lagrangian optimization with matrix constrains](https://math.stackexchange.com/questions/1104376/how-to-set-up-lagrangian-optimization-with-matrix-constrains)中讲述的方法可得上述优化目标的拉格朗日函数为
-$$L(\mathbf W)=-\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)+\langle \Theta,\mathbf W^T\mathbf W-\mathbf I\rangle$$
-其中，$\Theta  \in \mathbb{R}^{d \times d}$为拉格朗日乘子矩阵，其维度恒等于约束条件的维度，且其中的每个元素均为未知的拉格朗日乘子，$\langle \mathbf A, \mathbf B \rangle = \text { tr }(\mathbf A^T \mathbf B) = \sum\limits_{i,j} \mathbf A_{ij} \mathbf B_{ij}$为[矩阵的内积](https://en.wikipedia.org/wiki/Frobenius_inner_product)
-，根据矩阵内积的运算性质我们可以将拉格朗日函数恒等变形为
-$$ L(\mathbf W)=-\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)+\text { tr }\left(\Theta^T(\mathbf W^T\mathbf W-\mathbf I)\right) $$
+其中，$\mathbf{X}=\left(\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \ldots, \boldsymbol{x}_{m}\right) \in \mathbb{R}^{d \times m},\mathbf{W}=\left(\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{d^{\prime}}\right) \in \mathbb{R}^{d \times d^{\prime}}$，$\mathbf{I} \in \mathbb{R}^{d^{\prime} \times d^{\prime}}$为单位矩阵。对于带矩阵约束的优化问题，根据<a href="#ref1">[1]</a>中讲述的方法可得此优化目标的拉格朗日函数为
+$$\begin{aligned}
+L(\mathbf W,\Theta)&=-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\langle \Theta,\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I\rangle \\
+&=-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\text { tr }\left(\Theta^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right) 
+\end{aligned}$$
+其中，$\Theta  \in \mathbb{R}^{d^{\prime} \times d^{\prime}}$为拉格朗日乘子矩阵，其维度恒等于约束条件的维度，且其中的每个元素均为未知的拉格朗日乘子，$\langle \Theta,\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I\rangle = \text { tr }\left(\Theta^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right)$为矩阵的内积<sup><a href="#ref2">[2]</a></sup>。若此时只考虑约束$\left\|\boldsymbol{w}_{i}\right\|_{2}=1(i=1,2,...,d^{\prime})$，则拉格朗日乘子矩阵$\Theta$此时为对角矩阵，令新的拉格朗日乘子矩阵为$\Lambda=diag(\lambda_1,\lambda_2,...,\lambda_{d^{\prime}})\in \mathbb{R}^{d^{\prime} \times d^{\prime}}$，则新的拉格朗日函数为
+$$L(\mathbf W,\Lambda)=-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\text { tr }\left(\Lambda^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right) $$
 对拉格朗日函数关于$\mathbf{W}$求导可得
 $$\begin{aligned}
-\cfrac{\partial L(\mathbf W)}{\partial \mathbf W}&=\cfrac{\partial}{\partial \mathbf W}\left[-\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)+\text { tr }\left(\Theta^T(\mathbf W^T\mathbf W-\mathbf I)\right)\right] \\
-&=-\cfrac{\partial}{\partial \mathbf W}\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)+\cfrac{\partial}{\partial \mathbf W}\text { tr }\left(\Theta^T(\mathbf W^T\mathbf W-\mathbf I)\right) \\
+\cfrac{\partial L(\mathbf W,\Lambda)}{\partial \mathbf W}&=\cfrac{\partial}{\partial \mathbf W}\left[-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\text { tr }\left(\Lambda^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right)\right] \\
+&=-\cfrac{\partial}{\partial \mathbf W}\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\cfrac{\partial}{\partial \mathbf W}\text { tr }\left(\Lambda^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right) \\
 \end{aligned}$$
 由矩阵微分公式$\cfrac{\partial}{\partial \mathbf{X}} \text { tr }(\mathbf{X}^{T} \mathbf{B} \mathbf{X})=\mathbf{B X}+\mathbf{B}^{T} \mathbf{X},\cfrac{\partial}{\partial \mathbf{X}} \text { tr }\left(\mathbf{B X}^{T} \mathbf{X}\right)=\mathbf{X B}^{T}+\mathbf{X B}$可得
 $$\begin{aligned}
-\cfrac{\partial L(\mathbf W)}{\partial \mathbf W}&=-2\mathbf X\mathbf X^T\mathbf W+\mathbf{W}\Theta+\mathbf{W}\Theta^T \\
-&=-2\mathbf X\mathbf X^T\mathbf W+\mathbf{W}(\Theta+\Theta^T)
+\cfrac{\partial L(\mathbf W,\Lambda)}{\partial \mathbf W}&=-2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+\mathbf{W}\Lambda+\mathbf{W}\Lambda^{\mathrm{T}}  \\
+&=-2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+\mathbf{W}(\Lambda+\Lambda^{\mathrm{T}} ) \\
+&=-2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+2\mathbf{W}\Lambda
 \end{aligned}$$
-令$\cfrac{\partial L(\mathbf W)}{\partial \mathbf W}=\mathbf 0$可得
-$$-2\mathbf X\mathbf X^T\mathbf W+\mathbf{W}(\Theta+\Theta^T)=\mathbf 0$$
-$$\mathbf X\mathbf X^T\mathbf W=\cfrac{1}{2}\mathbf{W}(\Theta+\Theta^T)$$
-令$\Lambda=\cfrac{1}{2}(\Theta+\Theta^T)$，则上式可化为
-$$\mathbf X\mathbf X^T\mathbf W=\mathbf{W}\Lambda$$
-又因为$\mathbf{W}$满足约束$\mathbf W^T\mathbf W=\mathbf I$，则考虑对上式两边同时左乘上一个$\mathbf{W}^T$可得
-$$\mathbf{W}^T\mathbf X\mathbf X^T\mathbf W=\mathbf{W}^T\mathbf{W}\Lambda$$
-$$\mathbf{W}^T\mathbf X\mathbf X^T\mathbf W=\Lambda$$
-又因为$\mathbf{W}$是正交矩阵，所以$\mathbf{W}^T=\mathbf{W}^{-1}$，于是上式可化为
-$$\mathbf{W}^{-1}\mathbf X\mathbf X^T\mathbf W=\Lambda$$
-仔细观察目前得到的这个式子可以发现，此式为线性代数里经典的矩阵相似问题，也就是给定矩阵$\mathbf X\mathbf X^T$求其相似矩阵$\Lambda$以及相似变换矩阵$\mathbf{W}$，并且$\Lambda$和$\mathbf{W}$的解不唯一。尽管$\Lambda$和$\mathbf{W}$的解不唯一，但是根据相似矩阵的性质可知$\Lambda$的迹与$\mathbf X\mathbf X^T$的迹恒相等，则优化目标的函数值也恒保持不变，也即
-$$-\text { tr }(\mathbf W^T\mathbf X\mathbf X^T\mathbf W)=-\text { tr }(\mathbf W^{-1}\mathbf X\mathbf X^T\mathbf W)=-\text { tr }(\Lambda)=-\text { tr }(\mathbf X\mathbf X^T)$$
-所以我们只需要求出任意一个满足$\mathbf{W}^{-1}\mathbf X\mathbf X^T\mathbf W=\Lambda$的$\Lambda$和$\mathbf{W}$即可。由于$\mathbf X\mathbf X^T$是实对称矩阵，实对称矩阵一定正交相似于由其特征值构成的对角矩阵，且相似变换矩阵是由其特征向量构成，所以我们可以令$\mathbf W=\left(\boldsymbol{w}_{1}, \boldsymbol{w}_{2},...,\boldsymbol{w}_{d} \right)\in \mathbb{R}^{d \times d}$为由$\mathbf X\mathbf X^T$的$d$个相互正交的特征向量$\boldsymbol{w}_{i}$构成的正交矩阵，$\Lambda=\text{diag}(\lambda_1,\lambda_2,...,\lambda_d)\in \mathbb{R}^{d \times d}$为由$\mathbf X\mathbf X^T$的$d$个特征值$\lambda_i$构成的对角矩阵，因此求出了$\mathbf X\mathbf X^T$的特征值和特征向量也就求出了$\Lambda$和$\mathbf{W}$。按照特征值和特征向量的定义可知
-$$\mathbf X\mathbf X^T\boldsymbol w_i=\lambda _i\boldsymbol w_i$$
-此即为式（10.17）。
+令$\cfrac{\partial L(\mathbf W,\Lambda)}{\partial \mathbf W}=\mathbf 0$可得
+$$-2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+2\mathbf{W}\Lambda=\mathbf 0$$
+$$\mathbf X\mathbf X^{\mathrm{T}} \mathbf W=\mathbf{W}\Lambda$$
+将$\mathbf W$和$\Lambda$展开可得
+$$\mathbf X\mathbf X^{\mathrm{T}} \boldsymbol w_i=\lambda _i\boldsymbol w_i,\quad i=1,2,...,d^{\prime}$$
+显然，此式为矩阵特征值和特征向量的定义式，其中$\lambda_i,\boldsymbol w_i$分别表示矩阵$\mathbf X\mathbf X^{\mathrm{T}}$的特征值和特征向量。由于$\mathbf X\mathbf X^{\mathrm{T}} $是实对称矩阵，而实对称矩阵的不同特征值所对应的特征向量之间相互正交，同一特征值的不同特征向量可以通过施密特正交化使其变得正交，所以$\boldsymbol w_i$同时还满足约束$\boldsymbol{w}_{i}^{\mathrm{T}}\boldsymbol{w}_{j}=0(i\neq j)$。又因为优化目标的目标函数为
+$$\begin{aligned}
+\min\limits_{\mathbf W}-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)&=\max\limits_{\mathbf W}\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W) \\
+&=\max\limits_{\mathbf W}\sum_{i=1}^{d^{\prime}}\boldsymbol w_i^{\mathrm{T}}\mathbf X\mathbf X^{\mathrm{T}} \boldsymbol w_i \\
+&=\max\limits_{\mathbf W}\sum_{i=1}^{d^{\prime}}\boldsymbol w_i^{\mathrm{T}}\cdot\lambda _i\boldsymbol w_i \\
+&=\max\limits_{\mathbf W}\sum_{i=1}^{d^{\prime}}\lambda _i\boldsymbol w_i^{\mathrm{T}}\boldsymbol w_i \\
+&=\max\limits_{\mathbf W}\sum_{i=1}^{d^{\prime}}\lambda _i \\
+\end{aligned}$$
+所以只需要令$\lambda_1,\lambda_2,...,\lambda_{d^{\prime}}$和$\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{d^{\prime}}$分别为矩阵$\mathbf X\mathbf X^{\mathrm{T}}$的前$d^{\prime}$个最大的特征值和特征向量就能保证目标函数达到最优值。
 
 ## 10.24
 $$\mathbf{K}\boldsymbol{\alpha}^j=\lambda_j\boldsymbol{\alpha}^j $$
@@ -98,7 +100,7 @@ $$\boldsymbol w_j=\sum_{i=1}^{m} \phi\left(\boldsymbol{x}_{i}\right) \alpha_{i}^
 其中，$\boldsymbol{\alpha}^j=(\alpha_{1}^j;\alpha_{2}^j;...;\alpha_{m}^j)\in \mathbb{R}^{m \times 1} $。所以公式(10.21)可以进一步变换为
 $$\mathbf{Z}\mathbf{Z}^{\mathrm{T}}\mathbf{Z}\boldsymbol{\alpha}^j=\lambda_j\mathbf{Z}\boldsymbol{\alpha}^j $$
 $$\mathbf{Z}\mathbf{Z}^{\mathrm{T}}\mathbf{Z}\boldsymbol{\alpha}^j=\mathbf{Z}\lambda_j\boldsymbol{\alpha}^j $$
-由于主成分分析的目标是求出$\boldsymbol w_j$，也等价于要求出满足上式的$\boldsymbol{\alpha}^j$，显然，此时满足$\mathbf{Z}^{\mathrm{T}}\mathbf{Z}\boldsymbol{\alpha}^j=\lambda_j\boldsymbol{\alpha}^j $的$\boldsymbol{\alpha}^j$一定满足上式，所以问题转化为了求解满足下式的$\boldsymbol{\alpha}^j$：
+由于此时的目标是要求出$\boldsymbol w_j$，也就等价于要求出满足上式的$\boldsymbol{\alpha}^j$，显然，此时满足$\mathbf{Z}^{\mathrm{T}}\mathbf{Z}\boldsymbol{\alpha}^j=\lambda_j\boldsymbol{\alpha}^j $的$\boldsymbol{\alpha}^j$一定满足上式，所以问题转化为了求解满足下式的$\boldsymbol{\alpha}^j$：
 $$\mathbf{Z}^{\mathrm{T}}\mathbf{Z}\boldsymbol{\alpha}^j=\lambda_j\boldsymbol{\alpha}^j $$
 令$\mathbf{Z}^{\mathrm{T}}\mathbf{Z}=\mathbf{K}$，那么上式可化为
 $$\mathbf{K}\boldsymbol{\alpha}^j=\lambda_j\boldsymbol{\alpha}^j $$
@@ -155,3 +157,7 @@ $$\begin{aligned}
 \end{aligned}$$
 其中，$\boldsymbol M=(\boldsymbol I-\boldsymbol W)(\boldsymbol I-\boldsymbol W)^T$。
 [解析]：约束条件$\boldsymbol Z^T\boldsymbol Z=\boldsymbol I$是为了得到标准化（标准正交空间）的低维数据。
+
+## 参考文献
+<span id="ref1">[1][How to set up Lagrangian optimization with matrix constrains](https://math.stackexchange.com/questions/1104376/how-to-set-up-lagrangian-optimization-with-matrix-constrains)</span>
+<span id="ref2">[2][Frobenius inner product](https://en.wikipedia.org/wiki/Frobenius_inner_product)</span>
