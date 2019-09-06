@@ -34,20 +34,25 @@ b_{ij}&=-\frac{1}{2}(dist^2_{ij}-b_{ii}-b_{jj})\\
 
 ## 10.14
 $$\begin{aligned}
-\sum^m_{i=1}\| \sum^{d'}_{j=1}z_{ij}\boldsymbol w_j-\boldsymbol x_i \|^2_2&=\sum^m_{i=1}\boldsymbol z^T_i\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z^T_i\boldsymbol W^T\boldsymbol x_i + const\\
-&\propto -tr(\boldsymbol W^T(\sum^m_{i=1}\boldsymbol x_i\boldsymbol x^T_i)\boldsymbol W)
+\sum^m_{i=1}\left\| \sum^{d'}_{j=1}z_{ij}\boldsymbol{w}-\boldsymbol x_i \right\|^2_2&=\sum^m_{i=1}\boldsymbol z^{\mathrm{T}}_i\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z^{\mathrm{T}}_i\mathbf{W}^{\mathrm{T}}\boldsymbol x_i +\text { const }\\
+&\propto -\operatorname{tr}(\mathbf{W}^{\mathrm{T}}(\sum^m_{i=1}\boldsymbol x_i\boldsymbol x^{\mathrm{T}}_i)\mathbf{W})
 \end{aligned}$$
-[推导]：已知$\boldsymbol W^T \boldsymbol W=\boldsymbol I$和$\boldsymbol z_i=\boldsymbol W^T \boldsymbol x_i$，
+[推导]：已知$\mathbf{W}^{\mathrm{T}} \mathbf{W}=\mathbf{I},\boldsymbol z_i=\mathbf{W}^{\mathrm{T}} \boldsymbol x_i$，则
 $$\begin{aligned}
-\sum^m_{i=1}\| \sum^{d'}_{j=1}z_{ij}\boldsymbol w_j-\boldsymbol x_i \|^2_2&=\sum^m_{i=1}\| \boldsymbol W\boldsymbol z_i-\boldsymbol x_i \|^2_2\\
-&=\sum^m_{i=1}(\boldsymbol W\boldsymbol z_i)^T(\boldsymbol W\boldsymbol z_i)-2\sum^m_{i=1}(\boldsymbol W\boldsymbol z_i)^T\boldsymbol x_i+\sum^m_{i=1}\boldsymbol x^T_i\boldsymbol x_i\\
-&=\sum^m_{i=1}\boldsymbol z_i^T\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z_i^T\boldsymbol W^T\boldsymbol x_i+\sum^m_{i=1}\boldsymbol x^T_i\boldsymbol x_i\\
-&=\sum^m_{i=1}\boldsymbol z_i^T\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z_i^T\boldsymbol z_i+\sum^m_{i=1}\boldsymbol x^T_i\boldsymbol x_i\\
-&=-\sum^m_{i=1}\boldsymbol z_i^T\boldsymbol z_i+\sum^m_{i=1}\boldsymbol x^T_i\boldsymbol x_i\\
-&=-tr(\boldsymbol W^T(\sum^m_{i=1}\boldsymbol x_i\boldsymbol x^T_i)\boldsymbol W)+\sum^m_{i=1}\boldsymbol x^T_i\boldsymbol x_i\\
-&\propto -tr(\boldsymbol W^T(\sum^m_{i=1}\boldsymbol x_i\boldsymbol x^T_i)\boldsymbol W)
+\sum^m_{i=1}\left\| \sum^{d'}_{j=1}z_{ij}\boldsymbol{w}_j-\boldsymbol x_i \right\|^2_2&=\sum^m_{i=1}\left\|\mathbf{W}\boldsymbol z_i-\boldsymbol x_i \right\|^2_2\\
+&= \sum^m_{i=1} \left(\mathbf{W}\boldsymbol z_i-\boldsymbol x_i\right)^{\mathrm{T}}\left(\mathbf{W}\boldsymbol z_i-\boldsymbol x_i\right)\\
+&= \sum^m_{i=1} \left(\boldsymbol z_i^{\mathrm{T}}\mathbf{W}^{\mathrm{T}}\mathbf{W}\boldsymbol z_i- \boldsymbol z_i^{\mathrm{T}}\mathbf{W}^{\mathrm{T}}\boldsymbol x_i-\boldsymbol x_i^{\mathrm{T}}\mathbf{W}\boldsymbol z_i+\boldsymbol x_i^{\mathrm{T}}\boldsymbol x_i \right)\\
+&= \sum^m_{i=1} \left(\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i- 2\boldsymbol z_i^{\mathrm{T}}\mathbf{W}^{\mathrm{T}}\boldsymbol x_i+\boldsymbol x_i^{\mathrm{T}}\boldsymbol x_i \right)\\
+&=\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\mathbf{W}^{\mathrm{T}}\boldsymbol x_i+\sum^m_{i=1}\boldsymbol x^{\mathrm{T}}_i\boldsymbol x_i\\
+&=\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\mathbf{W}^{\mathrm{T}}\boldsymbol x_i+\text { const }\\
+&=\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i+\text { const }\\
+&=-\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i+\text { const }\\
+&=-\sum^m_{i=1}\operatorname{tr}\left(\boldsymbol z_i\boldsymbol z_i^{\mathrm{T}}\right)+\text { const }\\
+&=-\operatorname{tr}\left(\sum^m_{i=1}\boldsymbol z_i\boldsymbol z_i^{\mathrm{T}}\right)+\text { const }\\
+&=-\operatorname{tr}\left(\sum^m_{i=1}\mathbf{W}^{\mathrm{T}} \boldsymbol x_i\boldsymbol x_i^{\mathrm{T}}\mathbf{W}\right)+\text { const }\\
+&= -\operatorname{tr}\left(\mathbf{W}^{\mathrm{T}}\left(\sum^m_{i=1}\boldsymbol x_i\boldsymbol x^{\mathrm{T}}_i\right)\mathbf{W}\right)+\text { const }\\
+&\propto-\operatorname{tr}\left(\mathbf{W}^{\mathrm{T}}\left(\sum^m_{i=1}\boldsymbol x_i\boldsymbol x^{\mathrm{T}}_i\right)\mathbf{W}\right)\\
 \end{aligned}$$
-其中，$\sum^m_{i=1}\boldsymbol x^T_i\boldsymbol x_i$是常数。
 
 ## 10.17
 $$
