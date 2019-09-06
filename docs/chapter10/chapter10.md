@@ -112,38 +112,47 @@ $$\mathbf{K}\boldsymbol{\alpha}^j=\lambda_j\boldsymbol{\alpha}^j $$
 此式即为公式(10.24)，其中矩阵$\mathbf{K}$的第i行第j列的元素$(\mathbf{K})_{ij}=\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_j=\phi(\boldsymbol x_i)^{\mathrm{T}}\phi(\boldsymbol x_j)=\kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right)$
 
 ## 10.28
-$$w_{ij}=\cfrac{\sum\limits_{k\in Q_i}C_{jk}^{-1}}{\sum\limits_{l,s\in Q_i}C_{ls}^{-1}}$$
-[推导]：已知
-$$\begin{aligned}
-\min\limits_{\boldsymbol W}&\sum^m_{i=1}\| \boldsymbol x_i-\sum_{j \in Q_i}w_{ij}\boldsymbol x_j \|^2_2\\
-s.t.&\sum_{j \in Q_i}w_{ij}=1
+$$w_{i j}=\frac{\sum\limits_{k \in Q_{i}} C_{j k}^{-1}}{\sum\limits_{l, s \in Q_{i}} C_{l s}^{-1}}$$
+[推导]：由书中上下文可知，式(10.28)是如下优化问题的解。
+$$\begin{aligned} 
+\min _{\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m}} & \sum_{i=1}^{m}\left\|\boldsymbol{x}_{i}-\sum_{j \in Q_{i}} w_{i j} \boldsymbol{x}_{j}\right\|_{2}^{2} \\ 
+\text { s.t. } & \sum_{j \in Q_{i}} w_{i j}=1 
 \end{aligned}$$
-转换为
-$$\begin{aligned}
-\sum^m_{i=1}\| \boldsymbol x_i-\sum_{j \in Q_i}w_{ij}\boldsymbol x_j \|^2_2 &=\sum^m_{i=1}\| \sum_{j \in Q_i}w_{ij}\boldsymbol x_i- \sum_{j \in Q_i}w_{ij}\boldsymbol x_j \|^2_2 \\
-&=\sum^m_{i=1}\| \sum_{j \in Q_i}w_{ij}(\boldsymbol x_i- \boldsymbol x_j) \|^2_2\\
-&=\sum^m_{i=1}\boldsymbol W^T_i(\boldsymbol x_i-\boldsymbol x_j)(\boldsymbol x_i-\boldsymbol x_j)^T\boldsymbol W_i\\
-&=\sum^m_{i=1}\boldsymbol W^T_i\boldsymbol C_i\boldsymbol W_i
+若令$\boldsymbol{x}_{i}\in \mathbb{R}^{d\times 1},Q_i=\{q_i^1,q_i^2,...,q_i^n\}$，则上述优化问题的目标函数可以进行如下恒等变形
+$$\begin{aligned} 
+\sum_{i=1}^{m}\left\|\boldsymbol{x}_{i}-\sum_{j \in Q_{i}} w_{i j} \boldsymbol{x}_{j}\right\|_{2}^{2}&=\sum_{i=1}^{m}\left\|\sum_{j \in Q_{i}} w_{i j} \boldsymbol{x}_{i}-\sum_{j \in Q_{i}} w_{i j} \boldsymbol{x}_{j}\right\|_{2}^{2} \\ 
+&=\sum_{i=1}^{m}\left\|\sum_{j \in Q_{i}} w_{i j}(\boldsymbol{x}_{i}-\boldsymbol{x}_{j}) \right\|_{2}^{2} \\ 
+&=\sum_{i=1}^{m}\left\|\mathbf{X}_i\boldsymbol{w_i} \right\|_{2}^{2} \\
+&=\sum_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i} \\ 
 \end{aligned}$$
-其中，$\boldsymbol W_i=(w_{i1},w_{i2},\cdot\cdot\cdot,w_{ik})^T$，$k$是$Q_i$集合的长度，$\boldsymbol C_i=(\boldsymbol x_i-\boldsymbol x_j)(\boldsymbol x_i-\boldsymbol x_j)^T$，$j \in Q_i$。
-$$
-\sum_{j\in Q_i}w_{ij}=\boldsymbol W_i^T\boldsymbol 1_k=1
-$$
-其中，$\boldsymbol 1_k$为k维全1向量。
-运用拉格朗日乘子法可得，
-$$\begin{aligned}
-J(\boldsymbol W)&=\sum^m_{i=1}\boldsymbol W^T_i\boldsymbol C_i\boldsymbol W_i+\lambda(\boldsymbol W_i^T\boldsymbol 1_k-1)\\
-\cfrac{\partial J(\boldsymbol W)}{\partial \boldsymbol W_i} &=2\boldsymbol C_i\boldsymbol W_i+\lambda\boldsymbol 1_k
+其中$\boldsymbol{w_i}=(w_{iq_i^1},w_{iq_i^2},...,w_{iq_i^n})\in \mathbb{R}^{n\times 1}$，$\mathbf{X}_i=\left( \boldsymbol{x}_{i}-\boldsymbol{x}_{q_i^1}, \boldsymbol{x}_{i}-\boldsymbol{x}_{q_i^2},...,\boldsymbol{x}_{i}-\boldsymbol{x}_{q_i^n}\right)\in \mathbb{R}^{d\times n}$。同理，约束条件也可以进行如下恒等变形
+$$\sum_{j \in Q_{i}} w_{i j}=\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}=1 $$
+其中$\boldsymbol{I}=(1,1,...,1)\in \mathbb{R}^{n\times 1}$为$n$行1列的单位向量。因此，上述优化问题可以重写为
+$$\begin{aligned} 
+\min _{\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m}} & \sum_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i} \\ 
+\text { s.t. } & \boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}=1
 \end{aligned}$$
-令$\cfrac{\partial J(\boldsymbol W)}{\partial \boldsymbol W_i}=0$，故
-$$\begin{aligned}
-\boldsymbol W_i&=-\cfrac{1}{2}\lambda\boldsymbol C_i^{-1}\boldsymbol 1_k\\
-\boldsymbol W_i&=\lambda\boldsymbol C_i^{-1}\boldsymbol 1_k\\
+显然，此问题为带约束的优化问题，因此可以考虑使用拉格朗日乘子法来进行求解。由拉格朗日乘子法可得此优化问题的拉格朗日函数为
+$$L(\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m},\lambda)=\sum_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda\left(\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}-1\right)$$
+对拉格朗日函数关于$\boldsymbol{w_i}$求偏导并令其等于0可得
+$$\begin{aligned} 
+\cfrac{\partial L(\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m},\lambda)}{\partial \boldsymbol{w_i}}&=\cfrac{\partial \left[\sum_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda\left(\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}-1\right)\right]}{\partial \boldsymbol{w_i}}=0\\
+&=\cfrac{\partial \left[\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda\left(\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}-1\right)\right]}{\partial \boldsymbol{w_i}}=0\\
 \end{aligned}$$
-其中，$\lambda$为一个常数。利用$\boldsymbol W^T_i\boldsymbol 1_k=1$，对$\boldsymbol W_i$归一化，可得
-$$
-\boldsymbol W_i=\cfrac{\boldsymbol C^{-1}_i\boldsymbol 1_k}{\boldsymbol 1_k\boldsymbol C^{-1}_i\boldsymbol 1_k}
-$$
+又由矩阵微分公式$\cfrac{\partial \boldsymbol{x}^{T} \mathbf{B} \boldsymbol{x}}{\partial \boldsymbol{x}}=\left(\mathbf{B}+\mathbf{B}^{\mathrm{T}}\right) \boldsymbol{x},\cfrac{\partial \boldsymbol{x}^{T} \boldsymbol{a}}{\partial \boldsymbol{x}}=\boldsymbol{a}$可得
+$$\cfrac{\partial \left[\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda\left(\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}-1\right)\right]}{\partial \boldsymbol{w_i}}=2\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda \boldsymbol{I}=0$$
+$$\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}=-\frac{1}{2}\lambda \boldsymbol{I}$$
+若$\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i$可逆，则
+$$\boldsymbol{w_i}=-\frac{1}{2}\lambda(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}\boldsymbol{I}$$
+又因为$\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}=\boldsymbol{I}^{\mathrm{T}}\boldsymbol{w_i}=1$，则上式两边同时右乘$\boldsymbol{I}^{\mathrm{T}}$可得
+$$\boldsymbol{w_i}\boldsymbol{I}^{\mathrm{T}}=-\frac{1}{2}\lambda\boldsymbol{I}^{\mathrm{T}}(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}\boldsymbol{I}=1$$
+$$-\frac{1}{2}\lambda=\cfrac{1}{\boldsymbol{I}^{\mathrm{T}}(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}\boldsymbol{I}}$$
+将其代回$\boldsymbol{w_i}=-\frac{1}{2}\lambda(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}\boldsymbol{I}$即可解得
+$$\boldsymbol{w_i}=\cfrac{(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}\boldsymbol{I}}{\boldsymbol{I}^{\mathrm{T}}(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}\boldsymbol{I}}$$
+若令矩阵$(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}$第$j$行第$k$列的元素为$C_{jk}^{-1}$，则
+$$C_{jk}^{-1}=(\boldsymbol x_i-\boldsymbol x_{q_i^j})^{\mathrm{T}}(\boldsymbol x_i-\boldsymbol x_{q_i^k})$$
+$$w_{ij}=w_{i q_i^j}=\frac{\sum\limits_{k \in Q_{i}} C_{j k}^{-1}}{\sum\limits_{l, s \in Q_{i}} C_{l s}^{-1}}$$
+此即为公式(10.28)。显然，若$\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i$可逆，此优化问题即为凸优化问题，且此时用拉格朗日乘子法求得的$\boldsymbol{w_i}$为全局最优解。
 
 ## 10.31
 $$\begin{aligned}
