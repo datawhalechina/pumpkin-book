@@ -75,7 +75,7 @@ $$\begin{aligned}
 \cfrac{\partial L(\mathbf W,\Lambda)}{\partial \mathbf W}&=\cfrac{\partial}{\partial \mathbf W}\left[-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\text { tr }\left(\Lambda^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right)\right] \\
 &=-\cfrac{\partial}{\partial \mathbf W}\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\cfrac{\partial}{\partial \mathbf W}\text { tr }\left(\Lambda^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right) \\
 \end{aligned}$$
-由矩阵微分公式$\cfrac{\partial}{\partial \mathbf{X}} \text { tr }(\mathbf{X}^{T} \mathbf{B} \mathbf{X})=\mathbf{B X}+\mathbf{B}^{T} \mathbf{X},\cfrac{\partial}{\partial \mathbf{X}} \text { tr }\left(\mathbf{B X}^{T} \mathbf{X}\right)=\mathbf{X B}^{T}+\mathbf{X B}$可得
+由矩阵微分公式$\cfrac{\partial}{\partial \mathbf{X}} \text { tr }(\mathbf{X}^{\mathrm{T}}  \mathbf{B} \mathbf{X})=\mathbf{B X}+\mathbf{B}^{\mathrm{T}}  \mathbf{X},\cfrac{\partial}{\partial \mathbf{X}} \text { tr }\left(\mathbf{B X}^{\mathrm{T}}  \mathbf{X}\right)=\mathbf{X B}^{\mathrm{T}} +\mathbf{X B}$可得
 $$\begin{aligned}
 \cfrac{\partial L(\mathbf W,\Lambda)}{\partial \mathbf W}&=-2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+\mathbf{W}\Lambda+\mathbf{W}\Lambda^{\mathrm{T}}  \\
 &=-2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+\mathbf{W}(\Lambda+\Lambda^{\mathrm{T}} ) \\
