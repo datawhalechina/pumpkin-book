@@ -1,9 +1,9 @@
 ## 4.1
-$$\operatorname{Ent}(D)=-\sum_{k=1}^{|y|}p_klog_{2}{p_k}$$
+$$\operatorname{Ent}(D)=-\sum_{k=1}^{|\mathcal{Y}|}p_klog_{2}{p_k}$$
 [解析]：已知集合D的信息熵的定义为
-$$\operatorname{Ent}(D)=-\sum_{k=1}^{ | \mathcal{Y}|} p_{k} \log _{2} p_{k}$$
-其中，$| \mathcal{Y}|$表示样本类别总数，$p_k$表示第k类样本所占的比例，且$0 \leq p_k \leq 1,\sum_{k=1}^{n}p_k=1$。
-若令$| \mathcal{Y}|=n,p_k=x_k$，那么信息熵$\operatorname{Ent}(D)$就可以看作一个$n$元实值函数，也即
+$$\operatorname{Ent}(D)=-\sum_{k=1}^{|\mathcal{Y}|} p_{k} \log _{2} p_{k}$$
+其中，$|\mathcal{Y}|$表示样本类别总数，$p_k$表示第k类样本所占的比例，且$0 \leq p_k \leq 1,\sum_{k=1}^{n}p_k=1$。
+若令$|\mathcal{Y}|=n,p_k=x_k$，那么信息熵$\operatorname{Ent}(D)$就可以看作一个$n$元实值函数，也即
 $$\operatorname{Ent}(D)=f(x_1,...,x_n)=-\sum_{k=1}^{n} x_{k} \log _{2} x_{k} $$
 其中，$0 \leq x_k \leq 1,\sum_{k=1}^{n}x_k=1$，下面考虑求该多元函数的最值。<br>
 **求最大值：**<br>
