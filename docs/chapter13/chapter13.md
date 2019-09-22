@@ -84,10 +84,10 @@ $$
 $$
 \sum_{x_{j} \in D_{u}} \gamma_{j i} \cdot \mu_{i}+\sum_{\left(x_{j}, y_{j}\right) \in D_{t} \wedge y_{j}=i} \mu_{i}=\sum_{x_{j} \in D_{u}} \gamma_{j i} \cdot x_{j}+\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} x_{j}
 $$
-上式中， 可以作为常量提到求和号外面，而$\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} 1=l_{i}$，即第 类样本的有标记 样本数目，因此
-$$
-\left(\sum_{x_{j} \in D_{u}} \gamma_{j i}+\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \backslash y_{j}=i}  \mu_{i} \right) =\sum_{x_{j} \in D_{u}} \gamma_{j i} \cdot x_{j}+\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} x_{j}
-$$
+上式中， $\mu_i$ 可以作为常量提到求和号外面，而$\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} 1=l_{i}$，即第 类样本的有标记 样本数目，因此
+
+$$\left(\sum_{x_{j} \in D_{u}} \gamma_{j i}+\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} 1\right) \boldsymbol{\mu}_{i}=\sum_{x_{j} \in D_{u}} \gamma_{j i} \cdot \boldsymbol{x}_{j}+\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \boldsymbol{x}_{j}$$
+
 即得式(13.6)；
 ## 13.7
 $$
