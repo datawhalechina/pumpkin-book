@@ -1,10 +1,3 @@
-## 11.9
-$$\left \| \nabla f(\boldsymbol x{}')-\nabla  f(\boldsymbol x) \right \|_{2}^{2} \leqslant L\left \| \boldsymbol x{}'-\boldsymbol x \right \|_{2}^{2} 　(\forall \boldsymbol x,\boldsymbol x{}'),$$
-[解析]：*L-Lipschitz*条件定义为：对于函数$f(\boldsymbol x)$,若其任意定义域中的**x1**,**x2**，都存在L>0，使得$|f(\boldsymbol x1)-f(\boldsymbol x2)|≤L|\boldsymbol x1-\boldsymbol x2|$。通俗理解就是，对于函数上的每一对点，都存在一个实数L，使得它们连线斜率的绝对值不大于这个L，其中最小的L称为*Lipschitz*常数。
-　　　将公式变形可以更好的理解：$$\frac{\left \| \nabla f(\boldsymbol x{}')-\nabla f(\boldsymbol x) \right \|_{2}^{2}}{\left \| \boldsymbol x{}'-\boldsymbol x \right \|_{2}^{2}}\leqslant L 　(\forall \boldsymbol x,\boldsymbol x{}'),$$
-　　　进一步，如果$\boldsymbol x{}'\to  \boldsymbol x$，即$$\lim_{\boldsymbol x{}'\to \boldsymbol x}\frac{\left \| \nabla f(\boldsymbol x{}')-\nabla f(\boldsymbol x)\right \|_{2}^{2}}{\left \| \boldsymbol x{}'-\boldsymbol x \right \|_{2}^{2}}$$
-　　　“ *Lipschitz*连续”很常见，知乎有一个问答(https://www.zhihu.com/question/51809602) 对*Lipschitz*连续的解释很形象：以陆地为例， 连续就是说这块地上没有特别陡的坡；其中最陡的地方有多陡呢？这就是所谓的*Lipschitz*常数。 
-   
 ## 11.10
 
 $$
