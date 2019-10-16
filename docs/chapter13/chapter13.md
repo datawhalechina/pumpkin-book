@@ -69,11 +69,12 @@ $$\begin{aligned}
 \sum_{(x_i,y_i)\in D_l \wedge y_j=i} \cfrac{\partial ln(\alpha_i \cdot p(x_j| \mu_i,\Sigma_i))}{\partial\mu_i}\\
 &=\sum_{(x_i,y_i)\in D_l \wedge y_j=i}\cfrac{1}{p(x_j|\mu_i,\Sigma_i) }\cdot  \cfrac{\partial p(x_j|\mu_i,\Sigma_i)}{\partial\mu_i}\\
 &=\sum_{(x_i,y_i)\in D_l \wedge y_j=i}\cfrac{1}{p(x_j|\mu_i,\Sigma_i) }\cdot  p(x_j|\mu_i,\Sigma_i)  \cdot \Sigma_i^{-1}(x_j-\mu_i)\\
-&=\sum_{x_j \in D_u } \Sigma_i^{-1}(x_j-\mu_i)
+&=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}
+\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)
 \end{aligned}$$
 
 对于式(13.4)中的第 2 项$LL(D_u)$，求导结果与式(9.33)的推导过程一样
-$$\cfrac{\partial LL(D_l \cup D_u) }{\partial \mu_i}=\sum_{x_j \in {D_u}} \cfrac{\alpha_i}{\sum_{s=1}^N \alpha_s \cdotp(x_j|\mu_s,\Sigma_s)} \cdot p(x_j|\mu_i,\Sigma_i )\cdot \Sigma_i^{-1}(x_j-\mu_i)$$
+$$\cfrac{\partial LL(D_u) }{\partial \mu_i}=\sum_{x_j \in {D_u}} \cfrac{\alpha_i}{\sum_{s=1}^N \alpha_s \cdotp(x_j|\mu_s,\Sigma_s)} \cdot p(x_j|\mu_i,\Sigma_i )\cdot \Sigma_i^{-1}(x_j-\mu_i)$$
 $$=\sum_{x_j \in D_u }\gamma_{ji} \cdot  \Sigma_i^{-1}(x_j-\mu_i)$$
 综合两项结果，则$\cfrac{\partial LL(D_l \cup D_u) }{\partial \mu_i}$为
 $$
@@ -83,10 +84,10 @@ $$
 $$
 \sum_{x_{j} \in D_{u}} \gamma_{j i} \cdot \mu_{i}+\sum_{\left(x_{j}, y_{j}\right) \in D_{t} \wedge y_{j}=i} \mu_{i}=\sum_{x_{j} \in D_{u}} \gamma_{j i} \cdot x_{j}+\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} x_{j}
 $$
-上式中， 可以作为常量提到求和号外面，而$\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} 1=l_{i}$，即第 类样本的有标记 样本数目，因此
-$$
-\left(\sum_{x_{j} \in D_{u}} \gamma_{j i}+\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \backslash y_{j}=i} 1\right) \mu_{i}=\sum_{x_{j} \in D_{u}} \gamma_{j i} \cdot x_{j}+\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} x_{j}
-$$
+上式中， $\mu_i$ 可以作为常量提到求和号外面，而$\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} 1=l_{i}$，即第 类样本的有标记 样本数目，因此
+
+$$\left(\sum_{x_{j} \in D_{u}} \gamma_{j i}+\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} 1\right) \boldsymbol{\mu}_{i}=\sum_{x_{j} \in D_{u}} \gamma_{j i} \cdot \boldsymbol{x}_{j}+\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \boldsymbol{x}_{j}$$
+
 即得式(13.6)；
 ## 13.7
 $$
@@ -105,9 +106,8 @@ $$
 \frac{\partial L L\left(D_{u}\right)}{\partial \boldsymbol{\Sigma}_{i}}=\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1}
 $$
 综合两项结果，则$\cfrac{\partial LL(D_l \cup D_u) }{\partial \Sigma_i}$为
-$$\begin{aligned} \frac{\partial L L\left(D_{l} \cup D_{u}\right)}{\partial \boldsymbol{\mu}_{i}}=& \sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1} \\ &+\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1} \\
-&=\left(\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right)\right.\\ &+\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) ) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1}
-\end{aligned}
+$$
+\begin{aligned} \frac{\partial L L\left(D_{l} \cup D_{u}\right)}{\partial \boldsymbol{\mu}_{i}}=& \sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1} \\ &+\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1} \\=&\left(\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right)\right.\\ &\left.+\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right)\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1} \end{aligned}
 $$
 令$\frac{\partial L L\left(D_{l} \cup D_{u}\right)}{\partial \boldsymbol{\Sigma}_{i}}=0$，两边同时右乘$2\Sigma_i$可将 $\cfrac{1}{2}\Sigma_i^{-1}$消掉，移项即得
 $$
@@ -129,7 +129,7 @@ $$\begin{aligned}
 \end{aligned}$$
 类似于式(9.37)，对$\alpha_i$求偏导。对于LL(D_u)，求导结果与式(9.37)的推导过程一样：
 $$\cfrac{\partial LL(D_u)}{\partial\alpha_i} = \sum_{x_j \in D_u} \cfrac{1}{\Sigma_{s=1}^N \alpha_s \cdot p(x_j|\mu_s,\Sigma_s)} \cdot p(x_j|\mu_i,\Sigma_i)$$
-对于$LL(D_l)$，类似于类似于(13.6)和(13.7)的推导过程
+对于$LL(D_l)$，类似于(13.6)和(13.7)的推导过程
 $$\begin{aligned}
 \cfrac{\partial LL(D_l)}{\partial\alpha_i} &= \sum_{(x_i,y_i)\in D_l \wedge y_j=i} \cfrac{\partial ln(\alpha_i \cdot p(x_j| \mu_i,\Sigma_i))}{\partial\alpha_i}\\
 &=\sum_{(x_i,y_i)\in D_l \wedge y_j=i}\cfrac{1}{ \alpha_i \cdot p(x_j|\mu_i,\Sigma_i) }\cdot  \cfrac{\partial (\alpha_i \cdot  p(x_j|\mu_i,\Sigma_i))}{\partial \alpha_i}\\
@@ -157,5 +157,3 @@ $$\sum_{i=1}^N l_i+\sum_{i=1}^N  \sum_{x_i \in D_u} \gamma_{ji}+\sum_{i=1}^N \la
 最后带入整理解得
 $$l_i + \Sigma_{X_j \in{D_u}} \gamma_{ji}-m \alpha_i = 0$$
 整理即得式(13.8)；
-
-

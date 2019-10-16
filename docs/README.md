@@ -6,18 +6,17 @@
 
 南瓜书仅仅是西瓜书的一些细微补充，内容都是以西瓜书的内容为前置知识进行表述的。所以，南瓜书的最佳使用方法是以西瓜书为主线，遇到自己推导不出来或者看不懂的公式时再来查阅南瓜书。
 
-若南瓜书里没有你想要查阅的公式，可以[点击这里](https://github.com/datawhalechina/pumpkin-book/issues/1)提交你希望补充推导或者解析的公式编号，我们看到后会尽快进行补充。
+若南瓜书里没有你想要查阅的公式，可以[点击这里](https://github.com/datawhalechina/pumpkin-book/issues)提交你希望补充推导或者解析的公式编号，我们看到后会尽快进行补充。
 
 ## 选用的西瓜书版本
 
-<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/xigua.jpg" width = "476.7" height = "555.3">
+<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/xigua.jpg" width="300" height= "350">
 
 > 书名：机器学习<br>
 > 作者：周志华<br>
 > 出版社：清华大学出版社<br>
 > 版次：2016年1月第1版<br>
 > 勘误表：http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/MLbook2016.htm<br>
-> 全书共16章，大致分为3个部分：第1部分（第1～3章）介绍机器学习的基础知识；第2部分（第4～10章）讨论一些经典而常用的机器学习方法（决策树、神经网络、支持向量机、贝叶斯分类器、集成学习、聚类、降维与度量学习）；第3部分（第11～16章）为进阶知识，内容涉及特征选择与稀疏学习、计算学习理论、半监督学习、概率图模型、规则学习以及强化学习等。
 
 ### 主要贡献者（按首字母排名）
 
