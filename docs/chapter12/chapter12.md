@@ -8,7 +8,7 @@ f\left(\alpha x_{1}+(1-\alpha) x_{2}\right) \leq \alpha f\left(x_{1}\right)+(1-\
 $$
 
 $$
-f(E(x))=f\left(\frac{1}{m} \sum_{i}^{m} x_{i}\right)=f\left(\frac{m-1}{m} \frac{1}{m-1} \sum_{i}^{m-1} x_{i}+\frac{1}{m} x_{i}\right)
+f(E(x))=f\left(\frac{1}{m} \sum_{i}^{m} x_{i}\right)=f\left(\frac{m-1}{m} \frac{1}{m-1} \sum_{i}^{m-1} x_{i}+\frac{1}{m} x_{m}\right)
 $$
 取：
 $$
