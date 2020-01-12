@@ -1,7 +1,29 @@
+## 3.5
+$$\cfrac{\partial E_{(w, b)}}{\partial w}=2\left(w \sum_{i=1}^{m} x_{i}^{2}-\sum_{i=1}^{m}\left(y_{i}-b\right) x_{i}\right)$$
+[推导]：已知$E_{(w, b)}=\sum\limits_{i=1}^{m}\left(y_{i}-w x_{i}-b\right)^{2}$，所以
+$$\begin{aligned}
+\cfrac{\partial E_{(w, b)}}{\partial w}&=\cfrac{\partial}{\partial w} \left[\sum_{i=1}^{m}\left(y_{i}-w x_{i}-b\right)^{2}\right] \\
+&= \sum_{i=1}^{m}\cfrac{\partial}{\partial w} \left[\left(y_{i}-w x_{i}-b\right)^{2}\right] \\
+&= \sum_{i=1}^{m}\left[2\cdot\left(y_{i}-w x_{i}-b\right)\cdot (-x_i)\right] \\
+&= \sum_{i=1}^{m}\left[2\cdot\left(w x_{i}^2-y_i x_i +bx_i\right)\right] \\
+&= 2\cdot\left(w\sum_{i=1}^{m} x_{i}^2-\sum_{i=1}^{m}y_i x_i +b\sum_{i=1}^{m}x_i\right) \\
+&=2\left(w \sum_{i=1}^{m} x_{i}^{2}-\sum_{i=1}^{m}\left(y_{i}-b\right) x_{i}\right)
+\end{aligned}$$
+
+## 3.6
+$$\cfrac{\partial E_{(w, b)}}{\partial b}=2\left(m b-\sum_{i=1}^{m}\left(y_{i}-w x_{i}\right)\right)$$
+[推导]：已知$E_{(w, b)}=\sum\limits_{i=1}^{m}\left(y_{i}-w x_{i}-b\right)^{2}$，所以
+$$\begin{aligned}
+\cfrac{\partial E_{(w, b)}}{\partial b}&=\cfrac{\partial}{\partial b} \left[\sum_{i=1}^{m}\left(y_{i}-w x_{i}-b\right)^{2}\right] \\
+&=\sum_{i=1}^{m}\cfrac{\partial}{\partial b} \left[\left(y_{i}-w x_{i}-b\right)^{2}\right] \\
+&=\sum_{i=1}^{m}\left[2\cdot\left(y_{i}-w x_{i}-b\right)\cdot (-1)\right] \\
+&=\sum_{i=1}^{m}\left[2\cdot\left(b-y_{i}+w x_{i}\right)\right] \\
+&=2\cdot\left[\sum_{i=1}^{m}b-\sum_{i=1}^{m}y_{i}+\sum_{i=1}^{m}w x_{i}\right] \\
+&=2\left(m b-\sum_{i=1}^{m}\left(y_{i}-w x_{i}\right)\right)
+\end{aligned}$$
+
 ## 3.7
-
 $$ w=\cfrac{\sum_{i=1}^{m}y_i(x_i-\bar{x})}{\sum_{i=1}^{m}x_i^2-\cfrac{1}{m}(\sum_{i=1}^{m}x_i)^2} $$
-
 [推导]：令式（3.5）等于0：
 $$ 0 = w\sum_{i=1}^{m}x_i^2-\sum_{i=1}^{m}(y_i-b)x_i $$
 $$ w\sum_{i=1}^{m}x_i^2 = \sum_{i=1}^{m}y_ix_i-\sum_{i=1}^{m}bx_i $$
@@ -33,10 +55,9 @@ $$
 $$
 若令$ \boldsymbol{x}=(x_1,x_2,...,x_m)^T $，$ \boldsymbol{x}_{d}=(x_1-\bar{x},x_2-\bar{x},...,x_m-\bar{x})^T $为去均值后的$ \boldsymbol{x} $，$ \boldsymbol{y}=(y_1,y_2,...,y_m)^T $，$ \boldsymbol{y}_{d}=(y_1-\bar{y},y_2-\bar{y},...,y_m-\bar{y})^T $为去均值后的$ \boldsymbol{y} $，其中$ \boldsymbol{x} $、$ \boldsymbol{x}_{d} $、$ \boldsymbol{y} $、$ \boldsymbol{y}_{d} $均为m行1列的列向量，代入上式可得：
 $$ w=\cfrac{\boldsymbol{x}_{d}^T\boldsymbol{y}_{d}}{\boldsymbol{x}_d^T\boldsymbol{x}_{d}}$$
+
 ## 3.10
-
 $$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}=2\mathbf{X}^T(\mathbf{X}\hat{\boldsymbol w}-\boldsymbol{y}) $$
-
 [推导]：将$ E_{\hat{\boldsymbol w}}=(\boldsymbol{y}-\mathbf{X}\hat{\boldsymbol w})^T(\boldsymbol{y}-\mathbf{X}\hat{\boldsymbol w}) $展开可得：
 $$ E_{\hat{\boldsymbol w}}= \boldsymbol{y}^T\boldsymbol{y}-\boldsymbol{y}^T\mathbf{X}\hat{\boldsymbol w}-\hat{\boldsymbol w}^T\mathbf{X}^T\boldsymbol{y}+\hat{\boldsymbol w}^T\mathbf{X}^T\mathbf{X}\hat{\boldsymbol w} $$
 对$ \hat{\boldsymbol w} $求导可得：
@@ -46,9 +67,7 @@ $$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}= 0-\ma
 $$ \cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}=2\mathbf{X}^T(\mathbf{X}\hat{\boldsymbol w}-\boldsymbol{y}) $$
 
 ## 3.27
-
 $$ \ell(\boldsymbol{\beta})=\sum_{i=1}^{m}(-y_i\boldsymbol{\beta}^T\hat{\boldsymbol x}_i+\ln(1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i})) $$
-
 [推导]：将式（3.26）代入式（3.25）可得：
 $$ \ell(\boldsymbol{\beta})=\sum_{i=1}^{m}\ln\left(y_ip_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})+(1-y_i)p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right) $$
 其中$ p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})=\cfrac{e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}}{1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}},p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})=\cfrac{1}{1+e^{\boldsymbol{\beta}^T\hat{\boldsymbol x}_i}} $，代入上式可得：
@@ -78,9 +97,7 @@ $$\begin{aligned}
 显然，此种方式更易推导出式（3.27）
 
 ## 3.30
-
 $$\frac{\partial l(\beta)}{\partial \beta}=-\sum_{i=1}^{m}\hat{\boldsymbol x}_i(y_i-p_1(\hat{\boldsymbol x}_i;\beta))$$
-
 [解析]：此式可以进行向量化，令$p_1(\hat{\boldsymbol x}_i;\beta)=\hat{y}_i$，代入上式得：
 $$\begin{aligned}
 	\frac{\partial l(\beta)}{\partial \beta} &= -\sum_{i=1}^{m}\hat{\boldsymbol x}_i(y_i-\hat{y}_i) \\
@@ -90,9 +107,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 ## 3.32
-
 $$J=\cfrac{\boldsymbol w^T(\mu_0-\mu_1)(\mu_0-\mu_1)^T\boldsymbol w}{\boldsymbol w^T(\Sigma_0+\Sigma_1)\boldsymbol w}$$
-
 [推导]：
 $$\begin{aligned}
 	J &= \cfrac{\big|\big|\boldsymbol w^T\mu_0-\boldsymbol w^T\mu_1\big|\big|_2^2}{\boldsymbol w^T(\Sigma_0+\Sigma_1)\boldsymbol w} \\
@@ -103,9 +118,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 ## 3.37
-
 $$\boldsymbol S_b\boldsymbol w=\lambda\boldsymbol S_w\boldsymbol w$$
-
 [推导]：由3.36可列拉格朗日函数：
 $$l(\boldsymbol w)=-\boldsymbol w^T\boldsymbol S_b\boldsymbol w+\lambda(\boldsymbol w^T\boldsymbol S_w\boldsymbol w-1)$$
 对$\boldsymbol w$求偏导可得：
@@ -118,7 +131,6 @@ $$\cfrac{\partial l(\boldsymbol w)}{\partial \boldsymbol w} = -2\boldsymbol S_b\
 令导函数等于0即可得式3.37。
 
 ## 3.43
-
 $$\begin{aligned}
 \boldsymbol S_b &= \boldsymbol S_t - \boldsymbol S_w \\
 &= \sum_{i=1}^N m_i(\boldsymbol\mu_i-\boldsymbol\mu)(\boldsymbol\mu_i-\boldsymbol\mu)^T
