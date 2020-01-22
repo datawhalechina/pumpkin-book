@@ -136,7 +136,7 @@ $$\begin{aligned}
 [解析]：略
            
 ## 附录
-①互信息<sup>[1]</sup>
+### ①互信息<sup>[1]</sup>
 在解释互信息之前，需要先解释一下什么是条件熵<sup>[1]</sup>。条件熵表示的是在已知一个随机变量的条件下，另一个随机变量的不确定性。具体地，假设有随机变量$X$和$Y$，且它们服从以下联合概率分布
 $$P(X = x_{i},Y = y_{j}) = p_{ij}，i = 1,2,....,n；j = 1,2,...,m$$
 那么在已知$X$的条件下，随机变量$Y$的条件熵为
@@ -145,7 +145,7 @@ $$\operatorname{Ent}(Y|X) =  \sum_{i=1}^np_i \operatorname{Ent}(Y|X = x_i)$$
 $$\operatorname{I}(Y;X) = \operatorname{Ent}(Y) - \operatorname{Ent}(Y|X)$$
 此即为互信息的数学定义。
 
-②CART回归树<sup>[1]</sup>
+### ②CART回归树<sup>[1]</sup>
 假设给定数据集
 $$D = {(\boldsymbol{x}_1,y_1),(\boldsymbol{x}_2,y_2)...,(\boldsymbol{x}_N,y_N)}$$
 其中$\boldsymbol{x}\in \mathbb{R}^d$为$d$维特征向量，$y\in \mathbb{R}$是连续型随机变量，这是一个标准的回归问题的数据集。若把每个属性视为坐标空间中的一个坐标轴，则$d$个属性就构成了一个$d$维的特征空间，而每个$d$维特征向量$\boldsymbol{x}$就对应了$d$维的特征空间中的一个数据点。CART回归树的目标是将特征空间划分成若干个子空间，每个子空间都有一个固定的输出值，也就是凡是落在同一个子空间内的数据点$\boldsymbol{x}_i$，他们所对应的输出值$y_i$恒相等，且都为该子空间的输出值。那么如何划分出若干个子空间呢？这里采用一种启发式的方法：
@@ -158,6 +158,6 @@ $$c_2=\operatorname{ave}(y_i | x\in R_2(a,v))=\frac{1}{|R_2(a,v)|}\sum_{\boldsym
 $$f(\boldsymbol {x}) = \sum_{m=1}^{M}c_m\mathbb{I}(x\in{R_m})$$
 同理，其中的$c_m$表示的也是集合$R_m$中的样本$\boldsymbol {x}_i$对应的输出值$y_i$的均值。此公式直观上的理解就是，对于一个给定的样本$\boldsymbol {x}_i$，首先判断其属于哪个子空间，然后将其所属的子空间对应的输出值作为该样本的预测值$y_i$。
 
-### 参考文献
+## 参考文献
 [1]李航编著.统计学习方法[M].清华大学出版社,2012.
 

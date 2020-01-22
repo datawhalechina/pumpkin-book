@@ -44,7 +44,7 @@ $$\overline{\epsilon}=\max \epsilon\quad \text { s.t. } \sum_{i= \epsilon_{0} \t
 
 [推导]：截至2018年12月，第一版第30次印刷，公式（2.27）应当勘误为
 $$\overline{\epsilon}=\min \epsilon\quad\text { s.t. } \sum_{i=\epsilon\times m+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) \epsilon_0^{i}(1-\epsilon_0)^{m-i}<\alpha$$
-具体推导过程如下：由西瓜书中的上下文可知，对$\epsilon\leq\epsilon_0$进行假设检验，等价于附录<a href="#add1">①</a>中所述的对$p\leq p_0$进行假设检验，所以在西瓜书中求解最大错误率$\overline{\epsilon}$等价于在附录<a href="#add1">①</a>中求解事件最大发生频率$\frac{\overline{C}}{m}$。由附录<a href="#add1">①</a>可知
+具体推导过程如下：由西瓜书中的上下文可知，对$\epsilon\leq\epsilon_0$进行假设检验，等价于附录①中所述的对$p\leq p_0$进行假设检验，所以在西瓜书中求解最大错误率$\overline{\epsilon}$等价于在附录①中求解事件最大发生频率$\frac{\overline{C}}{m}$。由附录①可知
 $$\overline{C}=\min C\quad\text { s.t. } \sum_{i=C+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i}(1-p_0)^{m-i}<\alpha$$
 所以
 $$\frac{\overline{C}}{m}=\min \frac{C}{m}\quad\text { s.t. } \sum_{i=C+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i}(1-p_0)^{m-i}<\alpha$$
@@ -100,7 +100,7 @@ $$2\mathbb{E}_{D}\left[\left(\bar{f}(\boldsymbol{x})-y\right)\left(y-y_{D}\right
 $$2\mathbb{E}_{D}\left[\left(\bar{f}(\boldsymbol{x})-y\right)\left(y-y_{D}\right)\right]=2\left(\bar{f}(\boldsymbol{x})-y\right)\cdot 0=0$$
 
 ## 附录
-<h3 id="add1">①二项分布参数$p$的检验<sup><a href="#ref1">[1]</a></sup></h3>
+### ①二项分布参数$p$的检验<sup>[1]</sup>
 设某事件发生的概率为$p$，$p$未知，作$m$次独立试验，每次观察该事件是否发生，以$X$记该事件发生的次数，则$X$服从二项分布$B(m,p)$，现根据$X$检验如下假设：
 $$H_0:p\leq p_0 \\ H_1:p > p_0$$
 由二项分布本身的特性可知：$p$越小，$X$取到较小值的概率越大。因此，对于上述假设，一个直观上合理的检验为
@@ -112,7 +112,7 @@ $$\begin{aligned}
 &=1-\sum_{i=0}^{C}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p^{i} (1-p)^{m-i} \\
 &=\sum_{i=C+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p^{i} (1-p)^{m-i} \\
 \end{aligned}$$
-由于“$p$越小，$X$取到较小值的概率越大”可以等价表示为：$P(X\leq C)$是关于$p$的减函数（更为严格的数学证明参见<a href="#ref1">[1]</a>中第二章习题7），所以$\beta_{\varphi}(p)=P(X>C)=1-P(X\leq C)$是关于$p$的增函数，那么当$p\leq p_0$时，$\beta_{\varphi}(p_0)$即为$\beta_{\varphi}(p)$的上确界。又因为，根据<a href="#ref1">[1]</a>中5.1.3的定义1.2可知，检验水平$\alpha$默认取最小可能的水平，所以在给定检验水平$\alpha$时，可以通过如下方程解得满足检验水平$\alpha$的整数$C$：
+由于“$p$越小，$X$取到较小值的概率越大”可以等价表示为：$P(X\leq C)$是关于$p$的减函数（更为严格的数学证明参见参考文献[1]中第二章习题7），所以$\beta_{\varphi}(p)=P(X>C)=1-P(X\leq C)$是关于$p$的增函数，那么当$p\leq p_0$时，$\beta_{\varphi}(p_0)$即为$\beta_{\varphi}(p)$的上确界。又因为，根据参考文献[1]中5.1.3的定义1.2可知，检验水平$\alpha$默认取最小可能的水平，所以在给定检验水平$\alpha$时，可以通过如下方程解得满足检验水平$\alpha$的整数$C$：
 $$\alpha =\sup \left\{\beta_{\varphi}(p)\right\}$$
 显然，当$p\leq p_0$时：
 $$\begin{aligned}
@@ -127,4 +127,4 @@ $$\sum_{i=\overline{C}+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) 
 $$\overline{C}=\min C\quad\text { s.t. } \sum_{i=C+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i}(1-p_0)^{m-i}<\alpha$$
 
 ## 参考文献
-<span id="ref1">[1]陈希孺编著.概率论与数理统计[M].中国科学技术大学出版社,2009.</span>
+[1]陈希孺编著.概率论与数理统计[M].中国科学技术大学出版社,2009.
