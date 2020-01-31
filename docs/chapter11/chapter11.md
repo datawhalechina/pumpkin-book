@@ -14,7 +14,13 @@ $$
 
 [解析]：此为信息熵的定义式，其中$p_k, k=1, 2, \dots \vert\mathcal{Y}\vert$表示$D$中第$i$类样本所占的比例。可以看出，样本越纯，即$p_k\rightarrow 0$或$p_k\rightarrow 1$时，$\mathrm{Ent}(D)$越小，其最小值为0。此时必有$p_i=1, p_{\backslash i}=0, i=1, 2, \dots, \vert\mathcal{Y}\vert$。
 
-**式11.3，11.4是Relief方法的公式，文中已有详细解释，在此不再赘述**
+## 11.3
+
+定义式，无需证明
+
+## 11.4
+
+定义式，无需证明
 
 ## 11.5
 
