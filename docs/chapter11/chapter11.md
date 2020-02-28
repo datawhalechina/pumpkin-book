@@ -202,6 +202,8 @@ $$
    &>0
    \end{align}
    $$
+   
+
    因此当$\vert z^i\vert>\frac{\lambda}{L}$时，$x_i=0$不会是函数$g(x_i)$的最小值。
 
    b. 当$-\frac{\lambda}{L} \leqslant z_i \leqslant \frac{\lambda}{L}$时，对于任何$\Delta x\neq 0$有
