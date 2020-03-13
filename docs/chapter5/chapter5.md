@@ -248,5 +248,5 @@ $$T=\{(\boldsymbol{x}_1,y_1),(\boldsymbol{x}_2,y_2),...,(\boldsymbol{x}_N,y_N)\}
 $$\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x} +b=0 $$
 能将数据集$T$中的正样本和负样本完全正确地划分到超平面两侧，即对所有$y_i=1$的样本$\boldsymbol{x}_i$，有$\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x}_i +b\geq0$，对所有$y_i=0$的样本$\boldsymbol{x}_i$，有$\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x} _i+b<0$，则称数据集$T$线性可分，否则称数据集$T$线性不可分。
 ## 参考文献
-[1]李航编著.统计学习方法[M].清华大学出版社,2012.
+[1]李航编著.统计学习方法[M].清华大学出版社,2012.<br>
 [2]https://blog.csdn.net/itplus/article/details/19408143
