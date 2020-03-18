@@ -117,15 +117,15 @@ $$\begin{aligned}
 [解析]：此公式是公式（4.2）用于离散化后的连续属性的版本，其中$T_a$由公式（4.7）计算得来，$\lambda\in\{-,+\}$表示属性$a$的取值分别小于等于和大于候选划分点$t$时的情形，也即当$\lambda=-$时：$D^{\lambda}_t=D^{a\leq t}_t$，当$\lambda=+$时：$D^{\lambda}_t=D^{a> t}_t$。
 
 ## 4.9
-$$\rho = \frac{\sum_{\boldsymbol{x}\in\tilde{D}}\omega_\boldsymbol{x}}{\sum_{\boldsymbol{x}\in{D}}\omega_\boldsymbol{x}}$$
+$$\rho = \frac{\sum_{\boldsymbol{x}\in\tilde{D}}w_\boldsymbol{x}}{\sum_{\boldsymbol{x}\in{D}} w_\boldsymbol{x}}$$
 [解析]：略
 
 ## 4.10
-$$\tilde{\rho}_k = \frac{\sum_{\boldsymbol{x}\in\tilde{D_k}}\omega_\boldsymbol{x}}{\sum_{\boldsymbol{x}\in\tilde{D}}\omega_\boldsymbol{x}}\quad(1\leq{k}\leq{|\mathcal{Y}|})$$
+$$\tilde{p}_k = \frac{\sum_{\boldsymbol{x}\in\tilde{D_k}}w_\boldsymbol{x}}{\sum_{\boldsymbol{x}\in\tilde{D}}w_\boldsymbol{x}}\quad(1\leqslant{k}\leqslant{|\mathcal{Y}|})$$
 [解析]：略
 
 ## 4.11
-$$\tilde{r}_v = \frac{\sum_{\boldsymbol{x}\in{\tilde{D}^v}}\omega_\boldsymbol{x}}{\sum_{\boldsymbol{x}\in\tilde{D}}\omega_\boldsymbol{x}}\quad(1\leq{v}\leq{V})$$
+$$\tilde{r}_v = \frac{\sum_{\boldsymbol{x}\in{\tilde{D}^v}}w_\boldsymbol{x}}{\sum_{\boldsymbol{x}\in\tilde{D}}w_\boldsymbol{x}}\quad(1\leqslant{v}\leqslant{V})$$
 [解析]：略
 
 ## 4.12   
