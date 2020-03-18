@@ -156,7 +156,7 @@ $$
 \ell_{\exp }\left(H_{t-1}+h_{t} | \mathcal{D}\right)=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\left(1-f(\boldsymbol{x}) h_{t}(\boldsymbol{x})+\frac{1}{2}\right)\right]
 $$
 
-[推导]：由$e^x的二阶泰勒展开为1+x+\frac{x^2}{2}+o(x^2)$得:
+[推导]：由$e^x$的二阶泰勒展开为$1+x+\frac{x^2}{2}+o(x^2)$得:
 $$
 \begin{aligned}
 \ell_{\exp }\left(H_{t-1}+h_{t} | \mathcal{D}\right) &=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} e^{-f(\boldsymbol{x}) h_{t}(\boldsymbol{x})}\right]
