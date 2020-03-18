@@ -195,12 +195,12 @@ $$
 
    a. 当$\vert z^i\vert>\frac{\lambda}{L}$时，由上述推导可知$g(x_i)$的最小值在$x^i=z^i-\frac{\lambda}{L}$处取得，令
    $$
-   \begin{align}
+   \begin{aligned}
    f(x^i)&=g(x^i)\vert_{x^i=0}-g(x^i)\vert_{x_i=z^i-\frac{\lambda}{L}}\\
    &=\frac{L}{2}\left({z^i}\right)^2 - \left(\lambda z^i-\frac{\lambda^2}{2L}\right)\\
    &=\frac{L}{2}\left(z^i-\frac{\lambda}{L}\right)^2\\
    &>0
-   \end{align}
+   \end{aligned}
    $$
    
 
