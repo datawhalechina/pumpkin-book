@@ -220,7 +220,6 @@ $$
 此即为公式(9.38)
 
 ## 附录
-
 参考公式
 $$
 \frac{\partial\boldsymbol x^TB\boldsymbol x}{\partial\boldsymbol x}=\left(B+B^T\right)\boldsymbol x 
@@ -231,10 +230,11 @@ $$
 $$
 \frac{\partial}{\partial x}\left(A^{-1}\right)=-A^{-1}\frac{\partial A}{\partial x}A^{-1}
 $$
-参考资料
-[1] Meilă, Marina. "Comparing clusterings—an information based distance." Journal of multivariate analysis 98.5 (2007): 873-895.
-[2] Halkidi, Maria, Yannis Batistakis, and Michalis Vazirgiannis. "On clustering validation techniques." Journal of intelligent information systems 17.2-3 (2001): 107-145.
-[3] Petersen, K. B. & Pedersen, M. S. *The Matrix Cookbook*.
-[4] Bishop, C. M. (2006). *Pattern Recognition and Machine Learning*. Springer.
+
+## 参考文献
+[1] Meilă, Marina. "Comparing clusterings—an information based distance." Journal of multivariate analysis 98.5 (2007): 873-895.<br>
+[2] Halkidi, Maria, Yannis Batistakis, and Michalis Vazirgiannis. "On clustering validation techniques." Journal of intelligent information systems 17.2-3 (2001): 107-145.<br>
+[3] Petersen, K. B. & Pedersen, M. S. *The Matrix Cookbook*.<br>
+[4] Bishop, C. M. (2006). *Pattern Recognition and Machine Learning*. Springer.<br>
 
 
