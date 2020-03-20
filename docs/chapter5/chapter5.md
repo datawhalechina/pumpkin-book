@@ -1,3 +1,7 @@
+## 5.1
+$$w_i  \gets w_i+\Delta w_i $$
+[解析]：略
+
 ## 5.2
 $$\Delta w_i=\eta(y-\hat{y})x_i$$
 [解析]：此公式是感知机学习算法中的参数更新公式，下面依次给出感知机模型、学习策略和学习算法的具体介绍。<sup>[1]</sup>
@@ -41,6 +45,46 @@ $$\nabla_{\boldsymbol{w}}L(\boldsymbol{w})=\sum_{\boldsymbol{x_i}\in M}(\hat{y}_
 $$\boldsymbol w \leftarrow \boldsymbol w+\Delta \boldsymbol w$$
 $$\Delta \boldsymbol w=-\eta(\hat{y}_i-y_i)\boldsymbol x_i=\eta(y_i-\hat{y}_i)\boldsymbol x_i$$
 相应地，$\boldsymbol{w}$中的某个分量$w_i$的更新公式即为公式(5.2)。
+
+## 5.3
+$$\hat{y}_j^k=f(\beta_j-\theta_j)$$
+[解析]：略
+
+## 5.4
+$$E_k=\frac{1}{2}\sum_{j=1}^l(\hat{y}_j^k-y_j^k)^2$$
+[解析]：略
+
+## 5.5
+$$v  \gets v+\Delta v $$
+[解析]：略
+
+## 5.6
+$$\Delta w_{hj}=-\eta \frac{\partial {E_k}}{\partial{w_{hj}}}$$
+[解析]：略
+
+## 5.7
+$$ \frac{\partial {E_k}}{\partial{w_{hj}}}=\frac{\partial {E_k}}{\partial{\hat{y}_j^k}} \cdot \frac{\partial{\hat{y}_j^k}}{\partial{\beta_j}} \cdot  \frac{\partial{\beta_j}}{\partial{w_{hj}}} $$
+[解析]：略
+
+## 5.8
+$$ \frac{\partial{\beta_j}}{\partial{w_{hj}}}=b_h$$
+[解析]：略
+
+## 5.9
+$$ f^{\prime}(x)=f(x)(1-f(x))$$
+[解析]：略
+
+## 5.10
+$$\begin{align*}
+g_j&=-\frac{\partial {E_k}}{\partial{\hat{y}_j^k}} \cdot \frac{\partial{\hat{y}_j^k}}{\partial{\beta_j}}
+\\&=-( \hat{y}_j^k-y_j^k ) f ^{\prime} (\beta_j-\theta_j)
+\\&=\hat{y}_j^k(1-\hat{y}_j^k)(y_j^k-\hat{y}_j^k)
+\end{align*}$$
+[推导]：参见5.12
+
+## 5.11
+$$\Delta w_{hj}=\eta g_j b_h$$
+[解析]：略
 
 ## 5.12
 $$\Delta \theta_j = -\eta g_j$$
@@ -100,6 +144,31 @@ $$
 $$
 所以
 $$\Delta \gamma_h=-\eta\cfrac{\partial E_k}{\partial \gamma_h} = -\eta e_h$$
+
+## 5.15
+$$\begin{align*}
+e_h&=-\frac{\partial {E_k}}{\partial{b_h}}\cdot \frac{\partial{b_h}}{\partial{\alpha_h}}
+\\&=-\sum_{j=1}^l \frac{\partial {E_k}}{\partial{\beta_j}}\cdot \frac{\partial{\beta_j}}{\partial{b_h}}f^{\prime}(\alpha_h-\gamma_h)
+\\&=\sum_{j=1}^l w_{hj}g_j f^{\prime}(\alpha_h-\gamma_h)
+\\&=b_h(1-b_h)\sum_{j=1}^l w_{hj}g_j 
+\end{align*}$$
+[推导]：参见5.13
+
+## 5.16
+$$E=\frac{1}{m}\sum_{k=1}^mE_k$$
+[解析]：略
+
+## 5.17
+$$E=\lambda \frac{1}{m}\sum_{k=1}^mE_k+(1-\lambda)\sum_i w_i^2$$
+[解析]
+
+## 5.18
+$$\varphi(\boldsymbol{x})=\sum_{i=1}^q w_i\rho(\boldsymbol{x},\boldsymbol{c}_i)$$
+[解析]：略
+
+## 5.19
+$$\rho(\boldsymbol{x},\boldsymbol{c}_i)=e^{-\beta_i \| \boldsymbol{x}-\boldsymbol{c}_i \|^2}$$
+[解析]：略
 
 ## 5.20
 $$E(\boldsymbol{s})=-\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}w_{ij}s_is_j-\sum_{p=1}^n\theta_is_i$$
