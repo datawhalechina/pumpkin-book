@@ -1,10 +1,10 @@
-﻿## 10.4
+## 10.4
 $$\sum^m_{i=1}dist^2_{ij}=tr(\boldsymbol B)+mb_{jj}$$
 [推导]：
 $$\begin{aligned}
 \sum^m_{i=1}dist^2_{ij}&= \sum^m_{i=1}b_{ii}+\sum^m_{i=1}b_{jj}-2\sum^m_{i=1}b_{ij}\\
 &=tr(B)+mb_{jj}
-\end{aligned}​$$
+\end{aligned}$$
 
 ## 10.10
 $$b_{ij}=-\frac{1}{2}(dist^2_{ij}-dist^2_{i\cdot}-dist^2_{\cdot j}+dist^2_{\cdot\cdot})$$
