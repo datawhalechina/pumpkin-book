@@ -146,12 +146,12 @@ $$
 $$\Delta \gamma_h=-\eta\cfrac{\partial E_k}{\partial \gamma_h} = -\eta e_h$$
 
 ## 5.15
-$$\begin{align*}
+$$\begin{aligned}
 e_h&=-\frac{\partial {E_k}}{\partial{b_h}}\cdot \frac{\partial{b_h}}{\partial{\alpha_h}}
 \\&=-\sum_{j=1}^l \frac{\partial {E_k}}{\partial{\beta_j}}\cdot \frac{\partial{\beta_j}}{\partial{b_h}}f^{\prime}(\alpha_h-\gamma_h)
 \\&=\sum_{j=1}^l w_{hj}g_j f^{\prime}(\alpha_h-\gamma_h)
 \\&=b_h(1-b_h)\sum_{j=1}^l w_{hj}g_j 
-\end{align*}$$
+\end{aligned}$$
 [推导]：参见5.13
 
 ## 5.16
