@@ -75,11 +75,11 @@ $$ f^{\prime}(x)=f(x)(1-f(x))$$
 [解析]：略
 
 ## 5.10
-$$\begin{align*}
+$$\begin{aligned}
 g_j&=-\frac{\partial {E_k}}{\partial{\hat{y}_j^k}} \cdot \frac{\partial{\hat{y}_j^k}}{\partial{\beta_j}}
 \\&=-( \hat{y}_j^k-y_j^k ) f ^{\prime} (\beta_j-\theta_j)
 \\&=\hat{y}_j^k(1-\hat{y}_j^k)(y_j^k-\hat{y}_j^k)
-\end{align*}$$
+\end{aligned}$$
 [推导]：参见5.12
 
 ## 5.11
