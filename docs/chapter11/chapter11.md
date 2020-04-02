@@ -154,22 +154,22 @@ $$
 $$
 其中
 $$
-\operatorname{sgn}\left(x^{i}\right)=\left\{\begin{array}{ll}
+\operatorname{sign}\left(x^{i}\right)=\left\{\begin{array}{ll}
 {1,} & {x^{i}>0} \\
 {-1,} & {x^{i}<0}
 \end{array}\right.
 $$
-称为[符号函数](https://zh.wikipedia.org/zh-hans/符号函数)，对于$x_i=0$的特殊情况，由于$\vert x_i \vert$在$x_i=0$点出不光滑，所以其不可导，需单独讨论。令$\frac{d g\left(x^{i}\right)}{d x^{i}}=0$有
+称为[符号函数](https://en.wikipedia.org/wiki/Sign_function)，对于$x_i=0$的特殊情况，由于$\vert x_i \vert$在$x_i=0$点出不光滑，所以其不可导，需单独讨论。令$\frac{d g\left(x^{i}\right)}{d x^{i}}=0$有
 $$
-x^{i}=z^{i}-\frac{\lambda}{L} \operatorname{sgn}\left(x^{i}\right)
+x^{i}=z^{i}-\frac{\lambda}{L} \operatorname{sign}\left(x^{i}\right)
 $$
 此式的解即为优化目标$g(x^i)$的极值点，因为等式两端均含有未知变量$x^i$，故分情况讨论。
 
 1. 当$z^i>\frac{\lambda}{L}$时：
 
-   a. 假设$x^i<0$，则$\textrm{sgn}(x^i)=-1$，那么有$x^i=z^i+\frac{\lambda}{L}>0$与假设矛盾；
+   a. 假设$x^i<0$，则$\operatorname{sign}(x^i)=-1$，那么有$x^i=z^i+\frac{\lambda}{L}>0$与假设矛盾；
 
-   b. 假设$x^i>0$，则$\textrm{sgn}(x^i)=1$，那么有$x^i=z^i-\frac{\lambda}{L}<0$和假设相符和，下面来检验$x^i=z^i-\frac{\lambda}{L}$是否是使函数$g(x^i)$的取得最小值。当$x^i<0$时，
+   b. 假设$x^i>0$，则$\operatorname{sign}(x^i)=1$，那么有$x^i=z^i-\frac{\lambda}{L}<0$和假设相符和，下面来检验$x^i=z^i-\frac{\lambda}{L}$是否是使函数$g(x^i)$的取得最小值。当$x^i<0$时，
    $$
    \frac{d g\left(x^{i}\right)}{d x^{i}}=L\left(x^{i}-z^{i}\right)-\lambda
    $$
@@ -181,15 +181,15 @@ $$
 
 2. 当$z_i<-\frac{\lambda}{L}$时：
 
-   a. 假设$x^i>0$，则$\textrm{sgn}(x^i)=1$，那么有$x^i=z^i-\frac{\lambda}{L}<0$与假设矛盾；
+   a. 假设$x^i>0$，则$\operatorname{sign}(x^i)=1$，那么有$x^i=z^i-\frac{\lambda}{L}<0$与假设矛盾；
 
-   b. 假设$x^i<0$，则$\textrm{sgn}(x^i)=-1$，那么有$x^i=z^i+\frac{\lambda}{L}<0$与假设相符，由上述二阶导数恒大于0可知，$x^i=z^i+\frac{\lambda}{L}$是$g(x^i)$的最小值。
+   b. 假设$x^i<0$，则$\operatorname{sign}(x^i)=-1$，那么有$x^i=z^i+\frac{\lambda}{L}<0$与假设相符，由上述二阶导数恒大于0可知，$x^i=z^i+\frac{\lambda}{L}$是$g(x^i)$的最小值。
 
 3. 当$-\frac{\lambda}{L} \leqslant z_i \leqslant \frac{\lambda}{L}$时：
 
-   a. 假设$x^i>0$，则$\textrm{sgn}(x^i)=1$，那么有$x^i=z^i-\frac{\lambda}{L}\leqslant 0$与假设矛盾；
+   a. 假设$x^i>0$，则$\operatorname{sign}(x^i)=1$，那么有$x^i=z^i-\frac{\lambda}{L}\leqslant 0$与假设矛盾；
 
-   b. 假设$x^i<0$，则$\textrm{sgn}(x^i)=-1$，那么有$x^i=z^i+\frac{\lambda}{L}\geqslant 0$与假设矛盾。
+   b. 假设$x^i<0$，则$\operatorname{sign}(x^i)=-1$，那么有$x^i=z^i+\frac{\lambda}{L}\geqslant 0$与假设矛盾。
 
 4. 最后讨论$x_i=0$的情况，此时$g(x^i)=\frac{L}{2}\left({z^i}\right)^2$
 
