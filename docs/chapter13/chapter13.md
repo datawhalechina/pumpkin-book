@@ -48,7 +48,7 @@ $$
 $$
 [解析]：该式与式(13.3)相同，即后验概率。 可通过有标记数据对模型参数$(\alpha_i,\mu_i,\Sigma_i)$进行初始化，具体来说：
 $$\alpha_i = \cfrac{l_i}{|D_l|},where |D_l| = \sum_{i=1}^N l_i$$
-$$\mu_i = \cfrac{1}{l_i}\sum_{(x_j,y_j) \in D_l\wedge y_i=i}(x_j-\mu_j)(x_j-\mu_j)^T$$
+$$\mu_i = \cfrac{1}{l_i}\sum_{(x_j,y_j) \in D_l\wedge y_i=i}x_j$$
 $$
 \Sigma_{i}=\frac{1}{l_{i}} \sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left( x_{j}- \mu_{i}\right)\left( x_{j}-\mu_{i}\right)^{\top}
 $$
