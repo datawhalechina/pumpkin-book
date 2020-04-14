@@ -1,19 +1,103 @@
+## 7.1
+$$R\left(c_{i} | \boldsymbol{x}\right)=\sum_{j=1}^{N} \lambda_{i j} P\left(c_{j} | \boldsymbol{x}\right)$$
+[解析]：略
+
+## 7.2
+$$R(h)=\mathbb{E}_{\boldsymbol{x}}[R(h(\boldsymbol{x}) | \boldsymbol{x})]$$
+[解析]：略
+
+## 7.3
+$$h^{*}(\boldsymbol{x})=\underset{c \in \mathcal{Y}}{\arg \min } R(c | \boldsymbol{x})$$
+[解析]：略
+
+## 7.4
+$$\lambda_{i j}=\left\{\begin{array}{ll}0, & \text { if } i=j \\ 1, & \text { otherwise }\end{array}\right.$$
+[解析]：略
+
 ## 7.5
 $$R(c|\boldsymbol x)=1−P(c|\boldsymbol x)$$
-[推导]：由式7.1和式7.4可得：
+[推导]：由公式(7.1)和公式(7.4)可得：
 $$R(c_i|\boldsymbol x)=1*P(c_1|\boldsymbol x)+1*P(c_2|\boldsymbol x)+...+0*P(c_i|\boldsymbol x)+...+1*P(c_N|\boldsymbol x)$$
 又$\sum_{j=1}^{N}P(c_j|\boldsymbol x)=1$，则：
 $$R(c_i|\boldsymbol x)=1-P(c_i|\boldsymbol x)$$
-此即为式7.5
+此即为公式(7.5）
 
-## 7.17-7.18
-$$P_{(\boldsymbol x_{i}|c)}\in[0,1]$$
-$$p_{(\boldsymbol x_{i}| c)}$$
-[解析]：式(7.17)所得$P_{(\boldsymbol x_{i}|c)}\in[0,1]$为条件概率，但式(7.18)所得$p_{(\boldsymbol x_{i}| c)}$为条件概率密度而非概率，其值并不在局限于区间[0,1]之内。
+## 7.6
+$$h^{*}(\boldsymbol{x})=\underset{c \in \mathcal{Y}}{\arg \max } P(c | \boldsymbol{x})$$
+[推导]：将公式(7.5)带入公式(7.3)即可推得此式。
+
+## 7.7
+$$P(c | \boldsymbol{x})=\frac{P(\boldsymbol{x}, c)}{P(\boldsymbol{x})}$$
+[解析]：略
+
+## 7.8
+$$P(c | \boldsymbol{x})=\frac{P(c)P(\boldsymbol{x} | c)}{P(\boldsymbol{x})}$$
+[解析]：略
+
+## 7.9
+$$P\left(D_{c} | \boldsymbol{\theta}_{c}\right)=\prod_{\boldsymbol{x} \in D_{c}} P\left(\boldsymbol{x} | \boldsymbol{\theta}_{c}\right)$$
+[解析]：略
+
+## 7.10
+$$\begin{aligned} 
+LL\left(\boldsymbol{\theta}_{c}\right) &=\log P\left(D_{c} | \boldsymbol{\theta}_{c}\right) \\ 
+&=\sum_{\boldsymbol{x} \in D_{c}} \log P\left(\boldsymbol{x} | \boldsymbol{\theta}_{c}\right) 
+\end{aligned}$$
+[解析]：略
+
+## 7.11
+$$\hat{\boldsymbol{\theta}}_{c}=\underset{\boldsymbol{\theta}_{c}}{\arg \max } LL\left(\boldsymbol{\theta}_{c}\right)$$
+[解析]：略
+
+## 7.12
+$$\hat{\boldsymbol{\mu}}_{c}=\frac{1}{\left|D_{c}\right|} \sum_{\boldsymbol{x} \in D_{c}} \boldsymbol{x}$$
+[推导]：参见公式(7.13)
+
+## 7.13
+$$\hat{\boldsymbol{\sigma}}_{c}^{2}=\frac{1}{\left|D_{c}\right|} \sum_{\boldsymbol{x} \in D_{c}}\left(\boldsymbol{x}-\hat{\boldsymbol{\mu}}_{c}\right)\left(\boldsymbol{x}-\hat{\boldsymbol{\mu}}_{c}\right)^{\mathrm{T}}$$
+[推导]：根据公式(7.11)和公式(7.10)可知参数求解公式为
+$$\begin{aligned}
+\hat{\boldsymbol{\theta}}_{c}&=\underset{\boldsymbol{\theta}_{c}}{\arg \max } LL\left(\boldsymbol{\theta}_{c}\right) \\
+&=\underset{\boldsymbol{\theta}_{c}}{\arg \min } -LL\left(\boldsymbol{\theta}_{c}\right) \\
+&= \underset{\boldsymbol{\theta}_{c}}{\arg \min }-\sum_{\boldsymbol{x} \in D_{c}} \log P\left(\boldsymbol{x} | \boldsymbol{\theta}_{c}\right)
+\end{aligned}$$
+由西瓜书上下文可知，此时假设概率密度函数$p(\boldsymbol{x} | c) \sim \mathcal{N}\left(\boldsymbol{\mu}_{c}, \boldsymbol{\sigma}_{c}^{2}\right)$，其等价于假设
+$$P\left(\boldsymbol{x} | \boldsymbol{\theta}_{c}\right)=P\left(\boldsymbol{x} | \boldsymbol{\mu}_{c}, \boldsymbol{\sigma}_{c}^{2}\right)=\frac{1}{\sqrt{(2 \pi)^{d}|\boldsymbol{\Sigma}_c|}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right)$$
+其中，$d$表示$\boldsymbol{x}$的维数，$\boldsymbol{\Sigma}_c=\boldsymbol{\sigma}_{c}^{2}$为对称正定协方差矩阵，$|\boldsymbol{\Sigma}_c|$表示$\boldsymbol{\Sigma}_c$的行列式。将其代入参数求解公式可得
+$$\begin{aligned}
+\hat{\boldsymbol{\mu}}_{c}, \hat{\boldsymbol{\Sigma}}_{c}&= \underset{\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c}{\arg \min }-\sum_{\boldsymbol{x} \in D_{c}} \log\left[\frac{1}{\sqrt{(2 \pi)^{d}|\boldsymbol{\Sigma}_c|}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right)\right] \\
+&= \underset{\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c}{\arg \min }-\sum_{\boldsymbol{x} \in D_{c}} \left[-\frac{d}{2}\log(2 \pi)-\frac{1}{2}\log|\boldsymbol{\Sigma}_c|-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\
+&= \underset{\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c}{\arg \min }\sum_{\boldsymbol{x} \in D_{c}} \left[\frac{d}{2}\log(2 \pi)+\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\
+&= \underset{\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c}{\arg \min }\sum_{\boldsymbol{x} \in D_{c}} \left[\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\
+\end{aligned}
+$$
+假设此时数据集$D_c$中的样本个数为$n$，也即$|D_c|=n$，则上式可以改写为
+$$\begin{aligned}
+\hat{\boldsymbol{\mu}}_{c}, \hat{\boldsymbol{\Sigma}}_{c}&=\underset{\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c}{\arg \min }\sum_{i=1}^{n} \left[\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}_{i}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}_{i}-\boldsymbol{\mu}_c)\right]\\
+&=\underset{\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c}{\arg \min }\frac{n}{2}\log|\boldsymbol{\Sigma}_c|+\sum_{i=1}^{n}\frac{1}{2}(\boldsymbol{x}_i-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}_i-\boldsymbol{\mu}_c)\\
+\end{aligned}$$
+为了便于分别求解$\hat{\boldsymbol{\mu}}_{c}$和$\hat{\boldsymbol{\Sigma}}_{c}$，在这里我们根据公式$\boldsymbol{x}^{\mathrm{T}}\mathbf{A}\boldsymbol{x}=\operatorname{tr}(\mathbf{A}\boldsymbol{x}\boldsymbol{x}^{\mathrm{T}}),\bar{\boldsymbol{x}}=\frac{1}{n}\sum_{i=1}^{n}\boldsymbol{x}_i$将上式恒等变形为
+$$\hat{\boldsymbol{\mu}}_{c}, \hat{\boldsymbol{\Sigma}}_{c}=\underset{\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c}{\arg \min }\frac{n}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_{c}^{-1}\sum_{i=1}^{n}(\boldsymbol{x}_i-\bar{\boldsymbol{x}})(\boldsymbol{x}_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]+\frac{n}{2}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})$$
+观察上式可知，由于此时$\boldsymbol{\Sigma}_c^{-1}$和$\boldsymbol{\Sigma}_c$一样均为正定矩阵，所以当$\boldsymbol{\mu}_c-\bar{\boldsymbol{x}}\neq\boldsymbol{0}$时，上式最后一项为正定二次型。根据正定二次型的性质可知，上式最后一项取值的大小此时仅与$\boldsymbol{\mu}_c-\bar{\boldsymbol{x}}$相关，而且当且仅当$\boldsymbol{\mu}_c-\bar{\boldsymbol{x}}=\boldsymbol{0}$时，上式最后一项取到最小值0，此时可以解得
+$$\hat{\boldsymbol{\mu}}_{c}=\bar{\boldsymbol{x}}=\frac{1}{n}\sum_{i=1}^{n}\boldsymbol{x}_i$$
+将求解出来的$\hat{\boldsymbol{\mu}}_{c}$代回参数求解公式可得新的参数求解公式为
+$$\hat{\boldsymbol{\Sigma}}_{c}=\underset{\boldsymbol{\Sigma}_c}{\arg \min }\frac{n}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_{c}^{-1}\sum_{i=1}^{n}(\boldsymbol{x}_i-\bar{\boldsymbol{x}})(\boldsymbol{x}_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]$$
+此时的参数求解公式是仅与$\boldsymbol{\Sigma}_c$相关的函数。为了求解$\hat{\boldsymbol{\Sigma}}_{c}$，在这里我们不加证明地给出一个引理（具体证明参见参考文献[8]）：设$\mathbf{B}$为$p$阶正定矩阵，$n>0$为实数，在对所有$p$阶正定矩阵$\boldsymbol{\Sigma}$有
+$$\frac{n}{2}\log|\boldsymbol{\Sigma}|+\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}^{-1}\mathbf{B}\right]\geq\frac{n}{2}\log|\mathbf{B}|+\frac{pn}{2}(1-\log n)$$
+当且仅当$\boldsymbol{\Sigma}=\frac{1}{n}\mathbf{B}$时等号成立。所以根据此引理可知，当且仅当$\boldsymbol{\Sigma}_c=\frac{1}{n}\sum_{i=1}^{n}(\boldsymbol{x}_i-\bar{\boldsymbol{x}})(\boldsymbol{x}_i-\bar{\boldsymbol{x}})^{\mathrm{T}}$
+时，上述参数求解公式中$\arg \min$后面的式子取到最小值，那么此时的$\boldsymbol{\Sigma}_c$即为我们想要求解的$\hat{\boldsymbol{\Sigma}}_{c}$。
+
+## 7.17
+$$P\left(x_{i} | c\right)=\frac{\left|D_{c, x_{i}}\right|}{\left|D_{c}\right|}$$
+[解析]：略
+
+## 7.18
+$$p\left(x_{i} | c\right)=\frac{1}{\sqrt{2 \pi} \sigma_{c, i}} \exp \left(-\frac{\left(x_{i}-\mu_{c, i}\right)^{2}}{2 \sigma_{c, i}^{2}}\right)$$
+[解析]：略
 
 ## 7.19
 $$\hat{P}(c)=\frac{\left|D_{c}\right|+1}{|D|+N}$$
-[解析]：从贝叶斯估计（参见附录①）的角度来说，拉普拉斯修正就等价于先验概率为Dirichlet分布（参见附录③）的后验期望值估计。为了接下来的叙述方便，我们重新定义一下相关数学符号。设包含$m$个独立同分布样本的训练集为$D$，$D$中可能的类别数为$k$，其类别的具体取值范围为$\{c_1,c_2,...,c_k\}$。若令随机变量$C$表示样本所属的类别，且$C$取到每个值的概率分别为$p(C=c_1)=\theta_1,p(C=c_2)=\theta_2,...,p(C=c_k)=\theta_k$，那么显然$C$服从参数为$\boldsymbol{\theta}=(\theta_1,\theta_2,...,\theta_k)\in\mathbb{R}^{k}$的Categorical分布（参见附录②），其概率质量函数为
+[推导]：从贝叶斯估计（参见附录①）的角度来说，拉普拉斯修正就等价于先验概率为Dirichlet分布（参见附录③）的后验期望值估计。为了接下来的叙述方便，我们重新定义一下相关数学符号。设包含$m$个独立同分布样本的训练集为$D$，$D$中可能的类别数为$k$，其类别的具体取值范围为$\{c_1,c_2,...,c_k\}$。若令随机变量$C$表示样本所属的类别，且$C$取到每个值的概率分别为$p(C=c_1)=\theta_1,p(C=c_2)=\theta_2,...,p(C=c_k)=\theta_k$，那么显然$C$服从参数为$\boldsymbol{\theta}=(\theta_1,\theta_2,...,\theta_k)\in\mathbb{R}^{k}$的Categorical分布（参见附录②），其概率质量函数为
 $$p(C=c_i)=p(c_i)=\theta_1^{\mathbb{I}(C=c_1)}\ldots\theta_i^{\mathbb{I}(C=c_i)}\ldots\theta_k^{\mathbb{I}(C=c_k)}$$
 其中$p(c_i)=\theta_i$就是公式(7.9)所要求解的$\hat{P}(c)$，下面我们用贝叶斯估计中的后验期望值估计来估计$\theta_i$。根据贝叶斯估计的原理可知，在进行参数估计之前，需要先主观预设一个先验概率$p(\boldsymbol{\theta})$，通常为了方便计算后验概率$p(\boldsymbol{\theta}|D)$，我们会用似然函数$p(D|\boldsymbol{\theta})$的共轭先验<sup>[6]</sup>作为我们的先验概率<sup>[7]</sup>。显然，此时的似然函数$p(D|\boldsymbol{\theta})$是一个基于Categorical分布的似然函数，而Categorical分布的共轭先验为Dirichlet分布，所以此时只需要预设先验概率$p(\boldsymbol{\theta})$为Dirichlet分布，然后使用后验期望值估计就能估计出$\theta_i$。具体地，记$D$中样本类别取值为$c_i$的样本个数为$y_i$，则似然函数$p(D|\boldsymbol{\theta})$可展开为
 $$p(D|\boldsymbol{\theta})=\theta_1^{y_1}\ldots\theta_k^{y_k}=\prod_{i=1}^{k}\theta_i^{y_i}$$
@@ -59,23 +143,91 @@ $$\begin{aligned}
 
 ## 7.20
 $$\hat{P}\left(x_{i} | c\right)=\frac{\left|D_{c, x_{i}}\right|+1}{\left|D_{c}\right|+N_{i}}$$
-[解析]：参见公式(7.19)
+[推导]：参见公式(7.19)
+
+## 7.21
+$$P(c | \boldsymbol{x}) \propto P(c) \prod_{i=1}^{d} P\left(x_{i} | c, p a_{i}\right)$$
+[解析]：略
+
+## 7.22
+$$I\left(x_{i}, x_{j} | y\right)=\sum_{x_{i}, x_{j} ; c \in \mathcal{Y}} P\left(x_{i}, x_{j} | c\right) \log \frac{P\left(x_{i}, x_{j} | c\right)}{P\left(x_{i} | c\right) P\left(x_{j} | c\right)}$$
+[解析]：略
 
 ## 7.23
 $$P(c|\boldsymbol x)\propto{\sum_{i=1 \atop |D_{x_{i}}|\geq m'}^{d}}P(c,x_{i})\prod_{j=1}^{d}P(x_j|c,x_i)$$
-[推导]：
-$$\begin{aligned}
-P(c|\boldsymbol x)&=\cfrac{P(\boldsymbol x,c)}{P(\boldsymbol x)}\\
-&=\cfrac{P\left(x_{1}, x_{2}, \ldots, x_{d}, c\right)}{P(\boldsymbol x)}\\
-&=\cfrac{P\left(x_{1}, x_{2}, \ldots, x_{d} | c\right) P(c)}{P(\boldsymbol x)} \\
-&=\cfrac{P\left(x_{1}, \ldots, x_{i-1}, x_{i+1}, \ldots, x_{d} | c, x_{i}\right) P\left(c, x_{i}\right)}{P(\boldsymbol x)} \\
+[解析]：略
+
+## 7.24
+$$\hat{P}\left(c, x_{i}\right)=\frac{\left|D_{c, x_{i}}\right|+1}{|D|+N_{i}}$$
+[推导]：参见公式(7.19)
+
+## 7.25
+$$\hat{P}\left(x_{j} | c, x_{i}\right)=\frac{\left|D_{c, x_{i}, x_{j}}\right|+1}{\left|D_{c, x_{i}}\right|+N_{j}}$$
+[推导]：参见公式(7.20)
+
+## 7.26
+$$P_{B}\left(x_{1}, x_{2}, \ldots, x_{d}\right)=\prod_{i=1}^{d} P_{B}\left(x_{i} | \pi_{i}\right)=\prod_{i=1}^{d} \theta_{x_{i} | \pi_{i}}$$
+[解析]：略
+
+## 7.27
+$$\begin{aligned} 
+P\left(x_{1}, x_{2}\right) &=\sum_{x_{4}} P\left(x_{1}, x_{2}, x_{4}\right) \\ 
+&=\sum_{x_{4}} P\left(x_{4} | x_{1}, x_{2}\right) P\left(x_{1}\right) P\left(x_{2}\right) \\ 
+&=P\left(x_{1}\right) P\left(x_{2}\right) 
 \end{aligned}$$
-$$\begin{aligned}
-P(c|\boldsymbol x)&\propto P(c,x_{i})P(x_{1},…,x_{i-1},x_{i+1},…,x_{d}|c,x_{i}) \\
-&=P(c,x_{i})\prod _{j=1}^{d}P(x_j|c,x_i)
+[解析]：在这里补充一下同父结构和顺序结构的推导。同父结构：在给定父节点$x_1$的条件下$x_3,x_4$独立
+$$\begin{aligned} 
+P(x_3,x_4|x_1)&=\frac{P(x_1,x_3,x_4)}{P(x_1)} \\
+&=\frac{P(x_1)P(x_3|x_1)P(x_4|x_1)}{P(x_1)} \\
+&=P(x_3|x_1)P(x_4|x_1) \\
 \end{aligned}$$
-$$P(c|\boldsymbol x)\propto{\sum_{i=1 \atop |D_{x_{i}}|\geq m'}^{d}}P(c,x_{i})\prod_{j=1}^{d}P(x_j|c,x_i)$$
-此即为式7.23，由于式(7.24)和式(7.25)的使用到了$|D_{c,x_{i}}|$与$|D_{c,x_{i},x_{j}}|$，若$|D_{x_{i}}|$集合中样本数量过少，则$|D_{c,x_{i}}|$与$|D_{c,x_{i},x_{j}}|$将会更小，因此在式(7.23)中要求$|D_{x_{i}}|$集合中样本数量不少于$m'$。
+顺序结构：在给定节点$x$的条件下$y,z$独立
+$$\begin{aligned} 
+P(y,z|x)&=\frac{P(x,y,z)}{P(x)} \\
+&=\frac{P(z)P(x|z)P(y|x)}{P(x)} \\
+&=\frac{P(z,x)P(y|x)}{P(x)} \\
+&=P(z|x)P(y|x) \\
+\end{aligned}$$
+
+## 7.28
+$$s(B|D)=f(\theta)|B|-LL(B|D)$$
+[解析]：略
+
+## 7.29
+$$LL(B|D)=\sum_{i=1}^{m}\log P_{B}(\boldsymbol{x}_i)$$
+[解析]：略
+
+## 7.30
+$$\operatorname{AIC}(B|D)=|B|-LL(B|D)$$
+[解析]：略
+
+## 7.31
+$$\operatorname{BIC}(B|D)=\frac{\log m}{2}|B|-LL(B|D)$$
+[解析]：略
+
+## 7.32
+$$\theta_{x_i|\pi_i}=\hat{P}_D(x_i|\pi_i) $$
+[解析]：略
+
+## 7.33
+$$P(\mathbf{Q}=\boldsymbol{q}|\mathbf{E}=\boldsymbol{e})\simeq\frac{n_q}{T}$$
+[解析]：略
+
+## 7.34
+$$LL(\mathbf{\Theta}|\mathbf{X},\mathbf{Z})=\ln P(\mathbf{X},\mathbf{Z}|\mathbf{\Theta})$$
+[解析]：EM算法这一节建议以李航老师的《统计学习方法》为主，西瓜书为辅进行学习。
+
+## 7.35
+$$LL(\mathbf{\Theta}|\mathbf{X})=\ln P(\mathbf{X}|\mathbf{\Theta})=\ln\sum_{\mathbf{Z}}P(\mathbf{X},\mathbf{Z}|\mathbf{\Theta})$$
+[解析]：EM算法这一节建议以李航老师的《统计学习方法》为主，西瓜书为辅进行学习。
+
+## 7.36
+$$Q(\mathbf{\Theta}|\mathbf{\Theta}^t)=\mathbb{E}_{\mathbf{Z}|\mathbf{X},\mathbf{\Theta}^t}LL(\mathbf{\Theta}|\mathbf{X},\mathbf{Z})$$
+[解析]：EM算法这一节建议以李航老师的《统计学习方法》为主，西瓜书为辅进行学习。
+
+## 7.37
+$$\mathbf{\Theta}^{t+1}=\underset{\mathbf{\Theta}}{\arg \max }Q(\mathbf{\Theta}|\mathbf{\Theta}^t)$$
+[解析]：EM算法这一节建议以李航老师的《统计学习方法》为主，西瓜书为辅进行学习。
 
 ## 附录
 ### ①贝叶斯估计<sup>[1]</sup>
@@ -103,3 +255,4 @@ $$p(\boldsymbol{x};\boldsymbol{\alpha})=\frac{\Gamma \left(\sum _{i=1}^{k}\alpha
 [5]https://en.wikipedia.org/wiki/Gamma_function <br>
 [6]https://en.wikipedia.org/wiki/Conjugate_prior <br>
 [7]https://baike.baidu.com/item/%E5%85%B1%E8%BD%AD%E5%85%88%E9%AA%8C%E5%88%86%E5%B8%83 <br>
+[8]http://staff.ustc.edu.cn/~zwp/teach/MVA/Lec5_slides.pdf <br>
