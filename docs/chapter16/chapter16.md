@@ -5,8 +5,17 @@ $$
 
 [推导]：
 $$
-Q_{n}(k)=\frac{1}{n}\sum_{i=1}^{n}v_{i}=\frac{1}{n}\left(\sum_{i=1}^{n-1}v_{i}+v_{n}\right)=\frac{1}{n}\left((n-1)Q_{n-1}(k)+v_{n}\right)
+\begin{aligned}
+Q_{n}(k)&=\frac{1}{n}\sum_{i=1}^{n}v_{i}\\
+&=\frac{1}{n}\left(\sum_{i=1}^{n-1}v_{i}+v_{n}\right)\\
+&=\frac{1}{n}\left((n-1)\times Q_{n-1}(k)+v_{n}\right)\\
+&=Q_{n-1}(k)+\frac{1}{n}\left(v_n-Q_{n-1}(k)\right)
+\end{aligned}
 $$
+
+## 16.3
+
+[推导]：参见 16.2
 
 ## 16.4
 
@@ -40,14 +49,14 @@ $$
 $$
 \pi(x,a)=P(action=a|state=x)
 $$
-表示在状态x下选择动作a的概率，又因为动作事件之间两两互斥且和为动作空间，由全概率展开公式
+表示在状态$x$下选择动作$a$的概率，又因为动作事件之间两两互斥且和为动作空间，由全概率展开公式
 $$
 P(A)=\sum_{i=1}^{\infty}P(B_{i})P(A\mid B_{i})
 $$
 可得
 $$
 \begin{aligned}
-&=\mathbb{E}_{\pi}[\frac{1}{T}r_{1}+\frac{T-1}{T}\frac{1}{T-1}\sum_{t=2}^{T}r_{t}\mid x_{0}=x]\\
+&\mathbb{E}_{\pi}[\frac{1}{T}r_{1}+\frac{T-1}{T}\frac{1}{T-1}\sum_{t=2}^{T}r_{t}\mid x_{0}=x]\\
 &=\sum_{a\in A}\pi(x,a)\sum_{x{}'\in X}P_{x\rightarrow x{}'}^{a}(\frac{1}{T}R_{x\rightarrow x{}'}^{a}+\frac{T-1}{T}\mathbb{E}_{\pi}[\frac{1}{T-1}\sum_{t=1}^{T-1}r_{t}\mid x_{0}=x{}'])
 \end{aligned}
 $$
@@ -75,6 +84,25 @@ V_{\gamma }^{\pi}(x)&=\mathbb{E}_{\pi}[\sum_{t=0}^{\infty }\gamma^{t}r_{t+1}\mid
 &=\sum _{a\in A}\pi(x,a)\sum_{x{}'\in X}P_{x\rightarrow x{}'}^{a}(R_{x\rightarrow x{}'}^{a}+\gamma V_{\gamma }^{\pi}(x{}'))
 \end{aligned}
 $$
+
+## 16.10
+
+$$
+\left\{\begin{array}{l}
+Q_{T}^{\pi}(x, a)=\sum_{x^{\prime} \in X} P_{x \rightarrow x^{\prime}}^{a}\left(\frac{1}{T} R_{x \rightarrow x^{\prime}}^{a}+\frac{T-1}{T} V_{T-1}^{\pi}\left(x^{\prime}\right)\right) \\
+Q_{\gamma}^{\pi}(x, a)=\sum_{x^{\prime} \in X} P_{x \rightarrow x^{\prime}}^{a}\left(R_{x \rightarrow x^{\prime}}^{a}+\gamma V_{\gamma}^{\pi}\left(x^{\prime}\right)\right)
+\end{array}\right.
+$$
+
+[推导]：参见 16.7, 16.8
+
+## 16.14
+
+$$
+V^{*}(x)=\max _{a \in A} Q^{\pi^{*}}(x, a)
+$$
+
+[解析]：为了获得最优的状态值函数$V$，这里取了两层最优，分别是采用最优策略$\pi^{*}$和选取使得状态动作值函数$Q$最大的状态$\max_{a\in A}$。
 
 ## 16.16
 
