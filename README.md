@@ -26,7 +26,7 @@
 - 第12章 [计算学习理论](https://datawhalechina.github.io/pumpkin-book/#/chapter12/chapter12)
 - 第13章 [半监督学习](https://datawhalechina.github.io/pumpkin-book/#/chapter13/chapter13)
 - 第14章 [概率图模型](https://datawhalechina.github.io/pumpkin-book/#/chapter14/chapter14)
-- 第15章 规则学习（正在完成中）
+- 第15章 [规则学习](https://datawhalechina.github.io/pumpkin-book/#/chapter15/chapter15)
 - 第16章 [强化学习](https://datawhalechina.github.io/pumpkin-book/#/chapter16/chapter16)
 
 ## 选用的西瓜书版本
@@ -78,6 +78,7 @@ $$（公式的LaTeX表达式）$$
 
 ### 主要贡献者（按首字母排名）
 
+[@archwalker](https://github.com/archwalker)
 [@awyd234](https://github.com/awyd234)
 [@feijuan](https://github.com/feijuan)
 [@Ggmatch](https://github.com/Ggmatch)
