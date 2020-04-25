@@ -13,4 +13,6 @@
   - [第12章 计算学习理论](chapter12/chapter12.md)
   - [第13章 半监督学习](chapter13/chapter13.md)
   - [第14章 概率图模型](chapter14/chapter14.md)
+  - [第15章 规则学习](chapter15/chapter15.md) 
   - [第16章 强化学习](chapter16/chapter16.md)
+
