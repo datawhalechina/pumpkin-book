@@ -200,3 +200,189 @@ $$
 l_i + \sum_{x_j \in{D_u}} \gamma_{ji}-\lambda \alpha_i = 0
 $$
 整理即得式 13.8
+
+## 13.9
+
+$$
+\min _{\boldsymbol{w}, \boldsymbol{b}, \boldsymbol{y}, \boldsymbol{\xi}} \frac{1}{2}\|\boldsymbol{w}\|_{2}^{2}+C_{l} \sum_{i=1}^{l} \xi_{i}+C_{u} \sum_{i=l+1}^{m} \xi_{i}\\
+\begin{aligned}
+\text { s.t. } &y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right) \geqslant 1-\xi_{i}, \quad i=1,2, \ldots, l\\
+&\hat{y}_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right) \geqslant 1-\xi_{i}, \quad i=l+1, l+2, \ldots, m\\
+&\xi_{i} \geqslant 0, \quad i=1,2, \dots, m
+\end{aligned}
+$$
+
+[解析]：这个公式和公式 6.35 基本一致，除了引入了无标记样本的松弛变量$\xi_i, i=l+1,\cdots m$和对应的权重系数$C_u$
+
+## 13.12
+
+$$
+\begin{aligned}
+E(f) &=\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j}\left(f\left(\boldsymbol{x}_{i}\right)-f\left(\boldsymbol{x}_{j}\right)\right)^{2} \\
+&=\frac{1}{2}\left(\sum_{i=1}^{m} d_{i} f^{2}\left(\boldsymbol{x}_{i}\right)+\sum_{j=1}^{m} d_{j} f^{2}\left(\boldsymbol{x}_{j}\right)-2 \sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f\left(\boldsymbol{x}_{i}\right) f\left(\boldsymbol{x}_{j}\right)\right) \\
+&=\sum_{i=1}^{m} d_{i} f^{2}\left(\boldsymbol{x}_{i}\right)-\sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f\left(\boldsymbol{x}_{i}\right) f\left(\boldsymbol{x}_{j}\right) \\
+&=\boldsymbol{f}^{\mathrm{T}}(\mathbf{D}-\mathbf{W}) \boldsymbol{f}
+\end{aligned}
+$$
+
+[解析]：首先解释下这个能量函数的定义。原则上，我们希望能量函数$E(f)$越小越好，对于节点$i,j$，如果它们不相邻，则$\mathbf{W}_{i j}=0$，如果它们相邻，则最小化能量函数要求$f(x_i)$和$f(x_j)$尽量相似，和逻辑相符。下面进行公式的推导，首先由二项展开可得：
+$$
+\begin{aligned}
+E(f) &=\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j}\left(f\left(\boldsymbol{x}_{i}\right)-f\left(\boldsymbol{x}_{j}\right)\right)^{2} \\
+&=\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j}\left(f^{2}\left(\boldsymbol{x}_{i}\right)-2 f\left(\boldsymbol{x}_{i}\right) f\left(\boldsymbol{x}_{j}\right)+f^{2}\left(\boldsymbol{x}_{j}\right)\right) \\
+&=\frac{1}{2}\left( \sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f^{2}\left(\boldsymbol{x}_{i}\right)+ \sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f^{2}\left(\boldsymbol{x}_{j}\right)-2\sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f\left(\boldsymbol{x}_{i}\right) f\left(\boldsymbol{x}_{j}\right)\right)
+\end{aligned}
+$$
+由于$\mathbf{W}$是一个对称矩阵，可以通过变量替换得到
+$$
+\begin{aligned}
+\sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f^{2}\left(\boldsymbol{x}_{j}\right)&=\sum_{j=1}^{m} \sum_{i=1}^{m}(\mathbf{W})_{j i} f^{2}\left(\boldsymbol{x}_{i}\right)\\
+&=\sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f^{2}\left(\boldsymbol{x}_{i}\right)\\
+&=
+\sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f^{2}\left(\boldsymbol{x}_{j}\right)
+\end{aligned}
+$$
+因此$E(f)$可化简为
+$$
+\begin{aligned}
+E(f) &=  \sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f^{2}\left(\boldsymbol{x}_{i}\right)-\sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f\left(\boldsymbol{x}_{i}\right) f\left(\boldsymbol{x}_{j}\right)
+\end{aligned}
+$$
+根据定义 $d_i=\sum_{j=1}^{l+u}\left(\mathbf{W}\right)_{ij}$，且$m=l+u$则
+$$
+\begin{aligned}
+E(f)&=\sum_{i=1}^{m} d_{i} f^{2}\left(\boldsymbol{x}_{i}\right)-\sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f\left(\boldsymbol{x}_{i}\right) f\left(\boldsymbol{x}_{j}\right)\\
+&=\boldsymbol{f}^{\mathrm{T}}\mathbf{D}\boldsymbol{f}-\boldsymbol{f}^{\mathrm{T}}\mathbf{W}\boldsymbol{f}\\
+&=\boldsymbol{f}^{\mathrm{T}}(\mathbf{D}-\mathbf{W}) \boldsymbol{f}
+\end{aligned}
+$$
+
+## 13.13
+
+$$
+\begin{aligned}
+E(f) &=\left(\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{f}_{u}^{\mathrm{T}}\right)\left(\left[\begin{array}{ll}
+\mathbf{D}_{l l} & \mathbf{0}_{l u} \\
+\mathbf{0}_{u l} & \mathbf{D}_{u u}
+\end{array}\right]-\left[\begin{array}{ll}
+\mathbf{W}_{l l} & \mathbf{W}_{l u} \\
+\mathbf{W}_{u l} & \mathbf{W}_{u u}
+\end{array}\right]\right)\left[\begin{array}{l}
+\boldsymbol{f}_{l} \\
+\boldsymbol{f}_{u}
+\end{array}\right] \\
+&=\boldsymbol{f}_{l}^{\mathrm{T}}\left(\mathbf{D}_{l l}-\mathbf{W}_{l l}\right) \boldsymbol{f}_{l}-2 \boldsymbol{f}_{u}^{\mathrm{T}} \mathbf{W}_{u l} \boldsymbol{f}_{l}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\mathbf{D}_{u u}-\mathbf{W}_{u u}\right) \boldsymbol{f}_{u}
+\end{aligned}
+$$
+
+[解析]：根据矩阵乘法的定义，有：
+$$
+\begin{aligned}
+E(f) &=\left[\begin{array}{cc}
+\boldsymbol{f}_{l}^{\mathrm{T}} & \boldsymbol{f}_{u}^{\mathrm{T}}
+\end{array}\right]\left[\begin{array}{cc}
+\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l} & -\boldsymbol{W}_{l u} \\
+-\boldsymbol{W}_{u l} & \boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}
+\end{array}\right]\left[\begin{array}{l}
+f_{l} \\
+f_{u}
+\end{array}\right] \\
+&=\left[\boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right)-\boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l}-\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{W}_{l u}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right)\right]\left[\begin{array}{l}
+f_{l} \\
+f_{u}
+\end{array}\right] \\
+&=\left(\boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right)-\boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l}\right) \boldsymbol{f}_{l}+\left(-\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{W}_{l u}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right)\right) \boldsymbol{f}_{u} \\
+&=\boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right) \boldsymbol{f}_{l}-\boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l} \boldsymbol{f}_{l}-\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{W}_{l u} \boldsymbol{f}_{u}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right) \boldsymbol{f}_{u} \\
+&=\boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right) \boldsymbol{f}_{l}-2 \boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l} \boldsymbol{f}_{l}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right) \boldsymbol{f}_{u}
+\end{aligned}
+$$
+其中最后一步，$\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{W}_{l u} \boldsymbol{f}_{u}=\left(\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{W}_{l u} \boldsymbol{f}_{u}\right)^{\mathrm{T}}=f_{u}^{\mathrm{T}} \boldsymbol{W}_{u l} \boldsymbol{f}_{l}$，因为这个式子的结果是一个标量。
+
+## 13.14
+
+[解析]：参考 13.13
+
+## 13.15
+
+$$
+\boldsymbol{f}_{u}=\left(\mathbf{D}_{u u}-\mathbf{W}_{u u}\right)^{-1} \mathbf{W}_{u l} \boldsymbol{f}_{l}
+$$
+
+[解析]：由 13.13，有
+$$
+\begin{aligned}
+\frac{\partial E(f)}{\partial \boldsymbol{f}_{u}} &=\frac{\partial \boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right) \boldsymbol{f}_{l}-2 \boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l} \boldsymbol{f}_{l}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right) \boldsymbol{f}_{u}}{\partial \boldsymbol{f}_{u}} \\
+&=-2 \boldsymbol{W}_{u l} \boldsymbol{f}_{l}+2\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right) \boldsymbol{f}_{u}
+\end{aligned}
+$$
+另结果等于 0 即得 13.15
+
+## 13.16
+
+$$
+\begin{aligned}
+\mathbf{P} &=\mathbf{D}^{-1} \mathbf{W}=\left[\begin{array}{cc}
+\mathbf{D}_{l l}^{-1} & \mathbf{0}_{l u} \\
+\mathbf{0}_{u l} & \mathbf{D}_{u u}^{-1}
+\end{array}\right]\left[\begin{array}{ll}
+\mathbf{W}_{l l} & \mathbf{W}_{l u} \\
+\mathbf{W}_{u l} & \mathbf{W}_{u u}
+\end{array}\right] \\
+&=\left[\begin{array}{ll}
+\mathbf{D}_{l l}^{-1} \mathbf{W}_{l l} & \mathbf{D}_{l l}^{-1} \mathbf{W}_{l u} \\
+\mathbf{D}_{u u}^{-1} \mathbf{W}_{u l} & \mathbf{D}_{u u}^{-1} \mathbf{W}_{u u}
+\end{array}\right]
+\end{aligned}
+$$
+
+[解析]：根据矩阵乘法的定义计算可得该式，其中需要注意的是，对角矩阵$\mathbf{D}$的拟等于其各个对角元素的逆。
+
+## 13.17
+
+$$
+\begin{aligned}
+\boldsymbol{f}_{u} &=\left(\mathbf{D}_{u u}\left(\mathbf{I}-\mathbf{D}_{u u}^{-1} \mathbf{W}_{u u}\right)\right)^{-1} \mathbf{W}_{u l} \boldsymbol{f}_{l} \\
+&=\left(\mathbf{I}-\mathbf{D}_{u u}^{-1} \mathbf{W}_{u u}\right)^{-1} \mathbf{D}_{u u}^{-1} \mathbf{W}_{u l} \boldsymbol{f}_{l} \\
+&=\left(\mathbf{I}-\mathbf{P}_{u u}\right)^{-1} \mathbf{P}_{u l} \boldsymbol{f}_{l}
+\end{aligned}
+$$
+
+[解析]：第一项到第二项是根据矩阵乘法逆的定义：$$(\mathbf{A}\mathbf{B})^{-1}=\mathbf{B}^{-1}\mathbf{A}^{-1}$$，在这个式子中$$\mathbf{P}_{u u}=\mathbf{D}_{u u}^{-1} \mathbf{W}_{u u}, \mathbf{P}_{ul}=\mathbf{D}_{u u}^{-1} \mathbf{W}_{u l}$$均可以根据$\mathbf{W}_{ij}$计算得到，因此可以通过标记$\mathbf{f}_l$计算未标记数据的标签$\mathbf{f}_u$
+
+## 13.20
+
+$$
+\mathbf{F}^{*}=\lim _{t \rightarrow \infty} \mathbf{F}(t)=(1-\alpha)(\mathbf{I}-\alpha \mathbf{S})^{-1} \mathbf{Y}
+$$
+
+[解析]：由 13.19
+$$
+\mathbf{F}(t+1)=\alpha \mathbf{S} \mathbf{F}(t)+(1-\alpha) \mathbf{Y}
+$$
+当 t取不同的值时，有：
+$$
+\begin{aligned}
+t=0: \mathbf{F}(1) &=\alpha \mathbf{S F}(0)+(1-\alpha) \mathbf{Y}\\
+&=\alpha \mathbf{S} \mathbf{Y}+(1-\alpha) \mathbf{Y} \\
+t=1: \mathbf{F}(2) &=\alpha \mathbf{S F}(1)+(1-\alpha) \mathbf{Y}=\alpha \mathbf{S}(\alpha \mathbf{S} \mathbf{Y}+(1-\alpha) \mathbf{Y})+(1-\alpha) \mathbf{Y} \\
+&=(\alpha \mathbf{S})^{2} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{1}(\alpha \mathbf{S})^{i}\right) \mathbf{Y} \\
+t=2:\mathbf{F}(3)&=\alpha\mathbf{S}\mathbf{F}(2)+(1-\alpha)\mathbf{Y}\\&=\alpha \mathbf{S}\left((\alpha \mathbf{S})^{2} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{1}(\alpha \mathbf{S})^{i}\right) \mathbf{Y}\right)+(1-\alpha) \mathbf{Y} \\
+&=(\alpha \mathbf{S})^{3} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{2}(\alpha \mathbf{S})^{i}\right) \mathbf{Y}\\
+\end{aligned}
+$$
+可以观察到规律
+$$
+\mathbf{F}(t)=(\alpha \mathbf{S})^{t} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{t-1}(\alpha \mathbf{S})^{i}\right) \mathbf{Y}
+$$
+则
+$$
+\mathbf{F}^{*}=\lim _{t \rightarrow \infty}\mathbf{F}(t)=\lim _{t \rightarrow \infty}(\alpha \mathbf{S})^{t} \mathbf{Y}+\lim _{t \rightarrow \infty}(1-\alpha)\left(\sum_{i=0}^{t-1}(\alpha \mathbf{S})^{i}\right) \mathbf{Y}
+$$
+其中第一项由于$\mathbf{S}=\mathbf{D}^{-\frac{1}{2}} \mathbf{W} \mathbf{D}^{-\frac{1}{2}}$的特征值介于[-1, 1]之间(这里省略详细推导，可以参见 https://en.wikipedia.org/wiki/Laplacian_matrix 其中对称拉普拉斯矩阵的特征值介于 0 和 2 之间)，而$\alpha\in(0,1)$，所以$$\lim _{t \rightarrow \infty}(\alpha \mathbf{S})^{t}=0$$，第二项由等比数列公式
+$$
+\lim _{t \rightarrow \infty} \sum_{i=0}^{t-1}(\alpha \mathbf{S})^{i}=\frac{\mathbf{I}-\lim _{t \rightarrow \infty}(\alpha \mathbf{S})^{t}}{\mathbf{I}-\alpha \mathbf{S}}=\frac{\mathbf{I}}{\mathbf{I}-\alpha \mathbf{S}}=(\mathbf{I}-\alpha \mathbf{S})^{-1}
+$$
+综合可得式 13.20
+
+
+
