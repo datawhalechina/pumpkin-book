@@ -5,9 +5,7 @@ $$\operatorname{Ent}(D)=-\sum_{k=1}^{|\mathcal{Y}|}p_k\log_{2}{p_k}$$
 $$\operatorname{Ent}(D)=-\sum_{k=1}^{|\mathcal{Y}|} p_{k} \log _{2} p_{k}$$
 其中，$|\mathcal{Y}|$表示样本类别总数，$p_k$表示第$k$类样本所占的比例，且$0 \leq p_k \leq 1,\sum_{k=1}^{n}p_k=1$。若令$|\mathcal{Y}|=n,p_k=x_k$，那么信息熵$\operatorname{Ent}(D)$就可以看作一个$n$元实值函数，也即
 $$\operatorname{Ent}(D)=f(x_1,...,x_n)=-\sum_{k=1}^{n} x_{k} \log _{2} x_{k} $$
-其中，$0 \leq x_k \leq 1,\sum_{k=1}^{n}x_k=1$，下面考虑求该多元函数的最值。<br>
-**求最大值：**<br>
-如果不考虑约束$0 \leq x_k \leq 1$，仅考虑$\sum_{k=1}^{n}x_k=1$的话，对$f(x_1,...,x_n)$求最大值等价于如下最小化问题
+其中，$0 \leq x_k \leq 1,\sum_{k=1}^{n}x_k=1$，下面考虑求该多元函数的最值。首先我们先来求最大值，如果不考虑约束$0 \leq x_k \leq 1$，仅考虑$\sum_{k=1}^{n}x_k=1$的话，对$f(x_1,...,x_n)$求最大值等价于如下最小化问题
 $$\begin{array}{ll}{
 \operatorname{min}} & {\sum\limits_{k=1}^{n} x_{k} \log _{2} x_{k} } \\ 
 {\text { s.t. }} & {\sum\limits_{k=1}^{n}x_k=1} 
@@ -37,9 +35,7 @@ $$\left\{ \begin{array}{lr}
 $$x_1=x_2=...=x_n=\cfrac{1}{n}$$
 又因为$x_k$还需满足约束$0 \leq x_k \leq 1$，显然$0 \leq\cfrac{1}{n}\leq 1$，所以$x_1=x_2=...=x_n=\cfrac{1}{n}$是满足所有约束的最优解，也即为当前最小化问题的最小值点，同时也是$f(x_1,...,x_n)$的最大值点。将$x_1=x_2=...=x_n=\cfrac{1}{n}$代入$f(x_1,...,x_n)$中可得
 $$f(\cfrac{1}{n},...,\cfrac{1}{n})=-\sum_{k=1}^{n} \cfrac{1}{n} \log _{2} \cfrac{1}{n}=-n\cdot\cfrac{1}{n} \log _{2} \cfrac{1}{n}=\log _{2} n$$
-所以$f(x_1,...,x_n)$在满足约束$0 \leq x_k \leq 1,\sum_{k=1}^{n}x_k=1$时的最大值为$\log _{2} n$。<br>
-**求最小值：**<br>
-如果不考虑约束$\sum_{k=1}^{n}x_k=1$，仅考虑$0 \leq x_k \leq 1$的话，$f(x_1,...,x_n)$可以看做是$n$个互不相关的一元函数的加和，也即
+所以$f(x_1,...,x_n)$在满足约束$0 \leq x_k \leq 1,\sum_{k=1}^{n}x_k=1$时的最大值为$\log _{2} n$。求完最大值后下面我们再来求最小值，如果不考虑约束$\sum_{k=1}^{n}x_k=1$，仅考虑$0 \leq x_k \leq 1$的话，$f(x_1,...,x_n)$可以看做是$n$个互不相关的一元函数的加和，也即
 $$f(x_1,...,x_n)=\sum_{k=1}^{n} g(x_k) $$
 其中，$g(x_k)=-x_{k} \log _{2} x_{k},0 \leq x_k \leq 1$。那么当$g(x_1),g(x_2),...,g(x_n)$分别取到其最小值时，$f(x_1,...,x_n)$也就取到了最小值。所以接下来考虑分别求$g(x_1),g(x_2),...,g(x_n)$各自的最小值，由于$g(x_1),g(x_2),...,g(x_n)$的定义域和函数表达式均相同，所以只需求出$g(x_1)$的最小值也就求出了$g(x_2),...,g(x_n)$的最小值。下面考虑求$g(x_1)$的最小值，首先对$g(x_1)$关于$x_1$求一阶和二阶导数
 $$g^{\prime}(x_1)=\cfrac{d(-x_{1} \log _{2} x_{1})}{d x_1}=-\log _{2} x_{1}-x_1\cdot \cfrac{1}{x_1\ln2}=-\log _{2} x_{1}-\cfrac{1}{\ln2}$$
@@ -55,20 +51,6 @@ $$f(0,0,...,0,1,0,...,0)=-0 \log _{2}0-0 \log _{2}0...-0 \log _{2}0-1 \log _{2}1
 $$\operatorname{Gain}(D,a) = \operatorname{Ent}(D) - \sum_{v=1}^{V}\frac{|D^v|}{|D|}\operatorname{Ent}({D^v})$$
 [解析]：这个是信息增益的定义公式，在信息论中信息增益也称为互信息（参见附录①），其表示已知一个随机变量的信息后使得另一个随机变量的不确定性减少的程度。所以在这里，这个公式可以理解为在属性$a$的取值已知后数据集$D$中类别$k$的不确定性减小的程度。若根据某个属性计算得到的信息增益越大，则说明在知道其取值后样本集的不确定性减小的程度越大，也即为书上所说的“纯度提升”越大。
 
-## 4.3
-$$\operatorname{Gain\_ratio}(D,a) = \frac{\operatorname{Gain}(D,a)}{\operatorname{IV}(a)}$$
-[解析]：略
-
-## 4.4
-$$\operatorname{IV}(a) = -\sum_{v=1}^{V}\frac{|D^v|}{|D|}\log_{2}{\frac{|D^v|}{|D|}}$$
-[解析]：略
-
-## 4.5
-$$\begin{aligned}\operatorname{Gini}(p)&=\sum_{k=1}^{|y|}\sum_{{k'}\neq k}{p_k}{p_{k'}}\\
-&=1-\sum_{k=1}^{|y|}p_k^2
-\end{aligned}$$
-[解析]：略
-
 ## 4.6
 $$\operatorname{Gini\_index}(D,a) = \sum_{v=1}^{V}\frac{|D^v|}{|D|}\operatorname{Gini}(D^v)$$
 [解析]：这个是数据集$D$中属性$a$的基尼指数的定义，它表示在属性$a$的取值已知的条件下，数据集$D$按照属性$a$的所有可能取值划分后的纯度，不过在构造CART分类树时并不会严格按照此公式来选择最优划分属性，主要是因为CART分类树是一颗二叉树，如果用上面的公式去选出最优划分属性，无法进一步选出最优划分属性的最优划分点。CART分类树的构造算法如下：
@@ -78,29 +60,33 @@ $$\operatorname{Gini\_index}(D,a) = \frac{|D^{a=v}|}{|D|}\operatorname{Gini}(D^{
 - 最后，重复以上两步，直至满足停止条件。
 
 下面以西瓜书中表4.2中西瓜数据集2.0为例来构造CART分类树，其中第一个最优划分属性和最优划分点的计算过程如下：
-以属性“色泽”为例，它有3个可能的取值：$\{青绿，乌黑，浅白\}$， 若使用该属性的属性值是否等于“青绿”对数据集$D$进行划分，则可得到2个子集，分别记为$D^1(色泽=青绿),D^2(色泽\not=青绿)$。子集$D^1$包含编号$\{1,4,6,10,13,17\}$共6个样例，其中正例占$p_1=\frac{3}{6}$，反例占$p_2=\frac{3}{6}$；子集$D^2$包含编号$\{2,3,5,7,8,9,11,12,14,15,16\}$共11个样例，其中正例占$p_1=\frac{5}{11}$，反例占$p_2=\frac{6}{11}$，根据公式（4.5）可计算出用“色泽=青绿”划分之后得到基尼指数为
-$$\operatorname{Gini\_index}(D,色泽=青绿) = \frac{6}{17}\times\left(1-(\frac{3}{6})^2-(\frac{3}{6})^2\right)+\frac{11}{17}\times\left(1-(\frac{5}{11})^2-(\frac{6}{11})^2\right) 
+以属性“色泽”为例，它有3个可能的取值：$\{\text{青绿}，\text{乌黑}，\text{浅白}\}$， 若使用该属性的属性值是否等于“青绿”对数据集$D$进行划分，则可得到2个子集，分别记为$D^1(\text{色泽}=\text{青绿}),D^2(\text{色泽}\not=\text{青绿})$。子集$D^1$包含编号$\{1,4,6,10,13,17\}$共6个样例，其中正例占$p_1=\frac{3}{6}$，反例占$p_2=\frac{3}{6}$；子集$D^2$包含编号$\{2,3,5,7,8,9,11,12,14,15,16\}$共11个样例，其中正例占$p_1=\frac{5}{11}$，反例占$p_2=\frac{6}{11}$，根据公式（4.5）可计算出用“色泽=青绿”划分之后得到基尼指数为
+$$\operatorname{Gini\_index}(D,\text{色泽}=\text{青绿}) = \frac{6}{17}\times\left(1-(\frac{3}{6})^2-(\frac{3}{6})^2\right)+\frac{11}{17}\times\left(1-(\frac{5}{11})^2-(\frac{6}{11})^2\right) 
 = 0.497$$
 类似的，可以计算出以下不同属性取不同值的基尼指数
-$$\operatorname{Gini\_index}(D,色泽=乌黑) = \frac{6}{17}\times\left(1-(\frac{4}{6})^2-(\frac{2}{6})^2\right)+\frac{11}{17}\times\left(1-(\frac{4}{11})^2-(\frac{7}{11})^2\right) 
-= 0.456$$
-$$\operatorname{Gini\_index}(D,色泽=浅白) = \frac{5}{17}\times\left(1-(\frac{1}{5})^2-(\frac{4}{5})^2\right)+\frac{12}{17}\times\left(1-(\frac{7}{12})^2-(\frac{5}{12})^2\right) 
-= 0.426$$
-$$\operatorname{Gini\_index}(D,根蒂=蜷缩) = 0.456$$
-$$\operatorname{Gini\_index}(D,根蒂=稍蜷) = 0.496$$
-$$\operatorname{Gini\_index}(D,根蒂=硬挺) = 0.439$$
-$$\operatorname{Gini\_index}(D,敲声=浊响) = 0.450$$
-$$\operatorname{Gini\_index}(D,敲声=沉闷) = 0.494$$
-$$\operatorname{Gini\_index}(D,敲声=清脆) = 0.439$$
-$$\operatorname{Gini\_index}(D,纹理=清晰) = 0.286$$
-$$\operatorname{Gini\_index}(D,纹理=稍稀) = 0.437$$
-$$\operatorname{Gini\_index}(D,纹理=模糊) = 0.403$$
-$$\operatorname{Gini\_index}(D,脐部=凹陷) = 0.415$$
-$$\operatorname{Gini\_index}(D,脐部=稍凹) = 0.497$$
-$$\operatorname{Gini\_index}(D,脐部=平坦) = 0.362$$
-$$\operatorname{Gini\_index}(D,触感=硬挺) = 0.494$$
-$$\operatorname{Gini\_index}(D,触感=软粘) = 0.494$$ 
-特别地，对于属性“触感”，由于它的可取值个数为2，所以其实只需计算其中一个取值的基尼指数即可。根据上面的计算结果可知$\operatorname{Gini\_index}(D,纹理=清晰) = 0.286$最小，所以选择属性“纹理”为最优划分属性并生成根节点，接着以“纹理=清晰”为最优划分点生成$D^1(纹理=清晰),D^2(纹理\not=清晰)$两个子节点，对于两个子节点分别重复上述步骤继续生成下一层子节点，直至满足停止条件。以上便是CART分类树的构建过程，从构建过程中可以看出，CART分类树最终构造出来的是一颗二叉树。CART决策树除了能处理分类问题以外，它还可以处理回归问题，附录②中给出了CART回归树的构造算法。
+$$\begin{aligned}
+\operatorname{Gini\_index}(D,\text{色泽}=\text{乌黑}) = \frac{6}{17}\times\left(1-(\frac{4}{6})^2-(\frac{2}{6})^2\right)+\frac{11}{17}\times\left(1-(\frac{4}{11})^2-(\frac{7}{11})^2\right) 
+= 0.456\\
+\operatorname{Gini\_index}(D,\text{色泽}=\text{浅白}) = \frac{5}{17}\times\left(1-(\frac{1}{5})^2-(\frac{4}{5})^2\right)+\frac{12}{17}\times\left(1-(\frac{7}{12})^2-(\frac{5}{12})^2\right) 
+= 0.426
+\end{aligned}$$
+$$\begin{aligned}
+\operatorname{Gini\_index}(D,\text{根蒂}=\text{蜷缩}) = 0.456\\
+\operatorname{Gini\_index}(D,\text{根蒂}=\text{稍蜷}) = 0.496\\
+\operatorname{Gini\_index}(D,\text{根蒂}=\text{硬挺}) = 0.439\\
+\operatorname{Gini\_index}(D,\text{敲声}=\text{浊响}) = 0.450\\
+\operatorname{Gini\_index}(D,\text{敲声}=\text{沉闷}) = 0.494\\
+\operatorname{Gini\_index}(D,\text{敲声}=\text{清脆}) = 0.439\\
+\operatorname{Gini\_index}(D,\text{纹理}=\text{清晰}) = 0.286\\
+\operatorname{Gini\_index}(D,\text{纹理}=\text{稍稀}) = 0.437\\
+\operatorname{Gini\_index}(D,\text{纹理}=\text{模糊}) = 0.403\\
+\operatorname{Gini\_index}(D,\text{脐部}=\text{凹陷}) = 0.415\\
+\operatorname{Gini\_index}(D,\text{脐部}=\text{稍凹}) = 0.497\\
+\operatorname{Gini\_index}(D,\text{脐部}=\text{平坦}) = 0.362\\
+\operatorname{Gini\_index}(D,\text{触感}=\text{硬挺}) = 0.494\\
+\operatorname{Gini\_index}(D,\text{触感}=\text{软粘}) = 0.494
+\end{aligned}$$ 
+特别地，对于属性“触感”，由于它的可取值个数为2，所以其实只需计算其中一个取值的基尼指数即可。根据上面的计算结果可知$\operatorname{Gini\_index}(D,\text{纹理}=\text{清晰}) = 0.286$最小，所以选择属性“纹理”为最优划分属性并生成根节点，接着以“纹理=清晰”为最优划分点生成$D^1(\text{纹理}=\text{清晰}),D^2(\text{纹理}\not=\text{清晰})$两个子节点，对于两个子节点分别重复上述步骤继续生成下一层子节点，直至满足停止条件。以上便是CART分类树的构建过程，从构建过程中可以看出，CART分类树最终构造出来的是一颗二叉树。CART决策树除了能处理分类问题以外，它还可以处理回归问题，附录②中给出了CART回归树的构造算法。
 
 ## 4.7
 $$T_a={\lbrace{\frac{a^i+a^{i+1}}{2}|1\leq{i}\leq{n-1}}\rbrace}$$
@@ -115,25 +101,6 @@ $$\begin{aligned}
 {|D|}\operatorname{Ent}(D_t^{\lambda})
 \end{aligned}$$
 [解析]：此公式是公式（4.2）用于离散化后的连续属性的版本，其中$T_a$由公式（4.7）计算得来，$\lambda\in\{-,+\}$表示属性$a$的取值分别小于等于和大于候选划分点$t$时的情形，也即当$\lambda=-$时：$D^{\lambda}_t=D^{a\leq t}_t$，当$\lambda=+$时：$D^{\lambda}_t=D^{a> t}_t$。
-
-## 4.9
-$$\rho = \frac{\sum_{\boldsymbol{x}\in\tilde{D}}w_\boldsymbol{x}}{\sum_{\boldsymbol{x}\in{D}} w_\boldsymbol{x}}$$
-[解析]：略
-
-## 4.10
-$$\tilde{p}_k = \frac{\sum_{\boldsymbol{x}\in\tilde{D_k}}w_\boldsymbol{x}}{\sum_{\boldsymbol{x}\in\tilde{D}}w_\boldsymbol{x}}\quad(1\leqslant{k}\leqslant{|\mathcal{Y}|})$$
-[解析]：略
-
-## 4.11
-$$\tilde{r}_v = \frac{\sum_{\boldsymbol{x}\in{\tilde{D}^v}}w_\boldsymbol{x}}{\sum_{\boldsymbol{x}\in\tilde{D}}w_\boldsymbol{x}}\quad(1\leqslant{v}\leqslant{V})$$
-[解析]：略
-
-## 4.12   
-$$\begin{aligned}
-\operatorname{Gain}(D,a) &= \rho \times \operatorname{Gain}(\tilde{D},a) \\
-&= \rho \times \left(\operatorname{Ent}(\tilde{D}) - \sum_{v=1}^{V}{\tilde{r}_v}\operatorname{Ent}({\tilde{D}^v})\right)
-\end{aligned}$$
-[解析]：略
            
 ## 附录
 ### ①互信息<sup>[1]</sup>
