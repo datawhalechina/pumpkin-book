@@ -1,19 +1,3 @@
-## 7.1
-$$R\left(c_{i} | \boldsymbol{x}\right)=\sum_{j=1}^{N} \lambda_{i j} P\left(c_{j} | \boldsymbol{x}\right)$$
-[解析]：略
-
-## 7.2
-$$R(h)=\mathbb{E}_{\boldsymbol{x}}[R(h(\boldsymbol{x}) | \boldsymbol{x})]$$
-[解析]：略
-
-## 7.3
-$$h^{*}(\boldsymbol{x})=\underset{c \in \mathcal{Y}}{\arg \min } R(c | \boldsymbol{x})$$
-[解析]：略
-
-## 7.4
-$$\lambda_{i j}=\left\{\begin{array}{ll}0, & \text { if } i=j \\ 1, & \text { otherwise }\end{array}\right.$$
-[解析]：略
-
 ## 7.5
 $$R(c|\boldsymbol x)=1−P(c|\boldsymbol x)$$
 [推导]：由公式(7.1)和公式(7.4)可得：
@@ -25,29 +9,6 @@ $$R(c_i|\boldsymbol x)=1-P(c_i|\boldsymbol x)$$
 ## 7.6
 $$h^{*}(\boldsymbol{x})=\underset{c \in \mathcal{Y}}{\arg \max } P(c | \boldsymbol{x})$$
 [推导]：将公式(7.5)带入公式(7.3)即可推得此式。
-
-## 7.7
-$$P(c | \boldsymbol{x})=\frac{P(\boldsymbol{x}, c)}{P(\boldsymbol{x})}$$
-[解析]：略
-
-## 7.8
-$$P(c | \boldsymbol{x})=\frac{P(c)P(\boldsymbol{x} | c)}{P(\boldsymbol{x})}$$
-[解析]：略
-
-## 7.9
-$$P\left(D_{c} | \boldsymbol{\theta}_{c}\right)=\prod_{\boldsymbol{x} \in D_{c}} P\left(\boldsymbol{x} | \boldsymbol{\theta}_{c}\right)$$
-[解析]：略
-
-## 7.10
-$$\begin{aligned} 
-LL\left(\boldsymbol{\theta}_{c}\right) &=\log P\left(D_{c} | \boldsymbol{\theta}_{c}\right) \\ 
-&=\sum_{\boldsymbol{x} \in D_{c}} \log P\left(\boldsymbol{x} | \boldsymbol{\theta}_{c}\right) 
-\end{aligned}$$
-[解析]：略
-
-## 7.11
-$$\hat{\boldsymbol{\theta}}_{c}=\underset{\boldsymbol{\theta}_{c}}{\arg \max } LL\left(\boldsymbol{\theta}_{c}\right)$$
-[解析]：略
 
 ## 7.12
 $$\hat{\boldsymbol{\mu}}_{c}=\frac{1}{\left|D_{c}\right|} \sum_{\boldsymbol{x} \in D_{c}} \boldsymbol{x}$$
@@ -87,19 +48,11 @@ $$\frac{n}{2}\log|\boldsymbol{\Sigma}|+\frac{1}{2}\operatorname{tr}\left[\boldsy
 当且仅当$\boldsymbol{\Sigma}=\frac{1}{n}\mathbf{B}$时等号成立。所以根据此引理可知，当且仅当$\boldsymbol{\Sigma}_c=\frac{1}{n}\sum_{i=1}^{n}(\boldsymbol{x}_i-\bar{\boldsymbol{x}})(\boldsymbol{x}_i-\bar{\boldsymbol{x}})^{\mathrm{T}}$
 时，上述参数求解公式中$\arg \min$后面的式子取到最小值，那么此时的$\boldsymbol{\Sigma}_c$即为我们想要求解的$\hat{\boldsymbol{\Sigma}}_{c}$。
 
-## 7.17
-$$P\left(x_{i} | c\right)=\frac{\left|D_{c, x_{i}}\right|}{\left|D_{c}\right|}$$
-[解析]：略
-
-## 7.18
-$$p\left(x_{i} | c\right)=\frac{1}{\sqrt{2 \pi} \sigma_{c, i}} \exp \left(-\frac{\left(x_{i}-\mu_{c, i}\right)^{2}}{2 \sigma_{c, i}^{2}}\right)$$
-[解析]：略
-
 ## 7.19
 $$\hat{P}(c)=\frac{\left|D_{c}\right|+1}{|D|+N}$$
 [推导]：从贝叶斯估计（参见附录①）的角度来说，拉普拉斯修正就等价于先验概率为Dirichlet分布（参见附录③）的后验期望值估计。为了接下来的叙述方便，我们重新定义一下相关数学符号。设包含$m$个独立同分布样本的训练集为$D$，$D$中可能的类别数为$k$，其类别的具体取值范围为$\{c_1,c_2,...,c_k\}$。若令随机变量$C$表示样本所属的类别，且$C$取到每个值的概率分别为$p(C=c_1)=\theta_1,p(C=c_2)=\theta_2,...,p(C=c_k)=\theta_k$，那么显然$C$服从参数为$\boldsymbol{\theta}=(\theta_1,\theta_2,...,\theta_k)\in\mathbb{R}^{k}$的Categorical分布（参见附录②），其概率质量函数为
 $$p(C=c_i)=p(c_i)=\theta_1^{\mathbb{I}(C=c_1)}\ldots\theta_i^{\mathbb{I}(C=c_i)}\ldots\theta_k^{\mathbb{I}(C=c_k)}$$
-其中$p(c_i)=\theta_i$就是公式(7.9)所要求解的$\hat{P}(c)$，下面我们用贝叶斯估计中的后验期望值估计来估计$\theta_i$。根据贝叶斯估计的原理可知，在进行参数估计之前，需要先主观预设一个先验概率$p(\boldsymbol{\theta})$，通常为了方便计算后验概率$p(\boldsymbol{\theta}|D)$，我们会用似然函数$p(D|\boldsymbol{\theta})$的共轭先验<sup>[6]</sup>作为我们的先验概率<sup>[7]</sup>。显然，此时的似然函数$p(D|\boldsymbol{\theta})$是一个基于Categorical分布的似然函数，而Categorical分布的共轭先验为Dirichlet分布，所以此时只需要预设先验概率$p(\boldsymbol{\theta})$为Dirichlet分布，然后使用后验期望值估计就能估计出$\theta_i$。具体地，记$D$中样本类别取值为$c_i$的样本个数为$y_i$，则似然函数$p(D|\boldsymbol{\theta})$可展开为
+其中$p(c_i)=\theta_i$就是公式(7.9)所要求解的$\hat{P}(c)$，下面我们用贝叶斯估计中的后验期望值估计来估计$\theta_i$。根据贝叶斯估计的原理可知，在进行参数估计之前，需要先主观预设一个先验概率$p(\boldsymbol{\theta})$，通常为了方便计算<sup>[7]</sup>后验概率$p(\boldsymbol{\theta}|D)$，我们会用似然函数$p(D|\boldsymbol{\theta})$的共轭先验<sup>[6]</sup>作为我们的先验概率。显然，此时的似然函数$p(D|\boldsymbol{\theta})$是一个基于Categorical分布的似然函数，而Categorical分布的共轭先验为Dirichlet分布，所以此时只需要预设先验概率$p(\boldsymbol{\theta})$为Dirichlet分布，然后使用后验期望值估计就能估计出$\theta_i$。具体地，记$D$中样本类别取值为$c_i$的样本个数为$y_i$，则似然函数$p(D|\boldsymbol{\theta})$可展开为
 $$p(D|\boldsymbol{\theta})=\theta_1^{y_1}\ldots\theta_k^{y_k}=\prod_{i=1}^{k}\theta_i^{y_i}$$
 那么后验概率$p(D|\boldsymbol{\theta})$为
 $$\begin{aligned}
@@ -145,18 +98,6 @@ $$\begin{aligned}
 $$\hat{P}\left(x_{i} | c\right)=\frac{\left|D_{c, x_{i}}\right|+1}{\left|D_{c}\right|+N_{i}}$$
 [推导]：参见公式(7.19)
 
-## 7.21
-$$P(c | \boldsymbol{x}) \propto P(c) \prod_{i=1}^{d} P\left(x_{i} | c, p a_{i}\right)$$
-[解析]：略
-
-## 7.22
-$$I\left(x_{i}, x_{j} | y\right)=\sum_{x_{i}, x_{j} ; c \in \mathcal{Y}} P\left(x_{i}, x_{j} | c\right) \log \frac{P\left(x_{i}, x_{j} | c\right)}{P\left(x_{i} | c\right) P\left(x_{j} | c\right)}$$
-[解析]：略
-
-## 7.23
-$$P(c|\boldsymbol x)\propto{\sum_{i=1 \atop |D_{x_{i}}|\geq m'}^{d}}P(c,x_{i})\prod_{j=1}^{d}P(x_j|c,x_i)$$
-[解析]：略
-
 ## 7.24
 $$\hat{P}\left(c, x_{i}\right)=\frac{\left|D_{c, x_{i}}\right|+1}{|D|+N_{i}}$$
 [推导]：参见公式(7.19)
@@ -164,10 +105,6 @@ $$\hat{P}\left(c, x_{i}\right)=\frac{\left|D_{c, x_{i}}\right|+1}{|D|+N_{i}}$$
 ## 7.25
 $$\hat{P}\left(x_{j} | c, x_{i}\right)=\frac{\left|D_{c, x_{i}, x_{j}}\right|+1}{\left|D_{c, x_{i}}\right|+N_{j}}$$
 [推导]：参见公式(7.20)
-
-## 7.26
-$$P_{B}\left(x_{1}, x_{2}, \ldots, x_{d}\right)=\prod_{i=1}^{d} P_{B}\left(x_{i} | \pi_{i}\right)=\prod_{i=1}^{d} \theta_{x_{i} | \pi_{i}}$$
-[解析]：略
 
 ## 7.27
 $$\begin{aligned} 
@@ -189,44 +126,8 @@ P(y,z|x)&=\frac{P(x,y,z)}{P(x)} \\
 &=P(z|x)P(y|x) \\
 \end{aligned}$$
 
-## 7.28
-$$s(B|D)=f(\theta)|B|-LL(B|D)$$
-[解析]：略
-
-## 7.29
-$$LL(B|D)=\sum_{i=1}^{m}\log P_{B}(\boldsymbol{x}_i)$$
-[解析]：略
-
-## 7.30
-$$\operatorname{AIC}(B|D)=|B|-LL(B|D)$$
-[解析]：略
-
-## 7.31
-$$\operatorname{BIC}(B|D)=\frac{\log m}{2}|B|-LL(B|D)$$
-[解析]：略
-
-## 7.32
-$$\theta_{x_i|\pi_i}=\hat{P}_D(x_i|\pi_i) $$
-[解析]：略
-
-## 7.33
-$$P(\mathbf{Q}=\boldsymbol{q}|\mathbf{E}=\boldsymbol{e})\simeq\frac{n_q}{T}$$
-[解析]：略
-
 ## 7.34
 $$LL(\mathbf{\Theta}|\mathbf{X},\mathbf{Z})=\ln P(\mathbf{X},\mathbf{Z}|\mathbf{\Theta})$$
-[解析]：EM算法这一节建议以李航老师的《统计学习方法》为主，西瓜书为辅进行学习。
-
-## 7.35
-$$LL(\mathbf{\Theta}|\mathbf{X})=\ln P(\mathbf{X}|\mathbf{\Theta})=\ln\sum_{\mathbf{Z}}P(\mathbf{X},\mathbf{Z}|\mathbf{\Theta})$$
-[解析]：EM算法这一节建议以李航老师的《统计学习方法》为主，西瓜书为辅进行学习。
-
-## 7.36
-$$Q(\mathbf{\Theta}|\mathbf{\Theta}^t)=\mathbb{E}_{\mathbf{Z}|\mathbf{X},\mathbf{\Theta}^t}LL(\mathbf{\Theta}|\mathbf{X},\mathbf{Z})$$
-[解析]：EM算法这一节建议以李航老师的《统计学习方法》为主，西瓜书为辅进行学习。
-
-## 7.37
-$$\mathbf{\Theta}^{t+1}=\underset{\mathbf{\Theta}}{\arg \max }Q(\mathbf{\Theta}|\mathbf{\Theta}^t)$$
 [解析]：EM算法这一节建议以李航老师的《统计学习方法》为主，西瓜书为辅进行学习。
 
 ## 附录
