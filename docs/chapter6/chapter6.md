@@ -1,39 +1,3 @@
-## 6.1
-$$\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x}+b=0$$
-[解析]：略
-
-## 6.2
-$$r=\frac{|\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x}+b|}{\|\boldsymbol{w}\|}$$
-[解析]：略
-
-## 6.3
-$$\left\{\begin{array}{ll}{\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b \geqslant+1,} & {y_{i}=+1} \\ {\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b \leqslant-1,} & {y_{i}=-1}\end{array}\right.$$
-[解析]：略
-
-## 6.4
-$$\gamma=\frac{2}{\|\boldsymbol{w}\|}$$
-[解析]：略
-
-## 6.5
-$$\begin{array}{l}
-\underset{\boldsymbol{w}, b}{\max} \frac{2}{\|\boldsymbol{w}\|} \\ 
-\text { s.t. } y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right) \geqslant 1, \quad i=1,2, \ldots, m
-\end{array}$$
-[解析]：略
-
-## 6.6
-$$\begin{array}{l}
-\underset{\boldsymbol{w}, b}{\max} \frac{1}{2}\|\boldsymbol{w}\|^2 \\ 
-\text { s.t. } y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right) \geqslant 1, \quad i=1,2, \ldots, m
-\end{array}$$
-[解析]：略
-
-## 6.8
-$$
-L(\boldsymbol{w}, b, \boldsymbol{\alpha})=\frac{1}{2}\|\boldsymbol{w}\|^{2}+\sum_{i=1}^{m} \alpha_{i}\left(1-y_{i}\left(\boldsymbol{w}^{\top} \boldsymbol{x}_{i}+b\right)\right)
-$$
-[解析]：略
-
 ## 6.9
 $$\boldsymbol{w} = \sum_{i=1}^m\alpha_iy_i\boldsymbol{x}_i$$
 [推导]：公式(6.8)可作如下展开
@@ -79,116 +43,9 @@ $$\begin{aligned}
 所以
 $$\max_{\boldsymbol{\alpha}}\inf_{\boldsymbol{w},b} L(\boldsymbol{w},b,\boldsymbol{\alpha})=\max_{\boldsymbol{\alpha}} \sum_{i=1}^m\alpha_i - \frac{1}{2}\sum_{i = 1}^m\sum_{j=1}^m\alpha_i \alpha_j y_iy_j\boldsymbol{x}_i^T\boldsymbol{x}_j $$
 
-## 6.12
-$$\begin{aligned} f(\boldsymbol{x}) &=\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}+b \\ &=\sum_{i=1}^{m} \alpha_{i} y_{i} \boldsymbol{x}_{i}^{\mathrm{T}} \boldsymbol{x}+b \end{aligned}$$
-[解析]：略
-
 ## 6.13
 $$\left\{\begin{array}{l}\alpha_{i} \geqslant 0 \\ y_{i} f\left(\boldsymbol{x}_{i}\right)-1 \geqslant 0 \\ \alpha_{i}\left(y_{i} f\left(\boldsymbol{x}_{i}\right)-1\right)=0\end{array}\right.$$
 [解析]：参见公式(6.9)中给出的第1点理由
-
-## 6.14
-$$\alpha_{i} y_{i}+\alpha_{j} y_{j}=c, \quad \alpha_{i} \geqslant 0, \quad \alpha_{j} \geqslant 0$$
-[解析]：略
-
-## 6.15
-$$c=-\sum_{k \neq i, j} \alpha_{k} y_{k}$$
-[解析]：略
-
-## 6.16
-$$\alpha_{i} y_{i}+\alpha_{j} y_{j}=c$$
-[解析]：略
-
-## 6.17
-$$y_{s}\left(\sum_{i \in S} \alpha_{i} y_{i} \boldsymbol{x}_{i}^{\mathrm{T}} \boldsymbol{x}_{s}+b\right)=1$$
-[解析]：略
-
-## 6.18
-$$b=\frac{1}{|S|} \sum_{s \in S}\left(y_{s}-\sum_{i \in S} \alpha_{i} y_{i} \boldsymbol{x}_{i}^{\mathrm{T}} \boldsymbol{x}_{s}\right)$$
-[解析]：略
-
-## 6.19
-$$f(\boldsymbol{x})=\boldsymbol{w}^{\mathrm{T}}\phi(\boldsymbol{x})+b$$
-[解析]：略
-
-## 6.20
-$$\begin{array}{l}
-\underset{\boldsymbol{w}, b}{\max} \frac{1}{2}\|\boldsymbol{w}\|^2 \\ 
-\text { s.t. } y_{i}\left(\boldsymbol{w}^{\mathrm{T}}\phi(\boldsymbol{x}_{i})+b\right) \geqslant 1, \quad i=1,2, \ldots, m
-\end{array}$$
-[解析]：略
-
-## 6.21
-$$\begin{aligned}
-\max_{\boldsymbol{\alpha}} & \sum_{i=1}^m\alpha_i - \frac{1}{2}\sum_{i = 1}^m\sum_{j=1}^m\alpha_i \alpha_j y_iy_j\phi(\boldsymbol{x}_i)^T\phi(\boldsymbol{x}_j) \\
-\text { s.t. } & \sum_{i=1}^m \alpha_i y_i =0 \\ 
-& \alpha_i \geq 0 \quad i=1,2,\dots ,m
-\end{aligned}$$
-[解析]：略
-
-## 6.22
-$$\kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right)=\left\langle\phi\left(\boldsymbol{x}_{i}\right), \phi\left(\boldsymbol{x}_{j}\right)\right\rangle=\phi\left(\boldsymbol{x}_{i}\right)^{\mathrm{T}} \phi\left(\boldsymbol{x}_{j}\right)$$
-[解析]：略
-
-## 6.23
-$$\begin{aligned}
-\max_{\boldsymbol{\alpha}} & \sum_{i=1}^m\alpha_i - \frac{1}{2}\sum_{i = 1}^m\sum_{j=1}^m\alpha_i \alpha_j y_iy_j\kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right) \\
-\text { s.t. } & \sum_{i=1}^m \alpha_i y_i =0 \\ 
-& \alpha_i \geq 0 \quad i=1,2,\dots ,m
-\end{aligned}$$
-[解析]：略
-
-## 6.24
-$$\begin{aligned}
-f(\boldsymbol{x}) &=\boldsymbol{w}^{\mathrm{T}}\phi(\boldsymbol{x})+b \\ 
-&=\sum_{i=1}^{m} \alpha_{i} y_{i}\phi(\boldsymbol{x}_{i})^{\mathrm{T}}\phi(\boldsymbol{x})+b \\
-&=\sum_{i=1}^{m} \alpha_{i} y_{i}\kappa\left(\boldsymbol{x}, \boldsymbol{x}_{i}\right)+b \\
-\end{aligned}$$
-[解析]：略
-
-## 6.25
-$$\gamma_1\kappa_1+\gamma_2\kappa_2$$
-[解析]：略
-
-## 6.26
-$$\kappa_1\otimes\kappa_2\left(\boldsymbol{x}, \boldsymbol{z}\right)=\kappa_1\left(\boldsymbol{x}, \boldsymbol{z}\right)\kappa_2\left(\boldsymbol{x}, \boldsymbol{z}\right)$$
-[解析]：略
-
-## 6.27
-$$\kappa\left(\boldsymbol{x}, \boldsymbol{z}\right)=g(\boldsymbol{x})\kappa_1\left(\boldsymbol{x}, \boldsymbol{z}\right)g(\boldsymbol{z})$$
-[解析]：略
-
-## 6.28
-$$y_i(\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x}_i+b)\geqslant 1$$
-[解析]：略
-
-## 6.28
-$$y_i(\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x}_i+b)\geqslant 1$$
-[解析]：略
-
-## 6.29
-$$\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^{2}+C \sum_{i=1}^{m} \ell_{0 / 1}\left(y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right)-1\right)$$
-[解析]：略
-
-## 6.30
-$$\ell_{0 / 1}(z)=\left\{\begin{array}{ll}{1,} & {\text { if } z < 0} \\ {0,} & {\text { otherwise }}\end{array}\right.$$
-[解析]：略
-
-## 6.31
-$$\ell_{hinge}(z)=\max(0,1-z)$$
-[解析]：略
-
-## 6.32
-$$\ell_{exp}(z)=\exp(-z)$$
-[解析]：略
-
-## 6.33
-$$\ell_{log}(z)=\log(1+\exp(-z))$$
-[解析]：略
-
-## 6.34
-$$\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^{2}+C \sum_{i=1}^{m} \max \left(0,1-y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right)\right)$$
-[解析]：略
 
 ## 6.35
 $$\begin{aligned}
@@ -203,10 +60,6 @@ $$\xi_i = 0$$
 所以综上可得
 $$1-y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right)\leq\xi_i\Rightarrow y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right) \geqslant 1-\xi_{i}$$
 
-## 6.36
-$$\begin{aligned} L(\boldsymbol{w}, b, \boldsymbol{\alpha}, \boldsymbol{\xi}, \boldsymbol{\mu})=& \frac{1}{2}\|\boldsymbol{w}\|^{2}+C \sum_{i=1}^{m} \xi_{i} \\ &+\sum_{i=1}^{m} \alpha_{i}\left(1-\xi_{i}-y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right)\right)-\sum_{i=1}^{m} \mu_{i} \xi_{i} \end{aligned}$$
-[解析]：略
-
 ## 6.37
 $$\boldsymbol{w}=\sum_{i=1}^{m}\alpha_{i}y_{i}\boldsymbol{x}_{i}$$
 [解析]：参见公式(6.9)
@@ -217,7 +70,7 @@ $$0=\sum_{i=1}^{m}\alpha_{i}y_{i}$$
 
 ## 6.39
 $$ C=\alpha_i +\mu_i $$
-[推导]：对式（6.36）关于$\xi_i$求偏导并令其等于0可得：
+[推导]：对公式(6.36)关于$\xi_i$求偏导并令其等于0可得：
 $$\frac{\partial L}{\partial \xi_i}=0+C \times 1 - \alpha_i \times 1-\mu_i
 \times 1 =0\Longrightarrow C=\alpha_i +\mu_i$$
 
@@ -227,7 +80,7 @@ $$\begin{aligned}
  s.t. &\sum_{i=1}^m \alpha_i y_i=0 \\ 
  &  0 \leq\alpha_i \leq C \quad i=1,2,\dots ,m
  \end{aligned}$$
-将式6.37-6.39代入6.36可以得到6.35的对偶问题：
+将公式(6.37)-(6.39)代入公式(6.36)可以得到公式(6.35)的对偶问题：
 $$\begin{aligned}
  \min_{\boldsymbol{w},b,\boldsymbol{\xi}}L(\boldsymbol{w},b,\boldsymbol{\alpha},\boldsymbol{\xi},\boldsymbol{\mu}) &= \frac{1}{2}||\boldsymbol{w}||^2+C\sum_{i=1}^m \xi_i+\sum_{i=1}^m \alpha_i(1-\xi_i-y_i(\boldsymbol{w}^T\boldsymbol{x}_i+b))-\sum_{i=1}^m\mu_i \xi_i  \\
 &=\frac{1}{2}||\boldsymbol{w}||^2+\sum_{i=1}^m\alpha_i(1-y_i(\boldsymbol{w}^T\boldsymbol{x}_i+b))+C\sum_{i=1}^m \xi_i-\sum_{i=1}^m \alpha_i \xi_i-\sum_{i=1}^m\mu_i \xi_i \\
@@ -253,50 +106,6 @@ $$0 \leq\alpha_i \leq C \quad i=1,2,\dots ,m$$
 $$\left\{\begin{array}{l}\alpha_{i} \geqslant 0, \quad \mu_{i} \geqslant 0 \\ y_{i} f\left(\boldsymbol{x}_{i}\right)-1+\xi_{i} \geqslant 0 \\ \alpha_{i}\left(y_{i} f\left(\boldsymbol{x}_{i}\right)-1+\xi_{i}\right)=0 \\ \xi_{i} \geqslant 0, \mu_{i} \xi_{i}=0\end{array}\right.$$
 [解析]：参见公式(6.13)
 
-## 6.42
-$$\min _{f} \Omega(f)+C \sum_{i=1}^{m} \ell\left(f\left(\boldsymbol{x}_{i}\right), y_{i}\right)$$
-[解析]：略
-
-## 6.43
-$$\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^{2}+C \sum_{i=1}^{m} \ell_{\epsilon}\left(f\left(\boldsymbol{x}_{i}\right)-y_{i}\right)$$
-[解析]：略
-
-## 6.44
-$$\ell_{\epsilon}(z)=\left\{\begin{array}{cc}{0,} & {\text { if }|z| \leqslant \epsilon} \\ {|z|-\epsilon,} & {\text { otherwise }}\end{array}\right.$$
-[解析]：略
-
-## 6.45
-$$\begin{array}{ll}
-\underset{\boldsymbol{w}, b, \xi_{i}, \hat{\xi}_{i}}{\min} & \frac{1}{2}\|\boldsymbol{w}\|^{2}+C \sum_{i=1}^{m}\left(\xi_{i}+\hat{\xi}_{i}\right) \\
-{\text { s.t. }} & {f\left(\boldsymbol{x}_{i}\right)-y_{i} \leqslant \epsilon+\xi_{i}} \\ {} & {y_{i}-f\left(\boldsymbol{x}_{i}\right) \leqslant \epsilon+\hat{\xi}_{i}} \\ {} & {\xi_{i} \geqslant 0, \hat{\xi}_{i} \geqslant 0, i=1,2, \ldots, m}\end{array}$$
-[解析]：略
-
-## 6.46
-$$\begin{array}{l}L(\boldsymbol{w}, b, \boldsymbol{\alpha}, \hat{\boldsymbol{\alpha}}, \boldsymbol{\xi}, \hat{\boldsymbol{\xi}}, \boldsymbol{\mu}, \hat{\boldsymbol{\mu}}) \\ 
-=\frac{1}{2}\|\boldsymbol{w}\|^{2}+C \sum\limits_{i=1}^{m}\left(\xi_{i}+\hat{\xi}_{i}\right)-\sum\limits_{i=1}^{m} \mu_{i} \xi_{i}-\sum\limits_{i=1}^{m} \hat{\mu}_{i} \hat{\xi}_{i} \\ 
-+\sum\limits_{i=1}^{m} \alpha_{i}\left(f\left(\boldsymbol{x}_{i}\right)-y_{i}-\epsilon-\xi_{i}\right)+\sum\limits_{i=1}^{m} \hat{\alpha}_{i}\left(y_{i}-f\left(\boldsymbol{x}_{i}\right)-\epsilon-\hat{\xi}_{i}\right)\end{array}$$
-[解析]：略
-
-## 6.47
-$$\boldsymbol{w}=\sum_{i=1}^{m}(\hat{\alpha}_{i}-\alpha_{i})\boldsymbol{x}_{i}$$
-[解析]：略
-
-## 6.48
-$$0=\sum_{i=1}^{m}(\hat{\alpha}_{i}-\alpha_{i})$$
-[解析]：略
-
-## 6.49
-$$C=\alpha_{i}+\mu_{i}$$
-[解析]：略
-
-## 6.50
-$$C=\hat{\alpha}_{i}+\hat{\mu}_{i}$$
-[解析]：略
-
-## 6.51
-$$\begin{aligned} \max _{\boldsymbol{\alpha}, \hat{\boldsymbol{\alpha}}} & \sum_{i=1}^{m} y_{i}\left(\hat{\alpha}_{i}-\alpha_{i}\right)-\epsilon\left(\hat{\alpha}_{i}+\alpha_{i}\right) \\ &-\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m}\left(\hat{\alpha}_{i}-\alpha_{i}\right)\left(\hat{\alpha}_{j}-\alpha_{j}\right) \boldsymbol{x}_{i}^{\mathrm{T}} \boldsymbol{x}_{j} \\ \text { s.t. } & \sum_{i=1}^{m}\left(\hat{\alpha}_{i}-\alpha_{i}\right)=0 \\ & 0 \leqslant \alpha_{i}, \hat{\alpha}_{i} \leqslant C \end{aligned}$$
-[解析]：略
-
 ## 6.52
 $$
 \left\{\begin{array}{l}
@@ -304,8 +113,7 @@ $$
 {\left(C-\alpha_{i}\right) \xi_{i}=0,\left(C-\hat{\alpha}_{i}\right) \hat{\xi}_{i}=0}
 \end{array}\right.
 $$
-[推导]：
-将式（6.45）的约束条件全部恒等变形为小于等于0的形式可得：
+[推导]：将公式(6.45)的约束条件全部恒等变形为小于等于0的形式可得：
 $$
 \left\{\begin{array}{l}
 {f\left(\boldsymbol{x}_{i}\right)-y_{i}-\epsilon-\xi_{i} \leq 0 }  \\ 
@@ -314,7 +122,7 @@ $$
 {-\hat{\xi}_{i} \leq 0}
 \end{array}\right.
 $$
-由于以上四个约束条件的拉格朗日乘子分别为$\alpha_i,\hat{\alpha}_i,\mu_i,\hat{\mu}_i$，所以由西瓜书附录式（B.3）可知，以上四个约束条件可相应转化为以下KKT条件：
+由于以上四个约束条件的拉格朗日乘子分别为$\alpha_i,\hat{\alpha}_i,\mu_i,\hat{\mu}_i$，所以由附录①可知，以上四个约束条件可相应转化为以下KKT条件：
 $$
 \left\{\begin{array}{l}
 {\alpha_i\left(f\left(\boldsymbol{x}_{i}\right)-y_{i}-\epsilon-\xi_{i} \right) = 0 }  \\ 
@@ -323,7 +131,7 @@ $$
 {-\hat{\mu}_i \hat{\xi}_{i} = 0  \Rightarrow \hat{\mu}_i \hat{\xi}_{i} = 0 }
 \end{array}\right.
 $$
-由式（6.49）和式（6.50）可知：
+由公式(6.49)和公式(6.50)可知：
 $$
 \begin{aligned}
 \mu_i=C-\alpha_i \\
@@ -339,31 +147,7 @@ $$
 {(C-\hat{\alpha}_i) \hat{\xi}_{i} = 0 }
 \end{array}\right.
 $$
-又因为样本$(\boldsymbol{x}_i,y_i)$只可能处在间隔带的某一侧，那么约束条件$f\left(\boldsymbol{x}_{i}\right)-y_{i}-\epsilon-\xi_{i}=0$和$y_{i}-f\left(\boldsymbol{x}_{i}\right)-\epsilon-\hat{\xi}_{i}=0$不可能同时成立，所以$\alpha_i$和$\hat{\alpha}_i$中至少有一个为0，也即$\alpha_i\hat{\alpha}_i=0$。在此基础上再进一步分析可知，如果$\alpha_i=0$的话，那么根据约束$(C-\alpha_i)\xi_{i} = 0$可知此时$\xi_i=0$，同理，如果$\hat{\alpha}_i=0$的话，那么根据约束$(C-\hat{\alpha}_i)\hat{\xi}_{i} = 0$可知此时$\hat{\xi}_i=0$，所以$\xi_i$和$\hat{\xi}_i$中也是至少有一个为0，也即$\xi_{i} \hat{\xi}_{i}=0$。将$\alpha_i\hat{\alpha}_i=0,\xi_{i} \hat{\xi}_{i}=0$整合进上述KKT条件中即可得到式（6.52）。
-
-## 6.53
-$$f(\boldsymbol{x})=\sum_{i=1}^{m}(\hat{\alpha}_{i}-\alpha_{i})\boldsymbol{x}_{i}^{\mathrm{T}}\boldsymbol{x}+b$$
-[解析]：略
-
-## 6.54
-$$b=y_i+\epsilon-\sum_{i=1}^{m}(\hat{\alpha}_{i}-\alpha_{i})\boldsymbol{x}_{i}^{\mathrm{T}}\boldsymbol{x}$$
-[解析]：略
-
-## 6.55
-$$\boldsymbol{w}=\sum_{i=1}^{m}(\hat{\alpha}_{i}-\alpha_{i})\phi(\boldsymbol{x}_{i})$$
-[解析]：略
-
-## 6.56
-$$f(\boldsymbol{x})=\sum_{i=1}^{m}(\hat{\alpha}_{i}-\alpha_{i})\kappa(\boldsymbol{x},\boldsymbol{x}_{i})+b$$
-[解析]：略
-
-## 6.57
-$$\min _{h \in \mathbb{H}} F(h)=\Omega\left(\|h\|_{\mathbb{H}}\right)+\ell\left(h\left(\boldsymbol{x}_{1}\right), h\left(\boldsymbol{x}_{2}\right), \ldots, h\left(\boldsymbol{x}_{m}\right)\right)$$
-[解析]：略
-
-## 6.58
-$$h^{*}(\boldsymbol{x})=\sum_{i=1}^{m} \alpha_{i} \kappa\left(\boldsymbol{x}, \boldsymbol{x}_{i}\right)$$
-[解析]：略
+又因为样本$(\boldsymbol{x}_i,y_i)$只可能处在间隔带的某一侧，那么约束条件$f\left(\boldsymbol{x}_{i}\right)-y_{i}-\epsilon-\xi_{i}=0$和$y_{i}-f\left(\boldsymbol{x}_{i}\right)-\epsilon-\hat{\xi}_{i}=0$不可能同时成立，所以$\alpha_i$和$\hat{\alpha}_i$中至少有一个为0，也即$\alpha_i\hat{\alpha}_i=0$。在此基础上再进一步分析可知，如果$\alpha_i=0$的话，那么根据约束$(C-\alpha_i)\xi_{i} = 0$可知此时$\xi_i=0$，同理，如果$\hat{\alpha}_i=0$的话，那么根据约束$(C-\hat{\alpha}_i)\hat{\xi}_{i} = 0$可知此时$\hat{\xi}_i=0$，所以$\xi_i$和$\hat{\xi}_i$中也是至少有一个为0，也即$\xi_{i} \hat{\xi}_{i}=0$。将$\alpha_i\hat{\alpha}_i=0,\xi_{i} \hat{\xi}_{i}=0$整合进上述KKT条件中即可得到公式(6.52)。
 
 ## 6.59
 $$h(\boldsymbol{x})=\boldsymbol{w}^{\mathrm{T}}\phi(\boldsymbol{x})$$
@@ -373,10 +157,6 @@ $$h(\boldsymbol{x})=\boldsymbol{w}^{\mathrm{T}}\phi(\boldsymbol{x})$$
 $$\max _{\boldsymbol{w}} J(\boldsymbol{w})=\frac{\boldsymbol{w}^{\mathrm{T}} \mathbf{S}_{b}^{\phi} \boldsymbol{w}}{\boldsymbol{w}^{\mathrm{T}} \mathbf{S}_{w}^{\phi} \boldsymbol{w}}$$
 [解析]：类似于第3章的公式(3.35)。
 
-## 6.61
-$$\boldsymbol{\mu}_{i}^{\phi}=\frac{1}{m_{i}} \sum_{\boldsymbol{x} \in X_{i}} \phi(\boldsymbol{x})$$
-[解析]：略
-
 ## 6.62
 $$\mathbf{S}_{b}^{\phi}=\left(\boldsymbol{\mu}_{1}^{\phi}-\boldsymbol{\mu}_{0}^{\phi}\right)\left(\boldsymbol{\mu}_{1}^{\phi}-\boldsymbol{\mu}_{0}^{\phi}\right)^{\mathrm{T}}$$
 [解析]：类似于第3章的公式(3.34)。
@@ -384,10 +164,6 @@ $$\mathbf{S}_{b}^{\phi}=\left(\boldsymbol{\mu}_{1}^{\phi}-\boldsymbol{\mu}_{0}^{
 ## 6.63
 $$\mathbf{S}_{w}^{\phi}=\sum_{i=0}^{1} \sum_{\boldsymbol{x} \in X_{i}}\left(\phi(\boldsymbol{x})-\boldsymbol{\mu}_{i}^{\phi}\right)\left(\phi(\boldsymbol{x})-\boldsymbol{\mu}_{i}^{\phi}\right)^{\mathrm{T}}$$
 [解析]：类似于第3章的公式(3.33)。
-
-## 6.64
-$$h(\boldsymbol{x})=\sum_{i=1}^{m} \alpha_{i} \kappa\left(\boldsymbol{x}, \boldsymbol{x}_{i}\right)$$
-[解析]：略
 
 ## 6.65
 $$\boldsymbol{w}=\sum_{i=1}^{m} \alpha_{i} \phi\left(\boldsymbol{x}_{i}\right)$$
@@ -459,14 +235,6 @@ $$\hat{\boldsymbol{\mu}}_{1}=\frac{1}{m_{1}} \mathbf{K} \mathbf{1}_{1}=\frac{1}{
 ## 6.67
 $$\hat{\boldsymbol{\mu}}_{1}=\frac{1}{m_{1}} \mathbf{K} \mathbf{1}_{1}$$
 [解析]：参见公式(6.66)的解析。
-
-## 6.68
-$$\mathbf{M}=\left(\hat{\boldsymbol{\mu}}_{0}-\hat{\boldsymbol{\mu}}_{1}\right)\left(\hat{\boldsymbol{\mu}}_{0}-\hat{\boldsymbol{\mu}}_{1}\right)^{\mathrm{T}}$$
-[解析]：略
-
-## 6.69
-$$\mathbf{N}=\mathbf{K} \mathbf{K}^{\mathrm{T}}-\sum_{i=0}^{1} m_{i} \hat{\boldsymbol{\mu}}_{i} \hat{\boldsymbol{\mu}}_{i}^{\mathrm{T}}$$
-[解析]：略
 
 ## 6.70
 $$\max _{\boldsymbol{\alpha}} J(\boldsymbol{\alpha})=\frac{\boldsymbol{\alpha}^{\mathrm{T}} \mathbf{M} \boldsymbol{\alpha}}{\boldsymbol{\alpha}^{\mathrm{T}} \mathbf{N} \boldsymbol{\alpha}}$$
@@ -551,7 +319,7 @@ $$\begin{array}{ll}
 {\text {s.t.}} & {g_{i}(\boldsymbol x) \leq 0 \quad(i=1, \ldots, m)} \\ 
 {} & {h_{j}(\boldsymbol x)=0 \quad(j=1, \ldots, n)}
 \end{array}$$
-其中，自变量$\boldsymbol x\in \mathbb{R}^n$。设$f(\boldsymbol x),g_i(\boldsymbol x),h_j(\boldsymbol x)$具有连续的一阶偏导数，$\boldsymbol x^*$是优化问题的局部可行解。若该优化问题满足任意一个**约束限制条件（constraint qualifications or regularity conditions）**<sup>[2]</sup>，则一定存在$\boldsymbol \mu^*=(\mu_1^*,\mu_2^*,...,\mu_m^*)^T,\boldsymbol \lambda^*=(\lambda_1^*,\lambda_2^*,...,\lambda_n^*)^T,$使得
+其中，自变量$\boldsymbol x\in \mathbb{R}^n$。设$f(\boldsymbol x),g_i(\boldsymbol x),h_j(\boldsymbol x)$具有连续的一阶偏导数，$\boldsymbol x^*$是优化问题的局部可行解。若该优化问题满足任意一个约束限制条件（constraint qualifications or regularity conditions）<sup>[2]</sup>，则一定存在$\boldsymbol \mu^*=(\mu_1^*,\mu_2^*,...,\mu_m^*)^T,\boldsymbol \lambda^*=(\lambda_1^*,\lambda_2^*,...,\lambda_n^*)^T,$使得
 $$\left\{
 \begin{aligned}
 & \nabla_{\boldsymbol x} L(\boldsymbol x^* ,\boldsymbol \mu^* ,\boldsymbol \lambda^* )=\nabla f(\boldsymbol  x^* )+\sum_{i=1}^{m}\mu_i^* \nabla g_i(\boldsymbol x^* )+\sum_{j=1}^{n}\lambda_j^* \nabla h_j(\boldsymbol x^*)=0 &(1) \\
