@@ -90,9 +90,12 @@ $$2\mathbb{E}_{D}\left[\left(\bar{f}(\boldsymbol{x})-y\right)\left(y-y_{D}\right
 ## 附录
 ### ①二项分布参数$p$的检验<sup>[1]</sup>
 设某事件发生的概率为$p$，$p$未知，作$m$次独立试验，每次观察该事件是否发生，以$X$记该事件发生的次数，则$X$服从二项分布$B(m,p)$，现根据$X$检验如下假设：
-$$H_0:p\leq p_0 \\ H_1:p > p_0$$
+$$\begin{aligned}
+H_0:p\leq p_0\\
+H_1:p > p_0
+\end{aligned}$$
 由二项分布本身的特性可知：$p$越小，$X$取到较小值的概率越大。因此，对于上述假设，一个直观上合理的检验为
-$$\varphi:当X\leq C时接受H_0,否则就拒绝H_0$$
+$$\varphi:\text{当}X\leq C\text{时接受}H_0,\text{否则就拒绝}H_0$$
 其中，$C\in N$表示事件最大发生次数。此检验对应的功效函数为
 $$\begin{aligned}
 \beta_{\varphi}(p)&=P(X>C)\\
