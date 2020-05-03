@@ -1,10 +1,6 @@
-## 5.1
-$$w_i  \gets w_i+\Delta w_i $$
-[解析]：略
-
 ## 5.2
 $$\Delta w_i=\eta(y-\hat{y})x_i$$
-[解析]：此公式是感知机学习算法中的参数更新公式，下面依次给出感知机模型、学习策略和学习算法的具体介绍。<sup>[1]</sup>
+[解析]：此公式是感知机学习算法中的参数更新公式，下面依次给出感知机模型、学习策略和学习算法的具体介绍<sup>[1]</sup>：
 ### 感知机模型
 已知感知机由两层神经元组成，故感知机模型的公式可表示为
 $$y=f(\sum\limits_{i=1}^{n}w_ix_i-\theta)=f(\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x}-\theta)$$
@@ -46,45 +42,13 @@ $$\boldsymbol w \leftarrow \boldsymbol w+\Delta \boldsymbol w$$
 $$\Delta \boldsymbol w=-\eta(\hat{y}_i-y_i)\boldsymbol x_i=\eta(y_i-\hat{y}_i)\boldsymbol x_i$$
 相应地，$\boldsymbol{w}$中的某个分量$w_i$的更新公式即为公式(5.2)。
 
-## 5.3
-$$\hat{y}_j^k=f(\beta_j-\theta_j)$$
-[解析]：略
-
-## 5.4
-$$E_k=\frac{1}{2}\sum_{j=1}^l(\hat{y}_j^k-y_j^k)^2$$
-[解析]：略
-
-## 5.5
-$$v  \gets v+\Delta v $$
-[解析]：略
-
-## 5.6
-$$\Delta w_{hj}=-\eta \frac{\partial {E_k}}{\partial{w_{hj}}}$$
-[解析]：略
-
-## 5.7
-$$ \frac{\partial {E_k}}{\partial{w_{hj}}}=\frac{\partial {E_k}}{\partial{\hat{y}_j^k}} \cdot \frac{\partial{\hat{y}_j^k}}{\partial{\beta_j}} \cdot  \frac{\partial{\beta_j}}{\partial{w_{hj}}} $$
-[解析]：略
-
-## 5.8
-$$ \frac{\partial{\beta_j}}{\partial{w_{hj}}}=b_h$$
-[解析]：略
-
-## 5.9
-$$ f^{\prime}(x)=f(x)(1-f(x))$$
-[解析]：略
-
 ## 5.10
 $$\begin{aligned}
 g_j&=-\frac{\partial {E_k}}{\partial{\hat{y}_j^k}} \cdot \frac{\partial{\hat{y}_j^k}}{\partial{\beta_j}}
 \\&=-( \hat{y}_j^k-y_j^k ) f ^{\prime} (\beta_j-\theta_j)
 \\&=\hat{y}_j^k(1-\hat{y}_j^k)(y_j^k-\hat{y}_j^k)
 \end{aligned}$$
-[推导]：参见5.12
-
-## 5.11
-$$\Delta w_{hj}=\eta g_j b_h$$
-[解析]：略
+[推导]：参见公式(5.12)
 
 ## 5.12
 $$\Delta \theta_j = -\eta g_j$$
@@ -152,23 +116,7 @@ e_h&=-\frac{\partial {E_k}}{\partial{b_h}}\cdot \frac{\partial{b_h}}{\partial{\a
 \\&=\sum_{j=1}^l w_{hj}g_j f^{\prime}(\alpha_h-\gamma_h)
 \\&=b_h(1-b_h)\sum_{j=1}^l w_{hj}g_j 
 \end{aligned}$$
-[推导]：参见5.13
-
-## 5.16
-$$E=\frac{1}{m}\sum_{k=1}^mE_k$$
-[解析]：略
-
-## 5.17
-$$E=\lambda \frac{1}{m}\sum_{k=1}^mE_k+(1-\lambda)\sum_i w_i^2$$
-[解析]
-
-## 5.18
-$$\varphi(\boldsymbol{x})=\sum_{i=1}^q w_i\rho(\boldsymbol{x},\boldsymbol{c}_i)$$
-[解析]：略
-
-## 5.19
-$$\rho(\boldsymbol{x},\boldsymbol{c}_i)=e^{-\beta_i \| \boldsymbol{x}-\boldsymbol{c}_i \|^2}$$
-[解析]：略
+[推导]：参见公式(5.13)
 
 ## 5.20
 $$E(\boldsymbol{s})=-\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}w_{ij}s_is_j-\sum_{p=1}^n\theta_is_i$$
@@ -182,7 +130,7 @@ $$E_{nodes}=\sum_{p=1}^nE_{{node}_i}=-\sum_{p=1}^n\theta_is_i$$
 $$E_{graph}=E_{edges}+E_{nodes}=-\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}w_{ij}s_is_j-\sum_{p=1}^n\theta_is_i$$
 
 ## 5.21
-$$P(\boldsymbol{s})=\frac{e^{-E(\boldsymbol{s})}}{\sum_\boldsymbol{t}e^{-E(\boldsymbol{t})}}$$
+$$P(\boldsymbol{s})=\frac{e^{-E(\boldsymbol{s})}}{\sum_{\boldsymbol{t}}e^{-E(\boldsymbol{t})}}$$
 [推导]：一个无向图网络，其联合概率分布表示为：
 $$P(\boldsymbol{s})=\frac{1}{Z}\prod_{i=1}^{k}\Phi_i(\boldsymbol{s}_{c_i})$$
 其中，$k$为无向图网络中的极大团个数；$c_i$表示极大团的节点集合；$x_{c_i}$为该极大团所对用的节点变量；$\Phi_i$为势函数；$Z$表示规范化因子（极大团、势函数和规范化因子的具体定义参见西瓜书第14.2节）。假设一个Boltzmann机含有$n$个节点，$\boldsymbol{s}=\{0,1\}^n$为当前状态，状态集合$T$表示$2^n$种所有可能的状态构成的集合。由于Boltzmann机是一个全连接网络，故Boltzmann机中的极大团仅有一个，其节点集合为$c=\{s_1,s_2,\cdots,s_n\}$。其联合概率分布为
@@ -192,7 +140,7 @@ $$\Phi(\boldsymbol{s}_{c})=e^{-E(\boldsymbol{s}_{c})}$$
 其中$\boldsymbol{s}_c=(s_1\,s_2\,\cdots,\, s_n)=\boldsymbol{s}$，则状态$\boldsymbol{s}$下的联合概率分布为
 $$P(\boldsymbol{s})=\frac{1}{Z}e^{-E(\boldsymbol{s})}$$
 状态集合$T$中的某个状态$\boldsymbol{s}$出现的概率定义为：状态$\boldsymbol{s}$的联合概率分布与所有可能的状态的联合概率分布的比值
-$$P(\boldsymbol{s})=\frac{e^{-E(\boldsymbol{s})}}{\sum_\boldsymbol{t\in T}e^{-E(\boldsymbol{t})}}$$
+$$P(\boldsymbol{s})=\frac{e^{-E(\boldsymbol{s})}}{\sum_{\boldsymbol{t}\in T}e^{-E(\boldsymbol{t})}}$$
 
 ## 5.22
 $$P(\boldsymbol{v}|\boldsymbol{h})=\prod_{i=1}^dP(v_i\,  |  \, \boldsymbol{h})$$
@@ -260,7 +208,7 @@ $$
 $$\frac{\partial{L_k(\boldsymbol{\theta})}}{\partial{w_{ij}}}=-\sum_{\boldsymbol{h}}P(\boldsymbol{h}|\boldsymbol{v}_k)\frac{\partial{E({\boldsymbol{v}_k,\boldsymbol{h})}}}{\partial{w_{ij}}}+\sum_{\boldsymbol{v}}P(\boldsymbol{v})\sum_{\boldsymbol{h}}P(\boldsymbol{h}|\boldsymbol{v})\frac{\partial{E({\boldsymbol{v},\boldsymbol{h})}}}{\partial{w_{ij}}}$$
 根据公式(5.23)可知
 $$\begin{aligned}
-&\sum_\boldsymbol{h}P(\boldsymbol{h}|\boldsymbol{v})\frac{\partial{E({\boldsymbol{v},\boldsymbol{h})}}}{\partial{w_{ij}}}\\
+&\sum_{\boldsymbol{h}}P(\boldsymbol{h}|\boldsymbol{v})\frac{\partial{E({\boldsymbol{v},\boldsymbol{h})}}}{\partial{w_{ij}}}\\
 =&-\sum_{\boldsymbol{h}}P(\boldsymbol{h}|\boldsymbol{v})h_iv_j\\
 =&-\sum_{\boldsymbol{h}}\prod_{l=1}^{q}P(h_l|\boldsymbol{v})h_iv_j\\
 =&-\sum_{\boldsymbol{h}}P(h_i|\boldsymbol{v})\prod_{l=1,l\neq i}^{q}P(h_l|\boldsymbol{v})h_iv_j\\
@@ -271,7 +219,7 @@ $$\begin{aligned}
 =&-P(h_i=1|\boldsymbol{v})v_j
 \end{aligned}$$
 同理可推得
-$$\sum_\boldsymbol{h}P(\boldsymbol{h}|\boldsymbol{v}_k)\frac{\partial{E({\boldsymbol{v}_k,\boldsymbol{h})}}}{\partial{w_{ij}}}=-P(h_i=1|\boldsymbol{v}_k)v_j^k$$
+$$\sum_{\boldsymbol{h}}P(\boldsymbol{h}|\boldsymbol{v}_k)\frac{\partial{E({\boldsymbol{v}_k,\boldsymbol{h})}}}{\partial{w_{ij}}}=-P(h_i=1|\boldsymbol{v}_k)v_j^k$$
 将以上两式代回$\frac{\partial{L_k(\boldsymbol{\theta})}}{\partial{w_{ij}}}$中可得
 $$\frac{\partial{L_k(\boldsymbol{\theta})}}{\partial{w_{ij}}}=P(h_i=1|\boldsymbol{v}_k){v_{j}^k}-\sum_{\boldsymbol{v}}P(\boldsymbol{v})P(h_i=1|\boldsymbol{v})v_j$$
 观察此式可知，通过枚举所有可能的$\boldsymbol{v}$来计算$\sum_{\boldsymbol{v}}P(\boldsymbol{v})P(h_i=1|\boldsymbol{v})v_j$的复杂度太高，因此可以考虑求其近似值来简化计算。具体地，RBM通常采用的是西瓜书上所说的“对比散度”（Contrastive Divergence，简称CD）算法。CD算法的核心思想<sup>[2]</sup>是：用步长为$s$（通常设为1）的CD算法
@@ -302,7 +250,7 @@ $$\frac{\partial{L_k(\boldsymbol{\theta})}}{\partial{w_{ij}}}=P(h_i=1|\boldsymbo
 - 输入：$\boldsymbol{v},RBM(\boldsymbol\theta)$
 - 过程：
     1. $for \quad i=1,2,...,q \quad do$
-    2. $\quad 随机生成 0\leq\alpha_i\leq 1$
+    2. $\quad \text{随机生成} 0\leq\alpha_i\leq 1$
     3. $\quad h_{j}=\left\{\begin{array}{ll}1, & \text { if } \alpha_{i}<P(h_i=1|\boldsymbol{v}) \\ 0, & \text { otherwise }\end{array}\right.$
     4. $end \quad for$
 - 输出：$\boldsymbol{h}=(h_1,h_2,...,h_q)^{\mathrm{T}}$
