@@ -6,7 +6,6 @@ $$
 
 [解析]：给定两个集合$A$和$B$，则Jaccard系数定义为如下公式
 
-
 $$
 JC=\frac{|A\bigcap B|}{|A\bigcup B|}=\frac{|A\bigcap B|}{|A|+|B|-|A\bigcap B|}
 $$
@@ -70,7 +69,7 @@ $$
 \operatorname{avg}(C)=\frac{2}{|C|(|C|-1)} \sum_{1 \leqslant i<j \leqslant|C|} \operatorname{dist}\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right)
 $$
 
-[解析]簇内距离的定义式：求和号左边是$(x_i, x_j)$组合个数的倒数，求和号右边是这些组合的距离和，所以两者相乘定义为平均距离。
+[解析]：簇内距离的定义式：求和号左边是$(x_i, x_j)$组合个数的倒数，求和号右边是这些组合的距离和，所以两者相乘定义为平均距离。
 
 ## 9.33
 $$
@@ -204,7 +203,7 @@ $$
 \sum_{j=1}^m\sum_{i=1}^k\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\mathbf\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\mathbf\Sigma_{l})}&=-\lambda\sum_{i=1}^k\alpha_{i}
 \end{aligned}
 $$
-由$$m=-\lambda$$,
+由$$m=-\lambda$$有
 $$
 \sum_{j=1}^m\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\mathbf\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\mathbf\Sigma_{l})}=-\lambda\alpha_{i}=m\alpha_{i}
 $$
@@ -218,23 +217,5 @@ $$
 $$
 
 此即为公式(9.38)
-
-## 附录
-参考公式
-$$
-\frac{\partial\boldsymbol x^TB\boldsymbol x}{\partial\boldsymbol x}=\left(B+B^T\right)\boldsymbol x 
-$$
-$$
-\frac{\partial}{\partial A}ln|A|=\left(A^{-1}\right)^T
-$$
-$$
-\frac{\partial}{\partial x}\left(A^{-1}\right)=-A^{-1}\frac{\partial A}{\partial x}A^{-1}
-$$
-
-## 参考文献
-[1] Meilă, Marina. "Comparing clusterings—an information based distance." Journal of multivariate analysis 98.5 (2007): 873-895.<br>
-[2] Halkidi, Maria, Yannis Batistakis, and Michalis Vazirgiannis. "On clustering validation techniques." Journal of intelligent information systems 17.2-3 (2001): 107-145.<br>
-[3] Petersen, K. B. & Pedersen, M. S. *The Matrix Cookbook*.<br>
-[4] Bishop, C. M. (2006). *Pattern Recognition and Machine Learning*. Springer.<br>
 
 
