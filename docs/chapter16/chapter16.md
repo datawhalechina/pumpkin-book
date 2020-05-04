@@ -23,10 +23,6 @@ $$
 P(k)=\frac{e^{\frac{Q(k)}{\tau }}}{\sum_{i=1}^{K}e^{\frac{Q(i)}{\tau}}}
 $$
 
-$$
-\tau越小则平均奖赏高的摇臂被选取的概率越高
-$$
-
 [解析]：
 $$
 P(k)=\frac{e^{\frac{Q(k)}{\tau }}}{\sum_{i=1}^{K}e^{\frac{Q(i)}{\tau}}}\propto e^{\frac{Q(k)}{\tau }}\propto\frac{Q(k)}{\tau }\propto\frac{1}{\tau}

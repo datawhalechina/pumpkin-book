@@ -56,7 +56,7 @@ $$
 P\left(\left\vert\frac{1}{m} \sum_{i=1}^{m} x_{i}-\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right)\right\vert \geqslant \epsilon\right) \leqslant 2 \exp \left(-2 m \epsilon^{2}\right)
 $$
 
-[解析]：[TODO]
+[解析]：略
 
 
 
@@ -66,9 +66,9 @@ $$
 P\left(f\left(x_{1}, \ldots, x_{m}\right)-\mathbb{E}\left(f\left(x_{1}, \ldots, x_{m}\right)\right) \geqslant \epsilon\right) \leqslant \exp \left(\frac{-2 \epsilon^{2}}{\sum_{i} c_{i}^{2}}\right)
 $$
 
-[解析]：McDiarmid不等式：首先解释下前提条件：$
+[解析]：McDiarmid不等式：首先解释下前提条件：$$
 \sup _{x_{1}, \ldots, x_{m}, x_{i}^{\prime}}\left|f\left(x_{1}, \ldots, x_{m}\right)-f\left(x_{1}, \ldots, x_{i-1}, x_{i}^{\prime}, x_{i+1}, \ldots, x_{m}\right)\right| \leqslant c_{i}
-$ 表示当函数$f$某个输入$x_i$变到$x_i^\prime$的时候，其变化的上确$\sup$仍满足不大于$c_i$。所谓上确界sup可以理解成变化的极限最大值，可能取到也可能无穷逼近。当满足这个条件时，McDiarmid不等式指出：函数值$f(x_1,\dots,x_m)$和其期望值$\mathbb{E}\left(f(x_1,\dots,x_m)\right)$也相近，从概率的角度描述是：**它们之间差值不小于$\epsilon$**这样的事件出现的概率不大于$
+$$ 表示当函数$f$某个输入$x_i$变到$x_i^\prime$的时候，其变化的上确$\sup$仍满足不大于$c_i$。所谓上确界sup可以理解成变化的极限最大值，可能取到也可能无穷逼近。当满足这个条件时，McDiarmid不等式指出：函数值$f(x_1,\dots,x_m)$和其期望值$\mathbb{E}\left(f(x_1,\dots,x_m)\right)$也相近，从概率的角度描述是：它们之间差值不小于$\epsilon$这样的事件出现的概率不大于$
 \exp \left(\frac{-2 \epsilon^{2}}{\sum_{i} c_{i}^{2}}\right)
 $，可以看出当每次变量改动带来函数值改动的上限越小，函数值和其期望越相近。
 
@@ -78,7 +78,7 @@ $$
 P\left(\left|f\left(x_{1}, \ldots, x_{m}\right)-\mathbb{E}\left(f\left(x_{1}, \ldots, x_{m}\right)\right)\right| \geqslant \epsilon\right) \leqslant 2 \exp \left(\frac{-2 \epsilon^{2}}{\sum_{i} c_{i}^{2}}\right)
 $$
 
-[解析]：[TODO]
+[解析]：略
 
 
 
@@ -112,7 +112,7 @@ $$
 
 
 
-[解析]：先解释什么是$h$与$D$“表现一致”，12.2节开头阐述了这样的概念，如果$h$能将$D$中所有样本按与真实标记一致的方式完全分开，我们则称$h$对$D$是一致的。即$\left(h\left(\boldsymbol{x}_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}_{m}\right)=y_{m}\right)$为True。因为每个事件是独立的，所以上式可以写成$P\left(\left(h\left(\boldsymbol{x}_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}_{m}\right)=y_{m}\right)\right)=\prod_{i=1}^{m} P\left(h\left(\boldsymbol{x}_{i}\right)=y_{i}\right)$。根据对立事件的定义有：$\prod_{i=1}^{m} P\left(h\left(\boldsymbol{x}_{i}\right)=y_{i}\right)=\prod_{i=1}^{m}\left(1-P\left(h\left(\boldsymbol{x}_{i}\right) \neq y_{i}\right)\right)$，又根据公式(12.10)，有$\prod_{i=1}^{m}\left(1-P\left(h\left(\boldsymbol{x}_{i}\right) \neq y_{i}\right)\right)<\prod_{i=1}^{m}(1-\epsilon)=(1-\epsilon)^{m}$
+[解析]：先解释什么是$h$与$D$“表现一致”，12.2节开头阐述了这样的概念，如果$h$能将$D$中所有样本按与真实标记一致的方式完全分开，我们则称$h$对$D$是一致的。即$\left(h\left(\boldsymbol{x}_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}_{m}\right)=y_{m}\right)$为True。因为每个事件是独立的，所以上式可以写成$P\left(\left(h\left(\boldsymbol{x}_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}_{m}\right)=y_{m}\right)\right)=\prod_{i=1}^{m} P\left(h\left(\boldsymbol{x}_{i}\right)=y_{i}\right)$。根据对立事件的定义有：$\prod_{i=1}^{m} P\left(h\left(\boldsymbol{x}_{i}\right)=y_{i}\right)=\prod_{i=1}^{m}\left(1-P\left(h\left(\boldsymbol{x}_{i}\right) \neq y_{i}\right)\right)$，又根据公式(12.10)，有$$\prod_{i=1}^{m}\left(1-P\left(h\left(\boldsymbol{x}_{i}\right) \neq y_{i}\right)\right)<\prod_{i=1}^{m}(1-\epsilon)=(1-\epsilon)^{m}$$
 
 
 
@@ -366,7 +366,7 @@ $$
 &={\left(\frac{m}{d}\right)}^d{\left(1+\frac{d}{m}\right)}^m\\
 &<\left(\frac{e \cdot m}{d}\right)^{d} \end{aligned}
 $$
-第一步到第二步和第三步到第四步均因为$m\geqslant d$，第四步到第五步是由于[二项式定理]([https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86](https://zh.wikipedia.org/wiki/二项式定理))：$(x+y)^{n}=\sum_{k=0}^{n}\left(\begin{array}{l}{n} \\ {k}\end{array}\right) x^{n-k} y^{k}$，其中令$k=i, n=m, x=1, y = \frac{d}{m}$得$\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i}=\left(\frac{m}{d}\right)^{d} (1+\frac{d}{m})^m$，最后一步的不等式即需证明${\left(1+\frac{d}{m}\right)}^m\leqslant e^d$，因为${\left(1+\frac{d}{m}\right)}^m={\left(1+\frac{d}{m}\right)}^{\frac{m}{d}d}$，根据[自然对数底数$e$的定义]([https://zh.wikipedia.org/wiki/E_(%E6%95%B0%E5%AD%A6%E5%B8%B8%E6%95%B0)](https://zh.wikipedia.org/wiki/E_(数学常数))，${\left(1+\frac{d}{m}\right)}^{\frac{m}{d}d}< e^d$，注意原文中用的是$\leqslant$，但是由于$e=\lim _{\frac{d}{m} \rightarrow 0}\left(1+\frac{d}{m}\right)^{\frac{m}{d}}$的定义是一个极限，所以应该是用$<$。
+第一步到第二步和第三步到第四步均因为$m\geqslant d$，第四步到第五步是由于[二项式定理](https://zh.wikipedia.org/wiki/二项式定理)：$(x+y)^{n}=\sum_{k=0}^{n}\left(\begin{array}{l}{n} \\ {k}\end{array}\right) x^{n-k} y^{k}$，其中令$k=i, n=m, x=1, y = \frac{d}{m}$得$\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i}=\left(\frac{m}{d}\right)^{d} (1+\frac{d}{m})^m$，最后一步的不等式即需证明${\left(1+\frac{d}{m}\right)}^m\leqslant e^d$，因为${\left(1+\frac{d}{m}\right)}^m={\left(1+\frac{d}{m}\right)}^{\frac{m}{d}d}$，根据[自然对数底数$e$的定义](https://en.wikipedia.org/wiki/E_(mathematical_constant))，${\left(1+\frac{d}{m}\right)}^{\frac{m}{d}d}< e^d$，注意原文中用的是$\leqslant$，但是由于$e=\lim _{\frac{d}{m} \rightarrow 0}\left(1+\frac{d}{m}\right)^{\frac{m}{d}}$的定义是一个极限，所以应该是用$<$。
 
 
 
@@ -558,7 +558,6 @@ $$
 
 ## 12.42
 
-对实值函数空间$\mathcal{F}:\mathcal{Z}\rightarrow [0,1]$，根据分布$\mathcal{D}$从$\mathcal{Z}$中独立同分布采样得到示例集$Z=\{z_1,z_2,\dots,z_m\}, z_i\in\mathcal{Z},0<\delta<1$，对任意$f\in\mathcal{F}$，以至少$1-\delta$的概率有
 $$
 \begin{array}{l}{\mathbb{E}[f(\boldsymbol{z})] \leqslant \frac{1}{m} \sum_{i=1}^{m} f\left(\boldsymbol{z}_{i}\right)+2 R_{m}(\mathcal{F})+\sqrt{\frac{\ln (1 / \delta)}{2 m}}} \\ {\mathbb{E}[f(\boldsymbol{z})] \leqslant \frac{1}{m} \sum_{i=1}^{m} f\left(\boldsymbol{z}_{i}\right)+2 \widehat{R}_{Z}(\mathcal{F})+3 \sqrt{\frac{\ln (2 / \delta)}{2 m}}}\end{array}
 $$
@@ -610,8 +609,6 @@ $$
 
 最后根据定义式12.41可得$\mathbb{E}_{Z}[\Phi(Z)]=2\mathcal{R}_m(\mathcal{F})$，式12.24得证。
 
-[TODO]
-
 ## 12.43
 
 参见12.42
@@ -633,36 +630,6 @@ $$
 ## 12.46
 
 参见12.42
-
-
-
-## 12.47
-
-[TODO]
-
-
-
-## 12.48
-
-参见12.47
-
-
-
-## 12.49
-
-参见12.47
-
-
-
-## 12.50
-
-参见12.47
-
-
-
-## 12.51
-
-参见12.47
 
 
 
@@ -717,7 +684,7 @@ $$
 
 ## 12.59
 
-[证明]：比较繁琐，同书上所示，参见参见[Mohri etc., 2012](https://cs.nyu.edu/~mohri/mlbook/)
+[证明]：比较繁琐，同书上所示，参见[Mohri etc., 2012](https://cs.nyu.edu/~mohri/mlbook/)
 
 
 
@@ -747,7 +714,7 @@ $$
 $$
 \begin{array}{l}{\epsilon^{\prime}=\frac{\epsilon}{2}} \\ {\frac{\delta}{2}=2 \exp \left(-2 m\left(\epsilon^{\prime}\right)^{2}\right)}\end{array}
 $$
-将$\epsilon^\prime=\frac{\epsilon}{2}$带入到${\frac{\delta}{2}=2 \exp \left(-2 m\left(\epsilon^{\prime}\right)^{2}\right)}$可以解得$m=\frac{2}{\epsilon^{2}} \ln \frac{4}{\delta}$，由Hoeffding不等式12.6，$P\left(\left\vert\frac{1}{m} \sum_{i=1}^{m} x_{i}-\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right)\right\vert \geqslant \epsilon\right) \leqslant 2 \exp \left(-2 m \epsilon^{2}\right)$，其中$\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right)=\ell(g, \mathcal{D})$，$\frac{1}{m} \sum_{i=1}^{m} x_{i}=\widehat{\ell}(g, \mathcal{D})$，带入可得
+将$\epsilon^\prime=\frac{\epsilon}{2}$带入到${\frac{\delta}{2}=2 \exp \left(-2 m\left(\epsilon^{\prime}\right)^{2}\right)}$可以解得$m=\frac{2}{\epsilon^{2}} \ln \frac{4}{\delta}$，由Hoeffding不等式12.6，$$P\left(\left\vert\frac{1}{m} \sum_{i=1}^{m} x_{i}-\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right)\right\vert \geqslant \epsilon\right) \leqslant 2 \exp \left(-2 m \epsilon^{2}\right)$$，其中$\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right)=\ell(g, \mathcal{D})$，$\frac{1}{m} \sum_{i=1}^{m} x_{i}=\widehat{\ell}(g, \mathcal{D})$，带入可得
 $$
 P(|\ell(g, \mathcal{D})-\widehat{\ell}(g, D)| \geqslant \frac{\epsilon}{2})\leqslant \frac{\delta}{2}
 $$

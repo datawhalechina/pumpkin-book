@@ -12,7 +12,7 @@ $$
 \begin{aligned} f(\boldsymbol{x}) &=\underset{j \in \mathcal{Y}}{\arg \max } p(y=j | \boldsymbol{x}) \\ &=\underset{j \in \mathcal{Y}}{\arg \max } \sum_{i=1}^{N} p(y=j, \Theta=i | \boldsymbol{x}) \\ &=\underset{j \in \mathcal{Y}}{\arg \max } \sum_{i=1}^{N} p(y=j | \Theta=i, \boldsymbol{x}) \cdot p(\Theta=i | \boldsymbol{x}) \end{aligned}
 $$
 
-[解析]：从公式第 1 行到第 2 行是对概率进行边缘化(marginalization)；通过引入$\Theta$并对其求和 $$\sum_{i=1}^N$$以抵消引入的影响。从公式第 2 行到第 3 行推导如下
+[解析]：从公式第 1 行到第 2 行是对概率进行边缘化(marginalization)；通过引入$\Theta$并对其求和 $\sum_{i=1}^N$以抵消引入的影响。从公式第 2 行到第 3 行推导如下
 $$
 \begin{aligned}p(y=j, \Theta=i | \boldsymbol{x}) &=\frac{p(y=j, \Theta=i, \boldsymbol{x})}{p(\boldsymbol{x})} \\&=\frac{p(y=j, \Theta=i, \boldsymbol{x})}{p(\Theta=i, \boldsymbol{x})} \cdot \frac{p(\Theta=i, \boldsymbol{x})}{p(\boldsymbol{x})} \\&=p(y=j | \Theta=i, \boldsymbol{x}) \cdot p(\Theta=i | \boldsymbol{x})\end{aligned}
 $$
@@ -42,7 +42,7 @@ $$
 $$
 p(y=j | \Theta=i, \boldsymbol{x})=\left\{\begin{array}{ll}1, & i=j \\0, & i \neq j\end{array}\right.
 $$
-可知，这项限定了样本$$x_j$$只可能来自于$$y_j$$所对应的高斯分布。
+可知，这项限定了样本$x_j$$只可能来自于$$y_j$所对应的高斯分布。
 
 ## 13.5
 
@@ -140,7 +140,7 @@ $$
 $$
 
 
-类似于式 9.37，对$\alpha_i$求偏导。对于$$LL(D_u)$$，求导结果与式 9.37 的推导过程一样
+类似于式 9.37，对$\alpha_i$求偏导。对于$LL(D_u)$，求导结果与式 9.37 的推导过程一样
 $$
 \frac{\partial L L\left(D_{u}\right)}{\partial \alpha_{i}}=\sum_{\boldsymbol{x}_{j} \in D_{u}} \frac{1}{\sum_{s=1}^{N} \alpha_{s} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{s}, \boldsymbol{\Sigma}_{s}\right)} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)
 $$
@@ -300,6 +300,24 @@ $$
 
 ## 13.14
 
+$$
+\begin{aligned}
+E(f) &=\left(\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{f}_{u}^{\mathrm{T}}\right)\left(\left[\begin{array}{ll}
+\mathbf{D}_{l l} & \mathbf{0}_{l u} \\
+\mathbf{0}_{u l} & \mathbf{D}_{u u}
+\end{array}\right]-\left[\begin{array}{ll}
+\mathbf{W}_{l l} & \mathbf{W}_{l u} \\
+\mathbf{W}_{u l} & \mathbf{W}_{u u}
+\end{array}\right]\right)\left[\begin{array}{l}
+\boldsymbol{f}_{l} \\
+\boldsymbol{f}_{u}
+\end{array}\right] \\
+&=\boldsymbol{f}_{l}^{\mathrm{T}}\left(\mathbf{D}_{l l}-\mathbf{W}_{l l}\right) \boldsymbol{f}_{l}-2 \boldsymbol{f}_{u}^{\mathrm{T}} \mathbf{W}_{u l} \boldsymbol{f}_{l}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\mathbf{D}_{u u}-\mathbf{W}_{u u}\right) \boldsymbol{f}_{u}
+\end{aligned}
+$$
+
+
+
 [解析]：参考 13.13
 
 ## 13.15
@@ -347,7 +365,14 @@ $$
 \end{aligned}
 $$
 
-[解析]：第一项到第二项是根据矩阵乘法逆的定义：$$(\mathbf{A}\mathbf{B})^{-1}=\mathbf{B}^{-1}\mathbf{A}^{-1}$$，在这个式子中$$\mathbf{P}_{u u}=\mathbf{D}_{u u}^{-1} \mathbf{W}_{u u}, \mathbf{P}_{ul}=\mathbf{D}_{u u}^{-1} \mathbf{W}_{u l}$$均可以根据$\mathbf{W}_{ij}$计算得到，因此可以通过标记$\mathbf{f}_l$计算未标记数据的标签$\mathbf{f}_u$
+[解析]：第一项到第二项是根据矩阵乘法逆的定义：$(\mathbf{A}\mathbf{B})^{-1}=\mathbf{B}^{-1}\mathbf{A}^{-1}$，在这个式子中​
+$$
+\begin{aligned}
+\mathbf{P}_{u u}&=\mathbf{D}_{u u}^{-1} \mathbf{W}_{u u}\\
+\mathbf{P}_{ul}&=\mathbf{D}_{u u}^{-1} \mathbf{W}_{u l}
+\end{aligned}
+$$
+均可以根据$\mathbf{W}_{ij}$计算得到，因此可以通过标记$\mathbf{f}_l$计算未标记数据的标签$\mathbf{f}_u$
 
 ## 13.20
 
@@ -378,7 +403,7 @@ $$
 $$
 \mathbf{F}^{*}=\lim _{t \rightarrow \infty}\mathbf{F}(t)=\lim _{t \rightarrow \infty}(\alpha \mathbf{S})^{t} \mathbf{Y}+\lim _{t \rightarrow \infty}(1-\alpha)\left(\sum_{i=0}^{t-1}(\alpha \mathbf{S})^{i}\right) \mathbf{Y}
 $$
-其中第一项由于$\mathbf{S}=\mathbf{D}^{-\frac{1}{2}} \mathbf{W} \mathbf{D}^{-\frac{1}{2}}$的特征值介于[-1, 1]之间(这里省略详细推导，可以参见 https://en.wikipedia.org/wiki/Laplacian_matrix 其中对称拉普拉斯矩阵的特征值介于 0 和 2 之间)，而$\alpha\in(0,1)$，所以$$\lim _{t \rightarrow \infty}(\alpha \mathbf{S})^{t}=0$$，第二项由等比数列公式
+其中第一项由于$\mathbf{S}=\mathbf{D}^{-\frac{1}{2}} \mathbf{W} \mathbf{D}^{-\frac{1}{2}}$的特征值介于[-1, 1]之间(这里省略详细推导，可以参见 https://en.wikipedia.org/wiki/Laplacian_matrix 其中对称拉普拉斯矩阵的特征值介于 0 和 2 之间)，而$\alpha\in(0,1)$，所以$\lim _{t \rightarrow \infty}(\alpha \mathbf{S})^{t}=0$，第二项由等比数列公式
 $$
 \lim _{t \rightarrow \infty} \sum_{i=0}^{t-1}(\alpha \mathbf{S})^{i}=\frac{\mathbf{I}-\lim _{t \rightarrow \infty}(\alpha \mathbf{S})^{t}}{\mathbf{I}-\alpha \mathbf{S}}=\frac{\mathbf{I}}{\mathbf{I}-\alpha \mathbf{S}}=(\mathbf{I}-\alpha \mathbf{S})^{-1}
 $$
