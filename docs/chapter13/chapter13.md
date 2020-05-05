@@ -4,7 +4,7 @@ $$
 p(\boldsymbol{x})=\sum_{i=1}^{N} \alpha_{i} \cdot p\left(\boldsymbol{x} | \boldsymbol{\mu}_{i}, \mathbf{\Sigma}_{i}\right)
 $$
 
-[解析]： 高斯混合分布的定义式
+[解析]： 高斯混合分布的定义式。
 
 ## 13.2
 
@@ -94,7 +94,7 @@ $$
 $$
 
 
-即得式 13.6
+即得式 13.6。
 
 ## 13.7
 
@@ -126,7 +126,7 @@ $$
 $$
 \sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}+\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}=\left(\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i}+l_{i}\right) \boldsymbol{\Sigma}_{i}
 $$
-即得式 13.7
+即得式 13.7。
 
 ## 13.8
 
@@ -199,7 +199,7 @@ $$
 $$
 l_i + \sum_{x_j \in{D_u}} \gamma_{ji}-\lambda \alpha_i = 0
 $$
-整理即得式 13.8
+整理即得式 13.8。
 
 ## 13.9
 
@@ -212,7 +212,7 @@ $$
 \end{aligned}
 $$
 
-[解析]：这个公式和公式 6.35 基本一致，除了引入了无标记样本的松弛变量$\xi_i, i=l+1,\cdots m$和对应的权重系数$C_u$
+[解析]：这个公式和公式 6.35 基本一致，除了引入了无标记样本的松弛变量$\xi_i, i=l+1,\cdots m$和对应的权重系数$C_u$。
 
 ## 13.12
 
@@ -333,7 +333,7 @@ $$
 &=-2 \boldsymbol{W}_{u l} \boldsymbol{f}_{l}+2\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right) \boldsymbol{f}_{u}
 \end{aligned}
 $$
-另结果等于 0 即得 13.15
+令结果等于 0 即得 13.15。
 
 ## 13.16
 
@@ -372,7 +372,7 @@ $$
 \mathbf{P}_{ul}&=\mathbf{D}_{u u}^{-1} \mathbf{W}_{u l}
 \end{aligned}
 $$
-均可以根据$\mathbf{W}_{ij}$计算得到，因此可以通过标记$\mathbf{f}_l$计算未标记数据的标签$\mathbf{f}_u$
+均可以根据$\mathbf{W}_{ij}$计算得到，因此可以通过标记$\mathbf{f}_l$计算未标记数据的标签$\mathbf{f}_u$。
 
 ## 13.20
 
@@ -407,7 +407,7 @@ $$
 $$
 \lim _{t \rightarrow \infty} \sum_{i=0}^{t-1}(\alpha \mathbf{S})^{i}=\frac{\mathbf{I}-\lim _{t \rightarrow \infty}(\alpha \mathbf{S})^{t}}{\mathbf{I}-\alpha \mathbf{S}}=\frac{\mathbf{I}}{\mathbf{I}-\alpha \mathbf{S}}=(\mathbf{I}-\alpha \mathbf{S})^{-1}
 $$
-综合可得式 13.20
+综合可得式 13.20。
 
 
 

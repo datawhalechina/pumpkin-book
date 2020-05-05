@@ -14,14 +14,6 @@ $$
 
 [解析]：此为信息熵的定义式，其中$p_k, k=1, 2, \dots \vert\mathcal{Y}\vert$表示$D$中第$i$类样本所占的比例。可以看出，样本越纯，即$p_k\rightarrow 0$或$p_k\rightarrow 1$时，$\mathrm{Ent}(D)$越小，其最小值为0。此时必有$p_i=1, p_{\backslash i}=0, i=1, 2, \dots, \vert\mathcal{Y}\vert$。
 
-## 11.3
-
-定义式，无需证明
-
-## 11.4
-
-定义式，无需证明
-
 ## 11.5
 
 $$
@@ -46,9 +38,18 @@ $$
 
 [解析]：该式将11.6中的$\mathrm{L}_2$正规化项替换成了$\mathrm{L}_1$正规化项，也叫LASSO回归。关于$\mathrm{L}_2$和$\mathrm{L}_1$两个正规化项的区别，原书图11.2给出了很形象的解释。具体来说，结合$\mathrm{L}_1$范数优化的模型参数分量更偏向于取0，因此更容易取得稀疏解。
 
-## 11.8
+## 11.10
 
-令$\nabla$表示微分算子，对优化目标
+$$
+\begin{aligned}
+\hat{f}(\boldsymbol{x}) & \simeq f\left(\boldsymbol{x}_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}_{k}\right), \boldsymbol{x}-\boldsymbol{x}_{k}\right\rangle+\frac{L}{2}\left\|\boldsymbol{x}-\boldsymbol{x}_{k}\right\|^{2} \\
+&=\frac{L}{2}\left\|\boldsymbol{x}-\left(\boldsymbol{x}_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}_{k}\right)\right)\right\|_{2}^{2}+\mathrm{const}
+\end{aligned}
+$$
+
+
+
+[解析]：令$\nabla$表示微分算子，对优化目标
 $$
 \min _{\boldsymbol{x}} f(\boldsymbol{x})+\lambda\|\boldsymbol{x}\|_{1}
 $$
@@ -94,13 +95,7 @@ $$
 $$
 其中$\mathrm{const}=f(x_k)--\frac{1}{2 L} \nabla f\left(x_{k}\right)^{\top} \nabla f\left(x_{k}\right)$
 
-## 11.9
 
-参见 11.8
-
-## 11.10
-
-参见11.8
 
 ## 11.11
 

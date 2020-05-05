@@ -38,7 +38,7 @@ $$
 P\left(x_{A}, x_{B} | x_{C}\right) =\frac{\psi_{A C}\left(x_{A}, x_{C}\right)}{\sum_{x_{A}^{\prime}} \psi_{A C}\left(x_{A}^{\prime}, x_{C}\right)} \cdot \frac{\psi_{B C}\left(x_{B}, x_{C}\right)}{\sum_{x_{B}^{\prime}} \psi_{B C}\left(x_{B}^{\prime}, x_{C}\right)}
 $$
 
-[推导]：参见原书推导
+[推导]：参见原书推导。
 
 ## 14.6
 
@@ -46,7 +46,7 @@ $$
 P\left(x_{A} | x_{C}\right) =\frac{\psi_{A C}\left(x_{A,} x_{C}\right)}{\sum_{x_{A}} \psi_{A C}\left(x_{A}^{\prime}, x_{C}\right)}
 $$
 
-[推导]：参见原书推导
+[推导]：参见原书推导。
 
 ## 14.7
 
@@ -54,7 +54,7 @@ $$
 P\left(x_{A}, x_{B} | x_{C}\right)=P\left(x_{A} | x_{C}\right) P\left(x_{B} | x_{C}\right)
 $$
 
-[解析]：可由14.5、14.6得
+[解析]：可由14.5、14.6联立可得。
 
 ## 14.8
 
@@ -62,7 +62,7 @@ $$
 \psi_{Q}\left(\mathbf{x}_{Q}\right)=e^{-H_{Q}\left(\mathbf{x}_{Q}\right)}
 $$
 
-[解析]：此为势函数的定义式，即将势函数写作指数函数的形式
+[解析]：此为势函数的定义式，即将势函数写作指数函数的形式。
 
 ## 14.9
 
@@ -226,7 +226,7 @@ $$
 norm = \max\left (p(x^{t-1})Q(x^* | x^{t-1}),p(x^*)Q(x^{t-1} | x^*) \right )
 \end{aligned}  
 $$
-即教材的$14.28$。
+即西瓜书中的$14.28$。
 
 ## 14.29
 
@@ -279,9 +279,21 @@ $$
 
 ## 14.33
 
+$$
+\mathcal{L}(q)=\int q(\mathbf{z}) \ln \left\{\frac{p(\mathbf{x}, \mathbf{z})}{q(\mathbf{z})}\right\} \mathrm{d} \mathbf{z}
+$$
+
+
+
 [解析]：见$14.32$解析。
 
 ## 14.34
+
+$$
+\mathrm{KL}(q \| p)=-\int q(\mathrm{z}) \ln \frac{p(\mathrm{z} | \mathrm{x})}{q(\mathrm{z})} \mathrm{d} \mathrm{z}
+$$
+
+
 
 [解析]：见$14.32$解析。
 
@@ -344,9 +356,21 @@ $$
 
 ## 14.37
 
+$$
+\ln \tilde{p}\left(\mathbf{x}, \mathbf{z}_{j}\right)=\mathbb{E}_{i \neq j}[\ln p(\mathbf{x}, \mathbf{z})]+\text { const }
+$$
+
+
+
 [解析]：参见14.36
 
 ## 14.38
+
+$$
+\mathbb{E}_{i \neq j}[\ln p(\mathbf{x}, \mathbf{z})]=\int \ln p(\mathbf{x}, \mathbf{z}) \prod_{i \neq j} q_{i} \mathrm{d} \mathbf{z}_{i}
+$$
+
+
 
 [解析]：参见14.36
 

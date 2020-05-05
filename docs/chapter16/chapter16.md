@@ -15,6 +15,15 @@ $$
 
 ## 16.3
 
+$$
+\begin{aligned}
+&Q_{n}(k)=\frac{1}{n}\left((n-1) \times Q_{n-1}(k)+v_{n}\right)\\
+&=Q_{n-1}(k)+\frac{1}{n}\left(v_{n}-Q_{n-1}(k)\right)
+\end{aligned}
+$$
+
+
+
 [推导]：参见 16.2
 
 ## 16.4

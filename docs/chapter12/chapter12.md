@@ -1,4 +1,4 @@
-## 12.1
+## \Phi(Z) \leqslant \mathbb{E}_{Z}[\Phi(Z)]+\sqrt{\frac{\ln (1 / \delta)}{2 m}}12.1
 
 $$
 E(h ; \mathcal{D})=P_{\boldsymbol{x} \sim \mathcal{D}}(h(\boldsymbol{x}) \neq y)
@@ -163,19 +163,37 @@ $$
 
 ## 12.15
 
-参见12.5
+$$
+P(\widehat{E}(h)-E(h) \geqslant \epsilon) \leqslant \exp \left(-2 m \epsilon^{2}\right)
+$$
+
+
+
+[解析]：参见12.5
 
 
 
 ## 12.16
 
-参见12.5
+$$
+P(E(h)-\widehat{E}(h) \geqslant \epsilon) \leqslant \exp \left(-2 m \epsilon^{2}\right)
+$$
+
+
+
+[解析]：参见12.5
 
 
 
 ## 12.17
 
-参见12.6
+$$
+P(|E(h)-\widehat{E}(h)| \geqslant \epsilon) \leqslant 2 \exp \left(-2 m \epsilon^{2}\right)
+$$
+
+
+
+[解析]：参见12.6
 
 
 
@@ -339,19 +357,43 @@ $$
 
 ## 12.25
 
-参见12.24
+$$
+\left|\mathcal{H}_{| D}\right|=\left|\mathcal{H}_{| D^{\prime}}\right|+\left|\mathcal{H}_{D^{\prime} | D}\right|
+$$
+
+
+
+[解析]：参见12.24
 
 
 
 ## 12.26
 
-参见12.24
+$$
+\left|\mathcal{H}_{| D^{\prime}}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}
+m-1 \\
+i
+\end{array}\right)
+$$
+
+
+
+[解析]：参见12.24
 
 
 
 ## 12.27
 
-参见12.24
+$$
+\left|\mathcal{H}_{D^{\prime} | D}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d-1}\left(\begin{array}{c}
+m-1 \\
+i
+\end{array}\right)
+$$
+
+
+
+[解析]：参见12.24
 
 
 
@@ -492,13 +534,23 @@ $$
 
 ## 12.32
 
-参见12.31
+$$
+\sqrt{\frac{\left(\ln 2 / \delta^{\prime}\right)}{2 m}}=\frac{\epsilon}{2}
+$$
+
+[解析]：参见12.31
 
 
 
 ## 12.34
 
-参见12.31
+$$
+\sqrt{\frac{8 d \ln \frac{2 e m}{d}+8 \ln \frac{4}{\delta^{\prime}}}{m}}=\frac{\epsilon}{2}
+$$
+
+
+
+[解析]：参见12.31
 
 
 
@@ -611,23 +663,47 @@ $$
 
 ## 12.43
 
-参见12.42
+$$
+\mathbb{E}[f(\boldsymbol{z})] \leqslant \frac{1}{m} \sum_{i=1}^{m} f\left(\boldsymbol{z}_{i}\right)+2 \widehat{R}_{Z}(\mathcal{F})+3 \sqrt{\frac{\ln (2 / \delta)}{2 m}}
+$$
+
+
+
+[解析]：参见12.42
 
 
 
 ## 12.44
 
-参见 12.42
+$$
+\Phi(Z) \leqslant \mathbb{E}_{Z}[\Phi(Z)]+\sqrt{\frac{\ln (1 / \delta)}{2 m}}
+$$
+
+
+
+[解析]：参见 12.42
 
 
 
 ## 12.45
 
-参见12.42
+$$
+R_{m}(\mathcal{F}) \leqslant \widehat{R}_{Z}(\mathcal{F})+\sqrt{\frac{\ln (2 / \delta)}{2 m}}
+$$
+
+
+
+[解析]：参见12.42
 
 
 
 ## 12.46
+
+$$
+\Phi(Z) \leqslant 2 \widehat{R}_{Z}(\mathcal{F})+3 \sqrt{\frac{\ln (2 / \delta)}{2 m}}
+$$
+
+
 
 参见12.42
 
@@ -648,22 +724,6 @@ $$
 
 [解析]：根据式12.28有$\Pi_{\mathcal{H}}(m) \leqslant\left(\frac{e \cdot m}{d}\right)^{d}$，根据式12.52有$R_{m}(\mathcal{H}) \leqslant \sqrt{\frac{2 \ln \Pi_{\mathcal{H}}(m)}{m}}$，因此$\Pi_{\mathcal{H}}(m) \leqslant \sqrt{\frac{2 d \ln \frac{e m}{d}}{m}}$，再根据式12.47 $E(h) \leqslant \widehat{E}(h)+R_{m}(\mathcal{H})+\sqrt{\frac{\ln (1 / \delta)}{2 m}}$ 即证。
 
-## 12.54
-
-[解析]：定义式，无需证明。
-
-
-
-## 12.55
-
-[解析]：定义式，无需证明。
-
-
-
-## 12.56
-
-[解析]：定义式，无需证明。
-
 
 
 ## 12.57
@@ -678,11 +738,23 @@ $$
 
 ## 12.58
 
+$$
+\ell(\mathfrak{L}, \mathcal{D}) \leqslant \widehat{\ell}(\mathfrak{L}, D)+2 \beta+(4 m \beta+M) \sqrt{\frac{\ln (1 / \delta)}{2 m}}
+$$
+
+
+
 [证明]：比较繁琐，同书上所示，参见[Mohri etc., 2012](https://cs.nyu.edu/~mohri/mlbook/)
 
 
 
 ## 12.59
+
+$$
+\ell(\mathfrak{L}, \mathcal{D}) \leqslant \ell_{l o o}(\mathfrak{L}, D)+\beta+(4 m \beta+M) \sqrt{\frac{\ln (1 / \delta)}{2 m}}
+$$
+
+
 
 [证明]：比较繁琐，同书上所示，参见[Mohri etc., 2012](https://cs.nyu.edu/~mohri/mlbook/)
 
