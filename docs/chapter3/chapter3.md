@@ -36,8 +36,7 @@ w & = \cfrac{\sum_{i=1}^{m}y_ix_i-\bar{y}\sum_{i=1}^{m}x_i}{\sum_{i=1}^{m}x_i^2-
 \end{aligned}$$
 由于$\bar{y}\sum_{i=1}^{m}x_i=\cfrac{1}{m}\sum_{i=1}^{m}y_i\sum_{i=1}^{m}x_i=\bar{x}\sum_{i=1}^{m}y_i$，$\bar{x}\sum_{i=1}^{m}x_i=\cfrac{1}{m}\sum_{i=1}^{m}x_i\sum_{i=1}^{m}x_i=\cfrac{1}{m}(\sum_{i=1}^{m}x_i)^2$，代入上式即可得公式(3.7)
 $$ w=\cfrac{\sum_{i=1}^{m}y_i(x_i-\bar{x})}{\sum_{i=1}^{m}x_i^2-\cfrac{1}{m}(\sum_{i=1}^{m}x_i)^2} $$
-
-【注】：公式(3.7)还可以进一步化简为能用向量表达的形式，将$ \cfrac{1}{m}(\sum_{i=1}^{m}x_i)^2=\bar{x}\sum_{i=1}^{m}x_i $代入分母可得
+如果要想用Python来实现上式的话，上式中的求和运算只能用循环来实现，但是如果我们能将上式给向量化，也就是转换成矩阵（向量）运算的话，那么我们就可以利用诸如NumPy这种专门加速矩阵运算的类库来进行编写。下面我们就尝试将上式进行向量化，将$ \cfrac{1}{m}(\sum_{i=1}^{m}x_i)^2=\bar{x}\sum_{i=1}^{m}x_i $代入分母可得
 $$\begin{aligned}	  
 w & = \cfrac{\sum_{i=1}^{m}y_i(x_i-\bar{x})}{\sum_{i=1}^{m}x_i^2-\bar{x}\sum_{i=1}^{m}x_i} \\
 & = \cfrac{\sum_{i=1}^{m}(y_ix_i-y_i\bar{x})}{\sum_{i=1}^{m}(x_i^2-x_i\bar{x})}
@@ -77,9 +76,7 @@ $$ \ell(\boldsymbol{\beta}) =
 \end{cases} $$
 两式综合可得
 $$ \ell(\boldsymbol{\beta})=\sum_{i=1}^{m}\left(y_i\boldsymbol{\beta}^{\mathrm{T}}\hat{\boldsymbol x}_i-\ln(1+e^{\boldsymbol{\beta}^{\mathrm{T}}\hat{\boldsymbol x}_i})\right) $$
-由于此式仍为极大似然估计的似然函数，所以最大化似然函数等价于最小化似然函数的相反数，也即在似然函数前添加负号即可得公式(3.27)。
-
-【注】：若公式(3.26)中的似然项改写方式为$ p(y_i|\boldsymbol x_i;\boldsymbol w,b)=[p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})]^{y_i}[p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})]^{1-y_i} $，再将其代入公式(3.25)可得
+由于此式仍为极大似然估计的似然函数，所以最大化似然函数等价于最小化似然函数的相反数，也即在似然函数前添加负号即可得公式(3.27)。值得一提的是，若将公式(3.26)这个似然项改写为$p(y_i|\boldsymbol x_i;\boldsymbol w,b)=[p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})]^{y_i}[p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})]^{1-y_i}$，再将其代入公式(3.25)可得
 $$\begin{aligned}
  \ell(\boldsymbol{\beta})&=\sum_{i=1}^{m}\ln\left([p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})]^{y_i}[p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})]^{1-y_i}\right) \\
 &=\sum_{i=1}^{m}\left[y_i\ln\left(p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right)+(1-y_i)\ln\left(p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right)\right] \\
