@@ -30,7 +30,7 @@ $$\frac{1}{m^-}\left(\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbo
 
 $$\overline{\epsilon}=\max \epsilon\quad \text { s.t. } \sum_{i= \epsilon_{0} \times m+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) \epsilon^{i}(1-\epsilon)^{m-i}<\alpha$$
 
-[推导]：截至2018年12月，第一版第30次印刷，公式（2.27）应当勘误为
+[推导]：截至2018年12月，第一版第30次印刷，公式（2.27）应当勘误修正为
 $$\overline{\epsilon}=\min \epsilon\quad\text { s.t. } \sum_{i=\epsilon\times m+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) \epsilon_0^{i}(1-\epsilon_0)^{m-i}<\alpha$$
 具体推导过程如下：由西瓜书中的上下文可知，对$\epsilon\leq\epsilon_0$进行假设检验，等价于附录①中所述的对$p\leq p_0$进行假设检验，所以在西瓜书中求解最大错误率$\overline{\epsilon}$等价于在附录①中求解事件最大发生频率$\frac{\overline{C}}{m}$。由附录①可知
 $$\overline{C}=\min C\quad\text { s.t. } \sum_{i=C+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i}(1-p_0)^{m-i}<\alpha$$
