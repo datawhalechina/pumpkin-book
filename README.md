@@ -12,7 +12,7 @@
 ### 在线阅读
 地址：https://datawhalechina.github.io/pumpkin-book
 
-## 目录
+### 目录
 - 第1章 [绪论](https://datawhalechina.github.io/pumpkin-book/#/chapter1/chapter1)
 - 第2章 [模型评估与选择](https://datawhalechina.github.io/pumpkin-book/#/chapter2/chapter2)
 - 第3章 [线性模型](https://datawhalechina.github.io/pumpkin-book/#/chapter3/chapter3)
@@ -30,13 +30,13 @@
 - 第15章 [规则学习](https://datawhalechina.github.io/pumpkin-book/#/chapter15/chapter15)
 - 第16章 [强化学习](https://datawhalechina.github.io/pumpkin-book/#/chapter16/chapter16)
 
-## 选用的西瓜书版本
+### 选用的西瓜书版本
 <img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/xigua.jpg" width="150" height= "175">
 
 > 版次：2016年1月第1版<br>
 > 勘误表：http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/MLbook2016.htm
 
-### 编委会
+## 编委会
 | 职责 | 名单 |
 | :---: | :---: |
 | **主编** | [@Sm1les](https://github.com/Sm1les) [@archwalker](https://github.com/archwalker) |
