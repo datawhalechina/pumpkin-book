@@ -98,14 +98,14 @@ $$\begin{aligned}
 \end{aligned}$$
 
 ## 3.32
-$$J=\cfrac{\boldsymbol w^{\mathrm{T}}(\mu_0-\mu_1)(\mu_0-\mu_1)^{\mathrm{T}}\boldsymbol w}{\boldsymbol w^{\mathrm{T}}(\Sigma_0+\Sigma_1)\boldsymbol w}$$
+$$J=\cfrac{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})^{\mathrm{T}}\boldsymbol w}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}_{0}+\boldsymbol{\Sigma}_{1})\boldsymbol w}$$
 [推导]：
 $$\begin{aligned}
-	J &= \cfrac{\|\boldsymbol w^{\mathrm{T}}\mu_0-\boldsymbol w^{\mathrm{T}}\mu_1\|_2^2}{\boldsymbol w^{\mathrm{T}}(\Sigma_0+\Sigma_1)\boldsymbol w} \\
-	&= \cfrac{\|(\boldsymbol w^{\mathrm{T}}\mu_0-\boldsymbol w^{\mathrm{T}}\mu_1)^{\mathrm{T}}\|_2^2}{\boldsymbol w^{\mathrm{T}}(\Sigma_0+\Sigma_1)\boldsymbol w} \\
-	&= \cfrac{\|(\mu_0-\mu_1)^{\mathrm{T}}\boldsymbol w\|_2^2}{\boldsymbol w^{\mathrm{T}}(\Sigma_0+\Sigma_1)\boldsymbol w} \\
-	&= \cfrac{[(\mu_0-\mu_1)^{\mathrm{T}}\boldsymbol w]^{\mathrm{T}}(\mu_0-\mu_1)^{\mathrm{T}}\boldsymbol w}{\boldsymbol w^{\mathrm{T}}(\Sigma_0+\Sigma_1)\boldsymbol w} \\
-	&= \cfrac{\boldsymbol w^{\mathrm{T}}(\mu_0-\mu_1)(\mu_0-\mu_1)^{\mathrm{T}}\boldsymbol w}{\boldsymbol w^{\mathrm{T}}(\Sigma_0+\Sigma_1)\boldsymbol w}
+	J &= \cfrac{\|\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}_{0}-\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}_{1}\|_2^2}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}_{0}+\boldsymbol{\Sigma}_{1})\boldsymbol w} \\
+	&= \cfrac{\|(\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}_{0}-\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}_{1})^{\mathrm{T}}\|_2^2}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}_{0}+\boldsymbol{\Sigma}_{1})\boldsymbol w} \\
+	&= \cfrac{\|(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})^{\mathrm{T}}\boldsymbol w\|_2^2}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}_{0}+\boldsymbol{\Sigma}_{1})\boldsymbol w} \\
+	&= \cfrac{\left[(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})^{\mathrm{T}}\boldsymbol w\right]^{\mathrm{T}}(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})^{\mathrm{T}}\boldsymbol w}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}_{0}+\boldsymbol{\Sigma}_{1})\boldsymbol w} \\
+	&= \cfrac{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})^{\mathrm{T}}\boldsymbol w}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}_{0}+\boldsymbol{\Sigma}_{1})\boldsymbol w}
 \end{aligned}$$
 
 ## 3.37
