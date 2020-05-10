@@ -10,11 +10,11 @@ L(\boldsymbol{w},b,\boldsymbol{\alpha}) &= \frac{1}{2}||\boldsymbol{w}||^2+\sum_
 $$\frac {\partial L}{\partial \boldsymbol{w}}=\frac{1}{2}\times2\times\boldsymbol{w} + 0 - \sum_{i=1}^{m}\alpha_iy_i \boldsymbol{x}_i-0= 0 \Longrightarrow \boldsymbol{w}=\sum_{i=1}^{m}\alpha_iy_i \boldsymbol{x}_i$$
 
 $$\frac {\partial L}{\partial b}=0+0-0-\sum_{i=1}^{m}\alpha_iy_i=0  \Longrightarrow  \sum_{i=1}^{m}\alpha_iy_i=0$$
-值得一提的是，上述求解过程遵循的是西瓜书附录B中公式(B.7)左边的那段话“在推导对偶问题时，常通过将拉格朗日函数$L(\boldsymbol{x},\boldsymbol{\lambda},\boldsymbol{\mu})$对$\boldsymbol{x}$求导并令导数为0，来获得对偶函数的表达形式”。那么这段话背后的缘由是啥呢？在这里我猜测可能有两点理由：
+值得一提的是，上述求解过程遵循的是西瓜书附录B中公式(B.7)左边的那段话“在推导对偶问题时，常通过将拉格朗日函数$L(\boldsymbol{x},\boldsymbol{\lambda},\boldsymbol{\mu})$对$\boldsymbol{x}$求导并令导数为0，来获得对偶函数的表达形式”。那么这段话背后的缘由是啥呢？在这里我认为有两种说法可以进行解释：
 1. 对于强对偶性成立的优化问题，其主问题的最优解$\boldsymbol{x}^*$一定满足附录①给出的KKT条件（证明参见参考文献[3]的§ 5.5），而KKT条件中的条件(1)就要求最优解$\boldsymbol{x}^*$能使得拉格朗日函数$L(\boldsymbol{x},\boldsymbol{\lambda},\boldsymbol{\mu})$关于$\boldsymbol{x}$的一阶导数等于0；
 2. 对于任意优化问题，若拉格朗日函数$L(\boldsymbol{x},\boldsymbol{\lambda},\boldsymbol{\mu})$是关于$\boldsymbol{x}$的凸函数，那么此时对$L(\boldsymbol{x},\boldsymbol{\lambda},\boldsymbol{\mu})$关于$\boldsymbol{x}$求导并令导数等于0解出来的点一定是最小值点。根据对偶函数的定义可知，将最小值点代回$L(\boldsymbol{x},\boldsymbol{\lambda},\boldsymbol{\mu})$即可得到对偶函数。
 
-显然，对于SVM来说，它同时满足上述两种情形。
+显然，对于SVM来说，从以上任意一种说法都能解释得通。
 
 ## 6.10
 $$0=\sum_{i=1}^m\alpha_iy_i$$
