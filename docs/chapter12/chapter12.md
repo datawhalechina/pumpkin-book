@@ -1,4 +1,4 @@
-## \Phi(Z) \leqslant \mathbb{E}_{Z}[\Phi(Z)]+\sqrt{\frac{\ln (1 / \delta)}{2 m}}12.1
+## 12.1
 
 $$
 E(h ; \mathcal{D})=P_{\boldsymbol{x} \sim \mathcal{D}}(h(\boldsymbol{x}) \neq y)
