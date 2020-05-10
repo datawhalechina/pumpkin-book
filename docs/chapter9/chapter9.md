@@ -1,13 +1,13 @@
 ## 9.5 
 
 $$
-JC=\frac{a}{a+b+c}
+\mathrm{JC}=\frac{a}{a+b+c}
 $$
 
 [解析]：给定两个集合$A$和$B$，则Jaccard系数定义为如下公式
 
 $$
-JC=\frac{|A\bigcap B|}{|A\bigcup B|}=\frac{|A\bigcap B|}{|A|+|B|-|A\bigcap B|}
+\mathrm{JC}=\frac{|A\bigcap B|}{|A\bigcup B|}=\frac{|A\bigcap B|}{|A|+|B|-|A\bigcap B|}
 $$
 Jaccard系数可以用来描述两个集合的相似程度。
 
@@ -23,7 +23,7 @@ Jaccard系数可以用来描述两个集合的相似程度。
 
 根据Jaccard系数的定义，此时的Jaccard系数为如下公式
 $$
-JC=\frac{M_{11}}{M_{11}+M_{10}+M_{01}}
+\mathrm{JC}=\frac{M_{11}}{M_{11}+M_{10}+M_{01}}
 $$
 由于聚类属于无监督学习，事先并不知道聚类后样本所属类别的类别标记所代表的意义，即便参考模型的类别标记意义是已知的，我们也无法知道聚类后的类别标记与参考模型的类别标记是如何对应的，况且聚类后的类别总数与参考模型的类别总数还可能不一样，因此只用单个样本无法衡量聚类性能的好坏。
 
@@ -37,27 +37,27 @@ $$
 
 综上所述，即所有样本对存在着书中公式(9.1)-(9.4)的四种情况，现在假设集合$A$中存放着两个样本都同属于聚类结果的同一个类的样本对，即$A=SS\bigcup SD$，集合$B$中存放着两个样本都同属于参考模型的同一个类的样本对，即$B=SS\bigcup DS$，那么根据Jaccard系数的定义有：
 $$
-JC=\frac{|A\bigcap B|}{|A\bigcup B|}=\frac{|SS|}{|SS\bigcup SD\bigcup DS|}=\frac{a}{a+b+c}
+\mathrm{JC}=\frac{|A\bigcap B|}{|A\bigcup B|}=\frac{|SS|}{|SS\bigcup SD\bigcup DS|}=\frac{a}{a+b+c}
 $$
 也可直接将书中公式(9.1)-(9.4)的四种情况类比推论，即$M_{11}=a$，$M_{10}=b$，$M_{01}=c$，所以
 $$
-JC=\frac{M_{11}}{M_{11}+M_{10}+M_{01}}=\frac{a}{a+b+c}
+\mathrm{JC}=\frac{M_{11}}{M_{11}+M_{10}+M_{01}}=\frac{a}{a+b+c}
 $$
 
 ## 9.6
 $$
-FMI=\sqrt{\frac{a}{a+b}\cdot \frac{a}{a+c}}
+\mathrm{FMI}=\sqrt{\frac{a}{a+b}\cdot \frac{a}{a+c}}
 $$
 
 [解析]：其中$\frac{a}{a+b}$和$\frac{a}{a+c}$为Wallace提出的两个非对称指标，$a$代表两个样本在聚类结果和参考模型中均属于同一类的样本对的个数，$a+b$代表两个样本在聚类结果中属于同一类的样本对的个数，$a+c$代表两个样本在参考模型中属于同一类的样本对的个数，这两个非对称指标均可理解为样本对中的两个样本在聚类结果和参考模型中均属于同一类的概率。由于指标的非对称性，这两个概率值往往不一样，因此Fowlkes和Mallows提出利用几何平均数将这两个非对称指标转化为一个对称指标，即Fowlkes and Mallows Index, FMI。
 
 ## 9.7
 $$
-RI=\frac{2(a+d)}{m(m-1)}
+\mathrm{RI}=\frac{2(a+d)}{m(m-1)}
 $$
 [解析]：Rand Index定义如下：
 $$
-RI=\frac{a+d}{a+b+c+d}=\frac{a+d}{m(m-1)/2}=\frac{2(a+d)}{m(m-1)}
+\mathrm{RI}=\frac{a+d}{a+b+c+d}=\frac{a+d}{m(m-1)/2}=\frac{2(a+d)}{m(m-1)}
 $$
 其可以理解为两个样本都属于聚类结果和参考模型中的同一类的样本对的个数与两个样本都分别不属于聚类结果和参考模型中的同一类的样本对的个数的总和在所有样本对中出现的频率，可以简单理解为聚类结果与参考模型的一致性。
 
@@ -71,11 +71,11 @@ $$
 
 ## 9.33
 $$
-\sum_{j=1}^m \cfrac{\alpha_{i}\cdot p\left(\boldsymbol x_{j}|\boldsymbol\mu _{i},\mathbf\Sigma_{i}\right)}{\sum_{l=1}^k \alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\mathbf\Sigma_{l})}(\boldsymbol x_{j}-\boldsymbol\mu_{i})=0
+\sum_{j=1}^{m} \frac{\alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\sum_{l=1}^{k} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)=0
 $$
 [推导]：根据公式(9.28)可知：
 $$
-p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\mathbf\Sigma_{i})=\cfrac{1}{(2\pi)^\frac{n}{2}\left| \mathbf\Sigma_{i}\right |^\frac{1}{2}}\exp\left({-\frac{1}{2}(\boldsymbol x_{j}-\boldsymbol\mu_{i})^T\mathbf\Sigma_{i}^{-1}(\boldsymbol x_{j}-\boldsymbol\mu_{i})}\right)
+p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)=\frac{1}{(2 \pi)^{\frac{n}{2}}\left|\boldsymbol{\Sigma}_{i}\right|^{\frac{1}{2}}} \exp \left(-\frac{1}{2}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{T} \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\right)
 $$
 又根据公式(9.32)，由
 $$
@@ -83,12 +83,12 @@ $$
 $$
 可得
 $$\begin{aligned}
-\cfrac {\partial LL(D)}{\partial\boldsymbol\mu_{i}}&=\cfrac {\partial}{\partial \boldsymbol\mu_{i}}\left[\sum_{j=1}^m\ln\Bigg(\sum_{i=1}^k \alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\mathbf\Sigma_{i})\Bigg)\right] \\
-&=\sum_{j=1}^m\frac{\partial}{\partial\boldsymbol\mu_{i}}\left[\ln\Bigg(\sum_{i=1}^k \alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\mathbf\Sigma_{i})\Bigg)\right] \\
-&=\sum_{j=1}^m\cfrac{\alpha_{i}\cdot \cfrac{\partial}{\partial\boldsymbol\mu_{i}}\left(p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\mathbf\Sigma_{i})\right)}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\mathbf\Sigma_{l})} \\
-&=\sum_{j=1}^m\cfrac{\alpha_{i}\cdot \cfrac{1}{(2\pi)^\frac{n}{2}\left| \mathbf\Sigma_{i}\right |^\frac{1}{2}}\exp\left({-\frac{1}{2}(\boldsymbol x_{j}-\boldsymbol\mu_{i})^T\mathbf\Sigma_{i}^{-1}(\boldsymbol x_{j}-\boldsymbol\mu_{i})}\right)}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\mathbf\Sigma_{l})}\cfrac{\partial}{\partial \boldsymbol\mu_{i}}\left(-\frac{1}{2}\left(\boldsymbol x_{j}-\boldsymbol\mu_{i}\right)^T\mathbf\Sigma_{i}^{-1}\left(\boldsymbol x_{j}-\boldsymbol\mu_{i}\right)\right) \\
-&=\sum_{j=1}^m\cfrac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\mathbf\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\mathbf\Sigma_{l})}\cdot(-\cfrac{1}{2})\cdot\cfrac{\partial}{\partial \boldsymbol\mu_{i}}\left(\boldsymbol x_j^T\mathbf{\Sigma}_i^{-1}\boldsymbol x_j-\boldsymbol x_j^T\mathbf{\Sigma}_i^{-1}\boldsymbol\mu_i-\boldsymbol\mu_i^T\mathbf{\Sigma}_i^{-1}\boldsymbol x_j+\boldsymbol\mu_i^T\mathbf{\Sigma}_i^{-1}\boldsymbol\mu_i\right) \\
-&=\sum_{j=1}^m\cfrac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\mathbf\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\mathbf\Sigma_{l})}\cdot(-\cfrac{1}{2})\cdot\cfrac{\partial}{\partial \boldsymbol\mu_{i}}\left(-\boldsymbol x_j^T\mathbf{\Sigma}_i^{-1}\boldsymbol\mu_i-\boldsymbol\mu_i^T\mathbf{\Sigma}_i^{-1}\boldsymbol x_j+\boldsymbol\mu_i^T\mathbf{\Sigma}_i^{-1}\boldsymbol\mu_i\right) \\
+\frac{\partial L L(D)}{\partial \boldsymbol{\mu}_{i}} &=\frac{\partial}{\partial \boldsymbol{\mu}_{i}}\left[\sum_{j=1}^{m} \ln \left(\sum_{i=1}^{k} \alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)\right)\right] \\
+&=\sum_{j=1}^{m} \frac{\partial}{\partial \boldsymbol{\mu}_{i}}\left[\ln \left(\sum_{i=1}^{k} \alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)\right)\right] \\
+&=\sum_{j=1}^{m} \frac{\alpha_{i} \cdot \frac{\partial}{\partial \boldsymbol{\mu}_{i}}\left(p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)\right)}{\sum_{l=1}^{k} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)} \\
+&=\sum_{j=1}^{m} \frac{1}{(2 \pi)^{\frac{n}{2}}\left|\boldsymbol{\Sigma}_{i}\right|^{\frac{1}{2}} \exp \left(-\frac{1}{2}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{T} \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\right)} \frac{\partial}{\partial \boldsymbol{\mu}_{l=1} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)}\left(-\frac{1}{2}\left(\boldsymbol{x}_{i}\right)^{m}\right) \cdot \\ &\qquad\frac{\partial}{\partial \boldsymbol{\mu}_{i}}\left(\boldsymbol{x}_{j}^{T} \boldsymbol{\Sigma}_{i}^{-1} \boldsymbol{x}_{j}-\boldsymbol{x}_{j}^{T} \boldsymbol{\Sigma}_{i}^{-1} \boldsymbol{\mu}_{i}-\boldsymbol{\mu}_{i}^{T} \boldsymbol{\Sigma}_{i}^{-1} \boldsymbol{x}_{j}+\boldsymbol{\mu}_{i}^{T} \boldsymbol{\Sigma}_{i}^{-1} \boldsymbol{\mu}_{i}\right) \\
+&=\sum_{j=1}^{m} \frac{\alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\sum_{l=1}^{k} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)} \cdot\left(-\frac{1}{2}\right) \cdot \frac{\partial_{i}}{2}\left(\boldsymbol{x}_{i}, \boldsymbol{\Sigma}_{i}\right) \\
+&=\sum_{j=1}^{m} \frac{\left.\alpha_{i} \cdot p\left(\boldsymbol{x}_{i}\right)^{T} \boldsymbol{\Sigma}_{l=1}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\right)}{\left(x_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)\right.} \cdot\left(-\frac{1}{2}\right) \cdot \frac{\partial}{\partial \boldsymbol{\mu}_{i}}\left(-\boldsymbol{x}_{j}^{T} \boldsymbol{\Sigma}_{i}^{-1} \boldsymbol{\mu}_{i}-\boldsymbol{\mu}_{i}^{T} \boldsymbol{\Sigma}_{i}^{-1} \boldsymbol{x}_{j}+\boldsymbol{\mu}_{i}^{T} \boldsymbol{\Sigma}_{i}^{-1} \boldsymbol{\mu}_{i}\right)
 \end{aligned}$$
 由于$\boldsymbol x_j^T\mathbf{\Sigma}_i^{-1}\boldsymbol\mu_i$和$\boldsymbol\mu_i^T\mathbf{\Sigma}_i^{-1}\boldsymbol x_j$均为标量且$\mathbf{\Sigma}_i$为对称矩阵，所以
 $$(\boldsymbol x_j^T\mathbf{\Sigma}_i^{-1}\boldsymbol\mu_i)^T=\boldsymbol\mu_i^T({\mathbf{\Sigma}_i^{-1}})^T\boldsymbol x_j=\boldsymbol\mu_i^T({\mathbf{\Sigma}_i^T})^{-1}\boldsymbol x_j=\boldsymbol\mu_i^T\mathbf{\Sigma}_i^{-1}\boldsymbol x_j=\boldsymbol x_j^T\mathbf{\Sigma}_i^{-1}\boldsymbol\mu_i$$

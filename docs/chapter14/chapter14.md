@@ -62,7 +62,7 @@ $$
 \psi_{Q}\left(\mathbf{x}_{Q}\right)=e^{-H_{Q}\left(\mathbf{x}_{Q}\right)}
 $$
 
-[解析]：此为势函数的定义式，即将势函数写作指数函数的形式。
+[解析]：此为势函数的定义式，即将势函数写作指数函数的形式。指数函数满足非负性，且便于求导，因此在机器学习中具有广泛应用，例如西瓜书公式8.5和13.11。
 
 ## 14.9
 
@@ -78,7 +78,7 @@ $$
 P\left(y_{v} | \mathbf{x}, \mathbf{y}_{V \backslash\{v\}}\right)=P\left(y_{v} | \mathbf{x}, \mathbf{y}_{n(v)}\right)
 $$
 
-[解析]：根据局部马尔科夫性，给定某变量得邻接变量，则该变量独立与其他变量，即改变量只与其邻接变量有关，所以式$14.10$中给定变量$v$ 以外的所有变量与仅给定变量$v$的邻接变量是等价的。
+[解析]：根据局部马尔科夫性，给定某变量的邻接变量，则该变量独立与其他变量，即该变量只与其邻接变量有关，所以式$14.10$中给定变量$v$ 以外的所有变量与仅给定变量$v$的邻接变量是等价的。
 
 ## 14.14
 
@@ -268,15 +268,15 @@ $${\rm ln}p(x)=\mathcal{L}(q)+{\rm KL}(q \parallel p)$$
 等式两边同时乘以${\rm ln}p(x)$，因为${\rm ln}p(x)$是不关于变量$z$的函数，所以${\rm ln}p(x)$可以拿进积分里面，得到${\rm ln}p(x)=\int q(z){\rm ln}p(x)dz$
 $$
 \begin{aligned}
-{\rm ln}p(x)&=\int q(z){\rm ln}p(x) \\
- &=\int q(z){\rm ln}\frac{p(x,z)}{p(z|x)}\qquad(带入公式(1))\\
+{\rm ln}p(x)&=\int q(z){\rm ln}p(x)dz \\
+ &=\int q(z){\rm ln}\frac{p(x,z)}{p(z|x)}\\
  &=\int q(z){\rm ln}\bigg\{\frac{p(x,z)}{q(z)}\cdot\frac{q(z)}{p(z|x)}\bigg\} \\
  &=\int q(z)\bigg({\rm ln}\frac{p(x,z)}{q(z)}-{\rm ln}\frac{p(z|x)}{q(z)}\bigg) \\
   &=\int q(z){\rm ln}\bigg\{\frac{p(x,z)}{q(z)}\bigg\}-\int q(z){\rm ln}\frac{p(z|x)}{q(z)} \\
-  &=\mathcal{L}(q)+{\rm KL}(q \parallel p)\qquad(根据\mathcal{L}和{\rm KL}的定义)
+  &=\mathcal{L}(q)+{\rm KL}(q \parallel p)\qquad
 \end{aligned}
 $$
-
+最后一行是根据$\mathcal{L}$和${\rm KL}$的定义。
 ## 14.33
 
 $$
@@ -306,7 +306,6 @@ $$
 [解析]：再一次，条件独立的假设。可以看到，当问题复杂是往往简化问题到最简单最容易计算的局面，实际上往往效果不错。
 
 ## 14.36
-
 $$
 \begin{aligned}
 \mathcal{L}(q)&=\int \prod_{i}q_{i}\bigg\{ {\rm ln}p({\rm \mathbf{x},\mathbf{z}})-\sum_{i}{\rm ln}q_{i}\bigg\}d{\rm\mathbf{z}} \\
@@ -314,7 +313,6 @@ $$
 &=\int q_{j}{\rm ln}\tilde{p}({\rm \mathbf{x},\mathbf{z_{j}}})d{\rm\mathbf{z_{j}}}-\int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_{j}}}+{\rm const}
 \end{aligned}
 $$
-
 [推导]：
 $$
 \mathcal{L}(q)=\int \prod_{i}q_{i}\bigg\{ {\rm ln}p({\rm \mathbf{x},\mathbf{z}})-\sum_{i}{\rm ln}q_{i}\bigg\}d{\rm\mathbf{z}}=\int\prod_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}}-\int\prod_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}
@@ -323,37 +321,35 @@ $$
 $$
 \begin{aligned}
 \int\prod_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}} &= \int q_{j}\prod_{i\ne j}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}} \\
-&= \int q_{j}\bigg\{\int{\rm ln}p({\rm \mathbf{x},\mathbf{z}})\prod_{i\ne j}q_{i}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{j}}}\qquad (先对{\rm\mathbf{z_{j}}}求积分，再对{\rm\mathbf{z_{i}}}求积分)
+&= \int q_{j}\bigg\{\int{\rm ln}p({\rm \mathbf{x},\mathbf{z}})\prod_{i\ne j}q_{i}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{j}}}\qquad 
 \end{aligned}
 $$
-这个就是教材中的$14.36$左边的积分部分。
-
+即先对$\rm\mathbf{z_{j}}$求积分，再对$\rm\mathbf{z_{i}}$求积分，这个就是教材中的$14.36$左边的积分部分。
 我们现在看下右边积分的推导$\int\prod_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}$的推导。
-
 在此之前我们看下$\int\prod_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}$的计算
 $$
 \begin{aligned}
-\int\prod_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}&= \int q_{i^{\prime}}\prod_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}\qquad (选取一个变量q_{i^{\prime}}, i^{\prime}\ne k) \\
+\int\prod_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}&= \int q_{i^{\prime}}\prod_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}\qquad  \\
 &=\int q_{i^{\prime}}\bigg\{\int\prod_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{i^{\prime}}}}
 \end{aligned}
 $$
+第一个等式是一个展开项，选取一个变量$q_{i^{\prime}}, i^{\prime}\ne k$，由于
 $\bigg\{\int\prod_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}}\bigg\}$部分与变量$q_{i^{\prime}}$无关，所以可以拿到积分外面。又因为$\int q_{i^{\prime}}d{\rm\mathbf{z_{i^{\prime}}}}=1$，所以
 $$
 \begin{aligned}
 \int\prod_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}&=\int\prod_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}} \\
-&= \int q_{k}{\rm ln}q_{k}d{\rm\mathbf{z_k}}\qquad (所有k以外的变量都可以通过上面的方式消除)
+&= \int q_{k}{\rm ln}q_{k}d{\rm\mathbf{z_k}}\qquad 
 \end{aligned}
 $$
-有了这个结论，我们再来看公式
+即所有$k$以外的变量都可以通过上面的方式消除,有了这个结论，我们再来看公式
 $$
 \begin{aligned}
 \int\prod_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}&= \int\prod_{i}q_{i}{\rm ln}q_{j}d{\rm\mathbf{z}} + \sum_{k\ne j}\int\prod_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}} \\
-&= \int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_j}} + \sum_{z\ne j}\int q_{k}{\rm ln}q_{k}d{\rm\mathbf{z_k}}\qquad (根据上面结论) \\
-&= \int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_j}} + {\rm const} \qquad (这里我们关心的是q_{j}，其他变量可以视为{\rm const})
+&= \int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_j}} + \sum_{z\ne j}\int q_{k}{\rm ln}q_{k}d{\rm\mathbf{z_k}}\qquad \\
+&= \int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_j}} + {\rm const} \qquad
 \end{aligned}
 $$
-这个就是$14.36$右边的积分部分。
-
+其中第二个等式是依据上述规律进行消除，最后将与$q_j$无关的部分写作$\rm const$，这个就是$14.36$右边的积分部分。
 ## 14.37
 
 $$
