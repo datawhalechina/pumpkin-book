@@ -40,10 +40,10 @@
 | 职责 | 名单 |
 | :---: | :---: |
 | **主编** | [@Sm1les](https://github.com/Sm1les) [@archwalker](https://github.com/archwalker) |
-| **编委** | [@juxiao](https://github.com/juxiao) [@Majingmin](https://github.com/Majingmin) [@MrBigFan](https://github.com/MrBigFan) [@shanry](https://github.com/shanry) [@Ye980226](https://github.com/Ye980226) |
+| **编委** | [@jbb0523](https://blog.csdn.net/jbb0523) [@juxiao](https://github.com/juxiao) [@Majingmin](https://github.com/Majingmin) [@MrBigFan](https://github.com/MrBigFan) [@shanry](https://github.com/shanry) [@Ye980226](https://github.com/Ye980226) |
 
 ## 致谢
-特别感谢[@awyd234](https://github.com/awyd234)、[@feijuan](https://github.com/feijuan)、[@Ggmatch](https://github.com/Ggmatch)、[@Heitao5200](https://github.com/Heitao5200)、[@huaqing89](https://github.com/huaqing89)、[@LongJH](https://github.com/LongJH)、[@LilRachel](https://github.com/LilRachel)、[@LeoLRH](https://github.com/LeoLRH)、[@Nono17](https://github.com/Nono17)、[@spareribs](https://github.com/spareribs)、[@sunchaothu](https://github.com/sunchaothu)、[@StevenLzq](https://github.com/StevenLzq) 在最早期的时候对南瓜书所做的贡献，同时在后来的编撰过程中，也非常感谢[@jbb0523](https://blog.csdn.net/jbb0523)的注解给我们提供了很多推导思路。
+特别感谢[@awyd234](https://github.com/awyd234)、[@feijuan](https://github.com/feijuan)、[@Ggmatch](https://github.com/Ggmatch)、[@Heitao5200](https://github.com/Heitao5200)、[@huaqing89](https://github.com/huaqing89)、[@LongJH](https://github.com/LongJH)、[@LilRachel](https://github.com/LilRachel)、[@LeoLRH](https://github.com/LeoLRH)、[@Nono17](https://github.com/Nono17)、[@spareribs](https://github.com/spareribs)、[@sunchaothu](https://github.com/sunchaothu)、[@StevenLzq](https://github.com/StevenLzq) 在最早期的时候对南瓜书所做的贡献。
 
 ## 关注我们
 <div align=center><img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/qrcode.jpeg" width = "250" height = "270" alt="Datawhale，一个专注于AI领域的学习圈子。初衷是for the learner，和学习者一起成长。目前加入学习社群的人数已经数千人，组织了机器学习，深度学习，数据分析，数据挖掘，爬虫，编程，统计学，Mysql，数据竞赛等多个领域的内容学习，微信搜索公众号Datawhale可以加入我们。"></div>
