@@ -47,23 +47,6 @@ $$
 \end{aligned}
 $$
 
-
-
-[解析]：令$\nabla$表示微分算子，对优化目标
-$$
-\min _{\boldsymbol{x}} f(\boldsymbol{x})+\lambda\|\boldsymbol{x}\|_{1}
-$$
-若$f(x)$可到，且$\nabla f$可导，且$\nabla f$满足$L\mathrm{-Lipschitz}$条件，即存在常数$L>0$使得
-$$
-\left\|\nabla f\left(\boldsymbol{x}^{\prime}\right)-\nabla f(\boldsymbol{x})\right\|_{2}^{2} \leqslant L\left\|\boldsymbol{x}^{\prime}-\boldsymbol{x}\right\|_{2}^{2} \quad\left(\forall \boldsymbol{x}, \boldsymbol{x}^{\prime}\right)
-$$
-则在$x_k$附近可将$f(x)$通过二阶泰勒展开式近似为
-$$
-\begin{aligned}
-\hat{f}(\boldsymbol{x}) & \simeq f\left(\boldsymbol{x}_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}_{k}\right), \boldsymbol{x}-\boldsymbol{x}_{k}\right\rangle+\frac{L}{2}\left\|\boldsymbol{x}-\boldsymbol{x}_{k}\right\|^{2} \\
-&=\frac{L}{2}\left\|\boldsymbol{x}-\left(\boldsymbol{x}_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}_{k}\right)\right)\right\|_{2}^{2}+\mathrm{const}
-\end{aligned}
-$$
 [解析]：首先注意优化目标式和11.7 LASSO回归的联系和区别，该式中的$x$对应到式11.7的$w$，即我们优化的目标。再解释下什么是[$L\mathrm{-Lipschitz}$条件](https://zh.wikipedia.org/wiki/利普希茨連續)，根据维基百科的定义：它是一个比通常[连续](https://zh.wikipedia.org/wiki/連續函數)更强的光滑性条件。直觉上，利普希茨连续函数限制了函数改变的速度，符合利普希茨条件的函数的斜率，必小于一个称为利普希茨常数的实数（该常数依函数而定）。
 
 注意这里可能存在一个笔误，在wiki百科的定义中，式11.7应该写成
