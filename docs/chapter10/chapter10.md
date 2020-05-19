@@ -110,34 +110,34 @@ $$
 
 
 
-[推导]：由公式（10.3）可得，
+[推导]：由公式（10.3）可得
 $$
 b_{ij}=-\frac{1}{2}(dist^2_{ij}-b_{ii}-b_{jj})
 $$
 
 
-由公式（10.6）和（10.9）可得，
+由公式（10.6）和（10.9）可得
 $$
 \begin{aligned}
 tr(\boldsymbol B)&=\frac{1}{2m}\sum^m_{i=1}\sum^m_{j=1}dist^2_{ij}\\
 &=\frac{m}{2}dist^2_{\cdot}
 \end{aligned}
 $$
-由公式（10.4）和（10.8）可得，
+由公式（10.4）和（10.8）可得
 $$
 \begin{aligned}
 b_{jj}&=\frac{1}{m}\sum^m_{i=1}dist^2_{ij}-\frac{1}{m}tr(\boldsymbol B)\\
 &=dist^2_{\cdot j}-\frac{1}{2}dist^2_{\cdot}
 \end{aligned}
 $$
-由公式（10.5）和（10.7）可得，
+由公式（10.5）和（10.7）可得
 $$
 \begin{aligned}
 b_{ii}&=\frac{1}{m}\sum^m_{j=1}dist^2_{ij}-\frac{1}{m}tr(\boldsymbol B)\\
 &=dist^2_{i\cdot}-\frac{1}{2}dist^2_{\cdot}
 \end{aligned}
 $$
-综合可得，
+综合可得
 $$
 \begin{aligned}
 b_{ij}&=-\frac{1}{2}(dist^2_{ij}-b_{ii}-b_{jj})\\
