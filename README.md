@@ -9,7 +9,7 @@
 - 每个公式的解析和推导我们都力(zhi)争(neng)以本科数学基础的视角进行讲解，所以超纲的数学知识我们通常都会以附录和参考文献的形式给出，感兴趣的同学可以继续沿着我们给的资料进行深入学习；
 - 若南瓜书里没有你想要查阅的公式，或者你发现南瓜书哪个地方有错误，请毫不犹豫地去我们GitHub的Issues（ 地址：https://github.com/datawhalechina/pumpkin-book/issues ）进行反馈，在对应版块提交你希望补充的公式编号或者勘误信息，我们通常会在24小时以内给您回复，超过24小时未回复的话可以邮件联系我们（Email：sm1les@qq.com）；
 
-### 在线阅读
+### 在线阅读（内容实时更新）
 地址：https://datawhalechina.github.io/pumpkin-book
 
 ### 最新版PDF下载
