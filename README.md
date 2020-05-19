@@ -12,6 +12,9 @@
 ### 在线阅读
 地址：https://datawhalechina.github.io/pumpkin-book
 
+### 最新版PDF下载
+地址：https://github.com/datawhalechina/pumpkin-book/releases
+
 ### 目录
 - 第1章 [绪论](https://datawhalechina.github.io/pumpkin-book/#/chapter1/chapter1)
 - 第2章 [模型评估与选择](https://datawhalechina.github.io/pumpkin-book/#/chapter2/chapter2)
