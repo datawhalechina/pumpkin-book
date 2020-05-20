@@ -140,7 +140,7 @@ $$
 |\mathcal{H}| e^{-m \epsilon} \leqslant \delta
 $$
 
-[解析]：回到我们要回答的问题：到底需要多少样例才能学得目标概念$c$的有效近似。只要训练集$D$的规模能使学习算法$\mathcal{L}$以概率$1-\delta$找到目标假设的$\epsilon$近似即可。根据式12.12，学习算法$\mathcal{L}$生成的假设大于目标假设的$\epsilon$近似的概率为$P\left(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0\right)<\vert\mathcal{H}\vert e^{-m\epsilon}$，因此学习算法$\mathcal{L}$生成的假设落在目标假设的$\epsilon$近似的概率为$1-P\left(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0\right)\ge 1-\vert\mathcal{H}\vert e^{-m\epsilon}$，这个概率我们希望是$1-\delta$，因此$1-\delta\geqslant 1-\vert\mathcal{H}\vert e^{-m\epsilon}\Rightarrow\vert\mathcal{H}\vert e^{-m\epsilon}\leqslant\delta$
+[解析]：回到我们要回答的问题：到底需要多少样例才能学得目标概念$c$的有效近似。只要训练集$D$的规模能使学习算法$\mathcal{L}$以概率$1-\delta$找到目标假设的$\epsilon$近似即可。根据式12.12，学习算法$\mathcal{L}$生成的假设大于目标假设的$\epsilon$近似的概率为$P\left(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0\right)<\vert\mathcal{H}\vert e^{-m\epsilon}$，因此学习算法$\mathcal{L}$生成的假设落在目标假设的$\epsilon$近似的概率为$1-P\left(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0\right)\ge 1-\vert\mathcal{H}\vert e^{-m\epsilon}$，这个概率我们希望至少是$1-\delta$，因此$1-\delta\leqslant 1-\vert\mathcal{H}\vert e^{-m\epsilon}\Rightarrow\vert\mathcal{H}\vert e^{-m\epsilon}\leqslant\delta$
 
 ## 12.14
 
@@ -335,17 +335,17 @@ $$
 $$
 \left|\mathcal{H}_{| D^{\prime}}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)
 $$
-由记号$\mathcal{H}_{\vert D^\prime}$的定义可知，$\vert\mathcal{H}_{\vert D^\prime}\vert \geqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor$，因此$\vert\mathcal{H}_{D\vert D^\prime}\vert \leqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor$，由于样本集$D$的数量为$m$，根据增长函数的概念，有$\left|\mathcal{H}_{D| D^{\prime}}\right| \leqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor\leqslant \Pi_{\mathcal{H}}(m-1)$。
+由记号$\mathcal{H}_{\vert D^\prime}$的定义可知，$\vert\mathcal{H}_{\vert D^\prime}\vert \geqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor$，因此$\vert\mathcal{H}_{D^\prime\vert D}\vert \leqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor$，由于样本集$D$的数量为$m$，根据增长函数的概念，有$\left|\mathcal{H}_{D^{\prime}| D}\right| \leqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor\leqslant \Pi_{\mathcal{H}}(m-1)$。
 
 假设$Q$表示能被$\mathcal{H}_{D^\prime\vert D}$打散的集合，因为根据$\mathcal{H}_{D^\prime\vert D}$的定义，$H_{D}$必对元素$x_m$给定了不一致的判定，因此$Q \cup\left\{\boldsymbol{x}_{m}\right\}$必能被$\mathcal{H}_{\vert D}$打散，由前提假设$\mathcal{H}$的VC维为$d$，因此$\mathcal{H}_{D^\prime\vert D}$的VC维最大为$d-1$，综上有
 $$
-\left|\mathcal{H}_{D| D^{\prime}}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d-1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)
+\left|\mathcal{H}_{D^{\prime}| D}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d-1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)
 $$
 因此：
 $$
 \begin{aligned}
 \left|\mathcal{H}_{| D}\right|&=\left|\mathcal{H}_{| D^{\prime}}\right|+\left|\mathcal{H}_{D^{\prime} | D}\right|\\
-&\leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right) + \sum_{i=0}^{d+1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)\\
+&\leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right) + \sum_{i=0}^{d-1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)\\
 &=\sum_{i=0}^d \left(\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right) + \left(\begin{array}{c}{m-1} \\ {i-1}\end{array}\right)\right)\\
 &=\sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)
 \end{aligned}
