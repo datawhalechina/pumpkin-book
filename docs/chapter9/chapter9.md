@@ -79,31 +79,32 @@ p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)
 $$
 又根据公式(9.32)，由
 $$
-\cfrac{\partial LL(D)}{\partial \boldsymbol\mu_{i}}=0
+\frac{\partial L L(D)}{\partial \boldsymbol{\mu}_{i}}=\frac{\partial L L(D)}{\partial p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot \frac{\partial p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\partial \boldsymbol{\mu}_{i}}=0
 $$
-可得
-$$\begin{aligned}
-\frac{\partial L L(D)}{\partial \boldsymbol{\mu}_{i}} &=\frac{\partial}{\partial \boldsymbol{\mu}_{i}}\left[\sum_{j=1}^{m} \ln \left(\sum_{i=1}^{k} \alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)\right)\right] \\
-&=\sum_{j=1}^{m} \frac{\partial}{\partial \boldsymbol{\mu}_{i}}\left[\ln \left(\sum_{i=1}^{k} \alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)\right)\right] \\
-&=\sum_{j=1}^{m} \frac{\alpha_{i} \cdot \frac{\partial}{\partial \boldsymbol{\mu}_{i}}\left(p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)\right)}{\sum_{l=1}^{k} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)} \\
-&=\sum_{j=1}^{m} \frac{1}{(2 \pi)^{\frac{n}{2}}\left|\boldsymbol{\Sigma}_{i}\right|^{\frac{1}{2}} \exp \left(-\frac{1}{2}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{T} \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\right)} \frac{\partial}{\partial \boldsymbol{\mu}_{l=1} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)}\left(-\frac{1}{2}\left(\boldsymbol{x}_{i}\right)^{m}\right) \cdot \\ &\qquad\frac{\partial}{\partial \boldsymbol{\mu}_{i}}\left(\boldsymbol{x}_{j}^{T} \boldsymbol{\Sigma}_{i}^{-1} \boldsymbol{x}_{j}-\boldsymbol{x}_{j}^{T} \boldsymbol{\Sigma}_{i}^{-1} \boldsymbol{\mu}_{i}-\boldsymbol{\mu}_{i}^{T} \boldsymbol{\Sigma}_{i}^{-1} \boldsymbol{x}_{j}+\boldsymbol{\mu}_{i}^{T} \boldsymbol{\Sigma}_{i}^{-1} \boldsymbol{\mu}_{i}\right) \\
-&=\sum_{j=1}^{m} \frac{\alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\sum_{l=1}^{k} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)} \cdot\left(-\frac{1}{2}\right) \cdot \frac{\partial_{i}}{2}\left(\boldsymbol{x}_{i}, \boldsymbol{\Sigma}_{i}\right) \\
-&=\sum_{j=1}^{m} \frac{\left.\alpha_{i} \cdot p\left(\boldsymbol{x}_{i}\right)^{T} \boldsymbol{\Sigma}_{l=1}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\right)}{\left(x_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)\right.} \cdot\left(-\frac{1}{2}\right) \cdot \frac{\partial}{\partial \boldsymbol{\mu}_{i}}\left(-\boldsymbol{x}_{j}^{T} \boldsymbol{\Sigma}_{i}^{-1} \boldsymbol{\mu}_{i}-\boldsymbol{\mu}_{i}^{T} \boldsymbol{\Sigma}_{i}^{-1} \boldsymbol{x}_{j}+\boldsymbol{\mu}_{i}^{T} \boldsymbol{\Sigma}_{i}^{-1} \boldsymbol{\mu}_{i}\right)
-\end{aligned}$$
-由于$\boldsymbol x_j^T\mathbf{\Sigma}_i^{-1}\boldsymbol\mu_i$和$\boldsymbol\mu_i^T\mathbf{\Sigma}_i^{-1}\boldsymbol x_j$均为标量且$\mathbf{\Sigma}_i$为对称矩阵，所以
-$$(\boldsymbol x_j^T\mathbf{\Sigma}_i^{-1}\boldsymbol\mu_i)^T=\boldsymbol\mu_i^T({\mathbf{\Sigma}_i^{-1}})^T\boldsymbol x_j=\boldsymbol\mu_i^T({\mathbf{\Sigma}_i^T})^{-1}\boldsymbol x_j=\boldsymbol\mu_i^T\mathbf{\Sigma}_i^{-1}\boldsymbol x_j=\boldsymbol x_j^T\mathbf{\Sigma}_i^{-1}\boldsymbol\mu_i$$
-于是上式可进一步化简为
-$$\cfrac {\partial LL(D)}{\partial\boldsymbol\mu_{i}}=\sum_{j=1}^m\cfrac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\mathbf\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\mathbf\Sigma_{l})}\cdot(-\cfrac{1}{2})\cdot\cfrac{\partial}{\partial\boldsymbol\mu_{i}}\left(-2\boldsymbol\mu_i^T\mathbf{\Sigma}_i^{-1}\boldsymbol x_j+\boldsymbol\mu_i^T\mathbf{\Sigma}_i^{-1}\boldsymbol\mu_i\right) $$
-由矩阵微分公式$\cfrac{\partial \boldsymbol{x}^{T} \boldsymbol{a}}{\partial \boldsymbol{x}}=\boldsymbol{a},\cfrac{\partial \boldsymbol{x}^{T} \mathbf{B} \boldsymbol{x}}{\partial \boldsymbol{x}}=\left(\mathbf{B}+\mathbf{B}^{T}\right) \boldsymbol{x}$可得
-$$\begin{aligned}
-\cfrac {\partial LL(D)}{\partial\boldsymbol\mu_{i}}&=\sum_{j=1}^m\cfrac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\mathbf\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\mathbf\Sigma_{l})}\cdot(-\cfrac{1}{2})\cdot\left(-2\mathbf{\Sigma}_i^{-1}\boldsymbol x_j+2\mathbf{\Sigma}_i^{-1}\boldsymbol\mu_i\right) \\
-&=\sum_{j=1}^m\cfrac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\mathbf\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\mathbf\Sigma_{l})}\mathbf{\Sigma}_i^{-1}\left(\boldsymbol x_j-\boldsymbol\mu_i\right) \\
-\end{aligned}$$
-令上式等于0可得：
-$$\cfrac {\partial LL(D)}{\partial\boldsymbol\mu_{i}}=\sum_{j=1}^m\cfrac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\mathbf\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\mathbf\Sigma_{l})}\mathbf{\Sigma}_i^{-1}\left(\boldsymbol x_j-\boldsymbol\mu_i\right)=0 $$
-左右两边同时乘上$\mathbf\Sigma_{i}$可得：
-$$\sum_{j=1}^m\cfrac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\mathbf\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\mathbf\Sigma_{l})}\left(\boldsymbol x_j-\boldsymbol\mu_i\right)=0$$
-此即为公式(9.33)
+其中：
+$$
+\begin{aligned}
+\frac{\partial L L(D)}{\partial p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \mathbf{\Sigma}_{i}\right)} &=\frac{\partial \sum_{j=1}^{m} \ln \left(\sum_{l=1}^{k} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)\right)}{\partial p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \\
+&=\sum_{j=1}^{m} \frac{\partial \ln \left(\sum_{l=1}^{k} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)\right)}{\partial p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \\
+&=\sum_{j=1}^{m} \frac{\alpha_{i}}{\sum_{l=1}^{k} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\frac{\partial p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\partial \boldsymbol{\mu}_{i}} &=\frac{\partial \frac{1}{(2 \pi)^{\frac{n}{2}}\left|\Sigma_{i}\right|^{\frac{1}{2}}} \exp\left({-\frac{1}{2}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)}\right)}{\partial \boldsymbol{\mu}_{i}} \\
+&=\frac{1}{(2 \pi)^{\frac{n}{2}}\left|\boldsymbol{\Sigma}_{i}\right|^{\frac{1}{2}}} \cdot \frac{\partial \exp\left({-\frac{1}{2}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top} \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)}\right)}{\partial \boldsymbol{\mu}_{i}}\\
+&=\frac{1}{(2 \pi)^{\frac{n}{2}}\left|\boldsymbol{\Sigma}_{i}\right|^{\frac{1}{2}}}\cdot \exp\left({-\frac{1}{2}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top} \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)}\right) \cdot-\frac{1}{2} \frac{\partial\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top} \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)}{\partial \boldsymbol{\mu}_{i}}\\
+&=\frac{1}{(2 \pi)^{\frac{n}{2}}\left|\boldsymbol{\Sigma}_{i}\right|^{\frac{1}{2}}}\cdot \exp\left({-\frac{1}{2}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top} \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)}\right) \cdot-\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{i}-\boldsymbol{\mu}_{j}\right)\\
+&=p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right) \cdot \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)
+\end{aligned}
+$$
+
+因此有：
+$$
+\frac{\partial L L(D)}{\partial \boldsymbol{\mu}_{i}}=\sum_{j=1}^{m} \frac{\alpha_{i}}{\sum_{l=1}^{k} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \mathbf{\Sigma}_{l}\right)} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right) \cdot \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)=0
+$$
+
 
 ## 9.34
 
