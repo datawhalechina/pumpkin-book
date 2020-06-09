@@ -123,7 +123,7 @@ $$
 \end{aligned}
 $$
 
-[解析]：第一行到第二行显然成立，第二行到第三行是利用了$\arg\max$函数的定义。$\underset{y \in\{-1,1\}}{\arg \max } P(f(x)=y | \boldsymbol{x})$表示使得函数$P(f(x)=y | \boldsymbol{x}$取得最大值的$y$的值，展开刚好是第二行的式子。
+[解析]：第一行到第二行显然成立，第二行到第三行是利用了$\arg\max$函数的定义。$\underset{y \in\{-1,1\}}{\arg \max } P(f(x)=y | \boldsymbol{x})$表示使得函数$P(f(x)=y | \boldsymbol{x})$取得最大值的$y$的值，展开刚好是第二行的式子。
 
 ## 8.9
 
