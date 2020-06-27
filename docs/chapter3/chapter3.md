@@ -49,6 +49,57 @@ w & = \cfrac{\sum_{i=1}^{m}(y_ix_i-y_i\bar{x}-x_i\bar{y}+\bar{x}\bar{y})}{\sum_{
 若令$\boldsymbol{x}=(x_1,x_2,...,x_m)^T$，$\boldsymbol{x}_{d}=(x_1-\bar{x},x_2-\bar{x},...,x_m-\bar{x})^T$为去均值后的$\boldsymbol{x}$，$\boldsymbol{y}=(y_1,y_2,...,y_m)^T$，$\boldsymbol{y}_{d}=(y_1-\bar{y},y_2-\bar{y},...,y_m-\bar{y})^T$为去均值后的$\boldsymbol{y}$，其中$\boldsymbol{x}$、$\boldsymbol{x}_{d}$、$\boldsymbol{y}$、$\boldsymbol{y}_{d}$均为m行1列的列向量，代入上式可得
 $$w=\cfrac{\boldsymbol{x}_{d}^T\boldsymbol{y}_{d}}{\boldsymbol{x}_d^T\boldsymbol{x}_{d}}$$
 
+## 3.9
+$$\hat{\boldsymbol{w}}^{*}=\underset{\hat{\boldsymbol{w}}}{\arg \min }(\boldsymbol{y}-\mathbf{X} \hat{\boldsymbol{w}})^{\mathrm{T}}(\boldsymbol{y}-\mathbf{X} \hat{\boldsymbol{w}})$$
+[推导]：公式(3.4)是最小二乘法运用在一元线性回归上的情形，那么对于多元线性回归来说，我们可以类似得到
+$$\begin{aligned}
+	\left(\boldsymbol{w}^{*}, b^{*}\right)&=\underset{(\boldsymbol{w}, b)}{\arg \min } \sum_{i=1}^{m}\left(f\left(\boldsymbol{x}_{i}\right)-y_{i}\right)^{2} \\
+	&=\underset{(\boldsymbol{w}, b)}{\arg \min } \sum_{i=1}^{m}\left(y_{i}-f\left(\boldsymbol{x}_{i}\right)\right)^{2}\\
+	&=\underset{(\boldsymbol{w}, b)}{\arg \min } \sum_{i=1}^{m}\left(y_{i}-\left(\boldsymbol{w}^\mathrm{T}\boldsymbol{x}_{i}+b\right)\right)^{2}
+\end{aligned}$$
+为便于讨论，我们令$\hat{\boldsymbol{w}}=(\boldsymbol{w};b)=(w_1;...;w_d;b)\in\mathbb{R}^{(d+1)\times 1},\hat{\boldsymbol{x}}_i=(x_1;...;x_d;1)\in\mathbb{R}^{(d+1)\times 1}$，那么上式可以简化为
+$$\begin{aligned}
+	\hat{\boldsymbol{w}}^{*}&=\underset{\hat{\boldsymbol{w}}}{\arg \min } \sum_{i=1}^{m}\left(y_{i}-\hat{\boldsymbol{w}}^\mathrm{T}\hat{\boldsymbol{x}}_{i}\right)^{2} \\
+	&=\underset{\hat{\boldsymbol{w}}}{\arg \min } \sum_{i=1}^{m}\left(y_{i}-\hat{\boldsymbol{x}}_{i}^\mathrm{T}\hat{\boldsymbol{w}}\right)^{2} \\
+\end{aligned}$$
+根据向量内积的定义可知，上式可以写成如下向量内积的形式
+$$\begin{aligned}
+	\hat{\boldsymbol{w}}^{*}&=\underset{\hat{\boldsymbol{w}}}{\arg \min } \begin{bmatrix}
+	y_{1}-\hat{\boldsymbol{x}}_{1}^\mathrm{T}\hat{\boldsymbol{w}} & \cdots & y_{m}-\hat{\boldsymbol{x}}_{m}^\mathrm{T}\hat{\boldsymbol{w}} \\
+	\end{bmatrix}
+	\begin{bmatrix}
+	y_{1}-\hat{\boldsymbol{x}}_{1}^\mathrm{T}\hat{\boldsymbol{w}} \\
+	\vdots \\
+	y_{m}-\hat{\boldsymbol{x}}_{m}^\mathrm{T}\hat{\boldsymbol{w}}
+	\end{bmatrix} \\
+\end{aligned}$$
+其中
+$$
+\begin{aligned}
+\begin{bmatrix}
+	y_{1}-\hat{\boldsymbol{x}}_{1}^\mathrm{T}\hat{\boldsymbol{w}} \\
+	\vdots \\
+	y_{m}-\hat{\boldsymbol{x}}_{m}^\mathrm{T}\hat{\boldsymbol{w}}
+\end{bmatrix}&=\begin{bmatrix}
+	y_{1} \\
+	\vdots \\
+	y_{m}
+\end{bmatrix}-\begin{bmatrix}
+	\hat{\boldsymbol{x}}_{1}^\mathrm{T}\hat{\boldsymbol{w}} \\
+	\vdots \\
+	\hat{\boldsymbol{x}}_{m}^\mathrm{T}\hat{\boldsymbol{w}}
+\end{bmatrix}\\
+&=\boldsymbol{y}-\begin{bmatrix}
+	\hat{\boldsymbol{x}}_{1}^\mathrm{T} \\
+	\vdots \\
+	\hat{\boldsymbol{x}}_{m}^\mathrm{T}
+\end{bmatrix}\cdot\hat{\boldsymbol{w}}\\
+&=\boldsymbol{y}-\mathbf{X}\hat{\boldsymbol{w}}
+\end{aligned}
+$$
+所以
+$$\hat{\boldsymbol{w}}^{*}=\underset{\hat{\boldsymbol{w}}}{\arg \min }(\boldsymbol{y}-\mathbf{X} \hat{\boldsymbol{w}})^{\mathrm{T}}(\boldsymbol{y}-\mathbf{X} \hat{\boldsymbol{w}})$$
+
 ## 3.10
 $$\cfrac{\partial E_{\hat{\boldsymbol w}}}{\partial \hat{\boldsymbol w}}=2\mathbf{X}^{\mathrm{T}}(\mathbf{X}\hat{\boldsymbol w}-\boldsymbol{y})$$
 [推导]：将$E_{\hat{\boldsymbol w}}=(\boldsymbol{y}-\mathbf{X}\hat{\boldsymbol w})^{\mathrm{T}}(\boldsymbol{y}-\mathbf{X}\hat{\boldsymbol w})$展开可得
