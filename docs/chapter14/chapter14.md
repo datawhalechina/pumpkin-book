@@ -6,7 +6,7 @@ P\left(x_{1}, y_{1}, \ldots, x_{n}, y_{n}\right)=P\left(y_{1}\right) P\left(x_{1
 \end{aligned}
 $$
 
-[解析]：所有的相乘关系都表示概率的相互独立。三种概率$P\left(y_{i}\right), P\left(x_{i} | y_{i}\right), P\left(x_{i} | y_{i}\right)$ 分别表示初始状态概率，输出观测概率和条件转移概率。
+[解析]：所有的相乘关系都表示概率的相互独立。三种概率$P\left(y_{i}\right), P\left(x_{i} | y_{i}\right), P\left(y_{i} | y_{i-1}\right)$ 分别表示初始状态概率，输出观测概率和条件转移概率。
 
 ## 14.2
 
