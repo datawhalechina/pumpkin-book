@@ -173,12 +173,11 @@ $$\cfrac{\partial L(\boldsymbol w,\lambda)}{\partial \boldsymbol w} = -2\mathbf{
 令上式等于0即可得
 $$-2\mathbf{S}_b\boldsymbol w+2\lambda\mathbf{S}_w\boldsymbol w=0$$
 $$\mathbf{S}_b\boldsymbol w=\lambda\mathbf{S}_w\boldsymbol w$$
-由于我们想要求解的只有$\boldsymbol{w}$，而$\lambda$这个拉格朗乘子具体取值多少都无所谓，因此我们可以任意设定$\lambda$来配合我们求解$\boldsymbol{w}$。我们注意到
-$$\mathbf{S}_b\boldsymbol{w}=(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})^{\mathrm{T}}\boldsymbol{w}$$
-如果我们令$\lambda$恒等于$(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})^{\mathrm{T}}\boldsymbol{w}$，那么上式即可改写为
-$$\mathbf{S}_b\boldsymbol{w}=\lambda(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})$$
-将其代入$\mathbf{S}_b\boldsymbol w=\lambda\mathbf{S}_w\boldsymbol w$即可解得
-$$\boldsymbol{w}=\mathbf{S}_{w}^{-1}(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})$$
+$$(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})^{\mathrm{T}}\boldsymbol{w}=\lambda\mathbf{S}_w\boldsymbol w$$
+若令$(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})^{\mathrm{T}}\boldsymbol{w}=\gamma$，则
+$$\gamma(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})=\lambda\mathbf{S}_w\boldsymbol w$$
+$$\boldsymbol{w}=\frac{\gamma}{\lambda}\mathbf{S}_{w}^{-1}(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})$$
+由于最终要求解的$\boldsymbol{w}$不关心其大小，只关心其方向，所以$\frac{\gamma}{\lambda}$这个常数项可以任意取值，西瓜书中所说的“不妨令$\mathbf{S}_b\boldsymbol w=\lambda(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})$”就等价于令$\frac{\gamma}{\lambda}=1$，此时求解出的$\boldsymbol{w}$即为公式(3.39)
 
 ## 3.38
 $$\mathbf{S}_b\boldsymbol{w}=\lambda(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})$$
