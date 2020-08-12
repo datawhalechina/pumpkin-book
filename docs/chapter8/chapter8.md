@@ -98,7 +98,7 @@ $$
 \end{aligned}
 $$
 
-[解析]：其中$e^{-H\left(\boldsymbol{x}\right)}$ 和$e^{H\left(\boldsymbol{x}\right)}$均为常数，因此只需对 $\mathbb{I}\left(f\left(\boldsymbol{x}\right)=1\right)$和$\mathbb{I}\left(f\left(\boldsymbol{x}\right)=1\right)$取均值即可，即分别为$P\left(f\left(\boldsymbol{x}\right)=1 | \boldsymbol{x}\right)$和$P\left(f\left(\boldsymbol{x}\right)=-1 | \boldsymbol{x}\right)$
+[解析]：其中$e^{-H\left(\boldsymbol{x}\right)}$ 和$e^{H\left(\boldsymbol{x}\right)}$均为常数，因此只需对 $\mathbb{I}\left(f\left(\boldsymbol{x}\right)=1\right)$和$\mathbb{I}\left(f\left(\boldsymbol{x}\right)=-1\right)$取均值即可，即分别为$P\left(f\left(\boldsymbol{x}\right)=1 | \boldsymbol{x}\right)$和$P\left(f\left(\boldsymbol{x}\right)=-1 | \boldsymbol{x}\right)$
 
 因此
 $$
