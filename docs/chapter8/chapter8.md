@@ -98,7 +98,7 @@ $$
 \end{aligned}
 $$
 
-[解析]：其中e^{-H\left(\boldsymbol{x}\right)} 和e^{H\left(\boldsymbol{x}\right)}均为常数，因此只需对 \mathbb{I}\left(f\left(\boldsymbol{x}\right)=1\right)和\mathbb{I}\left(f\left(\boldsymbol{x}\right)=1\right)取均值即可，即分别为P\left(f\left(\boldsymbol{x}\right)=1 | \boldsymbol{x}\right)和P\left(f\left(\boldsymbol{x}\right)=-1 | \boldsymbol{x}\right)
+[解析]：其中$e^{-H\left(\boldsymbol{x}\right)}$ 和$e^{H\left(\boldsymbol{x}\right)}$均为常数，因此只需对 $\mathbb{I}\left(f\left(\boldsymbol{x}\right)=1\right)$和$\mathbb{I}\left(f\left(\boldsymbol{x}\right)=1\right)$取均值即可，即分别为$P\left(f\left(\boldsymbol{x}\right)=1 | \boldsymbol{x}\right)$和$P\left(f\left(\boldsymbol{x}\right)=-1 | \boldsymbol{x}\right)$
 
 因此
 $$
@@ -163,7 +163,7 @@ $$
 \end{aligned}
 $$
 
-[解析]：将$H_{t}(\boldsymbol{x})=H_{t-1}(\boldsymbol{x})+h_{t}(\boldsymbol{x})$带入公式(8.5)即可，因为理想的$h_t(\boldsymbol{x})$可以纠正$H_{t-1}$的全部错误，所以权重系数为无穷。因此，可以转化为对H_{t-1}(\boldsymbol{x})加上h_{t}(\boldsymbol{x})求损失函数最小，如果没有无穷权重的情况下可以很小，加上无穷权重就不存在有错误!
+[解析]：将$H_{t}(\boldsymbol{x})=H_{t-1}(\boldsymbol{x})+h_{t}(\boldsymbol{x})$带入公式(8.5)即可，因为理想的$h_t(\boldsymbol{x})$可以纠正$H_{t-1}$的全部错误，所以权重系数为无穷。因此，可以转化为对$H_{t-1}(\boldsymbol{x})加上h_{t}(\boldsymbol{x})$求损失函数最小，如果没有无穷权重的情况下可以很小，加上无穷权重就不存在有错误!
 
 ## 8.13
 
