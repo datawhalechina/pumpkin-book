@@ -93,14 +93,14 @@ $$
 $$
 \begin{aligned}
 \ell_{\exp }(H | \mathcal{D}) &=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}\right] \\
-&=\sum_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H(\boldsymbol{x})} \\
-&=\sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}_{i}\right)\left(e^{-H\left(\boldsymbol{x}_{i}\right)} \mathbb{I}\left(f\left(\boldsymbol{x}_{i}\right)=1\right)+e^{H\left(\boldsymbol{x}_{i}\right)} \mathbb{I}\left(f\left(\boldsymbol{x}_{i}\right)=-1\right)\right)\\
-&=e^{-H\left(\boldsymbol{x}_{i}\right)} P\left(f\left(\boldsymbol{x}_{i}\right)=1 | \boldsymbol{x}_{i}\right)+e^{H\left(\boldsymbol{x}_{i}\right)} P\left(f\left(\boldsymbol{x}_{i}\right)=-1 | \boldsymbol{x}_{i}\right)
+&=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-H\left(\boldsymbol{x}\right)} \mathbb{I}\left(f\left(\boldsymbol{x}\right)=1\right)+e^{H\left(\boldsymbol{x}\right)} \mathbb{I}\left(f\left(\boldsymbol{x}\right)=-1\right)\right]\\
+&=e^{-H\left(\boldsymbol{x}\right)} P\left(f\left(\boldsymbol{x}\right)=1 | \boldsymbol{x}\right)+e^{H\left(\boldsymbol{x}\right)} P\left(f\left(\boldsymbol{x}\right)=-1 | \boldsymbol{x}\right)
 \end{aligned}
 $$
 
-因此
+[解析]：其中e^{-H\left(\boldsymbol{x}\right)} 和e^{H\left(\boldsymbol{x}\right)}均为常数，因此只需对 \mathbb{I}\left(f\left(\boldsymbol{x}\right)=1\right)和\mathbb{I}\left(f\left(\boldsymbol{x}\right)=1\right)取均值即可，即分别为P\left(f\left(\boldsymbol{x}\right)=1 | \boldsymbol{x}\right)和P\left(f\left(\boldsymbol{x}\right)=-1 | \boldsymbol{x}\right)
 
+因此
 $$
 \frac{\partial \ell_{\exp }(H | \mathcal{D})}{\partial H(\boldsymbol{x})}=-e^{-H(\boldsymbol{x})} P(f(\boldsymbol{x})=1 | \boldsymbol{x})+e^{H(\boldsymbol{x})} P(f(\boldsymbol{x})=-1 | \boldsymbol{x})
 $$
@@ -163,7 +163,7 @@ $$
 \end{aligned}
 $$
 
-[解析]：将$H_{t}(\boldsymbol{x})=H_{t-1}(\boldsymbol{x})+h_{t}(\boldsymbol{x})$带入公式(8.5)即可，因为理想的$h_t(\boldsymbol{x})$可以纠正理想的$h_t$可以纠正$H_{t-1}$的全部错误，所以权重系数为1。如果权重系数$\alpha_t$是个常数的话，对后续结果也没有影响。
+[解析]：将$H_{t}(\boldsymbol{x})=H_{t-1}(\boldsymbol{x})+h_{t}(\boldsymbol{x})$带入公式(8.5)即可，因为理想的$h_t(\boldsymbol{x})$可以纠正$H_{t-1}$的全部错误，所以权重系数为无穷。因此，可以转化为对H_{t-1}(\boldsymbol{x})加上h_{t}(\boldsymbol{x})求损失函数最小，如果没有无穷权重的情况下可以很小，加上无穷权重就不存在有错误!
 
 ## 8.13
 
