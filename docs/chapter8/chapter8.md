@@ -77,11 +77,15 @@ $$
 1. 先考虑指数损失函数$e^{-f(x) H(x)}$的含义：$f$为真实函数，对于样本$x$来说，$f(\boldsymbol{x}) \in\{+1,-1\}$只能取$+1$和$-1$，而$H(\boldsymbol{x})$是一个实数；
    当$H(\boldsymbol{x})$的符号与$f(x)$一致时，$f(\boldsymbol{x}) H(\boldsymbol{x})>0$，因此$e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}=e^{-|H(\boldsymbol{x})|}<1$，且$|H(\boldsymbol{x})|$越大指数损失函数$e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}$越小（这很合理：此时$|H(\boldsymbol{x})|$越大意味着分类器本身对预测结果的信心越大，损失应该越小；若$|H(\boldsymbol{x})|$在零附近，虽然预测正确，但表示分类器本身对预测结果信心很小，损失应该较大）；
    当$H(\boldsymbol{x})$的符号与$f(\boldsymbol{x})$不一致时，$f(\boldsymbol{x}) H(\boldsymbol{x})<0$，因此$e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}=e^{|H(\boldsymbol{x})|}>1$，且$| H(\boldsymbol{x}) |$越大指数损失函数越大（这很合理：此时$| H(\boldsymbol{x}) |$越大意味着分类器本身对预测结果的信心越大，但预测结果是错的，因此损失应该越大；若$| H(\boldsymbol{x}) |$在零附近，虽然预测错误，但表示分类器本身对预测结果信心很小，虽然错了，损失应该较小）；
+   
 2. 符号$\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}[\cdot]$的含义：$\mathcal{D}$为概率分布，可简单理解为在数据集$D$中进行一次随机抽样，每个样本被取到的概率；$\mathbb{E}[\cdot]$为经典的期望，则综合起来$\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}[\cdot]$表示在概率分布$\mathcal{D}$上的期望，可简单理解为对数据集$D$以概率$\mathcal{D}$进行加权后的期望。即
-$$\begin{aligned}
-\ell_{\exp }(H | \mathcal{D}) &=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}\right] \\
-&=\sum_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}
-\end{aligned}$$
+  $$
+  \begin{aligned}
+  \ell_{\exp }(H | \mathcal{D}) &=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}\right] \\
+  &=\sum_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}
+  \end{aligned}
+  $$
+  
 
 ## 8.6
 
@@ -95,12 +99,20 @@ $$
 \ell_{\exp }(H | \mathcal{D}) &=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}\right] \\
 &=\sum_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H(\boldsymbol{x})} \\
 &=\sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}_{i}\right)\left(e^{-H\left(\boldsymbol{x}_{i}\right)} \mathbb{I}\left(f\left(\boldsymbol{x}_{i}\right)=1\right)+e^{H\left(\boldsymbol{x}_{i}\right)} \mathbb{I}\left(f\left(\boldsymbol{x}_{i}\right)=-1\right)\right)\\
-&=e^{-H\left(\boldsymbol{x}_{i}\right)} P\left(f\left(\boldsymbol{x}_{i}\right)=1 | \boldsymbol{x}_{i}\right)+e^{H\left(\boldsymbol{x}_{i}\right)} P\left(f\left(\boldsymbol{x}_{i}\right)=-1 | \boldsymbol{x}_{i}\right)
+&=\sum_{i=1}^{|D|} \left(e^{-H\left(\boldsymbol{x}_{i}\right)} \mathcal{D}\left(\boldsymbol{x}_{i}\right)\mathbb{I}\left(f\left(\boldsymbol{x}_{i}\right)=1\right)+e^{H\left(\boldsymbol{x}_{i}\right)} \mathcal{D}\left(\boldsymbol{x}_{i}\right)\mathbb{I}\left(f\left(\boldsymbol{x}_{i}\right)=-1\right)\right)\\
+&=\sum_{i=1}^{|D|} \left(e^{-H\left(\boldsymbol{x}_{i}\right)} P\left(f\left(\boldsymbol{x}_{i}\right)=1 \mid \boldsymbol{x}_{i}\right)+e^{H\left(\boldsymbol{x}_{i}\right)} P\left(f\left(\boldsymbol{x}_{i}\right)=-1 \mid \boldsymbol{x}_{i}\right)\right)
 \end{aligned}
 $$
 
-因此
+其中$\mathcal{D}\left(\boldsymbol{x}_{i}\right)\mathbb{I}\left(f\left(\boldsymbol{x}_{i}\right)=1\right)=P\left(f\left(\boldsymbol{x}_{i}\right)=1 \mid \boldsymbol{x}_{i}\right)$可以这样理解：
 
+$\mathcal{D}(x_i)$表示在数据集$D$中进行一次随机抽样，样本$x_i$被取到的概率，$\mathcal{D}\left(\boldsymbol{x}_{i}\right)\mathbb{I}\left(f\left(\boldsymbol{x}_{i}\right)=1\right)$表示在数据集$D$中进行一次随机抽样，使得$f(x_i)=1$的样本$x_i$被抽到的概率，即为$P\left(f\left(\boldsymbol{x}_{i}\right)=1 \mid \boldsymbol{x}_{i}\right)$。
+
+当对$H(x_i)$求导时，求和号中只有含$x_i$项不为0，由求导公式
+$$
+\frac{\partial e^{-H(\boldsymbol{x})}}{\partial H(\boldsymbol{x})}=-e^{-H(\boldsymbol{x})}\qquad \frac{\partial e^{H(\boldsymbol{x})}}{\partial H(\boldsymbol{x})}=e^{H(\boldsymbol{x})}
+$$
+有
 $$
 \frac{\partial \ell_{\exp }(H | \mathcal{D})}{\partial H(\boldsymbol{x})}=-e^{-H(\boldsymbol{x})} P(f(\boldsymbol{x})=1 | \boldsymbol{x})+e^{H(\boldsymbol{x})} P(f(\boldsymbol{x})=-1 | \boldsymbol{x})
 $$
