@@ -146,6 +146,17 @@ b_{ij}&=-\frac{1}{2}(dist^2_{ij}-b_{ii}-b_{jj})\\
 \end{aligned}
 $$
 
+## 10.11
+
+$$
+\mathbf{Z}=\mathbf{\Lambda}_{*}^{1 / 2} \mathbf{V}_{*}^{\mathrm{T}} \in \mathbb{R}^{d^{*} \times m}
+$$
+
+[解析]：由题设知，$d^*$为$\mathbf{V}$的非零特征值，因此$\mathbf{B}=\mathbf{V} \mathbf{\Lambda} \mathbf{V}^{\top}$可以写成$\mathbf{B}=\mathbf{V}_{*} \mathbf{\Lambda}_{*} \mathbf{V}_{*}^{\top}$，其中$\mathbf{\Lambda}_{*} \in \mathbb{R}^{d \times d}$为$d$个非零特征值构成的特征值对角矩阵，而$\mathbf{V}_{*} \in \mathbb{R}^{m \times d}$ 为  $\mathbf{\Lambda}_{*} \in \mathbb{R}^{d \times d}$对应的特征值向量矩阵，因此有
+$$
+\mathbf{B}=\left(\mathbf{V}_{*} \mathbf{\Lambda}_{*}^{1 / 2}\right)\left(\boldsymbol{\Lambda}_{*}^{1 / 2} \mathbf{V}_{*}^{\top}\right)
+$$
+故而$\mathbf{Z}=\mathbf{\Lambda}_{*}^{1 / 2} \mathbf{V}_{*}^{\top} \in \mathbb{R}^{d \times m}$
 
 ## 10.14
 
