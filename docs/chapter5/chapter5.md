@@ -119,15 +119,15 @@ e_h&=-\frac{\partial {E_k}}{\partial{b_h}}\cdot \frac{\partial{b_h}}{\partial{\a
 [推导]：参见公式(5.13)
 
 ## 5.20
-$$E(\boldsymbol{s})=-\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}w_{ij}s_is_j-\sum_{p=1}^n\theta_is_i$$
+$$E(\boldsymbol{s})=-\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}w_{ij}s_is_j-\sum_{i=1}^n\theta_is_i$$
 [解析]：能量最初表示一个物理概念，用于描述系统某状态下的能量值。能量值越大，当前状态越不稳定，当能量值达到最小时系统达到稳定状态。Boltzmann机本质上是一个引入了隐变量的无向图模型，无向图的能量可理解为
 $$E_{graph}=E_{edges}+E_{nodes}$$
 其中，$E_{graph}$表示图的能量，$E_{edges}$表示图中边的能量，$E_{nodes}$表示图中结点的能量；边能量由两连接结点的值及其权重的乘积确定：$E_{{edge}_{ij}}=-w_{ij}s_is_j$，结点能量由结点的值及其阈值的乘积确定：$E_{{node}_i}=-\theta_is_i$；图中边的能量为图中所有边能量之和
 $$E_{edges}=\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}E_{{edge}_{ij}}=-\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}w_{ij}s_is_j$$
 图中结点的能量为图中所有结点能量之和
-$$E_{nodes}=\sum_{p=1}^nE_{{node}_i}=-\sum_{p=1}^n\theta_is_i$$
+$$E_{nodes}=\sum_{i=1}^nE_{{node}_i}=-\sum_{i=1}^n\theta_is_i$$
 故状态向量$\boldsymbol{s}$所对应的Boltzmann机能量为
-$$E_{graph}=E_{edges}+E_{nodes}=-\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}w_{ij}s_is_j-\sum_{p=1}^n\theta_is_i$$
+$$E_{graph}=E_{edges}+E_{nodes}=-\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}w_{ij}s_is_j-\sum_{i=1}^n\theta_is_i$$
 
 ## 5.21
 $$P(\boldsymbol{s})=\frac{e^{-E(\boldsymbol{s})}}{\sum_{\boldsymbol{t}}e^{-E(\boldsymbol{t})}}$$
