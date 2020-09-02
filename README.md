@@ -51,7 +51,7 @@
 ## 关注我们
 <div align=center>
 <p>扫描下方二维码，然后回复关键词“南瓜书”，即可加入“南瓜书读者交流群”</p>
-<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/qrcode.jpeg" width = "250" height = "270" alt="Datawhale——一个专注于AI领域的开源组织">
+<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/qrcode.jpeg" width = "250" height = "270" alt="Datawhale是一个专注AI领域的开源组织，以“for the learner，和学习者一起成长”为愿景，构建对学习者最有价值的开源学习社区。关注我们，一起学习成长。">
 </div>
 
 ## LICENSE
