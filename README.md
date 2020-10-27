@@ -1,6 +1,6 @@
 # 南瓜书PumpkinBook
 “周志华老师的《机器学习》（西瓜书）是机器学习领域的经典入门教材之一，周老师为了使尽可能多的读者通过西瓜书对机器学习有所了解, 所以在书中对部分公式的推导细节没有详述，但是这对那些想深究公式推导细节的读者来说可能“不太友好”，本书旨在对西瓜书里比较难理解的公式加以解析，以及对部分公式补充具体的推导细节。”
- 
+
 读到这里，大家可能会疑问为啥前面这段话加了引号，因为这只是我们最初的遐想，后来我们了解到，周老师之所以省去这些推导细节的真实原因是，他本尊认为“理工科数学基础扎实点的大二下学生应该对西瓜书中的推导细节无困难吧，要点在书里都有了，略去的细节应能脑补或做练习”。所以......本南瓜书只能算是我等数学渣渣在自学的时候记下来的笔记，希望能够帮助大家都成为一名合格的“理工科数学基础扎实点的大二下学生”。
 
 ## 使用说明
@@ -53,6 +53,16 @@
 <p>扫描下方二维码，然后回复关键词“南瓜书”，即可加入“南瓜书读者交流群”</p>
 <img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/qrcode.jpeg" width = "250" height = "270" alt="Datawhale是一个专注AI领域的开源组织，以“for the learner，和学习者一起成长”为愿景，构建对学习者最有价值的开源学习社区。关注我们，一起学习成长。">
 </div>
+## 相关工作
+
+与周志华老师所著《机器学习》（西瓜书）这一机器学习领域的经典入门教材类似，周志华、王魏、高尉、张利军等老师所著的《机器学习理论导引》（宝箱书）填补了国内缺少机器学习理论入门著作的遗憾。该书试图以通俗易懂的语言，为有志于学习机器学习理论和研究机器学习理论的读者提供一个入门的导引。
+
+[Datawhale 开源组织](https://github.com/datawhalechina) 亦在其基础上进行了解读和补充。
+
+请参考[「钥匙书」](https://github.com/datawhalechina/key-book/)项目，在线阅读地址：https://datawhalechina.github.io/key-book/ 
+
+
 
 ## LICENSE
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
