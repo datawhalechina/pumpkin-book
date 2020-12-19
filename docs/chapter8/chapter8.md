@@ -20,7 +20,7 @@ $$
 \begin{aligned} P(H(\boldsymbol{x}) \neq f(\boldsymbol{x})) &=\sum_{k=0}^{\lfloor T / 2\rfloor} \left( \begin{array}{c}{T} \\ {k}\end{array}\right)(1-\epsilon)^{k} \epsilon^{T-k} \\ & \leqslant \exp \left(-\frac{1}{2} T(1-2 \epsilon)^{2}\right) \end{aligned}
 $$
 
-[推导]：由基分类器相互独立，假设随机变量$X$为$T$个基分类器分类正确的次数，因此$\mathrm{X} \sim \mathrm{B}(\mathrm{T}, 1-\mathrm{\epsilon})$，设$x_i$为每一个分类器分类正确的次数，则$x_i\sim \mathrm{B}(1, 1-\mathrm{\epsilon})（i=1，2，3，...，\mathrm{T}）$，那么有
+[推导]：由基分类器相互独立，假设随机变量$X$为$T$个基分类器分类正确的次数，因此随机变量$\mathrm{X}$服从二项分布：$\mathrm{X} \sim \mathcal{B}(\mathrm{T}, 1-\mathrm{\epsilon})$，设$x_i$为每一个分类器分类正确的次数，则$x_i\sim \mathcal{B}(1, 1-\mathrm{\epsilon})（i=1，2，3，...，\mathrm{T}）$，那么有
 $$
 \begin{aligned}
 \mathrm{X}&=\sum_{i=1}^{\mathrm{T}} x_i\\
@@ -214,13 +214,7 @@ $$
 \begin{aligned} h_{t}(\boldsymbol{x}) &=\underset{h}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\frac{e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right]} f(\boldsymbol{x}) h(\boldsymbol{x})\right] \\ &=\underset{\boldsymbol{h}}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_{t}}[f(\boldsymbol{x}) h(\boldsymbol{x})] \end{aligned}
 $$
 
-[推导]：假设$\boldsymbol{x}$的概率分布是$f(\boldsymbol{x})$
-(注:本书中概率分布全都是$\mathcal{D(\boldsymbol{x})}$)
-$$
-\mathbb{E(g(\boldsymbol{x}))}=\sum_{i=1}^{|D|}f(\boldsymbol{x}_i)g(\boldsymbol{x}_i)
-$$
-故可得
-
+[推导]：首先解释下符号$\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}$的含义，注意在本章中有两个符号$D$和$\mathcal{D}$，其中$D$表示数据集，而$\mathcal{D}$表示数据集$D$的样本分布，可以理解为在数据集$D$上进行一次随机采样，样本$x$被抽到的概率是$\mathcal{D}(x)$，那么符号$\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}$表示的是在概率分布$\mathcal{D}$上的期望，可以简单地理解为对数据及$D$以概率$\mathcal{D}$加权之后的期望，因此有：
 $$
 \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}\right]=\sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}_{i}\right) e^{-f\left(\boldsymbol{x}_{i}\right) H\left(\boldsymbol{x}_{i}\right)}
 $$
@@ -274,7 +268,7 @@ $$
 ## 8.20
 
 $$
-H^{oob}(\boldsymbol{x})=\underset{y \in \mathcal{Y}}{\arg \max } \sum_{t=1}^{\mathrm{T}} \mathbb{I}\left(h_{t}(\boldsymbol{x})=y\right) \cdot \mathbb{I}\left(\boldsymbol{x} \notin D_{t}\right)
+H^{\mathrm{oob}}(\boldsymbol{x})=\underset{y \in \mathcal{Y}}{\arg \max } \sum_{t=1}^{\mathrm{T}} \mathbb{I}\left(h_{t}(\boldsymbol{x})=y\right) \cdot \mathbb{I}\left(\boldsymbol{x} \notin D_{t}\right)
 $$
 
 [解析]：$\mathbb{I}\left(h_{t}(\boldsymbol{x})=y\right)$表示对$\mathrm{T}$个基学习器，每一个都判断结果是否与$y$一致，$y$的取值一般是$-1$和$1$，如果基学习器结果与$y$一致，则$\mathbb{I}\left(h_{t}(\boldsymbol{x})=y\right)=1$，如果样本不在训练集内，则$\mathbb{I}\left(\boldsymbol{x} \notin D_{t}\right)=1$，综合起来看就是，对包外的数据，用“投票法”选择包外估计的结果，即1或-1。
@@ -282,10 +276,10 @@ $$
 ## 8.21
 
 $$
-\epsilon^{o o b}=\frac{1}{|D|} \sum_{(\boldsymbol{x}, y) \in D} \mathbb{I}\left(H^{o o b}(\boldsymbol{x}) \neq y\right)
+\epsilon^{\mathrm{oob}}=\frac{1}{|D|} \sum_{(\boldsymbol{x}, y) \in D} \mathbb{I}\left(H^{\mathrm{oob}}(\boldsymbol{x}) \neq y\right)
 $$
 
-[解析]：由8.20知，$H^{oob}(\boldsymbol{x})$是对包外的估计，该式表示估计错误的个数除以总的个数，得到泛化误差的包外估计。
+[解析]：由8.20知，$H^{\mathrm{oob}}(\boldsymbol{x})$是对包外的估计，该式表示估计错误的个数除以总的个数，得到泛化误差的包外估计。
 
 ## 8.22
 
