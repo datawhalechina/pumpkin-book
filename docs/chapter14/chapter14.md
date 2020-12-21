@@ -14,7 +14,7 @@ $$
 P(\mathbf{x})=\frac{1}{Z} \prod_{Q \in C} \psi_{Q}\left(\mathbf{x}_{Q}\right)
 $$
 
-[解析]：连乘号都表示各个团之间概率分布相互独立。
+[解析]：因为各个团之间概率分布相互独立，因此它们连乘可以表示最终的概率。
 
 ## 14.3
 
@@ -170,29 +170,33 @@ $$
 
 ## 14.26
 
-$$p(x^t)T(x^{t-1}|x^t)=p(x^{t-1})T(x^t|x^{t-1})$$
+$$
+p\left(\mathbf{x}^{t}\right) T\left(\mathbf{x}^{t-1} \mid \mathbf{x}^{t}\right)=p\left(\mathbf{x}^{t-1}\right) T\left(\mathbf{x}^{t} \mid \mathbf{x}^{t-1}\right)
+$$
 
-[解析]：假设变量$x$所在的空间有$n$个状态($s_1,s_2,..,s_n$), 定义在该空间上的一个转移矩阵$T(n\times n)$如果满足一定的条件则该马尔可夫过程存在一个稳态分布$\pi$, 使得
+
+
+[解析]：假设变量$\mathbf{x}$所在的空间有$n$个状态($s_1,s_2,..,s_n$), 定义在该空间上的一个转移矩阵$\mathbf{T}\in\mathbb{R}^{n\times n}$满足一定的条件则该马尔可夫过程存在一个稳态分布$\boldsymbol{\pi}$, 使得
 $$
 \begin{aligned}
-\pi T=\pi
+\boldsymbol{\pi} \mathbf{T}=\boldsymbol{\pi}
 \end{aligned}
 $$
-其中, $\pi$是一个是一个$n$维向量，代表$s_1,s_2,..,s_n$对应的概率. 反过来, 如果我们希望采样得到符合某个分布$\pi$的一系列变量$x_1,x_2,..,x_t$, 应当采用哪一个转移矩阵$T(n\times n)$呢？
+其中, $\boldsymbol{\pi}$是一个是一个$n$维向量，代表$s_1,s_2,..,s_n$对应的概率. 反过来, 如果我们希望采样得到符合某个分布$\boldsymbol{\pi}$的一系列变量$\mathbf{x}^1,\mathbf{x}^2,..,\mathbf{x}^t$, 应当采用哪一个转移矩阵$\mathbf{T}\in\mathbb{R}^{n\times n}$呢？
 
 事实上，转移矩阵只需要满足马尔可夫细致平稳条件
 $$
 \begin{aligned}
-\pi (i)T(i,j)=\pi (j)T(j,i)
+\pi_i \mathbf{T}_{ij}=\pi_j \mathbf{T}_{ji}
 \end{aligned}
 $$
 即公式$14.26$，这里采用的符号与西瓜书略有区别以便于理解.  证明如下
 $$
 \begin{aligned}
-\pi T(j) = \sum _i \pi (i)T(i,j) = \sum _i \pi (j)T(j,i) = \pi(j)
-\end{aligned} 
+\boldsymbol{\pi} \mathbf{T}_{j\cdot} = \sum _i \pi_i\mathbf{T}_{ij} = \sum _i \pi_j\mathbf{T}_{ji} = \pi_j
+\end{aligned}
 $$
-假设采样得到的序列为$x_1,x_2,..,x_{t-1},x_t$，则可以使用$MH$算法来使得$x_{t-1}$(假设为状态$s_i$)转移到$x_t$(假设为状态$s_j$)的概率满足式。
+假设采样得到的序列为$\mathbf{x}^1,\mathbf{x}^2,..,\mathbf{x}^{t-1},\mathbf{x}^t$，则可以使用$MH$算法来使得$\mathbf{x}^{t-1}$(假设为状态$s_i$)转移到$\mathbf{x}^t$(假设为状态$s_j$)的概率满足式。
 
 ## 14.27
 
