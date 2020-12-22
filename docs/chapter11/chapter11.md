@@ -12,7 +12,7 @@ $$
 \operatorname{Ent}(D)=-\sum_{i=1}^{| \mathcal{Y |}} p_{k} \log _{2} p_{k}
 $$
 
-[解析]：此为信息熵的定义式，其中$p_k, k=1, 2, \dots \vert\mathcal{Y}\vert$表示$D$中第$i$类样本所占的比例。可以看出，样本越纯，即$p_k\rightarrow 0$或$p_k\rightarrow 1$时，$\mathrm{Ent}(D)$越小，其最小值为0。此时必有$p_i=1, p_{\backslash i}=0, i=1, 2, \dots, \vert\mathcal{Y}\vert$。
+[解析]：此为信息熵的定义式，其中$p_k, k=1, 2, \dots \vert\mathcal{Y}\vert$表示$D$中第$i$类样本所占的比例。可以看出，样本越纯，即$p_k\rightarrow 0$或$p_k\rightarrow 1$时，$\mathrm{Ent}(D)$越小，其最小值为0。
 
 ## 11.5
 
@@ -49,7 +49,7 @@ $$
 
 [解析]：首先注意优化目标式和11.7 LASSO回归的联系和区别，该式中的$x$对应到式11.7的$w$，即我们优化的目标。再解释下什么是[$L\mathrm{-Lipschitz}$条件](https://zh.wikipedia.org/wiki/利普希茨連續)，根据维基百科的定义：它是一个比通常[连续](https://zh.wikipedia.org/wiki/連續函數)更强的光滑性条件。直觉上，利普希茨连续函数限制了函数改变的速度，符合利普希茨条件的函数的斜率，必小于一个称为利普希茨常数的实数（该常数依函数而定）。
 
-注意这里可能存在一个笔误，在wiki百科的定义中，式11.9应该写成
+注意这里存在一个笔误，在wiki百科的定义中，式11.9应该写成
 $$
 \left\vert\nabla f\left(\boldsymbol{x}^{\prime}\right)-\nabla f(\boldsymbol{x})\right\vert \leqslant L\left\vert\boldsymbol{x}^{\prime}-\boldsymbol{x}\right\vert \quad\left(\forall \boldsymbol{x}, \boldsymbol{x}^{\prime}\right)
 $$
@@ -171,10 +171,10 @@ $$
 
 4. 最后讨论$x_i=0$的情况，此时$g(x^i)=\frac{L}{2}\left({z^i}\right)^2$
 
-   a. 当$\vert z^i\vert>\frac{\lambda}{L}$时，由上述推导可知$g(x_i)$的最小值在$x^i=z^i-\frac{\lambda}{L}$处取得，令
+   a. 当$\vert z^i\vert>\frac{\lambda}{L}$时，由上述推导可知$g(x_i)$的最小值在$x^i=z^i-\frac{\lambda}{L}$处取得，因为
    $$
    \begin{aligned}
-   f(x^i)&=g(x^i)\vert_{x^i=0}-g(x^i)\vert_{x_i=z^i-\frac{\lambda}{L}}\\
+   g(x^i)\vert_{x^i=0}-g(x^i)\vert_{x_i=z^i-\frac{\lambda}{L}}
    &=\frac{L}{2}\left({z^i}\right)^2 - \left(\lambda z^i-\frac{\lambda^2}{2L}\right)\\
    &=\frac{L}{2}\left(z^i-\frac{\lambda}{L}\right)^2\\
    &>0
@@ -189,8 +189,8 @@ $$
    \begin{aligned}
    g(\Delta x) &=\frac{L}{2}\left(\Delta x-z^{i}\right)^{2}+\lambda|\Delta x| \\
    &=\frac{L}{2}\left((\Delta x)^{2}-2 \Delta x \cdot z^{i}+\frac{2 \lambda}{L}|\Delta x|\right)+\frac{L}{2}\left(z^{i}\right)^{2} \\
-   &>\frac{L}{2}\left((\Delta x)^{2}-2 \Delta x \cdot z^{i}+\frac{2 \lambda}{L}\Delta x\right)+\frac{L}{2}\left(z^{i}\right)^{2}\\
-   &>\frac{L}{2}\left(\Delta x\right)^2+\frac{L}{2}\left(z^{i}\right)^{2}\\
+   &\ge\frac{L}{2}\left((\Delta x)^{2}-2 \Delta x \cdot z^{i}+\frac{2 \lambda}{L}\Delta x\right)+\frac{L}{2}\left(z^{i}\right)^{2}\\
+   &\ge\frac{L}{2}\left(\Delta x\right)^2+\frac{L}{2}\left(z^{i}\right)^{2}\\
    &>g(x^i)\vert_{x^i=0}
    \end{aligned}
    $$

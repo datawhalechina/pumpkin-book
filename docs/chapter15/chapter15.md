@@ -85,16 +85,16 @@ $$
 ## 15.16
 
 $$
-C_{2}=\left(C-\left(C_{1}-\left\{L_{1}\right\}\right) \theta_{1} \vee\left\{\neg L_{1} \theta_{1}\right\}\theta_{2}^{-1}\right) 
+C_{2}=\left(C-\left(C_{1}-\left\{L_{1}\right\}\right) \theta_{1} \vee\left\{\neg L_{1} \theta_{1}\right\}\right)\theta_{2}^{-1}
 $$
 
-[推导]：这里$\theta_2^{-1}$应该放在括号里，可能是作者的笔误。由15.9
+[推导]：$\theta_1$为作者笔误，由15.9
 $$
 \begin{aligned}
 C_{2}&=\left(C-\left(C_{1}-\{L_1\}\right)\right) \vee\{L_2\}\\
 \end{aligned}
 $$
-因为 $L_2=(\neg L_1\theta_1)\theta_2^{-1}$，因此对析合的两个子项分别做归一得证。
+因为 $L_2=(\neg L_1\theta_1)\theta_2^{-1}$，替换得证。
 
 
 

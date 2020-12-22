@@ -102,8 +102,7 @@ $$
 \begin{aligned}\boldsymbol{\Sigma}_{i}=& \frac{1}{\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i}+l_{i}}\left(\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}\right.\\&\left.+\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}\right)\end{aligned}
 $$
 
-[推导]：类似于13.6 由$\cfrac{\partial LL(D_l \cup D_u) }{\partial \Sigma_i}=0$得，化简过程同13.6过程类似
-首先$LL(D_l)$对$\boldsymbol{\Sigma_i}$求偏导 ，类似于 13.6 
+[推导]：首先$LL(D_l)$对$\boldsymbol{\Sigma_i}$求偏导 ，类似于 13.6
 $$
 \begin{aligned} \frac{\partial L L\left(D_{l}\right)}{\partial \boldsymbol{\Sigma}_{i}} &=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{\partial \ln \left(\alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)\right)}{\partial \boldsymbol{\Sigma}_{i}} \\ &=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{1}{p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot \frac{\partial p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\partial \boldsymbol{\Sigma}_{i}} \\
 &=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{1}{p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right) \cdot\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1}\\
@@ -225,7 +224,7 @@ E(f) &=\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j}\left(f\left(\
 \end{aligned}
 $$
 
-[解析]：首先解释下这个能量函数的定义。原则上，我们希望能量函数$E(f)$越小越好，对于节点$i,j$，如果它们不相邻，则$\mathbf{W}_{i j}=0$，如果它们相邻，则最小化能量函数要求$f(x_i)$和$f(x_j)$尽量相似，和逻辑相符。下面进行公式的推导，首先由二项展开可得：
+[解析]：首先解释下这个能量函数的定义。原则上，我们希望能量函数$E(f)$越小越好，对于节点$i,j$，如果它们不相邻，则$(\mathbf{W})_{i j}=0$，如果它们相邻，则最小化能量函数要求$f(x_i)$和$f(x_j)$尽量相似，和逻辑相符。下面进行公式的推导，首先由二项展开可得：
 $$
 \begin{aligned}
 E(f) &=\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j}\left(f\left(\boldsymbol{x}_{i}\right)-f\left(\boldsymbol{x}_{j}\right)\right)^{2} \\
@@ -275,7 +274,9 @@ E(f) &=\left(\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{f}_{u}^{\mathrm{T}}\rig
 \end{aligned}
 $$
 
-[解析]：根据矩阵乘法的定义，有：
+[解析]：这里第一项西瓜书中的符号有歧义，应该表示成$\left[\begin{array}{ll}
+\boldsymbol{f}_{l}^{\mathrm{T}} & \boldsymbol{f}_{u}^{\mathrm{T}}
+\end{array}\right]$即一个$\mathbb{R}^{1\times(l+u)}$的行向量，根据矩阵乘法的定义，有：
 $$
 \begin{aligned}
 E(f) &=\left[\begin{array}{ll}
@@ -353,7 +354,7 @@ $$
 \end{aligned}
 $$
 
-[解析]：根据矩阵乘法的定义计算可得该式，其中需要注意的是，对角矩阵$\mathbf{D}$的拟等于其各个对角元素的逆。
+[解析]：根据矩阵乘法的定义计算可得该式，其中需要注意的是，对角矩阵$\mathbf{D}$的拟等于其各个对角元素的倒数。
 
 ## 13.17
 
