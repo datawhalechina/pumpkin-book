@@ -4,8 +4,8 @@ $$\Delta w_i=\eta(y-\hat{y})x_i$$
 ### 感知机模型
 已知感知机由两层神经元组成，故感知机模型的公式可表示为
 $$y=f(\sum\limits_{i=1}^{n}w_ix_i-\theta)=f(\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x}-\theta)$$
-其中，$\boldsymbol{x} \in \mathbb{R}^n$为样本的特征向量，是感知机模型的输入；$\boldsymbol{w},\theta$是感知机模型的参数，$\boldsymbol{w} \in \mathbb{R}^n$为权重，$\theta$为阈值。假定$f$为阶跃函数，那么感知机模型的公式可进一步表示为
-$$ y=\operatorname{sgn}(\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x}-\theta)=\left\{\begin{array}{rcl}
+其中，$\boldsymbol{x} \in \mathbb{R}^n$为样本的特征向量，是感知机模型的输入；$\boldsymbol{w},\theta$是感知机模型的参数，$\boldsymbol{w} \in \mathbb{R}^n$为权重，$\theta$为阈值。上式中的$f$通常设为符号函数，那么感知机模型的公式可进一步表示为
+$$ y=\operatorname{sign}(\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x}-\theta)=\left\{\begin{array}{rcl}
 1,& {\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x} -\theta\geq 0}\\
 0,& {\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x} -\theta < 0}\\
 \end{array} \right.$$
@@ -120,7 +120,7 @@ e_h&=-\frac{\partial {E_k}}{\partial{b_h}}\cdot \frac{\partial{b_h}}{\partial{\a
 
 ## 5.20
 $$E(\boldsymbol{s})=-\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}w_{ij}s_is_j-\sum_{i=1}^n\theta_is_i$$
-[解析]：能量最初表示一个物理概念，用于描述系统某状态下的能量值。能量值越大，当前状态越不稳定，当能量值达到最小时系统达到稳定状态。Boltzmann机本质上是一个引入了隐变量的无向图模型，无向图的能量可理解为
+[解析]：Boltzmann机本质上是一个引入了隐变量的无向图模型，无向图的能量可理解为
 $$E_{graph}=E_{edges}+E_{nodes}$$
 其中，$E_{graph}$表示图的能量，$E_{edges}$表示图中边的能量，$E_{nodes}$表示图中结点的能量；边能量由两连接结点的值及其权重的乘积确定：$E_{{edge}_{ij}}=-w_{ij}s_is_j$，结点能量由结点的值及其阈值的乘积确定：$E_{{node}_i}=-\theta_is_i$；图中边的能量为图中所有边能量之和
 $$E_{edges}=\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}E_{{edge}_{ij}}=-\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}w_{ij}s_is_j$$
@@ -128,19 +128,6 @@ $$E_{edges}=\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}E_{{edge}_{ij}}=-\sum_{i=1}^{n-1}\su
 $$E_{nodes}=\sum_{i=1}^nE_{{node}_i}=-\sum_{i=1}^n\theta_is_i$$
 故状态向量$\boldsymbol{s}$所对应的Boltzmann机能量为
 $$E_{graph}=E_{edges}+E_{nodes}=-\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}w_{ij}s_is_j-\sum_{i=1}^n\theta_is_i$$
-
-## 5.21
-$$P(\boldsymbol{s})=\frac{e^{-E(\boldsymbol{s})}}{\sum_{\boldsymbol{t}}e^{-E(\boldsymbol{t})}}$$
-[推导]：一个无向图网络，其联合概率分布表示为：
-$$P(\boldsymbol{s})=\frac{1}{Z}\prod_{i=1}^{k}\Phi_i(\boldsymbol{s}_{c_i})$$
-其中，$k$为无向图网络中的极大团个数；$c_i$表示极大团的节点集合；$x_{c_i}$为该极大团所对用的节点变量；$\Phi_i$为势函数；$Z$表示规范化因子（极大团、势函数和规范化因子的具体定义参见西瓜书第14.2节）。假设一个Boltzmann机含有$n$个节点，$\boldsymbol{s}=\{0,1\}^n$为当前状态，状态集合$T$表示$2^n$种所有可能的状态构成的集合。由于Boltzmann机是一个全连接网络，故Boltzmann机中的极大团仅有一个，其节点集合为$c=\{s_1,s_2,\cdots,s_n\}$。其联合概率分布为
-$$P(\boldsymbol{s})=\frac{1}{Z}\Phi(\boldsymbol{s}_{c})$$
-势函数$\Phi(\boldsymbol{s}_{c})$一般定义为指数型函数，所以$\Phi(\boldsymbol{s}_{c})$的一般形式为
-$$\Phi(\boldsymbol{s}_{c})=e^{-E(\boldsymbol{s}_{c})}$$
-其中$\boldsymbol{s}_c=(s_1\,s_2\,\cdots,\, s_n)=\boldsymbol{s}$，则状态$\boldsymbol{s}$下的联合概率分布为
-$$P(\boldsymbol{s})=\frac{1}{Z}e^{-E(\boldsymbol{s})}$$
-状态集合$T$中的某个状态$\boldsymbol{s}$出现的概率定义为：状态$\boldsymbol{s}$的联合概率分布与所有可能的状态的联合概率分布的比值
-$$P(\boldsymbol{s})=\frac{e^{-E(\boldsymbol{s})}}{\sum_{\boldsymbol{t}\in T}e^{-E(\boldsymbol{t})}}$$
 
 ## 5.22
 $$P(\boldsymbol{v}|\boldsymbol{h})=\prod_{i=1}^dP(v_i\,  |  \, \boldsymbol{h})$$
@@ -170,7 +157,7 @@ $$\mathbf{W}=\begin{bmatrix}
 再由公式(5.21)可知，RBM的联合概率分布为
 $$P(\boldsymbol{v},\boldsymbol{h})=\frac{1}{Z}e^{-E(\boldsymbol{v},\boldsymbol{h})}$$
 其中$Z$为规范化因子
-$$Z=\sum_{\boldsymbol{v}}\sum_{\boldsymbol{h}}e^{-E(\boldsymbol{v},\boldsymbol{h})}$$
+$$Z=\sum_{\boldsymbol{v},\boldsymbol{h}}e^{-E(\boldsymbol{v},\boldsymbol{h})}$$
 给定含$m$个独立同分布数据的数据集$V=\{\boldsymbol{v}_1,\boldsymbol{v}_2,\cdots,\boldsymbol{v}_m\}$，记$\boldsymbol{\theta}=\{\mathbf{W},\boldsymbol{\alpha},\boldsymbol{\beta}\}$，学习RBM的策略是求出参数$\boldsymbol{\theta}$的值，使得如下对数似然函数最大化
 $$\begin{aligned}
 L(\boldsymbol{\theta})&=\ln\left(\prod_{k=1}^{m}P(\boldsymbol{v}_k)\right) \\
@@ -246,7 +233,7 @@ $$\frac{\partial{L_k(\boldsymbol{\theta})}}{\partial{w_{ij}}}=P(h_i=1|\boldsymbo
     11. $end\quad for$
 - 输出：$\Delta w_{ij}$
 
-其中函数$\boldsymbol{h}=h\_given\_v(\boldsymbol{v},RBM(\boldsymbol\theta))$表示在给定$\boldsymbol{v}$的条件下，从$RBM(\boldsymbol\theta)$中采样生成$\boldsymbol{h}$，同理，函数$\boldsymbol{v}=v\_given\_h(\boldsymbol{h},RBM(\boldsymbol\theta))$表示在给定$\boldsymbol{h}$的条件下，从$RBM(\boldsymbol\theta)$中采样生成$\boldsymbol{v}$。由于两个函数的算法可以互相类比推得，因此，下面仅给出函数$h\_given\_v(\boldsymbol{v},RBM(\boldsymbol\theta))$的具体算法：
+其中函数$h\_given\_v(\boldsymbol{v},RBM(\boldsymbol\theta))$表示在给定$\boldsymbol{v}$的条件下，从$RBM(\boldsymbol\theta)$中采样生成$\boldsymbol{h}$，同理，函数$v\_given\_h(\boldsymbol{h},RBM(\boldsymbol\theta))$表示在给定$\boldsymbol{h}$的条件下，从$RBM(\boldsymbol\theta)$中采样生成$\boldsymbol{v}$。由于两个函数的算法可以互相类比推得，因此，下面仅给出函数$h\_given\_v(\boldsymbol{v},RBM(\boldsymbol\theta))$的具体算法：
 - 输入：$\boldsymbol{v},RBM(\boldsymbol\theta)$
 - 过程：
     1. $for \quad i=1,2,...,q \quad do$

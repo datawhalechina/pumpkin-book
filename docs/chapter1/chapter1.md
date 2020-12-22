@@ -10,7 +10,13 @@ $$\begin{aligned}
 &=\cfrac{1}{2}2^{\vert \mathcal{X} \vert}\sum_{\boldsymbol{x}\in\mathcal{X}-X}P(\boldsymbol{x}) \sum_hP(h\vert X,\mathfrak{L}_a) \\
 &=2^{\vert \mathcal{X} \vert-1}\sum_{\boldsymbol{x}\in\mathcal{X}-X}P(\boldsymbol{x}) \cdot 1\\
 \end{aligned}$$
-[解析]：第1步到第2步是因为$\sum_i^m\sum_j^n\sum_k^o a_ib_jc_k=\sum_i^m a_i \cdot \sum_j^n b_j \cdot \sum_k^o c_k$；第2步到第3步：首先要知道此时我们对$f$的假设是任何能将样本映射到{0,1}的函数且服从均匀分布，也就是说不止一个$f$且每个$f$出现的概率相等，例如样本空间只有两个样本时：$ \mathcal{X}=\{\boldsymbol{x}_1,\boldsymbol{x}_2\},\vert \mathcal{X} \vert=2$，那么所有的真实目标函数$f$为：
+[解析]：第1步到第2步：
+$$\begin{aligned}
+&\sum_f\sum_h\sum_{\boldsymbol{x}\in\mathcal{X}-X}P(\boldsymbol{x})\mathbb{I}(h(\boldsymbol{x})\neq f(\boldsymbol{x}))P(h\vert X,\mathfrak{L}_a) \\
+&=\sum_{\boldsymbol{x}\in\mathcal{X}-X}P(\boldsymbol{x})\sum_f\sum_h\mathbb{I}(h(\boldsymbol{x})\neq f(\boldsymbol{x}))P(h\vert X,\mathfrak{L}_a) \\
+&=\sum_{\boldsymbol{x}\in\mathcal{X}-X}P(\boldsymbol{x}) \sum_hP(h\vert X,\mathfrak{L}_a)\sum_f\mathbb{I}(h(\boldsymbol{x})\neq f(\boldsymbol{x})) \\
+\end{aligned}$$
+第2步到第3步：首先要知道此时我们对$f$的假设是任何能将样本映射到{0,1}的函数且服从均匀分布，也就是说不止一个$f$且每个$f$出现的概率相等，例如样本空间只有两个样本时：$ \mathcal{X}=\{\boldsymbol{x}_1,\boldsymbol{x}_2\},\vert \mathcal{X} \vert=2$，那么所有的真实目标函数$f$为：
 $$\begin{aligned}
 f_1:f_1(\boldsymbol{x}_1)=0,f_1(\boldsymbol{x}_2)=0;\\
 f_2:f_2(\boldsymbol{x}_1)=0,f_2(\boldsymbol{x}_2)=1;\\
