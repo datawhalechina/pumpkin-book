@@ -112,8 +112,10 @@ $$\begin{aligned}
 &=\sum_{i=C+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i} (1-p_0)^{m-i}
 \end{aligned}$$
 对于此方程，通常不一定正好解得一个整数$C$使得方程成立，较常见的情况是存在这样一个$\overline{C}$使得
-$$\sum_{i=\overline{C}+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i} (1-p_0)^{m-i}<\alpha \\
-\sum_{i=\overline{C}}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i} (1-p_0)^{m-i}>\alpha$$
+$$\begin{aligned}
+\sum_{i=\overline{C}+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i} (1-p_0)^{m-i}<\alpha \\
+\sum_{i=\overline{C}}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i} (1-p_0)^{m-i}>\alpha
+\end{aligned}$$
 此时，$C$只能取$\overline{C}$或者$\overline{C}+1$，若$C$取$\overline{C}$，则相当于升高了检验水平$\alpha$，若$C$取$\overline{C}+1$则相当于降低了检验水平$\alpha$，具体如何取舍需要结合实际情况，但是通常为了减小犯第一类错误的概率，会倾向于令$C$取$\overline{C}+1$。下面考虑如何求解$\overline{C}$：易证$\beta_{\varphi}(p_0)$是关于$C$的减函数，所以再结合上述关于$\overline{C}$的两个不等式易推得
 $$\overline{C}=\min C\quad\text { s.t. } \sum_{i=C+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i}(1-p_0)^{m-i}<\alpha$$
 
