@@ -118,7 +118,7 @@ $$
 ## 9.34
 
 $$
-\mu_{i}=\frac{\sum_{j=1}^{m} \gamma_{j i} \boldsymbol{x}_{j}}{\sum_{j=1}^{m} \gamma_{j i}}
+\boldsymbol\mu_{i}=\frac{\sum_{j=1}^{m} \gamma_{j i} \boldsymbol{x}_{j}}{\sum_{j=1}^{m} \gamma_{j i}}
 $$
 
 
@@ -133,7 +133,7 @@ $$
 $$
 因此有
 $$
-\mu_{i}=\frac{\sum_{j=1}^{m} \gamma_{j i} \boldsymbol{x}_{j}}{\sum_{j=1}^{m} \gamma_{j i}}
+\boldsymbol\mu_{i}=\frac{\sum_{j=1}^{m} \gamma_{j i} \boldsymbol{x}_{j}}{\sum_{j=1}^{m} \gamma_{j i}}
 $$
 
 ## 9.35

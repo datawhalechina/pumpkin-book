@@ -617,7 +617,7 @@ $$
 $$
 \begin{aligned} \widehat{E}_{Z}(f) &=\frac{1}{m} \sum_{i=1}^{m} f\left(\boldsymbol{z}_{i}\right) \\ \Phi(Z) &=\sup _{f \in \mathcal{F}} \left(\mathbb{E}[f]-\widehat{E}_{Z}(f)\right) \end{aligned}
 $$
-即$\widehat{E}_{Z}(f)$表示函数$f$作为假设下的经验误差，$\Phi(Z)$表示经验误差和泛化误差的上确界。再令$Z^\prime$为只与$Z$有一个示例(样本)不同的训练集，不妨设$z_m\in Z$和$z^\prime_m\in Z^\prime$为不同的示例，那么有
+即$\widehat{E}_{Z}(f)$表示函数$f$作为假设下的经验误差，$\Phi(Z)$表示泛化误差和经验误差的差的上确界。再令$Z^\prime$为只与$Z$有一个示例(样本)不同的训练集，不妨设$z_m\in Z$和$z^\prime_m\in Z^\prime$为不同的示例，那么有
 $$
 \begin{aligned} \Phi\left(Z^{\prime}\right)-\Phi(Z) &=\sup _{f \in \mathcal{F}} \left(\mathbb{E}[f]-\widehat{E}_{Z^{\prime}}(f)\right)-\sup _{f \in \mathcal{F}} \left(\mathbb{E}[f]-\widehat{E}_{Z}(f)\right) \\ & \leqslant \sup _{f \in \mathcal{F}} \left(\widehat{E}_{Z}(f)-\widehat{E}_{Z^{\prime}}(f)\right) \\ &=\sup_{f\in\mathcal{F}}\frac{\sum^m_{i=1}f(z_i)-\sum^m_{i=1}f(z^\prime_i)}{m}\\&=\sup _{f \in \mathcal{F}} \frac{f\left(z_{m}\right)-f\left(z_{m}^{\prime}\right)}{m} \\ & \leqslant \frac{1}{m} \end{aligned}
 $$
