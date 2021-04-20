@@ -1,6 +1,6 @@
 # 南瓜书PumpkinBook
 “周志华老师的《机器学习》（西瓜书）是机器学习领域的经典入门教材之一，周老师为了使尽可能多的读者通过西瓜书对机器学习有所了解, 所以在书中对部分公式的推导细节没有详述，但是这对那些想深究公式推导细节的读者来说可能“不太友好”，本书旨在对西瓜书里比较难理解的公式加以解析，以及对部分公式补充具体的推导细节。”
- 
+
 读到这里，大家可能会疑问为啥前面这段话加了引号，因为这只是我们最初的遐想，后来我们了解到，周老师之所以省去这些推导细节的真实原因是，他本尊认为“理工科数学基础扎实点的大二下学生应该对西瓜书中的推导细节无困难吧，要点在书里都有了，略去的细节应能脑补或做练习”。所以......本南瓜书只能算是我等数学渣渣在自学的时候记下来的笔记，希望能够帮助大家都成为一名合格的“理工科数学基础扎实点的大二下学生”。
 
 ## 使用说明
@@ -13,6 +13,19 @@
 <img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/nangua.jpg" width="300">
 
 购买链接：[京东](https://item.jd.com/13130936.html) | [当当](http://product.dangdang.com/29206216.html) | [天猫](https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.16.42ab1597BfGB8r&id=638752681742)
+
+#### 纸质版勘误
+
+如何使用勘误？首先找到你的书的印次，接下来对着下表索引印次，改印次之后所有的勘误都是你的书中所要注意的勘误，印次前的所有勘误在当印次和之后印次的印刷中都修正了，所以不用管。
+
+| 印次                                                     | 原文内容                                                     | 勘误内容                                                     | 致谢         |
+| -------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ |
+| 2021-03-01第1版第一次印刷<br />2021-03-18第1版第二次重印 | 80页公式(9.34)，$\mu$都改为粗体，表示向量<br />117页倒数第二行，公式(12.42)，解析中$\Phi(Z)$表示经验误差和泛化误差的上确界 | $\mu\rightarrow\boldsymbol{\mu}$<br />$\Phi(Z)$表示泛化误差和经验误差的差的上确界 | 微信3群@橙子 |
+|                                                          |                                                              |                                                              |              |
+|                                                          |                                                              |                                                              |              |
+
+
+
 
 ### 在线阅读（内容实时更新）
 地址：https://datawhalechina.github.io/pumpkin-book
@@ -39,7 +52,7 @@
 - 第16章 [强化学习](https://datawhalechina.github.io/pumpkin-book/#/chapter16/chapter16)
 
 ### 选用的西瓜书版本
-<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/xigua.jpg" width="150">
+<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/xigua.jpg" width="150" height= "175">
 
 > 版次：2016年1月第1版<br>
 > 勘误表：http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/MLbook2016.htm
