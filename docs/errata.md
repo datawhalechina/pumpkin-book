@@ -6,6 +6,7 @@
 - 17页，式(3.37)，解析的倒数第二行“将其代入$\mathbf{S}_{b} \boldsymbol{w}=\lambda \mathbf{S}_{b} \boldsymbol{w}$”改为“将其代入$\mathbf{S}_{b} \boldsymbol{w}=\lambda \mathbf{S}_{w} \boldsymbol{w}$”
 - 80页，式(9.34)，$\mu$ 都改为粗体$\boldsymbol{\mu}$，表示向量
 - 117页倒数第二行，式(12.42)，解析中“$\Phi(Z)$ 表示经验误差和泛化误差的上确界”改为“$\Phi(Z)$表示泛化误差和经验误差的差的上确界”
+
 ## 第1版第3次印刷（2021.4）
 ## 第1版第2次印刷（2021.3）
 ## 第1版第1次印刷（2021.3）
