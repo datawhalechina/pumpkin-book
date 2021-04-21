@@ -349,7 +349,7 @@ $$
 $$
 \begin{aligned}
 \int\prod_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}&= \int\prod_{i}q_{i}{\rm ln}q_{j}d{\rm\mathbf{z}} + \sum_{k\ne j}\int\prod_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}} \\
-&= \int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_j}} + \sum_{z\ne j}\int q_{k}{\rm ln}q_{k}d{\rm\mathbf{z_k}}\qquad \\
+&= \int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_j}} + \sum_{k\ne j}\int q_{k}{\rm ln}q_{k}d{\rm\mathbf{z_k}}\qquad \\
 &= \int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_j}} + {\rm const} \qquad
 \end{aligned}
 $$
