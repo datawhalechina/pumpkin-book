@@ -1,5 +1,5 @@
 # PumpkinBook
-[简体中文](https://github.com/datawhalechina/pumpkin-book/blob/master/README.md) | [French](https://github.com/datawhalechina/pumpkin-book/blob/master/README_franch.md)
+[简体中文](https://github.com/datawhalechina/pumpkin-book/blob/master/README.md) | [French](https://github.com/datawhalechina/pumpkin-book/blob/master/README_french.md)
 
 “Le livre ‘Machine Learning’ (Watermelon Book) par Prof. Zhihua Zhou est l’un des plus classiques manuels dans le domaine de Machine Learning. Afin des faire connaissances au plus grand nombre de lecteurs possibles à travers de ce livre, Prof. Zhou n’a pas été détaillé des dérivations de certaines formules. Cependant, cela a créé des difficultés pour ce qui voudrais apprendre les détails de ces dérivations. Dans ce cas, ce livre vise à donner des interprétations qui sont plus difficile à comprendre, et aussi compléter des détails de certaines formules.” 
 
