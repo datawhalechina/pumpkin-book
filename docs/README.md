@@ -16,6 +16,8 @@
 
 勘误表：https://datawhalechina.github.io/pumpkin-book/#/errata
 
+配套视频教程：https://www.bilibili.com/video/BV1Mh411e7VU?from=search&seid=18137561657847305102
+
 ### 在线阅读（内容实时更新）
 地址：https://datawhalechina.github.io/pumpkin-book
 
@@ -24,7 +26,7 @@
 
 #### 纸质版和PDF版的区别
 
-PDF版本是我们寄送出版社的全书初稿，经由人民邮电出版社出版社的编辑老师们对初稿进行了反复修缮最终诞生了纸质书籍，在此向人民邮电出版社的编辑老师的认真严谨表示衷心的感谢！（附：校对样稿）
+PDF版本是我们寄送出版社的全书初稿，经由人民邮电出版社的编辑老师们对初稿进行了反复修缮最终诞生了纸质书籍，在此向人民邮电出版社的编辑老师的认真严谨表示衷心的感谢！（附：校对样稿）
 
 <center class="half"><img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/yanggao1.jpg" width="300"><img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/yanggao2.jpg" width="300"></center>
 
