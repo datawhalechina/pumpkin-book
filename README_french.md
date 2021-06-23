@@ -52,10 +52,11 @@ La version PDF est celle que nous avons envoyé à editor, elle était notre pre
 ### La version du livre ‘Watermelon Book’ Choisie
 <img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/xigua.jpg" width="150" height= "175">
 
-> Version : 1ère version du janvier 2016
+> Version : 1ère version du janvier 2016<br>
 > Errata：http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/MLbook2016.htm
 
 ## Comité éditorial
+||Liste des auteurs|
 | :---: | :---: |
 | **Éditeur en Chief** | [@Sm1les](https://github.com/Sm1les) [@archwalker](https://github.com/archwalker) |
 | **Membre du comité de rédaction** | [@jbb0523](https://blog.csdn.net/jbb0523) [@juxiao](https://github.com/juxiao) [@Majingmin](https://github.com/Majingmin) [@MrBigFan](https://github.com/MrBigFan) [@shanry](https://github.com/shanry) [@Ye980226](https://github.com/Ye980226) |
