@@ -16,7 +16,7 @@
 
 勘误表：https://datawhalechina.github.io/pumpkin-book/#/errata
 
-配套视频教程：https://www.bilibili.com/video/BV1Mh411e7VU?from=search&seid=18137561657847305102
+配套视频教程：https://www.bilibili.com/video/BV1Mh411e7VU
 
 ### 在线阅读（内容实时更新）
 地址：https://datawhalechina.github.io/pumpkin-book
