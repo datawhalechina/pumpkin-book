@@ -177,7 +177,7 @@ $$(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})(\boldsymbol{\mu}_{0}-\boldsymbol{\
 若令$(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})^{\mathrm{T}}\boldsymbol{w}=\gamma$，则
 $$\gamma(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})=\lambda\mathbf{S}_w\boldsymbol w$$
 $$\boldsymbol{w}=\frac{\gamma}{\lambda}\mathbf{S}_{w}^{-1}(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})$$
-由于最终要求解的$\boldsymbol{w}$不关心其大小，只关心其方向，所以$\frac{\gamma}{\lambda}$这个常数项可以任意取值，西瓜书中所说的“不妨令$\mathbf{S}_b\boldsymbol w=\lambda(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})$”就等价于令$\frac{\gamma}{\lambda}=1$，此时求解出的$\boldsymbol{w}$即为公式(3.39)
+由于最终要求解的$\boldsymbol{w}$不关心其大小，只关心其方向，所以其大小可以任意取值。由于$\boldsymbol{\mu}_{0}$和$\boldsymbol{\mu}_{1}$的大小是固定的，所以$\gamma$这个标量的大小只受$\boldsymbol{w}$的大小影响，因此可以调整$\boldsymbol{w}$的大小使得$\gamma=\lambda$，西瓜书中所说的“不妨令$\mathbf{S}_b\boldsymbol w=\lambda(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})$”也等价于令$\gamma=\lambda$，因此，此时$\frac{\gamma}{\lambda}=1$，求解出的$\boldsymbol{w}$即为公式(3.39)
 
 ## 3.38
 $$\mathbf{S}_b\boldsymbol{w}=\lambda(\boldsymbol{\mu}_{0}-\boldsymbol{\mu}_{1})$$
