@@ -3,6 +3,7 @@
 如何使用勘误？首先找到你的书的印次，接下来对着下表索引印次，该印次之后所有的勘误都是你的书中所要注意的勘误，印次前的所有勘误在当印次和之后印次均已印刷修正。
 ## 第1版第6次印刷（待定）
 - 17页，式(3.37)，最后解析$\lambda$的取值那部分不太严谨，最新表述参见：https://datawhalechina.github.io/pumpkin-book/#/chapter3/chapter3?id=_337
+
 ## 第1版第5次印刷（2021.06）
 ## 第1版第4次印刷（2021.05）
 - 17页，式(3.37)，解析的倒数第二行“将其代入$\mathbf{S}_{b} \boldsymbol{w}=\lambda \mathbf{S}_{b} \boldsymbol{w}$”改为“将其代入$\mathbf{S}_{b} \boldsymbol{w}=\lambda \mathbf{S}_{w} \boldsymbol{w}$”
