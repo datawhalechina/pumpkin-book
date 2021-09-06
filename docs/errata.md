@@ -4,6 +4,7 @@
 ## 第1版第7次印刷（待定）
 - 92页，式(10.28)，“$n$行1列的单位向量”改为“$n$行1列的元素值全为1的向量”
 - 95页，式(11.6)，“...降低因$w$的分量过太而导致...”改为“...降低因$w$的分量过大而导致...”（感谢微信@李伟豪work hard)
+- 式(11.18)，求和可得下面的公式中第一行关于$\boldsymbol{b}$的列向量有笔误，最新表述参见：https://datawhalechina.github.io/pumpkin-book/#/chapter11/chapter11?id=_1118 （感谢微信@@李伟豪work hard)
 
 ## 第1版第6次印刷（2021.07）
 - 17页，式(3.37)，最后解析$\lambda$的取值那部分不太严谨，最新表述参见：https://datawhalechina.github.io/pumpkin-book/#/chapter3/chapter3?id=_337
