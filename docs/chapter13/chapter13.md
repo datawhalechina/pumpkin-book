@@ -194,7 +194,7 @@ $$
 
 
 解出$l+u+\lambda = 0$  且$l+u =m$ 其中$m$为样本总个数，移项即得$\lambda = -m$
-最后带入整理解得
+最后代入整理解得
 $$
 l_i + \sum_{x_j \in{D_u}} \gamma_{ji}-\lambda \alpha_i = 0
 $$

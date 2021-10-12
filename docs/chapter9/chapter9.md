@@ -127,7 +127,7 @@ $$
 $$
 \gamma_{j i}=p_{\mathcal{M}}\left(z_{j}=i | \boldsymbol{x}_{j}\right)=\frac{\alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\sum_{l=1}^{k} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \mathbf{\Sigma}_{l}\right)}
 $$
-带入9.33
+代入9.33
 $$
 \sum_{j=1}^{m} \gamma_{j i}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)=0
 $$

@@ -28,7 +28,7 @@ $$
 C=\left(C_{1}-\{L\}\right) \vee\left(C_{2}-\{\neg L\}\right)
 $$
 
-[解析]：$C=A\vee B$，把$A=C_1 - \{L\}$和$L=C_2-\{\neg L\}$带入即得。
+[解析]：$C=A\vee B$，把$A=C_1 - \{L\}$和$L=C_2-\{\neg L\}$代入即得。
 
 ## 15.9
 

@@ -213,7 +213,7 @@ P(-\epsilon \leqslant E(h)-\widehat{E}(h) \leqslant \epsilon) &\geqslant 1 - \de
 P(\widehat{E}(h) -\epsilon \leqslant E(h) \leqslant \widehat{E}(h)+\epsilon) &\geqslant 1 - \delta\\
 \end{aligned}
 $$
-带入 $\epsilon=\sqrt{\frac{\ln(2/\delta)}{2m}}$得证。
+代入 $\epsilon=\sqrt{\frac{\ln(2/\delta)}{2m}}$得证。
 
 这个式子进一步阐明了当观测集样本数量足够大的时候，$h$的经验误差是其泛化误差很好的近似。
 
@@ -257,7 +257,7 @@ $$
 P(\forall h\in\mathcal{H}:\vert E(h)-\widehat{E}(h)\vert\leqslant\epsilon)&=1-P(\exists h \in \mathcal{H}:|E(h)-\widehat{E}(h)|>\epsilon)\\ &\geqslant 1- 2|\mathcal{H}| \exp \left(-2 m \epsilon^{2}\right)
 \end{aligned}
 $$
-令$\delta=2\vert\mathcal{H}\vert e^{-2m\epsilon^2}$，则$\epsilon=\sqrt{\frac{\ln |\mathcal{H}|+\ln (2 / \delta)}{2 m}}$，带入上式中即可得到
+令$\delta=2\vert\mathcal{H}\vert e^{-2m\epsilon^2}$，则$\epsilon=\sqrt{\frac{\ln |\mathcal{H}|+\ln (2 / \delta)}{2 m}}$，代入上式中即可得到
 $$
 P\left(\forall h\in\mathcal{H}:\vert E(h)-\widehat{E}(h)\vert\leqslant\sqrt{\frac{\ln |\mathcal{H}|+\ln (2 / \delta)}{2 m}}\right)\geqslant 1- \delta
 $$
@@ -424,7 +424,7 @@ E(h)-\widehat{E}(h) \leqslant \sqrt{
 $$
 
 
-[推导]：这里应该是作者的笔误，根据式12.22，$E(h)-\widehat{E}(h)$应当被绝对值符号包裹。将式12.28带入式12.22得
+[推导]：这里应该是作者的笔误，根据式12.22，$E(h)-\widehat{E}(h)$应当被绝对值符号包裹。将式12.28代入式12.22得
 $$
 P\left(\vert 
 E(h)-\widehat{E}(h) \vert> \epsilon
@@ -437,7 +437,7 @@ $$
 \frac{8d\ln\frac{2em}{d}+8\ln\frac{4}{\delta}}{m}
 }
 $$
-带入式12.22，则定理得证。这个式子是用VC维表示泛化界，可以看出，泛化误差界只与样本数量$m$有关，收敛速率为$\sqrt{\frac{\ln m}{m}}$ (书上简化为$\frac{1}{\sqrt{m}}$)。
+代入式12.22，则定理得证。这个式子是用VC维表示泛化界，可以看出，泛化误差界只与样本数量$m$有关，收敛速率为$\sqrt{\frac{\ln m}{m}}$ (书上简化为$\frac{1}{\sqrt{m}}$)。
 
 
 
@@ -732,7 +732,7 @@ $$
 \begin{array}{l}{\quad\left|\ell\left(\mathfrak{L}_{D}, \boldsymbol{z}\right)-\ell\left(\mathfrak{L}_{D^{i}}, \boldsymbol{z}\right)\right|} \\ {\leqslant\left|\ell\left(\mathfrak{L}_{D}, \boldsymbol{z}\right)-\ell\left(\mathfrak{L}_{D^{\backslash i}}, \boldsymbol{z}\right)\right|+\left|\ell\left(\mathfrak{L}_{D^{i}, \boldsymbol{z}}\right)-\ell\left(\mathfrak{L}_{D^{\backslash i}, \boldsymbol{z}}\right)\right|} \\ {\leqslant 2 \beta}\end{array}
 $$
 
-[解析]：根据[三角不等式]([https://zh.wikipedia.org/zh-hans/%E4%B8%89%E8%A7%92%E4%B8%8D%E7%AD%89%E5%BC%8F](https://zh.wikipedia.org/zh-hans/三角不等式))，有$|a+b| \leq|a|+|b|$，将$a=\ell\left(\mathfrak{L}_{D}, \boldsymbol{z}\right)-\ell\left(\mathfrak{L}_{D^{i}}\right)$，$b=\ell\left(\mathfrak{L}_{D^{i}, \boldsymbol{z}}\right)-\ell\left(\mathfrak{L}_{D^{\backslash i}, \boldsymbol{z}}\right)$带入即可得出第一个不等式，根据$D^{\backslash i}$表示移除$D$中第$i$个样本，$D^i$表示替换$D$中第$i$个样本，那么$a,b$的变动均为一个样本，根据式12.57，$a\leqslant\beta, b\leqslant\beta$，因此$a +b \leqslant 2\beta$。
+[解析]：根据[三角不等式]([https://zh.wikipedia.org/zh-hans/%E4%B8%89%E8%A7%92%E4%B8%8D%E7%AD%89%E5%BC%8F](https://zh.wikipedia.org/zh-hans/三角不等式))，有$|a+b| \leq|a|+|b|$，将$a=\ell\left(\mathfrak{L}_{D}, \boldsymbol{z}\right)-\ell\left(\mathfrak{L}_{D^{i}}\right)$，$b=\ell\left(\mathfrak{L}_{D^{i}, \boldsymbol{z}}\right)-\ell\left(\mathfrak{L}_{D^{\backslash i}, \boldsymbol{z}}\right)$代入即可得出第一个不等式，根据$D^{\backslash i}$表示移除$D$中第$i$个样本，$D^i$表示替换$D$中第$i$个样本，那么$a,b$的变动均为一个样本，根据式12.57，$a\leqslant\beta, b\leqslant\beta$，因此$a +b \leqslant 2\beta$。
 
 
 
@@ -768,7 +768,7 @@ $$
 
 
 
-[证明]：将$\beta=\frac{1}{m}$带入至式12.58即得证。
+[证明]：将$\beta=\frac{1}{m}$代入至式12.58即得证。
 
 
 
@@ -784,7 +784,7 @@ $$
 $$
 \begin{array}{l}{\epsilon^{\prime}=\frac{\epsilon}{2}} \\ {\frac{\delta}{2}=2 \exp \left(-2 m\left(\epsilon^{\prime}\right)^{2}\right)}\end{array}
 $$
-将$\epsilon^\prime=\frac{\epsilon}{2}$带入到${\frac{\delta}{2}=2 \exp \left(-2 m\left(\epsilon^{\prime}\right)^{2}\right)}$可以解得$m=\frac{2}{\epsilon^{2}} \ln \frac{4}{\delta}$，由Hoeffding不等式12.6，$$P\left(\left\vert\frac{1}{m} \sum_{i=1}^{m} x_{i}-\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right)\right\vert \geqslant \epsilon\right) \leqslant 2 \exp \left(-2 m \epsilon^{2}\right)$$，其中$\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right)=\ell(g, \mathcal{D})$，$\frac{1}{m} \sum_{i=1}^{m} x_{i}=\widehat{\ell}(g, \mathcal{D})$，带入可得
+将$\epsilon^\prime=\frac{\epsilon}{2}$代入到${\frac{\delta}{2}=2 \exp \left(-2 m\left(\epsilon^{\prime}\right)^{2}\right)}$可以解得$m=\frac{2}{\epsilon^{2}} \ln \frac{4}{\delta}$，由Hoeffding不等式12.6，$$P\left(\left\vert\frac{1}{m} \sum_{i=1}^{m} x_{i}-\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right)\right\vert \geqslant \epsilon\right) \leqslant 2 \exp \left(-2 m \epsilon^{2}\right)$$，其中$\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right)=\ell(g, \mathcal{D})$，$\frac{1}{m} \sum_{i=1}^{m} x_{i}=\widehat{\ell}(g, \mathcal{D})$，代入可得
 $$
 P(|\ell(g, \mathcal{D})-\widehat{\ell}(g, D)| \geqslant \frac{\epsilon}{2})\leqslant \frac{\delta}{2}
 $$

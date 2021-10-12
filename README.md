@@ -28,7 +28,7 @@
 
 #### 纸质版和PDF版的区别
 
-PDF版本是我们寄送出版社的全书初稿，经由人民邮电出版社出版社的编辑老师们对初稿进行了反复修缮最终诞生了纸质书籍，在此向人民邮电出版社的编辑老师的认真严谨表示衷心的感谢！（附：校对样稿）
+PDF版本是我们寄送出版社的全书初稿，经由人民邮电出版社的编辑老师们对初稿进行了反复修缮最终诞生了纸质书籍，在此向人民邮电出版社的编辑老师的认真严谨表示衷心的感谢！（附：校对样稿）
 
 <center class="half"><img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/yanggao1.jpg" width="300"><img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/yanggao2.jpg" width="300"></center>
 

@@ -8,7 +8,7 @@ $$R(c_i|\boldsymbol x)=1-P(c_i|\boldsymbol x)$$
 
 ## 7.6
 $$h^{*}(\boldsymbol{x})=\underset{c \in \mathcal{Y}}{\arg \max } P(c | \boldsymbol{x})$$
-[推导]：将公式(7.5)带入公式(7.3)即可推得此式。
+[推导]：将公式(7.5)代入公式(7.3)即可推得此式。
 
 ## 7.12
 $$\hat{\boldsymbol{\mu}}_{c}=\frac{1}{\left|D_{c}\right|} \sum_{\boldsymbol{x} \in D_{c}} \boldsymbol{x}$$
