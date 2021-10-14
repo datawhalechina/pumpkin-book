@@ -1,6 +1,6 @@
 ## 1.1
 $$E_{o t e}\left(\mathfrak{L}_{a} | X, f\right)=\sum_{h} \sum_{\boldsymbol{x} \in \mathcal{X}-X} P(\boldsymbol{x}) \mathbb{I}(h(\boldsymbol{x}) \neq f(\boldsymbol{x})) P\left(h | X, \mathfrak{L}_{a}\right)$$
-[Analyse]：voir la formule(1.2)
+[Analyse]: voir la formule(1.2)
 
 ## 1.2
 $$\begin{aligned}
