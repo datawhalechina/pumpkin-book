@@ -1,6 +1,6 @@
 ## 1.1
 $$E_{o t e}\left(\mathfrak{L}_{a} | X, f\right)=\sum_{h} \sum_{\boldsymbol{x} \in \mathcal{X}-X} P(\boldsymbol{x}) \mathbb{I}(h(\boldsymbol{x}) \neq f(\boldsymbol{x})) P\left(h | X, \mathfrak{L}_{a}\right)$$
-[解析]：参见公式(1.2)
+[Analyse]：voir la formule(1.2)
 
 ## 1.2
 $$\begin{aligned}
@@ -10,17 +10,17 @@ $$\begin{aligned}
 &=\cfrac{1}{2}2^{\vert \mathcal{X} \vert}\sum_{\boldsymbol{x}\in\mathcal{X}-X}P(\boldsymbol{x}) \sum_hP(h\vert X,\mathfrak{L}_a) \\
 &=2^{\vert \mathcal{X} \vert-1}\sum_{\boldsymbol{x}\in\mathcal{X}-X}P(\boldsymbol{x}) \cdot 1\\
 \end{aligned}$$
-[解析]：第1步到第2步：
+[Analyse]：De l'étape 1 à 2：
 $$\begin{aligned}
 &\sum_f\sum_h\sum_{\boldsymbol{x}\in\mathcal{X}-X}P(\boldsymbol{x})\mathbb{I}(h(\boldsymbol{x})\neq f(\boldsymbol{x}))P(h\vert X,\mathfrak{L}_a) \\
 &=\sum_{\boldsymbol{x}\in\mathcal{X}-X}P(\boldsymbol{x})\sum_f\sum_h\mathbb{I}(h(\boldsymbol{x})\neq f(\boldsymbol{x}))P(h\vert X,\mathfrak{L}_a) \\
 &=\sum_{\boldsymbol{x}\in\mathcal{X}-X}P(\boldsymbol{x}) \sum_hP(h\vert X,\mathfrak{L}_a)\sum_f\mathbb{I}(h(\boldsymbol{x})\neq f(\boldsymbol{x})) \\
 \end{aligned}$$
-第2步到第3步：首先要知道此时我们对$f$的假设是任何能将样本映射到{0,1}的函数且服从均匀分布，也就是说不止一个$f$且每个$f$出现的概率相等，例如样本空间只有两个样本时：$ \mathcal{X}=\{\boldsymbol{x}_1,\boldsymbol{x}_2\},\vert \mathcal{X} \vert=2$，那么所有的真实目标函数$f$为：
+De l'étape 1 à 2：：Tout d'abord; on fait hypothèse que $f$ est fonction qui peut mapper l'échantillion de {0,1} et obéir à une distribution uniforme. C'est-à-dire qu'il exists plusieur $f$ et la probabilité de chaque $f$ procède la même probabilité，dans le cas où il y a que deux échantillions ：$ \mathcal{X}=\{\boldsymbol{x}_1,\boldsymbol{x}_2\},\vert \mathcal{X} \vert=2$，Toute les fonctions objectif $f$ seront egaux aux：
 $$\begin{aligned}
 f_1:f_1(\boldsymbol{x}_1)=0,f_1(\boldsymbol{x}_2)=0;\\
 f_2:f_2(\boldsymbol{x}_1)=0,f_2(\boldsymbol{x}_2)=1;\\
 f_3:f_3(\boldsymbol{x}_1)=1,f_3(\boldsymbol{x}_2)=0;\\
 f_4:f_4(\boldsymbol{x}_1)=1,f_4(\boldsymbol{x}_2)=1;
 \end{aligned}$$
-一共$2^{\vert \mathcal{X} \vert}=2^2=4$个真实目标函数。所以此时通过算法$\mathfrak{L}_a$学习出来的模型$h(\boldsymbol{x})$对每个样本无论预测值为0还是1必然有一半的$f$与之预测值相等，例如，现在学出来的模型$h(\boldsymbol{x})$对$\boldsymbol{x}_1$的预测值为1，也即$h(\boldsymbol{x}_1)=1$，那么有且只有$f_3$和$f_4$与$h(\boldsymbol{x})$的预测值相等，也就是有且只有一半的$f$与它预测值相等，所以$\sum_f\mathbb{I}(h(\boldsymbol{x})\neq f(\boldsymbol{x})) = \cfrac{1}{2}2^{\vert \mathcal{X} \vert} $；第3步一直到最后显然成立。值得一提的是，在这里我们假设真实的目标函数$f$为“任何能将样本映射到{0,1}的函数且服从均匀分布”，但是实际情形并非如此，通常我们只认为能高度拟合已有样本数据的函数才是真实目标函数，例如，现在已有的样本数据为$\{(\boldsymbol{x}_1,0),(\boldsymbol{x}_2,1)\}$，那么此时$f_2$才是我们认为的真实目标函数，由于没有收集到或者压根不存在$\{(\boldsymbol{x}_1,0),(\boldsymbol{x}_2,0)\},\{(\boldsymbol{x}_1,1),(\boldsymbol{x}_2,0)\},\{(\boldsymbol{x}_1,1),(\boldsymbol{x}_2,1)\}$这类样本，所以$f_1,f_3,f_4$都不算是真实目标函数。这也就是西瓜书公式(1.3)下面的第3段话举的“骑自行车”的例子所想表达的内容。
+En total, il y aura $2^{\vert \mathcal{X} \vert}=2^2=4$ fonctions objectifs. Le modèle $h(\boldsymbol{x})$ apris par l'algoritme $\mathfrak{L}_a$ contients des prédictions qui sont égaux aux $f$-la moitié de l'échantillion comprise entre 0 et 1. Par exemple, le modèle actuel$h(\boldsymbol{x})$ La prédiction de $\boldsymbol{x}_1$ dans le modèle actuel est égale à 1，donc $h(\boldsymbol{x}_1)=1$. Il n'y a que $f_3$ et $f_4$ qui sont égaux à la prédiction de $h(\boldsymbol{x})$. Autrementdit，la moitié de $f$ est égale à sa prédiction. Dans ce cas, \sum_f\mathbb{I}(h(\boldsymbol{x})\neq f(\boldsymbol{x})) = \cfrac{1}{2}2^{\vert \mathcal{X} \vert} $；les analyses de l'étape 3 jusqu'aux dernières étapes sont étabile de façon évident.Il est à noter que, notre hypothèses initiale est “La fonction peut mapper à l'échantillion de {0,1} et obéir à une distribution uniforme”，mais en réalité, on constate que la fonction qui peut parfaitement s'adapter aux données d'échantillon existantes est la véritable fonction objectif. Par exemple, l'échantillion existante est $\{(\boldsymbol{x}_1,0),(\boldsymbol{x}_2,1)\}$, et alors, $f_2$ est la véritable fonction objectif. Parce qu'aucun échantillon de ce type $\{(\boldsymbol{x}_1,0),(\boldsymbol{x}_2,0)\},\{(\boldsymbol{x}_1,1),(\boldsymbol{x}_2,0)\},\{(\boldsymbol{x}_1,1),(\boldsymbol{x}_2,1)\}$ n'a été collecté ou n'existait pas du tout. On constate que $f_1,f_3,f_4$ n'est pas la véritable fonction objectif。C'est donc l'expression "Cyclisme" de la formule (1.3) dans notre Pumpkin-book.
