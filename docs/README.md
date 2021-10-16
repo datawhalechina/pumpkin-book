@@ -70,7 +70,7 @@ PDF版本是我们寄送出版社的全书初稿，经由人民邮电出版社�
 ## 关注我们
 <div align=center>
 <p>扫描下方二维码关注公众号：Datawhale，然后回复关键词“南瓜书”，即可加入“南瓜书读者交流群”</p>
-<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/qrcode.jpeg" width = "250" height = "250">
+<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/qrcode.jpeg" width = "180" height = "180">
 </div>
 
 ## LICENSE
