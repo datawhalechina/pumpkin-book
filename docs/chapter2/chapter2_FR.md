@@ -2,41 +2,41 @@
 $$\text{AUC}=\frac{1}{2}\sum_{i=1}^{m-1}(x_{i+1} - x_i)\cdot(y_i + y_{i+1})$$
 [Analyse]：Avant d'expliquer la formule $\text{AUC}$, Nous devons d'abord comprendre le processus pour dessiner la courbe $\text{ROC}$. On expliquera la processus pour dessiner la courbe $\text{ROC}$ selon la méthode de dessin donnée en bas de la figure 2.4 du Watermelon-Book. Supposons que nous ayons formé un apprenant $f(s)$, on ttilise maintenant cette apprenant pour tester nos 8 échantillons de test (4 cas positive et 4 negative, donc $m^+=m^-=4$) afin de procéder la prodiction, supposons le résultat de la prédiction est
 $$(s_1,0.77,+),(s_2,0.62,-),(s_3,0.58,+),(s_4,0.47,+),(s_5,0.47,-),(s_6,0.33,-),(s_7,0.23,+),(s_8,0.15,-)$$
-dedans, $+$和$-$ représente respectivement comme exemples positifs et exemples négatifs, le numéro dedans signifie la probabilité de l'échantillion étant positive dans l'apprenant $f(s)$. Par exemple, pour le contre-exemple $s_2$, l'apprenant actuel $f(s)$ prédit que la probabilité qu'il s'agisse d'un exemple positif est de 0,62$. Selon la méthode de dessin indiquée dans le livre Watermelon, tous les échantillons de test doivent être triés en fonction des résultats de prédiction donnés par l'apprenant dans un premier temps (Le résultats dessus sont triés de grande valeur à petite). Ensuite, on règle le seuil de classification à une valeur maximale impossible à obtenir. Il est évidemment, à ce stade, la probabilité que tous les échantillons soient positifs doit être inférieure au seuil de classification, et le nombre d’échantillons prédits positifs est de 0. Les probabilités correspondants de vrais et de faux positifs sont également de 0, donc à ce stade, nous pouvons atteindre un point aux coordonnées $(0,0)$. Ensuite, nous devons définir le seuil de classification à la valeur prédite pour chaque échantillon, c’est-à-dire le définir à son tour $0.77、0.62、0.58、0.47、0.33、0.23、0.15$. Ensuite, chaque fois que les probabilités de vrais et de faux positifs sont calculés, un point est dessiné sur les coordonnées correspondantes. Enfin, on peut obtenir le $\text{ROC}$ curve en enchaînant les points en ligne droite. Il est à noter que lorsque des prévisions statistiques sont faites, les échantillons dont les valeurs de prévision sont égales aux seuils de classification sont également comptés comme des prédictions positives. Par exemple, le seuil de classification est égale à $0.77$, l'échantillon $s_1$ est prédit étant une prédiction positive. 由于它的真实标记也是正例，所以此时$s_1$是一个真正例。为了便于绘图，我们将$x$轴（假正例率轴）的“步长”定为$\frac{1}{m^-}$，$y$轴（真正例率轴）的“步长”定为$\frac{1}{m^+}$，这样的话，根据真正例率和假正例率的定义可知，每次变动分类阈值时，若新增$i$个假正例，那么相应的$x$轴坐标也就增加$\frac{i}{m^-}$，同理，若新增$j$个真正例，那么相应的$y$轴坐标也就增加$\frac{j}{m^+}$。按照以上讲述的绘制流程，最终我们可以绘制出如下图所示的$\text{ROC}$曲线
+dedans, $+$和$-$ représente respectivement comme exemples positifs et exemples négatifs, le numéro dedans signifie la probabilité de l'échantillion étant positive dans l'apprenant $f(s)$. Par exemple, pour le contre-exemple $s_2$, l'apprenant actuel $f(s)$ prédit que la probabilité qu'il s'agisse d'un exemple positif est de 0,62$. Selon la méthode de dessin indiquée dans le livre Watermelon, tous les échantillons de test doivent être triés en fonction des résultats de prédiction donnés par l'apprenant dans un premier temps (Le résultats dessus sont triés de grande valeur à petite). Ensuite, on règle le seuil de classification à une valeur maximale impossible à obtenir. Il est évidemment, à ce stade, la probabilité que tous les échantillons soient positifs doit être inférieure au seuil de classification, et le nombre d’échantillons prédits positifs est de 0. Les probabilités correspondants de vrais et de faux positifs sont également de 0, donc à ce stade, nous pouvons atteindre un point aux coordonnées $(0,0)$. Ensuite, nous devons définir le seuil de classification à la valeur prédite pour chaque échantillon, c’est-à-dire le définir à son tour $0.77、0.62、0.58、0.47、0.33、0.23、0.15$. Ensuite, chaque fois que les probabilités de vrais et de faux positifs sont calculés, un point est dessiné sur les coordonnées correspondantes. Enfin, on peut obtenir le $\text{ROC}$ curve en enchaînant les points en ligne droite. Il est à noter que lorsque des prévisions statistiques sont faites, les échantillons dont les valeurs de prévision sont égales aux seuils de classification sont également comptés comme des prédictions positives. Par exemple, le seuil de classification est égale à $0.77$, l'échantillon $s_1$ est prédit étant une prédiction positive. Parce que son vrai marque est aussi un exemple positif, $s_1$ est un vrai exemple positif. Pour faciliter le dessin, on défine le pas de l'axe de $x$(l'axe de taux de faux positif) est égale à $\frac{1}{m^-}$, le pas de l'axe $y$ (l'axe de taux positif réel) est égale à $\frac{1}{m^+}$. Dans ce cas, Selon la définition des taux de vrais (TPR) et de faux positifs (FPR), Chaque fois que l'on modifie le seuil de classification, si on ajoute $i$ des faux positif, les coordonnées de l'axe $x$ augement $\frac{i}{m^-}$. De la même façon, si $j$ vrai positif est ajouté, les coordonnées de l'axe $y$ augement également $\frac{j}{m^+}$. Suivez le processus de dessin décrit ci-dessus, finalement, nous pouvons dessiner le diagramme suivant $\text{ROC}$
 <center><img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/docs/chapter2/resources/images/roc.png" width= "300"/></center>
-在这里我们为了能在解析公式(2.21)时复用此图所以没有写上具体地数值，转而用其数学符号代替。其中绿色线段表示在分类阈值变动的过程中只新增了真正例，红色线段表示只新增了假正例，蓝色线段表示既新增了真正例也新增了假正例。根据$\text{AUC}$值的定义可知，此时的$\text{AUC}$值其实就是所有红色线段和蓝色线段与$x$轴围成的面积之和。观察上图可知，红色线段与$x$轴围成的图形恒为矩形，蓝色线段与$x$轴围成的图形恒为梯形，但是由于梯形面积公式既能算梯形面积，也能算矩形面积，所以无论是红色线段还是蓝色线段，其与$x$轴围成的面积都能用梯形公式来计算，也即
+Ici, nous n’écrivons pas de valeurs spécifiques afin de pouvoir réutiliser ce graphique lors de l’analyse des formules (2.21), et le remplacer par ses symboles mathématiques. Lorsque le segment vert indique que seul l’exemple réel a été ajouté dans le processus de classification des changements de seuil, le segment rouge indique que seul l’exemple de faux positif a été ajouté et le segment bleu indique que le cas réel et l’exemple de faux positif ont été ajoutés. Selon la définition de $\text{AUC}$, la valeur de $\text{AUC}$ est en fait la somme de toutes les zones entourées de segments rouges et bleus et de l’axe $x$. Comme vous pouvez le voir sur l’image ci-dessus, le graphique entouré du segment rouge et de l’axe $x$ est rectangulaire, et les graphiques entourés du segment bleu et de l’axe $x$ sont rectangulaires. Cependant, étant donné que la formule de l’aire trapézoïdale peut compter à la fois l’aire trapézoïdale et la zone rectangulaire, la zone entourée de l’axe $x$ peut être calculée en utilisant à la fois les segments rouge et bleu, c’est-à-dire la formule  
 $$\frac{1}{2}\cdot(x_{i+1} - x_i)\cdot(y_i + y_{i+1})$$
-其中，$(x_{i+1} - x_i)$表示“高”，$y_i$表示“上底”，$y_{i+1}$表示“下底”。那么
+Il se trouve que $(x_{i+1} - x_i)$ dénote la hauteur, $y_i$ est l'échelle haut, et $y_{i+1}$ est l'échelle de bas. Dans ce cas,
 $$\sum_{i=1}^{m-1}\left[\frac{1}{2}\cdot(x_{i+1} - x_i)\cdot(y_i + y_{i+1})\right]$$
-表示的便是对所有红色线段和蓝色线段与$x$轴围成的面积进行求和，此即为$\text{AUC}$
+Cela représente une somme des zones entourant tous les segments rouges et bleus et l’axe $x$, c'est à dire $\text{AUC}$
 
 ## 2.21
 $$\ell_{rank}=\frac{1}{m^+m^-}\sum_{\boldsymbol{x}^+ \in D^+}\sum_{\boldsymbol{x}^- \in D^-}\left(\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{2}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right)$$
-[解析]：按照我们上述对公式(2.20)的解析思路，$\ell_{rank}$可以看作是所有绿色线段和蓝色线段与$y$轴围成的面积之和，但是公式(2.21)很难一眼看出其面积的具体计算方式，因此我们需要将公式(2.21)进行恒等变形
+[Analyse]：Selon notre analyse de la formule ci-dessus (2.20), $\ell_{rank}$ peut être considéré comme la somme de tous les segments verts et bleus et de la zone entourant l’axe $y$, Mais selon la formule (2.21), il est difficile à voir en un coup d’œil l'aire de cette zone, nous devons donc constamment déformer la formule (2.21).
 $$\begin{aligned}
 \ell_{rank}&=\frac{1}{m^+m^-}\sum_{\boldsymbol{x}^+ \in D^+}\sum_{\boldsymbol{x}^- \in D^-}\left(\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{2}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right) \\
 &=\frac{1}{m^+m^-}\sum_{\boldsymbol{x}^+ \in D^+}\left[\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{2}\cdot\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right] \\
 &=\sum_{\boldsymbol{x}^+ \in D^+}\left[\frac{1}{m^+}\cdot\frac{1}{m^-}\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{2}\cdot\frac{1}{m^+}\cdot\frac{1}{m^-}\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right] \\
 &=\sum_{\boldsymbol{x}^+ \in D^+}\frac{1}{2}\cdot\frac{1}{m^+}\cdot\left[\frac{2}{m^-}\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{m^-}\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right] \\
 \end{aligned}$$
-根据公式(2.20)中给出的$\text{ROC}$曲线图可知，在变动分类阈值的过程当中，如果有新增真正例，那么相应地就会增加一条绿色线段或蓝色线段，所以上式中的$\sum\limits_{\boldsymbol{x}^+ \in D^+}$可以看作是在遍历所有绿色和蓝色线段，那么相应地$\sum\limits_{\boldsymbol{x}^+ \in D^+}$后面的那一项便是在求绿色线段或者蓝色线段与$y$轴围成的面积，也即
+Selon la graph de $\text{ROC}$ donné par la formule (2.20), s’il y a de nouveaux exemples réels dans le processus de modification des seuils de classification, un segment vert ou bleu est ajouté en conséquence. Donc dans la formule ci-dessus $\sum\limits_{\boldsymbol{x}^+ \in D^+}$ peut être considéré traversant tous les segments verts et bleus, les $\sum\limits_{\boldsymbol{x}^+ \in D^+}$ correspondant, ce dernier élément est la zone autour de l’axe $y$ du segment vert ou du segment bleu, c’est-à-dire
 $$\frac{1}{2}\cdot\frac{1}{m^+}\cdot\left[\frac{2}{m^-}\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{m^-}\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right]$$
-同公式(2.20)中的求解思路一样，不论是绿色线段还是蓝色线段，其与$y$轴围成的图形面积都可以用梯形公式来进行计算，所以上式表示的依旧是一个梯形的面积求解公式。其中$\frac{1}{m^+}$即为梯形的“高”，中括号中的那一项便是“上底+下底”，下面我们来分别推导一下“上底”（较短的那个底）和“下底”。由于在绘制$\text{ROC}$曲线的过程中，每新增一个假正例时$x$坐标也就新增一个单位，所以对于“上底”，也就是绿色或者蓝色线段的下端点到$y$轴的距离，它就等于$\frac{1}{m^-}$乘以预测值比$\boldsymbol{x^+}$大的假正例的个数，也即
+Comme la solution de formule (2.20), la zone graphique entourant par l’axe $y$ peut être calculée à l’aide d’une formule trapézoïdale, peu import qu’il s’agisse d’un segment vert ou d’un segment bleu. La formule est donc toujours une aire trapézoïdale. Ici, $\frac{1}{m^+}$ est la hauteur, l'élément dans la parenthèse est « échelle haut plus celle du bas ». Dérivons respectivement le « échelle supérieur » (le fond le plus court) et le « bas ». Pendant la dessin du $\text{ROC}$, lorsque l'on ajoute un faut positif, un unité sera également ajouté aux coordonnées de l'axe $x$, Donc, pour « échelle supérieur», c’est-à-dire la distance entre l’extrémité inférieure du segment vert ou bleu et l’axe $y$, elle est égale à $\frac{1}{m^-}$ multiplie par la nombre de prédiction de faux positifs qui sont supérieur à $\boldsymbol{x^+}$ donc, 
 $$\frac{1}{m^-}\sum\limits_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)$$
-而对于“下底”，它就等于$\frac{1}{m^-}$乘以预测值大于等于$\boldsymbol{x^+}$的假正例的个数，也即
+Pour l'échelle du bas, il est égal à $\frac{1}{m^-}$ multiplier par le nombre de faux positifs dont la valeur prédite est supérieure ou égale à $\boldsymbol{x^+}$, dans notre cas, 
 $$\frac{1}{m^-}\left(\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right)$$
 
 ## 2.27
 
 $$\overline{\epsilon}=\max \epsilon\quad \text { s.t. } \sum_{i= \epsilon_{0} \times m+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) \epsilon^{i}(1-\epsilon)^{m-i}<\alpha$$
 
-[推导]：截至2018年12月，第一版第30次印刷，公式（2.27）应当勘误修正为
+[Analyse]：À compter de décembre 2018, la 30e édition de la première édition sera imprimée, la formule (2.27) devrait être révisée en tant qu’errat
 $$\overline{\epsilon}=\min \epsilon\quad\text { s.t. } \sum_{i=\epsilon\times m+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) \epsilon_0^{i}(1-\epsilon_0)^{m-i}<\alpha$$
-具体推导过程如下：由西瓜书中的上下文可知，对$\epsilon\leq\epsilon_0$进行假设检验，等价于附录①中所述的对$p\leq p_0$进行假设检验，所以在西瓜书中求解最大错误率$\overline{\epsilon}$等价于在附录①中求解事件最大发生频率$\frac{\overline{C}}{m}$。由附录①可知
+Le processus de l'interprétation est le suivant: comme on peut le voir dans le contexte du livre de pastèque, Le test d’hypothèse pour $\epsilon\leq\epsilon_0$ est équivalent au test d’hypothèse pour $p\leq p_0$ décrit à l’annexe (1), de sorte que le taux d’erreur maximal $\overline{\epsilon}$ est résolu dans le livre de pastèques est équivalent à la fréquence maximale $\frac{\overline{C}}{m}$ à laquelle un événement se produit à l’annexe (1).  Comme on le voit dans l’annexe (1).
 $$\overline{C}=\min C\quad\text { s.t. } \sum_{i=C+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i}(1-p_0)^{m-i}<\alpha$$
-所以
+Par conséquent,
 $$\frac{\overline{C}}{m}=\min \frac{C}{m}\quad\text { s.t. } \sum_{i=C+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i}(1-p_0)^{m-i}<\alpha$$
-将上式中的$\frac{\overline{C}}{m},\frac{C}{m},p_0$等价替换为$\overline{\epsilon},\epsilon,\epsilon_0$可得
+On replace $\frac{\overline{C}}{m},\frac{C}{m},p_0$ par sa équivalence $\overline{\epsilon},\epsilon,\epsilon_0$, on obtient 
 $$\overline{\epsilon}=\min \epsilon\quad\text { s.t. } \sum_{i=\epsilon\times m+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) \epsilon_0^{i}(1-\epsilon_0)^{m-i}<\alpha$$
 
 ## 2.41
@@ -50,23 +50,24 @@ E(f ; D)=& \mathbb{E}_{D}\left[\left(f(\boldsymbol{x} ; D)-y_{D}\right)^{2}\righ
 =& \mathbb{E}_{D}\left[\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})\right)^{2}\right]+\mathbb{E}_{D}\left[\left(\bar{f}(\boldsymbol{x})-y\right)^{2}\right]+\mathbb{E}_{D}\left[\left(y-y_{D}\right)^{2}\right]\\ &+2 \mathbb{E}_{D}\left[\left(\bar{f}(\boldsymbol{x})-y\right)\left(y-y_{D}\right)\right]\\
 =& \mathbb{E}_{D}\left[\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})\right)^{2}\right]+\left(\bar{f}(\boldsymbol{x})-y\right)^{2}+\mathbb{E}_{D}\left[\left(y_{D}-y\right)^{2}\right] \end{aligned}$$
 
-[解析]：
-- 第1-2步：减一个$\bar{f}(\boldsymbol{x})$再加一个$\bar{f}(\boldsymbol{x})$，属于简单的恒等变形；
-- 第2-3步：首先将中括号里面的式子展开
+[Analyse]：
+- Etape 1 à 2：on soustrait un $\bar{f}(\boldsymbol{x})$, puis on ajoute un $\bar{f}(\boldsymbol{x})$, il appartient à une simple déformation constante;
+- Etape 2 à 3：Tout d’abord, développez la formule entre les parenthèses
 $$\mathbb{E}_{D}\left[\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})\right)^{2}+\left(\bar{f}(\boldsymbol{x})-y_{D}\right)^{2}+2\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})\right)\left(\bar{f}(\boldsymbol{x})-y_{D}\right)\right]$$
-然后根据期望的运算性质：$\mathbb{E}[X+Y]=\mathbb{E}[X]+\mathbb{E}[Y]$可将上式化为
+Ensuite, en fonction de la nature de l'attentes de l’opération: $\mathbb{E}[X+Y]=\mathbb{E}[X]+\mathbb{E}[Y]$, on transforme la formule ci-dessus à 
 $$ \mathbb{E}_{D}\left[\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})\right)^{2}\right]+\mathbb{E}_{D}\left[\left(\bar{f}(\boldsymbol{x})-y_{D}\right)^{2}\right] +\mathbb{E}_{D}\left[2\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})\right)\left(\bar{f}(\boldsymbol{x})-y_{D}\right)\right]$$
-- 第3-4步：再次利用期望的运算性质将第3步得到的式子的最后一项展开
+- Étape 3-4 : Utilisez à nouveau les propriétés de calcul de l'attente statistique pour développer le dernier élément de la formule obtenue à l’étape 3
 $$\mathbb{E}_{D}\left[2\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})\right)\left(\bar{f}(\boldsymbol{x})-y_{D}\right)\right] = \mathbb{E}_{D}\left[2\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})\right)\cdot\bar{f}(\boldsymbol{x})\right] - \mathbb{E}_{D}\left[2\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})\right)\cdot y_{D}\right]$$
-	- 首先计算展开后得到的第一项
+	- Le premier élément est obtenu après l’expansion de la formule
 $$\mathbb{E}_{D}\left[2\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})\right)\cdot\bar{f}(\boldsymbol{x})\right] = \mathbb{E}_{D}\left[2f(\boldsymbol{x} ; D)\cdot\bar{f}(\boldsymbol{x})-2\bar{f}(\boldsymbol{x})\cdot\bar{f}(\boldsymbol{x})\right]$$
-由于$\bar{f}(\boldsymbol{x})$是常量，所以由期望的运算性质：$\mathbb{E}[AX+B]=A\mathbb{E}[X]+B$（其中$A,B$均为常量）可得
+$\bar{f}(\boldsymbol{x})$ est une constante, on obtient selon les propriétés de calcul de l'attente statistique:
+$\mathbb{E}[AX+B]=A\mathbb{E}[X]+B$ (A et B sont toute constantes), obtenons
 $$\mathbb{E}_{D}\left[2\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})\right)\cdot\bar{f}(\boldsymbol{x})\right] = 2\bar{f}(\boldsymbol{x})\cdot\mathbb{E}_{D}\left[f(\boldsymbol{x} ; D)\right]-2\bar{f}(\boldsymbol{x})\cdot\bar{f}(\boldsymbol{x})$$
-由公式（2.37）可知：$\mathbb{E}_{D}\left[f(\boldsymbol{x} ; D)\right]=\bar{f}(\boldsymbol{x})$，所以
+Comme on peut le voir la formule (2.37): $\mathbb{E}_{D}\left[f(\boldsymbol{x} ; D)\right]=\bar{f}(\boldsymbol{x})$, ainsi
 $$\mathbb{E}_{D}\left[2\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})\right)\cdot\bar{f}(\boldsymbol{x})\right] = 2\bar{f}(\boldsymbol{x})\cdot\bar{f}(\boldsymbol{x})-2\bar{f}(\boldsymbol{x})\cdot\bar{f}(\boldsymbol{x})=0$$
-	- 接着计算展开后得到的第二项
+	- On calcule ensuite la deuxième élément
 $$\mathbb{E}_{D}\left[2\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})\right)\cdot y_{D}\right]=2\mathbb{E}_{D}\left[f(\boldsymbol{x} ; D)\cdot y_{D}\right]-2\bar{f}(\boldsymbol{x})\cdot \mathbb{E}_{D}\left[y_{D}\right]$$
-由于噪声和$f$无关，所以$f(\boldsymbol{x} ; D)$和$y_D$是两个相互独立的随机变量，所以根据期望的运算性质：$\mathbb{E}[XY]=\mathbb{E}[X]\mathbb{E}[Y]$（其中$X$和$Y$为相互独立的随机变量）可得
+Comme le bruit n'a aucun relation avec $f$, ainsi $f(\boldsymbol{x} ; D)$ et $y_D$ sont deux variables aléatoires distinctes, selon la propriété du calcul de l'attente statistique: $\mathbb{E}[XY]=\mathbb{E}[X]\mathbb{E}[Y]$ ($X$ et $Y$ sont deux variables aléatoires distinctes), on obtient, 
 $$\begin{aligned} 
 \mathbb{E}_{D}\left[2\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})\right)\cdot y_{D}\right]&=2\mathbb{E}_{D}\left[f(\boldsymbol{x} ; D)\cdot y_{D}\right]-2\bar{f}(\boldsymbol{x})\cdot \mathbb{E}_{D}\left[y_{D}\right] \\
 &=2\mathbb{E}_{D}\left[f(\boldsymbol{x} ; D)\right]\cdot \mathbb{E}_{D}\left[y_{D}\right]-2\bar{f}(\boldsymbol{x})\cdot \mathbb{E}_{D}\left[y_{D}\right] \\
@@ -78,46 +79,46 @@ $$\begin{aligned} \mathbb{E}_{D}\left[2\left(f(\boldsymbol{x} ; D)-\bar{f}(\bold
 &= 0+0 \\
 &=0
 \end{aligned}$$
-- 第4-5步：同第1-2步一样，减一个$y$再加一个$y$，属于简单的恒等变形；
-- 第5-6步：同第2-3步一样，将最后一项利用期望的运算性质进行展开；
-- 第6-7步：因为$\bar{f}(\boldsymbol{x})$和$y$均为常量，所以根据期望的运算性质可知，第6步中的第2项可化为
+- Etape 3-4: Identique aux étapes 1 à 2, on diminus $y$ puis on ajoute $y$, étant une simple déformation constante；
+- Etape 5-6: Identique aux étapes 2 à 3, on fait l'expansion de la dernière élement selon les propriétés de calcul de l'attente statistique;
+- Etape 6-7：comme $\bar{f}(\boldsymbol{x})$ et $y$ sont constantes, selon les propriétés de calcul de l'attente statistique, la 2ème élément de l'étape 6 devient
 $$\mathbb{E}_{D}\left[\left(\bar{f}(\boldsymbol{x})-y\right)^{2}\right]=\left(\bar{f}(\boldsymbol{x})-y\right)^{2}$$
-同理，第6步中的最后一项可化为
+De même, le dernier élément de l’étape 6 peut être transformé en
 $$2\mathbb{E}_{D}\left[\left(\bar{f}(\boldsymbol{x})-y\right)\left(y-y_{D}\right)\right]=2\left(\bar{f}(\boldsymbol{x})-y\right)\mathbb{E}_{D}\left[\left(y-y_{D}\right)\right]$$
-由于此时假设噪声的期望为零，也即$\mathbb{E}_{D}\left[\left(y-y_{D}\right)\right]=0$，所以
+Étant donné que l’attente de bruit est supposée nulle à ce stade, c’est $\mathbb{E}_{D}\left[\left(y-y_{D}\right)\right]=0$, donc
 $$2\mathbb{E}_{D}\left[\left(\bar{f}(\boldsymbol{x})-y\right)\left(y-y_{D}\right)\right]=2\left(\bar{f}(\boldsymbol{x})-y\right)\cdot 0=0$$
 
-## 附录
-### ①二项分布参数$p$的检验<sup>[1]</sup>
-设某事件发生的概率为$p$，$p$未知，作$m$次独立试验，每次观察该事件是否发生，以$X$记该事件发生的次数，则$X$服从二项分布$B(m,p)$，现根据$X$检验如下假设：
+## Annexe
+### ①Test de paramètres de la distribution binaire <sup>[1]</sup>
+La probabilité de l'évenement est $p$, $p$ est inconnue, on lance $m$ tests distincts, on observe si l’événement s’est produit, le nombre de fois que l’événement se produit est enregistré à $X$, alor que $X$ obéit à la distribution binaire $B(m,p)$. Les hypothèses suivantes sont maintenant testées par rapport à $X$ :
 $$\begin{aligned}
 H_0:p\leq p_0\\
 H_1:p > p_0
 \end{aligned}$$
-由二项分布本身的特性可知：$p$越小，$X$取到较小值的概率越大。因此，对于上述假设，一个直观上合理的检验为
-$$\varphi:\text{当}X\leq C\text{时接受}H_0,\text{否则就拒绝}H_0$$
-其中，$C\in N$表示事件最大发生次数。此检验对应的功效函数为
+Les caractéristiques de la distribution binaire montre que: plus le $p$ est élevé, plus la probabilité que le $X $ obtienne une valeur petite est grande.Cependant, pour les hypothèses ci-dessus, un test intuitivement raisonnable est:
+$$\varphi:\text{Quand}X\leq C\text{acceptons}H_0,\text{or, on refuse}H_0$$
+ici, $C\in N$ désigne le nombre maximals de l'évènement. La fonction de l'éfficacité correspondante pour ce test est
 $$\begin{aligned}
 \beta_{\varphi}(p)&=P(X>C)\\
 &=1-P(X\leq C) \\
 &=1-\sum_{i=0}^{C}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p^{i} (1-p)^{m-i} \\
 &=\sum_{i=C+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p^{i} (1-p)^{m-i} \\
 \end{aligned}$$
-由于“$p$越小，$X$取到较小值的概率越大”可以等价表示为：$P(X\leq C)$是关于$p$的减函数（更为严格的数学证明参见参考文献[1]中第二章习题7），所以$\beta_{\varphi}(p)=P(X>C)=1-P(X\leq C)$是关于$p$的增函数，那么当$p\leq p_0$时，$\beta_{\varphi}(p_0)$即为$\beta_{\varphi}(p)$的上确界。又因为，根据参考文献[1]中5.1.3的定义1.2可知，检验水平$\alpha$默认取最小可能的水平，所以在给定检验水平$\alpha$时，可以通过如下方程解得满足检验水平$\alpha$的整数$C$：
+Parce que « plus le $p$ est petit, plus la probabilité que $X$ obtienne une valeur plus petite » peut être exprimée de manière équivalente comme : $P(X\leq C)$ est une function décroissante de $p$.(Preuve mathématique plus rigoureuse, voir chapitre 2 Exercice 7 dans Références 1), donc $\beta_{\varphi}(p)=P(X>C)=1-P(X\leq C)$ est une function croissante de $p$, dans ce cas, $p\leq p_0$，$\beta_{\varphi}(p_0)$ est la limites réelles de $\beta_{\varphi}(p)$. En outre, selon la définition 1.2 de 5.1.3 dans Références [1],Le niveau de test de $\alpha$ est le niveau minimum possible par défaut. Donc, au niveau de test donné de $\alpha$, le niveau de test $\alpha$ peut être satisfait en résolvant l’équation suivante：
 $$\alpha =\sup \left\{\beta_{\varphi}(p)\right\}$$
-显然，当$p\leq p_0$时：
+Apparament, quand $p\leq p_0$:
 $$\begin{aligned}
 \alpha &=\sup \left\{\beta_{\varphi}(p)\right\} \\
 &=\beta_{\varphi}(p_0) \\
 &=\sum_{i=C+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i} (1-p_0)^{m-i}
 \end{aligned}$$
-对于此方程，通常不一定正好解得一个整数$C$使得方程成立，较常见的情况是存在这样一个$\overline{C}$使得
+Pour cette équation, il n’est généralement pas possible de résoudre un entier de $C$ pour rendre l’équation valide, un scénario plus courant est l’existence d’un tel $\overline{C}$ 
 $$\begin{aligned}
 \sum_{i=\overline{C}+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i} (1-p_0)^{m-i}<\alpha \\
 \sum_{i=\overline{C}}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i} (1-p_0)^{m-i}>\alpha
 \end{aligned}$$
-此时，$C$只能取$\overline{C}$或者$\overline{C}+1$，若$C$取$\overline{C}$，则相当于升高了检验水平$\alpha$，若$C$取$\overline{C}+1$则相当于降低了检验水平$\alpha$，具体如何取舍需要结合实际情况，但是通常为了减小犯第一类错误的概率，会倾向于令$C$取$\overline{C}+1$。下面考虑如何求解$\overline{C}$：易证$\beta_{\varphi}(p_0)$是关于$C$的减函数，所以再结合上述关于$\overline{C}$的两个不等式易推得
+Dans ce cas, $C$ est n'égale qu'à $\overline{C}$ ou $\overline{C}+1$, si on défine $C$ comme $\overline{C}$, équivaut à augmenter le niveau de test $\alpha$，si $C$ serait $\overline{C}+1$; il est équivaut à dimunuer le niveau de test $\alpha$. Des compromis spécifiques doivent être combinés avec la situation réelle, mais on défine $C$ étant $\overline{C}+1$, généralement pour réduire la probabilité de faire le premier type d’erreur. Voici comment résoudre $\overline{C}$: il est facile à prouver $\beta_{\varphi}(p_0)$ est une function décroissant de $C$, Alors combinons les deux inégalités faciles qui précède à propos de $\overline{C}$, on obtiendrait
 $$\overline{C}=\min C\quad\text { s.t. } \sum_{i=C+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p_0^{i}(1-p_0)^{m-i}<\alpha$$
 
-## 参考文献
+## Référence
 [1]陈希孺编著.概率论与数理统计[M].中国科学技术大学出版社,2009.
