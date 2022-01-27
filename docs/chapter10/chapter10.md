@@ -48,7 +48,7 @@ $$
 ## 10.4
 
 $$
-\sum^m_{i=1}dist^2_{ij}=tr(\boldsymbol B)+mb_{jj}
+\sum^m_{i=1}dist^2_{ij}=\operatorname{tr}(\boldsymbol B)+mb_{jj}
 $$
 
 [解析]：首先根据式10.3有
@@ -119,7 +119,7 @@ $$
 由公式（10.6）和（10.9）可得
 $$
 \begin{aligned}
-tr(\boldsymbol B)&=\frac{1}{2m}\sum^m_{i=1}\sum^m_{j=1}dist^2_{ij}\\
+\operatorname{tr}(\boldsymbol B)&=\frac{1}{2m}\sum^m_{i=1}\sum^m_{j=1}dist^2_{ij}\\
 &=\frac{m}{2}dist^2_{\cdot}
 \end{aligned}
 $$
@@ -133,7 +133,7 @@ $$
 由公式（10.5）和（10.7）可得
 $$
 \begin{aligned}
-b_{ii}&=\frac{1}{m}\sum^m_{j=1}dist^2_{ij}-\frac{1}{m}tr(\boldsymbol B)\\
+b_{ii}&=\frac{1}{m}\sum^m_{j=1}dist^2_{ij}-\frac{1}{m}\operatorname{tr}(\boldsymbol B)\\
 &=dist^2_{i\cdot}-\frac{1}{2}dist^2_{\cdot}
 \end{aligned}
 $$
@@ -379,7 +379,7 @@ $$
 ## 10.31
 $$
 \begin{aligned}
-&\min\limits_{\boldsymbol Z}tr(\boldsymbol Z \boldsymbol M \boldsymbol Z^T)\\
+&\min\limits_{\boldsymbol Z}\operatorname{tr}(\boldsymbol Z \boldsymbol M \boldsymbol Z^T)\\
 &s.t. \boldsymbol Z^T\boldsymbol Z=\boldsymbol I. 
 \end{aligned}
 $$
@@ -393,12 +393,11 @@ $$
 &=\sum^m_{i=1}\|\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i)\|^2_2\\
 &=\sum^m_{i=1}(\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i))^T\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i)\\
 &=\sum^m_{i=1}(\boldsymbol I_i-\boldsymbol W_i)^T\boldsymbol Z^T\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i)\\
-&=tr((\boldsymbol I-\boldsymbol W)^T\boldsymbol Z^T\boldsymbol Z(\boldsymbol I-\boldsymbol W))\\
-&=tr(\boldsymbol Z(\boldsymbol I-\boldsymbol W)(\boldsymbol I-\boldsymbol W)^T\boldsymbol Z^T)\\
-&=tr(\boldsymbol Z\boldsymbol M\boldsymbol Z^T)
+&=\operatorname{tr}((\boldsymbol I-\boldsymbol W)^T\boldsymbol Z^T\boldsymbol Z(\boldsymbol I-\boldsymbol W))\\
+&=\operatorname{tr}(\boldsymbol Z(\boldsymbol I-\boldsymbol W)(\boldsymbol I-\boldsymbol W)^T\boldsymbol Z^T)\\
+&=\operatorname{tr}(\boldsymbol Z\boldsymbol M\boldsymbol Z^T)
 \end{aligned}
 $$
-
 
 其中，$\boldsymbol M=(\boldsymbol I-\boldsymbol W)(\boldsymbol I-\boldsymbol W)^T$。
 [解析]：约束条件$\boldsymbol Z^T\boldsymbol Z=\boldsymbol I$是为了得到标准化（标准正交空间）的低维数据。
