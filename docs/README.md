@@ -65,7 +65,7 @@ PDF版本是我们寄送出版社的全书初稿，经由人民邮电出版社�
 | **编委** | [@jbb0523](https://blog.csdn.net/jbb0523) [@juxiao](https://github.com/juxiao) [@Majingmin](https://github.com/Majingmin) [@MrBigFan](https://github.com/MrBigFan) [@shanry](https://github.com/shanry) [@Ye980226](https://github.com/Ye980226) |
 
 ## 致谢
-特别感谢[@awyd234](https://github.com/awyd234)、[@feijuan](https://github.com/feijuan)、[@Ggmatch](https://github.com/Ggmatch)、[@Heitao5200](https://github.com/Heitao5200)、[@huaqing89](https://github.com/huaqing89)、[@LongJH](https://github.com/LongJH)、[@LilRachel](https://github.com/LilRachel)、[@LeoLRH](https://github.com/LeoLRH)、[@Nono17](https://github.com/Nono17)、[@spareribs](https://github.com/spareribs)、[@sunchaothu](https://github.com/sunchaothu)、[@StevenLzq](https://github.com/StevenLzq) 在最早期的时候对南瓜书所做的贡献。
+特别感谢[@awyd234](https://github.com/awyd234)、[@feijuan](https://github.com/feijuan)、[@Ggmatch](https://github.com/Ggmatch)、[@Heitao5200](https://github.com/Heitao5200)、[@xhqing](https://github.com/xhqing)、[@LongJH](https://github.com/LongJH)、[@LilRachel](https://github.com/LilRachel)、[@LeoLRH](https://github.com/LeoLRH)、[@Nono17](https://github.com/Nono17)、[@spareribs](https://github.com/spareribs)、[@sunchaothu](https://github.com/sunchaothu)、[@StevenLzq](https://github.com/StevenLzq) 在最早期的时候对南瓜书所做的贡献。
 
 ## 关注我们
 <div align=center>
