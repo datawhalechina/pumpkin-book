@@ -1,5 +1,13 @@
-# 南瓜书PumpkinBook
-[简体中文](https://github.com/datawhalechina/pumpkin-book/blob/master/README.md) | [French](https://github.com/datawhalechina/pumpkin-book/blob/master/README_french.md)
+<div align=center>
+<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/pumpkin.png" >
+<h1>南瓜书PumpkinBook</h1>
+<p>
+<a href="https://github.com/datawhalechina/pumpkin-book/blob/master/README.md">简体中文</a> | <a href="https://github.com/datawhalechina/pumpkin-book/blob/master/README_french.md">Français</a>
+</p>
+<p>
+配套视频教程：https://www.bilibili.com/video/BV1Mh411e7VU
+</p>
+</div>
 
 “周志华老师的《机器学习》（西瓜书）是机器学习领域的经典入门教材之一，周老师为了使尽可能多的读者通过西瓜书对机器学习有所了解, 所以在书中对部分公式的推导细节没有详述，但是这对那些想深究公式推导细节的读者来说可能“不太友好”，本书旨在对西瓜书里比较难理解的公式加以解析，以及对部分公式补充具体的推导细节。”
 
@@ -17,8 +25,6 @@
 购买链接：[京东](https://item.jd.com/13130936.html) | [当当](http://product.dangdang.com/29206216.html) | [天猫](https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.16.42ab1597BfGB8r&id=638752681742)
 
 勘误表：https://datawhalechina.github.io/pumpkin-book/#/errata
-
-配套视频教程：https://www.bilibili.com/video/BV1Mh411e7VU
 
 ### 在线阅读（内容实时更新）
 地址：https://datawhalechina.github.io/pumpkin-book
