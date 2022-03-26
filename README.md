@@ -5,7 +5,7 @@
 <a href="https://github.com/datawhalechina/pumpkin-book/blob/master/README.md">简体中文</a> | <a href="https://github.com/datawhalechina/pumpkin-book/blob/master/README_french.md">Français</a>
 </p>
 <p>
-配套视频教程：https://www.bilibili.com/video/BV1Mh411e7VU
+<a href="https://www.bilibili.com/video/BV1Mh411e7VU"><img alt="配套视频教程" style="vertical-align:middle" src="https://img.shields.io/badge/BiliBili-00A1D6.svg?style=socail&logo=bilibili&logoColor=white" /></a>配套视频教程：https://www.bilibili.com/video/BV1Mh411e7VU
 </p>
 </div>
 
