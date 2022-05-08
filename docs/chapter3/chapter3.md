@@ -57,7 +57,7 @@ $$\begin{aligned}
 	&=\underset{(\boldsymbol{w}, b)}{\arg \min } \sum_{i=1}^{m}\left(y_{i}-f\left(\boldsymbol{x}_{i}\right)\right)^{2}\\
 	&=\underset{(\boldsymbol{w}, b)}{\arg \min } \sum_{i=1}^{m}\left(y_{i}-\left(\boldsymbol{w}^\mathrm{T}\boldsymbol{x}_{i}+b\right)\right)^{2}
 \end{aligned}$$
-为便于讨论，我们令$\hat{\boldsymbol{w}}=(\boldsymbol{w};b)=(w_1;...;w_d;b)\in\mathbb{R}^{(d+1)\times 1},\hat{\boldsymbol{x}}_i=(x_1;...;x_d;1)\in\mathbb{R}^{(d+1)\times 1}$，那么上式可以简化为
+为便于讨论，我们令$\hat{\boldsymbol{w}}=(\boldsymbol{w};b)=(w_1;...;w_d;b)\in\mathbb{R}^{(d+1)\times 1},\hat{\boldsymbol{x}}_i=(x_{i1};...;x_{id};1)\in\mathbb{R}^{(d+1)\times 1}$，那么上式可以简化为
 $$\begin{aligned}
 	\hat{\boldsymbol{w}}^{*}&=\underset{\hat{\boldsymbol{w}}}{\arg \min } \sum_{i=1}^{m}\left(y_{i}-\hat{\boldsymbol{w}}^\mathrm{T}\hat{\boldsymbol{x}}_{i}\right)^{2} \\
 	&=\underset{\hat{\boldsymbol{w}}}{\arg \min } \sum_{i=1}^{m}\left(y_{i}-\hat{\boldsymbol{x}}_{i}^\mathrm{T}\hat{\boldsymbol{w}}\right)^{2} \\
