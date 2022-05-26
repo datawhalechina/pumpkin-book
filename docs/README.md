@@ -1,5 +1,13 @@
-# 南瓜书PumpkinBook
-[简体中文](https://github.com/datawhalechina/pumpkin-book/blob/master/README.md) | [French](https://github.com/datawhalechina/pumpkin-book/blob/master/README_french.md)
+<div align=center>
+<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/pumpkin.png" >
+<h1>南瓜书PumpkinBook</h1>
+<p>
+<a href="https://github.com/datawhalechina/pumpkin-book/blob/master/README.md">简体中文</a> | <a href="https://github.com/datawhalechina/pumpkin-book/blob/master/README_french.md">Français</a>
+</p>
+<p>
+<strong>配套视频教程：https://www.bilibili.com/video/BV1Mh411e7VU</strong>
+</p>
+</div>
 
 “周志华老师的《机器学习》（西瓜书）是机器学习领域的经典入门教材之一，周老师为了使尽可能多的读者通过西瓜书对机器学习有所了解, 所以在书中对部分公式的推导细节没有详述，但是这对那些想深究公式推导细节的读者来说可能“不太友好”，本书旨在对西瓜书里比较难理解的公式加以解析，以及对部分公式补充具体的推导细节。”
 
@@ -8,8 +16,8 @@
 ## 使用说明
 - 南瓜书的所有内容都是以西瓜书的内容为前置知识进行表述的，所以南瓜书的最佳使用方法是以西瓜书为主线，遇到自己推导不出来或者看不懂的公式时再来查阅南瓜书；
 - 对于初学机器学习的小白，西瓜书第1章和第2章的公式**强烈不建议深究**，简单过一下即可，等你学得有点飘的时候再回来啃都来得及；
-- 每个公式的解析和推导我们都力(zhi)争(neng)以本科数学基础的视角进行讲解，所以超纲的数学知识我们通常都会以附录和参考文献的形式给出，感兴趣的同学可以继续沿着我们给的资料进行深入学习；
-- 若南瓜书里没有你想要查阅的公式，或者你发现南瓜书哪个地方有错误，请毫不犹豫地去我们GitHub的Issues（ 地址：https://github.com/datawhalechina/pumpkin-book/issues ）进行反馈，在对应版块提交你希望补充的公式编号或者勘误信息，我们通常会在24小时以内给您回复，超过24小时未回复的话可以邮件联系我们（微信：at-Sm1les）；
+- 每个公式的解析和推导我们都力争以本科数学基础的视角进行讲解，所以超纲的数学知识我们通常都会以附录和参考文献的形式给出，感兴趣的同学可以继续沿着我们给的资料进行深入学习；
+- 若南瓜书里没有你想要查阅的公式，或者你发现南瓜书哪个地方有错误，请毫不犹豫地去我们GitHub的Issues（ 地址：https://github.com/datawhalechina/pumpkin-book/issues ）进行反馈，在对应版块提交你希望补充的公式编号或者勘误信息，我们通常会在24小时以内给您回复，超过24小时未回复的话可以微信联系我们（微信号：at-Sm1les）；
 
 ### 纸质版
 <img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/nangua.jpg" width="300">
@@ -65,7 +73,7 @@ PDF版本是我们寄送出版社的全书初稿，经由人民邮电出版社�
 | **编委** | [@jbb0523](https://blog.csdn.net/jbb0523) [@juxiao](https://github.com/juxiao) [@Majingmin](https://github.com/Majingmin) [@MrBigFan](https://github.com/MrBigFan) [@shanry](https://github.com/shanry) [@Ye980226](https://github.com/Ye980226) |
 
 ## 致谢
-特别感谢[@awyd234](https://github.com/awyd234)、[@feijuan](https://github.com/feijuan)、[@Ggmatch](https://github.com/Ggmatch)、[@Heitao5200](https://github.com/Heitao5200)、[@huaqing89](https://github.com/huaqing89)、[@LongJH](https://github.com/LongJH)、[@LilRachel](https://github.com/LilRachel)、[@LeoLRH](https://github.com/LeoLRH)、[@Nono17](https://github.com/Nono17)、[@spareribs](https://github.com/spareribs)、[@sunchaothu](https://github.com/sunchaothu)、[@StevenLzq](https://github.com/StevenLzq) 在最早期的时候对南瓜书所做的贡献。
+特别感谢[@awyd234](https://github.com/awyd234)、[@feijuan](https://github.com/feijuan)、[@Ggmatch](https://github.com/Ggmatch)、[@Heitao5200](https://github.com/Heitao5200)、[@xhqing](https://github.com/xhqing)、[@LongJH](https://github.com/LongJH)、[@LilRachel](https://github.com/LilRachel)、[@LeoLRH](https://github.com/LeoLRH)、[@Nono17](https://github.com/Nono17)、[@spareribs](https://github.com/spareribs)、[@sunchaothu](https://github.com/sunchaothu)、[@StevenLzq](https://github.com/StevenLzq) 在最早期的时候对南瓜书所做的贡献。
 
 ## 关注我们
 <div align=center>

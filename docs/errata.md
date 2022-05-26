@@ -1,16 +1,19 @@
 # 纸质版勘误表
 
 如何使用勘误？首先找到你的书的印次，接下来对着下表索引印次，该印次之后所有的勘误都是你的书中所要注意的勘误，印次前的所有勘误在当印次和之后印次均已印刷修正。
-## 第1版第10次印刷（待定）
+## 第1版第12次印刷（待定）
+- 式（3.9）中$\hat{\boldsymbol{x}}_i=(x_{1};...;x_{d};1)\in\mathbb{R}^{(d+1)\times 1}$改为$\hat{\boldsymbol{x}}_i=(x_{i1};...;x_{id};1)\in\mathbb{R}^{(d+1)\times 1}$（感谢@Link2Truth）
 
+## 第1版第11次印刷（2022.03）
+## 第1版第10次印刷（2021.12）
 - 式（10.2）解释的最后一行，最后一个式子因为$1 + P^2\left(c^{*} | \boldsymbol{x}\right)\leqslant 2$改为$1 + P\left(c^{*} | \boldsymbol{x}\right)\leqslant 2$
 
 ## 第1版第9次印刷（2021.11）
 ## 第1版第8次印刷（2021.10）
 ## 第1版第7次印刷（2021.10）
 - 92页，式(10.28)，“$n$行1列的单位向量”改为“$n$行1列的元素值全为1的向量”
-- 95页，式(11.6)，“...降低因$w$的分量过太而导致...”改为“...降低因$w$的分量过大而导致...”（感谢微信@李伟豪work hard)
-- 式(11.18)，求和可得下面的公式中第一行关于$\boldsymbol{b}$的列向量有笔误，最新表述参见：https://datawhalechina.github.io/pumpkin-book/#/chapter11/chapter11?id=_1118 （感谢微信@@李伟豪work hard)
+- 95页，式(11.6)，“...降低因$w$的分量过太而导致...”改为“...降低因$w$的分量过大而导致...”（感谢@李伟豪work hard)
+- 式(11.18)，求和可得下面的公式中第一行关于$\boldsymbol{b}$的列向量有笔误，最新表述参见：https://datawhalechina.github.io/pumpkin-book/#/chapter11/chapter11?id=_1118 （感谢@李伟豪work hard)
 
 ## 第1版第6次印刷（2021.07）
 - 17页，式(3.37)，最后解析$\lambda$的取值那部分不太严谨，最新表述参见：https://datawhalechina.github.io/pumpkin-book/#/chapter3/chapter3?id=_337
