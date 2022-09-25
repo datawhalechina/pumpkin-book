@@ -110,37 +110,37 @@ $$
 [解析]：为了获得最优的状态值函数$V$，这里取了两层最优，分别是采用最优策略$\pi^{*}$和选取使得状态动作值函数$Q$最大的状态$\max_{a\in A}$。
 
 ## 16.16
-
 $$
-V^{\pi}(x)\leq V^{\pi{}'}(x)
+V^{\pi}(x)\leqslant V^{\pi{}'}(x)
 $$
-
 [推导]：
 $$
 \begin{aligned}
-V^{\pi}(x)&\leq Q^{\pi}(x,\pi{}'(x))\\
-&=\sum_{x{}'\in X}P_{x\rightarrow x{}'}^{\pi{}'(x)}(R_{x\rightarrow x{}'}^{\pi{}'(x)}+\gamma V^{\pi}(x{}'))\\
-&\leq \sum_{x{}'\in X}P_{x\rightarrow x{}'}^{\pi{}'(x)}(R_{x\rightarrow x{}'}^{\pi{}'(x)}+\gamma Q^{\pi}(x{}',\pi{}'(x{}')))\\
-&=\sum_{x{}'\in X}P_{x\rightarrow x{}'}^{\pi{}'(x)}(R_{x\rightarrow x{}'}^{\pi{}'(x)}+\gamma \sum_{x{}'\in X}P_{x{}'\rightarrow x{}'}^{\pi{}'(x{}')}(R_{x{}'\rightarrow x{}'}^{\pi{}'(x{}')}+\gamma V^{\pi}(x{}')))\\
-&=\sum_{x{}'\in X}P_{x\rightarrow x{}'}^{\pi{}'(x)}(R_{x\rightarrow x{}'}^{\pi{}'(x)}+\gamma V^{\pi{}'}(x{}'))\\
-&=V^{\pi{}'}(x)
+V^{\pi}(x) & \leqslant Q^{\pi}\left(x, \pi^{\prime}(x)\right) \\
+&=\sum_{x^{\prime} \in X} P_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}\left(R_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}+\gamma V^{\pi}\left(x^{\prime}\right)\right) \\
+& \leqslant \sum_{x^{\prime} \in X} P_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}\left(R_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}+\gamma Q^{\pi}\left(x^{\prime}, \pi^{\prime}\left(x^{\prime}\right)\right)\right) \\
+&= \sum_{x^{\prime} \in X} P_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}\left(R_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}+
+\sum_{x'^{\prime} \in X} P_{x' \rightarrow x^{''}}^{\pi^{\prime}(x')}\left(\gamma R_{x' \rightarrow x^{\prime \prime}}^{\pi^{\prime}(x')}+
+\gamma^2 V^{\pi}\left(x^{\prime \prime}\right)\right)\right)\\
+& \leqslant \sum_{x^{\prime} \in X} P_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}\left(R_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}+ \sum_{x'^{\prime} \in X} P_{x' \rightarrow x^{''}}^{\pi^{\prime}(x')} \left( \gamma R_{x' \rightarrow x^{\prime \prime}}^{\pi^{\prime}(x')} +
+\gamma^2 Q^{\pi}\left(x^{\prime \prime}, \pi^{\prime }\left(x^{\prime \prime}\right)\right)\right)\right) \\
+&\leqslant \cdots \\
+&\leqslant \sum_{x^{\prime} \in X} P_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}\left(R_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}+\sum_{x'^{\prime} \in X} P_{x' \rightarrow x^{''}}^{\pi^{\prime}(x')}\left(\gamma R_{x' \rightarrow x^{\prime \prime}}^{\pi^{\prime}(x')}+\sum_{x'^{\prime} \in X} P_{x'' \rightarrow x^{'''}}^{\pi^{\prime}(x'')} \left(\gamma^2 R_{x'' \rightarrow x^{\prime \prime \prime}}^{\pi^{\prime}(x'')}+\cdots \right)\right)\right) \\
+&= V^{\pi'}(x) 
 \end{aligned}
 $$
 其中，使用了动作改变条件
 $$
-Q^{\pi}(x,\pi{}'(x))\geq V^{\pi}(x)
+Q^{\pi}(x,\pi{}'(x))\geqslant V^{\pi}(x)
 $$
 以及状态-动作值函数
 $$
 Q^{\pi}(x{}',\pi{}'(x{}'))=\sum_{x{}'\in X}P_{x{}'\rightarrow x{}'}^{\pi{}'(x{}')}(R_{x{}'\rightarrow x{}'}^{\pi{}'(x{}')}+\gamma V^{\pi}(x{}'))
 $$
 于是，当前状态的最优值函数为
-
 $$
-V^{\ast}(x)=V^{\pi{}'}(x)\geq V^{\pi}(x)
+V^{\ast}(x)=V^{\pi{}'}(x)\geqslant V^{\pi}(x)
 $$
-
-
 
 ## 16.31
 
