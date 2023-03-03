@@ -26,6 +26,8 @@
 
 勘误表：https://datawhalechina.github.io/pumpkin-book/#/errata
 
+配套视频教程：https://www.bilibili.com/video/BV1Mh411e7VU
+
 ### 在线阅读（仅供第1版）
 地址：https://datawhalechina.github.io/pumpkin-book
 
@@ -38,26 +40,6 @@ PDF版本是我们寄送出版社的全书初稿，经由人民邮电出版社�
 
 <center class="half"><img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/yanggao1.jpg" width="300"><img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/yanggao2.jpg" width="300"></center>
 
-
-
-### 目录
-- 第1章 [绪论](https://datawhalechina.github.io/pumpkin-book/#/chapter1/chapter1)
-- 第2章 [模型评估与选择](https://datawhalechina.github.io/pumpkin-book/#/chapter2/chapter2)
-- 第3章 [线性模型](https://datawhalechina.github.io/pumpkin-book/#/chapter3/chapter3)
-- 第4章 [决策树](https://datawhalechina.github.io/pumpkin-book/#/chapter4/chapter4)
-- 第5章 [神经网络](https://datawhalechina.github.io/pumpkin-book/#/chapter5/chapter5)
-- 第6章 [支持向量机](https://datawhalechina.github.io/pumpkin-book/#/chapter6/chapter6)
-- 第7章 [贝叶斯分类器](https://datawhalechina.github.io/pumpkin-book/#/chapter7/chapter7)
-- 第8章 [集成学习](https://datawhalechina.github.io/pumpkin-book/#/chapter8/chapter8)
-- 第9章 [聚类](https://datawhalechina.github.io/pumpkin-book/#/chapter9/chapter9)
-- 第10章 [降维与度量学习](https://datawhalechina.github.io/pumpkin-book/#/chapter10/chapter10)
-- 第11章 [特征选择与稀疏学习](https://datawhalechina.github.io/pumpkin-book/#/chapter11/chapter11)
-- 第12章 [计算学习理论](https://datawhalechina.github.io/pumpkin-book/#/chapter12/chapter12)
-- 第13章 [半监督学习](https://datawhalechina.github.io/pumpkin-book/#/chapter13/chapter13)
-- 第14章 [概率图模型](https://datawhalechina.github.io/pumpkin-book/#/chapter14/chapter14)
-- 第15章 [规则学习](https://datawhalechina.github.io/pumpkin-book/#/chapter15/chapter15)
-- 第16章 [强化学习](https://datawhalechina.github.io/pumpkin-book/#/chapter16/chapter16)
-
 ### 选用的西瓜书版本
 <img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/xigua.jpg" width="150" height= "175">
 
@@ -69,6 +51,11 @@ PDF版本是我们寄送出版社的全书初稿，经由人民邮电出版社�
 | :---: | :---: |
 | **主编** | [@Sm1les](https://github.com/Sm1les) [@archwalker](https://github.com/archwalker) [@jbb0523](https://blog.csdn.net/jbb0523)|
 | **编委** | [@juxiao](https://github.com/juxiao) [@Majingmin](https://github.com/Majingmin) [@MrBigFan](https://github.com/MrBigFan) [@shanry](https://github.com/shanry) [@Ye980226](https://github.com/Ye980226) |
+
+## 封面设计
+| 构思 | 创作 |
+| :---: | :---: |
+| [@Sm1les](https://github.com/Sm1les) | 林王茂盛 | 
 
 ## 致谢
 特别感谢[@awyd234](https://github.com/awyd234)、[@feijuan](https://github.com/feijuan)、[@Ggmatch](https://github.com/Ggmatch)、[@Heitao5200](https://github.com/Heitao5200)、[@xhqing](https://github.com/xhqing)、[@LongJH](https://github.com/LongJH)、[@LilRachel](https://github.com/LilRachel)、[@LeoLRH](https://github.com/LeoLRH)、[@Nono17](https://github.com/Nono17)、[@spareribs](https://github.com/spareribs)、[@sunchaothu](https://github.com/sunchaothu)、[@StevenLzq](https://github.com/StevenLzq) 在最早期的时候对南瓜书所做的贡献。
