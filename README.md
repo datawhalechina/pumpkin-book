@@ -24,7 +24,7 @@
 
 购买链接：[京东](https://item.jd.com/13130936.html) | [当当](http://product.dangdang.com/29206216.html) | [天猫](https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.16.42ab1597BfGB8r&id=638752681742)
 
-勘误表：https://github.com/datawhalechina/pumpkin-book/blob/master/errata.md
+勘误表：https://datawhalechina.github.io/pumpkin-book/#/errata
 
 配套视频教程：https://www.bilibili.com/video/BV1Mh411e7VU
 
