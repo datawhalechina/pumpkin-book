@@ -17,9 +17,9 @@ Par ici, vous allez poser la question : pourquoi nous avons ajoute les guillemet
 - Dans le cas où vous ne trouvez pas une formule, ou vous trouvez des erreurs de ce livre. N’hésitez pas de mettre en avant des Issues sur notre GitHub: https://github.com/datawhalechina/pumpkin-book/issues. Lorsque vous vous font parvenir des issues sur des demandes des détails supplémentaires des formules ou des erreurs dans les rubriques correspondantes, nous vous répondrons, de manière générale, dans les 24 heures suivantes. Au-delà, vous êtes libre de nous contacter par email ou par WeChat ID ：at-Sm1les.
   
 ### Version papier
-<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/nangua.jpg" width="300">
+<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/nangua_v2.jpg" width="300">
 
-Lien d’achat: [JD mall 京东](https://item.jd.com/13130936.html) | [Dangdang 当当](http://product.dangdang.com/29206216.html) | [Tmall 天猫](https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.16.42ab1597BfGB8r&id=638752681742)
+Lien d’achat: [JD mall 京东](https://item.jd.com/13989990.html) | [Dangdang 当当](http://product.dangdang.com/29579286.html) | [Tmall 天猫](https://detail.tmall.com/item.htm?abbucket=12&id=720482241470)
 
 Errata：https://datawhalechina.github.io/pumpkin-book/#/errata
 

@@ -20,9 +20,9 @@
 - 若南瓜书里没有你想要查阅的公式，或者你发现南瓜书哪个地方有错误，请毫不犹豫地去我们GitHub的Issues（ 地址：https://github.com/datawhalechina/pumpkin-book/issues ）进行反馈，在对应版块提交你希望补充的公式编号或者勘误信息，我们通常会在24小时以内给您回复，超过24小时未回复的话可以微信联系我们（微信号：at-Sm1les）；
 
 ### 纸质版
-<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/nangua.jpg" width="300">
+<img src="https://raw.githubusercontent.com/datawhalechina/pumpkin-book/master/res/nangua_v2.jpg" width="300">
 
-购买链接：[京东](https://item.jd.com/13130936.html) | [当当](http://product.dangdang.com/29206216.html) | [天猫](https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.16.42ab1597BfGB8r&id=638752681742)
+购买链接：[京东](https://item.jd.com/13989990.html) | [当当](http://product.dangdang.com/29579286.html) | [天猫](https://detail.tmall.com/item.htm?abbucket=12&id=720482241470)
 
 勘误表：https://datawhalechina.github.io/pumpkin-book/#/errata
 
