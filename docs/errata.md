@@ -4,8 +4,8 @@
 
 ## 第2版第6次印刷（2024.01）
 - 127页，“式(8.7)的推导”中的最后一句话“两边同除$\frac{1}{2}$”改为“两边同乘$\frac{1}{2}$”（感谢@Acumen7）
-- 181页，式（10.14）的推导中，将式(10.14)化简成式(10.15)目标函数形式时，第⑥步中的$-\boldsymbol{x}_i^{\top}\mathbf{W}^{\top} \mathbf{x}_i$改为$-\boldsymbol{x}_i^{\top} \mathbf{W}\mathbf{W}^{\top} \mathbf{x}_i$（感谢@huishengye）
-- 
+- 181页，“式(10.14)的推导”中将式(10.14)化简成式(10.15)目标函数形式时，第⑥步中的$-\boldsymbol{x}_i^{\top}\mathbf{W}^{\top} \mathbf{x}_i$改为$-\boldsymbol{x}_i^{\top} \mathbf{W}\mathbf{W}^{\top} \mathbf{x}_i$（感谢@huishengye）
+- 195页，“式(10.31)的目标函数形式”中的$\operatorname{tr}\left(\mathbf{Z}\mathbf{M}\mathbf{Z}\mathbf{Z}^{\top}\right)$改为$\operatorname{tr}\left(\mathbf{Z}\mathbf{M}\mathbf{Z}^{\top}\right)$（感谢@CoderKingXY）
 
 ## 第2版第5次印刷（2023.11）
 - 98页，“6.6.5 核对率回归”中的第2个公式，其中的$\boldsymbol{x}_{i}$改为$\boldsymbol{z}_{i}$（感谢南瓜书读者交流群11的@[太阳]🌈）
