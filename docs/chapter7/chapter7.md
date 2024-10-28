@@ -10,9 +10,7 @@
 
 
 $$
-
 R(c_i|\boldsymbol x)=1*P(c_1|\boldsymbol x)+...+1*P(c_{i-1}|\boldsymbol x)+0*P(c_i|\boldsymbol x)+1*P(c_{i+1}|\boldsymbol x)+...+1*P(c_N|\boldsymbol x)
-
 $$
 
 
@@ -20,9 +18,7 @@ $$
 
 
 $$
-
 R(c_i|\boldsymbol x)=1-P(c_i|\boldsymbol x)
-
 $$
 
  此即式(7.5）。
@@ -50,13 +46,11 @@ $$
 根据式(7.11)和式(7.10)可知参数求解式为 
 
 $$
-
 \begin{aligned}
 \hat{\boldsymbol{\theta}}_{c}&=\underset{\boldsymbol{\theta}_{c}}{\arg \max } LL\left(\boldsymbol{\theta}_{c}\right) \\
 &=\underset{\boldsymbol{\theta}_{c}}{\arg \min } -LL\left(\boldsymbol{\theta}_{c}\right) \\
 &= \underset{\boldsymbol{\theta}_{c}}{\arg \min }-\sum_{\boldsymbol{x} \in D_{c}} \log P\left(\boldsymbol{x} | \boldsymbol{\theta}_{c}\right)
 \end{aligned}
-
 $$
 
 
@@ -64,9 +58,7 @@ $$
 
 
 $$
-
 P\left(\boldsymbol{x} | \boldsymbol{\theta}_{c}\right)=P\left(\boldsymbol{x} | \boldsymbol{\mu}_{c}, \boldsymbol{\sigma}_{c}^{2}\right)=\frac{1}{\sqrt{(2 \pi)^{d}|\boldsymbol{\Sigma}_c|}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right)
-
 $$
 
 
@@ -74,14 +66,12 @@ $$
 
 
 $$
-
 \begin{aligned}
 (\hat{\boldsymbol{\mu}}_{c}, \hat{\boldsymbol{\Sigma}}_{c})&= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }-\sum_{\boldsymbol{x} \in D_{c}} \log\left[\frac{1}{\sqrt{(2 \pi)^{d}|\boldsymbol{\Sigma}_c|}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right)\right] \\
 &= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }-\sum_{\boldsymbol{x} \in D_{c}} \left[-\frac{d}{2}\log(2 \pi)-\frac{1}{2}\log|\boldsymbol{\Sigma}_c|-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\
 &= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\sum_{\boldsymbol{x} \in D_{c}} \left[\frac{d}{2}\log(2 \pi)+\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\
 &= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\sum_{\boldsymbol{x} \in D_{c}} \left[\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\
 \end{aligned}
-
 $$
 
 
@@ -89,12 +79,10 @@ $$
 
 
 $$
-
 \begin{aligned}
 (\hat{\boldsymbol{\mu}}_{c}, \hat{\boldsymbol{\Sigma}}_{c})&=\underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\sum_{i=1}^{n} \left[\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}_{i}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}_{i}-\boldsymbol{\mu}_c)\right]\\
 &=\underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\frac{n}{2}\log|\boldsymbol{\Sigma}_c|+\sum_{i=1}^{n}\frac{1}{2}(\boldsymbol{x}_i-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}_i-\boldsymbol{\mu}_c)\\
 \end{aligned}
-
 $$
 
 
@@ -102,7 +90,6 @@ $$
 
 
 $$
-
 \begin{aligned}
 &\sum_{i=1}^{n}\frac{1}{2}(\boldsymbol{x}_i-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}_i-\boldsymbol{\mu}_c)\\
 =&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{x}_i-\boldsymbol{\mu}_c)(\boldsymbol{x}_i-\boldsymbol{\mu}_c)^{\mathrm{T}}\right]\\
@@ -116,16 +103,13 @@ $$
 =&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{x}_i-\bar{\boldsymbol{x}})(\boldsymbol{x}_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]+\frac{n}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]\\
 =&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{x}_i-\bar{\boldsymbol{x}})(\boldsymbol{x}_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]+\frac{n}{2}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})
 \end{aligned}
-
 $$
 
  所以
 
 
 $$
-
 (\hat{\boldsymbol{\mu}}_{c}, \hat{\boldsymbol{\Sigma}}_{c})=\underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\frac{n}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_{c}^{-1}\sum_{i=1}^{n}(\boldsymbol{x}_i-\bar{\boldsymbol{x}})(\boldsymbol{x}_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]+\frac{n}{2}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})
-
 $$
 
 
@@ -133,9 +117,7 @@ $$
 
 
 $$
-
 \hat{\boldsymbol{\mu}}_{c}=\bar{\boldsymbol{x}}=\frac{1}{n}\sum_{i=1}^{n}\boldsymbol{x}_i
-
 $$
 
 
@@ -143,9 +125,7 @@ $$
 
 
 $$
-
 \hat{\boldsymbol{\Sigma}}_{c}=\underset{\boldsymbol{\Sigma}_c}{\arg \min }\frac{n}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_{c}^{-1}\sum_{i=1}^{n}(\boldsymbol{x}_i-\bar{\boldsymbol{x}})(\boldsymbol{x}_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]
-
 $$
 
 
@@ -155,9 +135,7 @@ $$
 
 
 $$
-
 \frac{n}{2}\log|\boldsymbol{\Sigma}|+\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}^{-1}\mathbf{B}\right]\geq\frac{n}{2}\log|\mathbf{B}|+\frac{pn}{2}(1-\log n)
-
 $$
 
 
@@ -176,21 +154,17 @@ $$
 
 
 $$
-
 \begin{aligned}
 L(\theta)&=\theta\cdot\theta\cdot(1-\theta)\cdot\theta\cdot(1-\theta)\\
 &=\theta^{3}(1-\theta)^2
 \end{aligned}
-
 $$
 
  对数似然为
 
 
 $$
-
 LL(\theta)=\ln L(\theta)=3\ln\theta+2\ln (1-\theta)
-
 $$
 
 
@@ -198,13 +172,11 @@ $$
 
 
 $$
-
 \begin{aligned}
     \frac{\partial LL(\theta)}{\partial\theta}&=\frac{\partial\left(3\ln\theta+2\ln (1-\theta)\right)}{\partial\theta}\\
     &=\frac{3}{\theta}-\frac{2}{1-\theta}\\
     &=\frac{3-5\theta}{\theta(1-\theta)}
 \end{aligned}
-
 $$
 
 
@@ -226,10 +198,8 @@ $D=\{x_1,x_2,\cdots,x_n\}$，则根据贝叶斯式可得，在给定样本集$D$
 
 
 $$
-
 P(\theta|D)=\frac{P(D|\theta)P(\theta)}{P(D)}=\frac{P(D|\theta)P(\theta)}
 {\sum_{\theta}P(D|\theta)P(\theta)}
-
 $$
 
 
@@ -237,11 +207,9 @@ $$
 
 
 $$
-
 P(\theta|D)=\frac{P(D|\theta)P(\theta)}
 {\sum_{\theta}P(D|\theta)P(\theta)}=\frac{\prod_{i=1}^{n}P(x_i|\theta)
 P(\theta)}{\sum_{\theta}\prod_{i=1}^{n}P(x_i|\theta)P(\theta)}
-
 $$
 
 
@@ -259,9 +227,7 @@ Categorical分布又称为广义伯努利分布，是将伯努利分布中的随
 
 
 $$
-
 P(X=x_i)=p(x_i)=\theta_i
-
 $$
 
 
@@ -276,11 +242,9 @@ $$
 
 
 $$
-
 p(\boldsymbol{x};\boldsymbol{\alpha})=\frac{\Gamma \left(\sum _{i=1}^{k}\alpha _{i}\right)}
 {\prod _{i=1}^{k}\Gamma (\alpha _{i})}\prod
 _{i=1}^{k}x_{i}^{\alpha _{i}-1}
-
 $$
 
  其中$\Gamma (z)=\int
@@ -295,9 +259,7 @@ d}x$为Gamma函数，当$\boldsymbol{\alpha}=(1,1,\cdots,1)$时，Dirichlet分�
 
 
 $$
-
 P(C=c_i)=P(c_i)=\theta_i
-
 $$
 
 
@@ -308,16 +270,13 @@ $$
 
 
 $$
-
 P(D|\boldsymbol{\theta})=\theta_1^{y_1}...\theta_k^{y_k}=\prod_{i=1}^{k}\theta_i^{y_i}
-
 $$
 
 
 则有后验概率 
 
 $$
-
 \begin{aligned}
 P(\boldsymbol{\theta}|D)&=\frac{P(D|\boldsymbol{\theta})P(\boldsymbol{\theta})}{P(D)}\\
 &=\frac{P(D|\boldsymbol{\theta})P(\boldsymbol{\theta})}{\sum_{\boldsymbol{\theta}}
@@ -326,7 +285,6 @@ P(D|\boldsymbol{\theta})P(\boldsymbol{\theta})}\\
 P(\boldsymbol{\theta})}{\sum_{\boldsymbol{\theta}}\left[\prod_{i=1}^{k}\theta_i^{y_i}\cdot
 P(\boldsymbol{\theta})\right]}
 \end{aligned}
-
 $$
 
 
@@ -334,16 +292,13 @@ $$
 
 
 $$
-
 P(\boldsymbol{\boldsymbol{\theta}};\boldsymbol{\alpha})=\frac{\Gamma \left(\sum_{i=1}^{k}\alpha_{i}\right)}{\prod_{i=1}^{k}\Gamma (\alpha_{i})}\prod_{i=1}^{k}\theta_{i}^{\alpha_{i}-1}
-
 $$
 
 
 将其代入$P(D|\boldsymbol{\theta})$可得 
 
 $$
-
 \begin{aligned}
 P(\boldsymbol{\theta}|D)&=\dfrac{\prod_{i=1}^{k}\theta_i^{y_i}
 \cdot P(\boldsymbol{\theta})}{\sum_{\boldsymbol{\theta}}
@@ -371,7 +326,6 @@ _{i=1}^{k}\theta_{i}^{\alpha _{i}-1}}
 &=\dfrac{\prod_{i=1}^{k}\theta_i^{\alpha_{i}+y_i-1}}{\sum_{\boldsymbol{\theta}}
 \left[\prod_{i=1}^{k}\theta_i^{\alpha_{i}+y_i-1}\right]}
 \end{aligned}
-
 $$
 
 
@@ -379,7 +333,6 @@ $$
 \mathbb{R}^{k}$，则根据Dirichlet分布的定义可知 
 
 $$
-
 \begin{aligned}
 P(\boldsymbol{\theta};\boldsymbol{\alpha}+\boldsymbol{y})&=
 \dfrac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)}\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1} \\
@@ -397,14 +350,12 @@ _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma
 _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1}\right] \\
 \frac{1}{\sum_{\boldsymbol{\theta}}\left[\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1}\right]}&=\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)} \\
 \end{aligned}
-
 $$
 
  将此结论代入$P(D|\boldsymbol{\theta})$可得
 
 
 $$
-
 \begin{aligned}
 P(\boldsymbol{\theta}|D)&=\frac{\prod_{i=1}^{k}\theta_i^{\alpha_{i}+y_i-1}}{\sum_{\boldsymbol{\theta}}\left[\prod_{i=1}^{k}\theta_i^{\alpha_{i}+y_i-1}\right]}\\
 &=\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod
@@ -412,7 +363,6 @@ _{i=1}^{k}\Gamma
 (\alpha_{i}+y_i)}\prod _{i=1}^{k}\theta_{i}^{\alpha _{i}+y_i-1} \\
 &=P(\boldsymbol{\theta};\boldsymbol{\alpha}+\boldsymbol{y})
 \end{aligned}
-
 $$
 
 
@@ -420,7 +370,6 @@ $$
 
 
 $$
-
 \begin{aligned}
 \theta_i&=\mathbb E_{P(\boldsymbol{\theta}|D)}[\theta_i]\\
 &=\mathbb E_{P(\boldsymbol{\theta};\boldsymbol{\alpha}+\boldsymbol{y})}[\theta_i]\\
@@ -428,7 +377,6 @@ $$
 &=\frac{\alpha_i+y_i}{\sum_{j=1}^k\alpha_j+\sum_{j=1}^ky_j}\\
 &=\frac{\alpha_i+y_i}{\sum_{j=1}^k\alpha_j+m}\\
 \end{aligned}
-
 $$
 
 
@@ -446,9 +394,7 @@ $$
 
 
 $$
-
 I(x_i,x_j|y)=\sum_{n=1}^{N}P(x_i,x_j|c_n)\log\frac{P(x_i,x_j|c_n)}{P(x_i|c_n)P(x_j|c_n)}
-
 $$
 
 
@@ -460,13 +406,11 @@ $$
 
 
 $$
-
 \begin{aligned}
 P(\boldsymbol{x}, c) & =P\left(x_1, x_2, \ldots, x_d, c\right) \\
 & =P\left(x_1, x_2, \ldots, x_d \mid c\right) P(c) \\
 & =P\left(x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_d \mid c, x_i\right) P\left(c, x_i\right)
 \end{aligned}
-
 $$
 
 
@@ -475,9 +419,7 @@ $$
 
 
 $$
-
 P(x_1,...,x_{i-1},x_{i+1},...,x_d|c,x_i)=\prod_{j=1\\j\neq i}^{d}P(x_j|c,x_i)
-
 $$
 
 
@@ -485,23 +427,19 @@ $$
 
 
 $$
-
 P(x_1,...,x_{i-1},x_{i+1},...,x_d|c,x_i)=\prod_{j=1}^{d}P(x_j|c,x_i)
-
 $$
 
 
 综上可得： 
 
 $$
-
 \begin{aligned}
 P(c|\boldsymbol{x})&=\frac{P(\boldsymbol{x},c)}{P(\boldsymbol{x})}\\ 
 &=\frac{P\left(c, x_i\right)P\left(x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_d \mid c, x_i\right)}{P(\boldsymbol{x})}\\
 &\propto P\left(c, x_i\right)P\left(x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_d \mid c, x_i\right) \\
 &=P\left(c, x_i\right)\prod_{j=1}^{d}P(x_j|c,x_i)
 \end{aligned}
-
 $$
 
 
@@ -520,27 +458,23 @@ $$
 
 
 $$
-
 \begin{aligned} 
 P(x_3,x_4|x_1)&=\frac{P(x_1,x_3,x_4)}{P(x_1)} \\
 &=\frac{P(x_1)P(x_3|x_1)P(x_4|x_1)}{P(x_1)} \\
 &=P(x_3|x_1)P(x_4|x_1) \\
 \end{aligned}
-
 $$
 
  顺序结构：在给定节点$x$的条件下$y,z$独立
 
 
 $$
-
 \begin{aligned} 
 P(y,z|x)&=\frac{P(x,y,z)}{P(x)} \\
 &=\frac{P(z)P(x|z)P(y|x)}{P(x)} \\
 &=\frac{P(z,x)P(y|x)}{P(x)} \\
 &=P(z|x)P(y|x) \\
 \end{aligned}
-
 $$
 
 
@@ -555,9 +489,7 @@ $$
 
 
 $$
-
 f\left(t x_1 + (1-t)x_2\right)\leqslant tf(x_1)+(1-t)f(x_2)
-
 $$
 
 
@@ -565,9 +497,7 @@ $$
 
 
 $$
-
 f(t_1 x_1 + t_2x_2+...+t_nx_n)\leqslant t_1f(x_1)+t_2f(x_2)+...+t_nf(t_n)
-
 $$
 
 
@@ -575,9 +505,7 @@ $$
 
 
 $$
-
 \varphi(\mathbb{E}[X])\leqslant \mathbb{E}[\varphi(X)]
-
 $$
 
 
@@ -589,12 +517,10 @@ $$
 
 
 $$
-
 \begin{aligned} 
 LL(\theta) &=\sum_{i=1}^{m} \ln p(x_i; \theta) \\ 
 &=\sum_{i=1}^{m} \ln \sum_{z_i} p(x_i, z_i; \theta) 
 \end{aligned}
-
 $$
 
 
@@ -606,13 +532,11 @@ $$
 
 
 $$
-
 \begin{aligned} 
 LL(\theta)&=\ln P(X\vert \theta)\\
 &=\ln \sum_Z P(X,Z\vert\theta)\\
 &=\ln \left(\sum_Z P(X\vert Z,\theta)P(Z\vert \theta)\right)
 \end{aligned}
-
 $$
 
 
@@ -620,18 +544,15 @@ EM算法采用的是通过迭代逐步近似极大化$L(\theta)$：假设第$t$�
 
 
 $$
-
 \begin{aligned}
 LL(\theta)-LL(\theta^{(t)})&=\ln \left(\sum_Z P(X\vert Z,\theta)P(Z\vert \theta)\right)-\ln P(X\vert\theta^{(t)}) \\
 &=\ln \left(\sum_Z P(Z\vert X,\theta^{(t)}) \cfrac{P(X\vert Z,\theta)P(Z\vert \theta)}{P(Z\vert X,\theta^{(t)})}\right)-\ln P(X\vert\theta^{(t)})
 \end{aligned}
-
 $$
 
  由上述Jensen不等式可得 
 
 $$
-
 \begin{aligned}
 LL(\theta)-LL(\theta^{(t)})
 &\geqslant \sum_Z P(Z\vert X,\theta^{(t)})\ln \cfrac{P(X\vert Z,\theta)P(Z\vert \theta)}{P(Z\vert X,\theta^{(t)})}-\ln P(X\vert\theta^{(t)}) \\
@@ -640,25 +561,20 @@ LL(\theta)-LL(\theta^{(t)})
 &=\sum_Z P(Z\vert X,\theta^{(t)}) \left( \ln \cfrac{P(X\vert Z,\theta)P(Z\vert \theta)}{P(Z\vert X,\theta^{(t)})} - \ln P(X\vert\theta^{(t)}) \right)\\
 &= \sum_Z P(Z\vert X,\theta^{(t)})\ln \cfrac{P(X\vert Z,\theta)P(Z\vert \theta)}{P(Z\vert X,\theta^{(t)})P(X\vert\theta^{(t)})}
 \end{aligned}
-
 $$
 
  令
 
 
 $$
-
 B(\theta,\theta^{(t)})=LL(\theta^{(t)})+\sum_Z P(Z\vert X,\theta^{(t)})\ln \cfrac{P(X\vert Z,\theta)P(Z\vert \theta)}{P(Z\vert X,\theta^{(t)})P(X\vert\theta^{(t)})}
-
 $$
 
 
 则 
 
 $$
-
 LL(\theta)\geqslant B(\theta,\theta^{(t)})
-
 $$
 
 
@@ -666,9 +582,7 @@ $$
 
 
 $$
-
 B(\theta^{(t+1)},\theta^{(t)}) \geqslant B(\theta,\theta^{(t)})
-
 $$
 
 
@@ -676,18 +590,14 @@ $$
 
 
 $$
-
 LL(\theta^{(t+1)})\geqslant B(\theta^{(t+1)},\theta^{(t)})\geqslant B(\theta^{(t)},\theta^{(t)})=LL(\theta^{(t)})
-
 $$
 
 
 
 
 $$
-
 LL(\theta^{(t+1)})\geqslant LL(\theta^{(t)})
-
 $$
 
 
@@ -695,24 +605,20 @@ $$
 
 
 $$
-
 \begin{aligned}
 \theta^{(t+1)}&=\mathop{\arg\max}_{\theta}B(\theta,\theta^{(t)}) \\
 &=\mathop{\arg\max}_{\theta}\left( LL(\theta^{(t)})+\sum_Z P(Z\vert X,\theta^{(t)})\ln \cfrac{P(X\vert Z,\theta)P(Z\vert \theta)}{P(Z\vert X,\theta^{(t)})P(X\vert\theta^{(t)})}\right)
 \end{aligned}
-
 $$
 
  略去对$\theta$极大化而言是常数的项 
 
 $$
-
 \begin{aligned}
 \theta^{(t+1)}&=\mathop{\arg\max}_{\theta}\left(\sum_Z P(Z\vert X,\theta^{(t)})\ln\left( P(X\vert Z,\theta)P(Z\vert \theta)\right)\right) \\
 &=\mathop{\arg\max}_{\theta}\left(\sum_Z P(Z\vert X,\theta^{(t)})\ln P(X,Z\vert \theta)\right) \\
 &=\mathop{\arg\max}_{\theta}Q(\theta,\theta^{(t)})
 \end{aligned}
-
 $$
 
 
@@ -722,9 +628,7 @@ E步：计算完全数据的对数似然函数$\ln P(X,Z\vert \theta)$关于在�
 
 
 $$
-
 Q(\theta,\theta^{(t)})=\mathbb{E}_Z[\ln P(X,Z\vert \theta)\vert X,\theta^{(t)}]=\sum_Z P(Z\vert X,\theta^{(t)})\ln P(X,Z\vert \theta)
-
 $$
 
 
@@ -735,13 +639,11 @@ M步：求使得$Q(\theta,\theta^{(t)})$达到极大的$\theta^{(t+1)}$。
 
 
 $$
-
 \begin{aligned} 
 LL(\theta) &=\sum_{i=1}^{m} \ln p(x_i; \theta) \\ 
 &=\sum_{i=1}^{m} \ln \sum_{z_i} p(x_i, z_i; \theta) \\
 &=\sum_{i=1}^{m} \ln \sum_{z_i} Q_i(z_i)\cfrac{p(x_i, z_i; \theta)}{Q_i(z_i)} \\
 \end{aligned}
-
 $$
 
 
@@ -749,9 +651,7 @@ $$
 
 
 $$
-
 \sum_{z_i} Q_i(z_i)\cfrac{p(x_i, z_i; \theta)}{Q_i(z_i)}=\mathbb{E}_{z_i}\left[\cfrac{p(x_i, z_i; \theta)}{Q_i(z_i)}\right]
-
 $$
 
 
@@ -759,29 +659,23 @@ $$
 
 
 $$
-
 \ln\left(\mathbb{E}_{z_i}\left[\cfrac{p(x_i, z_i; \theta)}{Q_i(z_i)}\right]\right)\geqslant \mathbb{E}_{z_i}\left[\ln\left(\cfrac{p(x_i, z_i; \theta)}{Q_i(z_i)}\right)\right]
-
 $$
 
 
 
 
 $$
-
 \ln\sum_{z_i} Q_i(z_i)\cfrac{p(x_i, z_i; \theta)}{Q_i(z_i)}\geqslant \sum_{z_i} Q_i(z_i)\ln\cfrac{p(x_i, z_i; \theta)}{Q_i(z_i)}
-
 $$
 
 
 将此式代入$LL(\theta)$可得 
 
 $$
-
 \begin{aligned} 
 LL(\theta) &=\sum_{i=1}^{m} \ln \sum_{z_i} Q_i(z_i)\cfrac{p(x_i, z_i; \theta)}{Q_i(z_i)}\geqslant \sum_{i=1}^{m}\sum_{z_i} Q_i(z_i)\ln\cfrac{p(x_i, z_i; \theta)}{Q_i(z_i)} \quad \textcircled{1}
 \end{aligned}
-
 $$
 
 
@@ -789,54 +683,42 @@ $$
 
 
 $$
-
 \cfrac{p(x_i, z_i; \theta)}{Q_i(z_i)}=c
-
 $$
 
 
 
 
 $$
-
 p(x_i, z_i; \theta)=c\cdot Q_i(z_i)
-
 $$
 
 
 
 
 $$
-
 \sum_{z_i}p(x_i, z_i; \theta)=c\cdot \sum_{z_i}Q_i(z_i)
-
 $$
 
 
 
 
 $$
-
 \sum_{z_i}p(x_i, z_i; \theta)=c
-
 $$
 
 
 
 
 $$
-
 \cfrac{p(x_i, z_i; \theta)}{Q_i(z_i)}=\sum_{z_i}p(x_i, z_i; \theta)
-
 $$
 
 
 
 
 $$
-
 Q_i(z_i)=\cfrac{p(x_i, z_i; \theta)}{\sum\limits_{z_i}p(x_i, z_i; \theta)}=\cfrac{p(x_i, z_i; \theta)}{p(x_i; \theta)}=p(z_i|x_i; \theta)
-
 $$
 
 
@@ -844,14 +726,12 @@ $$
 
 
 $$
-
 \begin{aligned} 
 LL(\theta) &=\sum_{i=1}^{m} \ln \sum_{z_i} Q_i(z_i)\cfrac{p(x_i, z_i; \theta)}{Q_i(z_i)} & \quad \textcircled{2}\\
 &=\sum_{i=1}^{m} \ln \sum_{z_i}p(z_i|x_i; \theta)\cfrac{p(x_i, z_i; \theta)}{p(z_i|x_i; \theta)} & \quad \textcircled{3}\\
 &=\sum_{i=1}^{m}\sum_{z_i} p(z_i|x_i; \theta)\ln\cfrac{p(x_i, z_i; \theta)}{p(z_i|x_i; \theta)} & \quad \textcircled{4}\\
 &=\max\{B(\theta)\} & \quad \textcircled{5} \\
 \end{aligned}
-
 $$
 
 
@@ -859,20 +739,17 @@ $$
 
 
 $$
-
 \begin{aligned} 
 \theta^{(t+1)}&=\arg\max_{\theta}\max\{B(\theta)\}  & \quad \textcircled{6}\\
 &=\arg\max_{\theta}\sum_{i=1}^{m}\sum_{z_i} p(z_i|x_i;\theta^{(t)})\ln\cfrac{p(x_i, z_i; \theta)}{p(z_i|x_i; \theta^{(t)})}  & \quad \textcircled{7}\\
 &=\arg\max_{\theta}\sum_{i=1}^{m}\sum_{z_i} p(z_i|x_i;\theta^{(t)})\ln p(x_i, z_i; \theta) & \quad \textcircled{8}
 \end{aligned}
-
 $$
 
  此时将$\theta^{(t+1)}$代入$LL(\theta)$可推得
 
 
 $$
-
 \begin{aligned} 
 LL(\theta^{(t+1)}) &=\max\{B(\theta^{(t+1)})\} &\quad\textcircled{9} \\
 &=\sum_{i=1}^{m}\sum_{z_i} p(z_i|x_i; \theta^{(t+1)})\ln\cfrac{p(x_i, z_i; \theta^{(t+1)})}{p(z_i|x_i; \theta^{(t+1)})} &\quad\textcircled{10}\\
@@ -881,7 +758,6 @@ LL(\theta^{(t+1)}) &=\max\{B(\theta^{(t+1)})\} &\quad\textcircled{9} \\
 &=\max\{B(\theta^{(t)})\} &\quad\textcircled{13} \\
 &=LL(\theta^{(t)})&\quad\textcircled{14}
 \end{aligned}
-
 $$
 
 
@@ -889,9 +765,7 @@ $$
 
 
 $$
-
 Q(\theta,\theta^{(t)})=\sum_{i=1}^{m}\sum_{z_i} p(z_i|x_i; \theta^{(t)})\ln p(x_i, z_i; \theta)
-
 $$
 
 
@@ -905,14 +779,12 @@ M步：求使得$Q(\theta,\theta^{(t)})$到达极大的$\theta^{(t+1)}$。
 
 
 $$
-
 \begin{aligned} Q(\theta|\theta^{(t)})&=\sum_Z P(Z|X,\theta^{(t)})\ln P(X,Z|\theta) \\
 &=\sum_{z_1,z_2,...,z_m}\left\{\prod_{i=1}^mP(z_i|x_i,\theta^{(t)})\ln\left[ \prod_{i=1}^m P(x_i,z_i|\theta) \right] \right\} \\
 &=\sum_{z_1,z_2,...,z_m}\left\{\prod_{i=1}^mP(z_i|x_i,\theta^{(t)})\left[ \sum_{i=1}^m\ln P(x_i,z_i|\theta) \right] \right\} \\
 &=\sum_{z_1,z_2,...,z_m}\left\{\prod_{i=1}^mP(z_i|x_i,\theta^{(t)})\left[\ln P(x_1,z_1|\theta) + \ln P(x_2,z_2|\theta) +...+ \ln P(x_m,z_m|\theta)\right] \right\} \\
 &=\sum_{z_1,z_2,...,z_m}\left[\prod_{i=1}^mP(z_i|x_i,\theta^{(t)})\cdot\ln P(x_1,z_1|\theta) \right]+...+\sum_{z_1,z_2,...,z_m}\left[\prod_{i=1}^mP(z_i|x_i,\theta^{(t)})\cdot\ln P(x_m,z_m|\theta) \right]  \\
 \end{aligned}
-
 $$
 
 
@@ -920,7 +792,6 @@ $$
 
 
 $$
-
 \begin{aligned} 
 &\sum\limits_{z_1,z_2,...,z_m}\left[\prod\limits_{i=1}^mP(z_i|x_i,\theta^{(t)})\cdot\ln P(x_1,z_1|\theta) \right] \\
 =&\sum\limits_{z_1,z_2,...,z_m}\left[\prod_{i=2}^mP(z_i|x_i,\theta^{(t)})\cdot P(z_1|x_1,\theta^{(t)})\cdot\ln P(x_1,z_1|\theta) \right] \\
@@ -933,42 +804,35 @@ $$
 =&\sum_{z_1}P(z_1|x_1,\theta^{(t)})\ln P(x_1,z_1|\theta)\times \left\{1\times1\times...\times1\right\} \\
 =&\sum_{z_1}P(z_1|x_1,\theta^{(t)})\ln P(x_1,z_1|\theta)  \\
 \end{aligned}
-
 $$
 
  所以
 
 
 $$
-
 \sum\limits_{z_1,z_2,...,z_m}\left[\prod_{i=1}^mP(z_i|x_i,\theta^{(t)})\cdot\ln P(x_1,z_1|\theta) \right]=\sum_{z_1}P(z_1|x_1,\theta^{(t)})\ln P(x_1,z_1|\theta)
-
 $$
 
 
 同理可得 
 
 $$
-
 \begin{aligned} 
 \sum\limits_{z_1,z_2,...,z_m}\left[\prod_{i=1}^mP(z_i|x_i,\theta^{(t)})\cdot\ln P(x_2,z_2|\theta) \right] &=\sum_{z_2}P(z_2|x_2,\theta^{(t)})\ln P(x_2,z_2|\theta) \\
 &\vdots\\
 \sum\limits_{z_1,z_2,...,z_m}\left[\prod_{i=1}^mP(z_i|x_i,\theta^{(t)})\cdot\ln P(x_m,z_m|\theta) \right] &=\sum_{z_m}P(z_m|x_m,\theta^{(t)})\ln P(x_m,z_m|\theta)
 \end{aligned}
-
 $$
 
  将上式代入$Q(\theta|\theta^{(t)})$可得
 
 
 $$
-
 \begin{aligned} 
 Q(\theta|\theta^{(t)})&=\sum_{z_1,z_2,...,z_m}\left[\prod_{i=1}^mP(z_i|x_i,\theta^{(t)})\cdot\ln P(x_1,z_1|\theta) \right]+...+\sum_{z_1,z_2,...,z_m}\left[\prod_{i=1}^mP(z_i|x_i,\theta^{(t)})\cdot\ln P(x_m,z_m|\theta) \right]  \\
 &=\sum_{z_1}P(z_1|x_1,\theta^{(t)})\ln P(x_1,z_1|\theta) +...+\sum_{z_m}P(z_m|x_m,\theta^{(t)})\ln P(x_m,z_m|\theta) \\
 &=\sum_{i=1}^m\sum_{z_i}P(z_i|x_i,\theta^{(t)})\ln P(x_i,z_i|\theta)\\
 \end{aligned}
-
 $$
 
 
