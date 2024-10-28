@@ -32,9 +32,7 @@ $y$ 的概率, 即根据 $\boldsymbol{x}$ "判别" $y$, 因此称为 "判别式�
 
 
 $$
-
 P\left(x_1, y_1, \ldots, x_n, y_n\right)=P\left(x_1, \ldots, x_n \mid y_1, \ldots, y_n\right) \cdot P\left(y_1, \ldots, y_n\right)
-
 $$
 
 
@@ -43,14 +41,12 @@ $$
 
 
 $$
-
 \begin{aligned}
 P\left(y_1, \ldots, y_n\right) & =P\left(y_n \mid y_1, \ldots, y_{n-1}\right) \cdot P\left(y_1, \ldots, y_{n-1}\right) \\
 & =P\left(y_n \mid y_1, \ldots, y_{n-1}\right) \cdot P\left(y_{n-1} \mid y_1, \ldots, y_{n-2}\right) \cdot P\left(y_1, \ldots, y_{n-2}\right) \\
 & =\ldots \ldots \\
 & =P\left(y_n \mid y_1, \ldots, y_{n-1}\right) \cdot P\left(y_{n-1} \mid y_1, \ldots, y_{n-2}\right) \cdot \ldots \cdot P\left(y_2 \mid y_1\right) \cdot P\left(y_1\right)
 \end{aligned}
-
 $$
 
 
@@ -59,13 +55,11 @@ $$
 决定; 基于这种依赖关系, 有 
 
 $$
-
 \begin{aligned}
 P\left(y_n \mid y_1, \ldots, y_{n-1}\right) & =P\left(y_n \mid y_{n-1}\right) \\
 P\left(y_{n-1} \mid y_1, \ldots, y_{n-2}\right) & =P\left(y_{n-1} \mid y_{n-2}\right) \\
 P\left(y_{n-2} \mid y_1, \ldots, y_{n-3}\right) & =P\left(y_{n-2} \mid y_{n-3}\right)
 \end{aligned}
-
 $$
 
 
@@ -73,12 +67,10 @@ $$
 因此 $P\left(y_1, \ldots, y_n\right)$ 可化简为 
 
 $$
-
 \begin{aligned}
 P\left(y_1, \ldots, y_n\right) & =P\left(y_n \mid y_{n-1}\right) \cdot P\left(y_{n-1} \mid y_{n-2}\right) \cdot \ldots \cdot P\left(y_2 \mid y_1\right) \cdot P\left(y_1\right) \\
 & =P\left(y_1\right) \prod_{i=2}^n P\left(y_i \mid y_{i-1}\right)
 \end{aligned}
-
 $$
 
 
@@ -88,13 +80,11 @@ $$
 与其它状态变量及观测变量的取值无关。因此 
 
 $$
-
 \begin{aligned}
 P\left(x_1, \ldots, x_n \mid y_1, \ldots, y_n\right) & =P\left(x_1 \mid y_1, \ldots, y_n\right) \cdot \ldots \cdot P\left(x_n \mid y_1, \ldots, y_n\right) \\
 & =P\left(x_1 \mid y_1\right) \cdot \ldots \cdot P\left(x_n \mid y_n\right) \\
 & =\prod_{i=1}^n P\left(x_i \mid y_i\right)
 \end{aligned}
-
 $$
 
 
@@ -102,13 +92,11 @@ $$
 综上所述, 可得 
 
 $$
-
 \begin{aligned}
 P\left(x_1, y_1, \ldots, x_n, y_n\right) & =P\left(x_1, \ldots, x_n \mid y_1, \ldots, y_n\right) \cdot P\left(y_1, \ldots, y_n\right) \\
 & =\left(\prod_{i=1}^n P\left(x_i \mid y_i\right)\right) \cdot\left(P\left(y_1\right) \prod_{i=2}^n P\left(y_i \mid y_{i-1}\right)\right) \\
 & =P\left(y_1\right) P\left(x_1 \mid y_1\right) \prod_{i=2}^n P\left(y_i \mid y_{i-1}\right) P\left(x_i \mid y_i\right)
 \end{aligned}
-
 $$
 
 
@@ -150,9 +138,7 @@ $\psi_{A C}\left(x_A^{\prime}, x_C\right)$ 与变量 $x_B^{\prime}$ 无关,
 
 
 $$
-
 \sum_{x_A^{\prime}} \sum_{x_B^{\prime}} \psi_{A C}\left(x_A^{\prime}, x_C\right) \psi_{B C}\left(x_B^{\prime}, x_C\right)=\sum_{x_A^{\prime}} \psi_{A C}\left(x_A^{\prime}, x_C\right) \sum_{x_B^{\prime}} \psi_{B C}\left(x_B^{\prime}, x_C\right)
-
 $$
 
 
@@ -162,13 +148,11 @@ $\mathbf{x}=\left\{x_1, x_2, x_3\right\}, \mathbf{y}=\left\{y_1, y_2, y_3\right\
 则 
 
 $$
-
 \begin{aligned}
 \sum_{i=1}^3 \sum_{j=1}^3 x_i y_j & =x_1 y_1+x_1 y_2+x_1 y_3+x_2 y_1+x_2 y_2+x_2 y_3+x_3 y_1+x_3 y_2+x_3 y_3 \\
 & =x_1 \times\left(y_1+y_2+y_3\right)+x_2 \times\left(y_1+y_2+y_3\right)+x_3 \times\left(y_1+y_2+y_3\right) \\
 & =\left(x_1+x_2+x_3\right) \times\left(y_1+y_2+y_3\right)=\left(\sum_{i=1}^3 x_i\right)\left(\sum_{j=1}^3 y_j\right)
 \end{aligned}
-
 $$
 
 
@@ -221,9 +205,7 @@ $P(\mathbf{y} \mid \mathbf{x})$, 因此它 是一种判别式模型, 参见"西�
 
 
 $$
-
 P\left(y_{v} | \mathbf{x}, \mathbf{y}_{V \backslash\{v\}}\right)=P\left(y_{v} | \mathbf{x}, \mathbf{y}_{n(v)}\right)
-
 $$
 
 
@@ -264,14 +246,12 @@ $$
 请一定理解并记住其含义。依次推导如下: 
 
 $$
-
 \begin{aligned}
 & m_{12}\left(x_2\right)=\sum_{x_1} P\left(x_1\right) P\left(x_2 \mid x_1\right)=\sum_{x_1} P\left(x_2, x_1\right)=P\left(x_2\right) \\
 & m_{23}\left(x_3\right)=\sum_{x_2} P\left(x_3 \mid x_2\right) m_{12}\left(x_2\right)=\sum_{x_2} P\left(x_3, x_2\right)=P\left(x_3\right) \\
 & \left.m_{43}\left(x_3\right)=\sum_{x_4} P\left(x_4 \mid x_3\right) m_{23}\left(x_3\right)=\sum_{x_4} P\left(x_4, x_3\right)=P\left(x_3\right) \text { (这里与书中不一样 }\right) \\
 & m_{35}\left(x_5\right)=\sum_{x_3} P\left(x_5 \mid x_3\right) m_{43}\left(x_3\right)=\sum_{x_3} P\left(x_5, x_3\right)=P\left(x_5\right)
 \end{aligned}
-
 $$
 
  注意: 这里的过程与"西瓜书"中不太一样, 但本质一样, 因为
@@ -313,14 +293,12 @@ $n(3) \backslash 5=\{2,4\}$ （因为 $x_3$ 有邻接结点 2,4 和 5 )。
 接下来, 仍然以图14.7 计算 $P\left(x_5\right)$ 为例: 
 
 $$
-
 \begin{aligned}
 & m_{12}\left(x_2\right)=\sum_{x_1} \psi_{12}\left(x_1, x_2\right) \prod_{k \in n(1) \backslash 2} m_{k 1}\left(x_1\right)=\sum_{x_1} \psi_{12}\left(x_1, x_2\right) \\
 & m_{23}\left(x_3\right)=\sum_{x_2} \psi_{23}\left(x_2, x_3\right) \prod_{k \in n(2) \backslash 3} m_{k 2}\left(x_2\right)=\sum_{x_1} \psi_{12}\left(x_1, x_2\right) m_{12}\left(x_2\right) \\
 & m_{43}\left(x_3\right)=\sum_{x_4} \psi_{34}\left(x_3, x_4\right) \prod_{k \in n(4) \backslash 3} m_{k 4}\left(x_4\right)=\sum_{x_4} \psi_{34}\left(x_3, x_4\right) \\
 & m_{35}\left(x_5\right)=\sum_{x_3} \psi_{35}\left(x_3, x_5\right) \prod_{k \in n(3) \backslash 5} m_{k 3}\left(x_3\right)=\sum_{x_3} \psi_{35}\left(x_3, x_5\right) m_{23}\left(x_3\right) m_{43}\left(x_3\right)
 \end{aligned}
-
 $$
 
 
@@ -337,14 +315,12 @@ $$
 
 
 $$
-
 \begin{aligned}
 \hat{f}&=\frac{1}{N} \sum_{j=1}^{M} f\left(x_{j}\right) \cdot m_j \\
 &= \sum_{j=1}^{M} f\left(x_{j}\right)\cdot \frac{m_j}{N} \\
 &\approx \sum_{j=1}^{M} f\left(x_{j}\right)\cdot p(x_j)  \\
 &\approx \int f(x) p(x) dx
 \end{aligned}
-
 $$
 
 
@@ -403,11 +379,9 @@ $x_3$ 之间还有很多个结点呢?
 使得 
 
 $$
-
 \begin{aligned}
 \boldsymbol{\pi} \mathbf{T}=\boldsymbol{\pi}
 \end{aligned}
-
 $$
 
  其中,
@@ -419,22 +393,18 @@ $\boldsymbol{\pi}$是一个是一个$n$维向量，代表$s_1,s_2,..,s_n$对应�
 事实上，转移矩阵只需要满足马尔可夫细致平稳条件 
 
 $$
-
 \begin{aligned}
 \pi_i \mathbf{T}_{ij}=\pi_j \mathbf{T}_{ji}
 \end{aligned}
-
 $$
 
  即式(14.26)，这里采用的符号与西瓜书略有区别以便于理解.
 证明如下 
 
 $$
-
 \begin{aligned}
 \boldsymbol{\pi} \mathbf{T}_{j\cdot} = \sum _i \pi_i\mathbf{T}_{ij} = \sum _i \pi_j\mathbf{T}_{ji} = \pi_j
 \end{aligned}
-
 $$
 
 
@@ -467,14 +437,12 @@ $A\left(\mathbf{x}^* \mid \mathbf{x}^{t-1}\right)$ 的乘积表示。
 式(14.27)等号左边将变为: 
 
 $$
-
 \begin{aligned}
 & p\left(\mathbf{x}^{t-1}\right) Q\left(\mathbf{x}^* \mid \mathbf{x}^{t-1}\right) A\left(\mathbf{x}^* \mid \mathbf{x}^{t-1}\right) \\
 = & p\left(\mathbf{x}^{t-1}\right) Q\left(\mathbf{x}^* \mid \mathbf{x}^{t-1}\right) \min \left(1, \frac{p\left(\mathbf{x}^*\right) Q\left(\mathbf{x}^{t-1} \mid \mathbf{x}^*\right)}{p\left(\mathbf{x}^{t-1}\right) Q\left(\mathbf{x}^* \mid \mathbf{x}^{t-1}\right)}\right) \\
 = & \min \left(p\left(\mathbf{x}^{t-1}\right) Q\left(\mathbf{x}^* \mid \mathbf{x}^{t-1}\right), p\left(\mathbf{x}^{t-1}\right) Q\left(\mathbf{x}^* \mid \mathbf{x}^{t-1}\right) \frac{p\left(\mathbf{x}^*\right) Q\left(\mathbf{x}^{t-1} \mid \mathbf{x}^*\right)}{p\left(\mathbf{x}^{t-1}\right) Q\left(\mathbf{x}^* \mid \mathbf{x}^{t-1}\right)}\right) \\
 = & \min \left(p\left(\mathbf{x}^{t-1}\right) Q\left(\mathbf{x}^* \mid \mathbf{x}^{t-1}\right), p\left(\mathbf{x}^*\right) Q\left(\mathbf{x}^{t-1} \mid \mathbf{x}^*\right)\right)
 \end{aligned}
-
 $$
 
 
@@ -487,9 +455,7 @@ $\mathbf{x}^{t-1}$ 和 $\mathbf{x}^*$ 调换位置), 同理可得如上结果,
 
 
 $$
-
 A\left(\mathbf{x}^* \mid \mathbf{x}^{t-1}\right)=C \cdot p\left(\mathbf{x}^*\right) Q\left(\mathbf{x}^{t-1} \mid \mathbf{x}^*\right)
-
 $$
 
 
@@ -520,9 +486,7 @@ $\frac{1}{p\left(\mathbf{x}^{t-1}\right) Q\left(\mathbf{x}^* \mid \mathbf{x}^{t-
 
 
 $$
-
 C=\min \left(\frac{1}{\cdot p\left(\mathbf{x}^*\right) Q\left(\mathbf{x}^{t-1} \mid \mathbf{x}^*\right)}, \frac{1}{p\left(\mathbf{x}^{t-1}\right) Q\left(\mathbf{x}^* \mid \mathbf{x}^{t-1}\right)}\right)
-
 $$
 
 
@@ -575,9 +539,7 @@ $\mathbf{x}_{\bar{i}}^*=\mathbf{x}_{\bar{i}}^{t-1}$ )
 
 
 $$
-
 \frac{p\left(\mathbf{x}^*\right) Q\left(\mathbf{x}^{t-1} \mid \mathbf{x}^*\right)}{p\left(\mathbf{x}^{t-1}\right) Q\left(\mathbf{x}^* \mid \mathbf{x}^{t-1}\right)}=\frac{p\left(x_i^* \mid \mathbf{x}_i^*\right) p\left(\mathbf{x}_i^*\right) p\left(x_i^{t-1} \mid \mathbf{x}_{\bar{i}}^*\right)}{p\left(x_i^{t-1} \mid \mathbf{x}_{\bar{i}}^{t-1}\right) p\left(\mathbf{x}_{\bar{i}}^{t-1}\right) p\left(x_i^* \mid \mathbf{x}_{\bar{i}}^{t-1}\right)}=1
-
 $$
 
 
@@ -620,9 +582,7 @@ $p(\mathbf{x}, \mathbf{z})=p(\mathbf{z} \mid \mathbf{x}) p(\mathbf{x})$,
 
 
 $$
-
 p(\mathbf{x})=\frac{p(\mathbf{x}, \mathbf{z})}{p(\mathbf{z} \mid \mathbf{x})}
-
 $$
 
 
@@ -631,9 +591,7 @@ $$
 
 
 $$
-
 p(\mathbf{x})=\frac{p(\mathbf{x}, \mathbf{z}) / q(\mathbf{z})}{p(\mathbf{z} \mid \mathbf{x}) / q(\mathbf{z})}
-
 $$
 
 
@@ -642,9 +600,7 @@ $$
 
 
 $$
-
 \ln p(\mathbf{x})=\ln \frac{p(\mathbf{x}, \mathbf{z}) / q(\mathbf{z})}{p(\mathbf{z} \mid \mathbf{x}) / q(\mathbf{z})}=\ln \frac{p(\mathbf{x}, \mathbf{z})}{q(\mathbf{z})}-\ln \frac{p(\mathbf{z} \mid \mathbf{x})}{q(\mathbf{z})}
-
 $$
 
 
@@ -653,9 +609,7 @@ $$
 
 
 $$
-
 \int q(\mathbf{z}) \ln p(\mathbf{x}) \mathrm{d} \mathbf{z}=\int q(\mathbf{z}) \ln \frac{p(\mathbf{x}, \mathbf{z})}{q(\mathbf{z})} \mathrm{d} \mathbf{z}-\int q(\mathbf{z}) \ln \frac{p(\mathbf{z} \mid \mathbf{x})}{q(\mathbf{z})} \mathrm{d} \mathbf{z}
-
 $$
 
 
@@ -665,9 +619,7 @@ $$
 
 
 $$
-
 \int q(\mathbf{z}) \ln p(\mathbf{x}) \mathrm{d} \mathbf{z}=\ln p(\mathbf{x}) \int q(\mathbf{z}) \mathrm{d} \mathbf{z}=\ln p(\mathbf{x})
-
 $$
 
 
@@ -677,9 +629,7 @@ $$
 
 
 $$
-
 \ln p(\mathbf{x})=\int q(\mathbf{z}) \ln \frac{p(\mathbf{x}, \mathbf{z})}{q(\mathbf{z})} \mathrm{d} \mathbf{z}-\int q(\mathbf{z}) \ln \frac{p(\mathbf{z} \mid \mathbf{x})}{q(\mathbf{z})} \mathrm{d} \mathbf{z}
-
 $$
 
 
@@ -693,9 +643,7 @@ $p(\mathbf{z} \mid \mathbf{x})$, 而 $\mathrm{KL}$
 
 
 $$
-
 \min _{q(\mathbf{z})} \operatorname{KL}(q(\mathbf{z}) \| p(\mathbf{z} \mid \mathbf{x}))
-
 $$
 
 
@@ -721,13 +669,11 @@ $q(\mathbf{z})=\prod_{i=1}^M q_i\left(\mathbf{z}_i\right)$,
 将式(14.35)代入式(14.33), 得: 
 
 $$
-
 \begin{aligned}
 \mathcal{L}(q) & =\int q(\mathbf{z}) \ln \frac{p(\mathbf{x}, \mathbf{z})}{q(\mathbf{z})} \mathrm{d} \mathbf{z}=\int q(\mathbf{z})\{\ln p(\mathbf{x}, \mathbf{z})-\ln q(\mathbf{z})\} \mathrm{d} \mathbf{z} \\
 & =\int \prod_{i=1}^M q_i\left(\mathbf{z}_i\right)\left\{\ln p(\mathbf{x}, \mathbf{z})-\ln \prod_{i=1}^M q_i\left(\mathbf{z}_i\right)\right\} \mathrm{d} \mathbf{z} \\
 & =\int \prod_{i=1}^M q_i\left(\mathbf{z}_i\right) \ln p(\mathbf{x}, \mathbf{z}) \mathrm{d} \mathbf{z}-\int \prod_{i=1}^M q_i\left(\mathbf{z}_i\right) \ln \prod_{i=1}^M q_i\left(\mathbf{z}_i\right) \mathrm{d} \mathbf{z} \triangleq \mathcal{L}_1(q)-\mathcal{L}_2(q)
 \end{aligned}
-
 $$
 
 
@@ -737,9 +683,7 @@ $Q(\mathbf{x}, \mathbf{z})$, 则上式可变形为:
 
 
 $$
-
 \mathcal{L}(q)=\int Q(\mathbf{x}, \mathbf{z}) \mathrm{d} \mathbf{z}=\int \cdots \int Q(\mathbf{x}, \mathbf{z}) \mathrm{d} \mathbf{z}_1 \mathrm{~d} \mathbf{z}_2 \cdots \mathrm{d} \mathbf{z}_M
-
 $$
 
 
@@ -750,9 +694,7 @@ $$
 
 
 $$
-
 \mathcal{L}_1(q)=\int \prod_{i=1}^M q_i\left(\mathbf{z}_i\right) \ln p(\mathbf{x}, \mathbf{z}) \mathrm{d} \mathbf{z}=\int q_j\left\{\int \ln p(\mathbf{x}, \mathbf{z}) \prod_{i \neq j}^M\left(q_i\left(\mathbf{z}_i\right) \mathrm{d} \mathbf{z}_i\right)\right\} \mathrm{d} \mathbf{z}_j
-
 $$
 
 
@@ -763,9 +705,7 @@ $\ln \tilde{p}\left(\mathbf{x}, \mathbf{z}_j\right)=\int \ln p(\mathbf{x}, \math
 
 
 $$
-
 \mathcal{L}_1(q)=\int q_j \ln \tilde{p}\left(\mathbf{x}, \mathbf{z}_j\right) \mathrm{d} \mathbf{z}_j
-
 $$
 
 
@@ -773,12 +713,10 @@ $$
 对于第 2 项 $\mathcal{L}_2(q):$ 
 
 $$
-
 \begin{aligned}
 \mathcal{L}_2(q) & =\int \prod_{i=1}^M q_i\left(\mathbf{z}_i\right) \ln \prod_{i=1}^M q_i\left(\mathbf{z}_i\right) \mathrm{d} \mathbf{z}=\int \prod_{i=1}^M q_i\left(\mathbf{z}_i\right) \sum_{i=1}^M \ln q_i\left(\mathbf{z}_i\right) \mathrm{d} \mathbf{z} \\
 & =\sum_{i=1}^M \int \prod_{i=1}^M q_i\left(\mathbf{z}_i\right) \ln q_i\left(\mathbf{z}_i\right) \mathrm{d} \mathbf{z}=\sum_{i_1=1}^M \int \prod_{i_2=1}^M q_{i_2}\left(\mathbf{z}_{i_2}\right) \ln q_{i_1}\left(\mathbf{z}_{i_1}\right) \mathrm{d} \mathbf{z}
 \end{aligned}
-
 $$
 
 
@@ -789,12 +727,10 @@ $$
 积分项，考虑当 $i_1=j$ 时: 
 
 $$
-
 \begin{aligned}
 \int \prod_{i_2=1}^M q_{i_2}\left(\mathbf{z}_{i_2}\right) \ln q_j\left(\mathbf{z}_j\right) \mathrm{d} \mathbf{z} & =\int q_j\left(\mathbf{z}_j\right) \prod_{i_2 \neq j} q_{i_2}\left(\mathbf{z}_{i_2}\right) \ln q_j\left(\mathbf{z}_j\right) \mathrm{d} \mathbf{z} \\
 & =\int q_j\left(\mathbf{z}_j\right) \ln q_j\left(\mathbf{z}_j\right)\left\{\int \prod_{i_2 \neq j} q_{i_2}\left(\mathbf{z}_{i_2}\right) \prod_{i_2 \neq j} \mathrm{~d} \mathbf{z}_{i_2}\right\} \mathrm{d} \mathbf{z}_j
 \end{aligned}
-
 $$
 
 
@@ -806,9 +742,7 @@ $q_2\left(\mathbf{z}_2\right)$ 和 $q_3\left(\mathbf{z}_3\right)$, 即:
 
 
 $$
-
 \iiint q_1\left(\mathbf{z}_1\right) q_2\left(\mathbf{z}_2\right) q_3\left(\mathbf{z}_3\right) \mathrm{d} \mathbf{z}_1 \mathrm{~d} \mathbf{z}_2 \mathrm{~d} \mathbf{z}_3=\int q_1\left(\mathbf{z}_1\right) \int q_2\left(\mathbf{z}_2\right) \int q_3\left(\mathbf{z}_3\right) \mathrm{d} \mathbf{z}_3 \mathrm{~d} \mathbf{z}_2 \mathrm{~d} \mathbf{z}_1
-
 $$
 
 
@@ -819,9 +753,7 @@ $\int q_1\left(\mathbf{z}_1\right) \mathrm{d} \mathbf{z}_1=\int q_2\left(\mathbf
 
 
 $$
-
 \int \prod_{i_2=1}^M q_{i_2}\left(\mathbf{z}_{i_2}\right) \ln q_j\left(\mathbf{z}_j\right) \mathrm{d} \mathbf{z}=\int q_j\left(\mathbf{z}_j\right) \ln q_j\left(\mathbf{z}_j\right) \mathrm{d} \mathbf{z}_j
-
 $$
 
 
@@ -829,12 +761,10 @@ $$
 进而第 2 项可化简为: 
 
 $$
-
 \begin{aligned}
 \mathcal{L}_2(q) & =\sum_{i_1=1}^M \int q_{i_1}\left(\mathbf{z}_{i_1}\right) \ln q_{i_1}\left(\mathbf{z}_{i_1}\right) \mathrm{d} \mathbf{z}_{i_1} \\
 & =\int q_j\left(\mathbf{z}_j\right) \ln q_j\left(\mathbf{z}_j\right) \mathrm{d} \mathbf{z}_j+\sum_{i_1 \neq j}^M \int q_{i_1}\left(\mathbf{z}_{i_1}\right) \ln q_{i_1}\left(\mathbf{z}_{i_1}\right) \mathrm{d} \mathbf{z}_{i_1}
 \end{aligned}
-
 $$
 
 
@@ -844,9 +774,7 @@ $$
 
 
 $$
-
 \mathcal{L}_2(q)=\int q_j\left(\mathbf{z}_j\right) \ln q_j\left(\mathbf{z}_j\right) \mathrm{d} \mathbf{z}_j+\text { const }
-
 $$
 
 
@@ -868,7 +796,6 @@ $\ln \tilde{p}\left(\mathbf{x}, \mathbf{z}_j\right)$, 但该式却包
 项, 即: 
 
 $$
-
 \begin{aligned}
 & \int q_j\left\{\int \ln p(\mathbf{x}, \mathbf{z}) \prod_{i \neq j}^M\left(q_i\left(\mathbf{z}_i\right) \mathrm{d} \mathbf{z}_i\right)\right\} \mathrm{d} \mathbf{z}_j=\int q_j \mathbb{E}_{i \neq j}[\ln p(\mathbf{x}, \mathbf{z})] \mathrm{d} \mathbf{z}_j \\
 & =\int q_j\left(\ln \tilde{p}\left(\mathbf{x}, \mathbf{z}_j\right)-\text { const }\right) \mathrm{d} \mathbf{z}_j \\
@@ -876,7 +803,6 @@ $$
 & =\int q_j \ln \tilde{p}\left(\mathbf{x}, \mathbf{z}_j\right) \mathrm{d} \mathbf{z}_j-\text { const } \\
 &
 \end{aligned}
-
 $$
 
 
@@ -890,13 +816,11 @@ $$
 对于式(14.36), 可继续变形为: 
 
 $$
-
 \begin{aligned}
 \mathcal{L}(q) & =\int q_j \ln \tilde{p}\left(\mathbf{x}, \mathbf{z}_j\right) \mathrm{d} \mathbf{z}_j-\int q_j \ln q_j \mathrm{~d} \mathbf{z}_j+\mathrm{const} \\
 & =\int q_j \ln \frac{\tilde{p}\left(\mathbf{x}, \mathbf{z}_j\right)}{q_j} \mathrm{~d} \mathbf{z}_j+\mathrm{const} \\
 & =-\mathrm{KL}\left(q_j \| \tilde{p}\left(\mathbf{x}, \mathbf{z}_j\right)\right)+\mathrm{const}
 \end{aligned}
-
 $$
 
  注意, 在前面关于 "式(14.32) 式(14.34)的推导" 中提到,
@@ -924,12 +848,10 @@ $\ln q_j=\mathbb{E}_{i \neq j}[\ln p(\mathbf{x}, \mathbf{z})]+\mathrm{const}$,
 对式(14.39)两边同时取 $\exp (\cdot)$ 操作, 得 
 
 $$
-
 \begin{aligned}
 q_j^*\left(\mathbf{z}_j\right) & =\exp \left(\mathbb{E}_{i \neq j}[\ln p(\mathbf{x}, \mathbf{z})]+\text { const }\right) \\
 & =\exp \left(\mathbb{E}_{i \neq j}[\ln p(\mathbf{x}, \mathbf{z})]\right) \cdot \exp (\text { const })
 \end{aligned}
-
 $$
 
  两边同时取积分 $\int(\cdot) \mathrm{d} \mathbf{z}_j$
@@ -938,33 +860,27 @@ $\int q_j^*\left(\mathbf{z}_j\right) \mathrm{d} \mathbf{z}_j=1$, 因此有
 
 
 $$
-
 \begin{aligned}
 1 & =\int \exp \left(\mathbb{E}_{i \neq j}[\ln p(\mathbf{x}, \mathbf{z})]\right) \cdot \exp (\text { const }) \mathrm{d} \mathbf{z}_j \\
 & =\exp (\text { const }) \int \exp \left(\mathbb{E}_{i \neq j}[\ln p(\mathbf{x}, \mathbf{z})]\right) \mathrm{d} \mathbf{z}_j
 \end{aligned}
-
 $$
 
  这里就是将常数拿到了积分号外面, 因此:
 
 
 $$
-
 \exp (\text { const })=\frac{1}{\int \exp \left(\mathbb{E}_{i \neq j}[\ln p(\mathbf{x}, \mathbf{z})]\right) \mathrm{d} \mathbf{z}_j}
-
 $$
 
 
 代入刚开始的表达式, 可得本式: 
 
 $$
-
 \begin{aligned}
 q_j^*\left(\mathbf{z}_j\right) & =\exp \left(\mathbb{E}_{i \neq j}[\ln p(\mathbf{x}, \mathbf{z})]\right) \cdot \exp (\text { const }) \\
 & =\frac{\exp \left(\mathbb{E}_{i \neq j}[\ln p(\mathbf{x}, \mathbf{z})]\right)}{\int \exp \left(\mathbb{E}_{i \neq j}[\ln p(\mathbf{x}, \mathbf{z})]\right) \mathrm{d} \mathbf{z}_j}
 \end{aligned}
-
 $$
 
  实际上, 本式的分母为归一化因子, 以保证
@@ -982,12 +898,10 @@ $q_j^*\left(\mathbf{z}_j\right)$ 为概率分布。
 
 
 $$
-
 p(\boldsymbol W,\boldsymbol z,\boldsymbol \beta,\boldsymbol \theta | \boldsymbol \alpha,\boldsymbol \eta) =
 \prod_{t=1}^{T}p(\boldsymbol \theta_t | \boldsymbol \alpha)
 \prod_{k=1}^{K}p(\boldsymbol \beta_k | \boldsymbol \eta) 
 (\prod_{n=1}^{N}P(w_{t,n} | z_{t,n}, \boldsymbol \beta_k)P( z_{t,n} | \boldsymbol \theta_t))
-
 $$
 
 
@@ -1016,9 +930,7 @@ $p(\mathbf{W}, \mathbf{z}, \boldsymbol{\beta}, \boldsymbol{\Theta} \mid \boldsym
 
 
 $$
-
 p_{\boldsymbol{\alpha}, \boldsymbol{\eta}}(\mathbf{z}, \boldsymbol{\beta}, \boldsymbol{\Theta} \mid \mathbf{W})=\frac{p_{\boldsymbol{\alpha}, \boldsymbol{\eta}}(\mathbf{W}, \mathbf{z}, \boldsymbol{\beta}, \boldsymbol{\Theta})}{p_{\boldsymbol{\alpha}, \boldsymbol{\eta}}(\mathbf{W})}
-
 $$
 
 
