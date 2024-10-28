@@ -29,18 +29,28 @@ $\tau$很小，$Q$值大的动作更容易被选中（利用）。
 
 ### 16.3.1 式(16.7)的解释
 
-因为 $$\pi(x,a)=P(action=a|state=x)$$
+因为 
+
+$$\pi(x,a)=P(action=a|state=x)$$
+
 表示在状态$x$下选择动作$a$的概率，又因为动作事件之间两两互斥且和为动作空间，由全概率展开公式
-$$P(A)=\sum_{i=1}^{\infty}P(B_{i})P(A\mid B_{i})$$ 可得
+
+$$P(A)=\sum_{i=1}^{\infty}P(B_{i})P(A\mid B_{i})$$
+
+可得
+
 $$\begin{aligned}
 &\mathbb{E}_{\pi}[\frac{1}{T}r_{1}+\frac{T-1}{T}\frac{1}{T-1}\sum_{t=2}^{T}r_{t}\mid x_{0}=x]\\
 &=\sum_{a\in A}\pi(x,a)\sum_{x{}'\in X}P_{x\rightarrow x{}'}^{a}(\frac{1}{T}R_{x\rightarrow x{}'}^{a}+\frac{T-1}{T}\mathbb{E}_{\pi}[\frac{1}{T-1}\sum_{t=1}^{T-1}r_{t}\mid x_{0}=x{}'])
-\end{aligned}$$ 其中
+\end{aligned}$$
+
+其中
+
 $$r_{1}=\pi(x,a)P_{x\rightarrow x{}'}^{a}R_{x\rightarrow x{}'}^{a}$$
+
 最后一个等式用到了递归形式。
 
-Bellman
-等式定义了当前状态与未来状态之间的关系，表示当前状态的价值函数可以通过下个状态的价值函数来计算。
+Bellman等式定义了当前状态与未来状态之间的关系，表示当前状态的价值函数可以通过下个状态的价值函数来计算。
 
 ### 16.3.2 式(16.8)的推导
 
@@ -62,8 +72,7 @@ V_{\gamma }^{\pi}(x)&=\mathbb{E}_{\pi}[\sum_{t=0}^{\infty }\gamma^{t}r_{t+1}\mid
 
 ### 16.3.5 式(16.15)的解释
 
-最优 Bellman
-等式表明：最佳策略下的一个状态的价值必须等于在这个状态下采取最好动作得到的累积奖赏值的期望。
+最优 Bellman等式表明：最佳策略下的一个状态的价值必须等于在这个状态下采取最好动作得到的累积奖赏值的期望。
 
 ### 16.3.6 式(16.16)的推导
 
@@ -79,19 +88,25 @@ V^{\pi}(x) & \leqslant Q^{\pi}\left(x, \pi^{\prime}(x)\right) \\
 &\leqslant \cdots \\
 &\leqslant \sum_{x^{\prime} \in X} P_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}\left(R_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}+\sum_{x'^{\prime} \in X} P_{x' \rightarrow x^{''}}^{\pi^{\prime}(x')}\left(\gamma R_{x' \rightarrow x^{\prime \prime}}^{\pi^{\prime}(x')}+\sum_{x'^{\prime} \in X} P_{x'' \rightarrow x^{'''}}^{\pi^{\prime}(x'')} \left(\gamma^2 R_{x'' \rightarrow x^{\prime \prime \prime}}^{\pi^{\prime}(x'')}+\cdots \right)\right)\right) \\
 &= V^{\pi'}(x) 
-\end{aligned}$$ 其中，使用了动作改变条件
-$$Q^{\pi}(x,\pi{}'(x))\geqslant V^{\pi}(x)$$ 以及状态-动作值函数
+\end{aligned}$$
+
+其中，使用了动作改变条件
+
+$$Q^{\pi}(x,\pi{}'(x))\geqslant V^{\pi}(x)$$
+
+以及状态-动作值函数
+
 $$Q^{\pi}(x{}',\pi{}'(x{}'))=\sum_{x{}'\in X}P_{x{}'\rightarrow x{}'}^{\pi{}'(x{}')}(R_{x{}'\rightarrow x{}'}^{\pi{}'(x{}')}+\gamma V^{\pi}(x{}'))$$
+
 于是，当前状态的最优值函数为
+
 $$V^{\ast}(x)=V^{\pi{}'}(x)\geqslant V^{\pi}(x)$$
 
 ## 16.4 免模型学习
 
 ### 16.4.1 式(16.20)的解释
 
-如果 $\epsilon_k=\frac{1}{k}$，并且其值随 $k$ 增大而主角趋于零，则
-$\epsilon-$ 贪心是在无限的探索中的极限贪心（Greedy in the Limit with
-Infinite Exploration，简称GLIE）。
+如果 $\epsilon_k=\frac{1}{k}$，并且其值随 $k$ 增大而主角趋于零，则$\epsilon-$ 贪心是在无限的探索中的极限贪心（Greedy in the Limit with Infinite Exploration，简称GLIE）。
 
 ### 16.4.2 式(16.23)的解释
 
@@ -101,9 +116,17 @@ Weight），其用于修正两个分布的差异。
 ### 16.4.3 式(16.31)的推导
 
 对比公式16.29
+
 $$Q_{t+1}^{\pi}(x,a)=Q_{t}^{\pi}(x,a)+\frac{1}{t+1}(r_{t+1}-Q_{t}^{\pi}(x,a))$$
-以及由 $$\frac{1}{t+1}=\alpha$$ 可知，若下式成立，则公式16.31成立
+
+以及由
+
+$$\frac{1}{t+1}=\alpha$$
+
+可知，若下式成立，则公式16.31成立
+
 $$r_{t+1}=R_{x\rightarrow x{}'}^{a}+\gamma Q_{t}^{\pi}(x{}',a{}')$$
+
 而$r_{t+1}$表示$t+1$步的奖赏，即状态$x$变化到$x'$的奖赏加上前面$t$步奖赏总和$Q_{t}^{\pi}(x{}',a{}')$的$\gamma$折扣，因此这个式子成立。
 
 ## 16.5 值函数近似
@@ -116,20 +139,31 @@ $$r_{t+1}=R_{x\rightarrow x{}'}^{a}+\gamma Q_{t}^{\pi}(x{}',a{}')$$
 
 $$\begin{aligned}
 -\frac{\partial E_{\boldsymbol{\theta}}}{\partial \boldsymbol{\theta}} & = -\frac{\partial \mathbb{E}_{\boldsymbol{x} \sim \pi}\left[\left(V^\pi(\boldsymbol{x})-V_{\boldsymbol{\theta}}(\boldsymbol{x})\right)^2\right]}{\partial \boldsymbol{\theta}}\\
-\end{aligned}$$ 将
+\end{aligned}$$
+
+将
+
 $V^\pi(\boldsymbol{x})-V_{\boldsymbol{\theta}}(\boldsymbol{x})$
 看成一个整体，根据链式法则（chain rule）可知
+
 $$-\frac{\partial \mathbb{E}_{\boldsymbol{x} \sim \pi}\left[\left(V^\pi(\boldsymbol{x})-V_{\boldsymbol{\theta}}(\boldsymbol{x})\right)^2\right]}{\partial \boldsymbol{\theta}}=\mathbb{E}_{\boldsymbol{x} \sim \pi}\left[2\left(V^\pi(\boldsymbol{x})-V_{\boldsymbol{\theta}}(\boldsymbol{x})\right) \frac{\partial V_{\boldsymbol{\theta}}(\boldsymbol{x})}{\partial \boldsymbol{\theta}}\right]$$
+
 $V_{\boldsymbol{\theta}}(\boldsymbol{x})$
 是一个标量，$\boldsymbol{\theta}$
 是一个向量，$\frac{\partial V_{\boldsymbol{\theta}}(\boldsymbol{x})}{\partial \boldsymbol{\theta}}$
-属于矩阵微积分中的标量对向量求偏导，因此 $$\begin{aligned}
+属于矩阵微积分中的标量对向量求偏导，因此
+
+$$\begin{aligned}
 \frac{\partial V_{\boldsymbol{\theta}}(\boldsymbol{x})}{\partial \boldsymbol{\theta}}&=
 \frac{\partial \boldsymbol{\theta}^\mathrm{T}{\boldsymbol{x}}}{\partial \boldsymbol{\theta}} \\
 & =\left[\frac{\partial \boldsymbol{\theta}^{\mathrm{T}} \boldsymbol{x}}{\partial \theta_1}, \frac{\partial \boldsymbol{\theta}^{\mathrm{T}} \boldsymbol{x}}{\partial \theta_2}, \cdots,\frac{\partial \boldsymbol{\theta}^{\mathrm{T}}\boldsymbol{x}}{\partial \theta_n}\right]^{\mathrm{T}} \\
 & =\left[x_1, x_2, \cdots,x_m\right]^{\mathrm{T}} \\
 & =\boldsymbol{x}
-\end{aligned}$$ 故 $$\begin{aligned}
+\end{aligned}$$
+
+故
+
+$$\begin{aligned}
 -\frac{\partial E_{\boldsymbol{\theta}}}{\partial \boldsymbol{\theta}} & =\mathbb{E}_{\boldsymbol{x} \sim \pi}\left[2\left(V^\pi(\boldsymbol{x})-V_{\boldsymbol{\theta}}(\boldsymbol{x})\right) \frac{\partial V_{\boldsymbol{\theta}}(\boldsymbol{x})}{\partial \boldsymbol{\theta}}\right] \\
 & =\mathbb{E}_{\boldsymbol{x} \sim \pi}\left[2\left(V^\pi(\boldsymbol{x})-V_{\boldsymbol{\theta}}(\boldsymbol{x})\right) \boldsymbol{x}\right]
 \end{aligned}$$
