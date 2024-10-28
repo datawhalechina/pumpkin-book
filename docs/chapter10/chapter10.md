@@ -18,7 +18,6 @@ $\boldsymbol{\alpha}=\left(a_1, a_2, \ldots, a_i, \ldots, a_m\right)$
 
 
 $$
-
 \left[\begin{array}{lll}
 \lambda_1 & & \\
 & \lambda_2 & \\
@@ -32,7 +31,6 @@ x_{31} & x_{32} & x_{33}
 \lambda_2 x_{21} & \lambda_2 x_{22} & \lambda_2 x_{23} \\
 \lambda_3 x_{31} & \lambda_3 x_{32} & \lambda_3 x_{33}
 \end{array}\right]
-
 $$
 
 
@@ -41,7 +39,6 @@ $$
 
 
 $$
-
 \left[\begin{array}{lll}
 x_{11} & x_{12} & x_{13} \\
 x_{21} & x_{22} & x_{23} \\
@@ -55,7 +52,6 @@ x_{31} & x_{32} & x_{33}
 \lambda_1 x_{21} & \lambda_2 x_{22} & \lambda_3 x_{23} \\
 \lambda_1 x_{31} & \lambda_2 x_{32} & \lambda_3 x_{33}
 \end{array}\right]
-
 $$
 
 
@@ -64,7 +60,6 @@ $$
 
 
 $$
-
 \begin{aligned}
 & {\left[\begin{array}{lll}
 \lambda_1 & \lambda_2 & \lambda_3
@@ -84,7 +79,6 @@ x_{31} & x_{32} & x_{33}
 \lambda_1 x_{11}+\lambda_2 x_{21}+\lambda_3 x_{31}, \lambda_1 x_{12}+\lambda_2 x_{22}+\lambda_3 x_{32}, \lambda_1 x_{13}+\lambda_2 x_{23}+\lambda_3 x_{33}
 \end{array}\right)
 \end{aligned}
-
 $$
 
 
@@ -93,7 +87,6 @@ $$
 
 
 $$
-
 \begin{aligned}
 & {\left[\begin{array}{lll}
 x_{11} & x_{12} & x_{13} \\
@@ -123,7 +116,6 @@ x_{3 i}
 \end{array}\right]\right) \\
 & =\left(\lambda_1 x_{11}+\lambda_2 x_{12}+\lambda_3 x_{13} ; \lambda_1 x_{21}+\lambda_2 x_{22}+\lambda_3 x_{23} ; \lambda_1 x_{31}+\lambda_2 x_{32}+\lambda_3 x_{33}\right)
 \end{aligned}
-
 $$
 
 
@@ -138,9 +130,7 @@ $$
 
 
 $$
-
 \|\mathbf{A}\|_F=\left(\sum_{i=1}^m \sum_{j=1}^n\left|a_{i j}\right|^2\right)^{\frac{1}{2}}
-
 $$
 
 
@@ -149,7 +139,6 @@ $$
 
 
 $$
-
 \mathbf{A}=\left[\begin{array}{cccccc}
 a_{11} & a_{12} & \cdots & a_{1 j} & \cdots & a_{1 n} \\
 a_{21} & a_{22} & \cdots & a_{2 j} & \cdots & a_{2 n} \\
@@ -158,7 +147,6 @@ a_{i 1} & a_{i 2} & \cdots & a_{i j} & \cdots & a_{i n} \\
 \vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
 a_{m 1} & a_{m 2} & \cdots & a_{m j} & \cdots & a_{m n}
 \end{array}\right]
-
 $$
 
 
@@ -198,12 +186,10 @@ $\operatorname{tr}\left(\mathbf{A A}^{\top}\right)$ 是
 $\mathbf{A} \mathbf{A}^{\top}$ 的迹, 则 
 
 $$
-
 \begin{aligned}
 \|\mathbf{A}\|_F^2 & =\operatorname{tr}\left(\mathbf{A}^{\top} \mathbf{A}\right)=\sum_{j=1}^n \lambda_j\left(\mathbf{A}^{\top} \mathbf{A}\right) \\
 & =\operatorname{tr}\left(\mathbf{A} \mathbf{A}^{\top}\right)=\sum_{i=1}^m \lambda_i\left(\mathbf{A} \mathbf{A}^{\top}\right)
 \end{aligned}
-
 $$
 
 
@@ -216,7 +202,6 @@ $\operatorname{tr}(\mathbf{B})=\sum_{j=1}^n b_{j \jmath}$
 
 
 $$
-
 \mathbf{B}=\mathbf{A}^{\top} \mathbf{A}=\left[\begin{array}{cccccc}
 a_{11} & a_{21} & \cdots & a_{i 1} & \cdots & a_{m 1} \\
 a_{12} & a_{22} & \cdots & a_{i 2} & \cdots & a_{m 2} \\
@@ -232,7 +217,6 @@ a_{i 1} & a_{i 2} & \cdots & a_{i j} & \cdots & a_{i n} \\
 \vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
 a_{m 1} & a_{m 2} & \cdots & a_{m j} & \cdots & a_{m n}
 \end{array}\right]
-
 $$
 
  由矩阵运算规则, $b_{j j}$ 等于 $\mathbf{A}^{\top}$
@@ -240,9 +224,7 @@ $$
 
 
 $$
-
 \operatorname{tr}(\mathbf{B})=\sum_{j=1}^n b_{j j}=\sum_{j=1}^n\left(\sum_{i=1}^m\left|a_{i j}\right|^2\right)=\sum_{i=1}^m \sum_{j=1}^n\left|a_{i j}\right|^2=\|\mathbf{A}\|_F^2
-
 $$
 
 
@@ -255,7 +237,6 @@ $\|\mathbf{A}\|_F^2=\operatorname{tr}\left(\mathbf{A} \mathbf{A}^{\top}\right)$
 ： 
 
 $$
-
 \begin{aligned}
 & \mathbf{C}=\mathbf{A A}^{\top}=\left[\begin{array}{cccccc}
 a_{11} & a_{12} & \cdots & a_{1 j} & \cdots & a_{1 n} \\
@@ -274,7 +255,6 @@ a_{1 n} & a_{2 n} & \cdots & a_{i n} & \cdots & a_{m n}
 \end{array}\right] \\
 &
 \end{aligned}
-
 $$
 
 
@@ -284,9 +264,7 @@ $\mathbf{A}^{\top}$ 的第 $i$ 列的内积（红色元素), 因此
 
 
 $$
-
 \operatorname{tr}(\mathbf{C})=\sum_{i=1}^m c_{i i}=\sum_{i=1}^m\left(\sum_{j=1}^n\left|a_{i j}\right|^2\right)=\sum_{i=1}^m \sum_{j=1}^n\left|a_{i j}\right|^2=\|\mathbf{A}\|_F^2
-
 $$
 
 
@@ -300,9 +278,7 @@ $$
 
 
 $$
-
 P(e r r)=1-\sum_{c \in \mathcal{Y}} P(c | \boldsymbol{x}) P(c | \boldsymbol{z})
-
 $$
 
 
@@ -320,9 +296,7 @@ $\mathcal{Y}=\left\{c_1, c_2, \cdots, c_N\right\}$, 则该求和式子变为：
 
 
 $$
-
 P\left(c_1 \mid \boldsymbol{x}\right) P\left(c_1 \mid \boldsymbol{z}\right)+P\left(c_2 \mid \boldsymbol{x}\right) P\left(c_2 \mid \boldsymbol{z}\right)+\cdots+P\left(c_N \mid \boldsymbol{x}\right) P\left(c_N \mid \boldsymbol{z}\right)
-
 $$
 
 
@@ -351,9 +325,7 @@ $P(c \mid \boldsymbol{x}) \simeq P(c \mid \boldsymbol{z})$, 即
 
 
 $$
-
 \sum_{c \in \mathcal{Y}} P(c \mid \boldsymbol{x}) P(c \mid \boldsymbol{z}) \simeq \sum_{c \in \mathcal{Y}} P^2(c \mid \boldsymbol{x})
-
 $$
 
 
@@ -397,9 +369,7 @@ $\mathbf{B}=\mathbf{Z}^{\top} \mathbf{Z} \in \mathbb{R}^{m \times m}$,
 
 
 $$
-
 b_{i i}=\boldsymbol{z}_i^{\top} \boldsymbol{z}_i=\left\|\boldsymbol{z}_i\right\|^2, b_{j j}=\boldsymbol{z}_j^{\top} \boldsymbol{z}_j=\left\|\boldsymbol{z}_j\right\|^2, b_{i j}=\boldsymbol{z}_i^{\top} \boldsymbol{z}_j
-
 $$
 
 
@@ -409,7 +379,6 @@ $\left\|\boldsymbol{z}_i-\boldsymbol{z}_j\right\|=d i s t_{i j}=\left\|\boldsymb
 $\left(d^{\prime} \leqslant d\right)$ 。 
 
 $$
-
 \begin{aligned}
 d i s t_{i j}^2 & =\left\|\boldsymbol{z}_i-\boldsymbol{z}_j\right\|^2=\left(z_{i 1}-z_{j 1}\right)^2+\left(z_{i 2}-z_{j 2}\right)^2+\ldots+\left(z_{i d^{\prime}}-z_{j d^{\prime}}\right)^2 \\
 & =\left(z_{i 1}^2-2 z_{i 1} z_{j 1}+z_{j 1}^2\right)+\left(z_{i 2}^2-2 z_{i 2} z_{j 2}+z_{j 2}^2\right)+\ldots+\left(z_{i d^{\prime}}^2-2 z_{i d^{\prime}} z_{j d^{\prime}}+z_{j d^{\prime}}^2\right) \\
@@ -418,7 +387,6 @@ d i s t_{i j}^2 & =\left\|\boldsymbol{z}_i-\boldsymbol{z}_j\right\|^2=\left(z_{i
 & =\left\|\boldsymbol{z}_i\right\|^2+\left\|\boldsymbol{z}_j\right\|^2-2 \boldsymbol{z}_i^{\top} \boldsymbol{z}_j \\
 & =b_{i i}+b_{j j}-2 b_{i j}
 \end{aligned}
-
 $$
 
 
@@ -428,7 +396,6 @@ $$
 因此后面会尽可能不再从元素层面推导。具体来说： 
 
 $$
-
 \begin{aligned}
 d i s t_{i j}^2 & =\left\|\boldsymbol{z}_i-\boldsymbol{z}_j\right\|^2=\left(\boldsymbol{z}_i-\boldsymbol{z}_j\right)^{\top}\left(\boldsymbol{z}_i-\boldsymbol{z}_j\right) \\
 & =\boldsymbol{z}_i^{\top} \boldsymbol{z}_i-\boldsymbol{z}_i^{\top} \boldsymbol{z}_j-\boldsymbol{z}_j^{\top} \boldsymbol{z}_i+\boldsymbol{z}_j^{\top} \boldsymbol{z}_j \\
@@ -436,7 +403,6 @@ d i s t_{i j}^2 & =\left\|\boldsymbol{z}_i-\boldsymbol{z}_j\right\|^2=\left(\bol
 & =\left\|\boldsymbol{z}_i\right\|^2+\left\|\boldsymbol{z}_j\right\|^2-2 \boldsymbol{z}_i^{\top} \boldsymbol{z}_j \\
 & =b_{i i}+b_{j j}-2 b_{i j}
 \end{aligned}
-
 $$
 
  上式第三个等号化简是由于内积
@@ -468,12 +434,10 @@ $b_{i j}=\boldsymbol{z}_j^{\top} \boldsymbol{z}_i$,
 其实就是对应元素相乘, 再求和) 
 
 $$
-
 \begin{gathered}
 \sum_{i=1}^m b_{i j}=\sum_{i=1}^m \boldsymbol{z}_j^{\top} \boldsymbol{z}_i=\boldsymbol{z}_j^{\top} \sum_{i=1}^m \boldsymbol{z}_i=\boldsymbol{z}_j^{\top} \cdot \mathbf{0}_{d^{\prime} \times 1}=0 \\
 \sum_{j=1}^m b_{i j}=\sum_{j=1}^m \boldsymbol{z}_i^{\top} \boldsymbol{z}_j=\boldsymbol{z}_i^{\top} \sum_{j=1}^m \boldsymbol{z}_j=\boldsymbol{z}_i^{\top} \cdot \mathbf{0}_{d^{\prime} \times 1}=0
 \end{gathered}
-
 $$
 
 
@@ -482,12 +446,10 @@ $$
 
 
 $$
-
 \begin{aligned}
 \sum_{i=1}^m d i s t_{i j}^2 & =\sum_{i=1}^m\left(\left\|\boldsymbol{z}_i\right\|^2+\left\|\boldsymbol{z}_j\right\|^2-2 \boldsymbol{z}_i^{\top} \boldsymbol{z}_j\right) \\
 & =\sum_{i=1}^m\left\|\boldsymbol{z}_i\right\|^2+\sum_{i=1}^m\left\|\boldsymbol{z}_j\right\|^2-2 \sum_{i=1}^m \boldsymbol{z}_i^{\top} \boldsymbol{z}_j
 \end{aligned}
-
 $$
 
 
@@ -495,12 +457,10 @@ $$
 根据定义： 
 
 $$
-
 \begin{aligned}
 & \sum_{i=1}^m\left\|\boldsymbol{z}_i\right\|^2=\sum_{i=1}^m \boldsymbol{z}_i^{\top} \boldsymbol{z}_i=\sum_{i=1}^m b_{i i}=\operatorname{tr}(\mathbf{B}) \\
 & \sum_{i=1}^m\left\|\boldsymbol{z}_j\right\|^2=\left\|\boldsymbol{z}_j\right\|^2 \sum_{i=1}^m 1=m\left\|\boldsymbol{z}_j\right\|^2=m \boldsymbol{z}_j^{\top} \boldsymbol{z}_j=m b_{j j}
 \end{aligned}
-
 $$
 
 
@@ -509,9 +469,7 @@ $$
 
 
 $$
-
 \sum_{i=1}^m \boldsymbol{z}_i^{\top} \boldsymbol{z}_j=\left(\sum_{i=1}^m \boldsymbol{z}_i^{\top}\right) \boldsymbol{z}_j=\mathbf{0}_{1 \times d^{\prime}} \cdot \boldsymbol{z}_j=0
-
 $$
 
 
@@ -519,12 +477,10 @@ $$
 代入上式即得： 
 
 $$
-
 \begin{aligned}
 \sum_{i=1}^m d i s t_{i j}^2 & =\sum_{i=1}^m\left\|\boldsymbol{z}_i\right\|^2+\sum_{i=1}^m\left\|\boldsymbol{z}_j\right\|^2-2 \sum_{i=1}^m \boldsymbol{z}_i^{\top} \boldsymbol{z}_j \\
 & =\operatorname{tr}(\mathbf{B})+m b_{j j}
 \end{aligned}
-
 $$
 
 
@@ -534,13 +490,11 @@ $$
 与式(10.4)类似： 
 
 $$
-
 \begin{aligned}
 \sum_{j=1}^m d i s t_{i j}^2 & =\sum_{j=1}^m\left(\left\|\boldsymbol{z}_i\right\|^2+\left\|\boldsymbol{z}_j\right\|^2-2 \boldsymbol{z}_i^{\top} \boldsymbol{z}_j\right) \\
 & =\sum_{j=1}^m\left\|\boldsymbol{z}_i\right\|^2+\sum_{j=1}^m\left\|\boldsymbol{z}_j\right\|^2-2 \sum_{j=1}^m \boldsymbol{z}_i^{\top} \boldsymbol{z}_j \\
 & =m b_{i i}+\operatorname{tr}(\mathbf{B})
 \end{aligned}
-
 $$
 
 
@@ -550,12 +504,10 @@ $$
 
 
 $$
-
 \begin{aligned}
 \sum_{i=1}^{m} \sum_{j=1}^{m} \operatorname{dist}_{i j}^{2} &=\sum_{i=1}^{m} \sum_{j=1}^{m}\left(\left\|z_{i}\right\|^{2}+\left\|\boldsymbol{z}_{j}\right\|^{2}-2 \boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{j}\right) \\
 &=\sum_{i=1}^{m} \sum_{j=1}^{m}\left\|\boldsymbol{z}_{i}\right\|^{2}+\sum_{i=1}^{m} \sum_{j=1}^{m}\left\|\boldsymbol{z}_{j}\right\|^{2}-2 \sum_{i=1}^{m} \sum_{j=1}^{m} \boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{j} \\
 \end{aligned}
-
 $$
 
 
@@ -564,27 +516,21 @@ $$
 
 
 $$
-
 \sum_{i=1}^{m} \sum_{j=1}^{m}\left\|\boldsymbol{z}_{i}\right\|^{2}=m \sum_{i=1}^{m}\left\|\boldsymbol{z}_{i}\right\|^{2}=m \operatorname{tr}(\mathbf{B})
-
 $$
 
 
 
 
 $$
-
 \sum_{i=1}^{m} \sum_{j=1}^{m}\left\|\boldsymbol{z}_{j}\right\|^{2}=m \sum_{j=1}^{m}\left\|\boldsymbol{z}_{j}\right\|^{2}=m \operatorname{tr}(\mathbf{B})
-
 $$
 
 
 
 
 $$
-
 \sum_{i=1}^{m} \sum_{j=1}^{m} \boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{j}=0
-
 $$
 
 
@@ -596,21 +542,17 @@ $$
 由式(10.3)可得 
 
 $$
-
 b_{ij}=-\frac{1}{2}(dist^2_{ij}-b_{ii}-b_{jj})
-
 $$
 
 
 由式(10.6)和(10.9)可得 
 
 $$
-
 \begin{aligned}
 tr(\boldsymbol B)&=\frac{1}{2m}\sum^m_{i=1}\sum^m_{j=1}dist^2_{ij}\\
 &=\frac{m}{2}dist^2_{\cdot}
 \end{aligned}
-
 $$
 
 
@@ -618,12 +560,10 @@ $$
 由式(10.4)和(10.8)可得 
 
 $$
-
 \begin{aligned}
 b_{jj}&=\frac{1}{m}\sum^m_{i=1}dist^2_{ij}-\frac{1}{m}tr(\boldsymbol B)\\
 &=dist^2_{\cdot j}-\frac{1}{2}dist^2_{\cdot}
 \end{aligned}
-
 $$
 
 
@@ -631,12 +571,10 @@ $$
 由式(10.5)和式(10.7)可得 
 
 $$
-
 \begin{aligned}
 b_{ii}&=\frac{1}{m}\sum^m_{j=1}dist^2_{ij}-\frac{1}{m}tr(\boldsymbol B)\\
 &=dist^2_{i\cdot}-\frac{1}{2}dist^2_{\cdot}
 \end{aligned}
-
 $$
 
 
@@ -644,13 +582,11 @@ $$
 综合可得 
 
 $$
-
 \begin{aligned}
 b_{ij}&=-\frac{1}{2}(dist^2_{ij}-b_{ii}-b_{jj})\\
 &=-\frac{1}{2}(dist^2_{ij}-dist^2_{i\cdot}+\frac{1}{2}dist^2_{\cdot\cdot}-dist^2_{\cdot j}+\frac{1}{2}dist^2_{\cdot\cdot})\\
 &=-\frac{1}{2}(dist^2_{ij}-dist^2_{i\cdot}-dist^2_{\cdot j}+dist^2_{\cdot\cdot})
 \end{aligned}
-
 $$
 
 
@@ -675,9 +611,7 @@ $\boldsymbol{\Lambda}_{*} \in \mathbb{R}^{d \times d}$对应的特征值向量�
 
 
 $$
-
 \mathbf{B}=\left(\mathbf{V}_{*} \boldsymbol{\Lambda}_{*}^{1 / 2}\right)\left(\boldsymbol{\Lambda}_{*}^{1 / 2} \mathbf{V}_{*}^{\top}\right)
-
 $$
 
 
@@ -775,9 +709,7 @@ $\left(\boldsymbol{w}_1^{\top} \boldsymbol{x}_i ; \boldsymbol{w}_2^{\top} \bolds
 
 
 $$
-
 \mathbf{W}=\left(\boldsymbol{w}_1, \boldsymbol{w}_2, \ldots, \boldsymbol{w}_{d^{\prime}}\right) \in \mathbb{R}^{d \times d^{\prime}}
-
 $$
 
 
@@ -785,12 +717,10 @@ $$
 则 $\boldsymbol{x}_i$ 在低维坐标系中的投影为 
 
 $$
-
 \begin{aligned}
 \boldsymbol{z}_i & =\left(z_{i 1} ; z_{i 2} ; \ldots ; z_{i d^{\prime}}\right)=\left(\boldsymbol{w}_1^{\top} \boldsymbol{x}_i ; \boldsymbol{w}_2^{\top} \boldsymbol{x}_i ; \ldots ; \boldsymbol{w}_{d^{\prime}}^{\top} \boldsymbol{x}_i\right) \\
 & =\mathbf{W}^{\top} \boldsymbol{x}_i
 \end{aligned}
-
 $$
 
 
@@ -805,7 +735,6 @@ $\hat{\boldsymbol{x}}_i=\sum_{j=1}^{d^{\prime}} z_{i j} \boldsymbol{w}_j=\mathbf
 
 
 $$
-
 \begin{aligned}
 \sum_{i=1}^m\left\|\sum_{j=1}^{d^{\prime}} z_{i j} \boldsymbol{w}_j-\boldsymbol{x}_i\right\|_2^2 &=\sum_{i=1}^m\left\|\mathbf{W} \boldsymbol{z}_i-\boldsymbol{x}_i\right\|_2^2 &\textcircled{1}\\
 &=\sum_{i=1}^m\left\|\mathbf{W} \mathbf{W}^{\top} \boldsymbol{x}_i-\boldsymbol{x}_i\right\|_2^2 &\textcircled{2}\\
@@ -817,7 +746,6 @@ $$
 &=\sum_{i=1}^m\left(-\left\|\mathbf{W}^{\top} \boldsymbol{x}_i\right\|_2^2+\boldsymbol{x}_i^{\top} \boldsymbol{x}_i\right) &\textcircled{8}\\
 &\propto-\sum_{i=1}^m\left\|\mathbf{W}^{\top} \boldsymbol{x}_i\right\|_2^2 &\textcircled{9}
 \end{aligned}
-
 $$
 
 
@@ -828,9 +756,7 @@ $\left(\mathbf{W} \mathbf{W}^{\top}\right)^{\top}=\left(\mathbf{W}^{\top}\right)
 
 
 $$
-
 \left(\mathbf{W} \mathbf{W}^{\top} \boldsymbol{x}_i\right)^{\top}=\boldsymbol{x}_i^{\top}\left(\mathbf{W} \mathbf{W}^{\top}\right)^{\top}=\boldsymbol{x}_i^{\top} \mathbf{W} \mathbf{W}^{\top}
-
 $$
 
 
@@ -848,13 +774,11 @@ $\mathbf{X}=\left(\boldsymbol{x}_1, \boldsymbol{x}_2, \ldots, \boldsymbol{x}_m\r
 (参见10.2节) 
 
 $$
-
 \begin{aligned}
 -\sum_{i=1}^m\left\|\mathbf{W}^{\top} \boldsymbol{x}_i\right\|_2^2 & =-\left\|\mathbf{W}^{\top} \mathbf{X}\right\|_F^2 \\
 & =-\operatorname{tr}\left(\left(\mathbf{W}^{\top} \mathbf{X}\right)\left(\mathbf{W}^{\top} \mathbf{X}\right)^{\top}\right) \\
 & =-\operatorname{tr}\left(\mathbf{W}^{\top} \mathbf{X} \mathbf{X}^{\top} \mathbf{W}\right)
 \end{aligned}
-
 $$
 
 
@@ -884,7 +808,6 @@ $\sum_{i=1}^m \boldsymbol{x}_i \boldsymbol{x}_i^{\top}=\mathbf{X X}^{\top}$
 
 
 $$
-
 \boldsymbol{x}_i \boldsymbol{x}_i^{\top}=\left[\begin{array}{c}
 x_{i 1} \\
 x_{i 2} \\
@@ -898,7 +821,6 @@ x_{i 2} x_{i 1} & x_{i 2} x_{i 2} & \cdots & x_{i 2} x_{i d} \\
 \vdots & \vdots & \ddots & \vdots \\
 x_{i d} x_{i 1} & x_{i d} x_{i 2} & \cdots & x_{i d} x_{i d}
 \end{array}\right]_{d \times d}
-
 $$
 
 
@@ -907,7 +829,6 @@ $$
 得 
 
 $$
-
 \begin{aligned}
 \sum_{i=1}^m \boldsymbol{x}_i \boldsymbol{x}_i^{\top}= & \sum_{i=1}^m\left[\begin{array}{cccc}
 x_{i 1} x_{i 1} & x_{i 1} x_{i 2} & \cdots & x_{i 1} x_{i d} \\
@@ -922,7 +843,6 @@ x_{i d} x_{i 1} & x_{i d} x_{i 2} & \cdots & x_{i d} x_{i d}
 \sum_{i=1}^m x_{i d} x_{i 1} & \sum_{i=1}^m x_{i d} x_{i 2} & \cdots & \sum_{i=1}^m x_{i d} x_{i d}
 \end{array}\right]_{d \times d} }
 \end{aligned}
-
 $$
 
 
@@ -931,7 +851,6 @@ $$
 
 
 $$
-
 \mathbf{X X}^{\top}=\left[\begin{array}{llll}
 \boldsymbol{x}_1 & \boldsymbol{x}_2 & \cdots & \boldsymbol{x}_d
 \end{array}\right]\left[\begin{array}{c}
@@ -940,7 +859,6 @@ $$
 \vdots \\
 \boldsymbol{x}_d^{\top}
 \end{array}\right]
-
 $$
 
 
@@ -950,7 +868,6 @@ $\boldsymbol{x}_i=\left(x_{i 1} ; x_{i 2} ; \ldots ; x_{i d}\right) \in \mathbb{
 代入 
 
 $$
-
 \begin{aligned}
 & \mathbf{X X}^{\top}=\left[\begin{array}{cccc}
 x_{11} & x_{21} & \cdots & x_{m 1} \\
@@ -971,7 +888,6 @@ x_{m 1} & x_{m 2} & \cdots & x_{m d}
 \end{array}\right]_{d \times d} \\
 &
 \end{aligned}
-
 $$
 
 
@@ -984,9 +900,7 @@ $\sum_{i=1}^m \boldsymbol{x}_i \boldsymbol{x}_i^{\top}=\mathbf{X X}^{\top}$
 
 
 $$
-
 \operatorname{tr}\left(\mathbf{W}^{\top}\left(\sum_{i=1}^m \boldsymbol{x}_i \boldsymbol{x}_i^{\top}\right) \mathbf{W}\right)=\operatorname{tr}\left(\mathbf{W}^{\top} \mathbf{X} \mathbf{X}^{\top} \mathbf{W}\right)
-
 $$
 
 
@@ -1000,9 +914,7 @@ $X=\left\{x_1, x_2, \ldots, x_n\right\}$ 来说, 均值 $M$ 为
 
 
 $$
-
 M=\frac{x_1+x_2+\ldots+x_n}{n}=\sum_{i=1}^n x_i
-
 $$
 
 
@@ -1010,12 +922,10 @@ $$
 则方差 $\sigma_X^2$ 公式为 
 
 $$
-
 \begin{aligned}
 \sigma^2 & =\frac{\left(x_1-M\right)^2+\left(x_2-M\right)^2+\ldots+\left(x_n-M\right)^2}{n} \\
 & =\frac{1}{n} \sum_{i=1}^n\left(x_i-M\right)^2
 \end{aligned}
-
 $$
 
 
@@ -1027,12 +937,10 @@ $X^{\prime}=\left\{x_1^{\prime}, x_2^{\prime}, \ldots, x_n^{\prime}\right\}$,
 均值为 $M^{\prime}$, 则下式 
 
 $$
-
 \begin{aligned}
 \sigma_{X X^{\prime}}^2 & =\frac{\left(x_1-M\right)\left(x_1^{\prime}-M^{\prime}\right)+\left(x_2-M\right)\left(x_2^{\prime}-M^{\prime}\right)+\ldots+\left(x_n-M\right)\left(x_n^{\prime}-M^{\prime}\right)}{n} \\
 & =\frac{1}{n} \sum_{i=1}^n\left(x_i-M\right)\left(x_i^{\prime}-M^{\prime}\right)
 \end{aligned}
-
 $$
 
 
@@ -1061,14 +969,12 @@ $\sigma_{X X^{\prime}}^2<0$; 如果 两组数据与自己的均值的大小关�
 
 
 $$
-
 \mathbf{X}=\left(\boldsymbol{x}_1, \boldsymbol{x}_2, \ldots, \boldsymbol{x}_m\right)=\left[\begin{array}{cccc}
 x_{11} & x_{21} & \cdots & x_{m 1} \\
 x_{12} & x_{22} & \cdots & x_{m 2} \\
 \vdots & \vdots & \ddots & \vdots \\
 x_{1 d} & x_{2 d} & \cdots & x_{m d}
 \end{array}\right]_{d \times m}
-
 $$
 
  矩阵 $\mathbf{X}$ 每一行表示一维特征,
@@ -1086,14 +992,12 @@ $\mathbf{1} \in \mathbb{R}^{m \times 1}$ 为全 1 列向量, 参见习题 10.3),
 
 
 $$
-
 \frac{1}{m} \mathbf{X X}^{\top}=\frac{1}{m}\left[\begin{array}{cccc}
 \sum_{i=1}^m x_{i 1} x_{i 1} & \sum_{i=1}^m x_{i 1} x_{i 2} & \cdots & \sum_{i=1}^m x_{i 1} x_{i d} \\
 \sum_{i=1}^m x_{i 2} x_{i 1} & \sum_{i=1}^m x_{i 2} x_{i 2} & \cdots & \sum_{i=1}^m x_{i 2} x_{i d} \\
 \vdots & \vdots & \ddots & \vdots \\
 \sum_{i=1}^m x_{i d} x_{i 1} & \sum_{i=1}^m x_{i d} x_{i 2} & \cdots & \sum_{i=1}^m x_{i d} x_{i d}
 \end{array}\right]_{d \times d}
-
 $$
 
 
@@ -1143,12 +1047,10 @@ $\boldsymbol{w}_i^{\top} \sum_{j=1}^m \boldsymbol{x}_j=\boldsymbol{w}_i^{\top} \
 由式（10.15）可知，主成分分析的优化目标为 
 
 $$
-
 \begin{aligned}
 &\min\limits_{\mathbf W} \quad-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)\\
 &s.t. \quad\mathbf W^{\mathrm{T}} \mathbf W=\mathbf I
 \end{aligned}
-
 $$
 
 
@@ -1156,12 +1058,10 @@ $$
 
 
 $$
-
 \begin{aligned}
 L(\mathbf W,\Theta)&=-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\langle \Theta,\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I\rangle \\
 &=-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\text { tr }\left(\Theta^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right) 
 \end{aligned}
-
 $$
 
 
@@ -1170,9 +1070,7 @@ $$
 
 
 $$
-
 L(\mathbf W,\boldsymbol{\Lambda})=-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\text { tr }\left(\boldsymbol{\Lambda}^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right)
-
 $$
 
 
@@ -1180,12 +1078,10 @@ $$
 对拉格朗日函数关于$\mathbf{W}$求导可得 
 
 $$
-
 \begin{aligned}
 \cfrac{\partial L(\mathbf W,\boldsymbol{\Lambda})}{\partial \mathbf W}&=\cfrac{\partial}{\partial \mathbf W}\left[-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\text { tr }\left(\boldsymbol{\Lambda}^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right)\right] \\
 &=-\cfrac{\partial}{\partial \mathbf W}\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\cfrac{\partial}{\partial \mathbf W}\text { tr }\left(\boldsymbol{\Lambda}^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right) \\
 \end{aligned}
-
 $$
 
 
@@ -1194,13 +1090,11 @@ $$
 
 
 $$
-
 \begin{aligned}
 \cfrac{\partial L(\mathbf W,\boldsymbol{\Lambda})}{\partial \mathbf W}&=-2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+\mathbf{W}\boldsymbol{\Lambda}+\mathbf{W}\boldsymbol{\Lambda}^{\mathrm{T}}  \\
 &=-2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+\mathbf{W}(\boldsymbol{\Lambda}+\boldsymbol{\Lambda}^{\mathrm{T}} ) \\
 &=-2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+2\mathbf{W}\boldsymbol{\Lambda}
 \end{aligned}
-
 $$
 
 
@@ -1208,12 +1102,10 @@ $$
 
 
 $$
-
 \begin{aligned}
 -2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+2\mathbf{W}\boldsymbol{\Lambda}&=\mathbf 0\\
 \mathbf X\mathbf X^{\mathrm{T}} \mathbf W&=\mathbf{W}\boldsymbol{\Lambda}\\
 \end{aligned}
-
 $$
 
 
@@ -1222,9 +1114,7 @@ $$
 
 
 $$
-
 \mathbf X\mathbf X^{\mathrm{T}} \boldsymbol w_i=\lambda _i\boldsymbol w_i,\quad i=1,2,...,d^{\prime}
-
 $$
 
 
@@ -1233,7 +1123,6 @@ $$
 
 
 $$
-
 \begin{aligned}
 \min\limits_{\mathbf W}-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)&=\max\limits_{\mathbf W}\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W) \\
 &=\max\limits_{\mathbf W}\sum_{i=1}^{d^{\prime}}\boldsymbol w_i^{\mathrm{T}}\mathbf X\mathbf X^{\mathrm{T}} \boldsymbol w_i \\
@@ -1241,7 +1130,6 @@ $$
 &=\max\limits_{\mathbf W}\sum_{i=1}^{d^{\prime}}\lambda _i\boldsymbol w_i^{\mathrm{T}}\boldsymbol w_i \\
 &=\max\limits_{\mathbf W}\sum_{i=1}^{d^{\prime}}\lambda _i \\
 \end{aligned}
-
 $$
 
 
@@ -1258,9 +1146,7 @@ $\mathbf{X X}^{\top} \mathbf{W}=\mathbf{W} \boldsymbol{\Lambda}$
 
 
 $$
-
 \mathbf{W}^{\top} \mathbf{X} \mathbf{X}^{\top} \mathbf{W}=\mathbf{W}^{\top} \mathbf{W} \boldsymbol{\Lambda} = \boldsymbol{\Lambda}
-
 $$
 
 
@@ -1273,9 +1159,7 @@ $\mathbf{X X} \mathbf{X}^{\top}$ 的 $d^{\prime}$ 个特征值组成的对角阵
 
 
 $$
-
 \operatorname{tr}\left(\mathbf{W}^{\top} \mathbf{X} \mathbf{X}^{\top} \mathbf{W}\right)=\operatorname{tr}(\boldsymbol{\Lambda})=\sum_{i=1}^{d^{\prime}} \lambda_i
-
 $$
 
 
@@ -1340,12 +1224,10 @@ $\mathbf{W} \Lambda$ 的第 $j$ 列, 仅此而已。
 
 
 $$
-
 \begin{aligned}
 \mathbf{W} & =\left(\sum_{i=1}^m \boldsymbol{z}_i \boldsymbol{z}_i^{\top}\right) \mathbf{W} \boldsymbol{\Lambda}^{-1}=\sum_{i=1}^m\left(\boldsymbol{z}_i\left(\boldsymbol{z}_i^{\top} \mathbf{W} \boldsymbol{\Lambda}^{-1}\right)\right) \\
 & =\sum_{i=1}^m\left(\boldsymbol{z}_i \boldsymbol{\alpha}_i\right)
 \end{aligned}
-
 $$
 
  其中
@@ -1372,9 +1254,7 @@ $\phi\left(\boldsymbol{x}_i\right)$ 的结果。
 
 
 $$
-
 \left(\sum_{i=1}^{m} \phi(\boldsymbol{x}_{i}) \phi(\boldsymbol{x}_{i})^{\mathrm{T}}\right)\boldsymbol w_j=\left(\sum_{i=1}^{m} \boldsymbol z_i \boldsymbol z_i^{\mathrm{T}}\right)\boldsymbol w_j=\mathbf{Z}\mathbf{Z}^{\mathrm{T}}\boldsymbol w_j=\lambda_j\boldsymbol w_j
-
 $$
 
 
@@ -1382,9 +1262,7 @@ $$
 
 
 $$
-
 \boldsymbol w_j=\sum_{i=1}^{m} \phi\left(\boldsymbol{x}_{i}\right) \alpha_{i}^j=\sum_{i=1}^{m} \boldsymbol z_i \alpha_{i}^j=\mathbf{Z}\boldsymbol{\alpha}^j
-
 $$
 
 
@@ -1392,12 +1270,10 @@ $$
 
 
 $$
-
 \begin{aligned}
 \mathbf{Z}\mathbf{Z}^{\mathrm{T}}\mathbf{Z}\boldsymbol{\alpha}^j&=\lambda_j\mathbf{Z}\boldsymbol{\alpha}^j \\
 \mathbf{Z}\mathbf{Z}^{\mathrm{T}}\mathbf{Z}\boldsymbol{\alpha}^j&=\mathbf{Z}\lambda_j\boldsymbol{\alpha}^j
 \end{aligned}
-
 $$
 
 
@@ -1405,9 +1281,7 @@ $$
 
 
 $$
-
 \mathbf{Z}^{\mathrm{T}}\mathbf{Z}\boldsymbol{\alpha}^j=\lambda_j\boldsymbol{\alpha}^j
-
 $$
 
 
@@ -1415,9 +1289,7 @@ $$
 
 
 $$
-
 \mathbf{K}\boldsymbol{\alpha}^j=\lambda_j\boldsymbol{\alpha}^j
-
 $$
 
 
@@ -1468,21 +1340,17 @@ $\mathbf{D} \in \mathbb{R}^{m \times m}$ 由"西瓜书"图10.8的 Step1
 
 
 $$
-
 w_{i j}=\frac{\sum\limits_{k \in Q_{i}} C_{j k}^{-1}}{\sum\limits_{l, s \in Q_{i}} C_{l s}^{-1}}
-
 $$
 
 
 由书中上下文可知，式(10.28)是如下优化问题的解。 
 
 $$
-
 \begin{aligned} 
 \min _{\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m}} & \sum_{i=1}^{m}\left\|\boldsymbol{x}_{i}-\sum_{j \in Q_{i}} w_{i j} \boldsymbol{x}_{j}\right\|_{2}^{2} \\ 
 \text { s.t. } & \sum_{j \in Q_{i}} w_{i j}=1 
 \end{aligned}
-
 $$
 
 
@@ -1490,14 +1358,12 @@ $$
 
 
 $$
-
 \begin{aligned} 
 \sum_{i=1}^{m}\left\|\boldsymbol{x}_{i}-\sum_{j \in Q_{i}} w_{i j} \boldsymbol{x}_{j}\right\|_{2}^{2}&=\sum_{i=1}^{m}\left\|\sum_{j \in Q_{i}} w_{i j} \boldsymbol{x}_{i}-\sum_{j \in Q_{i}} w_{i j} \boldsymbol{x}_{j}\right\|_{2}^{2} \\ 
 &=\sum_{i=1}^{m}\left\|\sum_{j \in Q_{i}} w_{i j}(\boldsymbol{x}_{i}-\boldsymbol{x}_{j}) \right\|_{2}^{2} \\ 
 &=\sum_{i=1}^{m}\left\|\mathbf{X}_i\boldsymbol{w_i} \right\|_{2}^{2} \\
 &=\sum_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i} \\ 
 \end{aligned}
-
 $$
 
 
@@ -1505,9 +1371,7 @@ $$
 
 
 $$
-
 \sum_{j \in Q_{i}} w_{i j}=\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}=1
-
 $$
 
 
@@ -1515,12 +1379,10 @@ $$
 
 
 $$
-
 \begin{aligned} 
 \min _{\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m}} & \sum_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i} \\ 
 \text { s.t. } & \boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}=1
 \end{aligned}
-
 $$
 
 
@@ -1528,9 +1390,7 @@ $$
 
 
 $$
-
 L(\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m},\lambda)=\sum_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda\left(\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}-1\right)
-
 $$
 
 
@@ -1538,12 +1398,10 @@ $$
 
 
 $$
-
 \begin{aligned} 
 \cfrac{\partial L(\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m},\lambda)}{\partial \boldsymbol{w_i}}&=\cfrac{\partial \left[\sum_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda\left(\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}-1\right)\right]}{\partial \boldsymbol{w_i}}=0\\
 &=\cfrac{\partial \left[\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda\left(\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}-1\right)\right]}{\partial \boldsymbol{w_i}}=0\\
 \end{aligned}
-
 $$
 
 
@@ -1551,21 +1409,17 @@ $$
 
 
 $$
-
 \begin{aligned}
 \cfrac{\partial \left[\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda\left(\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}-1\right)\right]}{\partial \boldsymbol{w_i}}&=2\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda \boldsymbol{I}=0\\
 \mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}&=-\frac{1}{2}\lambda \boldsymbol{I}
 \end{aligned}
-
 $$
 
  若$\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i$可逆，则
 
 
 $$
-
 \boldsymbol{w_i}=-\frac{1}{2}\lambda(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}\boldsymbol{I}
-
 $$
 
 
@@ -1573,12 +1427,10 @@ $$
 
 
 $$
-
 \begin{aligned}
 \boldsymbol{I}^{\mathrm{T}}\boldsymbol{w_i}&=-\frac{1}{2}\lambda\boldsymbol{I}^{\mathrm{T}}(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}\boldsymbol{I}=1\\
 -\frac{1}{2}\lambda&=\cfrac{1}{\boldsymbol{I}^{\mathrm{T}}(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}\boldsymbol{I}}
 \end{aligned}
-
 $$
 
 
@@ -1586,9 +1438,7 @@ $$
 
 
 $$
-
 \boldsymbol{w_i}=\cfrac{(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}\boldsymbol{I}}{\boldsymbol{I}^{\mathrm{T}}(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}\boldsymbol{I}}
-
 $$
 
 
@@ -1597,9 +1447,7 @@ $$
 
 
 $$
-
 w_{ij}=w_{i q_i^j}=\frac{\sum\limits_{k \in Q_{i}} C_{j k}^{-1}}{\sum\limits_{l, s \in Q_{i}} C_{l s}^{-1}}
-
 $$
 
 
@@ -1616,12 +1464,10 @@ $\boldsymbol{v}_i \in \mathbb{R}^{d^{\prime} \times 1}$,
 则式(10.29)可重写为 
 
 $$
-
 \begin{aligned}
 \min _{\boldsymbol{z}_1, \boldsymbol{z}_2, \ldots, \boldsymbol{z}_m} & \sum_{i=1}^m\left\|\boldsymbol{v}_i\right\|_2^2 \\
 \text { s.t. } & \boldsymbol{v}_i=\boldsymbol{z}_i-\sum_{j \in Q_i} w_{i j} \boldsymbol{z}_j, i=1,2, \ldots, m
 \end{aligned}
-
 $$
 
 
@@ -1632,9 +1478,7 @@ $\mathbf{Z}=\left(\boldsymbol{z}_1, \boldsymbol{z}_2, \ldots, \boldsymbol{z}_i, 
 之外其余元素均为零, 则 
 
 $$
-
 \boldsymbol{z}_i=\mathbf{Z I}_i
-
 $$
 
  令
@@ -1648,7 +1492,6 @@ $\mathbf{W}=\left(\boldsymbol{w}_1, \boldsymbol{w}_2, \ldots, \boldsymbol{w}_i, 
 
 
 $$
-
 \mathbf{W}=\left(\boldsymbol{w}_1, \boldsymbol{w}_2, \ldots, \boldsymbol{w}_i, \ldots, \boldsymbol{w}_m\right)^{\top}=\left[\begin{array}{cccccc}
 w_{11} & w_{21} & \cdots & w_{i 1} & \cdots & w_{m 1} \\
 w_{12} & w_{22} & \cdots & w_{i 2} & \cdots & w_{m 2} \\
@@ -1657,7 +1500,6 @@ w_{1 j} & w_{2 j} & \cdots & w_{i j} & \cdots & w_{m j} \\
 \vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
 w_{1 m} & w_{2 m} & \cdots & w_{i m} & \cdots & w_{m m}
 \end{array}\right]^{\top}
-
 $$
 
 
@@ -1668,9 +1510,7 @@ $w_{i j} \neq 0, j \in Q_i$, 且它们 的和等于 1 , 则
 
 
 $$
-
 \sum_{j \in Q_i} w_{i j} \boldsymbol{z}_j=\mathbf{Z} \boldsymbol{w}_i
-
 $$
 
 
@@ -1679,9 +1519,7 @@ $$
 
 
 $$
-
 \boldsymbol{v}_i=\boldsymbol{z}_i-\sum_{j \in Q_i} w_{i j} \boldsymbol{z}_j=\mathbf{Z I}_i-\mathbf{Z} \boldsymbol{w}_i=\mathbf{Z}\left(\mathbf{I}_i-\boldsymbol{w}_i\right)
-
 $$
 
 
@@ -1692,9 +1530,7 @@ $\mathbf{V}=\left(\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_i, 
 
 
 $$
-
 \mathbf{V}=\mathbf{Z}\left(\mathbf{I}-\mathbf{W}^{\top}\right)=\mathbf{Z}\left(\mathbf{I}^{\top}-\mathbf{W}^{\top}\right)=\mathbf{Z}(\mathbf{I}-\mathbf{W})^{\top}
-
 $$
 
 
@@ -1703,7 +1539,6 @@ $$
 
 
 $$
-
 \begin{aligned}
 \sum_{i=1}^m\left\|\boldsymbol{v}_i\right\|_2^2 & =\|\mathbf{V}\|_F^2 \\
 & =\operatorname{tr}\left(\mathbf{V} \mathbf{V}^{\top}\right) \\
@@ -1711,7 +1546,6 @@ $$
 & =\operatorname{tr}\left(\mathbf{Z}(\mathbf{I}-\mathbf{W})^{\top}(\mathbf{I}-\mathbf{W}) \mathbf{Z}^{\top}\right) \\
 & =\operatorname{tr}\left(\mathbf{Z}\mathbf{M}\mathbf{Z}^{\top}\right)
 \end{aligned}
-
 $$
 
 
@@ -1722,9 +1556,7 @@ $$
 
 
 $$
-
 L(\mathbf{Z}, \boldsymbol{\Lambda})=\operatorname{tr}\left(\mathbf{Z M Z}^{\top}\right)+\left(\mathbf{Z Z}^{\top}-\mathbf{I}\right) \boldsymbol{\Lambda}
-
 $$
 
 
@@ -1733,9 +1565,7 @@ $$
 
 
 $$
-
 L(\mathbf{P}, \boldsymbol{\Lambda})=\operatorname{tr}\left(\mathbf{P}^{\top} \mathbf{M} \mathbf{P}\right)+\left(\mathbf{P}^{\top} \mathbf{P}-\mathbf{I}\right) \mathbf{\Lambda}
-
 $$
 
 
@@ -1743,12 +1573,10 @@ $$
 求导并令导数等于 0 ： 
 
 $$
-
 \begin{aligned}
 \frac{\partial L(\mathbf{P}, \boldsymbol{\Lambda})}{\partial \mathbf{P}} & =\frac{\partial \operatorname{tr}\left(\mathbf{P}^{\top} \mathbf{M} \mathbf{P}\right)}{\partial \mathbf{P}}+\frac{\partial\left(\mathbf{P}^{\top} \mathbf{P}-\mathbf{I}\right)}{\partial \mathbf{P}} \boldsymbol{\Lambda} \\
 & =2 \mathbf{M} \mathbf{P}-2 \mathbf{P} \boldsymbol{\Lambda}=\mathbf{0}
 \end{aligned}
-
 $$
 
 
@@ -1775,7 +1603,6 @@ $\boldsymbol{u}^{\top} \mathbf{M} \boldsymbol{u}=\|\boldsymbol{u}\|_{\mathbf{M}}
 
 
 $$
-
 \begin{aligned}
 \boldsymbol{u}^{\top} \mathbf{M} \boldsymbol{u} & =\left[\begin{array}{llll}
 u_1 & u_2 & \ldots & u_d
@@ -1803,7 +1630,6 @@ u_1 m_{d 1}+u_2 m_{d 2}+\ldots+u_d m_{d d}
 & \ldots \\
 & +u_d u_1 m_{d 1}+u_d u_2 m_{d 2}+\ldots+u_d u_d m_{d d}
 \end{aligned}
-
 $$
 
  注意, 对应到本式符号,
@@ -1811,9 +1637,7 @@ $$
 
 
 $$
-
 u_1 u_1 m_{11}+u_2 u_2 m_{22}+\ldots+u_d u_d m_{d d}
-
 $$
 
 
@@ -1822,9 +1646,7 @@ $m_{i i}(1 \leqslant i \leqslant d)$ 部分, 即
 
 
 $$
-
 u_1 u_1+u_2 u_2+\ldots+u_d u_d
-
 $$
 
  对比以上三个结果,
@@ -1880,9 +1702,7 @@ $(1 \leqslant n \leqslant N)$, 对于样本 $\boldsymbol{x}_i$ 来说,
 
 
 $$
-
 p_n^{\boldsymbol{x}_i}=\sum_{j \in \Omega_n} p_{i j}, 1 \leqslant n \leqslant N
-
 $$
 
 
