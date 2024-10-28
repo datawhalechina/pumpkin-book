@@ -19,9 +19,7 @@
 
 
 $$
-
 y=f\left(\sum\limits_{i=1}^{n}w_ix_i-\theta\right)=f(\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x}-\theta)
-
 $$
 
 
@@ -29,21 +27,17 @@ $$
 
 
 $$
-
 y=\varepsilon(\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x}-\theta)=\left\{\begin{array}{rcl}
 1,& {\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x} -\theta\geqslant 0};\\
 0,& {\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x} -\theta < 0}.\\
 \end{array} \right.
-
 $$
 
  由于$n$维空间中的超平面方程为
 
 
 $$
-
 w_1x_1+w_2x_2+\cdots+w_nx_n+b  =\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x} +b=0
-
 $$
 
 
@@ -53,9 +47,7 @@ $$
 
 
 $$
-
 T=\{(\boldsymbol{x}_1,y_1),(\boldsymbol{x}_2,y_2),\cdots,(\boldsymbol{x}_N,y_N)\}
-
 $$
 
 
@@ -63,9 +55,7 @@ $$
 
 
 $$
-
 \boldsymbol{w}^{\mathrm{T}}\boldsymbol{x}+b=0
-
 $$
 
 
@@ -75,9 +65,7 @@ $$
 
 
 $$
-
 \boldsymbol{w}^{\mathrm{T}}\boldsymbol{x}-\theta=0
-
 $$
 
 
@@ -85,9 +73,7 @@ $$
 
 
 $$
-
 (\hat{y}-y)\left(\boldsymbol{w}^\mathrm{T}\boldsymbol{x}-\theta\right)\geqslant0
-
 $$
 
 
@@ -95,10 +81,8 @@ $$
 
 
 $$
-
 L(\boldsymbol{w},\theta)=\sum_{\boldsymbol{x}\in M}(\hat{y}-y)
 \left(\boldsymbol{w}^\mathrm{T}\boldsymbol{x}-\theta\right)
-
 $$
 
 
@@ -108,9 +92,7 @@ $$
 
 
 $$
-
 T=\{(\boldsymbol{x}_1,y_1),(\boldsymbol{x}_2,y_2),\cdots,(\boldsymbol{x}_N,y_N)\}
-
 $$
 
 
@@ -118,9 +100,7 @@ $$
 
 
 $$
-
 \min\limits_{\boldsymbol{w},\theta}L(\boldsymbol{w},\theta)=\min\limits_{\boldsymbol{w},\theta}\sum_{\boldsymbol{x_i}\in M}(\hat{y}_i-y_i)(\boldsymbol{w}^\mathrm{T}\boldsymbol{x}_i-\theta)
-
 $$
 
 
@@ -128,9 +108,7 @@ $$
 
 
 $$
-
 -\theta=-1\cdot w_{n+1}=x_{n+1}\cdot w_{n+1}
-
 $$
 
 
@@ -138,14 +116,12 @@ $$
 
 
 $$
-
 \begin{aligned}
 \boldsymbol{w}^\mathrm{T}\boldsymbol{x_i}-\theta&=\sum
 \limits_{j=1}^n w_jx_j+x_{n+1}\cdot w_{n+1}\\ 
 &=\sum\limits_{j=1}^{n+1}w_jx_j\\
 &=\boldsymbol{w}^{\mathrm{T}}\boldsymbol{x_i}
 \end{aligned}
-
 $$
 
 
@@ -154,9 +130,7 @@ $$
 
 
 $$
-
 \min\limits_{\boldsymbol{w}}L(\boldsymbol{w})=\min\limits_{\boldsymbol{w}}\sum_{\boldsymbol{x_i}\in M}(\hat{y}_i-y_i)\boldsymbol{w}^\mathrm{T}\boldsymbol{x_i}
-
 $$
 
 
@@ -164,9 +138,7 @@ $$
 
 
 $$
-
 \nabla_{\boldsymbol{w}}L(\boldsymbol{w})=\sum_{\boldsymbol{x_i}\in M}(\hat{y}_i-y_i)\boldsymbol{x_i}
-
 $$
 
 
@@ -175,18 +147,14 @@ $$
 
 
 $$
-
 \boldsymbol w \leftarrow \boldsymbol w+\Delta \boldsymbol w
-
 $$
 
 
 
 
 $$
-
 \Delta \boldsymbol w=-\eta(\hat{y}_i-y_i)\boldsymbol x_i=\eta(y_i-\hat{y}_i)\boldsymbol x_i
-
 $$
 
 
@@ -200,9 +168,7 @@ $$
 
 
 $$
-
 (x_1,x_2)\rightarrow h_1=\varepsilon(x_1-x_2-0.5),h_2=\varepsilon(x_2-x_1-0.5)\rightarrow y=\varepsilon(h_1+h_2-0.5)
-
 $$
 
 
@@ -219,16 +185,13 @@ $$
 因为 
 
 $$
-
 \Delta \theta_j = -\eta \cfrac{\partial E_k}{\partial \theta_j}
-
 $$
 
 
 又 
 
 $$
-
 \begin{aligned} 
 \cfrac{\partial E_k}{\partial \theta_j} &= \cfrac{\partial E_k}{\partial \hat{y}_j^k} \cdot\cfrac{\partial \hat{y}_j^k}{\partial \theta_j} \\
 &= \cfrac{\partial E_k}{\partial \hat{y}_j^k} \cdot\cfrac{\partial [f(\beta_j-\theta_j)]}{\partial \theta_j} \\
@@ -240,16 +203,13 @@ $$
 &=(y_j^k-\hat{y}_j^k)\hat{y}_j^k\left(1-\hat{y}_j^k\right)  \\
 &= g_j
 \end{aligned}
-
 $$
 
  所以
 
 
 $$
-
 \Delta \theta_j = -\eta \cfrac{\partial E_k}{\partial \theta_j}=-\eta g_j
-
 $$
 
 
@@ -259,16 +219,13 @@ $$
 因为 
 
 $$
-
 \Delta v_{ih} = -\eta \cfrac{\partial E_k}{\partial v_{ih}}
-
 $$
 
  又
 
 
 $$
-
 \begin{aligned} 
 \cfrac{\partial E_k}{\partial v_{ih}} &= \sum_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}_j^k} \cdot \cfrac{\partial \hat{y}_j^k}{\partial \beta_j} \cdot \cfrac{\partial \beta_j}{\partial b_h} \cdot \cfrac{\partial b_h}{\partial \alpha_h} \cdot \cfrac{\partial \alpha_h}{\partial v_{ih}} \\
 &= \sum_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}_j^k} \cdot \cfrac{\partial \hat{y}_j^k}{\partial \beta_j} \cdot \cfrac{\partial \beta_j}{\partial b_h} \cdot \cfrac{\partial b_h}{\partial \alpha_h} \cdot x_i \\ 
@@ -279,16 +236,13 @@ $$
 &= -b_h(1-b_h) \cdot \sum_{j=1}^{l} g_j \cdot w_{hj}  \cdot x_i \\
 &= -e_h \cdot x_i
 \end{aligned}
-
 $$
 
  所以
 
 
 $$
-
 \Delta v_{ih} =-\eta \cfrac{\partial E_k}{\partial v_{ih}} =\eta e_h x_i
-
 $$
 
 
@@ -298,16 +252,13 @@ $$
 因为 
 
 $$
-
 \Delta \gamma_h = -\eta \cfrac{\partial E_k}{\partial \gamma_h}
-
 $$
 
 
 又 
 
 $$
-
 \begin{aligned} 
 \cfrac{\partial E_k}{\partial \gamma_h} &= \sum_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}_j^k} \cdot \cfrac{\partial \hat{y}_j^k}{\partial \beta_j} \cdot \cfrac{\partial \beta_j}{\partial b_h} \cdot \cfrac{\partial b_h}{\partial \gamma_h} \\
 &= \sum_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}_j^k} \cdot \cfrac{\partial \hat{y}_j^k}{\partial \beta_j} \cdot \cfrac{\partial \beta_j}{\partial b_h} \cdot f^{\prime}(\alpha_h-\gamma_h) \cdot (-1) \\
@@ -316,16 +267,13 @@ $$
 &= \sum_{j=1}^{l}g_j\cdot w_{hj} \cdot b_h(1-b_h)\\
 &=e_h
 \end{aligned}
-
 $$
 
  所以
 
 
 $$
-
 \Delta \gamma_h=-\eta\cfrac{\partial E_k}{\partial \gamma_h} = -\eta e_h
-
 $$
 
 
@@ -353,9 +301,7 @@ Machine，简称RBM）本质上是一个引入了隐变量的无向图模型，�
 
 
 $$
-
 E_{\rm graph}=E_{\rm edges}+E_{\rm nodes}
-
 $$
 
 
@@ -363,9 +309,7 @@ $$
 
 
 $$
-
 E_{\rm edges}=\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}E_{{\rm edge}_{ij}}=-\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}w_{ij}s_is_j
-
 $$
 
 
@@ -373,9 +317,7 @@ $$
 
 
 $$
-
 E_{\rm nodes}=\sum_{i=1}^nE_{{\rm node}_i}=-\sum_{i=1}^n\theta_is_i
-
 $$
 
 
@@ -383,9 +325,7 @@ $$
 
 
 $$
-
 E_{\rm graph}=E_{\rm edges}+E_{\rm nodes}=-\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}w_{ij}s_is_j-\sum_{i=1}^n\theta_is_i
-
 $$
 
 
