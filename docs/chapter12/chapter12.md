@@ -50,10 +50,7 @@ $\left|\frac{1}{m} \sum_{i=1}^m x_i-\frac{1}{m} \sum_{i=1}^m \mathbb{E}\left(x_i
 
 
 $$
-
-
 \frac{1}{m} \sum_{i=1}^m x_i-\frac{1}{m} \sum_{i=1}^m \mathbb{E}\left(x_i\right) \geqslant \epsilon \quad \vee \quad \frac{1}{m} \sum_{i=1}^m x_i-\frac{1}{m} \sum_{i=1}^m \mathbb{E}\left(x_i\right) \leqslant-\epsilon
-
 $$
 
 
@@ -77,10 +74,7 @@ $2 e^{-2 m \epsilon^2}$ )。
 McDiarmid不等式：首先解释下前提条件：
 
 $$
-
-
 \sup _{x_{1}, \ldots, x_{m}, x_{i}^{\prime}}\left|f\left(x_{1}, \ldots, x_{m}\right)-f\left(x_{1}, \ldots, x_{i-1}, x_{i}^{\prime}, x_{i+1}, \ldots, x_{m}\right)\right| \leqslant c_{i}
-
 $$
 
 
@@ -167,10 +161,7 @@ $P(h(\boldsymbol{x})=y) =1-P(h(\boldsymbol{x}) \neq y)$
 先解释什么是$h$与$D$"表现一致"，12.2节开头阐述了这样的概念，如果$h$能将$D$中所有样本按与真实标记一致的方式完全分开，我们称问题对学习算法是一致的。即$\left(h\left(\boldsymbol{x}_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}_{m}\right)=y_{m}\right)$为True。因为每个事件是独立的，所以上式可以写成$P\left(\left(h\left(\boldsymbol{x}_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}_{m}\right)=y_{m}\right)\right)=\prod_{i=1}^{m} P\left(h\left(\boldsymbol{x}_{i}\right)=y_{i}\right)$。根据对立事件的定义有：$\prod_{i=1}^{m} P\left(h\left(\boldsymbol{x}_{i}\right)=y_{i}\right)=\prod_{i=1}^{m}\left(1-P\left(h\left(\boldsymbol{x}_{i}\right) \neq y_{i}\right)\right)$，又根据公式(12.10)，有
 
 $$
-
-
 \prod_{i=1}^{m}\left(1-P\left(h\left(\boldsymbol{x}_{i}\right) \neq y_{i}\right)\right)<\prod_{i=1}^{m}(1-\epsilon)=(1-\epsilon)^{m}
-
 $$
 
 
@@ -182,10 +173,7 @@ $$
 
 
 $$
-
-
 \begin{aligned}P\left(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0\right) &=\sum_i^{\mathcal{\vert H\vert}}P\left(E(h_i)>\epsilon \wedge \widehat{E}(h_i)=0\right)\\&<|\mathcal{H}|(1-\epsilon)^{m}\end{aligned}
-
 $$
 
 
@@ -209,15 +197,12 @@ $$
 
 
 $$
-
-
 \begin{aligned}
 \vert\mathcal{H}\vert e^{-m \epsilon} &\leqslant \delta\\
 e^{-m \epsilon} &\leqslant \frac{\delta}{\vert\mathcal{H}\vert}\\
 -m \epsilon &\leqslant \ln\delta-\ln\vert\mathcal{H}\vert\\
 m &\geqslant \frac{1}{\epsilon}\left(\ln |\mathcal{H}|+\ln \frac{1}{\delta}\right)
 \end{aligned}
-
 $$
 
 
@@ -250,8 +235,6 @@ $E(h)=\frac{1}{m} \sum_{i=1}^m \mathbb{E}\left(\mathbb{I}\left(h\left(\boldsymbo
 
 
 $$
-
-
 \begin{aligned}
 P(|E(h)-\widehat{E}(h)| \geqslant \epsilon) &\leqslant 2 \exp \left(-2 m \epsilon^{2}\right)\\
 P(|E(h)-\widehat{E}(h)| \geqslant \epsilon) &\leqslant \delta\\
@@ -259,7 +242,6 @@ P(|E(h)-\widehat{E}(h)| \leqslant \epsilon) &\geqslant 1 - \delta\\
 P(-\epsilon \leqslant E(h)-\widehat{E}(h) \leqslant \epsilon) &\geqslant 1 - \delta\\
 P(\widehat{E}(h) -\epsilon \leqslant E(h) \leqslant \widehat{E}(h)+\epsilon) &\geqslant 1 - \delta\\
 \end{aligned}
-
 $$
 
 
@@ -275,13 +257,10 @@ $$
 
 
 $$
-
-
 \begin{aligned} 
 & P(\exists h \in \mathcal{H}:|E(h)-\widehat{E}(h)|>\epsilon) \\
 =& P\left(\left(\left|E_{h_{1}}-\widehat{E}_{h_{1}}\right|>\epsilon\right) \vee \ldots \vee\left(| E_{h_{|\mathcal{H}|}}-\widehat{E}_{h_{|\mathcal{H}|} |>\epsilon}\right)\right) \\ \leqslant & \sum_{h \in \mathcal{H}} P(|E(h)-\widehat{E}(h)|>\epsilon) 
 \end{aligned}
-
 $$
 
 
@@ -292,13 +271,10 @@ $$
 由式12.17： 
 
 $$
-
-
 \begin{aligned}
 &P(|E(h)-\widehat{E}(h)| \geqslant \epsilon) \leqslant 2 \exp \left(-2 m \epsilon^{2}\right)\\
 &\Rightarrow \sum_{h \in \mathcal{H}} P(|E(h)-\widehat{E}(h)|>\epsilon) \leqslant 2|\mathcal{H}| \exp \left(-2 m \epsilon^{2}\right)
 \end{aligned}
-
 $$
 
 
@@ -307,14 +283,11 @@ $$
 因此： 
 
 $$
-
-
 \begin{aligned}
 P(\exists h \in \mathcal{H}:|E(h)-\widehat{E}(h)|>\epsilon) 
 &\leqslant  \sum_{h \in \mathcal{H}} P(|E(h)-\widehat{E}(h)|>\epsilon)\\
 &\leqslant 2|\mathcal{H}| \exp \left(-2 m \epsilon^{2}\right)
 \end{aligned}
-
 $$
 
 
@@ -323,12 +296,9 @@ $$
 其对立事件： 
 
 $$
-
-
 \begin{aligned}
 P(\forall h\in\mathcal{H}:\vert E(h)-\widehat{E}(h)\vert\leqslant\epsilon)&=1-P(\exists h \in \mathcal{H}:|E(h)-\widehat{E}(h)|>\epsilon)\\ &\geqslant 1- 2|\mathcal{H}| \exp \left(-2 m \epsilon^{2}\right)
 \end{aligned}
-
 $$
 
 
@@ -338,10 +308,7 @@ $$
 
 
 $$
-
-
 P\left(\forall h\in\mathcal{H}:\vert E(h)-\widehat{E}(h)\vert\leqslant\sqrt{\frac{\ln |\mathcal{H}|+\ln (2 / \delta)}{2 m}}\right)\geqslant 1- \delta
-
 $$
 
 
@@ -375,10 +342,7 @@ the inequality
 
 
 $$
-
-
 \mathbf{P}\left(\pi^{(l)}>\varepsilon\right) \leqq 4 m^S(2 l) e^{-\varepsilon^2 l / 8} .
-
 $$
 
 
@@ -393,10 +357,7 @@ S 中"存在"one event 而不是 class S 中的 "任意" event。
 
 
 $$
-
-
 P(\exists h \in \mathcal{H}:|E(h)-\widehat{E}(h)|>\epsilon) \leqslant 2|\mathcal{H}| e^{-2 m \epsilon^2}
-
 $$
 
 
@@ -407,10 +368,7 @@ $$
 
 
 $$
-
-
 P(\forall h \in \mathcal{H}:|E(h)-\widehat{E}(h)| \leqslant \epsilon) \leqslant 1-2|\mathcal{H}| e^{-2 m \epsilon^2}
-
 $$
 
 
@@ -455,10 +413,7 @@ $\mathrm{VC}(\mathcal{H})=\max \left\{m: \Pi_{\mathcal{H}}(m)=2^{m}\right\}=0$
 
 
 $$
-
-
 \begin{array}{l}{\mathcal{H}_{| D}=\left\{\left(h\left(\boldsymbol{x}_{1}\right), h\left(\boldsymbol{x}_{2}\right), \ldots, h\left(\boldsymbol{x}_{m}\right)\right) | h \in \mathcal{H}\right\}} \\ {\mathcal{H}_{| D^{\prime}}=\left\{\left(h\left(\boldsymbol{x}_{1}\right), h\left(\boldsymbol{x}_{2}\right), \ldots, h\left(\boldsymbol{x}_{m-1}\right)\right) | h \in \mathcal{H}\right\}}\end{array}
-
 $$
 
 
@@ -468,13 +423,10 @@ $$
 
 
 $$
-
-
 \begin{aligned}
 \mathcal{H}_{\vert D}&=\{(+,-,-),(+,+,-),(+,+,+),(-,+,-),(-,-,+)\}\\
 \mathcal{H}_{\vert D^\prime}&=\{(+,+),(+,-),(-,+),(-,-)\}\\
 \end{aligned}
-
 $$
 
 
@@ -485,10 +437,7 @@ $$
 
 
 $$
-
-
 \left|\mathcal{H}_{| D}\right|=\left|\mathcal{H}_{| D^{\prime}}\right|+\left|\mathcal{H}_{D^{\prime} | D}\right|
-
 $$
 
 
@@ -498,10 +447,7 @@ $$
 
 
 $$
-
-
 \left|\mathcal{H}_{| D^{\prime}}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)
-
 $$
 
 
@@ -512,10 +458,7 @@ $$
 
 
 $$
-
-
 \left|\mathcal{H}_{D^{\prime}| D}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d-1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)
-
 $$
 
 
@@ -524,15 +467,12 @@ $$
 因此： 
 
 $$
-
-
 \begin{aligned}
 \left|\mathcal{H}_{| D}\right|&=\left|\mathcal{H}_{| D^{\prime}}\right|+\left|\mathcal{H}_{D^{\prime} | D}\right|\\
 &\leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right) + \sum_{i=0}^{d+1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)\\
 &=\sum_{i=0}^d \left(\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right) + \left(\begin{array}{c}{m-1} \\ {i-1}\end{array}\right)\right)\\
 &=\sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)
 \end{aligned}
-
 $$
 
 
@@ -542,10 +482,7 @@ $$
 
 
 $$
-
-
 \begin{aligned}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)+\left(\begin{array}{c}{m-1} \\ {i-1}\end{array}\right) &=\frac{(m-1) !}{(m-1-i) ! i !}+\frac{(m-1) !}{(m-1-i+1) !(i-1) !} \\ &=\frac{(m-1) !(m-i)}{(m-i)(m-1-i) ! i !}+\frac{(m-1) ! i}{(m-i) !(i-1) ! i} \\ &=\frac{(m-1) !(m-i)+(m-1) ! i}{(m-i) ! i !} \\ &=\frac{(m-1) !(m-i+i)}{(m-i) ! i !}=\frac{(m-1) ! m}{(m-i) ! i !} \\ &=\frac{m !}{(m-i) ! i !}=\left(\begin{array}{c}{m} \\ {i}\end{array}\right) \end{aligned}
-
 $$
 
 
@@ -556,12 +493,9 @@ $$
 
 
 $$
-
-
 \begin{aligned} \Pi_{\mathcal{H}}(m) & \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) \\ & \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{m}{d}\right)^{d-i} \\ &=\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i} \\ & \leqslant\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i} \\ 
 &={\left(\frac{m}{d}\right)}^d{\left(1+\frac{d}{m}\right)}^m\\
 &<\left(\frac{e \cdot m}{d}\right)^{d} \end{aligned}
-
 $$
 
 
@@ -575,13 +509,10 @@ $$
 
 
 $$
-
-
 P\left(\vert 
 E(h)-\widehat{E}(h) \vert> \epsilon
 \right) 
 \leqslant 4{\left(\frac{2em}{d}\right)}^d\exp\left(-\frac{m\epsilon^2}{8}\right)
-
 $$
 
 
@@ -590,12 +521,9 @@ $$
 
 
 $$
-
-
 \delta=\sqrt{
 \frac{8d\ln\frac{2em}{d}+8\ln\frac{4}{\delta}}{m}
 }
-
 $$
 
 
@@ -613,13 +541,10 @@ $$
 
 
 $$
-
-
 \begin{aligned}
 \delta^\prime = \frac{\delta}{2} \\
 \sqrt{\frac{\left(\ln 2 / \delta^{\prime}\right)}{2 m}}=\frac{\epsilon}{2}
 \end{aligned}
-
 $$
 
 
@@ -627,10 +552,7 @@ $$
 
 
 $$
-
-
 \widehat{E}(g)-\frac{\epsilon}{2} \leqslant E(g) \leqslant \widehat{E}(g)+\frac{\epsilon}{2}
-
 $$
 
 
@@ -639,10 +561,7 @@ $$
 
 
 $$
-
-
 P\left(|E(g)-\widehat{E}(g)| \leqslant \frac{\epsilon}{2}\right) \geqslant 1-\delta / 2
-
 $$
 
 
@@ -652,10 +571,7 @@ $$
 
 
 $$
-
-
 \sqrt{\frac{8 d \ln \frac{2 e m}{d}+8 \ln \frac{4}{\delta^{\prime}}}{m}}=\frac{\epsilon}{2}
-
 $$
 
 
@@ -663,13 +579,10 @@ $$
 由式12.29可知 
 
 $$
-
-
 P\left(\left\vert 
 E(h)-\widehat{E}(h) \right\vert\leqslant \frac{\epsilon}{2}
 \right)
 \geqslant 1-\frac{\delta}{2}
-
 $$
 
 
@@ -680,8 +593,6 @@ $$
 
 
 $$
-
-
 \begin{aligned}
 &P\left(
 \left(E(g)-\widehat{E}(g) \geqslant -\frac{\epsilon}{2} \right)\wedge\left(E(h)-\widehat{E}(h) \leqslant \frac{\epsilon}{2}
@@ -694,32 +605,25 @@ P\left(E(h)-\widehat{E}(h) \leqslant \frac{\epsilon}{2}\right)
 \\\geqslant &1 - \delta/2 + 1 - \delta/2 - 1
 \\=& 1-\delta
 \end{aligned}
-
 $$
 
 
  即 
 
 $$
-
-
 P\left(
 \left(E(g)-\widehat{E}(g) \geqslant -\frac{\epsilon}{2} \right)\wedge\left(E(h)-\widehat{E}(h) \leqslant \frac{\epsilon}{2}
 \right)\right) \geqslant 1-\delta
-
 $$
 
 
  因此 
 
 $$
-
-
 P\left(
 \widehat{E}(g)-E(g)+E(h)-\widehat{E}(h)\leqslant\frac{\epsilon}{2} + \frac{\epsilon}{2} 
 \right) = P\left(E(h)-E(g)\leqslant\widehat{E}(h)-\widehat{E}(g)+\epsilon\right)
 \geqslant 1 - \delta
-
 $$
 
 
@@ -728,11 +632,8 @@ $$
 
 
 $$
-
-
 P\left(E(h)-E(g)\leqslant\epsilon\right)
 \geqslant 1 - \delta
-
 $$
 
 
@@ -784,14 +685,11 @@ $\boldsymbol{\sigma}$ 仅为本次随机生成结果而已, 下次生
 $\mathcal{H}=\left\{h_1, h_2, h_3\right\}$, 其中 
 
 $$
-
-
 \begin{aligned}
 & \left\{h_1\left(\boldsymbol{x}_1\right), h_1\left(\boldsymbol{x}_2\right), h_1\left(\boldsymbol{x}_3\right), h_1\left(\boldsymbol{x}_4\right)\right\}=\{-1,-1,-1,-1\} \\
 & \left\{h_2\left(\boldsymbol{x}_1\right), h_2\left(\boldsymbol{x}_2\right), h_2\left(\boldsymbol{x}_3\right), h_2\left(\boldsymbol{x}_4\right)\right\}=\{-1,+1,-1,-1\} \\
 & \left\{h_3\left(\boldsymbol{x}_1\right), h_3\left(\boldsymbol{x}_2\right), h_3\left(\boldsymbol{x}_3\right), h_3\left(\boldsymbol{x}_4\right)\right\}=\{+1,+1,+1,+1\}
 \end{aligned}
-
 $$
 
 
@@ -801,10 +699,7 @@ $\frac{1}{m} \sum_{i=1}^m \sigma_i h_1\left(\boldsymbol{x}_i\right)=0, \frac{1}{
 
 
 $$
-
-
 \sup _{h \in \mathcal{H}} \frac{1}{m} \sum_{i=1}^m \sigma_i h\left(\boldsymbol{x}_i\right)=\frac{2}{4}
-
 $$
 
 
@@ -815,10 +710,7 @@ $$
 
 
 $$
-
-
 \mathbb{E}_{\boldsymbol{\sigma}}\left[\sup _{h \in \mathcal{H}} \frac{1}{m} \sum_{i=1}^{m} \sigma_{i} h\left(\boldsymbol{x}_{i}\right)\right]
-
 $$
 
 
@@ -839,10 +731,7 @@ $$
 
 
 $$
-
-
 \begin{aligned} \widehat{E}_{Z}(f) &=\frac{1}{m} \sum_{i=1}^{m} f\left(\boldsymbol{z}_{i}\right) \\ \Phi(Z) &=\sup _{f \in \mathcal{F}} \left(\mathbb{E}[f]-\widehat{E}_{Z}(f)\right) \end{aligned}
-
 $$
 
 
@@ -852,10 +741,7 @@ $$
 
 
 $$
-
-
 \begin{aligned} \Phi\left(Z^{\prime}\right)-\Phi(Z) &=\sup _{f \in \mathcal{F}} \left(\mathbb{E}[f]-\widehat{E}_{Z^{\prime}}(f)\right)-\sup _{f \in \mathcal{F}} \left(\mathbb{E}[f]-\widehat{E}_{Z}(f)\right) \\ & \leqslant \sup _{f \in \mathcal{F}} \left(\widehat{E}_{Z}(f)-\widehat{E}_{Z^{\prime}}(f)\right) \\ &=\sup_{f\in\mathcal{F}}\frac{\sum^m_{i=1}f(z_i)-\sum^m_{i=1}f(z^\prime_i)}{m}\\&=\sup _{f \in \mathcal{F}} \frac{f\left(z_{m}\right)-f\left(z_{m}^{\prime}\right)}{m} \\ & \leqslant \frac{1}{m} \end{aligned}
-
 $$
 
 
@@ -866,10 +752,7 @@ $$
 
 
 $$
-
-
 \Phi(Z)-\Phi\left(Z^{\prime}\right) =\sup _{f \in \mathcal{F}} \frac{f\left(z_{m}^\prime\right)-f\left(z_{m}\right)}{m} \leqslant \frac{1}{m}
-
 $$
 
 
@@ -879,10 +762,7 @@ $$
 
 
 $$
-
-
 \left\vert \Phi(Z)-\Phi\left(Z^{\prime}\right)\right\vert \leqslant \frac{1}{m}
-
 $$
 
 
@@ -892,10 +772,7 @@ $$
 
 
 $$
-
-
 P\left(\Phi(Z)-\mathbb{E}_{Z}[\Phi(Z)] \geqslant \epsilon\right) \leqslant \exp \left(\frac{-2 \epsilon^{2}}{\sum_{i} c_{i}^{2}}\right)
-
 $$
 
 
@@ -905,10 +782,7 @@ $$
 
 
 $$
-
-
 P\left(\Phi(Z)-\mathbb{E}_{Z}[\Phi(Z)] \geqslant \sqrt{\frac{\ln (1 / \delta)}{2 m}}\right) \leqslant \delta
-
 $$
 
 
@@ -918,10 +792,7 @@ $$
 
 
 $$
-
-
 P\left(\Phi(Z)-\mathbb{E}_{Z}[\Phi(Z)] \leqslant \sqrt{\frac{\ln (1 / \delta)}{2 m}}\right) \geqslant 1-\delta
-
 $$
 
 
@@ -931,10 +802,7 @@ $$
 
 
 $$
-
-
 \begin{aligned} \mathbb{E}_{Z}[\Phi(Z)] &=\mathbb{E}_{Z}\left[\sup _{f \in \mathcal{F}} \left(\mathbb{E}[f]-\widehat{E}_{Z}(f)\right)\right] \\ &=\mathbb{E}_{Z}\left[\sup _{f \in \mathcal{F}} \mathbb{E}_{Z^{\prime}}\left[\widehat{E}_{Z^{\prime}}(f)-\widehat{E}_{Z}(f)\right]\right] \\ & \leqslant \mathbb{E}_{Z, Z^{\prime}}\left[\sup _{f \in \mathcal{F}}\left( \widehat{E}_{Z^{\prime}}(f)-\widehat{E}_{Z}(f)\right)\right] \\ &=\mathbb{E}_{Z, Z^{\prime}}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum_{i=1}^{m}\left(f\left(\boldsymbol{z}_{i}^{\prime}\right)-f\left(\boldsymbol{z}_{i}\right)\right)\right] \\ &=\mathbb{E}_{\boldsymbol{\sigma}, Z,Z^{\prime}}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum_{i=1}^{m} \sigma_{i}\left(f\left(\boldsymbol{z}_{i}^{\prime}\right)-f\left(\boldsymbol{z}_{i}\right)\right)\right] \\ &\leqslant \mathbb{E}_{\boldsymbol{\sigma}, Z^{\prime}}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum_{i=1}^{m} \sigma_{i} f\left(\boldsymbol{z}_{i}^{\prime}\right)\right]+\mathbb{E}_{\boldsymbol{\sigma}, Z}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum_{i=1}^{m}-\sigma_{i} f\left(\boldsymbol{z}_{i}\right)\right] \\ &=2 \mathbb{E}_{\boldsymbol{\sigma}, Z}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum_{i=1}^{m} \sigma_{i} f\left(\boldsymbol{z}_{i}\right)\right] \\ &=2 R_{m}(\mathcal{F}) \end{aligned}
-
 $$
 
 
@@ -993,10 +861,7 @@ $\mathbb{I}\left(h\left(\boldsymbol{x}_i\right) \neq y_i\right)$; 第 3
 
 
 $$
-
-
 \sup _{h \in \mathcal{H}} \frac{1}{m} \sum_{i=1}^m \sigma_i \frac{1-y_i h\left(\boldsymbol{x}_i\right)}{2}=\sup _{h \in \mathcal{H}} \frac{1}{2 m} \sum_{i=1}^m \sigma_i+\sup _{h \in \mathcal{H}} \frac{1}{2 m} \sum_{i=1}^m \frac{-y_i \sigma_i h\left(\boldsymbol{x}_i\right)}{2}
-
 $$
 
 
@@ -1018,10 +883,7 @@ $\mathbb{E}_Z[\Phi(Z)] \leqslant 2 R_m(\mathcal{F})$ 相同,
 
 
 $$
-
-
 R_m\left(\mathcal{F}_{\mathcal{H}}\right)=\mathbb{E}_Z\left[\widehat{R}_Z\left(\mathcal{F}_{\mathcal{H}}\right)\right]=\mathbb{E}_D\left[\frac{1}{2} \widehat{R}_D(\mathcal{H})\right]=\frac{1}{2} \mathbb{E}_D\left[\widehat{R}_D(\mathcal{H})\right]=\frac{1}{2} R_m(\mathcal{H})
-
 $$
 
 
@@ -1032,13 +894,10 @@ $$
 
 
 $$
-
-
 \begin{gathered}
 \mathbb{E}[f(\boldsymbol{z})]=\mathbb{E}[\mathbb{I}(h(\boldsymbol{x}) \neq y)]=E(h) \\
 \frac{1}{m} \sum_{i=1}^m f\left(\boldsymbol{z}_i\right)=\frac{1}{m} \sum_{i=1}^m \mathbb{I}\left(h\left(\boldsymbol{x}_i\right) \neq y_i\right)=\widehat{E}(h)
 \end{gathered}
-
 $$
 
 
@@ -1137,10 +996,7 @@ Minimization)。由于$\mathcal{L}$满足经验误差最小化，则可令$g$表
 
 
 $$
-
-
 \ell(g, \mathcal{D})=\min _{h \in \mathcal{H}} \ell(h, \mathcal{D})
-
 $$
 
 
@@ -1150,10 +1006,7 @@ $$
 
 
 $$
-
-
 \begin{array}{l}{\epsilon^{\prime}=\frac{\epsilon}{2}} \\ {\frac{\delta}{2}=2 \exp \left(-2 m\left(\epsilon^{\prime}\right)^{2}\right)}\end{array}
-
 $$
 
 
@@ -1162,10 +1015,7 @@ $$
 将$\epsilon^\prime=\frac{\epsilon}{2}$带入到${\frac{\delta}{2}=2 \exp \left(-2 m\left(\epsilon^{\prime}\right)^{2}\right)}$可以解得$m=\frac{2}{\epsilon^{2}} \ln \frac{4}{\delta}$，由Hoeffding不等式12.6，
 
 $$
-
-
 P\left(\left\vert\frac{1}{m} \sum_{i=1}^{m} x_{i}-\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right)\right\vert \geqslant \epsilon\right) \leqslant 2 \exp \left(-2 m \epsilon^{2}\right)
-
 $$
 
 
@@ -1174,10 +1024,7 @@ $$
 
 
 $$
-
-
 P(|\ell(g, \mathcal{D})-\widehat{\ell}(g, D)| \geqslant \frac{\epsilon}{2})\leqslant \frac{\delta}{2}
-
 $$
 
 
@@ -1187,10 +1034,7 @@ $$
 
 
 $$
-
-
 P(|\ell(g, \mathcal{D})-\widehat{\ell}(g, D)| \leqslant \frac{\epsilon}{2})\geqslant 1- \frac{\delta}{2}
-
 $$
 
 
@@ -1202,10 +1046,7 @@ $$
 
 
 $$
-
-
 \sqrt{m}=\frac{(4+M) \sqrt{\frac{\ln (2 / \delta)}{2}}+\sqrt{(4+M)^{2} \frac{\ln (2 / \delta)}{2}-4 \times \frac{\epsilon}{2} \times(-2)}}{2 \times \frac{\epsilon}{2}}
-
 $$
 
 
@@ -1217,10 +1058,7 @@ $$
 
 
 $$
-
-
 P(\ell(\mathfrak{L}, \mathcal{D})-\ell(g, \mathcal{D})\leqslant\epsilon)\geqslant 1-\delta
-
 $$
 
 
