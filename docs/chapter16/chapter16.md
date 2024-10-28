@@ -141,9 +141,7 @@ $$\begin{aligned}
 -\frac{\partial E_{\boldsymbol{\theta}}}{\partial \boldsymbol{\theta}} & = -\frac{\partial \mathbb{E}_{\boldsymbol{x} \sim \pi}\left[\left(V^\pi(\boldsymbol{x})-V_{\boldsymbol{\theta}}(\boldsymbol{x})\right)^2\right]}{\partial \boldsymbol{\theta}}\\
 \end{aligned}$$
 
-将
-
-$V^\pi(\boldsymbol{x})-V_{\boldsymbol{\theta}}(\boldsymbol{x})$
+将$V^\pi(\boldsymbol{x})-V_{\boldsymbol{\theta}}(\boldsymbol{x})$
 看成一个整体，根据链式法则（chain rule）可知
 
 $$-\frac{\partial \mathbb{E}_{\boldsymbol{x} \sim \pi}\left[\left(V^\pi(\boldsymbol{x})-V_{\boldsymbol{\theta}}(\boldsymbol{x})\right)^2\right]}{\partial \boldsymbol{\theta}}=\mathbb{E}_{\boldsymbol{x} \sim \pi}\left[2\left(V^\pi(\boldsymbol{x})-V_{\boldsymbol{\theta}}(\boldsymbol{x})\right) \frac{\partial V_{\boldsymbol{\theta}}(\boldsymbol{x})}{\partial \boldsymbol{\theta}}\right]$$
