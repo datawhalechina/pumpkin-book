@@ -46,9 +46,7 @@ $\sum_{i=1}^N$以抵消引入的影响。从公式第 2 行到第 3 行推导如
 
 
 $$
-
 \begin{aligned}p(y=j, \Theta=i | \boldsymbol{x}) &=\frac{p(y=j, \Theta=i, \boldsymbol{x})}{p(\boldsymbol{x})} \\&=\frac{p(y=j, \Theta=i, \boldsymbol{x})}{p(\Theta=i, \boldsymbol{x})} \cdot \frac{p(\Theta=i, \boldsymbol{x})}{p(\boldsymbol{x})} \\&=p(y=j | \Theta=i, \boldsymbol{x}) \cdot p(\Theta=i | \boldsymbol{x})\end{aligned}
-
 $$
 
 
@@ -77,9 +75,7 @@ $\boldsymbol{x}$ 的条件概率（已知 $\Theta$ 就足够, 不需 $\boldsymbo
 
 
 $$
-
 p(y=j \mid \Theta=i, \boldsymbol{x})= \begin{cases}1, & i=j \\ 0, & i \neq j\end{cases}
-
 $$
 
 
@@ -90,9 +86,7 @@ $$
 
 
 $$
-
 p(\boldsymbol{x})=\sum_{i=1}^{N} \alpha_{i} \cdot p\left(\boldsymbol{x} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)
-
 $$
 
 
@@ -101,9 +95,7 @@ $$
 
 
 $$
-
 \begin{aligned}p(\Theta=i | \boldsymbol{x})&=\frac{p(\Theta=i , \boldsymbol{x})}{P(x)}\\&=\frac{\alpha_{i} \cdot p\left(\boldsymbol{x} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\sum_{i=1}^{N} \alpha_{i} \cdot p\left(\boldsymbol{x} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}\end{aligned}
-
 $$
 
 
@@ -115,9 +107,7 @@ $$
 
 
 $$
-
 p(y=j | \Theta=i, \boldsymbol{x})=\left\{\begin{array}{ll}1, & i=j \\0, & i \neq j\end{array}\right.
-
 $$
 
 
@@ -130,9 +120,7 @@ $$
 
 
 $$
-
 \begin{array}{l}\alpha_{i}=\frac{l_{i}}{\left|D_{l}\right|}, \text { where }\left|D_{l}\right|=\sum_{i=1}^{N} l_{i} \\\boldsymbol{\mu}_{i}=\frac{1}{l_{i}} \sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \boldsymbol{x}_{j} \\\boldsymbol{\Sigma}_{i}=\frac{1}{l_{i}} \sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}\end{array}
-
 $$
 
 
@@ -145,9 +133,7 @@ $$
 这项可以由
 
 $$
-
 \cfrac{\partial LL(D_l \cup D_u) }{\partial \mu_i}=0
-
 $$
 
 而得，将式
@@ -155,9 +141,7 @@ $$
 
 
 $$
-
 \begin{aligned}LL(D_l)&=\sum_{(\boldsymbol{x_j},y_j \in D_l)}\ln\left(\sum_{s=1}^{N}\alpha_s \cdot p(\boldsymbol{x_j}\vert \boldsymbol{\mu}_s,\boldsymbol{\Sigma}_s) \cdot p(y_i|\Theta = s,\boldsymbol{x_j})\right)\\&=\sum_{(\boldsymbol{x_j},y_j \in D_l)}\ln\left(\alpha_{y_j} \cdot p(\boldsymbol{x_j} \vert \boldsymbol{\mu}_{y_j},\boldsymbol{\Sigma}_{y_j})\right)\\LL(D_u)&=\sum_{\boldsymbol{x_j} \in D_u} \ln\left(\sum_{s=1}^N \alpha_s \cdot p(\boldsymbol{x_j} | \boldsymbol{\mu}_s,\boldsymbol{\Sigma}_s)\right)\end{aligned}
-
 $$
 
 
@@ -167,9 +151,7 @@ $$
 
 
 $$
-
 \begin{aligned}\frac{\partial L L\left(D_{l}\right)}{\partial \boldsymbol{\mu}_{i}} &=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{\partial \ln \left(\alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)\right)}{\partial \boldsymbol{\mu}_{i}} \\&=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{1}{p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot \frac{\partial p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\partial \boldsymbol{\mu}_{i}} \\&=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{1}{p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right) \cdot \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right) \\&=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\end{aligned}
-
 $$
 
 
@@ -178,12 +160,10 @@ $LL(D_u)$对$\boldsymbol{\mu_i}$求导，参考 9.33 的推导：
 
 
 $$
-
 \begin{aligned}
 \frac{\partial L L\left(D_{u}\right)}{\partial \boldsymbol{\mu}_{i}} &=\sum_{\boldsymbol{x}_{j} \in D_{u}} \frac{\alpha_{i}}{\sum_{s=1}^{N} \alpha_{s} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{s}, \boldsymbol{\Sigma}_{s}\right)} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right) \cdot \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right) \\
 &=\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)
 \end{aligned}
-
 $$
 
 
@@ -192,9 +172,7 @@ $$
 
 
 $$
-
 \begin{aligned}\frac{\partial L L\left(D_{l} \cup D_{u}\right)}{\partial \boldsymbol{\mu}_{i}} &=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)+\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right) \\&=\boldsymbol{\Sigma}_{i}^{-1}\left(\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)+\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\right) \\&=\boldsymbol{\Sigma}_{i}^{-1}\left(\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \boldsymbol{x}_{j}+\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot \boldsymbol{x}_{j}-\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \boldsymbol{\mu}_{i}-\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot \boldsymbol{\mu}_{i}\right)\end{aligned}
-
 $$
 
 
@@ -203,9 +181,7 @@ $$
 
 
 $$
-
 \sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot \boldsymbol{\mu}_{i}+\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \boldsymbol{\mu}_{i}=\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot \boldsymbol{x}_{j}+\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \boldsymbol{x}_{j}
-
 $$
 
 
@@ -216,9 +192,7 @@ $$
 
 
 $$
-
 \left(\sum_{x_{j} \in D_{u}} \gamma_{j i}+\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} 1\right) \boldsymbol{\mu}_{i}=\sum_{x_{j} \in D_{u}} \gamma_{j i} \cdot \boldsymbol{x}_{j}+\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \boldsymbol{x}_{j}
-
 $$
 
 
@@ -231,12 +205,10 @@ $$
 
 
 $$
-
 \begin{aligned} \frac{\partial L L\left(D_{l}\right)}{\partial \boldsymbol{\Sigma}_{i}} &=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{\partial \ln \left(\alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)\right)}{\partial \boldsymbol{\Sigma}_{i}} \\ &=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{1}{p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot \frac{\partial p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\partial \boldsymbol{\Sigma}_{i}} \\
 &=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{1}{p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right) \cdot\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1}\\
 &=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1}
 \end{aligned}
-
 $$
 
 
@@ -245,9 +217,7 @@ $$
 
 
 $$
-
 \frac{\partial L L\left(D_{u}\right)}{\partial \boldsymbol{\Sigma}_{i}}=\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1}
-
 $$
 
 
@@ -256,9 +226,7 @@ $$
 
 
 $$
-
 \begin{aligned} \frac{\partial L L\left(D_{l} \cup D_{u}\right)}{\partial \boldsymbol{\Sigma}_{i}}=& \sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1} \\ &+\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1} \\=&\left(\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right)\right.\\ &\left.+\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right)\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1} \end{aligned}
-
 $$
 
 
@@ -267,9 +235,7 @@ $$
 
 
 $$
-
 \begin{aligned} \sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}+& \sum_{\left(\boldsymbol{x}_{j}, y_{j} \in D_{l} \wedge y_{j}=i\right.} \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top} \\=& \sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot \boldsymbol{I}+\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \boldsymbol{I} \\ &=\left(\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i}+l_{i}\right) \boldsymbol{I} \end{aligned}
-
 $$
 
 
@@ -278,9 +244,7 @@ $$
 
 
 $$
-
 \sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i} \cdot\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}+\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}=\left(\sum_{\boldsymbol{x}_{j} \in D_{u}} \gamma_{j i}+l_{i}\right) \boldsymbol{\Sigma}_{i}
-
 $$
 
 
@@ -293,9 +257,7 @@ $$
 
 
 $$
-
 \begin{aligned}\mathcal{L}\left(D_{l} \cup D_{u}, \lambda\right) &=L L\left(D_{l} \cup D_{u}\right)+\lambda\left(\sum_{s=1}^{N} \alpha_{s}-1\right) \\&=L L\left(D_{l}\right)+L L\left(D_{u}\right)+\lambda\left(\sum_{s=1}^{N} \alpha_{s}-1\right)\end{aligned}
-
 $$
 
 
@@ -304,9 +266,7 @@ $$
 
 
 $$
-
 \frac{\partial L L\left(D_{u}\right)}{\partial \alpha_{i}}=\sum_{\boldsymbol{x}_{j} \in D_{u}} \frac{1}{\sum_{s=1}^{N} \alpha_{s} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{s}, \boldsymbol{\Sigma}_{s}\right)} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)
-
 $$
 
 
@@ -315,9 +275,7 @@ $$
 
 
 $$
-
 \begin{aligned}\frac{\partial L L\left(D_{l}\right)}{\partial \alpha_{i}} &=\sum_{\left(x_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{\partial \ln \left(\alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)\right)}{\partial \alpha_{i}} \\&=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{1}{\alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot \frac{\partial\left(\alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)\right)}{\partial \alpha_{i}} \\&=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{1}{\alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right) \\&=\sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{1}{\alpha_{i}}=\frac{1}{\alpha_{i}} \cdot \sum_{\left(\boldsymbol{x}_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} 1=\frac{l_{i}}{\alpha_{i}}\end{aligned}
-
 $$
 
 
@@ -330,9 +288,7 @@ $l_i$ 为第$i$类样本的有标记样本数目。
 
 
 $$
-
 \frac{\partial \mathcal{L}\left(D_{l} \cup D_{u}, \lambda\right)}{\partial \alpha_{i}}=\frac{l_{i}}{\alpha_{i}}+\sum_{\boldsymbol{x}_{j} \in D_{u}} \frac{p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\sum_{s=1}^{N} \alpha_{s} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{s}, \boldsymbol{\Sigma}_{s}\right)}+\lambda
-
 $$
 
 
@@ -342,9 +298,7 @@ $$
 
 
 $$
-
 \alpha_{i} \cdot \frac{l_{i}}{\alpha_{i}}+\sum_{\boldsymbol{x}_{j} \in D_{u}} \frac{\alpha_{i} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\sum_{s=1}^{N} \alpha_{s} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{s}, \boldsymbol{\Sigma}_{s}\right)}+\lambda \cdot \alpha_{i}=0
-
 $$
 
 
@@ -353,9 +307,7 @@ $$
 
 
 $$
-
 l_i+\sum_{x_i \in D_u} \gamma_{ji}+\lambda \alpha_i = 0
-
 $$
 
 
@@ -364,9 +316,7 @@ $$
 
 
 $$
-
 \sum_{i=1}^N l_i+\sum_{i=1}^N  \sum_{x_i \in D_u} \gamma_{ji}+\sum_{i=1}^N \lambda \alpha_i = 0
-
 $$
 
 
@@ -377,9 +327,7 @@ $$
 
 
 $$
-
 \sum_{i=1}^N \gamma_{ji} =  \sum_{i =1}^{N} \cfrac{\alpha_i \cdot  p(x_j|\mu_i,\Sigma_i)}{\Sigma_{s=1}^N \alpha_s \cdot p(x_j| \mu_s, \Sigma_s)}=  \cfrac{\sum_{i =1}^{N}\alpha_i \cdot  p(x_j|\mu_i,\Sigma_i)}{\sum_{s=1}^N \alpha_s \cdot p(x_j| \mu_s, \Sigma_s)}=1
-
 $$
 
 
@@ -388,9 +336,7 @@ $$
 
 
 $$
-
 \sum_{i=1}^N  \sum_{x_i \in D_u} \gamma_{ji}=\sum_{x_i \in D_u} \sum_{i=1}^N  \gamma_{ji} =\sum_{x_i \in D_u} 1=u
-
 $$
 
 
@@ -401,9 +347,7 @@ $\sum_{i=1}^Nl_i=l$其中$l$为有标记样本集的样本个数；将这些结�
 
 
 $$
-
 \sum_{i=1}^N l_i+\sum_{i=1}^N  \sum_{x_i \in D_u} \gamma_{ji}+\sum_{i=1}^N \lambda \alpha_i = 0
-
 $$
 
 
@@ -413,9 +357,7 @@ $$
 
 
 $$
-
 l_i + \sum_{x_j \in{D_u}} \gamma_{ji}-\lambda \alpha_i = 0
-
 $$
 
 
@@ -517,13 +459,11 @@ $E(f)$ 越小的目的。 首先对式(13.12)的第 1 行式子进行展开整�
 
 
 $$
-
 \begin{aligned}
 E(f) & =\frac{1}{2} \sum_{i=1}^m \sum_{j=1}^m(\mathbf{W})_{i j}\left(f\left(\boldsymbol{x}_i\right)-f\left(\boldsymbol{x}_j\right)\right)^2 \\
 & =\frac{1}{2} \sum_{i=1}^m \sum_{j=1}^m(\mathbf{W})_{i j}\left(f^2\left(\boldsymbol{x}_i\right)-2 f\left(\boldsymbol{x}_i\right) f\left(\boldsymbol{x}_j\right)+f^2\left(\boldsymbol{x}_j\right)\right) \\
 & =\frac{1}{2} \sum_{i=1}^m \sum_{j=1}^m(\mathbf{W})_{i j} f^2\left(\boldsymbol{x}_i\right)+\frac{1}{2} \sum_{i=1}^m \sum_{j=1}^m(\mathbf{W})_{i j} f^2\left(\boldsymbol{x}_j\right)-\sum_{i=1}^m \sum_{j=1}^m(\mathbf{W})_{i j} f\left(\boldsymbol{x}_i\right) f\left(\boldsymbol{x}_j\right)
 \end{aligned}
-
 $$
 
 
@@ -533,12 +473,10 @@ $\sum_{i=1}^m \sum_{j=1}^m(\mathbf{W})_{i j} f^2\left(\boldsymbol{x}_i\right)=\s
 并变形: 
 
 $$
-
 \begin{aligned}
 \sum_{i=1}^m \sum_{j=1}^m(\mathbf{W})_{i j} f^2\left(\boldsymbol{x}_j\right) & =\sum_{j=1}^m \sum_{i=1}^m(\mathbf{W})_{j i} f^2\left(\boldsymbol{x}_i\right)=\sum_{i=1}^m \sum_{j=1}^m(\mathbf{W})_{i j} f^2\left(\boldsymbol{x}_i\right) \\
 & =\sum_{i=1}^m f^2\left(\boldsymbol{x}_i\right) \sum_{j=1}^m(\mathbf{W})_{i j}
 \end{aligned}
-
 $$
 
 
@@ -558,9 +496,7 @@ $d_i=\sum_{j=1}^m(\mathbf{W})_{j i}$, 即第$i$列元素之和), 则
 
 
 $$
-
 E(f)=\sum_{i=1}^m d_i f^2\left(\boldsymbol{x}_i\right)-\sum_{i=1}^m \sum_{j=1}^m(\mathbf{W})_{i j} f\left(\boldsymbol{x}_i\right) f\left(\boldsymbol{x}_j\right)
-
 $$
 
 
@@ -570,12 +506,10 @@ $\sum_{i=1}^m d_i f^2\left(\boldsymbol{x}_i\right)$
 可以写为如下矩阵形式: 
 
 $$
-
 \begin{aligned}
 & =\boldsymbol{f}^{\mathrm{T}} \boldsymbol{D} \boldsymbol{f} \\
 &
 \end{aligned}
-
 $$
 
 
@@ -585,7 +519,6 @@ $\sum_{i=1}^m \sum_{j=1}^m(\mathbf{W})_{i j} f\left(\boldsymbol{x}_i\right) f\le
 也可以写为如下矩阵形式: 
 
 $$
-
 \begin{aligned}
 & \sum_{i=1}^m \sum_{j=1}^m(\mathbf{W})_{i j} f\left(\boldsymbol{x}_i\right) f\left(\boldsymbol{x}_j\right) \\
 & =\left[\begin{array}{llll}
@@ -603,7 +536,6 @@ f\left(\boldsymbol{x}_m\right)
 \end{array}\right] \\
 & =\boldsymbol{f}^{\mathrm{T}} \boldsymbol{W} \boldsymbol{f}
 \end{aligned}
-
 $$
 
 
@@ -637,7 +569,6 @@ $f\left(\boldsymbol{x}_i\right)$ 是待求变 量且应该使 $E(f)$ 最小,
 
 
 $$
-
 \begin{aligned}
 E(f) &=\left[\begin{array}{ll}
 \boldsymbol{f}_{l}^{\mathrm{T}} & \boldsymbol{f}_{u}^{\mathrm{T}}
@@ -656,7 +587,6 @@ E(f) &=\left[\begin{array}{ll}
 &=\boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right) \boldsymbol{f}_{l}-\boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l} \boldsymbol{f}_{l}-\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{W}_{l u} \boldsymbol{f}_{u}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right) \boldsymbol{f}_{u} \\
 &=\boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right) \boldsymbol{f}_{l}-2 \boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l} \boldsymbol{f}_{l}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right) \boldsymbol{f}_{u}
 \end{aligned}
-
 $$
 
 
@@ -668,12 +598,10 @@ $$
 首先，基于式(13.14)对$\boldsymbol{f}_u$求导： 
 
 $$
-
 \begin{aligned}
 \frac{\partial E(f)}{\partial \boldsymbol{f}_{u}} &=\frac{\partial \boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right) \boldsymbol{f}_{l}-2 \boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l} \boldsymbol{f}_{l}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right) \boldsymbol{f}_{u}}{\partial \boldsymbol{f}_{u}} \\
 &=-2 \boldsymbol{W}_{u l} \boldsymbol{f}_{l}+2\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right) \boldsymbol{f}_{u}
 \end{aligned}
-
 $$
 
  令结果等于 0 即得 13.15。
@@ -705,12 +633,10 @@ $\boldsymbol{f}_l$ 即函数 $f$ 在有标记样本上的预测结果 (即已知
 第一项到第二项是根据矩阵乘法逆的定义：$(\mathbf{A}\mathbf{B})^{-1}=\mathbf{B}^{-1}\mathbf{A}^{-1}$，在这个式子中
 
 $$
-
 \begin{aligned}
 \mathbf{P}_{u u}&=\mathbf{D}_{u u}^{-1} \mathbf{W}_{u u}\\
 \mathbf{P}_{ul}&=\mathbf{D}_{u u}^{-1} \mathbf{W}_{u l}
 \end{aligned}
-
 $$
 
 均可以根据$\mathbf{W}_{ij}$计算得到，因此可以通过标记$\mathbf{f}_l$计算未标记数据的标签$\mathbf{f}_u$。
@@ -728,9 +654,7 @@ $|\mathcal{Y}|$ 表示集合 $\mathcal{Y}$ 的势, 即包含元素 (类别) 的�
 
 
 $$
-
 \mathbf{F}^{*}=\lim _{t \rightarrow \infty} \mathbf{F}(t)=(1-\alpha)(\mathbf{I}-\alpha \mathbf{S})^{-1} \mathbf{Y}
-
 $$
 
 
@@ -738,16 +662,13 @@ $$
 
 
 $$
-
 \mathbf{F}(t+1)=\alpha \mathbf{S} \mathbf{F}(t)+(1-\alpha) \mathbf{Y}
-
 $$
 
 
 当 t取不同的值时，有： 
 
 $$
-
 \begin{aligned}
 t=0: \mathbf{F}(1) &=\alpha \mathbf{S F}(0)+(1-\alpha) \mathbf{Y}\\
 &=\alpha \mathbf{S} \mathbf{Y}+(1-\alpha) \mathbf{Y} \\
@@ -756,16 +677,13 @@ t=1: \mathbf{F}(2) &=\alpha \mathbf{S F}(1)+(1-\alpha) \mathbf{Y}=\alpha \mathbf
 t=2:\mathbf{F}(3)&=\alpha\mathbf{S}\mathbf{F}(2)+(1-\alpha)\mathbf{Y}\\&=\alpha \mathbf{S}\left((\alpha \mathbf{S})^{2} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{1}(\alpha \mathbf{S})^{i}\right) \mathbf{Y}\right)+(1-\alpha) \mathbf{Y} \\
 &=(\alpha \mathbf{S})^{3} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{2}(\alpha \mathbf{S})^{i}\right) \mathbf{Y}\\
 \end{aligned}
-
 $$
 
  可以观察到规律
 
 
 $$
-
 \mathbf{F}(t)=(\alpha \mathbf{S})^{t} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{t-1}(\alpha \mathbf{S})^{i}\right) \mathbf{Y}
-
 $$
 
 
@@ -773,9 +691,7 @@ $$
 
 
 $$
-
 \mathbf{F}^{*}=\lim _{t \rightarrow \infty}\mathbf{F}(t)=\lim _{t \rightarrow \infty}(\alpha \mathbf{S})^{t} \mathbf{Y}+\lim _{t \rightarrow \infty}(1-\alpha)\left(\sum_{i=0}^{t-1}(\alpha \mathbf{S})^{i}\right) \mathbf{Y}
-
 $$
 
 
@@ -784,9 +700,7 @@ $$
 
 
 $$
-
 \lim _{t \rightarrow \infty} \sum_{i=0}^{t-1}(\alpha \mathbf{S})^{i}=\frac{\mathbf{I}-\lim _{t \rightarrow \infty}(\alpha \mathbf{S})^{t}}{\mathbf{I}-\alpha \mathbf{S}}=\frac{\mathbf{I}}{\mathbf{I}-\alpha \mathbf{S}}=(\mathbf{I}-\alpha \mathbf{S})^{-1}
-
 $$
 
 
@@ -801,12 +715,10 @@ $$
 先将范数平方拆开为四项 
 
 $$
-
 \begin{aligned}
 \left\|\frac{1}{\sqrt{d_i}} \mathbf{F}_i-\frac{1}{\sqrt{d_j}} \mathbf{F}_j\right\|^2 & =\left(\frac{1}{\sqrt{d_i}} \mathbf{F}_i-\frac{1}{\sqrt{d_j}} \mathbf{F}_j\right)\left(\frac{1}{\sqrt{d_i}} \mathbf{F}_i-\frac{1}{\sqrt{d_j}} \mathbf{F}_j\right)^{\top} \\
 & =\frac{1}{d_i} \mathbf{F}_i \mathbf{F}_i^{\top}+\frac{1}{d_j} \mathbf{F}_j \mathbf{F}_j^{\top}-\frac{1}{\sqrt{d_i d_j}} \mathbf{F}_i \mathbf{F}_j^{\top}-\frac{1}{\sqrt{d_j d_i}} \mathbf{F}_j \mathbf{F}_i^{\top}
 \end{aligned}
-
 $$
 
 
@@ -818,13 +730,11 @@ $\sum_{i=1}^m \sum_{i=1}^m$ 的形式, 并将上面拆分的四项中的前两�
 
 
 $$
-
 \begin{aligned}
 & \sum_{i, j=1}^m(\mathbf{W})_{i j} \frac{1}{d_i} \mathbf{F}_i \mathbf{F}_i^{\top}=\sum_{i=1}^m \frac{1}{d_i} \mathbf{F}_i \mathbf{F}_i^{\top} \sum_{j=1}^m(\mathbf{W})_{i j}=\sum_{i=1}^m \frac{1}{d_i} \mathbf{F}_i \mathbf{F}_i^{\top} \cdot d_i=\sum_{i=1}^m \mathbf{F}_i \mathbf{F}_i^{\top} \\
 & \sum_{i, j=1}^m(\mathbf{W})_{i j} \frac{1}{d_j} \mathbf{F}_j \mathbf{F}_j^{\top}=\sum_{j=1}^m \frac{1}{d_j} \mathbf{F}_j \mathbf{F}_j^{\top} \sum_{i=1}^m(\mathbf{W})_{i j}=\sum_{j=1}^m \frac{1}{d_j} \mathbf{F}_j \mathbf{F}_j^{\top} \cdot d_j=\sum_{j=1}^m \mathbf{F}_j \mathbf{F}_j^{\top} \\
 &
 \end{aligned}
-
 $$
 
 
@@ -836,9 +746,7 @@ $d_i=\sum_{j=1}^m(\mathbf{W})_{i j}=\sum_{j=1}^m(\mathbf{W})_{j i}$
 
 
 $$
-
 \sum_{i=1}^m \mathbf{F}_i \mathbf{F}_i^{\top}=\sum_{j=1}^m \mathbf{F}_j \mathbf{F}_j^{\top}=\sum_{i=1}^m\left\|\mathbf{F}_i\right\|^2=\|\mathbf{F}\|_{\mathrm{F}}^2=\operatorname{tr}\left(\mathbf{F} \mathbf{F}^{\top}\right)
-
 $$
 
 
@@ -854,9 +762,7 @@ $\left\|\mathbf{F}_i\right\|^2$ 形式; 从第 2
 
 
 $$
-
 \sum_{i, j=1}^m(\mathbf{W})_{i j} \frac{1}{\sqrt{d_i d_j}} \mathbf{F}_i \mathbf{F}_j^{\top}=\sum_{i, j=1}^m(\mathbf{S})_{i j} \mathbf{F}_i \mathbf{F}_j^{\top}=\operatorname{tr}\left(\mathbf{S}^{\top} \mathbf{F} \mathbf{F}^{\top}\right)=\operatorname{tr}\left(\mathbf{S F} \mathbf{F}^{\top}\right)
-
 $$
 
 
@@ -864,7 +770,6 @@ $$
 具体来说, 以上化简过程为: 
 
 $$
-
 \begin{aligned}
 & \mathbf{S}=\left[\begin{array}{cccc}
 (\mathbf{S})_{11} & (\mathbf{S})_{12} & \cdots & (\mathbf{S})_{1 m} \\
@@ -891,7 +796,6 @@ $$
 \end{array}\right] \\
 &
 \end{aligned}
-
 $$
 
 
@@ -901,7 +805,6 @@ $(\mathbf{S})_{i j}=\frac{1}{\sqrt{d_i d_j}}(\mathbf{W})_{i j}$, 即第 1
 个等号; 而 
 
 $$
-
 \mathbf{F F}^{\top}=\left[\begin{array}{c}
 \mathbf{F}_1 \\
 \mathbf{F}_2 \\
@@ -915,7 +818,6 @@ $$
 \vdots & \vdots & \ddots & \vdots \\
 \mathbf{F}_m \mathbf{F}_1^{\top} & \mathbf{F}_m \mathbf{F}_2^{\top} & \cdots & \mathbf{F}_m \mathbf{F}_m^{\top}
 \end{array}\right]
-
 $$
 
 
@@ -926,9 +828,7 @@ Hadmard 积, 即矩阵 $\mathbf{S}$ 与矩阵 $\mathbf{F} \mathbf{F}^{\top}$
 
 
 $$
-
 \sum_{i, j=1}^m(\mathbf{S})_{i j} \mathbf{F}_i \mathbf{F}_j^{\top}=\sum_{i, j=1}^m(\mathbf{A})_{i j}
-
 $$
 
 
@@ -940,7 +840,6 @@ $\operatorname{tr}\left(\mathbf{S}^{\top} \mathbf{F F}^{\top}\right)$,
 这是因为 
 
 $$
-
 \begin{aligned}
 & \operatorname{tr}\left(\left[\begin{array}{cccc}
 (\mathbf{S})_{11} & (\mathbf{S})_{12} & \cdots & (\mathbf{S})_{1 m} \\
@@ -987,7 +886,6 @@ $$
 &=\sum_{i=1}^m(\mathbf{S})_{i 1} \mathbf{F}_i \mathbf{F}_1^{\top}+\sum_{i=1}^m(\mathbf{S})_{i 2} \mathbf{F}_i \mathbf{F}_2^{\top}+\ldots+\sum_{i=1}(\mathbf{S})_{i m} \mathbf{F}_i \mathbf{F}_m^{\top} \\
 &= \sum_{i, j=1}^m(\mathbf{S})_{i j} \mathbf{F}_i \mathbf{F}_j^{\top}
 \end{aligned}
-
 $$
 
 
@@ -999,9 +897,7 @@ $\mathbf{F}_i \mathbf{F}_j^{\top}$ 是一个 数 (即大小为 $1 \times 1$
 
 
 $$
-
 \mathbf{F}_i \mathbf{F}_j^{\top}=\left(\mathbf{F}_i \mathbf{F}_j^{\top}\right)^{\top}=\left(\mathbf{F}_j^{\top}\right)^{\top}\left(\mathbf{F}_i\right)^{\top}=\mathbf{F}_j \mathbf{F}_i^{\top}
-
 $$
 
 
@@ -1010,9 +906,7 @@ $$
 
 
 $$
-
 \frac{1}{\sqrt{d_i d_j}} \mathbf{F}_i \mathbf{F}_j^{\top}=\frac{1}{\sqrt{d_j d_i}} \mathbf{F}_j \mathbf{F}_i^{\top}
-
 $$
 
 
@@ -1021,9 +915,7 @@ $$
 
 
 $$
-
 \sum_{i, j=1}^m(\mathbf{W})_{i j} \frac{1}{\sqrt{d_i d_j}} \mathbf{F}_i \mathbf{F}_j^{\top}=\sum_{i, j=1}^m(\mathbf{W})_{i j} \frac{1}{\sqrt{d_j d_i}} \mathbf{F}_j \mathbf{F}_i^{\top}
-
 $$
 
 
@@ -1033,9 +925,7 @@ $\frac{1}{2}$ ):
 
 
 $$
-
 \frac{1}{2}\left(\sum_{i, j=1}^m(\mathbf{W})_{i j}\left\|\frac{1}{\sqrt{d_i}} \mathbf{F}_i-\frac{1}{\sqrt{d_j}} \mathbf{F}_j\right\|^2\right)=\operatorname{tr}\left(\mathbf{F F}^{\top}\right)-\operatorname{tr}\left(\mathbf{S F F}^{\top}\right)
-
 $$
 
 
@@ -1047,9 +937,7 @@ $$
 
 
 $$
-
 \mathcal{Q}(F)=\frac{1}{2} \sum_{i, j=1}^n W_{i j}\left\|\frac{F_i}{\sqrt{D_{i i}}}-\frac{F_j}{\sqrt{D_{j j}}}\right\|^2+\mu \sum_{i=1}^n\left\|F_i-Y_i\right\|^2,
-
 $$
 
 
@@ -1069,9 +957,7 @@ $\mu \sum_{i=l+1}^{l+u}\left\|\mathbf{F}_i\right\|^2$, 式(13.21)
 
 
 $$
-
 \sum_{i=1}^m\left\|\mathbf{F}_i-\mathbf{Y}_i\right\|^2=\|\mathbf{F}-\mathbf{Y}\|_{\mathrm{F}}^2
-
 $$
 
 
@@ -1081,12 +967,10 @@ $\mathcal{Q}(\mathbf{F})=\operatorname{tr}\left(\mathbf{F} \mathbf{F}^{\top}\rig
 求导: 
 
 $$
-
 \begin{aligned}
 \frac{\partial \mathcal{Q}(\mathbf{F})}{\partial \mathbf{F}} & =\frac{\partial \operatorname{tr}\left(\mathbf{F} \mathbf{F}^{\top}\right)}{\partial \mathbf{F}}-\frac{\partial \operatorname{tr}\left(\mathbf{S} \mathbf{F} \mathbf{F}^{\top}\right)}{\partial \mathbf{F}}+\mu \frac{\partial\|\mathbf{F}-\mathbf{Y}\|_{\mathrm{F}}^2}{\partial \mathbf{F}} \\
 & =2 \mathbf{F}-2 \mathbf{S} \mathbf{F}+2 \mu(\mathbf{F}-\mathbf{Y})
 \end{aligned}
-
 $$
 
  令 $\mu=\frac{1-\alpha}{\alpha}$, 并令
