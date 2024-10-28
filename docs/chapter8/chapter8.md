@@ -40,19 +40,16 @@ $h_i(\boldsymbol{x}) \in\{-1,+1\}$
 
 
 $$
-
 \begin{aligned}
 \mathrm{X}&=\sum_{i=1}^{\mathrm{T}} x_i\\
 \mathbb{E}(X)&=\sum_{i=1}^{\mathrm{T}}\mathbb{E}(x_i)=(1-\epsilon)T
 \end{aligned}
-
 $$
 
  证明过程如下：
 
 
 $$
-
 \begin{aligned} P(H(x) \neq f(x))=& P(X \leq\lfloor T / 2\rfloor) \\ & \leqslant P(X \leq T / 2)
 \\ & =P\left[X-(1-\epsilon) T \leqslant \frac{T}{2}-(1-\epsilon) T\right] 
 \\ & =P\left[X-
@@ -62,16 +59,13 @@ $$
 \\ &=P\left[\frac{1}{\mathrm{T}}\sum_{i=1}^{\mathrm{T}} x_i-\frac{1}{\mathrm{T}}
 \sum_{i=1}^{\mathrm{T}}\mathbb{E}(x_i) \leqslant -\frac{1}{2}\left(1-2\epsilon\right)]\right]
  \end{aligned}
-
 $$
 
  根据Hoeffding不等式知
 
 
 $$
-
 P\left(\frac{1}{m} \sum_{i=1}^{m} x_{i}-\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right) \leqslant -\delta\right) \leqslant  \exp \left(-2 m \delta^{2}\right)
-
 $$
 
 
@@ -79,9 +73,7 @@ $$
 
 
 $$
-
 \begin{aligned} P(H(\boldsymbol{x}) \neq f(\boldsymbol{x})) &=\sum_{k=0}^{\lfloor T / 2\rfloor} \left( \begin{array}{c}{T} \\ {k}\end{array}\right)(1-\epsilon)^{k} \epsilon^{T-k} \\ & \leqslant \exp \left(-\frac{1}{2} T(1-2 \epsilon)^{2}\right) \end{aligned}
-
 $$
 
 
@@ -110,13 +102,11 @@ $$
 $\mathcal{D}(\boldsymbol{x})$, 则式(8.5)可写为: 
 
 $$
-
 \begin{aligned}
 \ell_{\exp }(H \mid \mathcal{D}) & =\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}\right] \\
 & =\sum_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H(\boldsymbol{x})} \\
 & =\sum_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x})\left(e^{-H(\boldsymbol{x})} \mathbb{I}(f(\boldsymbol{x})=1)+e^{H(\boldsymbol{x})} \mathbb{I}(f(\boldsymbol{x})=-1)\right)
 \end{aligned}
-
 $$
 
 
@@ -127,9 +117,7 @@ $\mathcal{D}(\boldsymbol{x})=\frac{1}{|D|}$, 其中 $|D|$ 为数据集 $D$
 
 
 $$
-
 \ell_{\exp }(H \mid \mathcal{D})=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}\right]=\frac{1}{|D|} \sum_{\boldsymbol{x} \in D} e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}
-
 $$
 
 
@@ -142,7 +130,6 @@ $$
 
 
 $$
-
 \begin{aligned}
 \ell_{\exp }(H | \mathcal{D}) &=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}\right] \\
 &=\sum_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H(\boldsymbol{x})} \\
@@ -150,7 +137,6 @@ $$
 &=\sum_{i=1}^{|D|} \left(e^{-H\left(\boldsymbol{x}_{i}\right)} \mathcal{D}\left(\boldsymbol{x}_{i}\right)\mathbb{I}\left(f\left(\boldsymbol{x}_{i}\right)=1\right)+e^{H\left(\boldsymbol{x}_{i}\right)} \mathcal{D}\left(\boldsymbol{x}_{i}\right)\mathbb{I}\left(f\left(\boldsymbol{x}_{i}\right)=-1\right)\right)\\
 &=\sum_{i=1}^{|D|} \left(e^{-H\left(\boldsymbol{x}_{i}\right)} P\left(f\left(\boldsymbol{x}_{i}\right)=1 \mid \boldsymbol{x}_{i}\right)+e^{H\left(\boldsymbol{x}_{i}\right)} P\left(f\left(\boldsymbol{x}_{i}\right)=-1 \mid \boldsymbol{x}_{i}\right)\right)
 \end{aligned}
-
 $$
 
 
@@ -161,9 +147,7 @@ $\mathcal{D}(x_i)$表示在数据集$D$中进行一次随机抽样，样本$x_i$
 
 
 $$
-
 \frac{\partial e^{-H(\boldsymbol{x})}}{\partial H(\boldsymbol{x})}=-e^{-H(\boldsymbol{x})}\qquad \frac{\partial e^{H(\boldsymbol{x})}}{\partial H(\boldsymbol{x})}=e^{H(\boldsymbol{x})}
-
 $$
 
 
@@ -171,9 +155,7 @@ $$
 
 
 $$
-
 \frac{\partial \ell_{\exp }(H | \mathcal{D})}{\partial H(\boldsymbol{x})}=-e^{-H(\boldsymbol{x})} P(f(\boldsymbol{x})=1 | \boldsymbol{x})+e^{H(\boldsymbol{x})} P(f(\boldsymbol{x})=-1 | \boldsymbol{x})
-
 $$
 
 
@@ -184,9 +166,7 @@ $$
 
 
 $$
-
 \quad-e^{-H(\boldsymbol{x})} P(f(\boldsymbol{x})=1 \mid \boldsymbol{x})+e^{H(\boldsymbol{x})} P(f(\boldsymbol{x})=-1 \mid \boldsymbol{x})=0
-
 $$
 
 
@@ -194,9 +174,7 @@ $$
 
 
 $$
-
 \quad e^{H(\boldsymbol{x})} P(f(\boldsymbol{x})=-1 \mid \boldsymbol{x})=e^{-H(\boldsymbol{x})} P(f(\boldsymbol{x})=1 \mid \boldsymbol{x})
-
 $$
 
 
@@ -205,9 +183,7 @@ $\frac{e^{H(\boldsymbol{x})}}{P(f(\boldsymbol{x})=-1 \mid \boldsymbol{x})}$:
 
 
 $$
-
 \quad e^{2 H(\boldsymbol{x})}=\frac{P(f(\boldsymbol{x})=1 \mid \boldsymbol{x})}{P(f(\boldsymbol{x})=-1 \mid \boldsymbol{x})}
-
 $$
 
 
@@ -215,9 +191,7 @@ $$
 
 
 $$
-
 \quad 2 H(\boldsymbol{x})=\ln \frac{P(f(\boldsymbol{x})=1 \mid \boldsymbol{x})}{P(f(\boldsymbol{x})=-1 \mid \boldsymbol{x})}
-
 $$
 
 
@@ -228,13 +202,11 @@ $$
 
 
 $$
-
 \begin{aligned}
 \operatorname{sign}(H(\boldsymbol{x}))&=\operatorname{sign}\left(\frac{1}{2} \ln \frac{P(f(x)=1 | \boldsymbol{x})}{P(f(x)=-1 | \boldsymbol{x})}\right)
 \\ & =\left\{\begin{array}{ll}{1,} & {P(f(x)=1 | \boldsymbol{x})>P(f(x)=-1 | \boldsymbol{x})} \\ {-1,} & {P(f(x)=1 | \boldsymbol{x})<P(f(x)=-1 | \boldsymbol{x})}\end{array}\right.
 \\ & =\underset{y \in\{-1,1\}}{\arg \max } P(f(x)=y | \boldsymbol{x})
 \end{aligned}
-
 $$
 
 
@@ -249,14 +221,12 @@ $$
 
 
 $$
-
 \begin{aligned}
 \ell_{\exp }\left(\alpha_{t} h_{t} | \mathcal{D}_{t}\right) &=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_{t}}\left[e^{-f(\boldsymbol{x}) \alpha_{t} h_{t}(\boldsymbol{x})}\right] &\textcircled{1}\\
 &=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_{t}}\left[e^{-\alpha_{t}} \mathbb{I}\left(f(\boldsymbol{x})=h_{t}(\boldsymbol{x})\right)+e^{\alpha_{t}} \mathbb{I}\left(f(\boldsymbol{x}) \neq h_{t}(\boldsymbol{x})\right)\right] &\textcircled{2}\\
 &=e^{-\alpha_{t}} P_{\boldsymbol{x} \sim \mathcal{D}_{t}}\left(f(\boldsymbol{x})=h_{t}(\boldsymbol{x})\right)+e^{\alpha_{t}} P_{\boldsymbol{x} \sim \mathcal{D}_{t}}\left(f(\boldsymbol{x}) \neq h_{t}(\boldsymbol{x})\right) &\textcircled{3}\\
 &=e^{-\alpha_{t}}\left(1-\epsilon_{t}\right)+e^{\alpha_{t}} \epsilon_{t} &\textcircled{4}
 \end{aligned}
-
 $$
 
 
@@ -329,9 +299,7 @@ $h_t(\boldsymbol{x})$ :
 
 
 $$
-
 \left(\alpha_t, h_t(\boldsymbol{x})\right)=\underset{\alpha, h}{\arg \min } \ell_{\exp }\left(H_{t-1}+\alpha h \mid \mathcal{D}\right)
-
 $$
 
 
@@ -350,12 +318,10 @@ $$
 由$e^x$的二阶泰勒展开为$1+x+\frac{x^2}{2}+o(x^2)$得: 
 
 $$
-
 \begin{aligned}
 \ell_{\exp }\left(H_{t-1}+h_{t} | \mathcal{D}\right) &=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} e^{-f(\boldsymbol{x}) h_{t}(\boldsymbol{x})}\right]
 \\ & \simeq \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\left(1-f(\boldsymbol{x}) h_{t}(\boldsymbol{x})+\frac{f^{2}(\boldsymbol{x}) h_{t}^{2}(\boldsymbol{x})}{2}\right)\right]
 \end{aligned}
-
 $$
 
 
@@ -363,9 +329,7 @@ $$
 
 
 $$
-
 \ell_{\exp }\left(H_{t-1}+h_{t} | \mathcal{D}\right)= \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\left(1-f(\boldsymbol{x}) h_{t}(\boldsymbol{x})+\frac{1}{2}\right)\right]
-
 $$
 
 
@@ -378,14 +342,12 @@ Boosting理论框架就是只使用了一阶泰勒展开；当然二阶项为常
 
 
 $$
-
 \begin{aligned}
 h_{t}(\boldsymbol{x})&=\underset{h}{\arg \min } \ell_{\exp }\left(H_{t-1}+h | \mathcal{D}\right)&\textcircled{1}\\
 &=\underset{h}{\arg \min } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\left(1-f(\boldsymbol{x}) h(\boldsymbol{x})+\frac{1}{2}\right)\right]&\textcircled{2}\\
 &=\underset{h}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} f(\boldsymbol{x}) h(\boldsymbol{x})\right]&\textcircled{3}\\
 &=\underset{h}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\frac{e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right]} f(\boldsymbol{x}) h(\boldsymbol{x})\right]&\textcircled{4}
 \end{aligned}
-
 $$
 
 
@@ -396,13 +358,11 @@ $\textcircled{2}$是将式(8.13)代入；
 $\textcircled{3}$是因为 
 
 $$
-
 \begin{aligned}
 & \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\left(1-f(\boldsymbol{x}) h(\boldsymbol{x})+\frac{1}{2}\right)\right] \\
 = & \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\frac{3}{2} e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}-e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} f(\boldsymbol{x}) h(\boldsymbol{x})\right] \\
 = & \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\frac{3}{2} e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right]-\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} f(\boldsymbol{x}) h(\boldsymbol{x})\right]
 \end{aligned}
-
 $$
 
  本式自变量为 $h(\boldsymbol{x})$, 而
@@ -411,9 +371,7 @@ $\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\frac{3}{2} e^{-f(\boldsymbol
 
 
 $$
-
 -\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} f(\boldsymbol{x}) h(\boldsymbol{x})\right]
-
 $$
 
 
@@ -431,9 +389,7 @@ $\arg \max _x 2\left(1-x^2\right)$ 的结果均为 $\left.x=0\right)$。
 
 
 $$
-
 \mathbb{E}(g(\boldsymbol{x}))=\sum_{i=1}^{|D|}f(\boldsymbol{x}_i)g(\boldsymbol{x}_i)
-
 $$
 
 
@@ -441,9 +397,7 @@ $$
 
 
 $$
-
 \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}\right]=\sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}_{i}\right) e^{-f\left(\boldsymbol{x}_{i}\right) H\left(\boldsymbol{x}_{i}\right)}
-
 $$
 
 
@@ -451,9 +405,7 @@ $$
 
 
 $$
-
 \mathcal{D}_{t}\left(\boldsymbol{x}_{i}\right)=\mathcal{D}\left(\boldsymbol{x}_{i}\right) \frac{e^{-f\left(\boldsymbol{x}_{i}\right) H_{t-1}\left(\boldsymbol{x}_{i}\right)}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right]}
-
 $$
 
 
@@ -461,9 +413,7 @@ $$
 
 
 $$
-
 \begin{aligned} & \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\frac{e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right]} f(\boldsymbol{x}) h(\boldsymbol{x})\right] \\=& \sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}_{i}\right) \frac{e^{-f\left(\boldsymbol{x}_{i}\right) H_{t-1}\left(\boldsymbol{x}_{i}\right)}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x}) }]  \right.}f(x_i)h(x_i) \\=& \sum_{i=1}^{|D|} \mathcal{D}_{t}\left(\boldsymbol{x}_{i}\right) f\left(\boldsymbol{x}_{i}\right) h\left(\boldsymbol{x}_{i}\right) \\=& \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_{t}}[f(\boldsymbol{x}) h(\boldsymbol{x})] \end{aligned}
-
 $$
 
 
@@ -482,9 +432,7 @@ $$
 
 
 $$
-
 \begin{aligned} \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_t}[f(\boldsymbol{x}) h(\boldsymbol{x})] & =\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_t}[1-2 \mathbb{I}(f(\boldsymbol{x}) \neq h(\boldsymbol{x}))] \\ & =\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_t}[1]-2 \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_t}[\mathbb{I}(f(\boldsymbol{x}) \neq h(\boldsymbol{x}))] \\ & =1-2 \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_t}[\mathbb{I}(f(\boldsymbol{x}) \neq h(\boldsymbol{x}))]\end{aligned}
-
 $$
 
 
@@ -493,14 +441,12 @@ $$
 
 
 $$
-
 \begin{aligned}
 h_{t}(\boldsymbol{x}) &=\arg \max _{h} \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_{t}}[f(\boldsymbol{x}) h(\boldsymbol{x})] \\
 &=\arg \max _{h}\left(1-2 \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_{t}}[\mathbb{I}(f(\boldsymbol{x}) \neq h(\boldsymbol{x}))]\right) \\
 &=\underset{h}{\arg \max }\left(-2 \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_{t}}[\mathbb{I}(f(\boldsymbol{x}) \neq h(\boldsymbol{x}))]\right) \\
 &=\arg \min \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_{t}}[\mathbb{I}(f(\boldsymbol{x}) \neq h(\boldsymbol{x}))]
 \end{aligned}
-
 $$
 
 
@@ -516,13 +462,11 @@ $h_t(\boldsymbol{x})=\mathfrak{L}\left(D, \mathcal{D}_t\right)$,
 
 
 $$
-
 \begin{aligned}
 \mathcal{D}_{t+1}(\boldsymbol{x}) &=\frac{\mathcal{D}(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H_{t}(\boldsymbol{x})}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t}(\boldsymbol{x})}\right]} \\
 &=\frac{\mathcal{D}(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} e^{-f(\boldsymbol{x}) \alpha_{t} h_{t}(\boldsymbol{x})}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t}(\boldsymbol{x})}\right]} \\
 &=\mathcal{D}_{t}(\boldsymbol{x}) \cdot e^{-f(\boldsymbol{x}) \alpha_{t} h_{t}(\boldsymbol{x})} \frac{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right]}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t}(\boldsymbol{x})}\right]}
 \end{aligned}
-
 $$
 
 
@@ -578,9 +522,7 @@ $0 / 1$ 损失函数的 一致替代损失函数）:
 
 
 $$
-
 \left(\alpha_t, h_t\right)=\underset{\alpha, h}{\arg \min } \ell_{\exp }\left(H_{t-1}+\alpha h \mid \mathcal{D}\right)
-
 $$
 
 
@@ -593,14 +535,12 @@ $\ell_{\exp }\left(H_{t-1}+\alpha h \mid \mathcal{D}\right)$
 根据式(8.5)将指数损失函数表达式代入, 则 
 
 $$
-
 \begin{aligned}
 \ell_{\exp }\left(H_{t-1}+\alpha h \mid \mathcal{D}\right) & =\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x})\left(H_{t-1}(\boldsymbol{x})+\alpha h(\boldsymbol{x})\right)}\right] \\
 & =\sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}_i\right) e^{-f\left(\boldsymbol{x}_i\right)\left(H_{t-1}\left(\boldsymbol{x}_i\right)+\alpha h\left(\boldsymbol{x}_i\right)\right)} \\
 & =\sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}_i\right) e^{-f\left(\boldsymbol{x}_i\right) H_{t-1}\left(\boldsymbol{x}_i\right)} e^{-f\left(\boldsymbol{x}_i\right) \alpha h\left(\boldsymbol{x}_i\right)} \\
 & =\sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}_i\right) e^{-f\left(\boldsymbol{x}_i\right) H_{t-1}\left(\boldsymbol{x}_i\right)}\left(e^{-\alpha} \mathbb{I}\left(f\left(\boldsymbol{x}_i\right)=h\left(\boldsymbol{x}_i\right)\right)+e^\alpha \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)\right)
 \end{aligned}
-
 $$
 
  上式推导中, 由于 $f\left(\boldsymbol{x}_i\right)$ 和
@@ -615,23 +555,19 @@ $h\left(\boldsymbol{x}_i\right)$ 要么相 等, 要么不相等,
 
 
 $$
-
 \mathbb{I}\left(f\left(\boldsymbol{x}_i\right)=h\left(\boldsymbol{x}_i\right)\right)+\mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)=1
-
 $$
 
 
 所以 
 
 $$
-
 \begin{aligned}
 & e^{-\alpha} \mathbb{I}\left(f\left(\boldsymbol{x}_i\right)=h\left(\boldsymbol{x}_i\right)\right)+e^\alpha \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right) \\
 = & e^{-\alpha} \mathbb{I}\left(f\left(\boldsymbol{x}_i\right)=h\left(\boldsymbol{x}_i\right)\right)+e^{-\alpha} \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)-e^{-\alpha} \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)+e^\alpha \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right) \\
 = & e^{-\alpha}\left(\mathbb{I}\left(f\left(\boldsymbol{x}_i\right)=h\left(\boldsymbol{x}_i\right)\right)+\mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)\right)+\left(e^\alpha-e^{-\alpha}\right) \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right) \\
 = & e^{-\alpha}+\left(e^\alpha-e^{-\alpha}\right) \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)
 \end{aligned}
-
 $$
 
  将此结果代入
@@ -640,13 +576,11 @@ $\ell_{\exp }\left(H_{t-1}+\alpha h \mid \mathcal{D}\right)$, 得 **（注:
 时仍会使用）**
 
 $$
-
 \begin{aligned}
 \ell_{\exp }\left(H_{t-1}+\alpha h \mid \mathcal{D}\right) & =\sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}_i\right) e^{-f\left(\boldsymbol{x}_i\right) H_{t-1}\left(\boldsymbol{x}_i\right)}\left(e^{-\alpha}+\left(e^\alpha-e^{-\alpha}\right) \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)\right) \\
 & =\sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}_i\right) e^{-f\left(\boldsymbol{x}_i\right) H_{t-1}\left(\boldsymbol{x}_i\right)} e^{-\alpha}+\sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}_i\right) e^{-f\left(\boldsymbol{x}_i\right) H_{t-1}\left(\boldsymbol{x}_i\right)}\left(e^\alpha-e^{-\alpha}\right) \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right) \\
 & =e^{-\alpha} \sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right)+\left(e^\alpha-e^{-\alpha}\right) \sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right) \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)
 \end{aligned}
-
 $$
 
  外面; 第一项
@@ -657,9 +591,7 @@ $h(\boldsymbol{x})$ 只需要使第二项最小即可, 即
 
 
 $$
-
 h_t=\underset{h}{\arg \min }\left(e^\alpha-e^{-\alpha}\right) \sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right) \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)
-
 $$
 
 
@@ -668,9 +600,7 @@ $h(\boldsymbol{x})$ 无关的正系数可以省略:
 
 
 $$
-
 h_t=\underset{h}{\arg \min } \sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right) \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)
-
 $$
 
 
@@ -686,14 +616,12 @@ $h_t=\mathfrak{L}\left(D, \mathcal{D}_t\right.$ )得到第 $t$
 行）**
 
 $$
-
 \begin{aligned}
 \mathcal{D}_{t+1}\left(\boldsymbol{x}_i\right) & =\mathcal{D}\left(\boldsymbol{x}_i\right) e^{-f\left(\boldsymbol{x}_i\right) H_t\left(\boldsymbol{x}_i\right)} \\
 & =\mathcal{D}\left(\boldsymbol{x}_i\right) e^{-f\left(\boldsymbol{x}_i\right)\left(H_{t-1}\left(\boldsymbol{x}_i\right)+\alpha_t h_t\left(\boldsymbol{x}_i\right)\right)} \\
 & =\mathcal{D}\left(\boldsymbol{x}_i\right) e^{-f\left(\boldsymbol{x}_i\right) H_{t-1}\left(\boldsymbol{x}_i\right)} e^{-f\left(\boldsymbol{x}_i\right) \alpha_t h_t\left(\boldsymbol{x}_i\right)} \\
 & =\mathcal{D}_t\left(\boldsymbol{x}_i\right) e^{-f\left(\boldsymbol{x}_i\right) \alpha_t h_t\left(\boldsymbol{x}_i\right)}
 \end{aligned}
-
 $$
 
  此即类似式(8.19)的分布权重更新公式。
@@ -703,35 +631,29 @@ $\ell_{\exp }\left(H_{t-1}+\alpha h_t \mid \mathcal{D}\right)$ 求导, 得
 
 
 $$
-
 \begin{aligned}
 \frac{\partial \ell_{\exp }\left(H_{t-1}+\alpha h_t \mid \mathcal{D}\right)}{\partial \alpha} & =\frac{\partial\left(e^{-\alpha} \sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right)+\left(e^\alpha-e^{-\alpha}\right) \sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right) \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)\right)}{\partial \alpha} \\
 & =-e^{-\alpha} \sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right)+\left(e^\alpha+e^{-\alpha}\right) \sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right) \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)
 \end{aligned}
-
 $$
 
  令导数等于零, 得 
 
 $$
-
 \begin{aligned}
 \frac{e^{-\alpha}}{e^\alpha+e^{-\alpha}} & =\frac{\sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right) \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)}{\sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right)}=\sum_{i=1}^{|D|} \frac{\mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right)}{Z_t} \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right) \\
 & =\sum_{i=1}^{|D|} \mathcal{D}_t\left(\boldsymbol{x}_i\right) \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_t}\left[\mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)\right] \\
 & =\epsilon_t
 \end{aligned}
-
 $$
 
  对上述等式化简, 得 
 
 $$
-
 \begin{aligned}
 \frac{e^{-\alpha}}{e^\alpha+e^{-\alpha}}=\frac{1}{e^{2 \alpha}+1} & \Rightarrow e^{2 \alpha}+1=\frac{1}{\epsilon_t} \Rightarrow e^{2 \alpha}=\frac{1-\epsilon_t}{\epsilon_t} \Rightarrow 2 \alpha=\ln \left(\frac{1-\epsilon_t}{\epsilon_t}\right) \\
 & \Rightarrow \alpha_t=\frac{1}{2} \ln \left(\frac{1-\epsilon_t}{\epsilon_t}\right)
 \end{aligned}
-
 $$
 
  即式(8.11)。 从该式可以发现, 当 $\epsilon_t=1$ 时,
@@ -746,12 +668,10 @@ $\ell_{\exp }\left(H_{t-1}+\alpha h \mid \mathcal{D}\right)$
 的推导可以发现 
 
 $$
-
 \begin{aligned}
 \ell_{\exp }\left(H_{t-1}+\alpha h \mid \mathcal{D}\right) & =\sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}_i\right) e^{-f\left(\boldsymbol{x}_i\right) H_{t-1}\left(\boldsymbol{x}_i\right)} e^{-f\left(\boldsymbol{x}_i\right) \alpha h\left(\boldsymbol{x}_i\right)} \\
 & =\sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right) e^{-f\left(\boldsymbol{x}_i\right) \alpha h\left(\boldsymbol{x}_i\right)}
 \end{aligned}
-
 $$
 
  这与指数损失函数
@@ -759,12 +679,10 @@ $\ell_{\exp }\left(\alpha_t h_t \mid \mathcal{D}_t\right)$
 的表达式基本一致: 
 
 $$
-
 \begin{aligned}
 \ell_{\exp }\left(\alpha_t h_t \mid \mathcal{D}_t\right) & =\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_t}\left[e^{-f(\boldsymbol{x}) \alpha_t h_t(\boldsymbol{x})}\right] \\
 & =\sum_{i=1}^{|D|} \mathcal{D}_t\left(\boldsymbol{x}_i\right) e^{-f\left(\boldsymbol{x}_i\right) \alpha_t h_t\left(\boldsymbol{x}_t\right)}
 \end{aligned}
-
 $$
 
  而 $\mathcal{D}_t^{\prime}(\boldsymbol{x})$
@@ -793,9 +711,7 @@ $0.5$, 当二分类器分 类误差为 1 时相当于分类误差为 0 ,
 
 
 $$
-
 h_t=\underset{h}{\arg \min } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_t}[\mathbb{I}(f(\boldsymbol{x}) \neq h(\boldsymbol{x}))]=\underset{h}{\arg \min } P_{\boldsymbol{x} \sim \mathcal{D}_t}(h(\boldsymbol{x}) \neq f(\boldsymbol{x}))
-
 $$
 
 
@@ -808,13 +724,11 @@ $h_t$ 是最好的分类器, 而 $h_{t-1}$ 是最差的分类器,
 对于 $h_{t-1}$ 来说, 分类误差 $\epsilon_{t-1}$ 为 
 
 $$
-
 \begin{aligned}
 \epsilon_{t-1} & =P_{\boldsymbol{x} \sim \mathcal{D}_{t-1}}\left(h_{t-1}(\boldsymbol{x}) \neq f(\boldsymbol{x})\right)=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_{t-1}}\left[\mathbb{I}\left(h_{t-1}(\boldsymbol{x}) \neq f(\boldsymbol{x})\right)\right] \\
 & =\sum_{i=1}^{|D|} \mathcal{D}_{t-1}\left(\boldsymbol{x}_i\right) \mathbb{I}\left(h_{t-1}(\boldsymbol{x}) \neq f(\boldsymbol{x})\right) \\
 & =\frac{\sum_{i=1}^{|D|} \mathcal{D}_{t-1}\left(\boldsymbol{x}_i\right) \mathbb{I}\left(h_{t-1}(\boldsymbol{x}) \neq f(\boldsymbol{x})\right)}{\sum_{i=1}^{|D|} \mathcal{D}_{t-1}\left(\boldsymbol{x}_i\right) \mathbb{I}\left(h_{t-1}(\boldsymbol{x})=f(\boldsymbol{x})\right)+\sum_{i=1}^{|D|} \mathcal{D}_{t-1}\left(\boldsymbol{x}_i\right) \mathbb{I}\left(h_{t-1}(\boldsymbol{x}) \neq f(\boldsymbol{x})\right)}
 \end{aligned}
-
 $$
 
  在第 $t$ 轮, 根据分布更新公式(8.19)或"西瓜书"图8.3第7行
@@ -822,9 +736,7 @@ $$
 
 
 $$
-
 \mathcal{D}_t=\frac{\mathcal{D}_{t-1}}{Z_{t-1}} e^{-f(\boldsymbol{x}) \alpha_{t-1} h_{t-1}(\boldsymbol{x})}
-
 $$
 
 
@@ -832,9 +744,7 @@ $$
 
 
 $$
-
 \alpha_{t-1}=\frac{1}{2} \ln \frac{1-\epsilon_{t-1}}{\epsilon_{t-1}}=\ln \sqrt{\frac{1-\epsilon_{t-1}}{\epsilon_{t-1}}}
-
 $$
 
 
@@ -842,9 +752,7 @@ $$
 
 
 $$
-
 \mathcal{D}_t= \begin{cases}\frac{\mathcal{D}_{t-1}}{Z_{t-1}} \cdot \sqrt{\frac{\epsilon_{t-1}}{1-\epsilon_{t-1}}} & \text {, if } h_{t-1}(\boldsymbol{x})=f(\boldsymbol{x}) \\ \frac{\mathcal{D}_{t-1}}{Z_{t-1}} \cdot \sqrt{\frac{1-\epsilon_{t-1}}{\epsilon_{t-1}}} & \text {, if } h_{t-1}(\boldsymbol{x}) \neq f(\boldsymbol{x})\end{cases}
-
 $$
 
 
@@ -855,7 +763,6 @@ $\mathbb{I}\left(h_{t-1}(\boldsymbol{x})=f(\boldsymbol{x})\right)+\mathbb{I}\lef
 ) 
 
 $$
-
 \begin{aligned}
 & P_{\boldsymbol{x} \sim \mathcal{D}_t}\left(h_{t-1}(\boldsymbol{x}) \neq f(\boldsymbol{x})\right)=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_t}\left[\mathbb{I}\left(h_{t-1}(\boldsymbol{x}) \neq f(\boldsymbol{x})\right)\right] \\
 & =\frac{\sum_{i=1}^{|D|} \mathcal{D}_t\left(\boldsymbol{x}_i\right) \mathbb{I}\left(h_{t-1}\left(\boldsymbol{x}_i\right) \neq f\left(\boldsymbol{x}_i\right)\right)}{\sum_{i=1}^{|D|} \mathcal{D}_t\left(\boldsymbol{x}_i\right) \mathbb{I}\left(h_{t-1}\left(\boldsymbol{x}_i\right)=f\left(\boldsymbol{x}_i\right)\right)+\sum_{i=1}^{|D|} \mathcal{D}_t\left(\boldsymbol{x}_i\right) \mathbb{I}\left(h_{t-1}\left(\boldsymbol{x}_i\right) \neq f\left(\boldsymbol{x}_i\right)\right)} \\
@@ -864,7 +771,6 @@ $$
 & =\frac{\sqrt{\frac{1-\epsilon_{t-1}}{\epsilon_{t-1}}} \cdot \epsilon_{t-1}}{\sqrt{\frac{\epsilon_{t-1}}{1-\epsilon_{t-1}}} \cdot\left(1-\epsilon_{t-1}\right)+\sqrt{\frac{1-\epsilon_{t-1}}{\epsilon_{t-1}}} \cdot \epsilon_{t-1}}=\frac{1}{2} \\
 &
 \end{aligned}
-
 $$
 
 
@@ -883,9 +789,7 @@ $\mathcal{D}_t\left(\boldsymbol{x}_i\right)$, 则此时损失求和项应该变�
 
 
 $$
-
 \sum_{i=1}^m m \mathcal{D}_t\left(\boldsymbol{x}_i\right) \cdot \ell_{0 / 1}\left(y_i\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_i+b\right)-1\right)
-
 $$
 
 
@@ -897,9 +801,7 @@ $C=\alpha_i+\mu_i$ 变为
 
 
 $$
-
 C \cdot m \mathcal{D}_t\left(\boldsymbol{x}_i\right)=\alpha_i+\mu_i
-
 $$
 
 
@@ -958,9 +860,7 @@ $T=5$ 时, $0.632^T \approx 0.1$, 当 $T=10$ 时, $0.632^T \approx 0.01$,
 
 
 $$
-
 H(\boldsymbol{x})=\frac{1}{T} \sum_{i=1}^{T} h_{i}(\boldsymbol{x})
-
 $$
 
 
@@ -971,9 +871,7 @@ $$
 
 
 $$
-
 H(\boldsymbol{x})=\sum_{i=1}^{T} w_{i} h_{i}(\boldsymbol{x})
-
 $$
 
 
@@ -992,12 +890,10 @@ voting（概率投票），所以还是具体问题具体分析比较稳妥。
 
 
 $$
-
 H(\boldsymbol{x})=\left\{\begin{array}{ll}
 {c_{j},} & {\text { if } \sum_{i=1}^{T} h_{i}^{j}(\boldsymbol{x})>0.5 \sum_{k=1}^{N} \sum_{i=1}^{T} h_{i}^{k}(\boldsymbol{x})} \\
 {\text { reject, }} & {\text { otherwise. }}
 \end{array}\right.
-
 $$
 
 
@@ -1008,9 +904,7 @@ $$
 
 
 $$
-
 H(\boldsymbol{x})=c_{\underset{j}{ \arg \max} \sum_{i=1}^{T} h_{i}^{j}(\boldsymbol{x})}
-
 $$
 
 
@@ -1021,9 +915,7 @@ $$
 
 
 $$
-
 H(\boldsymbol{x})=c_{\underset{j}{ \arg \max} \sum_{i=1}^{T} w_i h_{i}^{j}(\boldsymbol{x})}
-
 $$
 
 
@@ -1059,9 +951,7 @@ $$
 
 
 $$
-
 A\left(h_{i} | \boldsymbol{x}\right)=\left(h_{i}(\boldsymbol{x})-H(\boldsymbol{x})\right)^{2}
-
 $$
 
 
@@ -1072,12 +962,10 @@ $$
 
 
 $$
-
 \begin{aligned}
 \bar{A}(h | \boldsymbol{x}) &=\sum_{i=1}^{T} w_{i} A\left(h_{i} | \boldsymbol{x}\right) \\
 &=\sum_{i=1}^{T} w_{i}\left(h_{i}(\boldsymbol{x})-H(\boldsymbol{x})\right)^{2}
 \end{aligned}
-
 $$
 
 
@@ -1088,9 +976,7 @@ $$
 
 
 $$
-
 E\left(h_{i} | \boldsymbol{x}\right)=\left(f(\boldsymbol{x})-h_{i}(\boldsymbol{x})\right)^{2}
-
 $$
 
 
@@ -1101,9 +987,7 @@ $$
 
 
 $$
-
 E(H | \boldsymbol{x})=(f(\boldsymbol{x})-H(\boldsymbol{x}))^{2}
-
 $$
 
 
@@ -1114,34 +998,28 @@ $$
 由(8.28)知 
 
 $$
-
 \begin{aligned}
 \bar{A}(h | \boldsymbol{x})&=\sum_{i=1}^{T} w_{i}\left(h_{i}(\boldsymbol{x})-H(\boldsymbol{x})\right)^{2}\\
 &=\sum_{i=1}^{T} w_{i}(h_i(\boldsymbol{x})^2-2h_i(\boldsymbol{x})H(\boldsymbol{x})+H(\boldsymbol{x})^2)\\
 &=\sum_{i=1}^{T} w_{i}h_i(\boldsymbol{x})^2-H(\boldsymbol{x})^2
 \end{aligned}
-
 $$
 
  又因为 
 
 $$
-
 \begin{aligned}
 & \sum_{i=1}^{T} w_{i} E\left(h_{i} | \boldsymbol{x}\right)-E(H | \boldsymbol{x})\\
 &=\sum_{i=1}^{T} w_{i}\left(f(\boldsymbol{x})-h_{i}(\boldsymbol{x})\right)^{2}-(f(\boldsymbol{x})-H(\boldsymbol{x}))^{2}\\
 &=\sum_{i=1}^{T} w_{i}h_i(\boldsymbol{x})^2-H(\boldsymbol{x})^{2}
 \end{aligned}
-
 $$
 
  所以
 
 
 $$
-
 \bar{A}(h | \boldsymbol{x}) =\sum_{i=1}^{T} w_{i} E\left(h_{i} | \boldsymbol{x}\right)-E(H | \boldsymbol{x})
-
 $$
 
 
@@ -1151,9 +1029,7 @@ $$
 
 
 $$
-
 \sum_{i=1}^{T} w_{i} \int A\left(h_{i} | \boldsymbol{x}\right) p(\boldsymbol{x}) d \boldsymbol{x}=\sum_{i=1}^{T} w_{i} \int E\left(h_{i} | \boldsymbol{x}\right) p(\boldsymbol{x}) d \boldsymbol{x}-\int E(H | \boldsymbol{x}) p(\boldsymbol{x}) d \boldsymbol{x}
-
 $$
 
 
@@ -1177,9 +1053,7 @@ $A_i=\sum_{\boldsymbol{x} \in D} A\left(h_i \mid \boldsymbol{x}\right) p_{\bolds
 
 
 $$
-
 E_{i}=\int E\left(h_{i} | \boldsymbol{x}\right) p(\boldsymbol{x}) d \boldsymbol{x}
-
 $$
 
 
@@ -1190,9 +1064,7 @@ $$
 
 
 $$
-
 A_{i}=\int A\left(h_{i} | \boldsymbol{x}\right) p(\boldsymbol{x}) d \boldsymbol{x}
-
 $$
 
 
@@ -1203,9 +1075,7 @@ $$
 
 
 $$
-
 E=\int E(H | \boldsymbol{x}) p(\boldsymbol{x}) d \boldsymbol{x}
-
 $$
 
 
@@ -1216,9 +1086,7 @@ $$
 
 
 $$
-
 E=\bar{E}-\bar{A}
-
 $$
 
 
@@ -1244,9 +1112,7 @@ $h_i$ 与 $h_j$ 对数据集 $D$ 所有样本预测结果均相同, 此时 $p_1=
 
 
 $$
-
 p_2=\frac{a+b}{m} \cdot \frac{a+c}{m}+\frac{c+d}{m} \cdot \frac{b+d}{m}
-
 $$
 
 
@@ -1263,12 +1129,10 @@ $\frac{c+d}{m} \cdot \frac{b+d}{m}$ 与 $\frac{d}{m}$ 的不同:
 
 
 $$
-
 \begin{aligned}
 & \frac{a+b}{m} \cdot \frac{a+c}{m}=p\left(h_i=+1\right) p\left(h_j=+1\right), \frac{a}{m}=p\left(h_i=+1, h_j=+1\right) \\
 & \frac{c+d}{m} \cdot \frac{b+d}{m}=p\left(h_i=-1\right) p\left(h_j=-1\right), \frac{d}{m}=p\left(h_i=-1, h_j=-1\right)
 \end{aligned}
-
 $$
 
  即 $\frac{a+b}{m} \cdot \frac{a+c}{m}$ 和
@@ -1317,9 +1181,7 @@ $\nabla f\left(\boldsymbol{x}_k\right)=\left.\frac{\nabla f(\boldsymbol{x})}{\na
 
 
 $$
-
 f(\boldsymbol{x}) \approx f\left(\boldsymbol{x}_k\right)+\nabla f\left(\boldsymbol{x}_k\right)^{\mathrm{T}}\left(\boldsymbol{x}-\boldsymbol{x}_k\right)
-
 $$
 
 
@@ -1327,9 +1189,7 @@ $$
 
 
 $$
-
 f\left(\boldsymbol{x}_k+\Delta \boldsymbol{x}\right) \approx f\left(\boldsymbol{x}_k\right)+\nabla f\left(\boldsymbol{x}_k\right)^{\mathrm{T}} \Delta \boldsymbol{x}
-
 $$
 
 
@@ -1354,21 +1214,17 @@ $\boldsymbol{d}_k$ 表示往哪个方向改 变 $\boldsymbol{x}$ 函数值下降
 
 
 $$
-
 \left(\alpha_k, \boldsymbol{d}_k\right)=\underset{\alpha, \boldsymbol{d}}{\arg \min } \nabla f\left(\boldsymbol{x}_k\right)^{\mathrm{T}} \alpha \boldsymbol{d}
-
 $$
 
 
 将以上优化问题分为两步求解, 即 
 
 $$
-
 \begin{gathered}
 \boldsymbol{d}_k=\underset{\boldsymbol{d}}{\arg \min } \nabla f\left(\boldsymbol{x}_k\right)^{\mathrm{T}} \boldsymbol{d} \quad \text { s.t. }\|\boldsymbol{d}\|_2=1 \\
 \alpha_k=\underset{\alpha}{\arg \min } \nabla f\left(\boldsymbol{x}_k\right)^{\mathrm{T}} \boldsymbol{d}_k \alpha
 \end{gathered}
-
 $$
 
  以上求解 $\alpha_k$ 的优化问题明显有问题, 因为对于
@@ -1378,9 +1234,7 @@ $\nabla f\left(\boldsymbol{x}_k\right)^{\mathrm{T}} \boldsymbol{d}_k<0$
 
 
 $$
-
 \alpha_k=\underset{\alpha}{\arg \min } f\left(\boldsymbol{x}_k+\alpha \boldsymbol{d}_k\right)
-
 $$
 
 
@@ -1391,9 +1245,7 @@ $\boldsymbol{d}_k$ 和 $\alpha_k$, 与先求 $\boldsymbol{d}_k$
 
 
 $$
-
 \left|\nabla f\left(\boldsymbol{x}_k\right)^{\mathrm{T}} \boldsymbol{d}_k\right| \leq\left\|\nabla f\left(\boldsymbol{x}_k\right)\right\|_2\left\|\boldsymbol{d}_k\right\|_2
-
 $$
 
 
@@ -1409,9 +1261,7 @@ $f\left(\boldsymbol{x}_k+\alpha \boldsymbol{d}_k\right)$ 对 $\alpha$
 
 
 $$
-
 \frac{\partial f\left(\boldsymbol{x}_k+\alpha \boldsymbol{d}_k\right)}{\partial \alpha}=0
-
 $$
 
 
@@ -1419,13 +1269,11 @@ $$
 解: 对 $f(x)$ 在 $x_k=2$ 处进行一阶 Taylor 展开: 
 
 $$
-
 \begin{aligned}
 f(x) & =f\left(x_k\right)+f^{\prime}\left(x_k\right)\left(x-x_k\right) \\
 & =x_k^2+2 x_k\left(x-x_k\right) \\
 & =x_k^2+2 x_k \alpha d
 \end{aligned}
-
 $$
 
  由于此时自变量为一维, 因此只有两个方向可选, 要么正方向,
@@ -1435,27 +1283,21 @@ $d_k=-\frac{f^{\prime}\left(x_k\right)}{\left|f^{\prime}\left(x_k\right)\right|}
 
 
 $$
-
 f\left(x_k+\alpha d_k\right)=f(2-\alpha)=(2-\alpha)^2
-
 $$
 
  进而有
 
 
 $$
-
 \frac{\partial f\left(x_k+\alpha d_k\right)}{\partial \alpha}=-2(2-\alpha)
-
 $$
 
 
 令导数等于 0 , 得 $\alpha_k=2$ 。此时 
 
 $$
-
 \Delta x=\alpha_k d_k=-2
-
 $$
 
  则
@@ -1469,13 +1311,11 @@ $\boldsymbol{x}_k=\left[x_k^1, x_k^2\right]^{\mathrm{T}}=[3,4]^{\mathrm{T}}$
 处进行一阶 Taylor 展开: 
 
 $$
-
 \begin{aligned}
 f(\boldsymbol{x}) & =f\left(\boldsymbol{x}_k\right)+\nabla f\left(\boldsymbol{x}_k\right)^{\mathrm{T}}\left(\boldsymbol{x}-\boldsymbol{x}_k\right) \\
 & =\|\boldsymbol{x}\|_2^2+2 \boldsymbol{x}_k^{\mathrm{T}}\left(\boldsymbol{x}-\boldsymbol{x}_k\right) \\
 & =\|\boldsymbol{x}\|_2^2+2 \boldsymbol{x}_k^{\mathrm{T}} \alpha \boldsymbol{d}
 \end{aligned}
-
 $$
 
  此时
@@ -1485,13 +1325,11 @@ $\boldsymbol{d}_k=-\frac{\nabla f\left(\boldsymbol{x}_k\right)}{\left\|\nabla f\
 
 
 $$
-
 \begin{aligned}
 f\left(\boldsymbol{x}_k+\alpha \boldsymbol{d}_k\right) & =(3-0.6 \alpha)^2+(4-0.8 \alpha)^2 \\
 & =\alpha^2-10 \alpha+25 \\
 & =(\alpha-5)^2
 \end{aligned}
-
 $$
 
  因此可得 $\alpha_k=5$ (或对 $\alpha$ 求导, 再令导数等于
@@ -1499,9 +1337,7 @@ $$
 
 
 $$
-
 \Delta \boldsymbol{x}=\alpha_k \boldsymbol{d}_k=[-3,-4]^{\mathrm{T}}
-
 $$
 
 
@@ -1512,9 +1348,7 @@ $\boldsymbol{d}_k$ 时应该求解如下优化问题:
 
 
 $$
-
 \boldsymbol{d}_k=\underset{\boldsymbol{d}}{\arg \min } \nabla f\left(\boldsymbol{x}_k\right)^{\mathrm{T}} \boldsymbol{d} \text { s.t. }\|\boldsymbol{d}\|_2=C
-
 $$
 
 
@@ -1524,9 +1358,7 @@ $\alpha_k$ 应该求解如下优化问题:
 
 
 $$
-
 \alpha_k=\underset{\alpha}{\arg \min } f\left(\boldsymbol{x}_k+\alpha \boldsymbol{d}_k\right)
-
 $$
 
 
@@ -1538,9 +1370,7 @@ AdaBoost 第 $t$ 轮迭代时最小化式(8.5)的指数损失函数
 
 
 $$
-
 \ell_{\exp }\left(H_t \mid \mathcal{D}\right)=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_t(\boldsymbol{x})}\right]=\sum_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H_t(\boldsymbol{x})}
-
 $$
 
 
@@ -1548,13 +1378,11 @@ $$
 处泰勒展开 
 
 $$
-
 \begin{aligned}
 \ell_{\exp }\left(H_t \mid \mathcal{D}\right) & \approx \sum_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x})\left(e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}-f(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\left(H_t(\boldsymbol{x})-H_{t-1}(\boldsymbol{x})\right)\right) \\
 & =\sum_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x})\left(e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}-e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} f(\boldsymbol{x}) \alpha_t h_t(\boldsymbol{x})\right) \\
 & =\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}-e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} f(\boldsymbol{x}) \alpha_t h_t(\boldsymbol{x})\right]
 \end{aligned}
-
 $$
 
  其中 $H_t=H_{t-1}+\alpha_t h_t$ 。注意: $\alpha_t, h_t$
@@ -1563,9 +1391,7 @@ $H_t(\boldsymbol{x})$, 在 $H_{t-1}$ 处一阶导数为
 
 
 $$
-
 \left.\frac{\partial e^{-f(\boldsymbol{x}) H_t(\boldsymbol{x})}}{\partial H_t(\boldsymbol{x})}\right|_{H_t(\boldsymbol{x})=H_{t-1}(\boldsymbol{x})}=-f(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}
-
 $$
 
 
@@ -1574,14 +1400,12 @@ $g(z)=e^{-f(\boldsymbol{x}) z}$, 对 $g(z)$ 在
 $z_0=H_{t-1}(\boldsymbol{x})$ 处泰勒展开, 得 
 
 $$
-
 \begin{aligned}
 g(z) & \approx g\left(z_0\right)+g^{\prime}\left(z_0\right)\left(z-z_0\right) \\
 & =g\left(z_0\right)-f(\boldsymbol{x}) e^{-f(\boldsymbol{x}) z_0}\left(z-z_0\right) \\
 & =e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}-e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} f(\boldsymbol{x})\left(H_t(\boldsymbol{x})-H_{t-1}(\boldsymbol{x})\right) \\
 & =e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}-e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} f(\boldsymbol{x}) \alpha_t h_t(\boldsymbol{x})
 \end{aligned}
-
 $$
 
 
@@ -1593,21 +1417,17 @@ $$
 
 
 $$
-
 h_t=\underset{h}{\arg \min } \sum_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x})\left(-e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} f(\boldsymbol{x}) h(\boldsymbol{x})\right) \quad \text { s.t. } h(\boldsymbol{x}) \in\{-1,+1\}
-
 $$
 
 
 将负号去掉, 最小化变为最大化问题 
 
 $$
-
 \begin{aligned}
 h_t & =\underset{h}{\arg \max } \sum_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x})\left(e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} f(\boldsymbol{x}) h(\boldsymbol{x})\right) \\
 & =\underset{h}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} f(\boldsymbol{x}) h(\boldsymbol{x})\right] \quad \text { s.t. } h(\boldsymbol{x}) \in\{-1,+1\}
 \end{aligned}
-
 $$
 
  这就是式(8.14)的第 3 个等号的结果,
@@ -1624,9 +1444,7 @@ $\ell_{\exp }\left(H_{t-1}+\alpha h_t \mid \mathcal{D}\right)$
 
 
 $$
-
 \alpha_k=\underset{\alpha}{\arg \min } \ell_{\exp }\left(H_{t-1}+\alpha h_t \mid \mathcal{D}\right)
-
 $$
 
 
@@ -1635,35 +1453,29 @@ $\ell_{\exp }\left(H_{t-1}+\alpha h_t \mid \mathcal{D}\right)$ 求导, 得
 
 
 $$
-
 \begin{aligned}
 \frac{\partial \ell_{\exp }\left(H_{t-1}+\alpha h_t \mid \mathcal{D}\right)}{\partial \alpha} & =\frac{\partial\left(e^{-\alpha} \sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right)+\left(e^\alpha-e^{-\alpha}\right) \sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right) \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)\right)}{\partial \alpha} \\
 & =-e^{-\alpha} \sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right)+\left(e^\alpha+e^{-\alpha}\right) \sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right) \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)
 \end{aligned}
-
 $$
 
  令导数等于零, 得 
 
 $$
-
 \begin{aligned}
 \frac{e^{-\alpha}}{e^\alpha+e^{-\alpha}} & =\frac{\sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right) \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)}{\sum_{i=1}^{|D|} \mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right)}=\sum_{i=1}^{|D|} \frac{\mathcal{D}_t^{\prime}\left(\boldsymbol{x}_i\right)}{Z_t} \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right) \\
 & =\sum_{i=1}^{|D|} \mathcal{D}_t\left(\boldsymbol{x}_i\right) \mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_t}\left[\mathbb{I}\left(f\left(\boldsymbol{x}_i\right) \neq h\left(\boldsymbol{x}_i\right)\right)\right] \\
 & =\epsilon_t
 \end{aligned}
-
 $$
 
  对上述等式化简, 得 
 
 $$
-
 \begin{aligned}
 \frac{e^{-\alpha}}{e^\alpha+e^{-\alpha}}=\frac{1}{e^{2 \alpha}+1} & \Rightarrow e^{2 \alpha}+1=\frac{1}{\epsilon_t} \Rightarrow e^{2 \alpha}=\frac{1-\epsilon_t}{\epsilon_t} \Rightarrow 2 \alpha=\ln \left(\frac{1-\epsilon_t}{\epsilon_t}\right) \\
 & \Rightarrow \alpha_t=\frac{1}{2} \ln \left(\frac{1-\epsilon_t}{\epsilon_t}\right)
 \end{aligned}
-
 $$
 
  即式(8.11)。 通过以上推导可以发现: AdaBoost
@@ -1678,12 +1490,10 @@ $h_t(\boldsymbol{x}) \in\{-1,+1\}$）**
 
 
 $$
-
 \begin{aligned}
 \ell\left(H_t \mid \mathcal{D}\right) & =\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\operatorname{err}\left(H_t(\boldsymbol{x}), f(\boldsymbol{x})\right)\right] \\
 & =\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\operatorname{err}\left(H_{t-1}(\boldsymbol{x})+\alpha_t h_t(\boldsymbol{x}), f(\boldsymbol{x})\right)\right]
 \end{aligned}
-
 $$
 
  问题时, $f(\boldsymbol{x}) \in \mathbb{R}$,
@@ -1693,9 +1503,7 @@ $\operatorname{err}\left(H_t(\boldsymbol{x}), f(\boldsymbol{x})\right)=\left(H_t
 
 
 $$
-
 H(\boldsymbol{x})=\sum_{t=1}^T \alpha_t h_t(\boldsymbol{x})
-
 $$
 
  类似于
@@ -1704,13 +1512,11 @@ AdaBoost, 第 $t$ 轮得到 $\alpha_t, h_t(\boldsymbol{x})$,
 
 
 $$
-
 \begin{aligned}
 \ell\left(H_t \mid \mathcal{D}\right) & \approx \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\operatorname{err}\left(H_{t-1}(\boldsymbol{x}), f(\boldsymbol{x})\right)+\left.\frac{\partial \operatorname{err}\left(H_t(\boldsymbol{x}), f(\boldsymbol{x})\right)}{\partial H_t(\boldsymbol{x})}\right|_{H_t(\boldsymbol{x})=H_{t-1}(\boldsymbol{x})}\left(H_t(\boldsymbol{x})-H_{t-1}(\boldsymbol{x})\right)\right] \\
 & =\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\operatorname{err}\left(H_{t-1}(\boldsymbol{x}), f(\boldsymbol{x})\right)+\left.\frac{\partial \operatorname{err}\left(H_t(\boldsymbol{x}), f(\boldsymbol{x})\right)}{\partial H_t(\boldsymbol{x})}\right|_{H_t(\boldsymbol{x})=H_{t-1}(\boldsymbol{x})} \alpha_t h_t(\boldsymbol{x})\right] \\
 & =\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\operatorname{err}\left(H_{t-1}(\boldsymbol{x}), f(\boldsymbol{x})\right)\right]+\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\left.\frac{\partial \operatorname{err}\left(H_t(\boldsymbol{x}), f(\boldsymbol{x})\right)}{\partial H_t(\boldsymbol{x})}\right|_{H_t(\boldsymbol{x})=H_{t-1}(\boldsymbol{x})} \alpha_t h_t(\boldsymbol{x})\right]
 \end{aligned}
-
 $$
 
  注意, 在上式展开中的变量为 $H_t(\boldsymbol{x})$, 且有
@@ -1724,9 +1530,7 @@ $h_t(\boldsymbol{x})$ :
 
 
 $$
-
 h_t(\boldsymbol{x})=\underset{h}{\arg \min } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\left.\frac{\partial \operatorname{err}\left(H_t(\boldsymbol{x}), f(\boldsymbol{x})\right)}{\partial H_t(\boldsymbol{x})}\right|_{H_t(\boldsymbol{x})=H_{t-1}(\boldsymbol{x})} h(\boldsymbol{x})\right] \quad \text { s.t. constraints for } h(\boldsymbol{x})
-
 $$
 
 
@@ -1734,9 +1538,7 @@ $$
 
 
 $$
-
 \alpha_t=\underset{\alpha}{\arg \min } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\operatorname{err}\left(H_{t-1}(\boldsymbol{x})+\alpha h_t(\boldsymbol{x}), f(\boldsymbol{x})\right)\right]
-
 $$
 
 
