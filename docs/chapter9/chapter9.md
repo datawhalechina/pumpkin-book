@@ -21,9 +21,7 @@ learning)。
 
 
 $$
-
 JC=\frac{|A\bigcap B|}{|A\bigcup B|}=\frac{|A\bigcap B|}{|A|+|B|-|A\bigcap B|}
-
 $$
 
 
@@ -42,9 +40,7 @@ Jaccard系数可以用来描述两个集合的相似程度。
 
 
 $$
-
 \mathrm{JC}=\frac{M_{11}}{M_{11}+M_{10}+M_{01}}
-
 $$
 
 
@@ -67,9 +63,7 @@ $$
 
 
 $$
-
 \mathrm{JC}=\frac{|A\bigcap B|}{|A\bigcup B|}=\frac{|SS|}{|SS\bigcup SD\bigcup DS|}=\frac{a}{a+b+c}
-
 $$
 
 
@@ -78,9 +72,7 @@ $$
 
 
 $$
-
 \mathrm{JC}=\frac{M_{11}}{M_{11}+M_{10}+M_{01}}=\frac{a}{a+b+c}
-
 $$
 
 
@@ -96,9 +88,7 @@ Rand Index定义如下：
 
 
 $$
-
 \mathrm{RI}=\frac{a+d}{a+b+c+d}=\frac{a+d}{m(m-1)/2}=\frac{2(a+d)}{m(m-1)}
-
 $$
 
 
@@ -154,12 +144,10 @@ $16 \sim 17$ ), 即 $m_{u, a, 2}=3$, 坏瓜中根蒂为稍蜷的样本共有 4 �
 
 
 $$
-
 \begin{aligned}
 \operatorname{VDM}_p(a, b) & =\left|\frac{m_{u, a, 1}}{m_{u, a}}-\frac{m_{u, b, 1}}{m_{u, b}}\right|^p+\left|\frac{m_{u, a, 2}}{m_{u, a}}-\frac{m_{u, b, 2}}{m_{u, b}}\right|^p \\
 & =\left|\frac{5}{8}-\frac{3}{7}\right|^p+\left|\frac{3}{8}-\frac{4}{7}\right|^p
 \end{aligned}
-
 $$
 
 
@@ -179,9 +167,7 @@ kmeans 函数供调用。学习向量量化也是无监督聚类的一种方式,
 
 
 $$
-
 p(\boldsymbol{x})=\frac{1}{(2 \pi)^{\frac{n}{2}}|\boldsymbol{\Sigma}|^{\frac{1}{2}}} e^{-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top} \boldsymbol{\Sigma}^{-1}(\boldsymbol{x}-\boldsymbol{\mu})}
-
 $$
 
 
@@ -189,9 +175,7 @@ $$
 
 
 $$
-
 p(x)=\frac{1}{\sqrt{2 \pi} \sigma} e^{-\frac{(x-\mu)^2}{2 \sigma^2}}
-
 $$
 
 
@@ -262,9 +246,7 @@ $p_{\mathcal{M}}\left(z_j=i \mid \boldsymbol{x}_j\right)$ 可写为
 
 
 $$
-
 p_{\mathcal{M}}\left(z_j=i \mid \boldsymbol{x}_j\right)=\frac{P\left(z_j=i\right) \cdot p_{\mathcal{M}}\left(\boldsymbol{x}_j \mid z_j=i\right)}{p_{\mathcal{M}}\left(\boldsymbol{x}_j\right)}
-
 $$
 
 
@@ -287,14 +269,12 @@ $j$ 行第例的元素, 矩阵 $\Gamma$ 大小为 $m \times k$, 即
 
 
 $$
-
 \Gamma=\left[\begin{array}{cccc}
 \gamma_{11} & \gamma_{12} & \cdots & \gamma_{1 k} \\
 \gamma_{21} & \gamma_{22} & \cdots & \gamma_{2 k} \\
 \vdots & \vdots & \ddots & \vdots \\
 \gamma_{m 1} & \gamma_{m 2} & \cdots & \gamma_{m k}
 \end{array}\right]_{m \times k}
-
 $$
 
  其中 $m$ 为训练集样本个数, $k$
@@ -341,9 +321,7 @@ $\prod_{j=1}^m p_{\mathcal{M}}\left(\boldsymbol{x}_j\right)$,
 
 
 $$
-
 p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)=\frac{1}{(2 \pi)^{\frac{n}{2}}\left|\boldsymbol{\Sigma}_{i}\right|^{\frac{1}{2}}} \exp \left(-\frac{1}{2}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{T} \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\right)
-
 $$
 
 
@@ -351,22 +329,18 @@ $$
 
 
 $$
-
 \frac{\partial L L(D)}{\partial \boldsymbol{\mu}_{i}}=\frac{\partial L L(D)}{\partial p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot \frac{\partial p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\partial \boldsymbol{\mu}_{i}}=0
-
 $$
 
 
 其中： 
 
 $$
-
 \begin{aligned}
 \frac{\partial L L(D)}{\partial p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \mathbf{\Sigma}_{i}\right)} &=\frac{\partial \sum_{j=1}^{m} \ln \left(\sum_{l=1}^{k} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)\right)}{\partial p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \\
 &=\sum_{j=1}^{m} \frac{\partial \ln \left(\sum_{l=1}^{k} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)\right)}{\partial p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \\
 &=\sum_{j=1}^{m} \frac{\alpha_{i}}{\sum_{l=1}^{k} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)}
 \end{aligned}
-
 $$
 
 
@@ -374,7 +348,6 @@ $$
 
 
 $$
-
 \begin{aligned}
 \frac{\partial p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\partial \boldsymbol{\mu}_{i}} &=\frac{\partial \frac{1}{(2 \pi)^{\frac{n}{2}}\left|\Sigma_{i}\right|^{\frac{1}{2}}} \exp\left({-\frac{1}{2}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top}\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)}\right)}{\partial \boldsymbol{\mu}_{i}} \\
 &=\frac{1}{(2 \pi)^{\frac{n}{2}}\left|\boldsymbol{\Sigma}_{i}\right|^{\frac{1}{2}}} \cdot \frac{\partial \exp\left({-\frac{1}{2}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top} \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)}\right)}{\partial \boldsymbol{\mu}_{i}}\\
@@ -382,7 +355,6 @@ $$
 &=\frac{1}{(2 \pi)^{\frac{n}{2}}\left|\boldsymbol{\Sigma}_{i}\right|^{\frac{1}{2}}}\cdot \exp\left({-\frac{1}{2}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top} \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)}\right) \cdot\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)\\
 &=p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right) \cdot \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)
 \end{aligned}
-
 $$
 
 
@@ -390,21 +362,17 @@ $$
 
 
 $$
-
 \begin{aligned}
 -\frac{1}{2} \frac{\partial\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)^{\top} \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)}{\partial \boldsymbol{\mu}_{i}} &=-\frac{1}{2} \cdot 2 \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{\mu}_{i}-\boldsymbol{x}_{j}\right) \\
 &=\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)
 \end{aligned}
-
 $$
 
  因此有：
 
 
 $$
-
 \frac{\partial L L(D)}{\partial \boldsymbol{\mu}_{i}}=\sum_{j=1}^{m} \frac{\alpha_{i}}{\sum_{l=1}^{k} \alpha_{l} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{l}, \mathbf{\Sigma}_{l}\right)} \cdot p\left(\boldsymbol{x}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right) \cdot \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}_{j}-\boldsymbol{\mu}_{i}\right)=0
-
 $$
 
 
@@ -415,9 +383,7 @@ $$
 
 
 $$
-
 \gamma_{j i}=p_{\mathcal{M}}\left(z_{j}=i | \mathbf{X}_{j}\right)=\frac{\alpha_{i} \cdot p\left(\mathbf{X}_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\sum_{l=1}^{k} \alpha_{l} \cdot p\left(\mathbf{X}_{j} | \boldsymbol{\mu}_{l}, \boldsymbol{\Sigma}_{l}\right)}
-
 $$
 
 
@@ -425,9 +391,7 @@ $$
 
 
 $$
-
 \sum_{j=1}^{m} \gamma_{j i}\left(\mathbf{X}_{j}-\boldsymbol{\mu}_{i}\right)=0
-
 $$
 
 
@@ -435,9 +399,7 @@ $$
 
 
 $$
-
 \sum_{j=1}^m \gamma_{j i} \boldsymbol{x}_j=\sum_{j=1}^m \gamma_{j i} \boldsymbol{\mu}_i=\boldsymbol{\mu}_i \cdot \sum_{j=1}^m \gamma_{j i}
-
 $$
 
 
@@ -446,9 +408,7 @@ $$
 
 
 $$
-
 \boldsymbol{\mu}_i=\frac{\sum_{j=1}^m \gamma_{j i} \boldsymbol{x}_j}{\sum_{j=1}^m \gamma_{j i}}
-
 $$
 
 
@@ -459,9 +419,7 @@ $$
 
 
 $$
-
 p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})=\cfrac{1}{(2\pi)^\frac{n}{2}\left| \boldsymbol\Sigma_{i}\right |^\frac{1}{2}}\exp\left({-\frac{1}{2}(\boldsymbol x_{j}-\boldsymbol\mu_{i})^T\boldsymbol\Sigma_{i}^{-1}(\boldsymbol x_{j}-\boldsymbol\mu_{i})}\right)
-
 $$
 
 
@@ -469,28 +427,23 @@ $$
 
 
 $$
-
 \cfrac{\partial LL(D)}{\partial \boldsymbol\Sigma_{i}}=0
-
 $$
 
  可得
 
 
 $$
-
 \begin{aligned}
 \cfrac {\partial LL(D)}{\partial\boldsymbol\Sigma_{i}}&=\cfrac {\partial}{\partial \boldsymbol\Sigma_{i}}\left[\sum_{j=1}^m\ln\Bigg(\sum_{i=1}^k \alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})\Bigg)\right] \\
 &=\sum_{j=1}^m\frac{\partial}{\partial\boldsymbol\Sigma_{i}}\left[\ln\Bigg(\sum_{i=1}^k \alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})\Bigg)\right] \\
 &=\sum_{j=1}^m\cfrac{\alpha_{i}\cdot \cfrac{\partial}{\partial\boldsymbol\Sigma_{i}}\left(p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})\right)}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\boldsymbol\Sigma_{l})} \\
 \end{aligned}
-
 $$
 
  其中 
 
 $$
-
 \begin{aligned}
 \cfrac{\partial}{\partial\boldsymbol\Sigma_{i}}\left(p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})\right)&=\cfrac{\partial}{\partial\boldsymbol\Sigma_{i}}\left[\cfrac{1}{(2\pi)^\frac{n}{2}\left| \boldsymbol\Sigma_{i}\right |^\frac{1}{2}}\exp\left({-\frac{1}{2}(\boldsymbol x_{j}-\boldsymbol\mu_{i})^T\boldsymbol\Sigma_{i}^{-1}(\boldsymbol x_{j}-\boldsymbol\mu_{i})}\right)\right] \\
 &=\cfrac{\partial}{\partial\boldsymbol\Sigma_{i}}\left\{\exp\left[\ln\left(\cfrac{1}{(2\pi)^\frac{n}{2}\left| \boldsymbol\Sigma_{i}\right |^\frac{1}{2}}\exp\left({-\frac{1}{2}(\boldsymbol x_{j}-\boldsymbol\mu_{i})^T\boldsymbol\Sigma_{i}^{-1}(\boldsymbol x_{j}-\boldsymbol\mu_{i})}\right)\right)\right]\right\} \\
@@ -498,7 +451,6 @@ $$
 &=p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})\cdot\cfrac{\partial}{\partial\boldsymbol\Sigma_{i}}\left[\ln\cfrac{1}{(2\pi)^{\frac{n}{2}}}-\cfrac{1}{2}\ln{|\boldsymbol{\Sigma}_i|}-\frac{1}{2}(\boldsymbol x_j-\boldsymbol\mu_i)^T\boldsymbol{\Sigma}_i^{-1}(\boldsymbol x_j-\boldsymbol\mu_i)\right]\\
 &=p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})\cdot\left[-\cfrac{1}{2}\cfrac{\partial\left(\ln{|\boldsymbol{\Sigma}_i|}\right) }{\partial \boldsymbol{\Sigma}_i}-\cfrac{1}{2}\cfrac{\partial \left[(\boldsymbol x_j-\boldsymbol\mu_i)^T\boldsymbol{\Sigma}_i^{-1}(\boldsymbol x_j-\boldsymbol\mu_i)\right]}{\partial \boldsymbol{\Sigma}_i}\right]\\
 \end{aligned}
-
 $$
 
 
@@ -506,11 +458,9 @@ $$
 
 
 $$
-
 \begin{aligned}
 \cfrac{\partial}{\partial\boldsymbol\Sigma_{i}}\left(p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})\right)&=p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})\cdot\left[-\cfrac{1}{2}\boldsymbol{\Sigma}_i^{-1}+\cfrac{1}{2}\boldsymbol{\Sigma}_i^{-1}(\boldsymbol x_j-\boldsymbol\mu_i)(\boldsymbol x_j-\boldsymbol\mu_i)^T\boldsymbol{\Sigma}_i^{-1}\right]\\
 \end{aligned}
-
 $$
 
 
@@ -518,9 +468,7 @@ $$
 
 
 $$
-
 \cfrac {\partial LL(D)}{\partial\boldsymbol\Sigma_{i}}=\sum_{j=1}^m\cfrac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\boldsymbol\Sigma_{l})}\cdot\left[-\cfrac{1}{2}\boldsymbol{\Sigma}_i^{-1}+\cfrac{1}{2}\boldsymbol{\Sigma}_i^{-1}(\boldsymbol x_j-\boldsymbol\mu_i)(\boldsymbol x_j-\boldsymbol\mu_i)^T\boldsymbol{\Sigma}_i^{-1}\right]
-
 $$
 
 
@@ -528,9 +476,7 @@ $$
 
 
 $$
-
 \cfrac {\partial LL(D)}{\partial\boldsymbol\Sigma_{i}}=\sum_{j=1}^m\gamma_{ji}\cdot\left[-\cfrac{1}{2}\boldsymbol{\Sigma}_i^{-1}+\cfrac{1}{2}\boldsymbol{\Sigma}_i^{-1}(\boldsymbol x_j-\boldsymbol\mu_i)(\boldsymbol x_j-\boldsymbol\mu_i)^T\boldsymbol{\Sigma}_i^{-1}\right]
-
 $$
 
 
@@ -538,16 +484,13 @@ $$
 
 
 $$
-
 \cfrac {\partial LL(D)}{\partial\boldsymbol\Sigma_{i}}=\sum_{j=1}^m\gamma_{ji}\cdot\left[-\cfrac{1}{2}\boldsymbol{\Sigma}_i^{-1}+\cfrac{1}{2}\boldsymbol{\Sigma}_i^{-1}(\boldsymbol x_j-\boldsymbol\mu_i)(\boldsymbol x_j-\boldsymbol\mu_i)^T\boldsymbol{\Sigma}_i^{-1}\right]=0
-
 $$
 
 
 移项推导有： 
 
 $$
-
 \begin{aligned}
 \sum_{j=1}^m\gamma_{ji}\cdot\left[-\boldsymbol{I}+(\boldsymbol x_j-\boldsymbol\mu_i)(\boldsymbol x_j-\boldsymbol\mu_i)^T\boldsymbol{\Sigma}_i^{-1}\right]&=0\\
 \sum_{j=1}^m\gamma_{ji}(\boldsymbol x_j-\boldsymbol\mu_i)(\boldsymbol x_j-\boldsymbol\mu_i)^T\boldsymbol{\Sigma}_i^{-1}&=\sum_{j=1}^m\gamma_{ji}\boldsymbol{I}\\
@@ -555,7 +498,6 @@ $$
 \boldsymbol{\Sigma}_i^{-1}\cdot\sum_{j=1}^m\gamma_{ji}(\boldsymbol x_j-\boldsymbol\mu_i)(\boldsymbol x_j-\boldsymbol\mu_i)^T&=\sum_{j=1}^m\gamma_{ji}\\
 \boldsymbol{\Sigma}_i&=\cfrac{\sum_{j=1}^m\gamma_{ji}(\boldsymbol x_j-\boldsymbol\mu_i)(\boldsymbol x_j-\boldsymbol\mu_i)^T}{\sum_{j=1}^m\gamma_{ji}}
 \end{aligned}
-
 $$
 
  此即为公式(9.35)。
@@ -570,9 +512,7 @@ $$
 
 
 $$
-
 L L(D)=\sum_{j=1}^m \ln \left(\sum_{l=1}^k \alpha_l \cdot p\left(\boldsymbol{x}_j \mid \boldsymbol{\mu}_l, \boldsymbol{\Sigma}_l\right)\right)
-
 $$
 
 
@@ -581,22 +521,18 @@ $\alpha_i$ 求导时与变量 $i$ 相 混淆。将式(9.36)中的两项分别对
 求导, 得 
 
 $$
-
 \begin{aligned}
 \frac{\partial L L(D)}{\partial \alpha_i} & =\frac{\partial \sum_{j=1}^m \ln \left(\sum_{l=1}^k \alpha_l \cdot p\left(\boldsymbol{x}_j \mid \boldsymbol{\mu}_l, \boldsymbol{\Sigma}_l\right)\right)}{\partial \alpha_i} \\
 & =\sum_{j=1}^m \frac{1}{\sum_{l=1}^k \alpha_l \cdot p\left(\boldsymbol{x}_j \mid \boldsymbol{\mu}_l, \boldsymbol{\Sigma}_l\right)} \cdot \frac{\partial \sum_{l=1}^k \alpha_l \cdot p\left(\boldsymbol{x}_j \mid \boldsymbol{\mu}_l, \boldsymbol{\Sigma}_l\right)}{\partial \alpha_i} \\
 & =\sum_{j=1}^m \frac{1}{\sum_{l=1}^k \alpha_l \cdot p\left(\boldsymbol{x}_j \mid \boldsymbol{\mu}_l, \boldsymbol{\Sigma}_l\right)} \cdot p\left(\boldsymbol{x}_j \mid \boldsymbol{\mu}_i, \boldsymbol{\Sigma}_i\right)
 \end{aligned}
-
 $$
 
 
 
 
 $$
-
 \frac{\partial\left(\sum_{l=1}^k \alpha_l-1\right)}{\partial \alpha_i}=\frac{\partial\left(\alpha_1+\alpha_2+\ldots+\alpha_i+\ldots+\alpha_k-1\right)}{\partial \alpha_i}=1
-
 $$
 
 
@@ -611,32 +547,26 @@ $$
 对公式(9.37)两边同时乘以$\alpha_{i}$可得 
 
 $$
-
 \begin{aligned}
 \sum_{j=1}^m\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\boldsymbol\Sigma_{l})}+\lambda\alpha_{i}=0\\
 \sum_{j=1}^m\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\boldsymbol\Sigma_{l})}=-\lambda\alpha_{i}
 \end{aligned}
-
 $$
 
  两边对所有混合成分求和可得
 
 
 $$
-
 \begin{aligned}\sum_{i=1}^k\sum_{j=1}^m\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\boldsymbol\Sigma_{l})}&=-\lambda\sum_{i=1}^k\alpha_{i}\\
 \sum_{j=1}^m\sum_{i=1}^k\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\boldsymbol\Sigma_{l})}&=-\lambda\sum_{i=1}^k\alpha_{i}
 \end{aligned}
-
 $$
 
  因为
 
 
 $$
-
 \sum_{i=1}^k\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\mathbf\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\mathbf\Sigma_{l})}=\frac{\sum_{i=1}^k\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\mathbf\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\mathbf\Sigma_{l})}=1
-
 $$
 
 
@@ -644,9 +574,7 @@ $$
 
 
 $$
-
 \sum_{j=1}^m\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\boldsymbol\Sigma_{l})}=-\lambda\alpha_{i}=m\alpha_{i}
-
 $$
 
 
@@ -654,9 +582,7 @@ $$
 
 
 $$
-
 \alpha_{i}=\cfrac{1}{m}\sum_{j=1}^m\frac{\alpha_{i}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{i},\boldsymbol\Sigma_{i})}{\sum_{l=1}^k\alpha_{l}\cdot p(\boldsymbol x_{j}|\boldsymbol\mu_{l},\boldsymbol\Sigma_{l})}
-
 $$
 
 
@@ -664,9 +590,7 @@ $$
 
 
 $$
-
 \alpha_{i}=\cfrac{1}{m}\sum_{j=1}^m\gamma_{ji}
-
 $$
 
  此即为公式(9.38)。
