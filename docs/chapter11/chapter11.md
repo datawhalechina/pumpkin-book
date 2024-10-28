@@ -27,10 +27,7 @@ $D^v$ 的信息樀的差。樀用来衡量一个系统的混舌程度,
 
 
 $$
-
-
 \operatorname{Ent}(D)=-\sum_{i=1}^{| \mathcal{Y |}} p_{k} \log _{2} p_{k}
-
 $$
 
 
@@ -136,10 +133,7 @@ $\nabla f(\boldsymbol{w})=-\sum_{i=1}^m 2\left(y^i-\boldsymbol{w}^{\top} \boldsy
 
 
 $$
-
-
 \frac{\left\|\nabla f\left(\boldsymbol{x}^{\prime}\right)-\nabla f(\boldsymbol{x})\right\|_2}{\left\|\boldsymbol{x}^{\prime}-\boldsymbol{x}\right\|_2} \leqslant L, \quad\left(\forall \boldsymbol{x}, \boldsymbol{x}^{\prime}\right)
-
 $$
 
 
@@ -148,10 +142,7 @@ $$
 
 
 $$
-
-
 \lim _{\boldsymbol{x}^{\prime} \rightarrow \boldsymbol{x}} \frac{\left\|\nabla f\left(\boldsymbol{x}^{\prime}\right)-\nabla f(\boldsymbol{x})\right\|_2}{\left\|\boldsymbol{x}^{\prime}-\boldsymbol{x}\right\|_2}
-
 $$
 
 
@@ -172,10 +163,7 @@ LASSO回归的联系和区别，该式中的$x$对应到式11.7的$w$，即我�
 
 
 $$
-
-
 \left\vert\nabla f\left(\boldsymbol{x}^{\prime}\right)-\nabla f(\boldsymbol{x})\right\vert \leqslant L\left\vert\boldsymbol{x}^{\prime}-\boldsymbol{x}\right\vert \quad\left(\forall \boldsymbol{x}, \boldsymbol{x}^{\prime}\right)
-
 $$
 
 
@@ -184,10 +172,7 @@ $$
 
 
 $$
-
-
 \frac{\left|\nabla f\left(\boldsymbol{x}^{\prime}\right)-\nabla f(\boldsymbol{x})\right|}{\vert x^\prime - x\vert}\leqslant L \quad\left(\forall \boldsymbol{x}, \boldsymbol{x}^{\prime}\right)
-
 $$
 
 
@@ -196,10 +181,7 @@ $$
 
 
 $$
-
-
 \nabla^2f(x)\leqslant L
-
 $$
 
 
@@ -208,8 +190,6 @@ $$
 
 
 $$
-
-
 \begin{aligned}
 \hat{f}(\boldsymbol{x}) & \simeq f\left(\boldsymbol{x}_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}_{k}\right), \boldsymbol{x}-\boldsymbol{x}_{k}\right\rangle+\frac{\nabla^2f(x_k)}{2}\left\|\boldsymbol{x}-\boldsymbol{x}_{k}\right\|^{2} \\
 &\leqslant
@@ -220,7 +200,6 @@ $$
 &=f(x_k)+\frac{L}{2}\left(\left(\boldsymbol{x}-\boldsymbol{x}_{k}\right)+\frac{1}{L} \nabla f\left(\boldsymbol{x}_{k}\right)\right)^{\top}\left(\left(\boldsymbol{x}-\boldsymbol{x}_{k}\right)+\frac{1}{L} \nabla f\left(\boldsymbol{x}_{k}\right)\right)-\frac{1}{2L}\nabla f(x_k)^\top\nabla f(x_k)\\
 &=\frac{L}{2}\left\|\boldsymbol{x}-\left(\boldsymbol{x}_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}_{k}\right)\right)\right\|_{2}^{2}+\mathrm{const}
 \end{aligned}
-
 $$
 
 
@@ -238,10 +217,7 @@ $$
 
 
 $$
-
-
 \hat{f}\left(\boldsymbol{x}_k-\frac{1}{L} \nabla f\left(\boldsymbol{x}_k\right)\right) \leqslant \hat{f}\left(\boldsymbol{x}_k\right)
-
 $$
 
 
@@ -253,10 +229,7 @@ $f(\boldsymbol{x}) \leqslant \hat{f}(\boldsymbol{x})$ 恒成立, 因此,
 
 
 $$
-
-
 f\left(\boldsymbol{x}_k-\frac{1}{L} \nabla f\left(\boldsymbol{x}_k\right)\right) \leqslant \hat{f}\left(\boldsymbol{x}_k-\frac{1}{L} \nabla f\left(\boldsymbol{x}_k\right)\right)
-
 $$
 
 
@@ -268,10 +241,7 @@ $f\left(\boldsymbol{x}_k\right)=\hat{f}\left(\boldsymbol{x}_k\right)$,
 
 
 $$
-
-
 f\left(\boldsymbol{x}_k-\frac{1}{L} \nabla f\left(\boldsymbol{x}_k\right)\right) \leqslant \hat{f}\left(\boldsymbol{x}_k-\frac{1}{L} \nabla f\left(\boldsymbol{x}_k\right)\right) \leqslant \hat{f}\left(\boldsymbol{x}_k\right)=f\left(\boldsymbol{x}_k\right)
-
 $$
 
 
@@ -300,14 +270,11 @@ $\hat{g}(\boldsymbol{x})=\hat{f}(\boldsymbol{x})+\lambda\|\boldsymbol{x}\|_{1^{\
 令优化函数 
 
 $$
-
-
 \begin{aligned}
 g(\boldsymbol{x}) &=\frac{L}{2}\|\boldsymbol{x}-\boldsymbol{z}\|_{2}^{2}+\lambda\|\boldsymbol{x}\|_{1} \\
 &=\frac{L}{2} \sum_{i=1}^{d}\left\|x^{i}-z^{i}\right\|_{2}^{2}+\lambda \sum_{i=1}^{d}\left\|x^{i}\right\|_{1} \\
 &=\sum_{i=1}^{d}\left(\frac{L}{2}\left(x^{i}-z^{i}\right)^{2}+\lambda\left|x^{i}\right|\right)
 \end{aligned}
-
 $$
 
 
@@ -317,10 +284,7 @@ $$
 
 
 $$
-
-
 g\left(x^{i}\right)=\frac{L}{2}\left(x^{i}-z^{i}\right)^{2}+\lambda\left|x^{i}\right|
-
 $$
 
 
@@ -330,10 +294,7 @@ $$
 
 
 $$
-
-
 \frac{d g\left(x^{i}\right)}{d x^{i}}=L\left(x^{i}-z^{i}\right)+\lambda s g n\left(x^{i}\right)
-
 $$
 
 
@@ -342,13 +303,10 @@ $$
 其中 
 
 $$
-
-
 \operatorname{sign}\left(x^{i}\right)=\left\{\begin{array}{ll}
 {1,} & {x^{i}>0} \\
 {-1,} & {x^{i}<0}
 \end{array}\right.
-
 $$
 
 
@@ -358,10 +316,7 @@ $$
 
 
 $$
-
-
 x^{i}=z^{i}-\frac{\lambda}{L} \operatorname{sign}\left(x^{i}\right)
-
 $$
 
 
@@ -378,10 +333,7 @@ $$
     
 
 $$
-
-
 \frac{d^2 g\left(x^{i}\right)}{{d x^{i}}^2}=L
-
 $$
 
 
@@ -394,20 +346,17 @@ $$
 （4）最后讨论$x^i=0$的情况，此时$g(x^i)=\frac{L}{2}\left({z^i}\right)^2$。当$\vert z^i\vert>\frac{\lambda}{L}$时，由上述推导可知$g(x^i)$的最小值在$x^i=z^i-\frac{\lambda}{L}$处取得，因为
         
 $$
-
 \begin{aligned}
            g(x^i)\vert_{x^i=0}-g(x^i)\vert_{x^i=z^i-\frac{\lambda}{L}}
            &=\frac{L}{2}\left({z^i}\right)^2 - \left(\lambda z^i-\frac{\lambda^2}{2L}\right)\\
            &=\frac{L}{2}\left(z^i-\frac{\lambda}{L}\right)^2\\
            &>0
            \end{aligned}
-
 $$
 
 因此当$\vert z^i\vert>\frac{\lambda}{L}$时，$x^i=0$不会是函数$g(x^i)$的最小值。当$-\frac{\lambda}{L} \leqslant z^i \leqslant \frac{\lambda}{L}$时，对于任何$\Delta x\neq 0$有
 
 $$
-
 \begin{aligned}
            g(\Delta x) &=\frac{L}{2}\left(\Delta x-z^{i}\right)^{2}+\lambda|\Delta x| \\
            &=\frac{L}{2}\left((\Delta x)^{2}-2 \Delta x \cdot z^{i}+\frac{2 \lambda}{L}|\Delta x|\right)+\frac{L}{2}\left(z^{i}\right)^{2} \\
@@ -415,7 +364,6 @@ $$
            &\ge\frac{L}{2}\left(\Delta x\right)^2+\frac{L}{2}\left(z^{i}\right)^{2}\\
            &>g(x^i)\vert_{x^i=0}
            \end{aligned}
-
 $$
 
 因此$x^i=0$是$g(x^i)$的最小值点。
@@ -446,8 +394,6 @@ $$
 
 
 $$
-
-
 \begin{aligned}
 \boldsymbol B\boldsymbol A
 & =\begin{bmatrix}
@@ -475,7 +421,6 @@ b_{1}^{2} &b_{2}^{2}  & \cdot  & \cdot  & \cdot  & b_{k}^{2}\\
 \sum_{j=1}^{k}b_{j}^{d}\alpha _{1}^{j}& \sum_{j=1}^{k}b_{j}^{d}\alpha _{2}^{j}  & \cdot  & \cdot  &\cdot   &  \sum_{j=1}^{k}b_{j}^{d}\alpha _{m}^{j}
 \end{bmatrix}_{d\times m} &
 \end{aligned}
-
 $$
 
 
@@ -484,8 +429,6 @@ $$
 
 
 $$
-
-
 \begin{aligned}
 \boldsymbol b_{\boldsymbol j}\boldsymbol \alpha ^{\boldsymbol j}
 & =\begin{bmatrix}
@@ -507,7 +450,6 @@ b_{j}^{2}\alpha _{1}^{j} &b_{j}^{2}\alpha _{2}^{j}  & \cdot  & \cdot  & \cdot  &
 b_{j}^{d}\alpha _{1}^{j}& b_{j}^{d}\alpha _{2}^{j}  & \cdot  & \cdot  &\cdot   &  b_{j}^{d}\alpha _{m}^{j}
 \end{bmatrix}_{d\times m} &
 \end{aligned}
-
 $$
 
 
@@ -516,8 +458,6 @@ $$
 求和可得： 
 
 $$
-
-
 \begin{aligned}
 \sum_{j=1}^{k}\boldsymbol b_{\boldsymbol j}\boldsymbol \alpha ^{\boldsymbol j} 
 & = \sum_{j=1}^{k}\left (\begin{bmatrix}
@@ -539,7 +479,6 @@ b_{j}^{1}\\ b_{j}^{2}
 \sum_{j=1}^{k}b_{j}^{d}\alpha _{1}^{j}& \sum_{j=1}^{k}b_{j}^{d}\alpha _{2}^{j}  & \cdot  & \cdot  &\cdot   &  \sum_{j=1}^{k}b_{j}^{d}\alpha _{m}^{j}
 \end{bmatrix}_{d\times m} &
 \end{aligned}
-
 $$
 
 
@@ -589,14 +528,11 @@ Codebook Update Stage, 在该步骤中分 K 次分别更新字典矩 阵 $\mathb
 如原文献式(21)所示: 
 
 $$
-
-
 \begin{aligned}
 \|\mathbf{Y}-\mathbf{D X}\|_F^2 & =\left\|\mathbf{Y}-\sum_{j=1}^K \mathbf{d}_j \mathbf{x}_T^j\right\|_F^2 \\
 & =\left\|\left(\mathbf{Y}-\sum_{j \neq k} \mathbf{d}_j \mathbf{x}_T^j\right)-\mathrm{d}_k \mathbf{x}_T^k\right\|_F^2 \\
 & =\left\|\mathbf{E}_k-\mathbf{d}_k \mathrm{x}_T^k\right\|_F^2 .
 \end{aligned}
-
 $$
 
 
@@ -625,10 +561,7 @@ $\mathbf{E}_k^R=\mathbf{U} \Delta \mathrm{V}^{\top}$, 则
 
 
 $$
-
-
 \tilde{\mathbf{d}}_k=\mathbf{U}_1, \quad \tilde{\mathbf{x}}_T^k=\boldsymbol{\Delta}(1,1) \mathbf{V}_1^{\top}
-
 $$
 
 
@@ -659,10 +592,7 @@ De-Noising、第 261 页 的 Basis Pursuit 和 Matching Pursuit 中的
 
 
 $$
-
-
 \left(1-\delta_k\right) \leqslant \frac{\left\|\mathbf{A}_k \boldsymbol{s}\right\|_2^2}{\|\boldsymbol{s}\|_2^2} \leqslant\left(1+\delta_k\right)
-
 $$
 
 
