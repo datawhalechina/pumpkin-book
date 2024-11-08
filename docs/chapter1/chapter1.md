@@ -3,7 +3,9 @@
 
 本章学习时间：1.5天
 
-本章配套视频教程：[https://www.bilibili.com/video/BV1Mh411e7VU?p=2](https://www.bilibili.com/video/BV1Mh411e7VU?p=2)
+本章配套视频教程：
+
+[https://www.bilibili.com/video/BV1Mh411e7VU?p=2](https://www.bilibili.com/video/BV1Mh411e7VU?p=2)
 ```
 
 # 第1章 绪论
