@@ -1,3 +1,19 @@
+```{important}
+参与组队学习的同学须知：
+
+本章学习时间：线性回归3天+对数几率回归3天+线性判别分析3天，共计9天
+
+本章配套视频教程：
+
+一元线性回归：https://www.bilibili.com/video/BV1Mh411e7VU?p=3
+
+多元线性回归：https://www.bilibili.com/video/BV1Mh411e7VU?p=4
+
+对数几率回归：https://www.bilibili.com/video/BV1Mh411e7VU?p=5
+
+线性判别分析：https://www.bilibili.com/video/BV1Mh411e7VU?p=6
+```
+
 # 第3章 线性模型
 
 作为"西瓜书"介绍机器学习模型的开篇，线性模型也是机器学习中最为基础的模型，很多复杂模型均可认为由线性模型衍生而得，无论是曾经红极一时的支持向量机还是如今万众瞩目的神经网络，其中都有线性模型的影子。
