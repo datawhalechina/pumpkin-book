@@ -11,6 +11,8 @@
 ## 配套资源
 视频教程：[https://www.bilibili.com/video/BV1Mh411e7VU](https://www.bilibili.com/video/BV1Mh411e7VU)
 
+组队学习：[https://www.datawhale.cn/learn/summary/2](https://www.datawhale.cn/learn/summary/2)
+
 在线阅读：[https://www.datawhale.cn/learn/summary/2](https://www.datawhale.cn/learn/summary/2)
 
 PDF版本下载：[https://github.com/datawhalechina/pumpkin-book/releases](https://github.com/datawhalechina/pumpkin-book/releases)
