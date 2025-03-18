@@ -247,7 +247,7 @@ $$
 
 (1)无论上述优化问题是否为凸优化问题，其对偶函数$\Gamma (\boldsymbol \mu,\boldsymbol \lambda)$恒为凹函数，详细证明可查阅参考文献[2]的第5.1.2和3.2.3节；
 
-(2)当$\boldsymbol{\mu} \succeq 0$时[（$\boldsymbol{\mu} \succeq 0$表示$\boldsymbol{\mu}$的分量均为非负）]{style="background-color: lightgray"}，$\Gamma (\boldsymbol \mu,\boldsymbol \lambda)$构成了上述优化问题最优值$p^*$的下界，即
+(2)当$\boldsymbol{\mu} \succeq 0$时（$\boldsymbol{\mu} \succeq 0$表示$\boldsymbol{\mu}$的分量均为非负），$\Gamma (\boldsymbol \mu,\boldsymbol \lambda)$构成了上述优化问题最优值$p^*$的下界，即
 
 
 $$
